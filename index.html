@@ -6,15 +6,17 @@
 <title>PRO-MAX ACADÉMIE | Apprendre. Évoluer. Réussir.</title>
 <meta name="description" content="PRO-MAX Académie — plateforme numérique moderne de formation, cours en ligne, AI Tutor, examens, progression et certifications.">
 <style>
-:root{--black:#000000;--orange:#ff7a00;--orange-light:#ffa24a;--border:rgba(255,122,0,0.38);--radius:22px;--header-height:84px}
+:root{--black:#000000;--orange:#ff9500;--orange-light:#ffb86b;--border:rgba(255,149,0,0.38);--radius:22px;--header-height:84px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{min-height:100vh;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;color:var(--orange-light);background:radial-gradient(circle at 12% 10%, rgba(255,122,0,0.17), transparent 28%),radial-gradient(circle at 88% 28%, rgba(184,66,0,0.15), transparent 30%),linear-gradient(145deg,#000000,#0b0400 50%,#000000)}
-header{position:fixed;top:0;left:0;z-index:2000;width:100%;min-height:var(--header-height);border-bottom:1px solid var(--border);background:rgba(0,0,0,0.92);backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
+body{min-height:100vh;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;color:var(--orange-light);background:radial-gradient(circle at 12% 10%, rgba(255,149,0,0.17), transparent 28%),radial-gradient(circle at 88% 28%, rgba(184,66,0,0.15), transparent 30%),linear-gradient(145deg,#000000,#0b0400 50%,#000000)}
+.contact-top{background:linear-gradient(90deg,#000,#1a0a00,#000);border-bottom:1px solid #ff9500;padding:8px 0;font-size:0.72rem;text-align:center;color:#ffb86b}
+.contact-top .container{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;align-items:center}
+header{position:fixed;top:38px;left:0;z-index:2000;width:100%;min-height:var(--header-height);border-bottom:1px solid var(--border);background:rgba(0,0,0,0.92);backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
 .header-inner{min-height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:13px}
-.brand-logo{width:58px;height:58px;flex:0 0 58px;object-fit:cover;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,122,0,0.35)}
-.brand-logo-video{width:58px;height:58px;flex:0 0 58px;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,122,0,0.35);object-fit:cover}
+.brand-logo{width:58px;height:58px;flex:0 0 58px;object-fit:cover;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,149,0,0.35)}
+.brand-logo-video{width:58px;height:58px;flex:0 0 58px;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,149,0,0.35);object-fit:cover}
 .brand-name{display:block;color:var(--orange);font-size:1.02rem;font-weight:950;letter-spacing:0.04em;text-transform:uppercase}
 .brand-subtitle{display:block;margin-top:4px;color:var(--orange-light);font-size:0.66rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase}
 .desktop-nav{display:flex;align-items:center;gap:3px}
@@ -25,239 +27,132 @@ header{position:fixed;top:0;left:0;z-index:2000;width:100%;min-height:var(--head
 .language-button.active,.language-button:hover{color:#000;background:var(--orange)}
 .menu-button{display:none;width:48px;height:48px;padding:10px;border:1px solid var(--border);border-radius:12px;background:#050200}
 .menu-button span{display:block;height:3px;margin:5px 0;border-radius:8px;background:var(--orange);transition:0.3s}
-.menu-button.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.menu-button.active span:nth-child(2){opacity:0}
-.menu-button.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.mobile-menu{display:none}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-height) + 80px) 0 80px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,0,0,0.97),rgba(0,0,0,0.86) 50%,rgba(255,122,0,0.09))}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-height) + 118px) 0 80px;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:65px}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,122,0,0.06);font-size:0.78rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase}
-.hero-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,149,0,0.06);font-size:0.78rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase}
 .hero-title{margin-top:24px;color:var(--orange);font-size:clamp(3.2rem,7.7vw,6.7rem);line-height:0.93;letter-spacing:-0.045em;text-transform:uppercase}
 .hero-title span{display:block;margin-top:15px;color:var(--orange-light);font-size:0.44em}
 .hero-slogan{margin-top:22px;color:var(--orange);font-size:clamp(1rem,2vw,1.35rem);font-weight:950;letter-spacing:0.1em;text-transform:uppercase}
 .hero-description{max-width:760px;margin-top:22px;color:var(--orange-light);font-size:1.06rem;line-height:1.8;opacity:0.88}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:2px solid var(--orange);border-radius:13px;font-size:0.82rem;font-weight:950;letter-spacing:0.05em;text-transform:uppercase;transition:0.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,122,0,0.18)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,149,0,0.18)}
 .btn-primary{color:#000;background:linear-gradient(135deg,var(--orange),var(--orange-light))}
 .btn-secondary{color:var(--orange);background:#000}
-.btn-secondary:hover{color:#000;background:var(--orange)}
 .hero-visual{min-height:510px;display:flex;align-items:center;justify-content:center}
-.academy-video-wrap{width:min(100%,560px);overflow:hidden;border:2px solid var(--orange);border-radius:26px;background:#000;box-shadow:0 0 65px rgba(255,122,0,0.28),0 30px 70px rgba(0,0,0,0.55)}
+.academy-video-wrap{width:min(100%,560px);overflow:hidden;border:2px solid var(--orange);border-radius:26px;background:#000;box-shadow:0 0 65px rgba(255,149,0,0.28),0 30px 70px rgba(0,0,0,0.55)}
 .academy-main-video{width:100%;height:auto;display:block;object-fit:cover;background:#000}
 .container{width:min(1200px,calc(100% - 34px));margin:auto}
 .section{padding:90px 0}
 .section-header{max-width:800px;margin:0 auto 48px;text-align:center}
-.section-label{display:inline-block;padding:8px 16px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,122,0,0.06);font-size:0.75rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase}
+.section-label{display:inline-block;padding:8px 16px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,149,0,0.06);font-size:0.75rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase}
 .section-title{margin-top:16px;color:var(--orange);font-size:clamp(2rem,5vw,3.7rem);line-height:1.05;text-transform:uppercase}
-.section-description{margin-top:17px;color:var(--orange-light);font-size:1rem;line-height:1.75;opacity:0.88}
-.identity-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
-.identity-card{min-height:165px;display:flex;flex-direction:column;justify-content:center;padding:22px 16px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(145deg,rgba(255,122,0,0.08),#000);text-align:center;transition:0.3s}
-.identity-card:hover{transform:translateY(-6px);border-color:var(--orange)}
-.identity-number{color:var(--orange);font-size:1.7rem;font-weight:950}
-.identity-card h3{margin-top:13px;color:var(--orange);font-size:0.9rem;text-transform:uppercase}
-.identity-card p{margin-top:8px;font-size:0.78rem;line-height:1.5;opacity:0.8}
-.course-search{display:grid;grid-template-columns:1fr auto;max-width:850px;margin:0 auto;padding:8px;border:1px solid var(--border);border-radius:16px;background:#050200}
-.course-search input{min-height:52px;padding:12px 16px;border:0;outline:0;color:var(--orange-light);background:transparent}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.category-card{position:relative;min-height:215px;display:flex;flex-direction:column;padding:25px;overflow:hidden;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,rgba(255,122,0,0.1),#000 60%);transition:0.3s}
-.category-card:hover{transform:translateY(-7px);border-color:var(--orange);box-shadow:0 22px 45px rgba(255,122,0,0.11)}
-.category-number{width:49px;height:49px;display:grid;place-items:center;border-radius:13px;color:#000;background:var(--orange);font-weight:950}
-.category-card h3{margin-top:20px;color:var(--orange);font-size:1.05rem;text-transform:uppercase}
-.category-card p{flex:1;margin-top:10px;font-size:0.82rem;line-height:1.65;opacity:0.82}
-.category-card span{margin-top:18px;color:var(--orange);font-size:0.73rem;font-weight:950;text-transform:uppercase}
-.course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.course-card{overflow:hidden;border:1px solid var(--border);border-radius:24px;background:#050200;transition:0.3s}
-.course-card:hover{transform:translateY(-7px);border-color:var(--orange)}
-.course-image{height:190px;display:grid;place-items:center;background:radial-gradient(circle,rgba(255,122,0,0.3),rgba(0,0,0,0.95))}
-.course-image span{color:var(--orange);font-size:2.5rem;font-weight:950}
-.course-body{padding:24px}
-.course-badge{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--orange);font-size:0.66rem;font-weight:900;text-transform:uppercase}
-.course-body h3{margin-top:15px;color:var(--orange);font-size:1.12rem;line-height:1.35;text-transform:uppercase}
-.course-body p{margin-top:10px;font-size:0.83rem;line-height:1.65;opacity:0.82}
-.course-meta{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:0.72rem;font-weight:800}
-.course-link{display:inline-flex;margin-top:18px;color:var(--orange);font-size:0.75rem;font-weight:950;text-transform:uppercase}
-.ai-box{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:50px;padding:55px;border:1px solid var(--orange);border-radius:32px;background:radial-gradient(circle at 15% 20%,rgba(255,122,0,0.26),transparent 35%),linear-gradient(135deg,#190800,#000 65%)}
-.ai-visual{min-height:340px;display:grid;place-items:center}
-.ai-circle{width:260px;height:260px;display:grid;place-items:center;border:2px solid var(--orange);border-radius:50%;color:var(--orange);background:rgba(0,0,0,0.8);box-shadow:0 0 60px rgba(255,122,0,0.22),inset 0 0 40px rgba(255,122,0,0.12);font-size:4.6rem;font-weight:950}
-.ai-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase}
-.ai-content p{margin-top:18px;line-height:1.8;opacity:0.88}
-.ai-list{display:grid;gap:10px;margin-top:24px}
-.ai-item{padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:rgba(255,122,0,0.04);font-size:0.85rem}
-.steps-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
-.step-card{padding:25px 18px;border:1px solid var(--border);border-radius:19px;background:#080400;text-align:center}
-.step-number{width:58px;height:58px;display:grid;place-items:center;margin:0 auto;border:2px solid var(--orange);border-radius:50%;color:#000;background:var(--orange);font-weight:950}
-.step-card h3{margin-top:17px;color:var(--orange);font-size:0.88rem;text-transform:uppercase}
-.step-card p{margin-top:9px;font-size:0.78rem;line-height:1.55;opacity:0.8}
-.certificate-box{display:grid;grid-template-columns:1.15fr 0.85fr;gap:45px;align-items:center;padding:48px;border:1px solid var(--border);border-radius:30px;background:linear-gradient(145deg,rgba(255,122,0,0.1),#000 65%)}
-.certificate-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.3rem);text-transform:uppercase}
-.certificate-content p{margin-top:18px;line-height:1.8;opacity:0.86}
-.certificate-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.certificate-demo{min-height:300px;display:grid;place-items:center;padding:25px;border:2px solid var(--orange);border-radius:18px;background:radial-gradient(circle,rgba(255,122,0,0.12),#000);text-align:center}
-.certificate-demo h3{color:var(--orange);font-size:1.5rem}
-.certificate-demo p{margin-top:12px;font-size:0.84rem;line-height:1.6}
-.certificate-seal{width:85px;height:85px;display:grid;place-items:center;margin:20px auto 0;border:2px solid var(--orange);border-radius:50%;color:var(--orange);font-weight:950}
-.training-box{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:45px;border:1px solid var(--orange);border-radius:30px;background:radial-gradient(circle at 80% 20%,rgba(255,122,0,0.18),transparent 35%),#050200}
-.training-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.1rem);text-transform:uppercase}
-.training-content p{margin-top:17px;line-height:1.75;opacity:0.86}
-.training-features{display:grid;gap:12px}
-.training-feature{padding:15px;border:1px solid var(--border);border-radius:13px;background:rgba(255,122,0,0.04)}
-.training-feature strong{display:block;color:var(--orange);font-size:0.85rem;text-transform:uppercase}
-.portal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.portal-card{min-height:280px;display:flex;flex-direction:column;padding:34px;border:1px solid var(--border);border-radius:25px;background:linear-gradient(145deg,rgba(255,122,0,0.1),#000)}
-.portal-card h3{color:var(--orange);font-size:1.6rem;text-transform:uppercase}
-.portal-card p{flex:1;margin-top:14px;line-height:1.7;opacity:0.84}
-.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.stat-card{padding:30px 18px;border:1px solid var(--border);border-radius:20px;background:#070300;text-align:center}
-.stat-card strong{display:block;color:var(--orange);font-size:clamp(2.2rem,5vw,3.5rem)}
-.stat-card span{display:block;margin-top:8px;font-size:0.8rem;font-weight:900;text-transform:uppercase}
-.announcement-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.announcement-card{padding:25px;border:1px solid var(--border);border-radius:20px;background:#080400}
-.announcement-date{color:var(--orange);font-size:0.7rem;font-weight:900;text-transform:uppercase}
-.announcement-card h3{margin-top:12px;color:var(--orange);font-size:1rem;text-transform:uppercase}
-.announcement-card p{margin-top:10px;font-size:0.82rem;line-height:1.65;opacity:0.82}
-.cta-box{position:relative;overflow:hidden;padding:60px 30px;border:1px solid var(--orange);border-radius:32px;background:radial-gradient(circle at 80% 20%,rgba(255,122,0,0.26),transparent 32%),linear-gradient(135deg,#190800,#000 62%);text-align:center}
-.cta-box h2{color:var(--orange);font-size:clamp(2rem,5vw,3.6rem);text-transform:uppercase}
-.cta-box p{max-width:760px;margin:18px auto 0;line-height:1.75;opacity:0.87}
-.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}
 footer{border-top:1px solid var(--border);background:#000}
-.footer-main{display:grid;grid-template-columns:1.2fr 0.7fr 0.7fr 0.7fr;gap:35px;padding:60px 0 40px}
+.footer-main{display:grid;grid-template-columns:1.3fr 0.7fr 0.8fr 0.8fr;gap:35px;padding:60px 0 40px}
 .footer-brand{display:flex;align-items:center;gap:13px}
 .footer-brand img{width:65px;height:65px;object-fit:cover;border:2px solid var(--orange);border-radius:50%}
 .footer-brand h3{color:var(--orange);font-size:1.05rem;text-transform:uppercase}
-.footer-brand p{margin-top:6px;font-size:0.72rem;text-transform:uppercase}
-.footer-description{margin-top:18px;max-width:480px;font-size:0.85rem;line-height:1.7;opacity:0.8}
 .footer-column h4{margin-bottom:15px;color:var(--orange);font-size:0.82rem;text-transform:uppercase}
 .footer-links{display:grid;gap:10px}
 .footer-links a{font-size:0.82rem;opacity:0.78;transition:0.3s}
 .footer-links a:hover{color:var(--orange);opacity:1;transform:translateX(4px)}
 .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--border);font-size:0.74rem;opacity:0.78}
-@media (max-width:1100px){.desktop-nav{display:none}.menu-button{display:block}.mobile-menu{position:fixed;top:84px;right:0;bottom:0;z-index:1900;width:min(370px,88%);display:flex;flex-direction:column;gap:10px;padding:28px;border-left:1px solid var(--border);background:rgba(0,0,0,0.98);transform:translateX(105%);transition:0.3s}.mobile-menu.open{transform:translateX(0)}.hero-grid{grid-template-columns:1fr}.hero-content{text-align:center}.hero-actions{justify-content:center}.identity-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-box,.certificate-box,.training-box{grid-template-columns:1fr}.steps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-main{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:700px){:root{--header-height:74px}.container{width:min(100% - 24px,1200px)}.section{padding:68px 0}.brand-logo{width:48px;height:48px}.brand-name{font-size:0.8rem}.brand-subtitle{display:none}.hero{padding-top:calc(74px + 55px)}.hero-title{font-size:clamp(2.8rem,15vw,4.8rem)}.hero-actions{display:grid}.hero-visual{min-height:auto}.identity-grid,.category-grid,.course-grid,.steps-grid,.portal-grid,.stats-grid,.announcement-grid,.footer-main{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div class="contact-top">
+<div class="container">
+<span>🌐 <a href="https://www.pro-maxacademie.com" target="_blank" style="color:#ff9500;font-weight:900">www.pro-maxacademie.com</a></span>
+<span>📧 promaxacademie@gmail.com</span>
+<span>📞 (407) 640-5166 | (516) 216-8494</span>
+</div>
+</div>
 <header>
 <div class="container header-inner">
 <a href="#home" class="brand">
-<!-- LOGO = pro-max-academie.mp4 + pro-max-cademie.mp4 - TOU DE YO POU L CHAJE -->
+<!-- LOGO VIDEO = pro-maxa-cademie-II.mp4 - KOULÈ RANJE #ff9500 -->
 <video class="brand-logo-video" autoplay muted loop playsinline>
+<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
+<source src="pro-maxa-cademie-ii.mp4" type="video/mp4">
 <source src="pro-max-academie.mp4" type="video/mp4">
 <source src="pro-max-cademie.mp4" type="video/mp4">
-<source src="./pro-max-academie.mp4" type="video/mp4">
-<source src="./pro-max-cademie.mp4" type="video/mp4">
+<source src="./pro-maxa-cademie-II.mp4" type="video/mp4">
 </video>
-<img src="pro-max-logo-final-HD.png" alt="PRO-MAX" class="brand-logo" style="display:none" onerror="this.previousElementSibling.style.display='none';this.style.display='block'">
 <span>
 <span class="brand-name">PRO-MAX ACADÉMIE</span>
-<span class="brand-subtitle" data-i18n="brandSubtitle">Apprendre • Évoluer • Réussir</span>
+<span class="brand-subtitle">Apprendre • Évoluer • Réussir</span>
 </span>
 </a>
 <nav class="desktop-nav">
-<a href="#home" class="nav-link" data-i18n="navHome">Akèy</a>
-<a href="courses.html" class="nav-link" data-i18n="navCourses">Kou</a>
-<a href="#categories" class="nav-link" data-i18n="navCategories">Kategori</a>
+<a href="#home" class="nav-link">Akèy</a>
+<a href="courses.html" class="nav-link">Kou</a>
+<a href="#categories" class="nav-link">Kategori</a>
 <a href="ai/ai-tutor.html" class="nav-link">AI Tutor</a>
-<a href="certificates.html" class="nav-link" data-i18n="navCertificates">Sètifika</a>
-<a href="about.html" class="nav-link" data-i18n="navAbout">Konsènan</a>
-<a href="contact.html" class="nav-link" data-i18n="navContact">Kontakte</a>
-<a href="login.html" class="nav-link" data-i18n="navLogin">Login</a>
+<a href="certificates.html" class="nav-link">Sètifika</a>
+<a href="login.html" class="nav-link">Login</a>
 <div class="language-switcher">
-<button class="language-button active" data-language="ht">KRE</button>
-<button class="language-button" data-language="fr">FRA</button>
-<button class="language-button" data-language="en">ENG</button>
+<button class="language-button active">KRE</button>
+<button class="language-button">FRA</button>
+<button class="language-button">ENG</button>
 </div>
 </nav>
-<button type="button" class="menu-button" id="menuButton" aria-label="Open Menu"><span></span><span></span><span></span></button>
 </div>
 </header>
-<nav class="mobile-menu" id="mobileMenu">
-<a href="#home" class="nav-link mobile-link" data-i18n="navHome">Akèy</a>
-<a href="courses.html" class="nav-link" data-i18n="navCourses">Kou</a>
-<a href="#categories" class="nav-link mobile-link" data-i18n="navCategories">Kategori</a>
-<a href="ai/ai-tutor.html" class="nav-link">AI Tutor</a>
-<a href="certificates.html" class="nav-link" data-i18n="navCertificates">Sètifika</a>
-<a href="login.html" class="nav-link" data-i18n="navLogin">Login</a>
-<a href="register.html" class="nav-link" data-i18n="navRegister">Enskri</a>
-<div class="language-switcher">
-<button class="language-button active" data-language="ht">KRE</button>
-<button class="language-button" data-language="fr">FRA</button>
-<button class="language-button" data-language="en">ENG</button>
-</div>
-</nav>
 <main>
 <section class="hero" id="home">
 <div class="container hero-grid">
 <div class="hero-content">
-<div class="hero-badge" data-i18n="heroBadge">Platfòm edikasyon dijital</div>
+<div class="hero-badge">Platfòm edikasyon dijital</div>
 <h1 class="hero-title">PRO-MAX<span>ACADÉMIE</span></h1>
-<div class="hero-slogan" data-i18n="heroSlogan">APPRENDRE. ÉVOLUER. RÉUSSIR.</div>
-<p class="hero-description" data-i18n="heroDescription">Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.</p>
+<div class="hero-slogan">APPRENDRE. ÉVOLUER. RÉUSSIR.</div>
+<p class="hero-description">Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.</p>
 <div class="hero-actions">
-<a href="courses.html" class="btn btn-primary" data-i18n="exploreCourses">Explore Courses</a>
-<a href="register.html" class="btn btn-secondary" data-i18n="startLearning">Start Learning</a>
-<a href="login.html" class="btn btn-secondary" data-i18n="studentLogin">Student Login</a>
+<a href="courses.html" class="btn btn-primary">Explore Courses</a>
+<a href="register.html" class="btn btn-secondary">Start Learning</a>
+<a href="login.html" class="btn btn-secondary">Student Login</a>
 </div>
 </div>
 <div class="hero-visual">
 <div class="academy-video-wrap">
-<video id="academyMainVideo" class="academy-main-video" autoplay muted loop playsinline preload="auto">
+<video class="academy-main-video" autoplay muted loop playsinline>
+<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
+<source src="pro-maxa-cademie-ii.mp4" type="video/mp4">
 <source src="pro-max-academie.mp4" type="video/mp4">
 <source src="pro-max-cademie.mp4" type="video/mp4">
-<source src="./pro-max-academie.mp4" type="video/mp4">
-<source src="./pro-max-cademie.mp4" type="video/mp4">
 </video>
 </div>
 </div>
 </div>
 </section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="identityLabel">Idantite Académie a</span><h2 class="section-title" data-i18n="identityTitle">Yon sistèm aprantisaj konplè</h2><p class="section-description" data-i18n="identityDescription">PRO-MAX Académie fèt pou mete teknoloji, edikasyon ak sètifikasyon nan yon sèl sistèm.</p></div><div class="identity-grid"><div class="identity-card"><div class="identity-number">3</div><h3 data-i18n="languagesTitle">Lang</h3><p>KRE • FRA • ENG</p></div><div class="identity-card"><div class="identity-number">AI</div><h3>AI Tutor</h3><p data-i18n="aiIdentityText">Asistans aprantisaj entèlijan</p></div><div class="identity-card"><div class="identity-number">✓</div><h3 data-i18n="certIdentityTitle">Certification</h3><p data-i18n="certIdentityText">Sètifika ak verification</p></div><div class="identity-card"><div class="identity-number">%</div><h3 data-i18n="progressTitle">Progress</h3><p data-i18n="progressText">Suivi pwogrè elèv</p></div><div class="identity-card"><div class="identity-number">I</div><h3 data-i18n="instructorTitle">Instructor</h3><p data-i18n="instructorText">Instructor Portal konplè</p></div><div class="identity-card"><div class="identity-number">24/7</div><h3 data-i18n="learningTitle">Learning</h3><p data-i18n="learningText">Aprann nenpòt lè</p></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label">COURSE SEARCH</span><h2 class="section-title" data-i18n="searchTitle">Chèche yon kou</h2></div><form class="course-search" action="courses.html" method="get"><input type="search" name="search" placeholder="Search courses..." data-i18n-placeholder="searchPlaceholder"><button class="btn btn-primary" type="submit" data-i18n="searchButton">Search</button></form></div></section>
-<section class="section" id="categories"><div class="container"><div class="section-header"><span class="section-label" data-i18n="categoryLabel">Course Categories</span><h2 class="section-title" data-i18n="categoryTitle">Chwazi domèn ou</h2><p class="section-description" data-i18n="categoryDescription">Devlope nouvo kapasite atravè kou pwofesyonèl, teknoloji, administrasyon ak fòmasyon kominotè.</p></div><div class="category-grid"><a href="courses.html?category=digital-skills" class="category-card"><div class="category-number">01</div><h3>Digital Skills</h3><p data-i18n="digitalSkillsText">Konpetans dijital pou travay ak teknoloji modèn.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=leadership" class="category-card"><div class="category-number">02</div><h3>Leadership</h3><p data-i18n="leadershipText">Devlope kapasite lidèchip ak jesyon ekip.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=communication" class="category-card"><div class="category-number">03</div><h3>Communication</h3><p data-i18n="communicationText">Kominikasyon pwofesyonèl ak relasyon imen.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=immigration-education" class="category-card"><div class="category-number">04</div><h3>Immigration Education</h3><p data-i18n="immigrationEducationText">Fòmasyon enfòmatif sou pwosesis ak resous imigrasyon.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=admin-training" class="category-card"><div class="category-number">05</div><h3>Admin Training</h3><p data-i18n="adminTrainingText">Fòmasyon espesyal pou Administratè BSS1815.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=technology" class="category-card"><div class="category-number">06</div><h3>Technology</h3><p data-i18n="technologyText">Teknoloji, AI ak zouti dijital modèn.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=professional" class="category-card"><div class="category-number">07</div><h3>Professional Training</h3><p data-i18n="professionalText">Preparasyon ak kapasite pou anviwònman pwofesyonèl.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html" class="category-card"><div class="category-number">08</div><h3>All Courses</h3><p data-i18n="allCoursesText">Eksplore tout pwogram fòmasyon Académie a.</p><span data-i18n="viewCourses">View Courses →</span></a></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="featuredLabel">Featured Courses</span><h2 class="section-title" data-i18n="featuredTitle">Kou rekòmande</h2></div><div class="course-grid"><article class="course-card"><div class="course-image"><span>AI</span></div><div class="course-body"><span class="course-badge">TECHNOLOGY</span><h3 data-i18n="courseOneTitle">Introduction à l'Intelligence Artificielle</h3><p data-i18n="courseOneText">Aprann baz AI, itilizasyon responsab ak zouti entèlijan pou travay ak aprantisaj.</p><div class="course-meta"><span>12 Lessons</span><span>Certificate</span></div><a href="course-details.html?course=ai-introduction" class="course-link" data-i18n="openCourse">Open Course →</a></div></article><article class="course-card"><div class="course-image"><span>ADM</span></div><div class="course-body"><span class="course-badge">ADMIN TRAINING</span><h3 data-i18n="courseTwoTitle">BSS1815 Admin Professional Training</h3><p data-i18n="courseTwoText">Leadership, communication, PRO-MAX DMP, security ak jesyon dijital.</p><div class="course-meta"><span>10 Modules</span><span>Certificate + Badge</span></div><a href="course-details.html?course=bss1815-admin" class="course-link" data-i18n="openCourse">Open Course →</a></div></article><article class="course-card"><div class="course-image"><span>DS</span></div><div class="course-body"><span class="course-badge">DIGITAL SKILLS</span><h3 data-i18n="courseThreeTitle">Digital Skills Fundamentals</h3><p data-i18n="courseThreeText">Devlope konpetans dijital pou travay, kominikasyon ak jesyon enfòmasyon.</p><div class="course-meta"><span>14 Lessons</span><span>Certificate</span></div><a href="course-details.html?course=digital-skills" class="course-link" data-i18n="openCourse">Open Course →</a></div></article></div></div></section>
-<section class="section ai-section"><div class="container"><div class="ai-box"><div class="ai-visual"><div class="ai-circle">AI</div></div><div class="ai-content"><span class="section-label">PRO-MAX AI TUTOR</span><h2 data-i18n="aiTitle">Yon pwofesè dijital ki toujou disponib</h2><p data-i18n="aiDescription">AI Tutor la ede elèv konprann leson, prepare egzamen, jwenn eksplikasyon, fè pratik epi aprann nan Kreyòl, Français ak English.</p><div class="ai-list"><div class="ai-item" data-i18n="aiFeatureOne">Eksplike lesson ak konsèp difisil</div><div class="ai-item" data-i18n="aiFeatureTwo">Kreye practice questions</div><div class="ai-item" data-i18n="aiFeatureThree">Prepare student pou quiz ak exam</div><div class="ai-item" data-i18n="aiFeatureFour">Tradui ak rezime materyèl</div></div><a href="ai/ai-tutor.html" class="btn btn-primary" data-i18n="askTutor">Ask AI Tutor</a></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="howLabel">How It Works</span><h2 class="section-title" data-i18n="howTitle">Senk etap pou reyisi</h2></div><div class="steps-grid"><div class="step-card"><div class="step-number">01</div><h3 data-i18n="stepOneTitle">Create Account</h3><p data-i18n="stepOneText">Kreye pwofil student ou.</p></div><div class="step-card"><div class="step-number">02</div><h3 data-i18n="stepTwoTitle">Choose Course</h3><p data-i18n="stepTwoText">Chwazi fòmasyon ki enterese w.</p></div><div class="step-card"><div class="step-number">03</div><h3 data-i18n="stepThreeTitle">Learn</h3><p data-i18n="stepThreeText">Suiv lessons ak materyèl yo.</p></div><div class="step-card"><div class="step-number">04</div><h3 data-i18n="stepFourTitle">Take Exam</h3><p data-i18n="stepFourText">Fè quiz ak final exam.</p></div><div class="step-card"><div class="step-number">05</div><h3 data-i18n="stepFiveTitle">Get Certified</h3><p data-i18n="stepFiveText">Resevwa certificate ou.</p></div></div></div></section>
-<section class="section"><div class="container"><div class="certificate-box"><div class="certificate-content"><span class="section-label">CERTIFICATE CENTER</span><h2 data-i18n="certificateTitle">Fòmasyon ki mennen nan sètifikasyon</h2><p data-i18n="certificateDescription">Lè yon student fini yon kou epi li satisfè kondisyon yo, PRO-MAX Académie kapab emèt yon certificate ak nimewo verification ak QR Code.</p><div class="certificate-actions"><a href="certificates.html" class="btn btn-primary" data-i18n="viewCertificates">View Certificates</a><a href="certificate-verification.html" class="btn btn-secondary" data-i18n="verifyCertificate">Verify Certificate</a></div></div><div class="certificate-demo"><div><h3>PRO-MAX ACADÉMIE</h3><p data-i18n="certificateDemoText">Certificate of Completion</p><div class="certificate-seal">PMA</div><p>PMA-CERT-2026-XXXXXX</p></div></div></div></div></section>
-<section class="section"><div class="container"><div class="training-box"><div class="training-content"><span class="section-label">BSS1815 ADMIN TRAINING</span><h2 data-i18n="trainingTitle">Fòmasyon espesyal pou administratè yo</h2><p data-i18n="trainingDescription">Yon pwogram espesyal pou fòme administratè BSS1815 nan leadership, communication, PRO-MAX DMP, digital management, security ak AI tools.</p><a href="course-details.html?course=bss1815-admin" class="btn btn-primary" style="margin-top:25px;" data-i18n="openTraining">Open Admin Training</a></div><div class="training-features"><div class="training-feature"><strong>Leadership</strong><p data-i18n="trainingFeatureOne">Devlope kapasite dirije ekip.</p></div><div class="training-feature"><strong>PRO-MAX DMP</strong><p data-i18n="trainingFeatureTwo">Aprann sistèm administrasyon santral la.</p></div><div class="training-feature"><strong>Certificate</strong><p data-i18n="trainingFeatureThree">Certificate apre kou a fini.</p></div><div class="training-feature"><strong>★ Badge</strong><p data-i18n="trainingFeatureFour">Admin ki pase fòmasyon an resevwa Star Badge.</p></div></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="portalLabel">Academy Portals</span><h2 class="section-title" data-i18n="portalTitle">Aksè pèsonalize</h2></div><div class="portal-grid"><div class="portal-card"><h3 data-i18n="studentPortalTitle">Student Portal</h3><p data-i18n="studentPortalText">Student la kapab wè kou li yo, pwogrè, exams, grades, certificates, messages ak AI Tutor.</p><a href="student/dashboard.html" class="btn btn-primary" data-i18n="openStudentPortal">Open Student Portal</a></div><div class="portal-card"><h3 data-i18n="instructorPortalTitle">Instructor Portal</h3><p data-i18n="instructorPortalText">Instructor la kapab kreye kou, lessons, quizzes, exams, grades ak announcements.</p><a href="instructor/dashboard.html" class="btn btn-secondary" data-i18n="openInstructorPortal">Open Instructor Portal</a></div></div></div></section>
-<section class="section"><div class="container"><div class="stats-grid"><div class="stat-card"><strong>0+</strong><span data-i18n="coursesStat">Courses</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="studentsStat">Students</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="certificatesStat">Certificates</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="instructorsStat">Instructors</span></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="announcementLabel">Academy Updates</span><h2 class="section-title" data-i18n="announcementTitle">Announcements</h2></div><div class="announcement-grid"><article class="announcement-card"><span class="announcement-date">PRO-MAX ACADÉMIE</span><h3 data-i18n="announcementOneTitle">Academy Launch</h3><p data-i18n="announcementOneText">Nouvo kou ak pwogram pral parèt isit la pandan Académie a ap devlope.</p></article><article class="announcement-card"><span class="announcement-date">AI TUTOR</span><h3 data-i18n="announcementTwoTitle">AI Learning Center</h3><p data-i18n="announcementTwoText">Student yo pral kapab jwenn asistans entèlijan pandan yo ap aprann.</p></article><article class="announcement-card"><span class="announcement-date">CERTIFICATION</span><h3 data-i18n="announcementThreeTitle">Certificate System</h3><p data-i18n="announcementThreeText">Certificates pral genyen verification number ak QR verification.</p></article></div></div></section>
-<section class="section"><div class="container"><div class="cta-box"><h2 data-i18n="ctaTitle">Start Your Learning Journey</h2><p data-i18n="ctaDescription">Antre nan PRO-MAX Académie, devlope nouvo kapasite, aprann ak AI epi prepare tèt ou pou demen.</p><div class="cta-actions"><a href="register.html" class="btn btn-primary" data-i18n="registerNow">Register Now</a><a href="courses.html" class="btn btn-secondary" data-i18n="exploreAllCourses">Explore Courses</a></div></div></div></section>
 </main>
 <footer>
 <div class="container footer-main">
 <div>
 <div class="footer-brand">
-<video autoplay muted loop playsinline style="width:65px;height:65px;object-fit:cover;border:2px solid #ff7a00;border-radius:50%;background:#000">
+<video autoplay muted loop playsinline style="width:65px;height:65px;object-fit:cover;border:2px solid #ff9500;border-radius:50%;background:#000">
+<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
 <source src="pro-max-academie.mp4" type="video/mp4">
-<source src="pro-max-cademie.mp4" type="video/mp4">
 </video>
 <div><h3>PRO-MAX ACADÉMIE</h3><p>APPRENDRE • ÉVOLUER • RÉUSSIR</p></div>
 </div>
-<p class="footer-description" data-i18n="footerDescription">Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.</p>
+<p style="margin-top:18px;max-width:480px;font-size:0.85rem;line-height:1.7;opacity:0.8">Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.</p>
 </div>
-<div class="footer-column"><h4 data-i18n="quickLinksTitle">Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="courses.html">Courses</a><a href="certificates.html">Certificates</a><a href="about.html">About</a></div></div>
-<div class="footer-column"><h4 data-i18n="academyLinksTitle">Academy</h4><div class="footer-links"><a href="student/dashboard.html">Student Portal</a><a href="instructor/dashboard.html">Instructor Portal</a><a href="ai/ai-tutor.html">AI Tutor</a><a href="certificate-verification.html">Verify Certificate</a></div></div>
-<div class="footer-column"><h4 data-i18n="supportTitle">Support</h4><div class="footer-links"><a href="help.html">Help Center</a><a href="contact.html">Contact</a><a href="login.html">Login</a><a href="register.html">Register</a></div></div>
-</div>
-<div class="container footer-bottom"><p>© <span id="year"></span> PRO-MAX ACADÉMIE. <span data-i18n="rights">Tout dwa rezève.</span></p><p>BSS1815 PRO-MAX DMP</p></div>
-</footer>
-<script>
-"use strict";
-const menuButton=document.getElementById("menuButton");
-const mobileMenu=document.getElementById("mobileMenu");
-if(menuButton&&mobileMenu){menuButton.addEventListener("click",function(){mobileMenu.classList.toggle("open");menuButton.classList.toggle("active");document.body.classList.toggle("menu-open");});}
-document.querySelectorAll(".mobile-link").forEach(function(link){link.addEventListener("click",function(){mobileMenu.classList.remove("open");menuButton.classList.remove("active");document.body.classList.remove("menu-open");});});
-const academyMainVideo=document.getElementById("academyMainVideo");
-if(academyMainVideo){academyMainVideo.muted=true;const p=academyMainVideo.play();if(p!==undefined){p.catch(function(){});}}
-const translations={ht:{brandSubtitle:"Aprann • Evolye • Reyisi",navHome:"Akèy",navCourses:"Kou",navCategories:"Kategori",navCertificates:"Sètifika",navAbout:"Konsènan",navContact:"Kontakte",navLogin:"Login",navRegister:"Enskri",heroBadge:"Platfòm edikasyon dijital",heroSlogan:"APRANN. EVOLYE. REYISI.",heroDescription:"Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.",exploreCourses:"Eksplore Kou",startLearning:"Kòmanse Aprann",studentLogin:"Student Login",identityLabel:"Idantite Académie a",identityTitle:"Yon sistèm aprantisaj konplè",identityDescription:"PRO-MAX Académie fèt pou mete teknoloji, edikasyon ak sètifikasyon nan yon sèl sistèm.",languagesTitle:"Lang",aiIdentityText:"Asistans aprantisaj entèlijan",certIdentityTitle:"Sètifikasyon",certIdentityText:"Sètifika ak verification",progressTitle:"Pwogrè",progressText:"Suivi pwogrè elèv",instructorTitle:"Enstriktè",instructorText:"Instructor Portal konplè",learningTitle:"Aprantisaj",learningText:"Aprann nenpòt lè",searchTitle:"Chèche yon kou",searchPlaceholder:"Chèche kou...",searchButton:"Chèche",categoryLabel:"Kategori Kou",categoryTitle:"Chwazi domèn ou",categoryDescription:"Devlope nouvo kapasite atravè kou pwofesyonèl, teknoloji, administrasyon ak fòmasyon kominotè.",digitalSkillsText:"Konpetans dijital pou travay ak teknoloji modèn.",leadershipText:"Devlope kapasite lidèchip ak jesyon ekip.",communicationText:"Kominikasyon pwofesyonèl ak relasyon imen.",immigrationEducationText:"Fòmasyon enfòmatif sou pwosesis ak resous imigrasyon.",adminTrainingText:"Fòmasyon espesyal pou Administratè BSS1815.",technologyText:"Teknoloji, AI ak zouti dijital modèn.",professionalText:"Preparasyon ak kapasite pou anviwònman pwofesyonèl.",allCoursesText:"Eksplore tout pwogram fòmasyon Académie a.",viewCourses:"Gade Kou →",featuredLabel:"Kou Rekòmande",featuredTitle:"Kou seleksyone",courseOneTitle:"Entwodiksyon nan Entèlijans Atifisyèl",courseOneText:"Aprann baz AI, itilizasyon responsab ak zouti entèlijan pou travay ak aprantisaj.",courseTwoTitle:"BSS1815 Admin Professional Training",courseTwoText:"Leadership, communication, PRO-MAX DMP, security ak jesyon dijital.",courseThreeTitle:"Digital Skills Fundamentals",courseThreeText:"Devlope konpetans dijital pou travay, kominikasyon ak jesyon enfòmasyon.",openCourse:"Louvri Kou →",aiTitle:"Yon pwofesè dijital ki toujou disponib",aiDescription:"AI Tutor la ede elèv konprann leson, prepare egzamen, jwenn eksplikasyon, fè pratik epi aprann nan Kreyòl, Français ak English.",aiFeatureOne:"Eksplike lesson ak konsèp difisil",aiFeatureTwo:"Kreye practice questions",aiFeatureThree:"Prepare student pou quiz ak exam",aiFeatureFour:"Tradui ak rezime materyèl",askTutor:"Pale ak AI Tutor",howLabel:"Kijan Sa Mache",howTitle:"Senk etap pou reyisi",stepOneTitle:"Kreye Kont",stepOneText:"Kreye pwofil student ou.",stepTwoTitle:"Chwazi Kou",stepTwoText:"Chwazi fòmasyon ki enterese w.",stepThreeTitle:"Aprann",stepThreeText:"Suiv lessons ak materyèl yo.",stepFourTitle:"Fè Egzamen",stepFourText:"Fè quiz ak final exam.",stepFiveTitle:"Jwenn Sètifika",stepFiveText:"Resevwa certificate ou.",certificateTitle:"Fòmasyon ki mennen nan sètifikasyon",certificateDescription:"Lè yon student fini yon kou epi li satisfè kondisyon yo, PRO-MAX Académie kapab emèt yon certificate ak nimewo verification ak QR Code.",viewCertificates:"Gade Sètifika",verifyCertificate:"Verifye Sètifika",certificateDemoText:"Sètifika Fòmasyon",trainingTitle:"Fòmasyon espesyal pou administratè yo",trainingDescription:"Yon pwogram espesyal pou fòme administratè BSS1815 nan leadership, communication, PRO-MAX DMP, digital management, security ak AI tools.",openTraining:"Louvri Admin Training",trainingFeatureOne:"Devlope kapasite dirije ekip.",trainingFeatureTwo:"Aprann sistèm administrasyon santral la.",trainingFeatureThree:"Certificate apre kou a fini.",trainingFeatureFour:"Admin ki pase fòmasyon an resevwa Star Badge.",portalLabel:"Pòtal Académie",portalTitle:"Aksè pèsonalize",studentPortalTitle:"Student Portal",studentPortalText:"Student la kapab wè kou li yo, pwogrè, exams, grades, certificates, messages ak AI Tutor.",openStudentPortal:"Louvri Student Portal",instructorPortalTitle:"Instructor Portal",instructorPortalText:"Instructor la kapab kreye kou, lessons, quizzes, exams, grades ak announcements.",openInstructorPortal:"Louvri Instructor Portal",coursesStat:"Kou",studentsStat:"Elèv",certificatesStat:"Sètifika",instructorsStat:"Enstriktè",announcementLabel:"Mizajou Académie",announcementTitle:"Anons",announcementOneTitle:"Lansman Académie",announcementOneText:"Nouvo kou ak pwogram pral parèt isit la pandan Académie a ap devlope.",announcementTwoTitle:"AI Learning Center",announcementTwoText:"Student yo pral kapab jwenn asistans entèlijan pandan yo ap aprann.",announcementThreeTitle:"Certificate System",announcementThreeText:"Certificates pral genyen verification number ak QR verification.",ctaTitle:"Kòmanse Vwayaj Aprantisaj Ou",ctaDescription:"Antre nan PRO-MAX Académie, devlope nouvo kapasite, aprann ak AI epi prepare tèt ou pou demen.",registerNow:"Enskri Kounye A",exploreAllCourses:"Eksplore Kou",footerDescription:"Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.",quickLinksTitle:"Lyen Rapid",academyLinksTitle:"Académie",supportTitle:"Sipò",rights:"Tout dwa rezève."},fr:{brandSubtitle:"Apprendre • Évoluer • Réussir",navHome:"Accueil",navCourses:"Cours",navCategories:"Catégories",navCertificates:"Certificats",navAbout:"À propos",navContact:"Contact",navLogin:"Connexion",navRegister:"Inscription",heroBadge:"Plateforme numérique d'apprentissage",heroSlogan:"APPRENDRE. ÉVOLUER. RÉUSSIR.",heroDescription:"Une plateforme éducative numérique moderne permettant d'apprendre, développer des compétences, suivre des cours, passer des examens, utiliser un AI Tutor et obtenir des certifications.",exploreCourses:"Explorer les cours",startLearning:"Commencer",studentLogin:"Connexion Étudiant",identityLabel:"Identité de l'Académie",identityTitle:"Un système complet d'apprentissage",identityDescription:"PRO-MAX Académie réunit technologie, éducation et certification dans un seul environnement.",languagesTitle:"Langues",aiIdentityText:"Assistance intelligente",certIdentityTitle:"Certification",certIdentityText:"Certificats avec vérification",progressTitle:"Progression",progressText:"Suivi de la progression",instructorTitle:"Formateurs",instructorText:"Portail formateur complet",learningTitle:"Apprentissage",learningText:"Apprendre à tout moment",searchTitle:"Rechercher un cours",searchPlaceholder:"Rechercher un cours...",searchButton:"Rechercher",categoryLabel:"Catégories",categoryTitle:"Choisissez votre domaine",categoryDescription:"Développez de nouvelles compétences grâce à des formations professionnelles, technologiques, administratives et communautaires.",digitalSkillsText:"Compétences numériques adaptées au monde moderne.",leadershipText:"Leadership et gestion d'équipe.",communicationText:"Communication professionnelle et relations humaines.",immigrationEducationText:"Formation informative sur les processus et ressources d'immigration.",adminTrainingText:"Formation spécialisée pour les administrateurs BSS1815.",technologyText:"Technologie, intelligence artificielle et outils numériques.",professionalText:"Compétences et préparation professionnelle.",allCoursesText:"Explorer tous les programmes disponibles.",viewCourses:"Voir les cours →",featuredLabel:"Cours en vedette",featuredTitle:"Cours recommandés",courseOneTitle:"Introduction à l'Intelligence Artificielle",courseOneText:"Découvrez les bases de l'IA et son utilisation responsable dans le travail et l'apprentissage.",courseTwoTitle:"Formation Professionnelle Admin BSS1815",courseTwoText:"Leadership, communication, PRO-MAX DMP, sécurité et gestion numérique.",courseThreeTitle:"Fondamentaux des compétences numériques",courseThreeText:"Développez des compétences numériques utiles au travail et à la communication.",openCourse:"Ouvrir le cours →",aiTitle:"Un professeur numérique toujours disponible",aiDescription:"AI Tutor aide les étudiants à comprendre les leçons, préparer les examens, pratiquer et apprendre en créole, français et anglais.",aiFeatureOne:"Expliquer les concepts difficiles",aiFeatureTwo:"Créer des questions d'entraînement",aiFeatureThree:"Préparer les quiz et examens",aiFeatureFour:"Traduire et résumer les contenus",askTutor:"Demander à AI Tutor",howLabel:"Comment ça marche",howTitle:"Cinq étapes pour réussir",stepOneTitle:"Créer un compte",stepOneText:"Créez votre profil étudiant.",stepTwoTitle:"Choisir un cours",stepTwoText:"Sélectionnez votre formation.",stepThreeTitle:"Apprendre",stepThreeText:"Suivez les leçons et ressources.",stepFourTitle:"Passer l'examen",stepFourText:"Complétez les quiz et examens.",stepFiveTitle:"Être certifié",stepFiveText:"Recevez votre certificat.",certificateTitle:"Des formations menant à la certification",certificateDescription:"Après avoir terminé une formation et satisfait aux critères, l'étudiant peut recevoir un certificat PRO-MAX Académie avec numéro de vérification et QR Code.",viewCertificates:"Voir les certificats",verifyCertificate:"Vérifier un certificat",certificateDemoText:"Certificat de formation",trainingTitle:"Formation spécialisée pour les administrateurs",trainingDescription:"Programme spécial destiné aux administrateurs BSS1815 couvrant leadership, communication, PRO-MAX DMP, gestion numérique, sécurité et outils IA.",openTraining:"Ouvrir la formation",trainingFeatureOne:"Développer les compétences de leadership.",trainingFeatureTwo:"Maîtriser le système PRO-MAX DMP.",trainingFeatureThree:"Certificat après réussite.",trainingFeatureFour:"Badge étoile après certification.",portalLabel:"Portails Académie",portalTitle:"Accès personnalisé",studentPortalTitle:"Portail Étudiant",studentPortalText:"L'étudiant consulte ses cours, progression, examens, notes, certificats, messages et AI Tutor.",openStudentPortal:"Ouvrir le portail étudiant",instructorPortalTitle:"Portail Formateur",instructorPortalText:"Le formateur peut créer des cours, leçons, quiz, examens, notes et annonces.",openInstructorPortal:"Ouvrir le portail formateur",coursesStat:"Cours",studentsStat:"Étudiants",certificatesStat:"Certificats",instructorsStat:"Formateurs",announcementLabel:"Actualités Académie",announcementTitle:"Annonces",announcementOneTitle:"Lancement de l'Académie",announcementOneText:"Les nouveaux cours et programmes apparaîtront ici pendant le développement de la plateforme.",announcementTwoTitle:"Centre d'apprentissage IA",announcementTwoText:"Les étudiants pourront obtenir une assistance intelligente pendant leur apprentissage.",announcementThreeTitle:"Système de certificats",announcementThreeText:"Les certificats disposeront d'un numéro et d'un QR Code de vérification.",ctaTitle:"Commencez votre parcours d'apprentissage",ctaDescription:"Rejoignez PRO-MAX Académie, développez de nouvelles compétences et préparez-vous pour demain.",registerNow:"S'inscrire",exploreAllCourses:"Explorer les cours",footerDescription:"Une plateforme éducative numérique pour la formation, l'IA, les examens, la progression et les certifications.",quickLinksTitle:"Liens rapides",academyLinksTitle:"Académie",supportTitle:"Support",rights:"Tous droits réservés."},en:{brandSubtitle:"Learn • Evolve • Succeed",navHome:"Home",navCourses:"Courses",navCategories:"Categories",navCertificates:"Certificates",navAbout:"About",navContact:"Contact",navLogin:"Login",navRegister:"Register",heroBadge:"Digital Learning Platform",heroSlogan:"LEARN. EVOLVE. SUCCEED.",heroDescription:"A modern digital education platform for learning, building skills, taking courses and exams, using an AI Tutor and earning certifications.",exploreCourses:"Explore Courses",startLearning:"Start Learning",studentLogin:"Student Login",identityLabel:"Academy Identity",identityTitle:"A complete learning system",identityDescription:"PRO-MAX Academy brings technology, education and certification together in one environment.",languagesTitle:"Languages",aiIdentityText:"Intelligent learning assistance",certIdentityTitle:"Certification",certIdentityText:"Verified certificates",progressTitle:"Progress",progressText:"Student progress tracking",instructorTitle:"Instructor",instructorText:"Complete Instructor Portal",learningTitle:"Learning",learningText:"Learn anytime",searchTitle:"Find a course",searchPlaceholder:"Search courses...",searchButton:"Search",categoryLabel:"Course Categories",categoryTitle:"Choose your field",categoryDescription:"Build new skills through professional, technology, administrative and community training.",digitalSkillsText:"Digital skills for today's technology environment.",leadershipText:"Leadership and team management.",communicationText:"Professional communication and human relations.",immigrationEducationText:"Informational education about immigration processes and resources.",adminTrainingText:"Specialized training for BSS1815 administrators.",technologyText:"Technology, AI and modern digital tools.",professionalText:"Professional preparation and workplace skills.",allCoursesText:"Explore all Academy training programs.",viewCourses:"View Courses →",featuredLabel:"Featured Courses",featuredTitle:"Recommended Courses",courseOneTitle:"Introduction to Artificial Intelligence",courseOneText:"Learn the foundations of AI and responsible use of intelligent tools for work and learning.",courseTwoTitle:"BSS1815 Admin Professional Training",courseTwoText:"Leadership, communication, PRO-MAX DMP, security and digital management.",courseThreeTitle:"Digital Skills Fundamentals",courseThreeText:"Build digital skills for work, communication and information management.",openCourse:"Open Course →",aiTitle:"A digital tutor that is always available",aiDescription:"AI Tutor helps students understand lessons, prepare for exams, practice and learn in Haitian Creole, French and English.",aiFeatureOne:"Explain difficult lessons and concepts",aiFeatureTwo:"Create practice questions",aiFeatureThree:"Prepare for quizzes and exams",aiFeatureFour:"Translate and summarize learning materials",askTutor:"Ask AI Tutor",howLabel:"How It Works",howTitle:"Five steps to success",stepOneTitle:"Create Account",stepOneText:"Create your student profile.",stepTwoTitle:"Choose Course",stepTwoText:"Select your training program.",stepThreeTitle:"Learn",stepThreeText:"Complete lessons and learning materials.",stepFourTitle:"Take Exam",stepFourText:"Complete quizzes and final exams.",stepFiveTitle:"Get Certified",stepFiveText:"Receive your certificate.",certificateTitle:"Training that leads to certification",certificateDescription:"After completing a course and meeting its requirements, a student may receive a PRO-MAX Academy certificate with a verification number and QR Code.",viewCertificates:"View Certificates",verifyCertificate:"Verify Certificate",certificateDemoText:"Certificate of Completion",trainingTitle:"Specialized administrator training",trainingDescription:"A dedicated BSS1815 administrator program covering leadership, communication, PRO-MAX DMP, digital management, security and AI tools.",openTraining:"Open Admin Training",trainingFeatureOne:"Develop leadership skills.",trainingFeatureTwo:"Learn the PRO-MAX DMP system.",trainingFeatureThree:"Certificate after completion.",trainingFeatureFour:"Star Badge after certification.",portalLabel:"Academy Portals",portalTitle:"Personalized access",studentPortalTitle:"Student Portal",studentPortalText:"Students can view courses, progress, exams, grades, certificates, messages and AI Tutor.",openStudentPortal:"Open Student Portal",instructorPortalTitle:"Instructor Portal",instructorPortalText:"Instructors can create courses, lessons, quizzes, exams, grades and announcements.",openInstructorPortal:"Open Instructor Portal",coursesStat:"Courses",studentsStat:"Students",certificatesStat:"Certificates",instructorsStat:"Instructors",announcementLabel:"Academy Updates",announcementTitle:"Announcements",announcementOneTitle:"Academy Launch",announcementOneText:"New courses and programs will appear here as the Academy develops.",announcementTwoTitle:"AI Learning Center",announcementTwoText:"Students will have intelligent learning assistance while completing their courses.",announcementThreeTitle:"Certificate System",announcementThreeText:"Certificates will include a verification number and QR verification.",ctaTitle:"Start Your Learning Journey",ctaDescription:"Join PRO-MAX Academy, build new skills, learn with AI and prepare yourself for tomorrow.",registerNow:"Register Now",exploreAllCourses:"Explore Courses",footerDescription:"A digital education platform for training, AI learning, exams, progress and certifications.",quickLinksTitle:"Quick Links",academyLinksTitle:"Academy",supportTitle:"Support",rights:"All rights reserved."}};
-function changeLanguage(language){if(!translations[language]){return;}document.documentElement.lang=language;document.querySelectorAll("[data-i18n]").forEach(function(element){const key=element.dataset.i18n;if(translations[language][key]!==undefined){element.textContent=translations[language][key];}});document.querySelectorAll("[data-i18n-placeholder]").forEach(function(element){const key=element.dataset.i18nPlaceholder;if(translations[language][key]!==undefined){element.placeholder=translations[language][key];}});document.querySelectorAll(".language-button").forEach(function(button){button.classList.toggle("active",button.dataset.language===language);});try{localStorage.setItem("proMaxAcademieLanguage",language);}catch(error){}}
-document.querySelectorAll(".language-button").forEach(function(button){button.addEventListener("click",function(){changeLanguage(button.dataset.language);});});
-let savedLanguage="ht";try{savedLanguage=localStorage.getItem("proMaxAcademieLanguage") || "ht";}catch(error){}
-changeLanguage(savedLanguage);
-const yearElement=document.getElementById("year");if(yearElement){yearElement.textContent=new Date().getFullYear();}
-</script>
-</body>
-</html>
+<div class="footer-column"><h4>Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="courses.html">Courses</a><a href="certificates.html">Certificates</a><a href="about.html">About</a></div></div>
+<div class="footer-column"><h4>Kontak</h4><div class="footer-links">
+<a href="https://www.pro-maxacademie.com" target="_blank">🌐 www.pro-maxacademie.com</a>
+<a href="mailto:promaxacademie@gmail.com">📧 promaxacademie@gmail.com</a>
+<a href="tel:+14076405166">📞 (407) 640-5166</a>
+<a href="tel:+15162168494">📞 (516) 216-8494</a>
+</div></div>
+<div class="footer-column"><h4>Rezo Sosyal</h4><div class="footer-links">
+<a href="#">📱 TELEGRAM</a>
+<a href="#">📘 FACEBOOK</a>
+<a href="#">💬 WHATSAPP</a>
+<a href="#">🎵 TIKTOK</a>
+<a href="#">📸 INSTAGRAM</a>
+<a href="#">🐦 T/TWITTER</a>
+<a href="#">✓ TRUE SOCIAL</a>
+<a href="#">▶️ YOUTUBE</a>
+<a href="#">🎧 SPOTIFY</a>
+</div></div>
+</
