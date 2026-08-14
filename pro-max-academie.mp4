@@ -1,0 +1,13 @@
+<video
+  class="pro-max-academie-logo-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+>
+  <source
+    src="assets/video/pro-max-academie.mp4"
+    type="video/mp4"
+  >
+</video>
