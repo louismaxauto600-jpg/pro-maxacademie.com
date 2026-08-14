@@ -79,11 +79,6 @@
       cursor: pointer;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
       width: min(1200px, calc(100% - 34px));
       margin: auto;
@@ -160,28 +155,19 @@
       min-width: 0;
     }
 
-    .brand-logo {
+    .brand-mark {
       width: 58px;
       height: 58px;
       flex: 0 0 58px;
-      object-fit: contain;
-      border: 2px solid var(--orange);
-      border-radius: 50%;
-      background: #000;
-      box-shadow: 0 0 24px var(--orange-glow);
-    }
-
-    .logo-fallback {
-      display: none;
-      width: 58px;
-      height: 58px;
-      flex: 0 0 58px;
+      display: grid;
       place-items: center;
       border: 2px solid var(--orange);
       border-radius: 50%;
       color: var(--orange);
       background: #000;
-      font-weight: 900;
+      box-shadow: 0 0 24px var(--orange-glow);
+      font-size: 0.8rem;
+      font-weight: 950;
     }
 
     .brand-name {
@@ -311,21 +297,6 @@
         );
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -130px;
-      top: 18%;
-      z-index: -1;
-      width: 470px;
-      height: 470px;
-      border: 2px solid rgba(255, 122, 0, 0.3);
-      border-radius: 50%;
-      box-shadow:
-        0 0 90px rgba(255, 122, 0, 0.12),
-        inset 0 0 80px rgba(255, 122, 0, 0.08);
-    }
-
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -439,104 +410,29 @@
     }
 
     .hero-visual {
-      position: relative;
       min-height: 510px;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .academy-orbit {
-      position: absolute;
-      width: 430px;
-      height: 430px;
-      border: 1px solid rgba(255, 122, 0, 0.34);
-      border-radius: 50%;
-      animation: rotate 22s linear infinite;
-    }
-
-    .academy-orbit::before,
-    .academy-orbit::after {
-      content: "";
-      position: absolute;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 18px var(--orange);
-    }
-
-    .academy-orbit::before {
-      top: 35px;
-      left: 80px;
-    }
-
-    .academy-orbit::after {
-      right: 20px;
-      bottom: 115px;
-    }
-
-    .academy-orbit-two {
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      border: 1px dashed rgba(255, 122, 0, 0.3);
-      border-radius: 50%;
-      animation: rotateReverse 17s linear infinite;
-    }
-
-    @keyframes rotate {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes rotateReverse {
-      to {
-        transform: rotate(-360deg);
-      }
-    }
-
-    .academy-core {
-      position: relative;
-      z-index: 3;
-      width: 270px;
-      min-height: 270px;
-      display: grid;
-      place-items: center;
-      padding: 30px;
+    .academy-video-wrap {
+      width: min(100%, 560px);
+      overflow: hidden;
       border: 2px solid var(--orange);
-      border-radius: 50%;
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 122, 0, 0.22),
-          #000 68%
-        );
+      border-radius: 26px;
+      background: #000;
       box-shadow:
-        0 0 65px rgba(255, 122, 0, 0.22),
-        inset 0 0 45px rgba(255, 122, 0, 0.09);
-      text-align: center;
+        0 0 65px rgba(255, 122, 0, 0.28),
+        0 30px 70px rgba(0, 0, 0, 0.55);
     }
 
-    .academy-core img {
-      width: 115px;
-      height: 115px;
-      margin: 0 auto 15px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
-
-    .academy-core h2 {
-      color: var(--orange);
-      font-size: 1.45rem;
-      text-transform: uppercase;
-    }
-
-    .academy-core p {
-      margin-top: 8px;
-      font-size: 0.72rem;
-      line-height: 1.5;
-      text-transform: uppercase;
+    .academy-main-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      background: #000;
     }
 
     /* ======================================
@@ -1228,12 +1124,17 @@
       gap: 13px;
     }
 
-    .footer-brand img {
+    .footer-mark {
       width: 65px;
       height: 65px;
-      object-fit: contain;
+      display: grid;
+      place-items: center;
+      flex: 0 0 65px;
       border: 2px solid var(--orange);
       border-radius: 50%;
+      color: var(--orange);
+      background: #000;
+      font-weight: 950;
     }
 
     .footer-brand h3 {
@@ -1395,8 +1296,7 @@
         padding: 68px 0;
       }
 
-      .brand-logo,
-      .logo-fallback {
+      .brand-mark {
         width: 48px;
         height: 48px;
         flex-basis: 48px;
@@ -1427,22 +1327,12 @@
       }
 
       .hero-visual {
-        min-height: 380px;
+        min-height: auto;
       }
 
-      .academy-orbit {
-        width: 330px;
-        height: 330px;
-      }
-
-      .academy-orbit-two {
-        width: 260px;
-        height: 260px;
-      }
-
-      .academy-core {
-        width: 220px;
-        min-height: 220px;
+      .academy-video-wrap {
+        width: 100%;
+        border-radius: 20px;
       }
 
       .identity-grid,
@@ -1500,26 +1390,12 @@
 
 <body>
 
-  <!-- ======================================
-       HEADER
-  ====================================== -->
-
   <header>
     <div class="container header-inner">
 
       <a href="#home" class="brand">
 
-        <img
-          src="assets/images/pro-max-academie-logo.png"
-          alt="PRO-MAX Académie Logo"
-          class="brand-logo"
-          onerror="
-            this.style.display='none';
-            this.nextElementSibling.style.display='grid';
-          "
-        >
-
-        <span class="logo-fallback">
+        <span class="brand-mark">
           PMA
         </span>
 
@@ -1540,89 +1416,49 @@
 
       <nav class="desktop-nav">
 
-        <a
-          href="#home"
-          class="nav-link"
-          data-i18n="navHome"
-        >
+        <a href="#home" class="nav-link" data-i18n="navHome">
           Akèy
         </a>
 
-        <a
-          href="courses.html"
-          class="nav-link"
-          data-i18n="navCourses"
-        >
+        <a href="courses.html" class="nav-link" data-i18n="navCourses">
           Kou
         </a>
 
-        <a
-          href="#categories"
-          class="nav-link"
-          data-i18n="navCategories"
-        >
+        <a href="#categories" class="nav-link" data-i18n="navCategories">
           Kategori
         </a>
 
-        <a
-          href="ai/ai-tutor.html"
-          class="nav-link"
-        >
+        <a href="ai/ai-tutor.html" class="nav-link">
           AI Tutor
         </a>
 
-        <a
-          href="certificates.html"
-          class="nav-link"
-          data-i18n="navCertificates"
-        >
+        <a href="certificates.html" class="nav-link" data-i18n="navCertificates">
           Sètifika
         </a>
 
-        <a
-          href="about.html"
-          class="nav-link"
-          data-i18n="navAbout"
-        >
+        <a href="about.html" class="nav-link" data-i18n="navAbout">
           Konsènan
         </a>
 
-        <a
-          href="contact.html"
-          class="nav-link"
-          data-i18n="navContact"
-        >
+        <a href="contact.html" class="nav-link" data-i18n="navContact">
           Kontakte
         </a>
 
-        <a
-          href="login.html"
-          class="nav-link"
-          data-i18n="navLogin"
-        >
+        <a href="login.html" class="nav-link" data-i18n="navLogin">
           Login
         </a>
 
         <div class="language-switcher">
 
-          <button
-            class="language-button active"
-            data-language="ht"
-          >
+          <button class="language-button active" data-language="ht">
             KRE
           </button>
 
-          <button
-            class="language-button"
-            data-language="fr"
-          >
+          <button class="language-button" data-language="fr">
             FRA
           </button>
 
-          <button
-            class="language-button"
-            data-language="en"
-          >
+          <button class="language-button" data-language="en">
             ENG
           </button>
 
@@ -1645,85 +1481,47 @@
   </header>
 
 
-  <!-- MOBILE MENU -->
-
   <nav class="mobile-menu" id="mobileMenu">
 
-    <a
-      href="#home"
-      class="nav-link mobile-link"
-      data-i18n="navHome"
-    >
+    <a href="#home" class="nav-link mobile-link" data-i18n="navHome">
       Akèy
     </a>
 
-    <a
-      href="courses.html"
-      class="nav-link"
-      data-i18n="navCourses"
-    >
+    <a href="courses.html" class="nav-link" data-i18n="navCourses">
       Kou
     </a>
 
-    <a
-      href="#categories"
-      class="nav-link mobile-link"
-      data-i18n="navCategories"
-    >
+    <a href="#categories" class="nav-link mobile-link" data-i18n="navCategories">
       Kategori
     </a>
 
-    <a
-      href="ai/ai-tutor.html"
-      class="nav-link"
-    >
+    <a href="ai/ai-tutor.html" class="nav-link">
       AI Tutor
     </a>
 
-    <a
-      href="certificates.html"
-      class="nav-link"
-      data-i18n="navCertificates"
-    >
+    <a href="certificates.html" class="nav-link" data-i18n="navCertificates">
       Sètifika
     </a>
 
-    <a
-      href="login.html"
-      class="nav-link"
-      data-i18n="navLogin"
-    >
+    <a href="login.html" class="nav-link" data-i18n="navLogin">
       Login
     </a>
 
-    <a
-      href="register.html"
-      class="nav-link"
-      data-i18n="navRegister"
-    >
+    <a href="register.html" class="nav-link" data-i18n="navRegister">
       Enskri
     </a>
 
     <div class="language-switcher">
 
-      <button
-        class="language-button active"
-        data-language="ht"
-      >
+      <button class="language-button active" data-language="ht">
         KRE
       </button>
 
-      <button
-        class="language-button"
-        data-language="fr"
-      >
+      <button class="language-button" data-language="fr">
         FRA
       </button>
 
-      <button
-        class="language-button"
-        data-language="en"
-      >
+      <button class="language-button" data-language="en">
         ENG
       </button>
 
@@ -1733,10 +1531,6 @@
 
 
   <main>
-
-    <!-- ======================================
-         HERO
-    ====================================== -->
 
     <section class="hero" id="home">
 
@@ -1805,28 +1599,22 @@
 
         <div class="hero-visual">
 
-          <div class="academy-orbit"></div>
-          <div class="academy-orbit-two"></div>
+          <div class="academy-video-wrap">
 
-          <div class="academy-core">
-
-            <div>
-
-              <img
-                src="assets/images/pro-max-academie-logo.png"
-                alt=""
-                onerror="this.style.display='none';"
+            <video
+              id="academyMainVideo"
+              class="academy-main-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            >
+              <source
+                src="pro-max-academie.mp4"
+                type="video/mp4"
               >
-
-              <h2>
-                PRO-MAX
-              </h2>
-
-              <p data-i18n="coreText">
-                Education • AI • Certification
-              </p>
-
-            </div>
+            </video>
 
           </div>
 
@@ -1837,34 +1625,21 @@
     </section>
 
 
-    <!-- ======================================
-         IDENTITY
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="identityLabel"
-          >
+          <span class="section-label" data-i18n="identityLabel">
             Idantite Académie a
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="identityTitle"
-          >
+          <h2 class="section-title" data-i18n="identityTitle">
             Yon sistèm aprantisaj konplè
           </h2>
 
-          <p
-            class="section-description"
-            data-i18n="identityDescription"
-          >
+          <p class="section-description" data-i18n="identityDescription">
             PRO-MAX Académie fèt pou mete teknoloji,
             edikasyon ak sètifikasyon nan yon sèl sistèm.
           </p>
@@ -1876,12 +1651,8 @@
 
           <div class="identity-card">
             <div class="identity-number">3</div>
-            <h3 data-i18n="languagesTitle">
-              Lang
-            </h3>
-            <p>
-              KRE • FRA • ENG
-            </p>
+            <h3 data-i18n="languagesTitle">Lang</h3>
+            <p>KRE • FRA • ENG</p>
           </div>
 
           <div class="identity-card">
@@ -1939,10 +1710,6 @@
     </section>
 
 
-    <!-- ======================================
-         SEARCH
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
@@ -1953,10 +1720,7 @@
             COURSE SEARCH
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="searchTitle"
-          >
+          <h2 class="section-title" data-i18n="searchTitle">
             Chèche yon kou
           </h2>
 
@@ -1990,34 +1754,21 @@
     </section>
 
 
-    <!-- ======================================
-         CATEGORIES
-    ====================================== -->
-
     <section class="section" id="categories">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="categoryLabel"
-          >
+          <span class="section-label" data-i18n="categoryLabel">
             Course Categories
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="categoryTitle"
-          >
+          <h2 class="section-title" data-i18n="categoryTitle">
             Chwazi domèn ou
           </h2>
 
-          <p
-            class="section-description"
-            data-i18n="categoryDescription"
-          >
+          <p class="section-description" data-i18n="categoryDescription">
             Devlope nouvo kapasite atravè kou pwofesyonèl,
             teknoloji, administrasyon ak fòmasyon kominotè.
           </p>
@@ -2027,123 +1778,76 @@
 
         <div class="category-grid">
 
-          <a
-            href="courses.html?category=digital-skills"
-            class="category-card"
-          >
+          <a href="courses.html?category=digital-skills" class="category-card">
             <div class="category-number">01</div>
             <h3>Digital Skills</h3>
             <p data-i18n="digitalSkillsText">
               Konpetans dijital pou travay ak teknoloji modèn.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=leadership"
-            class="category-card"
-          >
+          <a href="courses.html?category=leadership" class="category-card">
             <div class="category-number">02</div>
             <h3>Leadership</h3>
             <p data-i18n="leadershipText">
               Devlope kapasite lidèchip ak jesyon ekip.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=communication"
-            class="category-card"
-          >
+          <a href="courses.html?category=communication" class="category-card">
             <div class="category-number">03</div>
             <h3>Communication</h3>
             <p data-i18n="communicationText">
               Kominikasyon pwofesyonèl ak relasyon imen.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=immigration-education"
-            class="category-card"
-          >
+          <a href="courses.html?category=immigration-education" class="category-card">
             <div class="category-number">04</div>
             <h3>Immigration Education</h3>
             <p data-i18n="immigrationEducationText">
               Fòmasyon enfòmatif sou pwosesis ak resous imigrasyon.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=admin-training"
-            class="category-card"
-          >
+          <a href="courses.html?category=admin-training" class="category-card">
             <div class="category-number">05</div>
             <h3>Admin Training</h3>
             <p data-i18n="adminTrainingText">
               Fòmasyon espesyal pou Administratè BSS1815.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=technology"
-            class="category-card"
-          >
+          <a href="courses.html?category=technology" class="category-card">
             <div class="category-number">06</div>
             <h3>Technology</h3>
             <p data-i18n="technologyText">
               Teknoloji, AI ak zouti dijital modèn.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html?category=professional"
-            class="category-card"
-          >
+          <a href="courses.html?category=professional" class="category-card">
             <div class="category-number">07</div>
             <h3>Professional Training</h3>
             <p data-i18n="professionalText">
               Preparasyon ak kapasite pou anviwònman pwofesyonèl.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
-
-          <a
-            href="courses.html"
-            class="category-card"
-          >
+          <a href="courses.html" class="category-card">
             <div class="category-number">08</div>
             <h3>All Courses</h3>
             <p data-i18n="allCoursesText">
               Eksplore tout pwogram fòmasyon Académie a.
             </p>
-            <span data-i18n="viewCourses">
-              View Courses →
-            </span>
+            <span data-i18n="viewCourses">View Courses →</span>
           </a>
 
         </div>
@@ -2153,27 +1857,17 @@
     </section>
 
 
-    <!-- ======================================
-         FEATURED COURSES
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="featuredLabel"
-          >
+          <span class="section-label" data-i18n="featuredLabel">
             Featured Courses
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="featuredTitle"
-          >
+          <h2 class="section-title" data-i18n="featuredTitle">
             Kou rekòmande
           </h2>
 
@@ -2305,10 +1999,6 @@
     </section>
 
 
-    <!-- ======================================
-         AI TUTOR
-    ====================================== -->
-
     <section class="section ai-section">
 
       <div class="container">
@@ -2343,31 +2033,19 @@
 
             <div class="ai-list">
 
-              <div
-                class="ai-item"
-                data-i18n="aiFeatureOne"
-              >
+              <div class="ai-item" data-i18n="aiFeatureOne">
                 Eksplike lesson ak konsèp difisil
               </div>
 
-              <div
-                class="ai-item"
-                data-i18n="aiFeatureTwo"
-              >
+              <div class="ai-item" data-i18n="aiFeatureTwo">
                 Kreye practice questions
               </div>
 
-              <div
-                class="ai-item"
-                data-i18n="aiFeatureThree"
-              >
+              <div class="ai-item" data-i18n="aiFeatureThree">
                 Prepare student pou quiz ak exam
               </div>
 
-              <div
-                class="ai-item"
-                data-i18n="aiFeatureFour"
-              >
+              <div class="ai-item" data-i18n="aiFeatureFour">
                 Tradui ak rezime materyèl
               </div>
 
@@ -2390,27 +2068,17 @@
     </section>
 
 
-    <!-- ======================================
-         HOW IT WORKS
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="howLabel"
-          >
+          <span class="section-label" data-i18n="howLabel">
             How It Works
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="howTitle"
-          >
+          <h2 class="section-title" data-i18n="howTitle">
             Senk etap pou reyisi
           </h2>
 
@@ -2421,52 +2089,32 @@
 
           <div class="step-card">
             <div class="step-number">01</div>
-            <h3 data-i18n="stepOneTitle">
-              Create Account
-            </h3>
-            <p data-i18n="stepOneText">
-              Kreye pwofil student ou.
-            </p>
+            <h3 data-i18n="stepOneTitle">Create Account</h3>
+            <p data-i18n="stepOneText">Kreye pwofil student ou.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">02</div>
-            <h3 data-i18n="stepTwoTitle">
-              Choose Course
-            </h3>
-            <p data-i18n="stepTwoText">
-              Chwazi fòmasyon ki enterese w.
-            </p>
+            <h3 data-i18n="stepTwoTitle">Choose Course</h3>
+            <p data-i18n="stepTwoText">Chwazi fòmasyon ki enterese w.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">03</div>
-            <h3 data-i18n="stepThreeTitle">
-              Learn
-            </h3>
-            <p data-i18n="stepThreeText">
-              Suiv lessons ak materyèl yo.
-            </p>
+            <h3 data-i18n="stepThreeTitle">Learn</h3>
+            <p data-i18n="stepThreeText">Suiv lessons ak materyèl yo.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">04</div>
-            <h3 data-i18n="stepFourTitle">
-              Take Exam
-            </h3>
-            <p data-i18n="stepFourText">
-              Fè quiz ak final exam.
-            </p>
+            <h3 data-i18n="stepFourTitle">Take Exam</h3>
+            <p data-i18n="stepFourText">Fè quiz ak final exam.</p>
           </div>
 
           <div class="step-card">
             <div class="step-number">05</div>
-            <h3 data-i18n="stepFiveTitle">
-              Get Certified
-            </h3>
-            <p data-i18n="stepFiveText">
-              Resevwa certificate ou.
-            </p>
+            <h3 data-i18n="stepFiveTitle">Get Certified</h3>
+            <p data-i18n="stepFiveText">Resevwa certificate ou.</p>
           </div>
 
         </div>
@@ -2475,10 +2123,6 @@
 
     </section>
 
-
-    <!-- ======================================
-         CERTIFICATE CENTER
-    ====================================== -->
 
     <section class="section">
 
@@ -2557,10 +2201,6 @@
     </section>
 
 
-    <!-- ======================================
-         ADMIN TRAINING
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
@@ -2635,27 +2275,17 @@
     </section>
 
 
-    <!-- ======================================
-         STUDENT / INSTRUCTOR PORTALS
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="portalLabel"
-          >
+          <span class="section-label" data-i18n="portalLabel">
             Academy Portals
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="portalTitle"
-          >
+          <h2 class="section-title" data-i18n="portalTitle">
             Aksè pèsonalize
           </h2>
 
@@ -2716,10 +2346,6 @@
     </section>
 
 
-    <!-- ======================================
-         STATS
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
@@ -2728,30 +2354,22 @@
 
           <div class="stat-card">
             <strong>0+</strong>
-            <span data-i18n="coursesStat">
-              Courses
-            </span>
+            <span data-i18n="coursesStat">Courses</span>
           </div>
 
           <div class="stat-card">
             <strong>0+</strong>
-            <span data-i18n="studentsStat">
-              Students
-            </span>
+            <span data-i18n="studentsStat">Students</span>
           </div>
 
           <div class="stat-card">
             <strong>0+</strong>
-            <span data-i18n="certificatesStat">
-              Certificates
-            </span>
+            <span data-i18n="certificatesStat">Certificates</span>
           </div>
 
           <div class="stat-card">
             <strong>0+</strong>
-            <span data-i18n="instructorsStat">
-              Instructors
-            </span>
+            <span data-i18n="instructorsStat">Instructors</span>
           </div>
 
         </div>
@@ -2761,27 +2379,17 @@
     </section>
 
 
-    <!-- ======================================
-         ANNOUNCEMENTS
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
 
         <div class="section-header">
 
-          <span
-            class="section-label"
-            data-i18n="announcementLabel"
-          >
+          <span class="section-label" data-i18n="announcementLabel">
             Academy Updates
           </span>
 
-          <h2
-            class="section-title"
-            data-i18n="announcementTitle"
-          >
+          <h2 class="section-title" data-i18n="announcementTitle">
             Announcements
           </h2>
 
@@ -2850,10 +2458,6 @@
     </section>
 
 
-    <!-- ======================================
-         FINAL CTA
-    ====================================== -->
-
     <section class="section">
 
       <div class="container">
@@ -2900,10 +2504,6 @@
   </main>
 
 
-  <!-- ======================================
-       FOOTER
-  ====================================== -->
-
   <footer>
 
     <div class="container footer-main">
@@ -2912,11 +2512,9 @@
 
         <div class="footer-brand">
 
-          <img
-            src="assets/images/pro-max-academie-logo.png"
-            alt="PRO-MAX Académie"
-            onerror="this.style.display='none';"
-          >
+          <span class="footer-mark">
+            PMA
+          </span>
 
           <div>
 
@@ -2932,10 +2530,7 @@
 
         </div>
 
-        <p
-          class="footer-description"
-          data-i18n="footerDescription"
-        >
+        <p class="footer-description" data-i18n="footerDescription">
           Yon platfòm edikasyon dijital
           pou fòmasyon, AI learning,
           exams, progress ak certifications.
@@ -2952,21 +2547,10 @@
 
         <div class="footer-links">
 
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="courses.html">
-            Courses
-          </a>
-
-          <a href="certificates.html">
-            Certificates
-          </a>
-
-          <a href="about.html">
-            About
-          </a>
+          <a href="#home">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="about.html">About</a>
 
         </div>
 
@@ -2981,21 +2565,10 @@
 
         <div class="footer-links">
 
-          <a href="student/dashboard.html">
-            Student Portal
-          </a>
-
-          <a href="instructor/dashboard.html">
-            Instructor Portal
-          </a>
-
-          <a href="ai/ai-tutor.html">
-            AI Tutor
-          </a>
-
-          <a href="certificate-verification.html">
-            Verify Certificate
-          </a>
+          <a href="student/dashboard.html">Student Portal</a>
+          <a href="instructor/dashboard.html">Instructor Portal</a>
+          <a href="ai/ai-tutor.html">AI Tutor</a>
+          <a href="certificate-verification.html">Verify Certificate</a>
 
         </div>
 
@@ -3010,21 +2583,10 @@
 
         <div class="footer-links">
 
-          <a href="help.html">
-            Help Center
-          </a>
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-          <a href="login.html">
-            Login
-          </a>
-
-          <a href="register.html">
-            Register
-          </a>
+          <a href="help.html">Help Center</a>
+          <a href="contact.html">Contact</a>
+          <a href="login.html">Login</a>
+          <a href="register.html">Register</a>
 
         </div>
 
@@ -3055,30 +2617,26 @@
   <script>
     "use strict";
 
-    /* ======================================
-       MOBILE MENU
-    ====================================== */
-
     const menuButton =
       document.getElementById("menuButton");
 
     const mobileMenu =
       document.getElementById("mobileMenu");
 
-    menuButton.addEventListener(
-      "click",
-      function () {
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener(
+        "click",
+        function () {
 
-        mobileMenu.classList.toggle("open");
+          mobileMenu.classList.toggle("open");
 
-        menuButton.classList.toggle("active");
+          menuButton.classList.toggle("active");
 
-        document.body.classList.toggle(
-          "menu-open"
-        );
+          document.body.classList.toggle("menu-open");
 
-      }
-    );
+        }
+      );
+    }
 
     document
       .querySelectorAll(".mobile-link")
@@ -3092,9 +2650,7 @@
 
             menuButton.classList.remove("active");
 
-            document.body.classList.remove(
-              "menu-open"
-            );
+            document.body.classList.remove("menu-open");
 
           }
         );
@@ -3102,9 +2658,20 @@
       });
 
 
-    /* ======================================
-       LANGUAGE SYSTEM
-    ====================================== */
+    const academyMainVideo =
+      document.getElementById("academyMainVideo");
+
+    if (academyMainVideo) {
+      academyMainVideo.muted = true;
+
+      const playPromise =
+        academyMainVideo.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {});
+      }
+    }
+
 
     const translations = {
 
@@ -3153,9 +2720,6 @@
 
         studentLogin:
           "Student Login",
-
-        coreText:
-          "Edikasyon • AI • Sètifikasyon",
 
         identityLabel:
           "Idantite Académie a",
@@ -3496,9 +3060,6 @@
         studentLogin:
           "Connexion Étudiant",
 
-        coreText:
-          "Éducation • IA • Certification",
-
         identityLabel:
           "Identité de l'Académie",
 
@@ -3838,9 +3399,6 @@
         studentLogin:
           "Student Login",
 
-        coreText:
-          "Education • AI • Certification",
-
         identityLabel:
           "Academy Identity",
 
@@ -4136,10 +3694,6 @@
     };
 
 
-    /* ======================================
-       CHANGE LANGUAGE
-    ====================================== */
-
     function changeLanguage(language) {
 
       if (!translations[language]) {
@@ -4238,10 +3792,6 @@
       });
 
 
-    /* ======================================
-       SAVED LANGUAGE
-    ====================================== */
-
     let savedLanguage = "ht";
 
     try {
@@ -4256,13 +3806,13 @@
     changeLanguage(savedLanguage);
 
 
-    /* ======================================
-       YEAR
-    ====================================== */
+    const yearElement =
+      document.getElementById("year");
 
-    document.getElementById("year")
-      .textContent =
-      new Date().getFullYear();
+    if (yearElement) {
+      yearElement.textContent =
+        new Date().getFullYear();
+    }
 
   </script>
 
