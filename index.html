@@ -1,158 +1,132 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRO-MAX ACADÉMIE | Apprendre. Évoluer. Réussir.</title>
-<meta name="description" content="PRO-MAX Académie — plateforme numérique moderne de formation, cours en ligne, AI Tutor, examens, progression et certifications.">
+<title>PRO-MAX ACADEMY | LEARN EVOLVE SUCCEED</title>
 <style>
-:root{--black:#000000;--orange:#ff9500;--orange-light:#ffb86b;--border:rgba(255,149,0,0.38);--radius:22px;--header-height:84px}
+:root{--orange:#ff7a00;--orange2:#ff9a1f;--orange-light:#ffad4d;--black:#000;--border:rgba(255,122,0,0.3)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{min-height:100vh;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;color:var(--orange-light);background:radial-gradient(circle at 12% 10%, rgba(255,149,0,0.17), transparent 28%),radial-gradient(circle at 88% 28%, rgba(184,66,0,0.15), transparent 30%),linear-gradient(145deg,#000000,#0b0400 50%,#000000)}
-.contact-top{background:linear-gradient(90deg,#000,#1a0a00,#000);border-bottom:1px solid #ff9500;padding:8px 0;font-size:0.72rem;text-align:center;color:#ffb86b}
-.contact-top .container{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;align-items:center}
-header{position:fixed;top:38px;left:0;z-index:2000;width:100%;min-height:var(--header-height);border-bottom:1px solid var(--border);background:rgba(0,0,0,0.92);backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
-.header-inner{min-height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:13px}
-.brand-logo{width:58px;height:58px;flex:0 0 58px;object-fit:cover;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,149,0,0.35)}
-.brand-logo-video{width:58px;height:58px;flex:0 0 58px;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px rgba(255,149,0,0.35);object-fit:cover}
-.brand-name{display:block;color:var(--orange);font-size:1.02rem;font-weight:950;letter-spacing:0.04em;text-transform:uppercase}
-.brand-subtitle{display:block;margin-top:4px;color:var(--orange-light);font-size:0.66rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase}
-.desktop-nav{display:flex;align-items:center;gap:3px}
-.nav-link{padding:11px 9px;color:var(--orange-light);font-size:0.76rem;font-weight:900;text-transform:uppercase;transition:0.3s}
-.nav-link:hover{color:var(--orange)}
-.language-switcher{display:flex;gap:2px;padding:4px;margin-left:6px;border:1px solid var(--border);border-radius:999px;background:#050200}
-.language-button{min-width:42px;padding:8px;border:0;border-radius:999px;color:var(--orange-light);background:transparent;font-size:0.68rem;font-weight:950}
-.language-button.active,.language-button:hover{color:#000;background:var(--orange)}
-.menu-button{display:none;width:48px;height:48px;padding:10px;border:1px solid var(--border);border-radius:12px;background:#050200}
-.menu-button span{display:block;height:3px;margin:5px 0;border-radius:8px;background:var(--orange);transition:0.3s}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-height) + 118px) 0 80px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:65px}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,149,0,0.06);font-size:0.78rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase}
-.hero-title{margin-top:24px;color:var(--orange);font-size:clamp(3.2rem,7.7vw,6.7rem);line-height:0.93;letter-spacing:-0.045em;text-transform:uppercase}
-.hero-title span{display:block;margin-top:15px;color:var(--orange-light);font-size:0.44em}
-.hero-slogan{margin-top:22px;color:var(--orange);font-size:clamp(1rem,2vw,1.35rem);font-weight:950;letter-spacing:0.1em;text-transform:uppercase}
-.hero-description{max-width:760px;margin-top:22px;color:var(--orange-light);font-size:1.06rem;line-height:1.8;opacity:0.88}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:2px solid var(--orange);border-radius:13px;font-size:0.82rem;font-weight:950;letter-spacing:0.05em;text-transform:uppercase;transition:0.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,149,0,0.18)}
-.btn-primary{color:#000;background:linear-gradient(135deg,var(--orange),var(--orange-light))}
-.btn-secondary{color:var(--orange);background:#000}
-.hero-visual{min-height:510px;display:flex;align-items:center;justify-content:center}
-.academy-video-wrap{width:min(100%,560px);overflow:hidden;border:2px solid var(--orange);border-radius:26px;background:#000;box-shadow:0 0 65px rgba(255,149,0,0.28),0 30px 70px rgba(0,0,0,0.55)}
-.academy-main-video{width:100%;height:auto;display:block;object-fit:cover;background:#000}
-.container{width:min(1200px,calc(100% - 34px));margin:auto}
-.section{padding:90px 0}
-.section-header{max-width:800px;margin:0 auto 48px;text-align:center}
-.section-label{display:inline-block;padding:8px 16px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,149,0,0.06);font-size:0.75rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase}
-.section-title{margin-top:16px;color:var(--orange);font-size:clamp(2rem,5vw,3.7rem);line-height:1.05;text-transform:uppercase}
-footer{border-top:1px solid var(--border);background:#000}
-.footer-main{display:grid;grid-template-columns:1.3fr 0.7fr 0.8fr 0.8fr;gap:35px;padding:60px 0 40px}
-.footer-brand{display:flex;align-items:center;gap:13px}
-.footer-brand img{width:65px;height:65px;object-fit:cover;border:2px solid var(--orange);border-radius:50%}
-.footer-brand h3{color:var(--orange);font-size:1.05rem;text-transform:uppercase}
-.footer-column h4{margin-bottom:15px;color:var(--orange);font-size:0.82rem;text-transform:uppercase}
-.footer-links{display:grid;gap:10px}
-.footer-links a{font-size:0.82rem;opacity:0.78;transition:0.3s}
-.footer-links a:hover{color:var(--orange);opacity:1;transform:translateX(4px)}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--border);font-size:0.74rem;opacity:0.78}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:radial-gradient(ellipse at 20% 30%, rgba(255,122,0,0.15) 0%, transparent 50%),radial-gradient(ellipse at 80% 70%, rgba(255,122,0,0.12) 0%, transparent 50%),linear-gradient(180deg, #000 0%, #0a0400 40%, #000 100%);color:var(--orange-light);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+a{color:var(--orange-light)!important;text-decoration:none!important}
+a:visited{color:var(--orange-light)!important}
+a:hover{color:var(--orange)!important}
+.contact-top{background:#000;border-bottom:1px solid var(--border);padding:8px 0;text-align:center;font-size:0.73rem;color:var(--orange-light)}
+.contact-top a{color:var(--orange)!important;font-weight:900}
+header{position:sticky;top:0;z-index:1000;background:rgba(0,0,0,0.96);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.header-inner{width:min(1200px,calc(100% - 24px));margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none!important}
+.brand video{width:56px;height:56px;flex:0 0 56px;border:2px solid var(--orange);border-radius:50%;object-fit:cover;box-shadow:0 0 20px rgba(255,122,0,0.4);background:#000}
+.brand-name{color:var(--orange);font-size:1rem;font-weight:950;line-height:1.05;text-transform:uppercase}
+.brand-sub{color:var(--orange-light);font-size:0.6rem;font-weight:800;letter-spacing:0.08em;margin-top:2px}
+.desktop-nav{display:flex;align-items:center;gap:2px}
+.nav-link{padding:9px 10px;color:var(--orange-light)!important;font-size:0.78rem;font-weight:900;text-transform:uppercase;border-radius:8px;transition:0.2s}
+.nav-link:hover{background:var(--orange);color:#000!important}
+.lang-switch{display:flex;gap:2px;padding:3px;border:1px solid var(--border);border-radius:999px;background:#000;margin-left:10px}
+.lang-btn{min-width:40px;padding:7px 10px;border:0;border-radius:999px;background:transparent;color:var(--orange-light);font-size:0.68rem;font-weight:950;cursor:pointer;transition:0.2s}
+.lang-btn.active{background:var(--orange);color:#000}
+.lang-btn:hover{background:var(--orange);color:#000}
+.create-btn{margin-left:8px;padding:9px 16px;border:2px solid var(--orange);border-radius:999px;background:var(--orange);color:#000!important;font-size:0.75rem;font-weight:950;text-transform:uppercase}
+.hero{width:min(1200px,calc(100% - 24px));margin:auto;min-height:88vh;display:grid;grid-template-columns:1.15fr 0.85fr;align-items:center;gap:36px;padding:50px 0 70px}
+.badge{display:inline-flex;padding:8px 15px;border:1px solid var(--border);border-radius:999px;background:rgba(255,122,0,0.08);color:var(--orange);font-size:0.72rem;font-weight:900;letter-spacing:0.1em}
+.hero-title{margin-top:20px;color:var(--orange);font-size:clamp(3rem,6vw,5.2rem);line-height:0.92;font-weight:950;text-transform:uppercase}
+.hero-title span{color:var(--orange-light);display:block;font-size:0.5em;margin-top:6px}
+.hero-slogan{margin-top:16px;color:var(--orange);font-size:1.05rem;font-weight:950;letter-spacing:0.1em}
+.hero-desc{margin-top:16px;color:var(--orange-light);font-size:1rem;line-height:1.65;max-width:620px;opacity:0.9}
+.hero-btns{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.btn{padding:13px 22px;border:2px solid var(--orange);border-radius:12px;font-size:0.8rem;font-weight:950;text-transform:uppercase;transition:0.25s;text-decoration:none!important;cursor:pointer}
+.btn-primary{background:var(--orange);color:#000!important}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,122,0,0.3)}
+.btn-secondary{background:transparent;color:var(--orange)!important}
+.btn-secondary:hover{background:var(--orange);color:#000!important}
+.hero-video-wrap{width:100%;border:2px solid var(--orange);border-radius:22px;overflow:hidden;box-shadow:0 0 40px rgba(255,122,0,0.22);background:#000}
+.hero-video-wrap video{width:100%;height:auto;display:block}
+footer{border-top:1px solid var(--border);background:#000;margin-top:40px}
+.footer-main{width:min(1200px,calc(100% - 24px));margin:auto;display:grid;grid-template-columns:1.4fr 0.7fr 0.8fr 0.9fr;gap:28px;padding:48px 0 28px}
+.footer-brand{display:flex;gap:12px;align-items:center}
+.footer-brand video{width:58px;height:58px;border:2px solid var(--orange);border-radius:50%;object-fit:cover}
+.footer-brand h3{color:var(--orange);font-size:1rem;line-height:1.1;text-transform:uppercase}
+.footer-brand p{color:var(--orange-light);font-size:0.62rem;margin-top:3px}
+.footer-desc{margin-top:14px;color:var(--orange-light);font-size:0.83rem;line-height:1.6;opacity:0.85}
+.footer-col h4{color:var(--orange);font-size:0.8rem;margin-bottom:14px;text-transform:uppercase}
+.footer-links{display:grid;gap:9px}
+.footer-links a{color:var(--orange-light)!important;font-size:0.82rem;opacity:0.9}
+.footer-links a:hover{color:var(--orange)!important;transform:translateX(3px)}
+.footer-bottom{width:min(1200px,calc(100% - 24px));margin:auto;display:flex;justify-content:space-between;gap:10px;padding:16px 0;border-top:1px solid var(--border);font-size:0.7rem;color:var(--orange-light);opacity:0.6}
+@media(max-width:980px){.desktop-nav{display:none}.hero{grid-template-columns:1fr;gap:28px}.footer-main{grid-template-columns:1fr 1fr}.footer-main>div:first-child{grid-column:1/-1}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}.hero-btns{display:grid}.btn{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
-<div class="contact-top">
-<div class="container">
-<span>🌐 <a href="https://www.pro-maxacademie.com" target="_blank" style="color:#ff9500;font-weight:900">www.pro-maxacademie.com</a></span>
-<span>📧 promaxacademie@gmail.com</span>
-<span>📞 (407) 640-5166 | (516) 216-8494</span>
-</div>
-</div>
+<div class="contact-top">🌐 <a href="https://www.pro-maxacademie.com">www.pro-maxacademie.com</a> &nbsp; 📧 promaxacademie@gmail.com &nbsp; 📞 (407) 640-5166 | (516) 216-8494</div>
 <header>
-<div class="container header-inner">
+<div class="header-inner">
 <a href="#home" class="brand">
-<!-- LOGO VIDEO = pro-maxa-cademie-II.mp4 - KOULÈ RANJE #ff9500 -->
-<video class="brand-logo-video" autoplay muted loop playsinline>
-<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
-<source src="pro-maxa-cademie-ii.mp4" type="video/mp4">
-<source src="pro-max-academie.mp4" type="video/mp4">
-<source src="pro-max-cademie.mp4" type="video/mp4">
-<source src="./pro-maxa-cademie-II.mp4" type="video/mp4">
-</video>
-<span>
-<span class="brand-name">PRO-MAX ACADÉMIE</span>
-<span class="brand-subtitle">Apprendre • Évoluer • Réussir</span>
-</span>
+<video autoplay muted loop playsinline><source src="pro-maxa-cademie-II.mp4" type="video/mp4"><source src="pro-max-academie.mp4" type="video/mp4"><source src="pro-max-cademie.mp4" type="video/mp4"></video>
+<div><div class="brand-name">PRO-MAX<br>ACADEMY</div><div class="brand-sub">LEARN • EVOLVE • SUCCEED</div></div>
 </a>
 <nav class="desktop-nav">
-<a href="#home" class="nav-link">Akèy</a>
-<a href="courses.html" class="nav-link">Kou</a>
-<a href="#categories" class="nav-link">Kategori</a>
-<a href="ai/ai-tutor.html" class="nav-link">AI Tutor</a>
-<a href="certificates.html" class="nav-link">Sètifika</a>
-<a href="login.html" class="nav-link">Login</a>
-<div class="language-switcher">
-<button class="language-button active">KRE</button>
-<button class="language-button">FRA</button>
-<button class="language-button">ENG</button>
+<a href="#home" class="nav-link" data-i18n="home">HOME</a>
+<a href="#courses" class="nav-link" data-i18n="course">COURSE</a>
+<a href="#category" class="nav-link" data-i18n="cat">CATEGORY</a>
+<a href="#ai" class="nav-link" data-i18n="ai">AI TUTOR</a>
+<a href="#cert" class="nav-link" data-i18n="cert">CERTIFICATE</a>
+<a href="#login" class="nav-link" data-i18n="login">LOGIN</a>
+<a href="#create" class="create-btn">CREATE</a>
+<div class="lang-switch">
+<button class="lang-btn active" data-lang="en" onclick="setLang('en')">ENG</button>
+<button class="lang-btn" data-lang="ht" onclick="setLang('ht')">KRE</button>
+<button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FRA</button>
 </div>
 </nav>
 </div>
 </header>
-<main>
 <section class="hero" id="home">
-<div class="container hero-grid">
-<div class="hero-content">
-<div class="hero-badge">Platfòm edikasyon dijital</div>
-<h1 class="hero-title">PRO-MAX<span>ACADÉMIE</span></h1>
-<div class="hero-slogan">APPRENDRE. ÉVOLUER. RÉUSSIR.</div>
-<p class="hero-description">Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.</p>
-<div class="hero-actions">
-<a href="courses.html" class="btn btn-primary">Explore Courses</a>
-<a href="register.html" class="btn btn-secondary">Start Learning</a>
-<a href="login.html" class="btn btn-secondary">Student Login</a>
+<div>
+<div class="badge" data-i18n="badge">DIGITAL EDUCATION PLATFORM</div>
+<h1 class="hero-title">PRO-MAX<span data-i18n="academy">ACADEMY</span></h1>
+<div class="hero-slogan" data-i18n="slogan">LEARN. EVOLVE. SUCCESSFUL.</div>
+<p class="hero-desc" data-i18n="desc">A modern digital education platform to learn, develop skills, take courses, pass exams, use AI Tutor and receive certification.</p>
+<div class="hero-btns">
+<a href="#courses" class="btn btn-primary" data-i18n="explore">EXPLORE COURSES</a>
+<a href="#start" class="btn btn-secondary" data-i18n="start">START LEARNING</a>
+<a href="#login" class="btn btn-secondary" data-i18n="slogin">STUDENT LOGIN</a>
 </div>
 </div>
-<div class="hero-visual">
-<div class="academy-video-wrap">
-<video class="academy-main-video" autoplay muted loop playsinline>
-<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
-<source src="pro-maxa-cademie-ii.mp4" type="video/mp4">
-<source src="pro-max-academie.mp4" type="video/mp4">
-<source src="pro-max-cademie.mp4" type="video/mp4">
-</video>
-</div>
-</div>
+<div class="hero-video-wrap">
+<video autoplay muted loop playsinline><source src="pro-maxa-cademie-II.mp4" type="video/mp4"><source src="pro-max-academie.mp4" type="video/mp4"><source src="pro-max-cademie.mp4" type="video/mp4"></video>
 </div>
 </section>
-</main>
 <footer>
-<div class="container footer-main">
+<div class="footer-main">
 <div>
 <div class="footer-brand">
-<video autoplay muted loop playsinline style="width:65px;height:65px;object-fit:cover;border:2px solid #ff9500;border-radius:50%;background:#000">
-<source src="pro-maxa-cademie-II.mp4" type="video/mp4">
-<source src="pro-max-academie.mp4" type="video/mp4">
-</video>
-<div><h3>PRO-MAX ACADÉMIE</h3><p>APPRENDRE • ÉVOLUER • RÉUSSIR</p></div>
+<video autoplay muted loop playsinline><source src="pro-maxa-cademie-II.mp4" type="video/mp4"><source src="pro-max-academie.mp4" type="video/mp4"></video>
+<div><h3>PRO-MAX<br>ACADEMY</h3><p>LEARN • EVOLVE • SUCCEED</p></div>
 </div>
-<p style="margin-top:18px;max-width:480px;font-size:0.85rem;line-height:1.7;opacity:0.8">Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.</p>
+<div class="footer-desc" data-i18n="fdesc">A digital education platform for training, AI learning, exams, progress and certifications.</div>
 </div>
-<div class="footer-column"><h4>Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="courses.html">Courses</a><a href="certificates.html">Certificates</a><a href="about.html">About</a></div></div>
-<div class="footer-column"><h4>Kontak</h4><div class="footer-links">
-<a href="https://www.pro-maxacademie.com" target="_blank">🌐 www.pro-maxacademie.com</a>
-<a href="mailto:promaxacademie@gmail.com">📧 promaxacademie@gmail.com</a>
-<a href="tel:+14076405166">📞 (407) 640-5166</a>
-<a href="tel:+15162168494">📞 (516) 216-8494</a>
-</div></div>
-<div class="footer-column"><h4>Rezo Sosyal</h4><div class="footer-links">
-<a href="#">📱 TELEGRAM</a>
-<a href="#">📘 FACEBOOK</a>
-<a href="#">💬 WHATSAPP</a>
-<a href="#">🎵 TIKTOK</a>
-<a href="#">📸 INSTAGRAM</a>
-<a href="#">🐦 T/TWITTER</a>
-<a href="#">✓ TRUE SOCIAL</a>
-<a href="#">▶️ YOUTUBE</a>
-<a href="#">🎧 SPOTIFY</a>
-</div></div>
-</
+<div class="footer-col"><h4>QUICK LINKS</h4><div class="footer-links"><a href="#home" data-i18n="h">Home</a><a href="#courses" data-i18n="c">Courses</a><a href="#cert" data-i18n="ce">Certificates</a><a href="#about" data-i18n="ab">About</a></div></div>
+<div class="footer-col"><h4>CONTACT</h4><div class="footer-links"><a href="https://www.pro-maxacademie.com">🌐 www.pro-maxacademie.com</a><a href="mailto:promaxacademie@gmail.com">📧 promaxacademie@gmail.com</a><a href="tel:+14076405166">📞 (407) 640-5166</a><a href="tel:+15162168494">📞 (516) 216-8494</a></div></div>
+<div class="footer-col"><h4>SOCIAL NETWORK</h4><div class="footer-links"><a href="#">TELEGRAM</a><a href="#">FACEBOOK</a><a href="#">WHATSAPP</a><a href="#">TIKTOK</a><a href="#">INSTAGRAM</a><a href="#">T/TWITTER</a><a href="#">TRUE SOCIAL</a><a href="#">YOUTUBE</a><a href="#">SPOTIFY</a></div></div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> PRO-MAX ACADEMY</span><span>www.pro-maxacademie.com</span></div>
+</footer>
+<script>
+const dict={
+en:{home:"HOME",course:"COURSE",cat:"CATEGORY",ai:"AI TUTOR",cert:"CERTIFICATE",login:"LOGIN",badge:"DIGITAL EDUCATION PLATFORM",academy:"ACADEMY",slogan:"LEARN. EVOLVE. SUCCESSFUL.",desc:"A modern digital education platform to learn, develop skills, take courses, pass exams, use AI Tutor and receive certification.",explore:"EXPLORE COURSES",start:"START LEARNING",slogin:"STUDENT LOGIN",fdesc:"A digital education platform for training, AI learning, exams, progress and certifications.",h:"Home",c:"Courses",ce:"Certificates",ab:"About"},
+ht:{home:"AKÈY",course:"KOU",cat:"KATEGORI",ai:"AI TUTOR",cert:"SÈTIFIKA",login:"LOGIN",badge:"PLATFÒM EDİKASYON DIJITAL",academy:"ACADÉMIE",slogan:"APRANN. EVOLYE. REYISI.",desc:"Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.",explore:"EKSPLOR KOU",start:"KÒMANSE APRANN",slogin:"LOGIN ELÈV",fdesc:"Yon platfòm edikasyon dijital pou fòmasyon, AI learning, egzamen ak sètifikasyon.",h:"Akèy",c:"Kou",ce:"Sètifika",ab:"Konsènan"},
+fr:{home:"ACCUEIL",course:"COURS",cat:"CATÉGORIE",ai:"AI TUTOR",cert:"CERTIFICAT",login:"CONNEXION",badge:"PLATEFORME ÉDUCATION NUMÉRIQUE",academy:"ACADÉMIE",slogan:"APPRENDRE. ÉVOLUER. RÉUSSIR.",desc:"Une plateforme éducative numérique moderne pour apprendre, développer des compétences, suivre des cours, passer des examens, utiliser AI Tutor et obtenir des certifications.",explore:"EXPLORER COURS",start:"COMMENCER",slogin:"CONNEXION ÉTUDIANT",fdesc:"Une plateforme éducative numérique pour la formation, l'IA, les examens et les certifications.",h:"Accueil",c:"Cours",ce:"Certificats",ab:"À propos"}
+};
+function setLang(l){
+localStorage.setItem('pma-lang',l);
+document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(dict[l]&&dict[l][k]) el.textContent=dict[l][k];});
+document.documentElement.lang=l;
+}
+const saved=localStorage.getItem('pma-lang')||'en';setLang(saved);
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
