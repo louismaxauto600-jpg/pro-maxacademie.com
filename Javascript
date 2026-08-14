@@ -1,0 +1,764 @@
+"use strict";
+
+/* =========================================
+   PRO-MAX ACADÉMIE
+   MAIN JAVASCRIPT
+========================================= */
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const mobileMenu =
+  document.getElementById("mobileMenu");
+
+if (menuButton && mobileMenu) {
+
+  menuButton.addEventListener(
+    "click",
+    function () {
+
+      mobileMenu.classList.toggle("open");
+
+      menuButton.classList.toggle("active");
+
+      document.body.classList.toggle(
+        "menu-open"
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   CLOSE MOBILE MENU
+========================================= */
+
+document
+  .querySelectorAll(".mobile-link")
+  .forEach(function (link) {
+
+    link.addEventListener(
+      "click",
+      function () {
+
+        if (mobileMenu) {
+          mobileMenu.classList.remove("open");
+        }
+
+        if (menuButton) {
+          menuButton.classList.remove("active");
+        }
+
+        document.body.classList.remove(
+          "menu-open"
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   ESCAPE KEY
+========================================= */
+
+document.addEventListener(
+  "keydown",
+  function (event) {
+
+    if (event.key === "Escape") {
+
+      if (mobileMenu) {
+        mobileMenu.classList.remove("open");
+      }
+
+      if (menuButton) {
+        menuButton.classList.remove("active");
+      }
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   TRANSLATIONS
+========================================= */
+
+const translations = {
+
+  ht: {
+
+    brandSubtitle:
+      "Aprann • Evolye • Reyisi",
+
+    navHome:
+      "Akèy",
+
+    navCourses:
+      "Kou",
+
+    navCategories:
+      "Kategori",
+
+    navCertificates:
+      "Sètifika",
+
+    navAbout:
+      "Konsènan",
+
+    navContact:
+      "Kontakte",
+
+    navLogin:
+      "Login",
+
+    navRegister:
+      "Enskri",
+
+    heroBadge:
+      "Platfòm edikasyon dijital",
+
+    heroSlogan:
+      "APRANN. EVOLYE. REYISI.",
+
+    heroDescription:
+      "Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.",
+
+    exploreCourses:
+      "Eksplore Kou",
+
+    startLearning:
+      "Kòmanse Aprann",
+
+    studentLogin:
+      "Student Login",
+
+    identityLabel:
+      "Idantite Académie a",
+
+    identityTitle:
+      "Yon sistèm aprantisaj konplè",
+
+    identityDescription:
+      "PRO-MAX Académie fèt pou mete teknoloji, edikasyon ak sètifikasyon nan yon sèl sistèm.",
+
+    searchTitle:
+      "Chèche yon kou",
+
+    searchPlaceholder:
+      "Chèche kou...",
+
+    searchButton:
+      "Chèche",
+
+    categoryLabel:
+      "Kategori Kou",
+
+    categoryTitle:
+      "Chwazi domèn ou",
+
+    viewCourses:
+      "Gade Kou →",
+
+    featuredLabel:
+      "Kou Rekòmande",
+
+    featuredTitle:
+      "Kou seleksyone",
+
+    openCourse:
+      "Louvri Kou →",
+
+    aiTitle:
+      "Yon pwofesè dijital ki toujou disponib",
+
+    askTutor:
+      "Pale ak AI Tutor",
+
+    howLabel:
+      "Kijan Sa Mache",
+
+    howTitle:
+      "Senk etap pou reyisi",
+
+    certificateTitle:
+      "Fòmasyon ki mennen nan sètifikasyon",
+
+    viewCertificates:
+      "Gade Sètifika",
+
+    verifyCertificate:
+      "Verifye Sètifika",
+
+    trainingTitle:
+      "Fòmasyon espesyal pou administratè yo",
+
+    openTraining:
+      "Louvri Admin Training",
+
+    portalLabel:
+      "Pòtal Académie",
+
+    portalTitle:
+      "Aksè pèsonalize",
+
+    openStudentPortal:
+      "Louvri Student Portal",
+
+    openInstructorPortal:
+      "Louvri Instructor Portal",
+
+    announcementLabel:
+      "Mizajou Académie",
+
+    announcementTitle:
+      "Anons",
+
+    ctaTitle:
+      "Kòmanse Vwayaj Aprantisaj Ou",
+
+    registerNow:
+      "Enskri Kounye A",
+
+    exploreAllCourses:
+      "Eksplore Kou",
+
+    rights:
+      "Tout dwa rezève."
+  },
+
+
+  fr: {
+
+    brandSubtitle:
+      "Apprendre • Évoluer • Réussir",
+
+    navHome:
+      "Accueil",
+
+    navCourses:
+      "Cours",
+
+    navCategories:
+      "Catégories",
+
+    navCertificates:
+      "Certificats",
+
+    navAbout:
+      "À propos",
+
+    navContact:
+      "Contact",
+
+    navLogin:
+      "Connexion",
+
+    navRegister:
+      "Inscription",
+
+    heroBadge:
+      "Plateforme numérique d'apprentissage",
+
+    heroSlogan:
+      "APPRENDRE. ÉVOLUER. RÉUSSIR.",
+
+    heroDescription:
+      "Une plateforme éducative numérique moderne permettant d'apprendre, développer des compétences, suivre des cours, passer des examens, utiliser un AI Tutor et obtenir des certifications.",
+
+    exploreCourses:
+      "Explorer les cours",
+
+    startLearning:
+      "Commencer",
+
+    studentLogin:
+      "Connexion Étudiant",
+
+    identityLabel:
+      "Identité de l'Académie",
+
+    identityTitle:
+      "Un système complet d'apprentissage",
+
+    identityDescription:
+      "PRO-MAX Académie réunit technologie, éducation et certification dans un seul environnement.",
+
+    searchTitle:
+      "Rechercher un cours",
+
+    searchPlaceholder:
+      "Rechercher un cours...",
+
+    searchButton:
+      "Rechercher",
+
+    categoryLabel:
+      "Catégories",
+
+    categoryTitle:
+      "Choisissez votre domaine",
+
+    viewCourses:
+      "Voir les cours →",
+
+    featuredLabel:
+      "Cours en vedette",
+
+    featuredTitle:
+      "Cours recommandés",
+
+    openCourse:
+      "Ouvrir le cours →",
+
+    aiTitle:
+      "Un professeur numérique toujours disponible",
+
+    askTutor:
+      "Demander à AI Tutor",
+
+    howLabel:
+      "Comment ça marche",
+
+    howTitle:
+      "Cinq étapes pour réussir",
+
+    certificateTitle:
+      "Des formations menant à la certification",
+
+    viewCertificates:
+      "Voir les certificats",
+
+    verifyCertificate:
+      "Vérifier un certificat",
+
+    trainingTitle:
+      "Formation spécialisée pour les administrateurs",
+
+    openTraining:
+      "Ouvrir la formation",
+
+    portalLabel:
+      "Portails Académie",
+
+    portalTitle:
+      "Accès personnalisé",
+
+    openStudentPortal:
+      "Ouvrir le portail étudiant",
+
+    openInstructorPortal:
+      "Ouvrir le portail formateur",
+
+    announcementLabel:
+      "Actualités Académie",
+
+    announcementTitle:
+      "Annonces",
+
+    ctaTitle:
+      "Commencez votre parcours d'apprentissage",
+
+    registerNow:
+      "S'inscrire",
+
+    exploreAllCourses:
+      "Explorer les cours",
+
+    rights:
+      "Tous droits réservés."
+  },
+
+
+  en: {
+
+    brandSubtitle:
+      "Learn • Evolve • Succeed",
+
+    navHome:
+      "Home",
+
+    navCourses:
+      "Courses",
+
+    navCategories:
+      "Categories",
+
+    navCertificates:
+      "Certificates",
+
+    navAbout:
+      "About",
+
+    navContact:
+      "Contact",
+
+    navLogin:
+      "Login",
+
+    navRegister:
+      "Register",
+
+    heroBadge:
+      "Digital Learning Platform",
+
+    heroSlogan:
+      "LEARN. EVOLVE. SUCCEED.",
+
+    heroDescription:
+      "A modern digital education platform for learning, building skills, taking courses and exams, using an AI Tutor and earning certifications.",
+
+    exploreCourses:
+      "Explore Courses",
+
+    startLearning:
+      "Start Learning",
+
+    studentLogin:
+      "Student Login",
+
+    identityLabel:
+      "Academy Identity",
+
+    identityTitle:
+      "A complete learning system",
+
+    identityDescription:
+      "PRO-MAX Academy brings technology, education and certification together in one environment.",
+
+    searchTitle:
+      "Find a course",
+
+    searchPlaceholder:
+      "Search courses...",
+
+    searchButton:
+      "Search",
+
+    categoryLabel:
+      "Course Categories",
+
+    categoryTitle:
+      "Choose your field",
+
+    viewCourses:
+      "View Courses →",
+
+    featuredLabel:
+      "Featured Courses",
+
+    featuredTitle:
+      "Recommended Courses",
+
+    openCourse:
+      "Open Course →",
+
+    aiTitle:
+      "A digital tutor that is always available",
+
+    askTutor:
+      "Ask AI Tutor",
+
+    howLabel:
+      "How It Works",
+
+    howTitle:
+      "Five steps to success",
+
+    certificateTitle:
+      "Training that leads to certification",
+
+    viewCertificates:
+      "View Certificates",
+
+    verifyCertificate:
+      "Verify Certificate",
+
+    trainingTitle:
+      "Specialized administrator training",
+
+    openTraining:
+      "Open Admin Training",
+
+    portalLabel:
+      "Academy Portals",
+
+    portalTitle:
+      "Personalized access",
+
+    openStudentPortal:
+      "Open Student Portal",
+
+    openInstructorPortal:
+      "Open Instructor Portal",
+
+    announcementLabel:
+      "Academy Updates",
+
+    announcementTitle:
+      "Announcements",
+
+    ctaTitle:
+      "Start Your Learning Journey",
+
+    registerNow:
+      "Register Now",
+
+    exploreAllCourses:
+      "Explore Courses",
+
+    rights:
+      "All rights reserved."
+  }
+
+};
+
+
+/* =========================================
+   CHANGE LANGUAGE
+========================================= */
+
+function changeLanguage(language) {
+
+  if (!translations[language]) {
+    return;
+  }
+
+  document.documentElement.lang =
+    language;
+
+  document
+    .querySelectorAll("[data-i18n]")
+    .forEach(function (element) {
+
+      const key =
+        element.dataset.i18n;
+
+      if (
+        translations[language][key]
+        !== undefined
+      ) {
+
+        element.textContent =
+          translations[language][key];
+
+      }
+
+    });
+
+
+  document
+    .querySelectorAll(
+      "[data-i18n-placeholder]"
+    )
+    .forEach(function (element) {
+
+      const key =
+        element.dataset.i18nPlaceholder;
+
+      if (
+        translations[language][key]
+        !== undefined
+      ) {
+
+        element.placeholder =
+          translations[language][key];
+
+      }
+
+    });
+
+
+  document
+    .querySelectorAll(
+      ".language-button"
+    )
+    .forEach(function (button) {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.language
+          === language
+      );
+
+    });
+
+
+  try {
+
+    localStorage.setItem(
+      "proMaxAcademieLanguage",
+      language
+    );
+
+  } catch (error) {
+
+    console.warn(
+      "Language preference could not be saved."
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   LANGUAGE BUTTONS
+========================================= */
+
+document
+  .querySelectorAll(
+    ".language-button"
+  )
+  .forEach(function (button) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        changeLanguage(
+          button.dataset.language
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   SAVED LANGUAGE
+========================================= */
+
+let savedLanguage = "ht";
+
+try {
+
+  savedLanguage =
+    localStorage.getItem(
+      "proMaxAcademieLanguage"
+    ) || "ht";
+
+} catch (error) {
+
+  savedLanguage = "ht";
+
+}
+
+changeLanguage(savedLanguage);
+
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+const yearElement =
+  document.getElementById("year");
+
+if (yearElement) {
+
+  yearElement.textContent =
+    new Date().getFullYear();
+
+}
+
+
+/* =========================================
+   COURSE SEARCH
+========================================= */
+
+const courseSearch =
+  document.querySelector(
+    ".course-search"
+  );
+
+if (courseSearch) {
+
+  courseSearch.addEventListener(
+    "submit",
+    function (event) {
+
+      const input =
+        courseSearch.querySelector(
+          'input[name="search"]'
+        );
+
+      if (!input) {
+        return;
+      }
+
+      const value =
+        input.value.trim();
+
+      if (!value) {
+
+        event.preventDefault();
+
+        input.focus();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   SMOOTH INTERNAL LINKS
+========================================= */
+
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(function (link) {
+
+    link.addEventListener(
+      "click",
+      function (event) {
+
+        const targetId =
+          link.getAttribute("href");
+
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+          return;
+        }
+
+        const target =
+          document.querySelector(
+            targetId
+          );
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+    );
+
+  });
