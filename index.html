@@ -3,100 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRO-MAX ACADÉMIE | Courses</title>
+<title>PRO-MAX ACADÉMIE | Former aujourd'hui pour diriger demain</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{--orange:#ff6500;--orange2:#ff8a3d;--border:rgba(255,101,0,.35)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:radial-gradient(circle at 50% 0,rgba(255,101,0,.14),transparent 32%),linear-gradient(180deg,#000,#0b0300,#000);color:var(--orange2);font-family:Arial,Helvetica,sans-serif}
-header{position:sticky;top:0;z-index:1000;background:#000;border-bottom:2px solid var(--orange)}
-.nav{max-width:1350px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:64px;height:64px;border:2px solid var(--orange);border-radius:50%;overflow:hidden;background:#000}
+:root{--orange:#ff6500;--orange2:#ff8a3d;--orange3:#ffb066;--border:rgba(255,101,0,.35)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 50% 0,rgba(255,101,0,.16),transparent 30%),linear-gradient(180deg,#000,#0b0300,#000);color:var(--orange2);min-height:100vh}
+a{color:inherit;text-decoration:none}button{font-family:inherit}
+header{background:rgba(0,0,0,.96);border-bottom:2px solid var(--orange);position:sticky;top:0;z-index:1000}
+.nav{max-width:1350px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{width:64px;height:64px;border:2px solid var(--orange);border-radius:50%;overflow:hidden;background:#000;box-shadow:0 0 15px rgba(255,101,0,.25)}
 .logo video{width:100%;height:100%;object-fit:cover;display:block}
-.brand h2{color:var(--orange);font-size:20px}.brand small{font-size:10px}
-.nav-right{display:flex;gap:10px;align-items:center}
-.back,.welcome-btn{border:1px solid var(--orange);border-radius:25px;padding:9px 16px;font-size:12px;font-weight:bold;background:#000;color:var(--orange)}
+.brand h2{color:var(--orange);font-size:20px}.brand small{color:var(--orange2);font-size:10px;letter-spacing:.5px}
+.header-right{display:flex;align-items:center;gap:10px}
+.welcome-btn{border:1px solid var(--orange);border-radius:25px;padding:9px 18px;font-size:12px;font-weight:bold;background:#000;color:var(--orange)}
 .languages{display:flex;border:1px solid var(--border);border-radius:30px;overflow:hidden;background:#000}
-.languages button{border:0;background:#000;color:var(--orange);padding:9px 16px;font-weight:bold;cursor:pointer;font-size:13px}
+.languages button{border:0;background:#000;color:var(--orange);padding:9px 16px;cursor:pointer;font-weight:bold;font-size:13px}
 .languages button.active{background:var(--orange);color:#000}
-.course{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#140600,#020101);cursor:pointer;transition:.3s}
-.course:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 0 25px rgba(255,101,0,.2)}
-.course-cover{min-height:170px;display:grid;place-items:center;font-size:65px;background:radial-gradient(circle,rgba(255,101,0,.24),transparent 65%),#050100;border-bottom:1px solid var(--border);position:relative}
-.course-cover::after{content:"KLIKE POU OUVRI →";position:absolute;bottom:10px;right:12px;font-size:10px;font-weight:bold;background:var(--orange);color:#000;padding:5px 10px;border-radius:15px;opacity:0;transition:.3s}
-.course:hover .course-cover::after{opacity:1}
-.open-btn{width:100%;margin-top:15px;padding:12px;background:var(--orange);color:#000;border:0;border-radius:10px;font-weight:bold;cursor:pointer}
-.modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.85);padding:20px}
-.modal.active{display:grid;place-items:center}
-.modal-content{max-width:650px;width:100%;background:linear-gradient(145deg,#140600,#020101);border:2px solid var(--orange);border-radius:20px;padding:30px 25px;position:relative}
-.modal-close{position:absolute;top:12px;right:15px;background:#000;border:1px solid var(--orange);color:var(--orange);width:32px;height:32px;border-radius:50%;cursor:pointer}
+.hero{max-width:1350px;margin:auto;padding:25px 20px 50px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.hero-banner{border:2px solid var(--orange);border-radius:26px;overflow:hidden;background:#000}
+.hero-banner img{width:100%;display:block}
+.hero h1{color:var(--orange);font-size:clamp(38px,6vw,72px);line-height:1;margin:15px 0}
+.hero h2{color:var(--orange3);font-size:clamp(18px,3vw,26px);margin-bottom:15px}
+.hero p{line-height:1.7;font-size:16px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:1px solid var(--orange);border-radius:10px;padding:12px 18px;font-weight:bold;cursor:pointer}
+.btn-primary{background:var(--orange);color:#000}.btn-secondary{background:#000;color:var(--orange)}
+.stats{max-width:1200px;margin:0 auto 30px;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:linear-gradient(145deg,#130600,#030100);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center}
+.stat strong{display:block;color:var(--orange);font-size:26px}
+.section{max-width:1350px;margin:auto;padding:50px 20px}.section-heading{text-align:center;margin-bottom:35px}
+.section-heading h2{color:var(--orange);font-size:32px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:linear-gradient(145deg,#120500,#020101);border:1px solid var(--border);border-radius:16px;padding:24px 20px}
+.card h3{color:var(--orange);margin:10px 0;font-size:18px}.card p{font-size:13px;line-height:1.6}
+.social-section{max-width:1350px;margin:40px auto;padding:45px 20px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,101,0,.05)}
+.social-section h2{color:var(--orange);font-size:30px;margin-bottom:10px}
+.social-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:900px;margin:25px auto}
+.social-btn{width:60px;height:60px;border:1px solid var(--border);border-radius:14px;display:grid;place-items:center;background:#130600;font-size:22px;color:var(--orange);transition:.25s}
+.social-btn:hover{transform:translateY(-3px);background:var(--orange);color:#000;border-color:var(--orange)}
+.contact-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;max-width:1000px;margin:25px auto;padding:20px;background:rgba(255,101,0,.06);border:1px solid var(--border);border-radius:14px}
+.contact-item i{color:var(--orange);font-size:20px;margin-bottom:6px;display:block}
+.contact-item strong{color:var(--orange);font-size:12px;display:block}
+.contact-item a{font-size:13px;color:var(--orange2)}
+footer{border-top:2px solid var(--orange);background:#000;text-align:center;padding:35px 20px;line-height:1.7}
+footer strong{color:var(--orange)}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-content{text-align:center}.hero-actions{justify-content:center}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<!-- HEADER ak video logo PA CHANJE -->
+
 <header>
 <div class="nav">
 <a href="index.html" class="brand">
-<div class="logo"><video autoplay loop muted playsinline><source src="pro-max-academie-II.mp4" type="video/mp4"></video></div>
-<div><h2>PRO-MAX ACADÉMIE</h2><small>FORMER AUJOURD'HUI POUR DIRIGER DEMAIN</small></div>
+<div class="logo">
+<video autoplay loop muted playsinline>
+<source src="pro-max-academie-II.mp4" type="video/mp4">
+</video>
+</div>
+<div>
+<h2>PRO-MAX ACADÉMIE</h2>
+<small data-i18n="slogan">FORMER AUJOURD'HUI POUR DIRIGER DEMAIN</small>
+</div>
 </a>
-<div class="nav-right">
-<a href="index.html" class="back">← ACADÉMIE</a>
-<span class="welcome-btn">WELCOME</span>
-<div class="languages"><button data-lang="fr" class="active">FRA</button><button data-lang="en">ENG</button><button data-lang="ht">KRE</button></div>
+<div class="header-right">
+<span class="welcome-btn" data-i18n="welcome">WELCOME</span>
+<div class="languages">
+<button data-lang="fr" class="active">FRA</button>
+<button data-lang="en">ENG</button>
+<button data-lang="ht">KRE</button>
+</div>
 </div>
 </div>
 </header>
 
-<!-- COURSE GRID -->
-<section style="max-width:1350px;margin:auto;padding:30px 20px 60px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
-
-<article class="course" data-title="COMPÉTENCES NUMÉRIQUES" data-desc="Bases outils numériques" data-icon="💻">
-<div class="course-cover">💻</div>
-<div style="padding:20px">
-<h2 style="color:var(--orange)">COMPÉTENCES NUMÉRIQUES</h2>
-<p>Apprendre les bases essentielles des outils numériques...</p>
-<button class="open-btn">👁️ OUVRI KOU A</button>
+<section class="hero">
+<div class="hero-banner">
+<img src="banner-final.png" alt="PRO-MAX ACADEMIE">
 </div>
-</article>
-
-<!-- KOPIE MEMM JAN POU 5 LOT KOU YO - AI, LEADERSHIP, MEDIA, BUSINESS, COMMUNITY -->
-
+<div class="hero-content">
+<span style="border:1px solid var(--orange);border-radius:20px;padding:6px 12px;font-size:11px;font-weight:bold" data-i18n="digitalAcademy">🎓 ACADÉMIE NUMÉRIQUE</span>
+<h1>PRO-MAX<br>ACADÉMIE</h1>
+<h2 data-i18n="slogan">FORMER AUJOURD'HUI POUR DIRIGER DEMAIN</h2>
+<p data-i18n="heroText">Une plateforme moderne de formation conçue pour développer les connaissances, les compétences, la discipline, le leadership et la maîtrise des outils numériques.</p>
+<div class="hero-actions">
+<a href="#courses" class="btn btn-primary" data-i18n="explore">🎓 EXPLORER LES COURS</a>
+<a href="#student" class="btn btn-secondary" data-i18n="studentSpace">👤 ESPACE ÉTUDIANT</a>
+</div>
 </div>
 </section>
 
-<!-- MODAL KI OUVÈ LE OU KLIKE -->
-<div class="modal" id="courseModal">
-<div class="modal-content">
-<button class="modal-close" id="closeModal">✕</button>
-<div style="font-size:60px;text-align:center" id="modalIcon">💻</div>
-<h2 id="modalTitle" style="color:var(--orange);text-align:center">TITRE</h2>
-<p id="modalDesc" style="text-align:center">Description</p>
-<div id="modalModules"></div>
-<button style="width:100%;padding:14px;background:var(--orange);color:#000;border:0;border-radius:10px;font-weight:bold;margin-top:15px">🎓 KOMANSE FÒMASYON SA A</button>
+<section class="stats">
+<div class="stat"><strong>3</strong><span data-i18n="languages">LANGUES</span></div>
+<div class="stat"><strong>24/7</strong><span>ACCÈS NUMÉRIQUE</span></div>
+<div class="stat"><strong>AI</strong><span>SMART LEARNING</span></div>
+<div class="stat"><strong>🎓</strong><span>CERTIFICATION</span></div>
+</section>
+
+<section class="section">
+<div class="section-heading"><h2 data-i18n="learningCenter">CENTRE D'APPRENTISSAGE</h2><p data-i18n="learningIntro">Une structure complète pour apprendre, pratiquer, évaluer et progresser.</p></div>
+<div class="grid">
+<div class="card"><div style="font-size:35px">📚</div><h3 data-i18n="courses">COURS</h3><p data-i18n="coursesText">Programmes structurés avec modules et leçons.</p></div>
+<div class="card"><div style="font-size:35px">🎥</div><h3>LEÇONS VIDÉO</h3><p>Cours et démonstrations en vidéo.</p></div>
+<div class="card"><div style="font-size:35px">📝</div><h3>QUIZ & EXAMENS</h3><p>Évaluations pour mesurer les connaissances.</p></div>
+<div class="card"><div style="font-size:35px">📈</div><h3>PROGRESSION</h3><p>Suivez vos cours et votre progression.</p></div>
+<div class="card"><div style="font-size:35px">🏆</div><h3>CERTIFICATS</h3><p>Reconnaissance des formations complétées.</p></div>
+<div class="card"><div style="font-size:35px">🧠</div><h3>AI ASSISTANT</h3><p>Assistance intelligente pour l'apprentissage.</p></div>
 </div>
+</section>
+
+<section class="section" id="courses">
+<div class="section-heading"><h2>PROGRAMMES DE FORMATION</h2><p>Les grandes catégories de formation de PRO-MAX ACADÉMIE.</p></div>
+<div class="grid">
+<div class="card"><div style="font-size:50px">💻</div><h3>COMPÉTENCES NUMÉRIQUES</h3><p>Internet, outils numériques, IA et technologie moderne.</p></div>
+<div class="card"><div style="font-size:50px">🤖</div><h3>INTELLIGENCE ARTIFICIELLE</h3><p>Comprendre et utiliser l'IA de manière productive.</p></div>
+<div class="card"><div style="font-size:50px">👔</div><h3>LEADERSHIP</h3><p>Organisation, responsabilité et gestion d'équipe.</p></div>
+<div class="card"><div style="font-size:50px">🎙️</div><h3>RADIO & MÉDIAS</h3><p>Présentation, radio numérique et production.</p></div>
 </div>
+</section>
+
+<section class="social-section">
+<h2 data-i18n="followUs">SUIVEZ-NOUS</h2>
+<p>Retrouvez PRO-MAX ACADÉMIE sur tous nos réseaux</p>
+<div class="social-grid">
+<a href="https://facebook.com/promaxacademie" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://wa.me/14076405166" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/promaxacademie" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://youtube.com/@promaxacademie" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://open.spotify.com" target="_blank" class="social-btn" title="Spotify"><i class="fab fa-spotify"></i></a>
+<a href="https://truthsocial.com/@promaxacademie" target="_blank" class="social-btn" title="Truth Social"><i class="fas fa-bolt"></i></a>
+<a href="https://x.com/promaxacademie" target="_blank" class="social-btn" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+<a href="https://tiktok.com/@promaxacademie" target="_blank" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://linkedin.com/in/promaxacademie" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+<div class="contact-bar">
+<div class="contact-item"><i class="fas fa-globe"></i><strong>WEBSITE</strong><a href="https://www.promaxacademie.com">www.promaxacademie.com</a></div>
+<div class="contact-item"><i class="fas fa-envelope"></i><strong>EMAIL</strong><a href="mailto:promaxacademie@gmail.com">promaxacademie@gmail.com</a></div>
+<div class="contact-item"><i class="fas fa-phone"></i><strong>TEL 1</strong><a href="tel:+14076405166">(407) 640-5166</a></div>
+<div class="contact-item"><i class="fas fa-phone"></i><strong>TEL 2</strong><a href="tel:+15162168494">(516) 216-8494</a></div>
+</div>
+</section>
+
+<footer>
+<p><strong>PRO-MAX ACADÉMIE</strong></p>
+<p data-i18n="slogan">FORMER AUJOURD'HUI POUR DIRIGER DEMAIN</p>
+<p>PRO-MAX FM DMP • ÉDUCATION • TECHNOLOGIE • LEADERSHIP</p>
+<p><a href="https://www.promaxacademie.com">www.promaxacademie.com</a> | <a href="mailto:promaxacademie@gmail.com">promaxacademie@gmail.com</a> | (407) 640-5166 | (516) 216-8494</p>
+<p>© 2026 PRO-MAX ACADÉMIE — Tous droits réservés.</p>
+<p><strong>DEVAN DEVAN NÈT. BATI POU JODI A. PARE POU DEMEN.</strong></p>
+</footer>
 
 <script>
-// KOUNYA COURSE YO OUVÈ!
-const courses=document.querySelectorAll(".course");
-const modal=document.getElementById("courseModal");
-const modalTitle=document.getElementById("modalTitle");
-const closeModal=document.getElementById("closeModal");
-
-function openCourseModal(courseEl){
-modalTitle.textContent=courseEl.dataset.title;
-document.getElementById("modalIcon").textContent=courseEl.dataset.icon;
-modal.classList.add("active");
-}
-function closeCourseModal(){modal.classList.remove("active");}
-
-courses.forEach(course=>{
-course.addEventListener("click",()=>openCourseModal(course));
+const translations={
+fr:{welcome:"BIENVENUE",slogan:"FORMER AUJOURD'HUI POUR DIRIGER DEMAIN",digitalAcademy:"🎓 ACADÉMIE NUMÉRIQUE",heroText:"Une plateforme moderne de formation conçue pour développer les connaissances, les compétences, la discipline, le leadership et la maîtrise des outils numériques.",explore:"🎓 EXPLORER LES COURS",studentSpace:"👤 ESPACE ÉTUDIANT",languages:"LANGUES",learningCenter:"CENTRE D'APPRENTISSAGE",learningIntro:"Une structure complète pour apprendre, pratiquer, évaluer et progresser.",courses:"COURS",coursesText:"Programmes structurés avec modules et leçons.",followUs:"SUIVEZ-NOUS"},
+en:{welcome:"WELCOME",slogan:"TRAIN TODAY TO LEAD TOMORROW",digitalAcademy:"🎓 DIGITAL ACADEMY",heroText:"A modern training platform designed to develop knowledge, skills, discipline, leadership and mastery of digital tools.",explore:"🎓 EXPLORE COURSES",studentSpace:"👤 STUDENT AREA",languages:"LANGUAGES",learningCenter:"LEARNING CENTER",learningIntro:"A complete structure for learning, practicing, assessing and progressing.",courses:"COURSE",coursesText:"Structured programs with modules and lessons.",followUs:"FOLLOW US"},
+ht:{welcome:"BYENVINI",slogan:"FÒME JODI A POU DIRIJE DEMEN",digitalAcademy:"🎓 AKADEMI DIJITAL",heroText:"Yon platfòm fòmasyon modèn ki fèt pou devlope konesans, konpetans, disiplin, lidèchip ak zouti dijital.",explore:"🎓 DEKOUVRI KOU YO",studentSpace:"👤 ESPAS ELÈV",languages:"LANG",learningCenter:"SANT APRANTISAJ",learningIntro:"Yon sistèm konplè pou aprann, pratike, evalye ak avanse.",courses:"KOU",coursesText:"Pwogram òganize ak modil ak leson.",followUs:"SWIV NOU"}
+};
+function applyLanguage(lang){
+const dict=translations[lang]||translations.fr;
+document.documentElement.lang=lang;
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const k=el.dataset.i18n;
+if(dict[k]) el.textContent=dict[k];
 });
-closeModal.addEventListener("click",closeCourseModal);
-modal.addEventListener("click",(e)=>{if(e.target===modal) closeCourseModal();});
+document.querySelectorAll("[data-lang]").forEach(b=>{
+b.classList.toggle("active",b.dataset.lang===lang);
+});
+localStorage.setItem("promax-lang",lang);
+}
+document.querySelectorAll("[data-lang]").forEach(b=>{
+b.addEventListener("click",()=>applyLanguage(b.dataset.lang));
+});
+applyLanguage(localStorage.getItem("promax-lang")||"fr");
 </script>
 </body>
 </html>
