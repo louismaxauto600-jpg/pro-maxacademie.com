@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Payment & Certification Center</title>
+<meta name="description" content="PRO-MAX ACADÉMIE Payment & Certification Center — 5 peman × 1,000 HTG, NatCash, Digicel/MonCash, Bank Card, resi otomatik, balans ak sètifikasyon.">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --black3:#0d0500;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --border:rgba(255,121,0,.28);
+  --border2:rgba(255,121,0,.70);
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glow2:0 0 16px rgba(255,121,0,.70),0 0 40px rgba(255,121,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,121,0,.14),transparent 35%),
+    radial-gradient(circle at 80% 65%,rgba(255,121,0,.10),transparent 40%),
+    linear-gradient(180deg,#000 0%,#090400 45%,#000 100%);
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1180px,calc(100% - 28px));margin:auto}
+header{
+  position:sticky;top:0;z-index:999;background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);backdrop-filter:blur(12px);
+}
+.header-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:54px;height:54px;border-radius:50%;border:2px solid var(--orange);
+  display:grid;place-items:center;color:var(--orange);font-weight:1000;background:#000;box-shadow:var(--glow)
+}
+.brand-text strong{display:block;color:var(--orange);font-size:.95rem}
+.brand-text span{display:block;margin-top:5px;font-size:.57rem;font-weight:900;text-transform:uppercase;color:var(--orange3)}
+.back-btn{
+  padding:10px 16px;border:1px solid var(--border2);border-radius:999px;
+  color:var(--orange);font-size:.70rem;font-weight:1000;text-transform:uppercase
+}
+.back-btn:hover{background:var(--orange);color:#000}
+.hero{padding:58px 0 32px;text-align:center}
+.eyebrow{color:var(--orange);font-size:.70rem;font-weight:1000;letter-spacing:.16em;text-transform:uppercase}
+.hero h1{margin-top:12px;color:var(--orange);font-size:clamp(2.4rem,7vw,5rem);line-height:.92;text-transform:uppercase}
+.hero p{max-width:820px;margin:18px auto 0;color:var(--orange3);line-height:1.7}
+.rule{
+  max-width:900px;margin:24px auto 0;padding:16px 18px;border:1px solid var(--border2);
+  border-radius:15px;background:rgba(255,121,0,.06);color:var(--orange2);font-weight:1000;line-height:1.55
+}
+.dashboard{padding:35px 0 85px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{
+  border:1px solid var(--border);border-radius:20px;padding:24px;
+  background:linear-gradient(145deg,#000,#0b0400)
+}
+.card h2{color:var(--orange);font-size:1.18rem;text-transform:uppercase}
+.sub{margin-top:8px;font-size:.88rem;line-height:1.55}
+.field{margin-top:16px}
+label{display:block;margin-bottom:7px;color:var(--orange2);font-size:.74rem;font-weight:900;text-transform:uppercase}
+input,select,textarea{
+  width:100%;border:1px solid var(--border2);border-radius:12px;background:#000;
+  color:var(--orange3);padding:12px 13px;outline:none
+}
+input:focus,select:focus,textarea:focus{box-shadow:var(--glow);border-color:var(--orange)}
+textarea{min-height:96px;resize:vertical}
+.payment-methods{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.method-option{
+  border:1px solid var(--border);border-radius:14px;padding:14px;background:#050200;
+  cursor:pointer;display:flex;align-items:center;gap:9px;transition:.25s
+}
+.method-option:hover,.method-option.active{border-color:var(--orange);box-shadow:var(--glow)}
+.method-option input{width:auto}
+.method-option strong{color:var(--orange);font-size:.78rem}
+.method-option span{display:block;margin-top:3px;font-size:.66rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{
+  border:2px solid var(--orange);border-radius:999px;padding:11px 18px;
+  font-weight:1000;text-transform:uppercase;font-size:.72rem;cursor:pointer
+}
+.btn-primary{background:var(--orange);color:#000}
+.btn-secondary{background:#000;color:var(--orange)}
+.btn:hover{box-shadow:var(--glow2);transform:translateY(-1px)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.metric{border:1px solid var(--border);border-radius:15px;padding:16px;text-align:center;background:#050200}
+.metric strong{display:block;color:var(--orange);font-size:1.35rem}
+.metric span{display:block;margin-top:6px;font-size:.69rem;text-transform:uppercase;font-weight:900}
+.progress-wrap{margin-top:22px}
+.progress-track{height:16px;border:1px solid var(--border);border-radius:999px;background:#140700;overflow:hidden}
+.progress-bar{width:0;height:100%;background:var(--orange);transition:.3s ease}
+.progress-label{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:.78rem;font-weight:900}
+.installments{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.installment{border:1px solid var(--border);border-radius:14px;padding:13px 8px;text-align:center;background:#050200}
+.installment.paid{border-color:var(--orange);box-shadow:var(--glow)}
+.installment strong{display:block;color:var(--orange)}
+.installment span{display:block;margin-top:6px;font-size:.68rem}
+.status-box{margin-top:20px;padding:18px;border:1px solid var(--border2);border-radius:16px;background:#050200}
+.status-box strong{color:var(--orange);font-size:1.05rem}
+.status-box p{margin-top:8px;line-height:1.55;font-size:.86rem}
+.check-row{
+  display:flex;align-items:center;gap:10px;margin-top:13px;padding:13px;
+  border:1px solid var(--border);border-radius:12px;background:#050200
+}
+.check-row input{width:auto}
+.check-row label{margin:0;text-transform:none;font-size:.83rem;color:var(--orange3)}
+.full{grid-column:1/-1}
+.note{margin-top:18px;padding:14px;border-left:4px solid var(--orange);background:rgba(255,121,0,.06);line-height:1.6}
+.history{margin-top:20px;overflow:auto}
+table{width:100%;min-width:850px;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left;font-size:.82rem}
+th{color:var(--orange);text-transform:uppercase;background:#080300}
+td{color:var(--orange3)}
+.message-box{margin-top:18px;padding:18px;border:1px solid var(--border2);border-radius:16px;background:#000}
+.message-box strong{color:var(--orange)}
+.message-box pre{margin-top:10px;white-space:pre-wrap;word-break:break-word;font-family:inherit;line-height:1.6;color:var(--orange3)}
+footer{border-top:1px solid var(--border);padding:35px 0;text-align:center;background:#000}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .payment-methods{grid-template-columns:1fr}
+  .installments{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .header-inner{min-height:70px}
+  .brand-mark{width:46px;height:46px}
+  .brand-text strong{font-size:.80rem}
+  .brand-text span{font-size:.50rem}
+  .back-btn{padding:8px 10px;font-size:.61rem}
+  .metrics{grid-template-columns:1fr 1fr}
+  .installments{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="brand-mark">PM</div>
+      <div class="brand-text">
+        <strong>PRO-MAX ACADÉMIE</strong>
+        <span>Payment & Certification Center</span>
+      </div>
+    </div>
+    <a class="back-btn" href="../index.html">← Retounen nan Académie</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">BSS1815 PRO-MAX DMP</div>
+    <h1>Payment & Certification Center</h1>
+    <p>Jere enskripsyon, peman, balans, referans tranzaksyon, resi otomatik, istwa peman ak estati sètifika elèv yo nan yon sèl modil.</p>
+    <div class="rule">5 PEMAN × 1,000 HTG = 5,000 HTG TOTAL • SÈTIFIKA RETE BLOKE JISKASKE 5/5 FIN PEYE + KOU A FINI + EVALYASYON PASE</div>
+  </div>
+</section>
+
+<section class="dashboard">
+<div class="container grid">
+
+  <section class="card">
+    <h2>Enskripsyon Elèv</h2>
+    <p class="sub">Antre enfòmasyon elèv la anvan ou anrejistre premye peman an.</p>
+
+    <div class="field">
+      <label for="studentName">Non Elèv</label>
+      <input id="studentName" type="text" placeholder="Egzanp: Jean Pierre">
+    </div>
+
+    <div class="field">
+      <label for="courseName">Kou</label>
+      <select id="courseName">
+        <option value="Introduction à l’IA">Introduction à l’IA</option>
+        <option value="Création Digitale">Création Digitale</option>
+        <option value="Leadership Digital">Leadership Digital</option>
+        <option value="Automatisation">Automatisation</option>
+        <option value="Communication">Communication</option>
+        <option value="Innovation">Innovation</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="phone">Telefòn / WhatsApp</label>
+      <input id="phone" type="text" placeholder="+509 ...">
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="student@email.com">
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="saveStudentBtn">Sove Elèv</button>
+      <button class="btn btn-secondary" id="resetBtn">Reset</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Kontwòl Peman</h2>
+    <p class="sub">Chak peman nòmal se 1,000 HTG. Chwazi metòd la epi antre referans tranzaksyon an.</p>
+
+    <div class="metrics">
+      <div class="metric"><strong id="paidAmount">0 HTG</strong><span>Total Peye</span></div>
+      <div class="metric"><strong id="balanceAmount">5,000 HTG</strong><span>Balans</span></div>
+      <div class="metric"><strong id="paymentCount">0/5</strong><span>Peman</span></div>
+      <div class="metric"><strong id="certificateShort">🔒</strong><span>Sètifika</span></div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-label"><span id="progressText">0% peye</span><span>5,000 HTG total</span></div>
+    </div>
+
+    <div class="installments">
+      <div class="installment"><strong>1/5</strong><span>1,000 HTG</span></div>
+      <div class="installment"><strong>2/5</strong><span>1,000 HTG</span></div>
+      <div class="installment"><strong>3/5</strong><span>1,000 HTG</span></div>
+      <div class="installment"><strong>4/5</strong><span>1,000 HTG</span></div>
+      <div class="installment"><strong>5/5</strong><span>1,000 HTG</span></div>
+    </div>
+
+    <div class="field">
+      <label>Metòd Peman</label>
+      <div class="payment-methods" id="paymentMethods">
+        <label class="method-option active">
+          <input type="radio" name="paymentMethod" value="NatCash" checked>
+          <div><strong>NatCash</strong><span>Peman mobil</span></div>
+        </label>
+
+        <label class="method-option">
+          <input type="radio" name="paymentMethod" value="Digicel / MonCash">
+          <div><strong>Digicel / MonCash</strong><span>Peman mobil</span></div>
+        </label>
+
+        <label class="method-option">
+          <input type="radio" name="paymentMethod" value="Bank Card">
+          <div><strong>Bank Card</strong><span>Visa • Mastercard • Debit • Credit</span></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="referenceId">Transaction / Reference ID</label>
+      <input id="referenceId" type="text" placeholder="Egzanp: NC-123456789 / MC-987654321">
+    </div>
+
+    <div class="field">
+      <label for="paymentNote">Nòt Peman</label>
+      <textarea id="paymentNote" placeholder="Opsyonèl: mete yon nòt sou peman an..."></textarea>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="addPaymentBtn">+ Konfime 1,000 HTG</button>
+    </div>
+
+    <div class="status-box">
+      <strong id="certificateStatus">🔒 CERTIFICATE LOCKED</strong>
+      <p id="certificateReason">Elèv la dwe fini 5/5 peman yo, fini kou a epi pase evalyasyon an.</p>
+    </div>
+  </section>
+
+  <section class="card full">
+    <h2>Kondisyon Akademik</h2>
+    <p class="sub">Peman sèlman pa dwe bay sètifika. Sètifika a mande kondisyon finansye ak akademik.</p>
+
+    <div class="check-row">
+      <input id="courseCompleted" type="checkbox">
+      <label for="courseCompleted">Kou a fini</label>
+    </div>
+
+    <div class="check-row">
+      <input id="assessmentPassed" type="checkbox">
+      <label for="assessmentPassed">Evalyasyon an pase</label>
+    </div>
+
+    <div class="note"><strong>Règ sètifika:</strong> 5/5 peman fini + kou fini + evalyasyon pase = sètifika elijib.</div>
+  </section>
+
+  <section class="card full">
+    <h2>Payment History</h2>
+    <p class="sub">Chak peman konsève kantite, dat, metòd, referans, total peye ak balans.</p>
+
+    <div class="history">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Dat</th><th>Elèv</th><th>Kou</th><th>Peman</th>
+            <th>Metòd</th><th>Referans</th><th>Total Peye</th><th>Balans</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card full">
+    <h2>Mesaj Otomatik</h2>
+    <p class="sub">Apre chak peman, sistèm nan prepare yon mesaj elèv ak yon notifikasyon admin.</p>
+
+    <div class="message-box">
+      <strong>MESAJ ELÈV</strong>
+      <pre id="studentMessage">Pa gen peman anrejistre ankò.</pre>
+    </div>
+
+    <div class="message-box">
+      <strong>NOTIFIKASYON ADMIN</strong>
+      <pre id="adminMessage">Pa gen peman anrejistre ankò.</pre>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-secondary" id="copyStudentBtn">Kopye Mesaj Elèv</button>
+      <button class="btn btn-secondary" id="copyAdminBtn">Kopye Mesaj Admin</button>
+    </div>
+  </section>
+
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong style="color:var(--orange)">PRO-MAX ACADÉMIE</strong><br>
+    <span>Payment & Certification Center • BSS1815 PRO-MAX DMP</span>
+  </div>
+</footer>
+
+<script>
+const TOTAL_TUITION = 5000;
+const INSTALLMENT_AMOUNT = 1000;
+const MAX_PAYMENTS = 5;
+
+let student = {name:"",course:"",phone:"",email:""};
+let payments = [];
+
+const el = id => document.getElementById(id);
+
+function money(amount){
+  return Number(amount).toLocaleString("en-US") + " HTG";
+}
+
+function totalPaid(){
+  return payments.reduce((sum,payment)=>sum + payment.amount,0);
+}
+
+function remainingBalance(){
+  return Math.max(TOTAL_TUITION - totalPaid(),0);
+}
+
+function paymentCount(){
+  return payments.length;
+}
+
+function selectedPaymentMethod(){
+  const checked = document.querySelector('input[name="paymentMethod"]:checked');
+  return checked ? checked.value : "NatCash";
+}
+
+function certificateEligible(){
+  return totalPaid() >= TOTAL_TUITION &&
+         el("courseCompleted").checked &&
+         el("assessmentPassed").checked;
+}
+
+function updatePaymentMethodCards(){
+  document.querySelectorAll(".method-option").forEach(card=>{
+    const radio = card.querySelector("input");
+    card.classList.toggle("active",radio.checked);
+  });
+}
+
+document.querySelectorAll('input[name="paymentMethod"]').forEach(radio=>{
+  radio.addEventListener("change",updatePaymentMethodCards);
+});
+
+function updateInstallments(){
+  const boxes = [...document.querySelectorAll(".installment")];
+  boxes.forEach((box,index)=>{
+    box.classList.toggle("paid",index < paymentCount());
+  });
+}
+
+function updateDashboard(){
+  const paid = totalPaid();
+  const balance = remainingBalance();
+  const percentage = Math.min((paid / TOTAL_TUITION) * 100,100);
+
+  el("paidAmount").textContent = money(paid);
+  el("balanceAmount").textContent = money(balance);
+  el("paymentCount").textContent = Math.min(paymentCount(),MAX_PAYMENTS) + "/5";
+  el("progressBar").style.width = percentage + "%";
+  el("progressText").textContent = Math.round(percentage) + "% peye";
+
+  const eligible = certificateEligible();
+
+  el("certificateShort").textContent = eligible ? "🔓" : "🔒";
+  el("certificateStatus").textContent = eligible ? "🔓 CERTIFICATE ELIGIBLE" : "🔒 CERTIFICATE LOCKED";
+
+  if(eligible){
+    el("certificateReason").textContent = "Tout kondisyon yo ranpli. Sètifika a kapab debloke.";
+  } else if(paid < TOTAL_TUITION){
+    el("certificateReason").textContent = `Balans ki rete: ${money(balance)}. Peman: ${paymentCount()}/5.`;
+  } else if(!el("courseCompleted").checked){
+    el("certificateReason").textContent = "Peman yo fini, men kou a poko make kòm fini.";
+  } else {
+    el("certificateReason").textContent = "Peman yo fini ak kou a fini, men evalyasyon an poko pase.";
+  }
+
+  updateInstallments();
+}
+
+function saveStudent(){
+  student = {
+    name:el("studentName").value.trim(),
+    course:el("courseName").value,
+    phone:el("phone").value.trim(),
+    email:el("email").value.trim()
+  };
+
+  if(!student.name){
+    alert("Tanpri antre non elèv la.");
+    return;
+  }
+
+  localStorage.setItem("promaxPaymentStudent",JSON.stringify(student));
+  alert("Elèv la sove.");
+  renderHistory();
+  generateMessages();
+}
+
+function addPayment(){
+  if(!student.name){
+    alert("Sove elèv la anvan ou ajoute peman.");
+    return;
+  }
+
+  if(totalPaid() >= TOTAL_TUITION){
+    alert("Tout 5 peman yo deja fini.");
+    return;
+  }
+
+  const reference = el("referenceId").value.trim();
+
+  if(!reference){
+    alert("Tanpri antre Transaction / Reference ID.");
+    return;
+  }
+
+  const method = selectedPaymentMethod();
+
+  const duplicate = payments.some(payment =>
+    payment.reference.toLowerCase() === reference.toLowerCase()
+  );
+
+  if(duplicate){
+    alert("Referans tranzaksyon sa a deja itilize.");
+    return;
+  }
+
+  const payment = {
+    amount:INSTALLMENT_AMOUNT,
+    method,
+    reference,
+    note:el("paymentNote").value.trim(),
+    date:new Date().toLocaleString()
+  };
+
+  payments.push(payment);
+
+  localStorage.setItem("promaxPaymentHistory",JSON.stringify(payments));
+
+  el("referenceId").value = "";
+  el("paymentNote").value = "";
+
+  updateDashboard();
+  renderHistory();
+  generateMessages();
+}
+
+function renderHistory(){
+  const body = el("historyBody");
+  body.innerHTML = "";
+
+  let runningTotal = 0;
+
+  payments.forEach((payment,index)=>{
+    runningTotal += payment.amount;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${payment.date}</td>
+      <td>${student.name || "—"}</td>
+      <td>${student.course || "—"}</td>
+      <td>${index + 1}/5 — ${money(payment.amount)}</td>
+      <td>${payment.method}</td>
+      <td>${payment.reference}</td>
+      <td>${money(runningTotal)}</td>
+      <td>${money(Math.max(TOTAL_TUITION - runningTotal,0))}</td>
+    `;
+    body.appendChild(row);
+  });
+}
+
+function generateMessages(){
+  if(!payments.length){
+    el("studentMessage").textContent = "Pa gen peman anrejistre ankò.";
+    el("adminMessage").textContent = "Pa gen peman anrejistre ankò.";
+    return;
+  }
+
+  const lastPayment = payments[payments.length - 1];
+  const paid = totalPaid();
+  const balance = remainingBalance();
+  const count = paymentCount();
+
+  let studentText =
+`PRO-MAX ACADÉMIE
+PAYMENT CONFIRMATION
+
+Elèv: ${student.name || "—"}
+Kou: ${student.course || "—"}
+
+Peman: ${count}/5
+Kantite: ${money(lastPayment.amount)}
+Metòd: ${lastPayment.method}
+Reference ID: ${lastPayment.reference}
+Dat: ${lastPayment.date}
+
+Total peye: ${money(paid)}
+Balans ki rete: ${money(balance)}`;
+
+  if(count >= 5){
+    studentText += `
+
+Felisitasyon. Tout 5 peman yo fini.
+Sètifika a ap disponib sèlman apre kou a fini epi evalyasyon an pase.`;
+  } else {
+    studentText += `
+
+Mèsi paske ou kontinye avanse nan fòmasyon ou.`;
+  }
+
+  studentText += `
+
+DEVAN DEVAN NÈT™
+PRO-MAX ACADÉMIE
+BSS1815 PRO-MAX DMP`;
+
+  const adminText =
+`NOUVO PEMAN — PRO-MAX ACADÉMIE
+
+Elèv: ${student.name || "—"}
+Kou: ${student.course || "—"}
+Telefòn: ${student.phone || "—"}
+Email: ${student.email || "—"}
+
+Peman: ${count}/5
+Kantite: ${money(lastPayment.amount)}
+Metòd: ${lastPayment.method}
+Reference ID: ${lastPayment.reference}
+Dat: ${lastPayment.date}
+
+Total peye: ${money(paid)}
+Balans: ${money(balance)}
+
+Estati sètifika:
+${certificateEligible() ? "🔓 ELIGIBLE" : "🔒 LOCKED"}`;
+
+  el("studentMessage").textContent = studentText;
+  el("adminMessage").textContent = adminText;
+}
+
+function resetAll(){
+  const ok = confirm("Ou vle efase tout done elèv ak peman yo?");
+  if(!ok) return;
+
+  student = {name:"",course:"",phone:"",email:""};
+  payments = [];
+
+  localStorage.removeItem("promaxPaymentStudent");
+  localStorage.removeItem("promaxPaymentHistory");
+
+  el("studentName").value = "";
+  el("phone").value = "";
+  el("email").value = "";
+  el("referenceId").value = "";
+  el("paymentNote").value = "";
+  el("courseCompleted").checked = false;
+  el("assessmentPassed").checked = false;
+
+  updateDashboard();
+  renderHistory();
+  generateMessages();
+}
+
+async function copyText(id){
+  const text = el(id).textContent;
+
+  try{
+    await navigator.clipboard.writeText(text);
+    alert("Mesaj la kopye.");
+  } catch(error){
+    alert("Browser la pa pèmèt copy otomatik.");
+  }
+}
+
+function restoreData(){
+  const savedStudent = localStorage.getItem("promaxPaymentStudent");
+  const savedPayments = localStorage.getItem("promaxPaymentHistory");
+
+  if(savedStudent){
+    student = JSON.parse(savedStudent);
+    el("studentName").value = student.name || "";
+    el("courseName").value = student.course || "Introduction à l’IA";
+    el("phone").value = student.phone || "";
+    el("email").value = student.email || "";
+  } else {
+    student.course = el("courseName").value;
+  }
+
+  if(savedPayments){
+    payments = JSON.parse(savedPayments);
+  }
+
+  updateDashboard();
+  renderHistory();
+  generateMessages();
+  updatePaymentMethodCards();
+}
+
+el("saveStudentBtn").addEventListener("click",saveStudent);
+el("addPaymentBtn").addEventListener("click",addPayment);
+el("resetBtn").addEventListener("click",resetAll);
+el("courseCompleted").addEventListener("change",()=>{
+  updateDashboard();
+  generateMessages();
+});
+el("assessmentPassed").addEventListener("change",()=>{
+  updateDashboard();
+  generateMessages();
+});
+el("copyStudentBtn").addEventListener("click",()=>copyText("studentMessage"));
+el("copyAdminBtn").addEventListener("click",()=>copyText("adminMessage"));
+
+restoreData();
+</script>
+
+</body>
+</html>
+
