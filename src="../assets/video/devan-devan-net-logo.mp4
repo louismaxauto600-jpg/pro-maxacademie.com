@@ -1,1 +1,2087 @@
-<source src="../assets/video/devan-devan-net-logo.mp4" type="video/mp4">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DEVAN DEVAN NÈT™ | Le Mouvement de l’Ère IA</title>
+
+<meta name="description" content="DEVAN DEVAN NÈT™ — Le Mouvement de l’Ère IA intégré à PRO-MAX ACADÉMIE, au sein de BSS1815 PRO-MAX DMP.">
+<meta name="theme-color" content="#000000">
+
+<style>
+/* =========================================================
+   DEVAN DEVAN NÈT™
+   LE MOUVEMENT DE L'ÈRE IA
+   ORANGE + BLACK ONLY
+========================================================= */
+
+:root{
+  --black:#000000;
+  --black-soft:#080300;
+  --black-card:#0d0500;
+
+  --orange:#ff7900;
+  --orange-2:#ff8c1a;
+  --orange-3:#ffad4d;
+  --orange-dark:#9e4300;
+
+  --border:rgba(255,121,0,.30);
+  --border-strong:rgba(255,121,0,.65);
+
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glow-strong:
+      0 0 15px rgba(255,121,0,.65),
+      0 0 35px rgba(255,121,0,.35);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,121,0,.15),transparent 35%),
+    radial-gradient(circle at 80% 65%,rgba(255,121,0,.10),transparent 40%),
+    linear-gradient(180deg,#000000 0%,#090400 48%,#000000 100%);
+  color:var(--orange-3);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,121,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.035) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+img,
+video{
+  max-width:100%;
+}
+
+.container{
+  width:min(1220px,calc(100% - 28px));
+  margin:auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+  padding:8px 14px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+  background:#000;
+  color:var(--orange-2);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(0,0,0,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:2px solid var(--orange);
+  display:grid;
+  place-items:center;
+  background:#000;
+  box-shadow:var(--glow);
+  color:var(--orange);
+  font-weight:1000;
+  font-size:1rem;
+}
+
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:.95rem;
+  line-height:1;
+  letter-spacing:.04em;
+}
+
+.brand-text span{
+  display:block;
+  color:var(--orange-3);
+  font-size:.58rem;
+  margin-top:5px;
+  text-transform:uppercase;
+  font-weight:900;
+}
+
+.desktop-nav{
+  display:flex;
+  align-items:center;
+  gap:3px;
+}
+
+.nav-link{
+  padding:10px 10px;
+  border-radius:9px;
+  color:var(--orange-3);
+  font-size:.72rem;
+  text-transform:uppercase;
+  font-weight:950;
+  transition:.25s ease;
+}
+
+.nav-link:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  border:0;
+  border-radius:999px;
+  padding:8px 10px;
+  background:#000;
+  color:var(--orange-3);
+  font-size:.66rem;
+  font-weight:950;
+  cursor:pointer;
+}
+
+.lang-btn.active{
+  color:#000;
+  background:var(--orange);
+}
+
+.menu-btn{
+  display:none;
+  width:45px;
+  height:45px;
+  border:1px solid var(--border);
+  background:#000;
+  color:var(--orange);
+  border-radius:10px;
+  cursor:pointer;
+  font-size:1.2rem;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav{
+  display:none;
+  border-top:1px solid var(--border);
+  background:#000;
+  padding:12px 14px 18px;
+}
+
+.mobile-nav.open{
+  display:block;
+}
+
+.mobile-nav a{
+  display:block;
+  padding:13px;
+  margin-bottom:5px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  color:var(--orange-3);
+  text-transform:uppercase;
+  font-size:.75rem;
+  font-weight:900;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  min-height:90vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+  padding:65px 0 80px;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid var(--border-strong);
+  background:rgba(255,121,0,.08);
+  border-radius:999px;
+  padding:9px 15px;
+  color:var(--orange);
+  font-size:.72rem;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+
+.hero-title{
+  margin-top:20px;
+  color:var(--orange);
+  text-transform:uppercase;
+  font-size:clamp(3.4rem,7vw,6.7rem);
+  line-height:.83;
+  font-weight:1000;
+  letter-spacing:-.06em;
+  text-shadow:0 0 35px rgba(255,121,0,.25);
+}
+
+.hero-title span{
+  display:block;
+  margin-top:15px;
+  color:var(--orange-3);
+  font-size:.27em;
+  letter-spacing:.06em;
+  line-height:1.05;
+}
+
+.hero-tagline{
+  margin-top:23px;
+  font-size:1.05rem;
+  line-height:1.7;
+  color:var(--orange-3);
+  max-width:650px;
+}
+
+.hero-tagline strong{
+  color:var(--orange);
+}
+
+.hero-quote{
+  margin-top:22px;
+  padding:16px 19px;
+  border-left:4px solid var(--orange);
+  background:linear-gradient(90deg,rgba(255,121,0,.13),transparent);
+  color:var(--orange-2);
+  font-size:1rem;
+  font-weight:900;
+  line-height:1.55;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:999px;
+  border:2px solid var(--orange);
+  text-transform:uppercase;
+  font-size:.74rem;
+  font-weight:1000;
+  letter-spacing:.05em;
+  transition:.25s ease;
+}
+
+.btn-primary{
+  background:var(--orange);
+  color:#000;
+  box-shadow:var(--glow);
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--glow-strong);
+}
+
+.btn-secondary{
+  background:#000;
+  color:var(--orange);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,121,0,.10);
+}
+
+
+/* =========================================================
+   HERO VIDEO
+========================================================= */
+
+.hero-media{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.video-orbit{
+  position:relative;
+  width:min(100%,560px);
+  aspect-ratio:1/1;
+  display:grid;
+  place-items:center;
+}
+
+.video-orbit::before,
+.video-orbit::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid var(--border);
+  animation:orbitSpin 12s linear infinite;
+}
+
+.video-orbit::before{
+  inset:2%;
+  border-top:3px solid var(--orange);
+  border-right-color:transparent;
+}
+
+.video-orbit::after{
+  inset:9%;
+  animation-direction:reverse;
+  animation-duration:8s;
+  border-bottom:2px solid var(--orange-2);
+  border-left-color:transparent;
+}
+
+.logo-video{
+  position:relative;
+  z-index:2;
+  width:82%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid var(--orange);
+  background:#000;
+  box-shadow:
+    0 0 25px rgba(255,121,0,.35),
+    0 0 70px rgba(255,121,0,.18);
+}
+
+.orbit-dot{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 0 14px var(--orange);
+  z-index:5;
+}
+
+.dot-1{
+  top:8%;
+  right:19%;
+  animation:pulse 1.6s infinite;
+}
+
+.dot-2{
+  bottom:13%;
+  left:10%;
+  animation:pulse 2.2s infinite;
+}
+
+
+/* =========================================================
+   SECTION GENERAL
+========================================================= */
+
+section{
+  scroll-margin-top:100px;
+}
+
+.section{
+  padding:90px 0;
+  border-top:1px solid rgba(255,121,0,.10);
+}
+
+.section-head{
+  max-width:850px;
+  margin-bottom:40px;
+}
+
+.eyebrow{
+  color:var(--orange);
+  text-transform:uppercase;
+  font-size:.7rem;
+  font-weight:1000;
+  letter-spacing:.15em;
+}
+
+.section-title{
+  margin-top:10px;
+  color:var(--orange);
+  font-size:clamp(2rem,5vw,4rem);
+  text-transform:uppercase;
+  line-height:.95;
+  font-weight:1000;
+}
+
+.section-desc{
+  margin-top:16px;
+  color:var(--orange-3);
+  line-height:1.75;
+  font-size:1rem;
+}
+
+
+/* =========================================================
+   FIVE PILLARS
+========================================================= */
+
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.pillar-card{
+  position:relative;
+  overflow:hidden;
+  min-height:235px;
+  padding:24px 18px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at top,rgba(255,121,0,.14),transparent 47%),
+    #050200;
+  transition:.3s ease;
+}
+
+.pillar-card::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:3px;
+  background:var(--orange);
+  transform:scaleX(0);
+  transition:.3s ease;
+  transform-origin:left;
+}
+
+.pillar-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.pillar-card:hover::after{
+  transform:scaleX(1);
+}
+
+.pillar-number{
+  font-size:2.5rem;
+  font-weight:1000;
+  color:var(--orange-dark);
+}
+
+.pillar-icon{
+  margin-top:16px;
+  font-size:2rem;
+  filter:grayscale(1) sepia(1) saturate(8);
+}
+
+.pillar-card h3{
+  margin-top:16px;
+  color:var(--orange);
+  font-size:.92rem;
+  text-transform:uppercase;
+}
+
+.pillar-card p{
+  margin-top:10px;
+  color:var(--orange-3);
+  font-size:.86rem;
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   MANIFESTO
+========================================================= */
+
+.manifesto-layout{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:35px;
+  align-items:start;
+}
+
+.manifesto-statement{
+  position:sticky;
+  top:120px;
+  border:1px solid var(--border-strong);
+  border-radius:20px;
+  padding:30px;
+  background:
+    linear-gradient(145deg,rgba(255,121,0,.14),rgba(0,0,0,.95));
+  box-shadow:var(--glow);
+}
+
+.manifesto-statement strong{
+  display:block;
+  color:var(--orange);
+  font-size:clamp(1.8rem,4vw,3.3rem);
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.manifesto-statement p{
+  margin-top:20px;
+  color:var(--orange-3);
+  line-height:1.7;
+}
+
+.manifesto-content{
+  display:grid;
+  gap:14px;
+}
+
+.manifesto-item{
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:rgba(0,0,0,.65);
+}
+
+.manifesto-item h3{
+  color:var(--orange);
+  text-transform:uppercase;
+  font-size:.95rem;
+}
+
+.manifesto-item p{
+  margin-top:9px;
+  color:var(--orange-3);
+  line-height:1.7;
+  font-size:.94rem;
+}
+
+
+/* =========================================================
+   AI SECTION
+========================================================= */
+
+.ai-panel{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border-strong);
+  border-radius:25px;
+  padding:45px;
+  background:
+    radial-gradient(circle at 80% 30%,rgba(255,121,0,.17),transparent 28%),
+    linear-gradient(135deg,#000,rgba(255,121,0,.07),#000);
+}
+
+.ai-panel::before{
+  content:"AI";
+  position:absolute;
+  right:5%;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:clamp(8rem,22vw,18rem);
+  font-weight:1000;
+  color:rgba(255,121,0,.035);
+  pointer-events:none;
+}
+
+.ai-content{
+  position:relative;
+  z-index:2;
+  max-width:770px;
+}
+
+.ai-content h2{
+  color:var(--orange);
+  font-size:clamp(2rem,5vw,4rem);
+  text-transform:uppercase;
+  line-height:.95;
+}
+
+.ai-content p{
+  color:var(--orange-3);
+  margin-top:18px;
+  line-height:1.75;
+}
+
+.ai-list{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.ai-point{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  color:var(--orange-2);
+  background:#000;
+  font-size:.86rem;
+  font-weight:900;
+}
+
+
+/* =========================================================
+   FORMATION
+========================================================= */
+
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.course-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px;
+  background:linear-gradient(145deg,#000,#0c0500);
+  transition:.3s ease;
+}
+
+.course-card:hover{
+  border-color:var(--orange);
+  transform:translateY(-5px);
+  box-shadow:var(--glow);
+}
+
+.course-badge{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--orange-dark);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.course-card h3{
+  color:var(--orange);
+  margin-top:18px;
+  text-transform:uppercase;
+  font-size:1.13rem;
+}
+
+.course-card p{
+  margin-top:12px;
+  color:var(--orange-3);
+  font-size:.9rem;
+  line-height:1.65;
+}
+
+.course-link{
+  margin-top:20px;
+  display:inline-flex;
+  color:var(--orange);
+  text-transform:uppercase;
+  font-size:.72rem;
+  font-weight:1000;
+}
+
+
+/* =========================================================
+   COMMUNITY
+========================================================= */
+
+.community{
+  text-align:center;
+}
+
+.hashtag{
+  display:inline-block;
+  margin-top:25px;
+  color:var(--orange);
+  font-size:clamp(2rem,7vw,5rem);
+  font-weight:1000;
+  letter-spacing:-.05em;
+  text-shadow:0 0 25px rgba(255,121,0,.35);
+}
+
+.community-actions{
+  margin-top:28px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.media-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.media-card{
+  min-height:210px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:23px;
+  background:
+    linear-gradient(180deg,rgba(255,121,0,.09),transparent),
+    #000;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  transition:.25s ease;
+}
+
+.media-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.media-icon{
+  margin-bottom:auto;
+  font-size:2rem;
+}
+
+.media-card h3{
+  color:var(--orange);
+  text-transform:uppercase;
+}
+
+.media-card p{
+  margin-top:9px;
+  color:var(--orange-3);
+  line-height:1.5;
+  font-size:.85rem;
+}
+
+
+/* =========================================================
+   PRO-MAX CONNECTION
+========================================================= */
+
+.connection{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--border-strong);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.connection-box{
+  min-height:190px;
+  padding:28px 20px;
+  background:#000;
+  border-right:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+
+.connection-box:last-child{
+  border-right:0;
+}
+
+.connection-box strong{
+  color:var(--orange);
+  text-transform:uppercase;
+  font-size:1rem;
+}
+
+.connection-box span{
+  margin-top:8px;
+  color:var(--orange-3);
+  font-size:.82rem;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta{
+  padding:90px 0 100px;
+  text-align:center;
+}
+
+.final-cta-box{
+  position:relative;
+  overflow:hidden;
+  padding:60px 25px;
+  border:1px solid var(--orange);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at center,rgba(255,121,0,.16),transparent 45%),
+    #000;
+  box-shadow:var(--glow);
+}
+
+.final-cta h2{
+  color:var(--orange);
+  font-size:clamp(2.8rem,8vw,6rem);
+  line-height:.85;
+  text-transform:uppercase;
+  font-weight:1000;
+}
+
+.final-cta h2 span{
+  display:block;
+  margin-top:16px;
+  color:var(--orange-3);
+  font-size:.28em;
+  letter-spacing:.08em;
+}
+
+.final-cta p{
+  margin:25px auto 0;
+  max-width:720px;
+  color:var(--orange-3);
+  line-height:1.75;
+}
+
+.final-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  border-top:1px solid var(--border);
+  background:#000;
+  padding:40px 0;
+}
+
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+}
+
+.footer-brand{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-brand small{
+  display:block;
+  color:var(--orange-3);
+  margin-top:7px;
+  line-height:1.5;
+}
+
+.footer-right{
+  text-align:right;
+  color:var(--orange-2);
+  font-size:.75rem;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes orbitSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(.75);
+    opacity:.45;
+  }
+  50%{
+    transform:scale(1.4);
+    opacity:1;
+  }
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .desktop-nav{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding-top:55px;
+  }
+
+  .hero-tagline{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-quote{
+    max-width:720px;
+    margin-left:auto;
+    margin-right:auto;
+    border-left:1px solid var(--orange);
+  }
+
+  .hero-media{
+    margin-top:15px;
+  }
+
+  .pillars-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .manifesto-layout{
+    grid-template-columns:1fr;
+  }
+
+  .manifesto-statement{
+    position:relative;
+    top:auto;
+  }
+
+  .course-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .media-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .connection{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .connection-box{
+    border-bottom:1px solid var(--border);
+  }
+}
+
+
+@media(max-width:650px){
+
+  .header-inner{
+    min-height:70px;
+  }
+
+  .brand-mark{
+    width:45px;
+    height:45px;
+  }
+
+  .brand-text strong{
+    font-size:.82rem;
+  }
+
+  .brand-text span{
+    font-size:.52rem;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:50px 0 70px;
+  }
+
+  .hero-title{
+    font-size:clamp(3.1rem,18vw,5rem);
+  }
+
+  .video-orbit{
+    width:100%;
+  }
+
+  .section{
+    padding:70px 0;
+  }
+
+  .pillars-grid,
+  .course-grid,
+  .media-grid,
+  .connection,
+  .ai-list{
+    grid-template-columns:1fr;
+  }
+
+  .connection-box{
+    border-right:0;
+  }
+
+  .ai-panel{
+    padding:30px 22px;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .footer-right{
+    text-align:center;
+  }
+
+  .lang-switch{
+    display:none;
+  }
+
+  .hashtag{
+    font-size:clamp(2rem,13vw,4rem);
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ========================================================
+     TOP BAR
+======================================================== -->
+
+<div class="topbar"
+     data-fr="BSS1815 PRO-MAX DMP • PRO-MAX ACADÉMIE • MOUVEMENT DDN"
+     data-ht="BSS1815 PRO-MAX DMP • PRO-MAX ACADÉMIE • MOUVMAN DDN"
+     data-en="BSS1815 PRO-MAX DMP • PRO-MAX ACADEMY • DDN MOVEMENT">
+  BSS1815 PRO-MAX DMP • PRO-MAX ACADÉMIE • MOUVEMENT DDN
+</div>
+
+
+<!-- ========================================================
+     HEADER
+======================================================== -->
+
+<header>
+
+<div class="container header-inner">
+
+  <a class="brand" href="../index.html">
+
+    <div class="brand-mark">DDN</div>
+
+    <div class="brand-text">
+      <strong>DEVAN DEVAN NÈT™</strong>
+      <span
+        data-fr="Le Mouvement de l’Ère IA"
+        data-ht="Mouvman Epòk IA a"
+        data-en="The AI Era Movement">
+        Le Mouvement de l’Ère IA
+      </span>
+    </div>
+
+  </a>
+
+
+  <nav class="desktop-nav">
+
+    <a href="#mouvement" class="nav-link"
+       data-fr="Mouvement"
+       data-ht="Mouvman"
+       data-en="Movement">
+       Mouvement
+    </a>
+
+    <a href="#piliers" class="nav-link"
+       data-fr="5 Piliers"
+       data-ht="5 Pilye"
+       data-en="5 Pillars">
+       5 Piliers
+    </a>
+
+    <a href="#manifeste" class="nav-link"
+       data-fr="Manifeste"
+       data-ht="Manifès"
+       data-en="Manifesto">
+       Manifeste
+    </a>
+
+    <a href="#ia" class="nav-link">IA</a>
+
+    <a href="#formation" class="nav-link"
+       data-fr="Formation"
+       data-ht="Fòmasyon"
+       data-en="Training">
+       Formation
+    </a>
+
+    <a href="#communaute" class="nav-link"
+       data-fr="Communauté"
+       data-ht="Kominote"
+       data-en="Community">
+       Communauté
+    </a>
+
+    <a href="#media" class="nav-link">Media</a>
+
+  </nav>
+
+
+  <div class="lang-switch">
+
+    <button class="lang-btn" data-lang="ht">KRE</button>
+    <button class="lang-btn active" data-lang="fr">FRA</button>
+    <button class="lang-btn" data-lang="en">ENG</button>
+
+  </div>
+
+
+  <button class="menu-btn" id="menuBtn" aria-label="Menu">
+    ☰
+  </button>
+
+</div>
+
+
+<div class="mobile-nav" id="mobileNav">
+
+  <a href="#mouvement">MOUVEMENT</a>
+  <a href="#piliers">5 PILIERS</a>
+  <a href="#manifeste">MANIFESTE</a>
+  <a href="#ia">INTELLIGENCE ARTIFICIELLE</a>
+  <a href="#formation">FORMATION</a>
+  <a href="#communaute">COMMUNAUTÉ</a>
+  <a href="#media">MEDIA CENTER</a>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ========================================================
+     HERO
+======================================================== -->
+
+<section id="mouvement">
+
+<div class="container hero">
+
+  <div class="hero-copy reveal">
+
+    <div class="hero-badge"
+         data-fr="LE MOUVEMENT DE L’ÈRE IA"
+         data-ht="MOUVMAN EPÒK IA A"
+         data-en="THE AI ERA MOVEMENT">
+      LE MOUVEMENT DE L’ÈRE IA
+    </div>
+
+
+    <h1 class="hero-title">
+      DEVAN<br>
+      DEVAN<br>
+      NÈT™
+
+      <span
+        data-fr="Une vision. Une mentalité. Un mouvement."
+        data-ht="Yon vizyon. Yon mantalite. Yon mouvman."
+        data-en="One vision. One mindset. One movement.">
+        Une vision. Une mentalité. Un mouvement.
+      </span>
+
+    </h1>
+
+
+    <p class="hero-tagline"
+       data-fr="DEVAN DEVAN NÈT™ est le mouvement de l’ère IA intégré à PRO-MAX ACADÉMIE. Nous apprenons l’IA, nous créons avec elle et nous avançons avec notre époque."
+       data-ht="DEVAN DEVAN NÈT™ se mouvman epòk IA a ki entegre nan PRO-MAX ACADÉMIE. Nou aprann IA, nou kreye avèk li epi nou avanse ak epòk nou an."
+       data-en="DEVAN DEVAN NÈT™ is the AI-era movement integrated into PRO-MAX ACADEMY. We learn AI, create with it, and move forward with our time.">
+
+      DEVAN DEVAN NÈT™ est le mouvement de l’ère IA intégré à
+      <strong>PRO-MAX ACADÉMIE</strong>.
+      Nous apprenons l’IA, nous créons avec elle et nous avançons avec notre époque.
+
+    </p>
+
+
+    <div class="hero-quote"
+         data-fr="« L’IA ne nous attendra pas. Alors, avançons avec elle. »"
+         data-ht="« IA pap tann nou. Se pou sa nou dwe avanse avèk li. »"
+         data-en="“AI will not wait for us. So let us move forward with it.”">
+
+      « L’IA ne nous attendra pas. Alors, avançons avec elle. »
+
+    </div>
+
+
+    <div class="hero-actions">
+
+      <a href="#manifeste" class="btn btn-primary"
+         data-fr="Découvrir le manifeste"
+         data-ht="Dekouvri manifès la"
+         data-en="Discover the manifesto">
+        Découvrir le manifeste
+      </a>
+
+      <a href="#formation" class="btn btn-secondary"
+         data-fr="Explorer les formations"
+         data-ht="Eksplore fòmasyon yo"
+         data-en="Explore training">
+        Explorer les formations
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="hero-media reveal">
+
+    <div class="video-orbit">
+
+      <span class="orbit-dot dot-1"></span>
+      <span class="orbit-dot dot-2"></span>
+
+      <video
+        class="logo-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata">
+
+        <source
+          src="../assets/video/devan-devan-net-logo.mp4"
+          type="video/mp4">
+
+      </video>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     FIVE PILLARS
+======================================================== -->
+
+<section class="section" id="piliers">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">DDN CORE SYSTEM</div>
+
+    <h2 class="section-title"
+        data-fr="LES 5 PILIERS DDN"
+        data-ht="5 PILYE DDN YO"
+        data-en="THE 5 DDN PILLARS">
+
+      LES 5 PILIERS DDN
+
+    </h2>
+
+    <p class="section-desc"
+       data-fr="La philosophie DDN repose sur cinq piliers qui préparent l’humain à comprendre, utiliser et maîtriser les technologies de demain."
+       data-ht="Filozofi DDN lan chita sou senk pilye ki prepare moun pou konprann, itilize epi metrize teknoloji demen yo."
+       data-en="The DDN philosophy is built on five pillars that prepare people to understand, use and master the technologies of tomorrow.">
+
+      La philosophie DDN repose sur cinq piliers qui préparent
+      l’humain à comprendre, utiliser et maîtriser les technologies de demain.
+
+    </p>
+
+  </div>
+
+
+  <div class="pillars-grid">
+
+    <article class="pillar-card reveal">
+      <div class="pillar-number">01</div>
+      <div class="pillar-icon">◉</div>
+      <h3>VISION</h3>
+      <p
+        data-fr="Voir plus loin que le présent et anticiper les transformations de demain."
+        data-ht="Gade pi lwen pase jodi a epi prepare pou transfòmasyon demen."
+        data-en="Look beyond the present and anticipate tomorrow's transformations.">
+        Voir plus loin que le présent et anticiper les transformations de demain.
+      </p>
+    </article>
+
+
+    <article class="pillar-card reveal">
+      <div class="pillar-number">02</div>
+      <div class="pillar-icon">⌘</div>
+      <h3
+        data-fr="CONNAISSANCE"
+        data-ht="KONESANS"
+        data-en="KNOWLEDGE">
+        CONNAISSANCE
+      </h3>
+      <p
+        data-fr="Apprendre continuellement dans un monde où la connaissance évolue sans cesse."
+        data-ht="Aprann san rete nan yon mond kote konesans ap evolye chak jou."
+        data-en="Keep learning in a world where knowledge constantly evolves.">
+        Apprendre continuellement dans un monde où la connaissance évolue sans cesse.
+      </p>
+    </article>
+
+
+    <article class="pillar-card reveal">
+      <div class="pillar-number">03</div>
+      <div class="pillar-icon">AI</div>
+      <h3
+        data-fr="INTELLIGENCE ARTIFICIELLE"
+        data-ht="ENTELIJANS ATIFISYÈL"
+        data-en="ARTIFICIAL INTELLIGENCE">
+        INTELLIGENCE ARTIFICIELLE
+      </h3>
+      <p
+        data-fr="Utiliser l’IA comme outil d’apprentissage, de productivité et de création."
+        data-ht="Sèvi ak IA kòm zouti pou aprann, travay pi byen epi kreye."
+        data-en="Use AI as a tool for learning, productivity and creation.">
+        Utiliser l’IA comme outil d’apprentissage, de productivité et de création.
+      </p>
+    </article>
+
+
+    <article class="pillar-card reveal">
+      <div class="pillar-number">04</div>
+      <div class="pillar-icon">✦</div>
+      <h3>INNOVATION</h3>
+      <p
+        data-fr="Imaginer, expérimenter et construire des solutions nouvelles."
+        data-ht="Imajine, teste epi konstwi nouvo solisyon."
+        data-en="Imagine, experiment and build new solutions.">
+        Imaginer, expérimenter et construire des solutions nouvelles.
+      </p>
+    </article>
+
+
+    <article class="pillar-card reveal">
+      <div class="pillar-number">05</div>
+      <div class="pillar-icon">↗</div>
+      <h3>PROGRESSION</h3>
+      <p
+        data-fr="Avancer continuellement, apprendre de chaque étape et construire l’avenir."
+        data-ht="Toujou avanse, aprann nan chak etap epi konstwi lavni."
+        data-en="Keep moving forward, learn from every step and build the future.">
+        Avancer continuellement, apprendre de chaque étape et construire l’avenir.
+      </p>
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     MANIFESTO
+======================================================== -->
+
+<section class="section" id="manifeste">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">NOTRE CONVICTION</div>
+
+    <h2 class="section-title"
+        data-fr="MANIFESTE OFFICIEL DDN"
+        data-ht="MANIFÈS OFISYÈL DDN"
+        data-en="OFFICIAL DDN MANIFESTO">
+
+      MANIFESTE OFFICIEL DDN
+
+    </h2>
+
+  </div>
+
+
+  <div class="manifesto-layout">
+
+    <aside class="manifesto-statement reveal">
+
+      <strong>
+        NOUS AVONS<br>
+        CHOISI<br>
+        D’AVANCER.
+      </strong>
+
+      <p>
+        DEVAN DEVAN NÈT™ n’est pas seulement une phrase.
+        C’est une direction, une mentalité et une réponse à la transformation
+        technologique de notre époque.
+      </p>
+
+    </aside>
+
+
+    <div class="manifesto-content">
+
+      <article class="manifesto-item reveal">
+        <h3>01 — LE MONDE CHANGE</h3>
+        <p>
+          L’intelligence artificielle transforme notre manière d’apprendre,
+          de travailler, de communiquer, de créer, d’entreprendre et de résoudre
+          des problèmes.
+        </p>
+      </article>
+
+
+      <article class="manifesto-item reveal">
+        <h3>02 — NOUS REFUSONS L’IMMOBILISME</h3>
+        <p>
+          Nous refusons de regarder la révolution technologique passer devant
+          nous sans nous préparer. Nous choisissons l’apprentissage,
+          l’adaptation et l’action.
+        </p>
+      </article>
+
+
+      <article class="manifesto-item reveal">
+        <h3>03 — L’HUMAIN + L’IA</h3>
+        <p>
+          Nous croyons à un avenir dans lequel la connaissance humaine et
+          l’intelligence artificielle travaillent ensemble pour augmenter
+          nos capacités et créer de nouvelles possibilités.
+        </p>
+      </article>
+
+
+      <article class="manifesto-item reveal">
+        <h3>04 — APPRENDRE. CRÉER. INNOVER.</h3>
+        <p>
+          Notre objectif est simple : comprendre l’IA, apprendre à l’utiliser,
+          développer nos compétences et transformer la connaissance en action.
+        </p>
+      </article>
+
+
+      <article class="manifesto-item reveal">
+        <h3>05 — NOTRE DIRECTION</h3>
+        <p>
+          Nous savons d’où nous venons. Nous observons où va le monde.
+          Notre direction reste claire : DEVAN DEVAN NÈT™.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     AI
+======================================================== -->
+
+<section class="section" id="ia">
+
+<div class="container">
+
+  <div class="ai-panel reveal">
+
+    <div class="ai-content">
+
+      <div class="eyebrow">DDN + INTELLIGENCE ARTIFICIELLE</div>
+
+      <h2>
+        L’IA NE NOUS<br>
+        ATTENDRA PAS.
+      </h2>
+
+      <p>
+        DDN prépare une génération capable de comprendre les nouveaux outils,
+        d’utiliser l’intelligence artificielle de manière responsable et
+        d’en faire un accélérateur de connaissance, de productivité,
+        de créativité et d’innovation.
+      </p>
+
+
+      <div class="ai-list">
+
+        <div class="ai-point">APPRENDRE AVEC L’IA</div>
+        <div class="ai-point">CRÉER AVEC L’IA</div>
+        <div class="ai-point">TRAVAILLER AVEC L’IA</div>
+        <div class="ai-point">INNOVER AVEC L’IA</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     FORMATION
+======================================================== -->
+
+<section class="section" id="formation">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">POWERED BY PRO-MAX ACADÉMIE</div>
+
+    <h2 class="section-title">
+      DDN FORMATION
+    </h2>
+
+    <p class="section-desc">
+      Le mouvement inspire. PRO-MAX ACADÉMIE transforme cette inspiration
+      en compétences pratiques pour l’ère numérique.
+    </p>
+
+  </div>
+
+
+  <div class="course-grid">
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 01</span>
+      <h3>INTRODUCTION À L’IA</h3>
+      <p>
+        Comprendre l’intelligence artificielle, ses usages,
+        ses possibilités et son impact sur notre époque.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 02</span>
+      <h3>IA & PRODUCTIVITÉ</h3>
+      <p>
+        Utiliser les outils intelligents pour organiser,
+        accélérer et améliorer son travail.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 03</span>
+      <h3>CRÉATION DIGITALE</h3>
+      <p>
+        Texte, image, vidéo, audio et contenu numérique
+        assistés par intelligence artificielle.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 04</span>
+      <h3>AUTOMATISATION</h3>
+      <p>
+        Découvrir comment automatiser les tâches répétitives
+        et construire des workflows plus intelligents.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 05</span>
+      <h3>LEADERSHIP DIGITAL</h3>
+      <p>
+        Développer une mentalité capable de diriger,
+        décider et évoluer dans un environnement technologique.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+
+    <article class="course-card reveal">
+      <span class="course-badge">DDN 06</span>
+      <h3>INNOVATION & FUTUR</h3>
+      <p>
+        Transformer les idées en projets et développer
+        les compétences nécessaires pour construire demain.
+      </p>
+      <a href="#" class="course-link">EXPLORER →</a>
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     COMMUNITY
+======================================================== -->
+
+<section class="section community" id="communaute">
+
+<div class="container">
+
+  <div class="section-head reveal" style="margin-left:auto;margin-right:auto;">
+
+    <div class="eyebrow">REJOINDRE LE MOUVEMENT</div>
+
+    <h2 class="section-title">
+      LA COMMUNAUTÉ DDN
+    </h2>
+
+    <p class="section-desc">
+      Une communauté pour apprendre, partager, créer,
+      collaborer et avancer ensemble dans l’ère de l’intelligence artificielle.
+    </p>
+
+  </div>
+
+
+  <div class="hashtag reveal">
+    #DevanDevanNèt
+  </div>
+
+
+  <div class="community-actions reveal">
+
+    <a href="#" class="btn btn-primary">
+      REJOINDRE DDN
+    </a>
+
+    <a href="#media" class="btn btn-secondary">
+      DÉCOUVRIR LES MÉDIAS
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     MEDIA CENTER
+======================================================== -->
+
+<section class="section" id="media">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">DDN MEDIA CENTER</div>
+
+    <h2 class="section-title">
+      LE MOUVEMENT EN ACTION
+    </h2>
+
+    <p class="section-desc">
+      Vidéos, campagnes, messages, podcasts et contenus
+      qui donnent une voix au mouvement DEVAN DEVAN NÈT™.
+    </p>
+
+  </div>
+
+
+  <div class="media-grid">
+
+    <article class="media-card reveal">
+      <div class="media-icon">▶</div>
+      <h3>VIDÉOS DDN</h3>
+      <p>Présentations, animations et campagnes du mouvement.</p>
+    </article>
+
+    <article class="media-card reveal">
+      <div class="media-icon">◉</div>
+      <h3>PODCASTS</h3>
+      <p>Conversations sur l’IA, l’innovation et le futur.</p>
+    </article>
+
+    <article class="media-card reveal">
+      <div class="media-icon">#</div>
+      <h3>SOCIAL MEDIA</h3>
+      <p>Campagnes digitales autour de #DevanDevanNèt.</p>
+    </article>
+
+    <article class="media-card reveal">
+      <div class="media-icon">✦</div>
+      <h3>ÉVÉNEMENTS</h3>
+      <p>Rencontres, ateliers, challenges et conférences DDN.</p>
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     DDN + PRO-MAX
+======================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      BSS1815 PRO-MAX DMP
+    </div>
+
+    <h2 class="section-title">
+      UNE VISION COMMUNE
+    </h2>
+
+  </div>
+
+
+  <div class="connection reveal">
+
+    <div class="connection-box">
+      <strong>PRO-MAX ACADÉMIE</strong>
+      <span>FORME</span>
+    </div>
+
+    <div class="connection-box">
+      <strong>DDN</strong>
+      <span>MOBILISE</span>
+    </div>
+
+    <div class="connection-box">
+      <strong>INTELLIGENCE ARTIFICIELLE</strong>
+      <span>TRANSFORME</span>
+    </div>
+
+    <div class="connection-box">
+      <strong>BSS1815 PRO-MAX DMP</strong>
+      <span>RASSEMBLE</span>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     FINAL CTA
+======================================================== -->
+
+<section class="final-cta">
+
+<div class="container">
+
+  <div class="final-cta-box reveal">
+
+    <h2>
+      DEVAN<br>
+      DEVAN<br>
+      NÈT™
+
+      <span>
+        LE MOUVEMENT DE L’ÈRE IA
+      </span>
+
+    </h2>
+
+
+    <p>
+      L’intelligence artificielle transforme le monde.
+      Notre responsabilité est d’apprendre, de nous adapter,
+      de créer et d’avancer avec intelligence.
+    </p>
+
+
+    <div class="final-buttons">
+
+      <a href="#formation" class="btn btn-primary">
+        COMMENCER À APPRENDRE
+      </a>
+
+      <a href="../index.html" class="btn btn-secondary">
+        PRO-MAX ACADÉMIE
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+
+<footer>
+
+<div class="container footer-inner">
+
+  <div class="footer-brand">
+
+    DEVAN DEVAN NÈT™
+
+    <small>
+      Le Mouvement de l’Ère IA<br>
+      Powered by PRO-MAX ACADÉMIE
+    </small>
+
+  </div>
+
+
+  <div class="footer-right">
+
+    BSS1815 PRO-MAX DMP<br>
+    #DevanDevanNèt
+
+  </div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+/* =========================================================
+   DEVAN DEVAN NÈT™
+   MAIN JAVASCRIPT
+========================================================= */
+
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileNav = document.getElementById("mobileNav");
+
+menuBtn.addEventListener("click", () => {
+  mobileNav.classList.toggle("open");
+});
+
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("open");
+  });
+});
+
+
+/* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+const langButtons = document.querySelectorAll(".lang-btn");
+
+function setLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-fr]").forEach(element => {
+
+    const value = element.dataset[lang];
+
+    if(value){
+      element.textContent = value;
+    }
+
+  });
+
+  langButtons.forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.lang === lang
+    );
+  });
+
+  localStorage.setItem("ddn-language",lang);
+}
+
+
+langButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
+
+});
+
+
+const savedLanguage =
+  localStorage.getItem("ddn-language") || "fr";
+
+setLanguage(savedLanguage);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealObserver = new IntersectionObserver(
+  entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("visible");
+
+        revealObserver.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+  {
+    threshold:0.12
+  }
+);
+
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
+});
+
+
+/* =========================================================
+   VIDEO AUTOPLAY FALLBACK
+========================================================= */
+
+const logoVideo = document.querySelector(".logo-video");
+
+if(logoVideo){
+
+  logoVideo.muted = true;
+
+  logoVideo.play().catch(() => {
+
+    document.addEventListener(
+      "click",
+      () => logoVideo.play(),
+      {once:true}
+    );
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
