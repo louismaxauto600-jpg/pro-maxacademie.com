@@ -2,936 +2,153 @@
 <html lang="ht">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PRO-MAX ACADÉMIE | Fòme Jodi a Pou Dirije Demen</title>
-
-<meta name="description" content="PRO-MAX ACADÉMIE — Fòmasyon, entèlijans atifisyèl, inovasyon, lidèchip ak DEVAN DEVAN NÈT™.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Payment & Certification Center</title>
 <meta name="theme-color" content="#000000">
-
 <style>
-:root{
-  --black:#000000;
-  --black2:#080300;
-  --black3:#0d0500;
-  --orange:#ff7900;
-  --orange2:#ff8c1a;
-  --orange3:#ffad4d;
-  --orangeDark:#9e4300;
-  --border:rgba(255,121,0,.28);
-  --borderStrong:rgba(255,121,0,.70);
-  --glow:0 0 18px rgba(255,121,0,.35);
-  --glowStrong:0 0 15px rgba(255,121,0,.70),0 0 38px rgba(255,121,0,.34);
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  min-height:100vh;
-  overflow-x:hidden;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--orange3);
-  background:
-    radial-gradient(circle at 20% 20%,rgba(255,121,0,.14),transparent 34%),
-    radial-gradient(circle at 80% 70%,rgba(255,121,0,.09),transparent 40%),
-    linear-gradient(180deg,#000000 0%,#090400 45%,#000000 100%);
-}
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
-  background-image:
-    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
-  background-size:44px 44px;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{width:min(1220px,calc(100% - 28px));margin:auto}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(0,0,0,.97);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(14px);
-}
-.header-inner{
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-video{
-  width:58px;height:58px;border-radius:50%;object-fit:cover;background:#000;
-  border:2px solid var(--orange);box-shadow:var(--glow);
-}
-.brand-text strong{
-  display:block;color:var(--orange);font-size:1rem;font-weight:1000;line-height:1;letter-spacing:.02em;
-}
-.brand-text span{
-  display:block;margin-top:6px;color:var(--orange3);font-size:.58rem;font-weight:900;text-transform:uppercase;
-}
-.header-actions{display:flex;align-items:center;gap:10px}
-.welcome-btn{
-  padding:10px 17px;border:1px solid var(--borderStrong);border-radius:999px;
-  color:var(--orange);background:#000;font-size:.70rem;font-weight:1000;text-transform:uppercase;transition:.25s;
-}
-.welcome-btn:hover{color:#000;background:var(--orange)}
-.lang-switch{
-  display:flex;gap:3px;padding:3px;border:1px solid var(--border);border-radius:999px;background:#000;
-}
-.lang-btn{
-  border:0;border-radius:999px;padding:9px 13px;min-width:46px;cursor:pointer;background:#000;
-  color:var(--orange3);font-size:.68rem;font-weight:1000;
-}
-.lang-btn.active{background:var(--orange);color:#000}
-
-.hero{
-  min-height:calc(100vh - 82px);
-  padding:58px 0 75px;
-  text-align:center;
-}
-.platform-label{
-  color:var(--orange);font-size:.72rem;font-weight:1000;letter-spacing:.20em;text-transform:uppercase;
-}
-
-.globe-wrap{
-  position:relative;width:min(88vw,470px);aspect-ratio:1;margin:34px auto 0;
-  display:grid;place-items:center;filter:drop-shadow(0 0 35px rgba(255,121,0,.25));
-}
-.globe-sphere{
-  position:absolute;width:67%;height:67%;overflow:hidden;border-radius:50%;
-  border:1px solid rgba(255,121,0,.75);
-  background:
-    radial-gradient(circle at 31% 24%,rgba(255,173,77,.55),transparent 22%),
-    radial-gradient(circle at 65% 65%,rgba(255,121,0,.24),transparent 46%),
-    #080300;
-  box-shadow:
-    inset -30px -30px 65px rgba(0,0,0,.95),
-    inset 15px 14px 45px rgba(255,121,0,.20),
-    0 0 35px rgba(255,121,0,.55),
-    0 0 100px rgba(255,121,0,.18);
-}
-.world-map{
-  position:absolute;inset:-6%;width:112%;height:112%;
-  animation:worldTurn 18s linear infinite;
-}
-@keyframes worldTurn{
-  from{transform:translateX(-7%) rotate(0deg)}
-  to{transform:translateX(7%) rotate(360deg)}
-}
-.globe-grid{
-  position:absolute;inset:0;width:100%;height:100%;
-  animation:gridSpin 20s linear infinite;
-}
-@keyframes gridSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.globe-shine{
-  position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle at 27% 21%,rgba(255,173,77,.44),transparent 28%);
-  pointer-events:none;
-}
-.orbit{position:absolute;border-radius:50%;pointer-events:none}
-.orbit-one{
-  width:84%;height:84%;border:2px solid rgba(255,121,0,.45);
-  border-left-color:transparent;border-right-color:transparent;
-  transform:rotateX(68deg) rotateZ(-14deg);
-  animation:orbitOne 8s linear infinite;
-}
-.orbit-two{
-  width:82%;height:82%;border:1px solid rgba(255,121,0,.50);
-  border-top-color:var(--orange);border-bottom-color:var(--orange);
-  transform:rotateY(65deg) rotateZ(18deg);
-  animation:orbitTwo 10s linear infinite;
-}
-@keyframes orbitOne{
-  from{transform:rotateX(68deg) rotateZ(-14deg) rotate(0deg)}
-  to{transform:rotateX(68deg) rotateZ(-14deg) rotate(360deg)}
-}
-@keyframes orbitTwo{
-  from{transform:rotateY(65deg) rotateZ(18deg) rotate(360deg)}
-  to{transform:rotateY(65deg) rotateZ(18deg) rotate(0deg)}
-}
-
-.academy-ring{
-  position:absolute;inset:0;width:100%;height:100%;overflow:visible;
-  animation:textOrbit 24s linear infinite;
-}
-.ring-text{fill:var(--orange);font-size:8px;font-weight:1000;letter-spacing:2px}
-@keyframes textOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-.globe-center{
-  position:absolute;z-index:20;width:118px;height:118px;display:grid;place-items:center;
-  border-radius:50%;border:2px solid var(--orange);
-  background:radial-gradient(circle,rgba(255,121,0,.14),#000 65%);
-  box-shadow:var(--glowStrong);
-}
-.globe-center strong{display:block;color:var(--orange);font-size:1.30rem;font-weight:1000}
-.globe-center span{
-  display:block;margin-top:6px;color:var(--orange3);font-size:.50rem;font-weight:1000;letter-spacing:.10em;
-}
-
-.glow-dot{
-  position:absolute;z-index:30;width:9px;height:9px;border-radius:50%;
-  background:var(--orange);box-shadow:0 0 17px var(--orange);
-}
-.dot1{top:13%;right:20%;animation:pulse 1.5s infinite}
-.dot2{bottom:15%;left:18%;animation:pulse 2s infinite}
-.dot3{top:51%;left:2%;animation:pulse 1.8s infinite}
-@keyframes pulse{
-  0%,100%{opacity:.40;transform:scale(.65)}
-  50%{opacity:1;transform:scale(1.5)}
-}
-
-.hero-slogan{
-  margin-top:22px;color:var(--orange);font-size:clamp(1.7rem,5vw,3.2rem);
-  font-weight:1000;line-height:1;text-transform:uppercase;
-}
-.hero-description{
-  max-width:760px;margin:19px auto 0;color:var(--orange3);font-size:1rem;line-height:1.75;
-}
-
-.hero-actions{
-  display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;gap:13px;margin-top:32px;
-}
-.btn{
-  position:relative;min-height:54px;padding:13px 23px;display:inline-flex;align-items:center;justify-content:center;
-  gap:7px;border-radius:999px;border:2px solid var(--orange);text-transform:uppercase;
-  font-size:.75rem;font-weight:1000;letter-spacing:.03em;transition:.25s ease;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:var(--glowStrong)}
-.btn-primary{background:var(--orange);color:#000}
-.btn-outline{background:#000;color:var(--orange)}
-
-.btn-ddn{
-  min-width:260px;overflow:hidden;flex-direction:column;color:var(--orange);
-  background:linear-gradient(135deg,#000,rgba(255,121,0,.16),#000);
-  animation:ddnGlow 2.5s ease-in-out infinite;
-}
-.btn-ddn strong{position:relative;z-index:2}
-.btn-ddn small{
-  position:relative;z-index:2;margin-top:2px;color:var(--orange3);font-size:.51rem;letter-spacing:.08em;
-}
-.btn-ddn::before{
-  content:"";position:absolute;top:-100%;left:-70%;width:40%;height:300%;transform:rotate(25deg);
-  background:linear-gradient(90deg,transparent,rgba(255,121,0,.30),transparent);
-  animation:sweep 3.2s infinite;
-}
-@keyframes ddnGlow{
-  0%,100%{box-shadow:0 0 12px rgba(255,121,0,.30)}
-  50%{box-shadow:0 0 25px rgba(255,121,0,.72),0 0 50px rgba(255,121,0,.20)}
-}
-@keyframes sweep{0%{left:-70%}60%,100%{left:135%}}
-
-.stats-grid{
-  margin-top:58px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
-}
-.stat-card{
-  min-height:140px;padding:22px;border:1px solid var(--border);border-radius:18px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:radial-gradient(circle at top,rgba(255,121,0,.13),transparent 52%),#050200;
-  transition:.3s;
-}
-.stat-card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:var(--glow)}
-.stat-value{color:var(--orange);font-size:2rem;font-weight:1000}
-.stat-label{
-  margin-top:8px;color:var(--orange3);font-size:.80rem;font-weight:900;text-transform:uppercase;
-}
-
-.section{
-  padding:90px 0;border-top:1px solid rgba(255,121,0,.10);text-align:center;
-}
-.eyebrow{
-  color:var(--orange);font-size:.70rem;font-weight:1000;letter-spacing:.18em;text-transform:uppercase;
-}
-.section-title{
-  margin-top:11px;color:var(--orange);font-size:clamp(2rem,6vw,3.8rem);
-  font-weight:1000;line-height:.95;text-transform:uppercase;
-}
-.section-desc{
-  max-width:720px;margin:17px auto 0;color:var(--orange3);line-height:1.75;
-}
-
-.course-grid{
-  margin-top:45px;display:grid;grid-template-columns:repeat(3,1fr);gap:17px;
-}
-.course-card{
-  min-height:250px;padding:25px;display:flex;flex-direction:column;text-align:left;
-  border:1px solid var(--border);border-radius:19px;
-  background:linear-gradient(145deg,#000,#0b0400);transition:.3s;
-}
-.course-card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:var(--glow)}
-.course-icon{color:var(--orange);font-size:2rem;font-weight:1000}
-.course-card h3{margin-top:20px;color:var(--orange);font-size:1rem;text-transform:uppercase}
-.course-card p{margin-top:12px;color:var(--orange3);line-height:1.6;font-size:.88rem}
-.course-btn{
-  margin-top:auto;padding-top:20px;color:var(--orange);font-size:.72rem;font-weight:1000;text-transform:uppercase;
-}
-
-.ddn-section{
-  position:relative;overflow:hidden;margin-top:45px;padding:45px;
-  border:1px solid var(--borderStrong);border-radius:26px;text-align:left;
-  background:
-    radial-gradient(circle at 78% 30%,rgba(255,121,0,.19),transparent 33%),
-    linear-gradient(135deg,#000,#0d0500,#000);
-  box-shadow:var(--glow);
-}
-.ddn-badge{
-  display:inline-flex;padding:7px 12px;border:1px solid var(--orange);
-  border-radius:999px;color:var(--orange);font-size:.63rem;font-weight:1000;
-}
-.ddn-section h2{margin-top:18px;color:var(--orange);font-size:clamp(2.2rem,7vw,5rem);line-height:.88}
-.ddn-section h3{margin-top:15px;color:var(--orange3);font-size:1rem;text-transform:uppercase}
-.ddn-section p{max-width:760px;margin-top:18px;color:var(--orange3);line-height:1.75}
-
-.student-grid{
-  margin-top:45px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-}
-.student-card{
-  padding:25px 18px;min-height:185px;border:1px solid var(--border);border-radius:18px;
-  background:#050200;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:.3s;
-}
-.student-card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:var(--glow)}
-.student-icon{color:var(--orange);font-size:2rem}
-.student-card strong{margin-top:15px;color:var(--orange);text-transform:uppercase}
-.student-card span{margin-top:9px;color:var(--orange3);font-size:.80rem;line-height:1.5}
-
-.final-cta{padding:80px 0 100px;text-align:center}
-.final-box{
-  padding:55px 25px;border:1px solid var(--orange);border-radius:28px;
-  background:radial-gradient(circle,rgba(255,121,0,.15),transparent 48%),#000;
-  box-shadow:var(--glow);
-}
-.final-box h2{color:var(--orange);font-size:clamp(2.3rem,7vw,5rem);line-height:.9}
-.final-box p{max-width:680px;margin:22px auto 0;color:var(--orange3);line-height:1.7}
-
-footer{
-  padding:42px 0;border-top:1px solid var(--border);background:#000;text-align:center;
-}
-.footer-title{color:var(--orange);font-weight:1000}
-.footer-info{margin-top:9px;color:var(--orange3);line-height:1.65;font-size:.78rem}
-
-@media(max-width:900px){
-  .course-grid{grid-template-columns:repeat(2,1fr)}
-  .student-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:650px){
-  .header-inner{min-height:72px}
-  .brand-video{width:48px;height:48px}
-  .brand-text strong{font-size:.82rem}
-  .brand-text span{font-size:.50rem}
-  .welcome-btn{display:none}
-  .lang-btn{padding:8px 9px}
-  .hero{padding-top:38px}
-  .globe-wrap{width:min(94vw,420px)}
-  .globe-center{width:94px;height:94px}
-  .globe-center strong{font-size:1rem}
-  .ring-text{font-size:7px}
-  .hero-actions{display:grid;grid-template-columns:1fr}
-  .btn{width:100%}
-  .btn-ddn{min-width:0}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .course-grid,.student-grid{grid-template-columns:1fr}
-  .ddn-section{padding:30px 22px}
-}
+:root{--o:#ff7900;--o2:#ffad4d;--b:#000;--bd:rgba(255,121,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:linear-gradient(#000,#0a0400,#000);color:var(--o2)}
+a{text-decoration:none;color:inherit}.wrap{width:min(1100px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#000;border-bottom:1px solid var(--bd)}
+.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;color:var(--o)}.sub{font-size:.72rem;margin-top:5px}
+.lang{display:flex;gap:4px}.lang button{border:1px solid var(--bd);background:#000;color:var(--o2);padding:8px 11px;border-radius:999px;font-weight:900}
+.lang button.active{background:var(--o);color:#000}
+.back{border:1px solid var(--o);padding:9px 13px;border-radius:999px;font-size:.72rem;font-weight:900}
+.hero{text-align:center;padding:55px 0 28px}.hero h1{color:var(--o);font-size:clamp(2rem,6vw,4rem)}
+.hero p{max-width:760px;margin:15px auto;line-height:1.6}
+.rule{border:1px solid var(--o);padding:15px;border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:28px 0 70px}.card{border:1px solid var(--bd);border-radius:18px;padding:22px;background:#050200}
+.card h2{color:var(--o);margin-bottom:8px}.full{grid-column:1/-1}.field{margin-top:14px}
+label{display:block;margin-bottom:6px;color:var(--o);font-size:.75rem;font-weight:900}
+input,select,textarea{width:100%;background:#000;color:var(--o2);border:1px solid var(--bd);border-radius:10px;padding:11px}
+textarea{min-height:80px}.btn{margin-top:15px;border:2px solid var(--o);border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer}
+.primary{background:var(--o);color:#000}.secondary{background:#000;color:var(--o)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.metric{border:1px solid var(--bd);border-radius:12px;padding:13px;text-align:center}
+.metric strong{display:block;color:var(--o);font-size:1.2rem}.metric span{font-size:.7rem}
+.bar{height:14px;border:1px solid var(--bd);border-radius:999px;overflow:hidden;margin-top:15px}.fill{height:100%;width:0;background:var(--o)}
+.payments{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}.pay{border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center}.pay.on{box-shadow:0 0 18px rgba(255,121,0,.6)}
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.method{border:1px solid var(--bd);padding:10px;border-radius:10px}
+.method input{width:auto}.status{margin-top:16px;border:1px solid var(--o);border-radius:12px;padding:14px}
+table{width:100%;border-collapse:collapse;min-width:760px}.table{overflow:auto;margin-top:12px}
+th,td{padding:10px;border-bottom:1px solid var(--bd);text-align:left;font-size:.8rem}th{color:var(--o)}
+pre{white-space:pre-wrap;line-height:1.5;margin-top:10px}
+.contacts{padding:60px 0;border-top:1px solid var(--bd)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-box{border:1px solid var(--bd);border-radius:18px;padding:22px;background:#050200}.contact-box h2{color:var(--o)}
+.contact-list{display:grid;gap:8px;margin-top:14px}.contact-list a,.social{border:1px solid var(--bd);padding:11px;border-radius:10px}
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.social{text-align:center;color:var(--o);font-weight:900}
+footer{text-align:center;padding:30px;border-top:1px solid var(--bd);background:#000}
+@media(max-width:820px){.grid,.contact-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.methods{grid-template-columns:1fr}.payments{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.head{align-items:flex-start;padding:10px 0;flex-wrap:wrap}.socials{grid-template-columns:1fr 1fr}}
 </style>
 </head>
-
 <body>
-
-<header>
-<div class="container header-inner">
-
-<a href="#home" class="brand">
-  <video class="brand-video" autoplay muted loop playsinline preload="metadata">
-    <source src="pro-max-academie-II.mp4" type="video/mp4">
-  </video>
-
-  <div class="brand-text">
-    <strong>PRO-MAX ACADÉMIE</strong>
-    <span
-      data-ht="Fòme Jodi a Pou Dirije Demen"
-      data-fr="Former Aujourd’hui Pour Diriger Demain"
-      data-en="Train Today To Lead Tomorrow">
-      Fòme Jodi a Pou Dirije Demen
-    </span>
-  </div>
-</a>
-
-<div class="header-actions">
-
-  <a
-    href="#home"
-    class="welcome-btn"
-    data-ht="BYENVINI"
-    data-fr="BIENVENUE"
-    data-en="WELCOME">
-    BYENVINI
-  </a>
-
-  <div class="lang-switch" aria-label="Language selector">
-    <button type="button" class="lang-btn" data-lang="fr">FRA</button>
-    <button type="button" class="lang-btn" data-lang="en">ENG</button>
-    <button type="button" class="lang-btn active" data-lang="ht">KRE</button>
-  </div>
-
-</div>
-</div>
-</header>
+<header><div class="wrap head">
+<div><div class="brand">PRO-MAX ACADÉMIE</div><div class="sub" data-k="sub">Payment & Certification Center</div></div>
+<div class="lang"><button data-l="fr">FRA</button><button data-l="en">ENG</button><button class="active" data-l="ht">KRE</button></div>
+<a class="back" href="../index.html" data-k="back">← Retounen</a>
+</div></header>
 
 <main>
+<section class="hero"><div class="wrap">
+<h1 data-k="title">Payment & Certification Center</h1>
+<p data-k="intro">Jere enskripsyon, peman, balans, resi otomatik ak estati sètifika elèv yo.</p>
+<div class="rule" data-k="rule">5 PEMAN × 1,000 HTG = 5,000 HTG TOTAL • SÈTIFIKA BLOKE JISKASKE 5/5 PEYE + KOU FINI + EVALYASYON PASE</div>
+</div></section>
 
-<section class="hero" id="home">
-<div class="container">
-
-<div class="platform-label">BSS1815 PRO-MAX DMP</div>
-
-<div class="globe-wrap">
-
-  <span class="glow-dot dot1"></span>
-  <span class="glow-dot dot2"></span>
-  <span class="glow-dot dot3"></span>
-
-  <div class="orbit orbit-one"></div>
-  <div class="orbit orbit-two"></div>
-
-  <div class="globe-sphere">
-
-    <svg class="world-map" viewBox="0 0 200 200">
-      <g fill="#ff7900" opacity=".82">
-        <path d="M27 58 L40 44 L56 41 L69 48 L64 58 L52 61 L45 73 L35 70 Z"/>
-        <path d="M58 78 L70 84 L76 100 L70 119 L60 133 L56 117 L58 100 L52 90 Z"/>
-        <path d="M94 44 L111 40 L124 48 L119 57 L127 64 L117 70 L103 64 L97 55 Z"/>
-        <path d="M103 71 L120 67 L133 76 L129 92 L121 105 L113 121 L102 109 L97 92 Z"/>
-        <path d="M128 49 L151 54 L168 65 L164 79 L148 75 L139 66 Z"/>
-        <path d="M153 111 L168 113 L175 124 L165 133 L151 129 Z"/>
-      </g>
-      <g stroke="#ff8c1a" stroke-width=".8" fill="none" opacity=".62">
-        <path d="M10 100 Q100 40 190 100"/>
-        <path d="M10 100 Q100 160 190 100"/>
-        <path d="M100 10 Q45 100 100 190"/>
-        <path d="M100 10 Q155 100 100 190"/>
-      </g>
-    </svg>
-
-    <svg class="globe-grid" viewBox="0 0 200 200">
-      <g fill="none" stroke="#ff7900" stroke-width=".7" opacity=".40">
-        <circle cx="100" cy="100" r="93"/>
-        <ellipse cx="100" cy="100" rx="90" ry="28"/>
-        <ellipse cx="100" cy="100" rx="90" ry="57"/>
-        <ellipse cx="100" cy="100" rx="30" ry="90"/>
-        <ellipse cx="100" cy="100" rx="58" ry="90"/>
-        <line x1="10" y1="100" x2="190" y2="100"/>
-      </g>
-    </svg>
-
-    <div class="globe-shine"></div>
-  </div>
-
-  <svg class="academy-ring" viewBox="0 0 200 200">
-    <defs>
-      <path id="academyCircle" d="M100,12 A88,88 0 1,1 99.9,12"/>
-    </defs>
-
-    <circle
-      cx="100"
-      cy="100"
-      r="88"
-      fill="none"
-      stroke="#ff7900"
-      stroke-width=".8"
-      opacity=".38"/>
-
-    <text class="ring-text">
-      <textPath href="#academyCircle" startOffset="0%">
-        ✦ PRO-MAX ACADÉMIE ✦ PRO-MAX ACADÉMIE ✦ PRO-MAX ACADÉMIE ✦
-      </textPath>
-    </text>
-  </svg>
-
-  <div class="globe-center">
-    <div>
-      <strong>PRO-MAX</strong>
-      <span>ACADÉMIE</span>
-    </div>
-  </div>
-
+<section><div class="wrap grid">
+<div class="card">
+<h2 data-k="reg">Enskripsyon Elèv</h2>
+<div class="field"><label data-k="name">Non Elèv</label><input id="name"></div>
+<div class="field"><label data-k="course">Kou</label><select id="course"><option>Introduction à l’IA</option><option>Création Digitale</option><option>Leadership Digital</option><option>Automatisation</option><option>Communication</option><option>Innovation</option></select></div>
+<div class="field"><label data-k="phone">Telefòn / WhatsApp</label><input id="phone"></div>
+<div class="field"><label>Email</label><input id="email" type="email"></div>
+<button class="btn primary" id="save" data-k="save">Sove Elèv</button>
+<button class="btn secondary" id="reset">Reset</button>
 </div>
 
-<h1
-  class="hero-slogan"
-  data-ht="FÒME JODI A POU DIRIJE DEMEN"
-  data-fr="FORMER AUJOURD’HUI POUR DIRIGER DEMAIN"
-  data-en="TRAIN TODAY TO LEAD TOMORROW">
-  FÒME JODI A POU DIRIJE DEMEN
-</h1>
-
-<p
-  class="hero-description"
-  data-ht="Yon platfòm fòmasyon modèn ki konekte konesans, konpetans, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip."
-  data-fr="Une plateforme moderne de formation qui relie connaissances, compétences, intelligence artificielle, innovation, discipline et leadership."
-  data-en="A modern learning platform connecting knowledge, skills, artificial intelligence, innovation, discipline and leadership.">
-  Yon platfòm fòmasyon modèn ki konekte konesans, konpetans, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip.
-</p>
-
-<div class="hero-actions">
-
-  <a
-    href="#courses"
-    class="btn btn-primary"
-    data-ht="🎓 DEKOUVRI KOU YO"
-    data-fr="🎓 DÉCOUVRIR LES COURS"
-    data-en="🎓 EXPLORE COURSES">
-    🎓 DEKOUVRI KOU YO
-  </a>
-
-  <a href="#ddn" class="btn btn-ddn">
-    <strong>🤖 DEVAN DEVAN NÈT™ — DDN</strong>
-    <small
-      data-ht="MOUVMAN EPÒK IA A"
-      data-fr="LE MOUVEMENT DE L’ÈRE IA"
-      data-en="THE AI ERA MOVEMENT">
-      MOUVMAN EPÒK IA A
-    </small>
-  </a>
-
-  <a
-    href="#student-area"
-    class="btn btn-outline"
-    data-ht="👤 ESPAS ELÈV"
-    data-fr="👤 ESPACE ÉTUDIANT"
-    data-en="👤 STUDENT AREA">
-    👤 ESPAS ELÈV
-  </a>
-
+<div class="card">
+<h2 data-k="control">Kontwòl Peman</h2>
+<div class="metrics">
+<div class="metric"><strong id="paid">0 HTG</strong><span data-k="paid">Total Peye</span></div>
+<div class="metric"><strong id="bal">5,000 HTG</strong><span data-k="bal">Balans</span></div>
+<div class="metric"><strong id="count">0/5</strong><span data-k="pay">Peman</span></div>
+<div class="metric"><strong id="lock">🔒</strong><span data-k="cert">Sètifika</span></div>
+</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div class="payments"><div class="pay">1/5</div><div class="pay">2/5</div><div class="pay">3/5</div><div class="pay">4/5</div><div class="pay">5/5</div></div>
+<div class="field"><label data-k="method">Metòd Peman</label>
+<div class="methods">
+<label class="method"><input type="radio" name="method" value="NatCash" checked> NatCash</label>
+<label class="method"><input type="radio" name="method" value="Digicel / MonCash"> Digicel / MonCash</label>
+<label class="method"><input type="radio" name="method" value="Bank Card"> Bank Card</label>
+</div></div>
+<div class="field"><label>Transaction / Reference ID</label><input id="ref"></div>
+<button class="btn primary" id="add" data-k="confirm">+ Konfime 1,000 HTG</button>
+<div class="status"><strong id="certStatus">🔒 CERTIFICATE LOCKED</strong><p id="reason">Balans: 5,000 HTG.</p></div>
 </div>
 
-<div class="stats-grid">
-
-  <div class="stat-card">
-    <div class="stat-value">3</div>
-    <div class="stat-label"
-      data-ht="Lang"
-      data-fr="Langues"
-      data-en="Languages">
-      Lang
-    </div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-value">24/7</div>
-    <div class="stat-label"
-      data-ht="Aksè Nimerik"
-      data-fr="Accès Numérique"
-      data-en="Digital Access">
-      Aksè Nimerik
-    </div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-value">AI</div>
-    <div class="stat-label">Smart Learning</div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-value">🎓</div>
-    <div class="stat-label"
-      data-ht="Sètifikasyon"
-      data-fr="Certification"
-      data-en="Certification">
-      Sètifikasyon
-    </div>
-  </div>
-
+<div class="card full">
+<h2 data-k="academic">Kondisyon Akademik</h2>
+<label><input style="width:auto" type="checkbox" id="done"> <span data-k="done">Kou a fini</span></label><br><br>
+<label><input style="width:auto" type="checkbox" id="pass"> <span data-k="pass">Evalyasyon an pase</span></label>
 </div>
 
-</div>
-</section>
-
-<section class="section" id="courses">
-<div class="container">
-
-<div class="eyebrow"
-  data-ht="SANT APRANTISAJ"
-  data-fr="CENTRE D’APPRENTISSAGE"
-  data-en="LEARNING CENTER">
-  SANT APRANTISAJ
+<div class="card full">
+<h2>Payment History</h2>
+<div class="table"><table><thead><tr><th>#</th><th data-k="date">Dat</th><th data-k="name">Elèv</th><th data-k="course">Kou</th><th data-k="method">Metòd</th><th>Reference</th><th data-k="paid">Total Peye</th><th data-k="bal">Balans</th></tr></thead><tbody id="history"></tbody></table></div>
 </div>
 
-<h2
-  class="section-title"
-  data-ht="APRANN • PRATIKE • AVANSE"
-  data-fr="APPRENDRE • PRATIQUER • PROGRESSER"
-  data-en="LEARN • PRACTICE • PROGRESS">
-  APRANN • PRATIKE • AVANSE
-</h2>
-
-<p
-  class="section-desc"
-  data-ht="Yon estrikti konplè pou aprann, pratike, evalye, devlope konpetans epi prepare pou lavni."
-  data-fr="Une structure complète pour apprendre, pratiquer, évaluer, développer des compétences et préparer l’avenir."
-  data-en="A complete structure for learning, practicing, evaluating, developing skills and preparing for the future.">
-  Yon estrikti konplè pou aprann, pratike, evalye, devlope konpetans epi prepare pou lavni.
-</p>
-
-<div class="course-grid">
-
-  <article class="course-card">
-    <div class="course-icon">AI</div>
-    <h3
-      data-ht="ENTWODIKSYON NAN AI"
-      data-fr="INTRODUCTION À L’IA"
-      data-en="INTRODUCTION TO AI">
-      ENTWODIKSYON NAN AI
-    </h3>
-    <p
-      data-ht="Konprann prensip entèlijans atifisyèl, zouti li yo ak fason pou itilize yo."
-      data-fr="Comprendre les principes de l’intelligence artificielle, ses outils et leurs usages."
-      data-en="Understand artificial intelligence, its tools and practical uses.">
-      Konprann prensip entèlijans atifisyèl, zouti li yo ak fason pou itilize yo.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
-  <article class="course-card">
-    <div class="course-icon">✦</div>
-    <h3
-      data-ht="KREYASYON DIJITAL"
-      data-fr="CRÉATION DIGITALE"
-      data-en="DIGITAL CREATION">
-      KREYASYON DIJITAL
-    </h3>
-    <p
-      data-ht="Aprann kreye tèks, imaj, videyo, prezantasyon ak kontni dijital."
-      data-fr="Apprendre à créer textes, images, vidéos, présentations et contenus numériques."
-      data-en="Learn to create text, images, video, presentations and digital content.">
-      Aprann kreye tèks, imaj, videyo, prezantasyon ak kontni dijital.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
-  <article class="course-card">
-    <div class="course-icon">↗</div>
-    <h3
-      data-ht="LIDÈCHIP DIJITAL"
-      data-fr="LEADERSHIP DIGITAL"
-      data-en="DIGITAL LEADERSHIP">
-      LIDÈCHIP DIJITAL
-    </h3>
-    <p
-      data-ht="Devlope vizyon, disiplin, òganizasyon ak kapasite pou dirije nan epòk dijital la."
-      data-fr="Développer vision, discipline, organisation et leadership dans l’ère numérique."
-      data-en="Develop vision, discipline, organization and leadership for the digital era.">
-      Devlope vizyon, disiplin, òganizasyon ak kapasite pou dirije nan epòk dijital la.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
-  <article class="course-card">
-    <div class="course-icon">⚙</div>
-    <h3
-      data-ht="OTOMATIZASYON"
-      data-fr="AUTOMATISATION"
-      data-en="AUTOMATION">
-      OTOMATIZASYON
-    </h3>
-    <p
-      data-ht="Aprann kreye workflow entelijan pou diminye travay repetitif."
-      data-fr="Apprendre à créer des workflows intelligents pour réduire les tâches répétitives."
-      data-en="Build smart workflows that reduce repetitive work.">
-      Aprann kreye workflow entelijan pou diminye travay repetitif.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
-  <article class="course-card">
-    <div class="course-icon">◎</div>
-    <h3
-      data-ht="KOMINIKASYON"
-      data-fr="COMMUNICATION"
-      data-en="COMMUNICATION">
-      KOMINIKASYON
-    </h3>
-    <p
-      data-ht="Devlope kominikasyon pwofesyonèl, prezantasyon ak kapasite pou pataje ide avèk enpak."
-      data-fr="Développer la communication professionnelle, la présentation et l’impact."
-      data-en="Develop professional communication, presentation and impactful messaging.">
-      Devlope kominikasyon pwofesyonèl, prezantasyon ak kapasite pou pataje ide avèk enpak.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
-  <article class="course-card">
-    <div class="course-icon">◆</div>
-    <h3
-      data-ht="INOVASYON"
-      data-fr="INNOVATION"
-      data-en="INNOVATION">
-      INOVASYON
-    </h3>
-    <p
-      data-ht="Aprann transfòme lide an pwojè epi itilize teknoloji pou konstwi nouvo solisyon."
-      data-fr="Transformer les idées en projets et utiliser la technologie pour construire de nouvelles solutions."
-      data-en="Turn ideas into projects and use technology to build new solutions.">
-      Aprann transfòme lide an pwojè epi itilize teknoloji pou konstwi nouvo solisyon.
-    </p>
-    <a href="#student-area" class="course-btn">KÒMANSE →</a>
-  </article>
-
+<div class="card full">
+<h2 data-k="messages">Mesaj Otomatik</h2>
+<pre id="studentMsg">Pa gen peman ankò.</pre>
+<pre id="adminMsg">Pa gen peman ankò.</pre>
+<button class="btn secondary" id="copyS" data-k="copyS">Kopye Mesaj Elèv</button>
+<button class="btn secondary" id="copyA" data-k="copyA">Kopye Mesaj Admin</button>
 </div>
-</div>
-</section>
+</div></section>
 
-<section class="section" id="ddn">
-<div class="container">
-
-<div class="ddn-section">
-
-  <span class="ddn-badge">PRO-MAX ACADÉMIE • AI MOVEMENT</span>
-
-  <h2>DEVAN DEVAN NÈT™</h2>
-
-  <h3
-    data-ht="MOUVMAN EPÒK ENTÈLIJANS ATIFISYÈL LA"
-    data-fr="LE MOUVEMENT DE L’ÈRE DE L’INTELLIGENCE ARTIFICIELLE"
-    data-en="THE ARTIFICIAL INTELLIGENCE ERA MOVEMENT">
-    MOUVMAN EPÒK ENTÈLIJANS ATIFISYÈL LA
-  </h3>
-
-  <p
-    data-ht="DDN se mouvman AI ki entegre dirèkteman nan PRO-MAX ACADÉMIE. Misyon li se ankouraje moun aprann teknoloji, konprann AI, kreye avèk li, inove epi toujou avanse."
-    data-fr="DDN est le mouvement IA intégré directement à PRO-MAX ACADÉMIE. Sa mission est d’encourager chacun à apprendre la technologie, comprendre l’IA, créer avec elle, innover et toujours avancer."
-    data-en="DDN is the AI movement integrated directly into PRO-MAX ACADEMY. Its mission is to encourage people to learn technology, understand AI, create with it, innovate and keep moving forward.">
-    DDN se mouvman AI ki entegre dirèkteman nan PRO-MAX ACADÉMIE. Misyon li se ankouraje moun aprann teknoloji, konprann AI, kreye avèk li, inove epi toujou avanse.
-  </p>
-
-  <a href="#courses" class="btn btn-ddn" style="margin-top:25px;">
-    <strong
-      data-ht="ANTRE NAN MOUVMAN DDN →"
-      data-fr="DÉCOUVRIR LE MOUVEMENT DDN →"
-      data-en="ENTER THE DDN MOVEMENT →">
-      ANTRE NAN MOUVMAN DDN →
-    </strong>
-    <small>#DevanDevanNèt</small>
-  </a>
-
-</div>
-
-</div>
-</section>
-
-<section class="section" id="student-area">
-<div class="container">
-
-<div class="eyebrow"
-  data-ht="PORTAL ELÈV"
-  data-fr="PORTAIL ÉTUDIANT"
-  data-en="STUDENT PORTAL">
-  PORTAL ELÈV
-</div>
-
-<h2
-  class="section-title"
-  data-ht="ESPAS ELÈV"
-  data-fr="ESPACE ÉTUDIANT"
-  data-en="STUDENT AREA">
-  ESPAS ELÈV
-</h2>
-
-<p
-  class="section-desc"
-  data-ht="Tout zouti elèv la nan yon sèl espas pou aprann, suiv pwogrè, pran evalyasyon epi resevwa sètifika."
-  data-fr="Tous les outils de l’étudiant dans un seul espace pour apprendre, suivre sa progression, passer des évaluations et recevoir ses certificats."
-  data-en="All student tools in one place to learn, track progress, take assessments and receive certificates.">
-  Tout zouti elèv la nan yon sèl espas pou aprann, suiv pwogrè, pran evalyasyon epi resevwa sètifika.
-</p>
-
-<div class="student-grid">
-
-  <a href="#courses" class="student-card">
-    <div class="student-icon">🎓</div>
-    <strong
-      data-ht="KOU MWEN"
-      data-fr="MES COURS"
-      data-en="MY COURSES">
-      KOU MWEN
-    </strong>
-    <span
-      data-ht="Gade kou ki disponib yo."
-      data-fr="Voir les cours disponibles."
-      data-en="View available courses.">
-      Gade kou ki disponib yo.
-    </span>
-  </a>
-
-  <a href="#courses" class="student-card">
-    <div class="student-icon">↗</div>
-    <strong
-      data-ht="PWOGRÈ"
-      data-fr="PROGRESSION"
-      data-en="PROGRESS">
-      PWOGRÈ
-    </strong>
-    <span
-      data-ht="Kontinye aprantisaj ou."
-      data-fr="Continuer votre apprentissage."
-      data-en="Continue your learning.">
-      Kontinye aprantisaj ou.
-    </span>
-  </a>
-
-  <a href="#courses" class="student-card">
-    <div class="student-icon">✓</div>
-    <strong
-      data-ht="EVALYASYON"
-      data-fr="ÉVALUATIONS"
-      data-en="ASSESSMENTS">
-      EVALYASYON
-    </strong>
-    <span
-      data-ht="Teste konesans ak konpetans ou."
-      data-fr="Tester vos connaissances et compétences."
-      data-en="Test your knowledge and skills.">
-      Teste konesans ak konpetans ou.
-    </span>
-  </a>
-
-  <a href="#courses" class="student-card">
-    <div class="student-icon">★</div>
-    <strong
-      data-ht="SÈTIFIKA"
-      data-fr="CERTIFICATS"
-      data-en="CERTIFICATES">
-      SÈTIFIKA
-    </strong>
-    <span
-      data-ht="Prepare pou sètifikasyon Academy a."
-      data-fr="Préparez-vous à la certification de l’Académie."
-      data-en="Prepare for Academy certification.">
-      Prepare pou sètifikasyon Academy a.
-    </span>
-  </a>
-
-</div>
-</div>
-</section>
-
-<section class="final-cta">
-<div class="container">
-
-<div class="final-box">
-
-<h2
-  data-ht="APRANN JODI A. DIRIJE DEMEN."
-  data-fr="APPRENEZ AUJOURD’HUI. DIRIGEZ DEMAIN."
-  data-en="LEARN TODAY. LEAD TOMORROW.">
-  APRANN JODI A. DIRIJE DEMEN.
-</h2>
-
-<p
-  data-ht="Konesans ap evolye. Teknoloji ap avanse. Entèlijans atifisyèl ap transfòme mond lan. PRO-MAX ACADÉMIE prepare w pou avanse avèk epòk la."
-  data-fr="La connaissance évolue. La technologie avance. L’intelligence artificielle transforme le monde. PRO-MAX ACADÉMIE vous prépare à avancer avec votre époque."
-  data-en="Knowledge is evolving. Technology is advancing. Artificial intelligence is transforming the world. PRO-MAX ACADEMY prepares you to move forward with the times.">
-  Konesans ap evolye. Teknoloji ap avanse. Entèlijans atifisyèl ap transfòme mond lan. PRO-MAX ACADÉMIE prepare w pou avanse avèk epòk la.
-</p>
-
-<div class="hero-actions">
-
-  <a
-    href="#courses"
-    class="btn btn-primary"
-    data-ht="KÒMANSE APRANN"
-    data-fr="COMMENCER À APPRENDRE"
-    data-en="START LEARNING">
-    KÒMANSE APRANN
-  </a>
-
-  <a href="#ddn" class="btn btn-outline">
-    DEVAN DEVAN NÈT™ →
-  </a>
-
-</div>
-
-</div>
-</div>
-</section>
-
+<section class="contacts"><div class="wrap contact-grid">
+<div class="contact-box"><h2 data-k="contact">Kontak</h2><div class="contact-list">
+<a href="tel:+14076405166">📞 (407) 640-5166</a>
+<a href="tel:+15172168494">📞 (517) 216-8494</a>
+<a href="mailto:pro-maxacademie@gmail.com">✉ pro-maxacademie@gmail.com</a>
+<a href="https://briyantsoley1815-site.netlify.app" target="_blank" rel="noopener">🌐 www.briyantsoley1815-site.netlify.app</a>
+</div></div>
+<div class="contact-box"><h2 data-k="social">Rezo Sosyal</h2><div class="socials">
+<div class="social">Facebook</div><div class="social">WhatsApp</div><div class="social">Instagram</div>
+<div class="social">TikTok</div><div class="social">LinkedIn</div><div class="social">YouTube</div>
+<div class="social">Spotify</div><div class="social">Truth Social</div><div class="social">X / Twitter</div>
+</div></div>
+</div></section>
 </main>
 
-<footer>
-<div class="container">
-
-<div class="footer-title">PRO-MAX ACADÉMIE</div>
-
-<div class="footer-info">
-  BSS1815 PRO-MAX DMP<br>
-  DEVAN DEVAN NÈT™ — LE MOUVEMENT DE L’ÈRE IA<br>
-  #DevanDevanNèt
-</div>
-
-</div>
-</footer>
+<footer>PRO-MAX ACADÉMIE • BSS1815 PRO-MAX DMP</footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  var languageButtons = document.querySelectorAll(".lang-btn");
-  var translatableElements = document.querySelectorAll(
-    "[data-ht][data-fr][data-en]"
-  );
-
-  function applyLanguage(lang) {
-    if (lang !== "ht" && lang !== "fr" && lang !== "en") {
-      lang = "ht";
-    }
-
-    document.documentElement.lang = lang;
-
-    translatableElements.forEach(function (element) {
-      var value = element.getAttribute("data-" + lang);
-      if (value !== null) {
-        element.textContent = value;
-      }
-    });
-
-    languageButtons.forEach(function (button) {
-      var isActive = button.getAttribute("data-lang") === lang;
-      button.classList.toggle("active", isActive);
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-  }
-
-  languageButtons.forEach(function (button) {
-    button.addEventListener("click", function (event) {
-      var lang = event.currentTarget.getAttribute("data-lang");
-      applyLanguage(lang);
-    });
-  });
-
-  applyLanguage("ht");
-
-
-  var academyLogo = document.querySelector(".brand-video");
-
-  if (academyLogo) {
-    academyLogo.muted = true;
-
-    academyLogo.play().catch(function () {
-      document.addEventListener(
-        "click",
-        function () { academyLogo.play(); },
-        { once: true }
-      );
-    });
-  }
-
-});
+const T={
+ht:{sub:"Payment & Certification Center",back:"← Retounen",title:"Payment & Certification Center",intro:"Jere enskripsyon, peman, balans, resi otomatik ak estati sètifika elèv yo.",rule:"5 PEMAN × 1,000 HTG = 5,000 HTG TOTAL • SÈTIFIKA BLOKE JISKASKE 5/5 PEYE + KOU FINI + EVALYASYON PASE",reg:"Enskripsyon Elèv",name:"Non Elèv",course:"Kou",phone:"Telefòn / WhatsApp",save:"Sove Elèv",control:"Kontwòl Peman",paid:"Total Peye",bal:"Balans",pay:"Peman",cert:"Sètifika",method:"Metòd Peman",confirm:"+ Konfime 1,000 HTG",academic:"Kondisyon Akademik",done:"Kou a fini",pass:"Evalyasyon an pase",date:"Dat",messages:"Mesaj Otomatik",copyS:"Kopye Mesaj Elèv",copyA:"Kopye Mesaj Admin",contact:"Kontak",social:"Rezo Sosyal"},
+fr:{sub:"Centre Paiement & Certification",back:"← Retour",title:"Centre Paiement & Certification",intro:"Gérez les inscriptions, paiements, soldes, reçus automatiques et certificats.",rule:"5 PAIEMENTS × 1 000 HTG = 5 000 HTG • CERTIFICAT BLOQUÉ JUSQU’À 5/5 + COURS TERMINÉ + ÉVALUATION RÉUSSIE",reg:"Inscription Étudiant",name:"Nom Étudiant",course:"Cours",phone:"Téléphone / WhatsApp",save:"Enregistrer",control:"Contrôle Paiement",paid:"Total Payé",bal:"Solde",pay:"Paiements",cert:"Certificat",method:"Mode de Paiement",confirm:"+ Confirmer 1 000 HTG",academic:"Conditions Académiques",done:"Cours terminé",pass:"Évaluation réussie",date:"Date",messages:"Messages Automatiques",copyS:"Copier Message Étudiant",copyA:"Copier Message Admin",contact:"Contact",social:"Réseaux Sociaux"},
+en:{sub:"Payment & Certification Center",back:"← Back",title:"Payment & Certification Center",intro:"Manage enrollment, payments, balances, automatic receipts and certificate status.",rule:"5 PAYMENTS × 1,000 HTG = 5,000 HTG • CERTIFICATE LOCKED UNTIL 5/5 + COURSE COMPLETED + ASSESSMENT PASSED",reg:"Student Registration",name:"Student Name",course:"Course",phone:"Phone / WhatsApp",save:"Save Student",control:"Payment Control",paid:"Total Paid",bal:"Balance",pay:"Payments",cert:"Certificate",method:"Payment Method",confirm:"+ Confirm 1,000 HTG",academic:"Academic Requirements",done:"Course completed",pass:"Assessment passed",date:"Date",messages:"Automatic Messages",copyS:"Copy Student Message",copyA:"Copy Admin Message",contact:"Contact",social:"Social Networks"}};
+let lang="ht";
+function setLang(l){lang=T[l]?l:"ht";document.documentElement.lang=lang;document.querySelectorAll("[data-k]").forEach(n=>{let k=n.dataset.k;if(T[lang][k])n.textContent=T[lang][k]});document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.l===lang));update()}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+const E=id=>document.getElementById(id),TOTAL=5000,STEP=1000;let student={},payments=[];
+function paid(){return payments.length*STEP}function bal(){return Math.max(TOTAL-paid(),0)}
+function eligible(){return paid()>=TOTAL&&E("done").checked&&E("pass").checked}
+function update(){
+E("paid").textContent=paid().toLocaleString()+" HTG";E("bal").textContent=bal().toLocaleString()+" HTG";E("count").textContent=payments.length+"/5";E("fill").style.width=(paid()/TOTAL*100)+"%";E("lock").textContent=eligible()?"🔓":"🔒";E("certStatus").textContent=eligible()?"🔓 CERTIFICATE ELIGIBLE":"🔒 CERTIFICATE LOCKED";E("reason").textContent=eligible()?"Tout kondisyon yo ranpli.":`Balans: ${bal().toLocaleString()} HTG.`;document.querySelectorAll(".pay").forEach((n,i)=>n.classList.toggle("on",i<payments.length))}
+function render(){E("history").innerHTML="";payments.forEach((p,i)=>{E("history").innerHTML+=`<tr><td>${i+1}</td><td>${p.date}</td><td>${student.name||"—"}</td><td>${student.course||"—"}</td><td>${p.method}</td><td>${p.ref}</td><td>${((i+1)*STEP).toLocaleString()} HTG</td><td>${(TOTAL-(i+1)*STEP).toLocaleString()} HTG</td></tr>`})}
+function messages(){if(!payments.length){E("studentMsg").textContent="Pa gen peman ankò.";E("adminMsg").textContent="Pa gen peman ankò.";return}let p=payments.at(-1),c=payments.length;E("studentMsg").textContent=`PRO-MAX ACADÉMIE\nPeman ${c}/5 konfime\nKantite: 1,000 HTG\nMetòd: ${p.method}\nReference: ${p.ref}\nTotal peye: ${paid().toLocaleString()} HTG\nBalans: ${bal().toLocaleString()} HTG`;E("adminMsg").textContent=`NOUVO PEMAN\nElèv: ${student.name}\nKou: ${student.course}\nPeman: ${c}/5\nMetòd: ${p.method}\nReference: ${p.ref}\nBalans: ${bal().toLocaleString()} HTG`}
+E("save").onclick=()=>{student={name:E("name").value.trim(),course:E("course").value,phone:E("phone").value.trim(),email:E("email").value.trim()};if(!student.name)return alert("Antre non elèv la.");localStorage.setItem("pmStudent",JSON.stringify(student));alert("Elèv sove.")};
+E("add").onclick=()=>{if(!student.name)return alert("Sove elèv la anvan.");if(payments.length>=5)return alert("5/5 deja fini.");let ref=E("ref").value.trim();if(!ref)return alert("Antre Transaction / Reference ID.");if(payments.some(p=>p.ref.toLowerCase()===ref.toLowerCase()))return alert("Reference sa deja itilize.");let method=document.querySelector('input[name="method"]:checked').value;payments.push({ref,method,date:new Date().toLocaleString()});localStorage.setItem("pmPayments",JSON.stringify(payments));E("ref").value="";update();render();messages()};
+E("reset").onclick=()=>{if(confirm("Efase tout done yo?")){student={};payments=[];localStorage.removeItem("pmStudent");localStorage.removeItem("pmPayments");location.reload()}};
+E("done").onchange=E("pass").onchange=update;
+async function copy(id){try{await navigator.clipboard.writeText(E(id).textContent);alert("Kopye.")}catch{alert("Copy pa disponib.")}}
+E("copyS").onclick=()=>copy("studentMsg");E("copyA").onclick=()=>copy("adminMsg");
+try{student=JSON.parse(localStorage.getItem("pmStudent")||"{}");payments=JSON.parse(localStorage.getItem("pmPayments")||"[]");E("name").value=student.name||"";E("course").value=student.course||"Introduction à l’IA";E("phone").value=student.phone||"";E("email").value=student.email||""}catch{}
+setLang("ht");render();messages();
 </script>
-
 </body>
 </html>
