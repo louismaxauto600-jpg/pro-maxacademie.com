@@ -490,7 +490,7 @@ footer{
     🎓 DEKOUVRI KOU YO
   </a>
 
-  <a href="/ddn/" class="btn btn-ddn">
+  <a href="#ddn" class="btn btn-ddn">
     <strong>🤖 DEVAN DEVAN NÈT™ — DDN</strong>
     <small
       data-ht="MOUVMAN EPÒK IA A"
@@ -710,7 +710,7 @@ footer{
     DDN se mouvman AI ki entegre dirèkteman nan PRO-MAX ACADÉMIE. Misyon li se ankouraje moun aprann teknoloji, konprann AI, kreye avèk li, inove epi toujou avanse.
   </p>
 
-  <a href="/ddn/" class="btn btn-ddn" style="margin-top:25px;">
+  <a href="#courses" class="btn btn-ddn" style="margin-top:25px;">
     <strong
       data-ht="ANTRE NAN MOUVMAN DDN →"
       data-fr="DÉCOUVRIR LE MOUVEMENT DDN →"
@@ -851,7 +851,7 @@ footer{
     KÒMANSE APRANN
   </a>
 
-  <a href="/ddn/" class="btn btn-outline">
+  <a href="#ddn" class="btn btn-outline">
     DEVAN DEVAN NÈT™ →
   </a>
 
@@ -878,65 +878,59 @@ footer{
 </footer>
 
 <script>
-/* ==========================================================
-   LANGUAGE SYSTEM — FIXED
-   DEFAULT = KREYÒL
-========================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-const languageButtons = document.querySelectorAll(".lang-btn");
-const translatableElements = document.querySelectorAll(
-  "[data-ht][data-fr][data-en]"
-);
+  var languageButtons = document.querySelectorAll(".lang-btn");
+  var translatableElements = document.querySelectorAll(
+    "[data-ht][data-fr][data-en]"
+  );
 
-function applyLanguage(lang) {
-  if (!["ht", "fr", "en"].includes(lang)) {
-    lang = "ht";
+  function applyLanguage(lang) {
+    if (lang !== "ht" && lang !== "fr" && lang !== "en") {
+      lang = "ht";
+    }
+
+    document.documentElement.lang = lang;
+
+    translatableElements.forEach(function (element) {
+      var value = element.getAttribute("data-" + lang);
+      if (value !== null) {
+        element.textContent = value;
+      }
+    });
+
+    languageButtons.forEach(function (button) {
+      var isActive = button.getAttribute("data-lang") === lang;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
   }
 
-  document.documentElement.lang = lang;
-
-  translatableElements.forEach((element) => {
-    const value = element.getAttribute(`data-${lang}`);
-    if (value !== null) {
-      element.textContent = value;
-    }
+  languageButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      var lang = event.currentTarget.getAttribute("data-lang");
+      applyLanguage(lang);
+    });
   });
 
-  languageButtons.forEach((button) => {
-    const isActive = button.getAttribute("data-lang") === lang;
-    button.classList.toggle("active", isActive);
-    button.setAttribute("aria-pressed", isActive ? "true" : "false");
-  });
-}
+  applyLanguage("ht");
 
-languageButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const lang = event.currentTarget.getAttribute("data-lang");
-    applyLanguage(lang);
-  });
+
+  var academyLogo = document.querySelector(".brand-video");
+
+  if (academyLogo) {
+    academyLogo.muted = true;
+
+    academyLogo.play().catch(function () {
+      document.addEventListener(
+        "click",
+        function () { academyLogo.play(); },
+        { once: true }
+      );
+    });
+  }
+
 });
-
-/* PA ITILIZE LOCALSTORAGE — PAJ LA TOUJOU OUVRI AN KREYÒL */
-applyLanguage("ht");
-
-
-/* ==========================================================
-   VIDEO AUTOPLAY
-========================================================== */
-
-const academyLogo = document.querySelector(".brand-video");
-
-if (academyLogo) {
-  academyLogo.muted = true;
-
-  academyLogo.play().catch(() => {
-    document.addEventListener(
-      "click",
-      () => academyLogo.play(),
-      { once: true }
-    );
-  });
-}
 </script>
 
 </body>
