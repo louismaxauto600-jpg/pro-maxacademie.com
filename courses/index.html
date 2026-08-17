@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Courses Center</title>
+<meta name="description" content="PRO-MAX ACADÉMIE Courses Center — AI, Digital Creation, Leadership, Automation, Communication and Innovation.">
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --border:rgba(255,121,0,.28);
+  --border2:rgba(255,121,0,.70);
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glow2:0 0 16px rgba(255,121,0,.70),0 0 40px rgba(255,121,0,.28);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 82% 68%,rgba(255,121,0,.10),transparent 42%),
+    linear-gradient(180deg,#000 0%,#090400 48%,#000 100%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1220px,calc(100% - 28px));margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
+}
+.header-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand-mark{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:2px solid var(--orange);
+  display:grid;
+  place-items:center;
+  color:var(--orange);
+  font-weight:1000;
+  background:#000;
+  box-shadow:var(--glow);
+}
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:.95rem;
+}
+.brand-text span{
+  display:block;
+  margin-top:5px;
+  font-size:.56rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.home-btn{
+  padding:10px 15px;
+  border:1px solid var(--border2);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.68rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+.home-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+/* HERO */
+.hero{
+  padding:68px 0 45px;
+  text-align:center;
+}
+.eyebrow{
+  color:var(--orange);
+  font-size:.70rem;
+  font-weight:1000;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.6rem,7vw,5.4rem);
+  line-height:.90;
+  text-transform:uppercase;
+}
+.hero p{
+  max-width:800px;
+  margin:18px auto 0;
+  line-height:1.7;
+}
+.hero-badge{
+  margin:24px auto 0;
+  width:max-content;
+  max-width:100%;
+  padding:10px 16px;
+  border:1px solid var(--border2);
+  border-radius:999px;
+  background:rgba(255,121,0,.06);
+  color:var(--orange);
+  font-weight:1000;
+  font-size:.72rem;
+  text-transform:uppercase;
+}
+
+/* OVERVIEW */
+.overview{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:34px 0 0;
+}
+.overview-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  background:#050200;
+  text-align:center;
+}
+.overview-card strong{
+  display:block;
+  color:var(--orange);
+  font-size:1.65rem;
+}
+.overview-card span{
+  display:block;
+  margin-top:7px;
+  font-size:.72rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* SECTION */
+.section{
+  padding:75px 0;
+  border-top:1px solid rgba(255,121,0,.10);
+}
+.section-title{
+  color:var(--orange);
+  text-align:center;
+  font-size:clamp(2rem,5vw,3.4rem);
+  text-transform:uppercase;
+}
+.section-desc{
+  max-width:760px;
+  margin:14px auto 0;
+  text-align:center;
+  line-height:1.7;
+}
+
+/* COURSES */
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:42px;
+}
+.course-card{
+  position:relative;
+  min-height:330px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at top right,rgba(255,121,0,.12),transparent 36%),
+    #050200;
+  display:flex;
+  flex-direction:column;
+  transition:.25s ease;
+}
+.course-card:hover{
+  border-color:var(--orange);
+  box-shadow:var(--glow2);
+  transform:translateY(-4px);
+}
+.course-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  border:1px solid var(--border2);
+  display:grid;
+  place-items:center;
+  background:#000;
+}
+.course-icon i{
+  color:var(--orange);
+  font-size:1.6rem;
+}
+.course-code{
+  position:absolute;
+  top:24px;
+  right:24px;
+  color:var(--orange3);
+  font-size:.68rem;
+  font-weight:1000;
+  letter-spacing:.08em;
+}
+.course-card h3{
+  margin-top:20px;
+  color:var(--orange);
+  font-size:1.25rem;
+  text-transform:uppercase;
+}
+.course-card p{
+  margin-top:10px;
+  line-height:1.65;
+  font-size:.90rem;
+}
+.course-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.meta{
+  padding:7px 10px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:.66rem;
+  font-weight:900;
+  text-transform:uppercase;
+  background:#000;
+}
+.progress-wrap{
+  margin-top:18px;
+}
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  font-size:.72rem;
+  font-weight:900;
+}
+.progress-bar{
+  height:10px;
+  margin-top:7px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  overflow:hidden;
+  background:#140700;
+}
+.progress-fill{
+  height:100%;
+  width:0;
+  background:var(--orange);
+}
+.course-actions{
+  display:flex;
+  gap:9px;
+  margin-top:auto;
+  padding-top:22px;
+}
+.btn{
+  min-height:44px;
+  padding:10px 15px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:.68rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+.btn-primary{
+  flex:1;
+  background:var(--orange);
+  color:#000;
+}
+.btn-secondary{
+  background:#000;
+  color:var(--orange);
+}
+.btn:hover{
+  box-shadow:var(--glow);
+}
+
+/* LEARNING PATH */
+.path{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+.path-step{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  background:#050200;
+}
+.path-step strong{
+  color:var(--orange);
+  font-size:1.4rem;
+}
+.path-step h4{
+  margin-top:12px;
+  color:var(--orange);
+  text-transform:uppercase;
+}
+.path-step p{
+  margin-top:8px;
+  font-size:.84rem;
+  line-height:1.55;
+}
+
+/* RULE BOX */
+.rule-box{
+  margin-top:38px;
+  border:1px solid var(--border2);
+  border-radius:20px;
+  padding:25px;
+  background:rgba(255,121,0,.06);
+}
+.rule-box h3{
+  color:var(--orange);
+  text-transform:uppercase;
+}
+.rule-box p{
+  margin-top:10px;
+  line-height:1.65;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  background:#000;
+  padding:36px 0;
+  text-align:center;
+  line-height:1.6;
+}
+
+@media(max-width:980px){
+  .course-grid{grid-template-columns:repeat(2,1fr)}
+  .path{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .overview{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .header-inner{min-height:70px}
+  .brand-mark{width:46px;height:46px}
+  .brand-text strong{font-size:.80rem}
+  .brand-text span{font-size:.50rem}
+  .home-btn{padding:8px 10px;font-size:.61rem}
+  .course-grid,.path{grid-template-columns:1fr}
+  .course-actions{flex-direction:column}
+  .btn{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <div class="brand">
+      <div class="brand-mark">PM</div>
+      <div class="brand-text">
+        <strong>PRO-MAX ACADÉMIE</strong>
+        <span>Courses & Learning Center</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a class="home-btn" href="../index.html">
+        <i class="fa-solid fa-house"></i> RETOUNEN NAN ACADÉMIE
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">BSS1815 PRO-MAX DMP</div>
+    <h1>COURSES CENTER</h1>
+
+    <p>
+      Sant aprantisaj ofisyèl PRO-MAX ACADÉMIE pou devlope konesans,
+      konpetans dijital, entèlijans atifisyèl, lidèchip, kominikasyon,
+      automatisation ak inovasyon.
+    </p>
+
+    <div class="hero-badge">
+      6 CORE COURSES • 24/7 DIGITAL ACCESS • PROGRESS TRACKING • CERTIFICATION PATH
+    </div>
+
+    <div class="overview">
+      <div class="overview-card">
+        <strong>6</strong>
+        <span>Kou Prensipal</span>
+      </div>
+      <div class="overview-card">
+        <strong>24/7</strong>
+        <span>Aksè Digital</span>
+      </div>
+      <div class="overview-card">
+        <strong>AI</strong>
+        <span>Smart Learning</span>
+      </div>
+      <div class="overview-card">
+        <strong>🎓</strong>
+        <span>Sètifikasyon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title">CHWAZI KOU OU</h2>
+    <p class="section-desc">
+      Chak kou gen pwòp modil, leson, egzèsis, evalyasyon ak progress tracker pa li.
+    </p>
+
+    <div class="course-grid">
+
+      <article class="course-card" data-course="ai">
+        <div class="course-code">COURSE 01</div>
+        <div class="course-icon"><i class="fa-solid fa-brain"></i></div>
+
+        <h3>Introduction to AI</h3>
+        <p>
+          Konprann entèlijans atifisyèl, prensip fondamantal li yo,
+          zouti modèn yo ak aplikasyon pratik nan lavi ak travay.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Beginner</span>
+          <span class="meta">AI</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="ai-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="ai-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./introduction-ai/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+      <article class="course-card" data-course="digital">
+        <div class="course-code">COURSE 02</div>
+        <div class="course-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+
+        <h3>Digital Creation</h3>
+        <p>
+          Aprann kreye tèks, imaj, videyo, prezantasyon,
+          kontni sosyal ak materyèl dijital pwofesyonèl.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Creative</span>
+          <span class="meta">Media</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="digital-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="digital-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./digital-creation/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+      <article class="course-card" data-course="leadership">
+        <div class="course-code">COURSE 03</div>
+        <div class="course-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+
+        <h3>Digital Leadership</h3>
+        <p>
+          Devlope vizyon, disiplin, òganizasyon, responsablite,
+          kominikasyon ak lidèchip pou epòk dijital la.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Leadership</span>
+          <span class="meta">Strategy</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="leadership-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="leadership-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./digital-leadership/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+      <article class="course-card" data-course="automation">
+        <div class="course-code">COURSE 04</div>
+        <div class="course-icon"><i class="fa-solid fa-gears"></i></div>
+
+        <h3>Automation</h3>
+        <p>
+          Aprann kreye workflow entelijan, automatisation travay,
+          sistèm repetitif ak zouti ki ogmante efikasite.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Workflow</span>
+          <span class="meta">Productivity</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="automation-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="automation-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./automation/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+      <article class="course-card" data-course="communication">
+        <div class="course-code">COURSE 05</div>
+        <div class="course-icon"><i class="fa-solid fa-comments"></i></div>
+
+        <h3>Communication</h3>
+        <p>
+          Devlope kominikasyon pwofesyonèl, prezantasyon,
+          mesaj piblik ak fason pou kominike avèk enpak.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Communication</span>
+          <span class="meta">Presentation</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="communication-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="communication-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./communication/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+      <article class="course-card" data-course="innovation">
+        <div class="course-code">COURSE 06</div>
+        <div class="course-icon"><i class="fa-solid fa-lightbulb"></i></div>
+
+        <h3>Innovation</h3>
+        <p>
+          Aprann transfòme lide an pwojè, kreye solisyon,
+          itilize teknoloji epi bati yon mantalite inovasyon.
+        </p>
+
+        <div class="course-meta">
+          <span class="meta">Innovation</span>
+          <span class="meta">Projects</span>
+          <span class="meta">Certificate</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>PWOGRÈ</span>
+            <span id="innovation-progress-text">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="innovation-progress"></div>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <a class="btn btn-primary" href="./innovation/index.html">
+            <i class="fa-solid fa-play"></i> KÒMANSE KOU A
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title">LEARNING PATH</h2>
+    <p class="section-desc">
+      Chak kou swiv menm lojik pou elèv la avanse klèman depi premye leson an rive nan sètifikasyon.
+    </p>
+
+    <div class="path">
+
+      <div class="path-step">
+        <strong>01</strong>
+        <h4>Aprann</h4>
+        <p>Li oswa gade leson yo epi konprann prensip fondamantal kou a.</p>
+      </div>
+
+      <div class="path-step">
+        <strong>02</strong>
+        <h4>Pratike</h4>
+        <p>Fè egzèsis, aktivite ak ti pwojè pou aplike sa ou aprann.</p>
+      </div>
+
+      <div class="path-step">
+        <strong>03</strong>
+        <h4>Evalye</h4>
+        <p>Pran quiz ak assessment pou verifye konpreyansyon ak konpetans ou.</p>
+      </div>
+
+      <div class="path-step">
+        <strong>04</strong>
+        <h4>Sètifye</h4>
+        <p>Fini kou a, pase evalyasyon an epi satisfè kondisyon peman pou jwenn sètifika.</p>
+      </div>
+
+    </div>
+
+    <div class="rule-box">
+      <h3>RÈG SÈTIFIKASYON PRO-MAX ACADÉMIE</h3>
+      <p>
+        Yon elèv dwe fini kou a, pase evalyasyon obligatwa yo epi satisfè kondisyon finansye yo
+        anvan sètifika a kapab debloke nan Payment & Certification Center.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong style="color:var(--orange)">PRO-MAX ACADÉMIE</strong><br>
+    Courses & Learning Center • BSS1815 PRO-MAX DMP
+  </div>
+</footer>
+
+<script>
+const courseKeys = [
+  "ai",
+  "digital",
+  "leadership",
+  "automation",
+  "communication",
+  "innovation"
+];
+
+function readProgress(key){
+  const value = Number(localStorage.getItem("promaxCourseProgress_" + key) || 0);
+  return Math.max(0, Math.min(100, value));
+}
+
+function renderProgress(){
+  courseKeys.forEach(key=>{
+    const percent = readProgress(key);
+    const bar = document.getElementById(key + "-progress");
+    const text = document.getElementById(key + "-progress-text");
+
+    if(bar) bar.style.width = percent + "%";
+    if(text) text.textContent = percent + "%";
+  });
+}
+
+renderProgress();
+</script>
+
+</body>
+</html>
