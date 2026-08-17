@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PRO-MAX ACADÉMIE | Fòme Jodi a Pou Dirije Demen</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE — Fòmasyon, entèlijans atifisyèl, inovasyon, lidèchip ak DEVAN DEVAN NÈT™.">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000000;
+  --black2:#080300;
+  --black3:#0d0500;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --orangeDark:#9e4300;
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.70);
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:0 0 15px rgba(255,121,0,.70),0 0 38px rgba(255,121,0,.34);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 80% 70%,rgba(255,121,0,.09),transparent 40%),
     linear-gradient(180deg,#000000 0%,#090400 45%,#000000 100%);
 }
 body::before{
@@ -51,7 +87,7 @@ header{
   display:flex;gap:3px;padding:3px;border:1px solid var(--border);border-radius:999px;background:#000;
 }
 .lang-btn{
-  border:0;border-radius:999px;padding:9px 13px;cursor:pointer;background:#000;
+  border:0;border-radius:999px;padding:9px 13px;min-width:46px;cursor:pointer;background:#000;
   color:var(--orange3);font-size:.68rem;font-weight:1000;
 }
 .lang-btn.active{background:var(--orange);color:#000}
@@ -338,10 +374,10 @@ footer{
     BYENVINI
   </a>
 
-  <div class="lang-switch">
-    <button class="lang-btn" data-lang="fr">FRA</button>
-    <button class="lang-btn" data-lang="en">ENG</button>
-    <button class="lang-btn active" data-lang="ht">KRE</button>
+  <div class="lang-switch" aria-label="Language selector">
+    <button type="button" class="lang-btn" data-lang="fr">FRA</button>
+    <button type="button" class="lang-btn" data-lang="en">ENG</button>
+    <button type="button" class="lang-btn active" data-lang="ht">KRE</button>
   </div>
 
 </div>
@@ -843,39 +879,46 @@ footer{
 
 <script>
 /* ==========================================================
-   LANGUAGE SYSTEM
+   LANGUAGE SYSTEM — FIXED
    DEFAULT = KREYÒL
 ========================================================== */
 
 const languageButtons = document.querySelectorAll(".lang-btn");
+const translatableElements = document.querySelectorAll(
+  "[data-ht][data-fr][data-en]"
+);
 
-function setLanguage(lang){
+function applyLanguage(lang) {
+  if (!["ht", "fr", "en"].includes(lang)) {
+    lang = "ht";
+  }
 
   document.documentElement.lang = lang;
 
-  document.querySelectorAll("[data-ht]").forEach(element => {
-    const translation = element.getAttribute("data-" + lang);
-    if(translation){
-      element.textContent = translation;
+  translatableElements.forEach((element) => {
+    const value = element.getAttribute(`data-${lang}`);
+    if (value !== null) {
+      element.textContent = value;
     }
   });
 
-  languageButtons.forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.lang === lang
-    );
+  languageButtons.forEach((button) => {
+    const isActive = button.getAttribute("data-lang") === lang;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
   });
 }
 
-languageButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    setLanguage(button.dataset.lang);
+languageButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const lang = event.currentTarget.getAttribute("data-lang");
+    applyLanguage(lang);
   });
 });
 
-/* TOUJOU KÒMANSE AN KREYÒL */
-setLanguage("ht");
+/* PA ITILIZE LOCALSTORAGE — PAJ LA TOUJOU OUVRI AN KREYÒL */
+applyLanguage("ht");
+
 
 /* ==========================================================
    VIDEO AUTOPLAY
@@ -883,14 +926,14 @@ setLanguage("ht");
 
 const academyLogo = document.querySelector(".brand-video");
 
-if(academyLogo){
+if (academyLogo) {
   academyLogo.muted = true;
 
   academyLogo.play().catch(() => {
     document.addEventListener(
       "click",
       () => academyLogo.play(),
-      {once:true}
+      { once: true }
     );
   });
 }
