@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Profile | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Student Profile — BSS1815 PRO-MAX DMP">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+  --glow:0 0 20px rgba(255,121,0,.38);
+  --glowStrong:0 0 18px rgba(255,121,0,.72),0 0 45px rgba(255,121,0,.28);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,121,0,.14),transparent 32%),
+    radial-gradient(circle at 85% 70%,rgba(255,121,0,.10),transparent 35%),
+    linear-gradient(180deg,#000 0%,#0b0400 50%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+.container{
+  width:min(1200px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--orange);
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.brand-logo video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:1rem;
+  font-weight:1000;
+}
+
+.brand-text span{
+  display:block;
+  margin-top:5px;
+  color:var(--orange3);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back-btn{
+  padding:10px 16px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  color:var(--orange);
+  background:#000;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+  padding:9px 10px;
+  border:0;
+  border-radius:999px;
+  background:#000;
+  color:var(--orange3);
+  cursor:pointer;
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+/* HERO */
+
+.hero{
+  padding:65px 0 38px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.6rem,8vw,5.5rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:720px;
+  margin:18px auto 0;
+  line-height:1.7;
+}
+
+/* PROFILE */
+
+.profile-layout{
+  display:grid;
+  grid-template-columns:330px 1fr;
+  gap:20px;
+  padding:25px 0 85px;
+}
+
+.card{
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at top,rgba(255,121,0,.08),transparent 35%),
+    linear-gradient(145deg,#000,#0b0400);
+  box-shadow:0 0 0 rgba(0,0,0,0);
+}
+
+.profile-card{
+  padding:28px 22px;
+  text-align:center;
+  height:max-content;
+  position:sticky;
+  top:110px;
+}
+
+.avatar{
+  width:130px;
+  height:130px;
+  margin:auto;
+  border-radius:50%;
+  border:3px solid var(--orange);
+  background:
+    radial-gradient(circle,rgba(255,121,0,.20),#000 68%);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  box-shadow:var(--glowStrong);
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.avatar span{
+  color:var(--orange);
+  font-size:3rem;
+  font-weight:1000;
+}
+
+.student-name{
+  margin-top:20px;
+  color:var(--orange);
+  font-size:1.35rem;
+  font-weight:1000;
+}
+
+.student-id{
+  margin-top:7px;
+  font-size:.75rem;
+  font-weight:900;
+}
+
+.status-pill{
+  display:inline-flex;
+  margin-top:15px;
+  padding:8px 14px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.profile-mini{
+  margin-top:25px;
+  display:grid;
+  gap:10px;
+  text-align:left;
+}
+
+.mini-row{
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:#030100;
+}
+
+.mini-row small{
+  display:block;
+  color:var(--orange);
+  font-size:.60rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.mini-row strong{
+  display:block;
+  margin-top:5px;
+  font-size:.78rem;
+  word-break:break-word;
+}
+
+/* MAIN AREA */
+
+.main-area{
+  display:grid;
+  gap:20px;
+}
+
+.panel{
+  padding:27px;
+}
+
+.panel-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:22px;
+}
+
+.panel-title h2{
+  color:var(--orange);
+  font-size:1.25rem;
+  text-transform:uppercase;
+}
+
+.edit-btn{
+  border:1px solid var(--orange);
+  border-radius:999px;
+  padding:9px 15px;
+  background:#000;
+  color:var(--orange);
+  cursor:pointer;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.edit-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.field{
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#030100;
+}
+
+.field label{
+  display:block;
+  color:var(--orange);
+  font-size:.62rem;
+  font-weight:1000;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.field input,
+.field select{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--orange3);
+  font-size:.86rem;
+}
+
+.field input:disabled,
+.field select:disabled{
+  opacity:1;
+  -webkit-text-fill-color:var(--orange3);
+}
+
+.field.editing{
+  border-color:var(--orange);
+  box-shadow:0 0 12px rgba(255,121,0,.18);
+}
+
+.save-actions{
+  display:none;
+  margin-top:18px;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.save-actions.show{
+  display:flex;
+}
+
+.btn{
+  min-height:46px;
+  padding:11px 19px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  cursor:pointer;
+  font-size:.68rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.btn-primary{
+  background:var(--orange);
+  color:#000;
+}
+
+.btn-outline{
+  background:#000;
+  color:var(--orange);
+}
+
+/* METRICS */
+
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.metric{
+  min-height:135px;
+  padding:18px 12px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#030100;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.metric-icon{
+  font-size:1.6rem;
+}
+
+.metric strong{
+  margin-top:10px;
+  color:var(--orange);
+  font-size:1.25rem;
+}
+
+.metric span{
+  margin-top:7px;
+  font-size:.64rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* COURSE */
+
+.course-box{
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#030100;
+}
+
+.course-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+}
+
+.course-top h3{
+  color:var(--orange);
+  font-size:1rem;
+}
+
+.course-top span{
+  font-size:.73rem;
+  font-weight:1000;
+}
+
+.progress-track{
+  height:15px;
+  margin-top:18px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  overflow:hidden;
+  background:#160800;
+}
+
+.progress-bar{
+  height:100%;
+  width:0;
+  background:var(--orange);
+  transition:width .5s ease;
+}
+
+.progress-label{
+  margin-top:8px;
+  display:flex;
+  justify-content:space-between;
+  font-size:.70rem;
+  font-weight:900;
+}
+
+/* CERTIFICATE */
+
+.certificate-box{
+  padding:25px;
+  border:1px solid var(--borderStrong);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at center,rgba(255,121,0,.12),transparent 55%),
+    #020100;
+  text-align:center;
+}
+
+.certificate-icon{
+  font-size:3rem;
+}
+
+.certificate-box h3{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:1.4rem;
+}
+
+.certificate-box p{
+  margin:12px auto 0;
+  max-width:600px;
+  line-height:1.6;
+  font-size:.84rem;
+}
+
+/* NAVIGATION */
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.quick-link{
+  min-height:135px;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#030100;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  transition:.25s;
+}
+
+.quick-link:hover{
+  transform:translateY(-4px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.quick-link span{
+  font-size:1.7rem;
+}
+
+.quick-link strong{
+  margin-top:10px;
+  color:var(--orange);
+  font-size:.72rem;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  padding:42px 0;
+  border-top:1px solid var(--border);
+  background:#000;
+  text-align:center;
+}
+
+.footer-title{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:9px;
+  font-size:.76rem;
+  line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+  .profile-layout{
+    grid-template-columns:1fr;
+  }
+
+  .profile-card{
+    position:static;
+  }
+
+  .metrics{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .header-inner{
+    padding:12px 0;
+  }
+
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-text strong{
+    font-size:.80rem;
+  }
+
+  .brand-text span{
+    font-size:.47rem;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .lang-btn{
+    min-width:38px;
+    padding:8px 7px;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .metrics{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .panel{
+    padding:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+  <div class="brand-logo">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../pro-max-dmp-II.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="brand-text">
+    <strong>PRO-MAX ACADÉMIE</strong>
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+      Fòme Jodi a Pou Dirije Demen
+    </span>
+  </div>
+
+</a>
+
+<div class="header-actions">
+
+  <a
+    href="../index.html"
+    class="back-btn"
+    data-ht="← AKADEMI"
+    data-fr="← ACADÉMIE"
+    data-en="← ACADEMY">
+    ← AKADEMI
+  </a>
+
+  <div class="lang-switch" aria-label="Language selector">
+
+    <button type="button" class="lang-btn" data-lang="fr">
+      FRA
+    </button>
+
+    <button type="button" class="lang-btn" data-lang="en">
+      ENG
+    </button>
+
+    <button type="button" class="lang-btn active" data-lang="ht">
+      KRE
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+BSS1815 PRO-MAX DMP • STUDENT PORTAL
+</div>
+
+<h1
+  data-ht="PWOFIL ELÈV"
+  data-fr="PROFIL ÉTUDIANT"
+  data-en="STUDENT PROFILE">
+  PWOFIL ELÈV
+</h1>
+
+<p
+  data-ht="Jere enfòmasyon pèsonèl ou, kou ou, pwogrè, peman, evalyasyon ak estati sètifikasyon ou nan yon sèl espas."
+  data-fr="Gérez vos informations personnelles, vos cours, votre progression, vos paiements, vos évaluations et votre certification dans un seul espace."
+  data-en="Manage your personal information, courses, progress, payments, assessments and certification status in one place.">
+  Jere enfòmasyon pèsonèl ou, kou ou, pwogrè, peman, evalyasyon ak estati sètifikasyon ou nan yon sèl espas.
+</p>
+
+</div>
+
+</section>
+
+<div class="container profile-layout">
+
+<!-- LEFT PROFILE -->
+
+<aside class="card profile-card">
+
+  <div class="avatar">
+    <img id="profileImage" alt="Student Profile">
+    <span id="avatarInitials">PM</span>
+  </div>
+
+  <div class="student-name" id="displayName">
+    PRO-MAX STUDENT
+  </div>
+
+  <div class="student-id">
+    ID: <span id="displayStudentId">PM-000001</span>
+  </div>
+
+  <div class="status-pill"
+    data-ht="● ELÈV AKTIF"
+    data-fr="● ÉTUDIANT ACTIF"
+    data-en="● ACTIVE STUDENT">
+    ● ELÈV AKTIF
+  </div>
+
+  <div class="profile-mini">
+
+    <div class="mini-row">
+      <small
+        data-ht="KOU AKTYÈL"
+        data-fr="COURS ACTUEL"
+        data-en="CURRENT COURSE">
+        KOU AKTYÈL
+      </small>
+      <strong id="miniCourse">Introduction à l’IA</strong>
+    </div>
+
+    <div class="mini-row">
+      <small
+        data-ht="DAT ENSKRIPSYON"
+        data-fr="DATE D’INSCRIPTION"
+        data-en="REGISTRATION DATE">
+        DAT ENSKRIPSYON
+      </small>
+      <strong id="miniRegistration">—</strong>
+    </div>
+
+    <div class="mini-row">
+      <small
+        data-ht="ESTATI SÈTIFIKA"
+        data-fr="STATUT DU CERTIFICAT"
+        data-en="CERTIFICATE STATUS">
+        ESTATI SÈTIFIKA
+      </small>
+      <strong id="miniCertificate">🔒 LOCKED</strong>
+    </div>
+
+  </div>
+
+</aside>
+
+<!-- RIGHT AREA -->
+
+<div class="main-area">
+
+<!-- PERSONAL INFORMATION -->
+
+<section class="card panel">
+
+<div class="panel-title">
+
+<h2
+  data-ht="ENFÒMASYON PÈSONÈL"
+  data-fr="INFORMATIONS PERSONNELLES"
+  data-en="PERSONAL INFORMATION">
+  ENFÒMASYON PÈSONÈL
+</h2>
+
+<button
+  type="button"
+  class="edit-btn"
+  id="editProfileBtn"
+  data-ht="✎ MODIFYE"
+  data-fr="✎ MODIFIER"
+  data-en="✎ EDIT">
+  ✎ MODIFYE
+</button>
+
+</div>
+
+<div class="info-grid">
+
+<div class="field">
+<label
+  data-ht="NON KONPLÈ"
+  data-fr="NOM COMPLET"
+  data-en="FULL NAME">
+  NON KONPLÈ
+</label>
+
+<input
+  id="fullName"
+  type="text"
+  value="PRO-MAX STUDENT"
+  disabled>
+</div>
+
+<div class="field">
+<label>STUDENT ID</label>
+
+<input
+  id="studentId"
+  type="text"
+  value="PM-000001"
+  disabled>
+</div>
+
+<div class="field">
+<label
+  data-ht="TELEFÒN / WHATSAPP"
+  data-fr="TÉLÉPHONE / WHATSAPP"
+  data-en="PHONE / WHATSAPP">
+  TELEFÒN / WHATSAPP
+</label>
+
+<input
+  id="studentPhone"
+  type="text"
+  placeholder="+509 / +1 ..."
+  disabled>
+</div>
+
+<div class="field">
+<label>EMAIL</label>
+
+<input
+  id="studentEmail"
+  type="email"
+  placeholder="student@email.com"
+  disabled>
+</div>
+
+<div class="field">
+<label
+  data-ht="PEYI"
+  data-fr="PAYS"
+  data-en="COUNTRY">
+  PEYI
+</label>
+
+<input
+  id="studentCountry"
+  type="text"
+  placeholder="Haiti / United States..."
+  disabled>
+</div>
+
+<div class="field">
+<label
+  data-ht="VIL"
+  data-fr="VILLE"
+  data-en="CITY">
+  VIL
+</label>
+
+<input
+  id="studentCity"
+  type="text"
+  placeholder="City"
+  disabled>
+</div>
+
+<div class="field">
+<label
+  data-ht="KOU"
+  data-fr="COURS"
+  data-en="COURSE">
+  KOU
+</label>
+
+<select id="studentCourse" disabled>
+<option>Introduction à l’IA</option>
+<option>Création Digitale</option>
+<option>Leadership Digital</option>
+<option>Automatisation</option>
+<option>Communication</option>
+<option>Innovation</option>
+</select>
+</div>
+
+<div class="field">
+<label
+  data-ht="DAT ENSKRIPSYON"
+  data-fr="DATE D’INSCRIPTION"
+  data-en="REGISTRATION DATE">
+  DAT ENSKRIPSYON
+</label>
+
+<input
+  id="registrationDate"
+  type="date"
+  disabled>
+</div>
+
+</div>
+
+<div class="save-actions" id="saveActions">
+
+<button
+  type="button"
+  class="btn btn-primary"
+  id="saveProfileBtn"
+  data-ht="✓ SOVE PWOFIL"
+  data-fr="✓ ENREGISTRER"
+  data-en="✓ SAVE PROFILE">
+  ✓ SOVE PWOFIL
+</button>
+
+<button
+  type="button"
+  class="btn btn-outline"
+  id="cancelEditBtn"
+  data-ht="ANILE"
+  data-fr="ANNULER"
+  data-en="CANCEL">
+  ANILE
+</button>
+
+</div>
+
+</section>
+
+<!-- DASHBOARD -->
+
+<section class="card panel">
+
+<div class="panel-title">
+
+<h2
+  data-ht="REZIME ELÈV"
+  data-fr="RÉSUMÉ ÉTUDIANT"
+  data-en="STUDENT SUMMARY">
+  REZIME ELÈV
+</h2>
+
+</div>
+
+<div class="metrics">
+
+<div class="metric">
+<div class="metric-icon">🎓</div>
+<strong id="courseProgressMetric">0%</strong>
+<span
+  data-ht="PWOGRÈ KOU"
+  data-fr="PROGRESSION"
+  data-en="COURSE PROGRESS">
+  PWOGRÈ KOU
+</span>
+</div>
+
+<div class="metric">
+<div class="metric-icon">💳</div>
+<strong id="paymentMetric">0/5</strong>
+<span
+  data-ht="PEMAN"
+  data-fr="PAIEMENTS"
+  data-en="PAYMENTS">
+  PEMAN
+</span>
+</div>
+
+<div class="metric">
+<div class="metric-icon">💰</div>
+<strong id="balanceMetric">5,000 HTG</strong>
+<span
+  data-ht="BALANS"
+  data-fr="SOLDE"
+  data-en="BALANCE">
+  BALANS
+</span>
+</div>
+
+<div class="metric">
+<div class="metric-icon">🏆</div>
+<strong id="certificateMetric">🔒</strong>
+<span
+  data-ht="SÈTIFIKA"
+  data-fr="CERTIFICAT"
+  data-en="CERTIFICATE">
+  SÈTIFIKA
+</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- COURSE PROGRESS -->
+
+<section class="card panel">
+
+<div class="panel-title">
+
+<h2
+  data-ht="PWOGRÈ KOU"
+  data-fr="PROGRESSION DU COURS"
+  data-en="COURSE PROGRESS">
+  PWOGRÈ KOU
+</h2>
+
+</div>
+
+<div class="course-box">
+
+<div class="course-top">
+
+<h3 id="courseTitle">
+Introduction à l’IA
+</h3>
+
+<span id="progressPercent">
+0%
+</span>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar" id="courseProgressBar"></div>
+</div>
+
+<div class="progress-label">
+
+<span
+  data-ht="Kòmanse"
+  data-fr="Début"
+  data-en="Start">
+  Kòmanse
+</span>
+
+<span
+  data-ht="Fini"
+  data-fr="Terminé"
+  data-en="Complete">
+  Fini
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATE -->
+
+<section class="card panel">
+
+<div class="panel-title">
+
+<h2
+  data-ht="SÈTIFIKASYON"
+  data-fr="CERTIFICATION"
+  data-en="CERTIFICATION">
+  SÈTIFIKASYON
+</h2>
+
+</div>
+
+<div class="certificate-box">
+
+<div class="certificate-icon" id="certificateIcon">
+🔒
+</div>
+
+<h3 id="certificateStatus">
+CERTIFICATE LOCKED
+</h3>
+
+<p
+  id="certificateReason"
+  data-ht="Pou debloke sètifika a: fini 5/5 peman yo, fini kou a epi pase evalyasyon an."
+  data-fr="Pour débloquer le certificat : terminez les 5/5 paiements, le cours et réussissez l’évaluation."
+  data-en="To unlock the certificate: complete all 5/5 payments, finish the course and pass the assessment.">
+  Pou debloke sètifika a: fini 5/5 peman yo, fini kou a epi pase evalyasyon an.
+</p>
+
+</div>
+
+</section>
+
+<!-- QUICK LINKS -->
+
+<section class="card panel">
+
+<div class="panel-title">
+
+<h2
+  data-ht="AKSÈ RAPID"
+  data-fr="ACCÈS RAPIDE"
+  data-en="QUICK ACCESS">
+  AKSÈ RAPID
+</h2>
+
+</div>
+
+<div class="quick-grid">
+
+<a href="../courses/index.html" class="quick-link">
+<span>🎓</span>
+<strong
+  data-ht="KOU MWEN"
+  data-fr="MES COURS"
+  data-en="MY COURSES">
+  KOU MWEN
+</strong>
+</a>
+
+<a href="../index.html#payment" class="quick-link">
+<span>💳</span>
+<strong
+  data-ht="PEMAN"
+  data-fr="PAIEMENTS"
+  data-en="PAYMENTS">
+  PEMAN
+</strong>
+</a>
+
+<a href="../index.html#student-area" class="quick-link">
+<span>✓</span>
+<strong
+  data-ht="EVALYASYON"
+  data-fr="ÉVALUATION"
+  data-en="ASSESSMENT">
+  EVALYASYON
+</strong>
+</a>
+
+<a href="../ddn/index.html" class="quick-link">
+<span>🌎</span>
+<strong>
+DEVAN DEVAN NÈT™
+</strong>
+</a>
+
+</div>
+
+</section>
+
+</div>
+</div>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-title">
+PRO-MAX ACADÉMIE
+</div>
+
+<div class="footer-info">
+BSS1815 PRO-MAX DMP<br>
+DEVAN DEVAN NÈT™<br>
+BATI POU JODI A • PARE POU DEMEN
+</div>
+
+</div>
+
+</footer>
+
+<script>
+(function(){
+
+"use strict";
+
+/* =========================================
+   LANGUAGE SYSTEM
+========================================= */
+
+var currentLanguage = "ht";
+
+var languageButtons =
+  document.querySelectorAll(".lang-btn[data-lang]");
+
+function applyLanguage(lang){
+
+  if(["ht","fr","en"].indexOf(lang) === -1){
+    lang = "ht";
+  }
+
+  currentLanguage = lang;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-" + lang + "]")
+    .forEach(function(element){
+
+      var translation =
+        element.getAttribute("data-" + lang);
+
+      if(translation !== null){
+        element.textContent = translation;
+      }
+
+    });
+
+  languageButtons.forEach(function(button){
+
+    var active =
+      button.getAttribute("data-lang") === lang;
+
+    button.classList.toggle("active",active);
+
+    button.setAttribute(
+      "aria-pressed",
+      active ? "true" : "false"
+    );
+
+  });
+
+  try{
+    localStorage.setItem(
+      "promaxLanguage",
+      lang
+    );
+  }catch(e){}
+
+}
+
+languageButtons.forEach(function(button){
+
+  button.addEventListener("click",function(){
+
+    applyLanguage(
+      this.getAttribute("data-lang")
+    );
+
+  });
+
+});
+
+var savedLanguage = "ht";
+
+try{
+  savedLanguage =
+    localStorage.getItem("promaxLanguage") || "ht";
+}catch(e){}
+
+applyLanguage(savedLanguage);
+
+
+/* =========================================
+   VIDEO LOGO
+========================================= */
+
+document.querySelectorAll("video")
+.forEach(function(video){
+
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  var playPromise = video.play();
+
+  if(playPromise){
+    playPromise.catch(function(){});
+  }
+
+});
+
+
+/* =========================================
+   PROFILE DATA
+========================================= */
+
+var PROFILE_KEY =
+  "promaxStudentProfile";
+
+var PAYMENT_KEY =
+  "promaxPaymentHistory";
+
+var TOTAL_TUITION = 5000;
+
+var originalProfile = null;
+
+var fields = [
+  "fullName",
+  "studentId",
+  "studentPhone",
+  "studentEmail",
+  "studentCountry",
+  "studentCity",
+  "studentCourse",
+  "registrationDate"
+];
+
+function getElement(id){
+  return document.getElementById(id);
+}
+
+function defaultDate(){
+
+  var today = new Date();
+
+  var year = today.getFullYear();
+
+  var month =
+    String(today.getMonth()+1)
+    .padStart(2,"0");
+
+  var day =
+    String(today.getDate())
+    .padStart(2,"0");
+
+  return year+"-"+month+"-"+day;
+
+}
+
+function getProfile(){
+
+  var saved = null;
+
+  try{
+    saved =
+      JSON.parse(
+        localStorage.getItem(PROFILE_KEY)
+      );
+  }catch(e){}
+
+  if(saved){
+    return saved;
+  }
+
+  return {
+    fullName:"PRO-MAX STUDENT",
+    studentId:"PM-000001",
+    studentPhone:"",
+    studentEmail:"",
+    studentCountry:"",
+    studentCity:"",
+    studentCourse:"Introduction à l’IA",
+    registrationDate:defaultDate(),
+    courseProgress:0,
+    assessmentPassed:false
+  };
+
+}
+
+function fillProfile(profile){
+
+  fields.forEach(function(id){
+
+    if(getElement(id)){
+      getElement(id).value =
+        profile[id] || "";
+    }
+
+  });
+
+  updateProfileDisplay(profile);
+
+}
+
+function updateProfileDisplay(profile){
+
+  getElement("displayName").textContent =
+    profile.fullName || "PRO-MAX STUDENT";
+
+  getElement("displayStudentId").textContent =
+    profile.studentId || "PM-000001";
+
+  getElement("miniCourse").textContent =
+    profile.studentCourse || "—";
+
+  getElement("courseTitle").textContent =
+    profile.studentCourse || "—";
+
+  getElement("miniRegistration").textContent =
+    profile.registrationDate || "—";
+
+  var initials =
+    (profile.fullName || "PRO MAX")
+    .split(" ")
+    .filter(Boolean)
+    .slice(0,2)
+    .map(function(word){
+      return word.charAt(0);
+    })
+    .join("")
+    .toUpperCase();
+
+  getElement("avatarInitials").textContent =
+    initials || "PM";
+
+}
+
+
+/* =========================================
+   EDIT PROFILE
+========================================= */
+
+function setEditing(editing){
+
+  fields.forEach(function(id){
+
+    var field = getElement(id);
+
+    if(!field) return;
+
+    /* Student ID remains protected */
+
+    if(id === "studentId"){
+      field.disabled = true;
+    }else{
+      field.disabled = !editing;
+    }
+
+    var wrapper =
+      field.closest(".field");
+
+    if(wrapper){
+      wrapper.classList.toggle(
+        "editing",
+        editing && id !== "studentId"
+      );
+    }
+
+  });
+
+  getElement("saveActions")
+    .classList.toggle(
+      "show",
+      editing
+    );
+
+}
+
+getElement("editProfileBtn")
+.addEventListener("click",function(){
+
+  originalProfile =
+    getProfile();
+
+  setEditing(true);
+
+});
+
+getElement("cancelEditBtn")
+.addEventListener("click",function(){
+
+  if(originalProfile){
+    fillProfile(originalProfile);
+  }
+
+  setEditing(false);
+
+});
+
+getElement("saveProfileBtn")
+.addEventListener("click",function(){
+
+  var oldProfile =
+    getProfile();
+
+  var profile = {
+    fullName:
+      getElement("fullName").value.trim(),
+
+    studentId:
+      getElement("studentId").value.trim(),
+
+    studentPhone:
+      getElement("studentPhone").value.trim(),
+
+    studentEmail:
+      getElement("studentEmail").value.trim(),
+
+    studentCountry:
+      getElement("studentCountry").value.trim(),
+
+    studentCity:
+      getElement("studentCity").value.trim(),
+
+    studentCourse:
+      getElement("studentCourse").value,
+
+    registrationDate:
+      getElement("registrationDate").value,
+
+    courseProgress:
+      Number(oldProfile.courseProgress || 0),
+
+    assessmentPassed:
+      Boolean(oldProfile.assessmentPassed)
+  };
+
+  if(!profile.fullName){
+
+    alert(
+      currentLanguage === "fr"
+      ? "Entrez le nom de l’étudiant."
+      : currentLanguage === "en"
+      ? "Enter the student's name."
+      : "Antre non elèv la."
+    );
+
+    return;
+  }
+
+  try{
+
+    localStorage.setItem(
+      PROFILE_KEY,
+      JSON.stringify(profile)
+    );
+
+  }catch(e){}
+
+  fillProfile(profile);
+
+  setEditing(false);
+
+  updateDashboard();
+
+  alert(
+    currentLanguage === "fr"
+    ? "Profil enregistré."
+    : currentLanguage === "en"
+    ? "Profile saved."
+    : "Pwofil la sove."
+  );
+
+});
+
+
+/* =========================================
+   PAYMENT + CERTIFICATION
+========================================= */
+
+function getPayments(){
+
+  try{
+
+    var data =
+      JSON.parse(
+        localStorage.getItem(PAYMENT_KEY)
+      );
+
+    return Array.isArray(data)
+      ? data
+      : [];
+
+  }catch(e){
+
+    return [];
+
+  }
+
+}
+
+function totalPaid(){
+
+  return getPayments()
+  .reduce(function(total,payment){
+
+    return total +
+      Number(payment.amount || 0);
+
+  },0);
+
+}
+
+function updateDashboard(){
+
+  var profile = getProfile();
+
+  var payments =
+    getPayments();
+
+  var paid =
+    Math.min(
+      totalPaid(),
+      TOTAL_TUITION
+    );
+
+  var balance =
+    Math.max(
+      TOTAL_TUITION-paid,
+      0
+    );
+
+  var count =
+    Math.min(
+      payments.length,
+      5
+    );
+
+  var progress =
+    Math.max(
+      0,
+      Math.min(
+        Number(profile.courseProgress || 0),
+        100
+      )
+    );
+
+  var courseFinished =
+    progress >= 100;
+
+  var assessmentPassed =
+    profile.assessmentPassed === true;
+
+  var paymentFinished =
+    paid >= TOTAL_TUITION;
+
+  var certificateEligible =
+    paymentFinished &&
+    courseFinished &&
+    assessmentPassed;
+
+
+  getElement("paymentMetric")
+    .textContent =
+    count+"/5";
+
+  getElement("balanceMetric")
+    .textContent =
+    balance.toLocaleString("en-US")
+    +" HTG";
+
+  getElement("courseProgressMetric")
+    .textContent =
+    progress+"%";
+
+  getElement("progressPercent")
+    .textContent =
+    progress+"%";
+
+  getElement("courseProgressBar")
+    .style.width =
+    progress+"%";
+
+
+  if(certificateEligible){
+
+    getElement("certificateMetric")
+      .textContent = "🔓";
+
+    getElement("certificateIcon")
+      .textContent = "🏆";
+
+    getElement("certificateStatus")
+      .textContent =
+      "CERTIFICATE ELIGIBLE";
+
+    getElement("miniCertificate")
+      .textContent =
+      "🔓 ELIGIBLE";
+
+  }else{
+
+    getElement("certificateMetric")
+      .textContent = "🔒";
+
+    getElement("certificateIcon")
+      .textContent = "🔒";
+
+    getElement("certificateStatus")
+      .textContent =
+      "CERTIFICATE LOCKED";
+
+    getElement("miniCertificate")
+      .textContent =
+      "🔒 LOCKED";
+
+  }
+
+}
+
+
+/* =========================================
+   INITIALIZE
+========================================= */
+
+var profile =
+  getProfile();
+
+fillProfile(profile);
+
+setEditing(false);
+
+updateDashboard();
+
+})();
+</script>
+
+</body>
+</html>
