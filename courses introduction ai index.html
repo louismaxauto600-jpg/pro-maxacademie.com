@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Introduction to AI — Firestore Live</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{
+  --o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);
+  --bd2:rgba(255,121,0,.72);--g:0 0 20px rgba(255,121,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--o2);
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),
+    linear-gradient(180deg,#000,#0a0400 50%,#000)
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{width:min(1120px,calc(100% - 28px));margin:auto}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--bd)
+}
+.head{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px
+}
+.brand strong{display:block;color:var(--o)}
+.brand span{font-size:.62rem;font-weight:900}
+.back{
+  border:1px solid var(--bd2);
+  border-radius:999px;padding:10px 14px;
+  color:var(--o);font-size:.68rem;font-weight:900
+}
+
+.hero{text-align:center;padding:58px 0 36px}
+.hero h1{
+  color:var(--o);
+  font-size:clamp(2.5rem,7vw,5rem);
+  line-height:.9
+}
+.hero p{
+  max-width:800px;
+  margin:16px auto 0;
+  line-height:1.65
+}
+.statusbar{
+  max-width:900px;
+  margin:22px auto 0;
+  padding:14px;
+  border:1px solid var(--bd2);
+  border-radius:14px;
+  background:rgba(255,121,0,.08);
+  font-weight:900
+}
+
+.progress-card{
+  max-width:850px;
+  margin:28px auto 0;
+  border:1px solid var(--bd2);
+  border-radius:18px;
+  padding:18px;
+  background:#050200
+}
+.progress-top{
+  display:flex;justify-content:space-between;
+  gap:12px;font-weight:900
+}
+.track{
+  height:14px;margin-top:10px;
+  border:1px solid var(--bd);
+  border-radius:999px;overflow:hidden;background:#160800
+}
+.fill{height:100%;width:0;background:var(--o);transition:.3s}
+
+.section{
+  padding:60px 0;
+  border-top:1px solid rgba(255,121,0,.12)
+}
+.title{
+  text-align:center;
+  color:var(--o);
+  font-size:clamp(2rem,5vw,3.2rem)
+}
+.modules{
+  display:grid;gap:16px;margin-top:34px
+}
+.module{
+  border:1px solid var(--bd);
+  border-radius:20px;
+  background:#050200;
+  overflow:hidden
+}
+.module-head{
+  padding:20px;
+  display:flex;justify-content:space-between;gap:12px
+}
+.module-head h3{color:var(--o)}
+.module-head span{font-size:.68rem;font-weight:900}
+.lesson{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:16px 20px;
+  border-top:1px solid rgba(255,121,0,.15)
+}
+.lesson input{
+  width:20px;height:20px;
+  accent-color:var(--o)
+}
+.lesson strong{display:block;color:var(--o2)}
+.lesson small{display:block;margin-top:4px;line-height:1.45}
+.lesson-status{
+  font-size:.64rem;font-weight:900;
+  border:1px solid var(--bd);
+  border-radius:999px;padding:6px 8px
+}
+
+.quiz{
+  margin-top:34px;
+  border:1px solid var(--bd2);
+  border-radius:20px;
+  padding:24px;
+  background:#050200
+}
+.quiz h2{color:var(--o)}
+.question{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid var(--bd)
+}
+.question p{font-weight:900}
+.answers{display:grid;gap:8px;margin-top:12px}
+.answer{
+  display:flex;gap:9px;align-items:flex-start;
+  border:1px solid var(--bd);
+  border-radius:12px;
+  padding:11px
+}
+.answer input{
+  width:auto;
+  accent-color:var(--o);
+  margin-top:2px
+}
+
+.actions{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:20px
+}
+.btn{
+  border:2px solid var(--o);
+  border-radius:999px;
+  padding:11px 17px;
+  font-weight:1000;
+  font-size:.72rem;
+  cursor:pointer;
+  text-transform:uppercase
+}
+.primary{background:var(--o);color:#000}
+.secondary{background:#000;color:var(--o)}
+.message{
+  display:none;margin-top:16px;padding:14px;
+  border:1px solid var(--bd2);
+  border-radius:12px;line-height:1.55
+}
+.status-card{
+  margin-top:34px;
+  border:1px solid var(--bd2);
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  background:#000
+}
+.status-card h2{color:var(--o)}
+.status-card p{
+  max-width:720px;
+  margin:10px auto 0;
+  line-height:1.6
+}
+footer{
+  text-align:center;
+  padding:34px 0;
+  border-top:1px solid var(--bd)
+}
+
+@media(max-width:600px){
+  .lesson{grid-template-columns:auto 1fr}
+  .lesson-status{grid-column:2}
+  .back{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container head">
+  <div class="brand">
+    <strong>PRO-MAX ACADÉMIE</strong>
+    <span>INTRODUCTION TO AI • FIRESTORE LIVE</span>
+  </div>
+
+  <a class="back" href="../index.html">← COURSES CENTER</a>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container">
+
+  <h1>INTRODUCTION TO AI</h1>
+
+  <p>
+    Leson, progress, assessment score ak course completion
+    sove dirèkteman nan Cloud Firestore pou elèv la kapab kontinye
+    sou diferan aparèy.
+  </p>
+
+  <div class="statusbar" id="authStatus">
+    VERIFYING FIREBASE SESSION...
+  </div>
+
+  <div class="progress-card">
+    <div class="progress-top">
+      <span>COURSE PROGRESS</span>
+      <span id="progressText">0%</span>
+    </div>
+
+    <div class="track">
+      <div class="fill" id="progressFill"></div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="title">MODIL & LESON</h2>
+
+<div class="modules">
+
+  <section class="module">
+    <div class="module-head">
+      <h3>MODIL 1 — KONPRANN AI</h3>
+      <span>FOUNDATION</span>
+    </div>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-01" type="checkbox">
+      <div>
+        <strong>Leson 1 — Kisa Entèlijans Atifisyèl ye?</strong>
+        <small>Definisyon, objektif ak egzanp AI nan lavi chak jou.</small>
+      </div>
+      <span class="lesson-status">LESSON 01</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-02" type="checkbox">
+      <div>
+        <strong>Leson 2 — Kijan AI aprann?</strong>
+        <small>Done, algoritm, machine learning ak modèl AI.</small>
+      </div>
+      <span class="lesson-status">LESSON 02</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-03" type="checkbox">
+      <div>
+        <strong>Leson 3 — AI vs entèlijans imen</strong>
+        <small>Fòs, limit ak diferans ant teknoloji ak kapasite imen.</small>
+      </div>
+      <span class="lesson-status">LESSON 03</span>
+    </label>
+  </section>
+
+  <section class="module">
+    <div class="module-head">
+      <h3>MODIL 2 — AI NAN MOND MODÈN</h3>
+      <span>APPLICATION</span>
+    </div>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-04" type="checkbox">
+      <div>
+        <strong>Leson 4 — AI nan travay</strong>
+        <small>Otomatizasyon, analiz, sèvis kliyan ak pwodiktivite.</small>
+      </div>
+      <span class="lesson-status">LESSON 04</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-05" type="checkbox">
+      <div>
+        <strong>Leson 5 — AI pou kreyasyon</strong>
+        <small>Tèks, imaj, videyo, odyo ak prezantasyon.</small>
+      </div>
+      <span class="lesson-status">LESSON 05</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-06" type="checkbox">
+      <div>
+        <strong>Leson 6 — Prompting</strong>
+        <small>Kijan pou bay AI enstriksyon klè pou jwenn pi bon rezilta.</small>
+      </div>
+      <span class="lesson-status">LESSON 06</span>
+    </label>
+  </section>
+
+  <section class="module">
+    <div class="module-head">
+      <h3>MODIL 3 — RESPONSABLITE & LAVNI</h3>
+      <span>ADVANCE</span>
+    </div>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-07" type="checkbox">
+      <div>
+        <strong>Leson 7 — Verifye enfòmasyon AI</strong>
+        <small>Poukisa rezilta AI dwe revize ak verifye.</small>
+      </div>
+      <span class="lesson-status">LESSON 07</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-08" type="checkbox">
+      <div>
+        <strong>Leson 8 — Etik, vi prive & sekirite</strong>
+        <small>Itilizasyon responsab ak pwoteksyon enfòmasyon.</small>
+      </div>
+      <span class="lesson-status">LESSON 08</span>
+    </label>
+
+    <label class="lesson">
+      <input class="lessonCheck" data-id="lesson-09" type="checkbox">
+      <div>
+        <strong>Leson 9 — Prepare pou epòk AI</strong>
+        <small>Aprann, adapte, kreye ak devlope nouvo konpetans.</small>
+      </div>
+      <span class="lesson-status">LESSON 09</span>
+    </label>
+  </section>
+
+</div>
+
+<div class="quiz">
+
+  <h2>FINAL ASSESSMENT</h2>
+  <p style="margin-top:8px">
+    Ou bezwen omwen 80% pou pase.
+  </p>
+
+  <div class="question" data-correct="b">
+    <p>1. Ki deskripsyon ki pi bon pou AI?</p>
+    <div class="answers">
+      <label class="answer"><input type="radio" name="q1" value="a"> Yon sistèm ki toujou konnen tout bagay.</label>
+      <label class="answer"><input type="radio" name="q1" value="b"> Teknoloji ki ka fè travay ki mande analiz, aprantisaj oswa jenerasyon rezilta.</label>
+      <label class="answer"><input type="radio" name="q1" value="c"> Yon ranplasman total pou jijman imen.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="c">
+    <p>2. Kisa yon bon prompt dwe fè?</p>
+    <div class="answers">
+      <label class="answer"><input type="radio" name="q2" value="a"> Rete vag.</label>
+      <label class="answer"><input type="radio" name="q2" value="b"> Sèlman itilize yon mo.</label>
+      <label class="answer"><input type="radio" name="q2" value="c"> Bay objektif, kontèks ak enstriksyon klè.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="a">
+    <p>3. Èske nou dwe verifye enfòmasyon AI bay?</p>
+    <div class="answers">
+      <label class="answer"><input type="radio" name="q3" value="a"> Wi, sitou lè enfòmasyon an enpòtan.</label>
+      <label class="answer"><input type="radio" name="q3" value="b"> Non, AI pa janm fè erè.</label>
+      <label class="answer"><input type="radio" name="q3" value="c"> Sèlman yon fwa pa ane.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="b">
+    <p>4. Ki youn ki se itilizasyon AI?</p>
+    <div class="answers">
+      <label class="answer"><input type="radio" name="q4" value="a"> Sèlman kalkilatris.</label>
+      <label class="answer"><input type="radio" name="q4" value="b"> Kreyasyon kontni, analiz ak automatisation.</label>
+      <label class="answer"><input type="radio" name="q4" value="c"> AI pa gen aplikasyon pratik.</label>
+    </div>
+  </div>
+
+  <div class="question" data-correct="c">
+    <p>5. Ki apwòch ki pi responsab?</p>
+    <div class="answers">
+      <label class="answer"><input type="radio" name="q5" value="a"> Mete nenpòt done prive nan nenpòt zouti.</label>
+      <label class="answer"><input type="radio" name="q5" value="b"> Aksepte tout rezilta san reflechi.</label>
+      <label class="answer"><input type="radio" name="q5" value="c"> Pwoteje done, verifye rezilta epi sèvi ak jijman imen.</label>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" id="gradeBtn">
+      SUBMIT ASSESSMENT
+    </button>
+
+    <button class="btn secondary" id="reloadBtn">
+      RELOAD CLOUD PROGRESS
+    </button>
+  </div>
+
+  <div class="message" id="message"></div>
+
+</div>
+
+<div class="status-card">
+  <h2 id="courseStatus">🔒 COURSE NOT COMPLETED</h2>
+
+  <p id="courseReason">
+    Fini 9 leson yo epi pase Final Assessment la avèk omwen 80%.
+  </p>
+
+  <div class="actions" style="justify-content:center">
+    <a class="btn secondary" href="../../payment-center/index.html">
+      PAYMENT CENTER
+    </a>
+
+    <a class="btn primary" href="../index.html">
+      COURSES CENTER
+    </a>
+  </div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+  <strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>
+  Introduction to AI • Firestore Live Progress • BSS1815 PRO-MAX DMP
+</div>
+</footer>
+
+<script type="module">
+import {
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+  doc,
+  setDoc,
+  getDoc,
+  onSnapshot,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+import {
+  auth,
+  db
+} from "../../firebase/firebase-config.js";
+
+const COURSE_ID="introduction-ai";
+const TOTAL_LESSONS=9;
+
+const E=id=>document.getElementById(id);
+const checks=[...document.querySelectorAll(".lessonCheck")];
+
+let currentUser=null;
+let cloudData={
+  completedLessonIds:[],
+  assessmentScore:0,
+  assessmentPassed:false,
+  courseCompleted:false,
+  progressPercent:0
+};
+let unsubscribeProgress=null;
+let applyingCloud=false;
+
+function showMessage(text){
+  const box=E("message");
+  box.style.display="block";
+  box.textContent=text;
+}
+
+function progressRef(){
+  return doc(
+    db,
+    "courseProgress",
+    currentUser.uid,
+    "courses",
+    COURSE_ID
+  );
+}
+
+function completedLessonIds(){
+  return checks
+    .filter(c=>c.checked)
+    .map(c=>c.dataset.id);
+}
+
+function calculateProgress(completedCount,assessmentPassed){
+  const lessonPercent=Math.round(
+    (completedCount/TOTAL_LESSONS)*80
+  );
+
+  return Math.min(80,lessonPercent)+(assessmentPassed?20:0);
+}
+
+function renderProgress(data){
+  if(!data)return;
+
+  cloudData={
+    completedLessonIds:Array.isArray(data.completedLessonIds)
+      ? data.completedLessonIds
+      : [],
+    assessmentScore:Number(data.assessmentScore||0),
+    assessmentPassed:data.assessmentPassed===true,
+    courseCompleted:data.courseCompleted===true,
+    progressPercent:Number(data.progressPercent||0)
+  };
+
+  applyingCloud=true;
+
+  checks.forEach(check=>{
+    check.checked=cloudData.completedLessonIds.includes(
+      check.dataset.id
+    );
+  });
+
+  applyingCloud=false;
+
+  E("progressFill").style.width=
+    Math.max(0,Math.min(100,cloudData.progressPercent))+"%";
+
+  E("progressText").textContent=
+    Math.max(0,Math.min(100,cloudData.progressPercent))+"%";
+
+  E("courseStatus").textContent=
+    cloudData.courseCompleted
+      ?"🔓 COURSE COMPLETED"
+      :"🔒 COURSE NOT COMPLETED";
+
+  if(cloudData.courseCompleted){
+    E("courseReason").textContent=
+      `Felisitasyon! Kou a fini. Final Assessment Score: ${cloudData.assessmentScore}%.`;
+  }else if(cloudData.assessmentPassed){
+    E("courseReason").textContent=
+      `Assessment passed (${cloudData.assessmentScore}%). Fini tout 9 leson yo pou course completion.`;
+  }else{
+    E("courseReason").textContent=
+      "Fini 9 leson yo epi pase Final Assessment la avèk omwen 80%.";
+  }
+}
+
+async function saveProgress({
+  assessmentScore=cloudData.assessmentScore,
+  assessmentPassed=cloudData.assessmentPassed
+}={}){
+  if(!currentUser)return;
+
+  const ids=completedLessonIds();
+  const completedLessons=ids.length;
+
+  const courseCompleted=
+    completedLessons===TOTAL_LESSONS &&
+    assessmentPassed===true;
+
+  const progressPercent=
+    calculateProgress(
+      completedLessons,
+      assessmentPassed
+    );
+
+  await setDoc(
+    progressRef(),
+    {
+      uid:currentUser.uid,
+      courseId:COURSE_ID,
+      completedLessonIds:ids,
+      completedLessons,
+      totalLessons:TOTAL_LESSONS,
+      progressPercent,
+      assessmentScore:Number(assessmentScore||0),
+      assessmentPassed:assessmentPassed===true,
+      courseCompleted,
+      updatedAt:serverTimestamp()
+    },
+    {merge:true}
+  );
+}
+
+checks.forEach(check=>{
+  check.addEventListener("change",async()=>{
+    if(applyingCloud||!currentUser)return;
+
+    try{
+      await saveProgress();
+      showMessage("Lesson progress sove nan Cloud Firestore.");
+    }catch(error){
+      console.error(error);
+      showMessage(
+        "Lesson progress pa sove. Verifye Firebase session ak Firestore rules."
+      );
+    }
+  });
+});
+
+E("gradeBtn").addEventListener("click",async()=>{
+  if(!currentUser){
+    showMessage("Firebase login obligatwa.");
+    return;
+  }
+
+  const questions=[
+    ...document.querySelectorAll(".question")
+  ];
+
+  let score=0;
+  let answered=0;
+
+  questions.forEach(question=>{
+    const selected=question.querySelector(
+      'input[type="radio"]:checked'
+    );
+
+    if(selected){
+      answered++;
+      if(selected.value===question.dataset.correct){
+        score++;
+      }
+    }
+  });
+
+  if(answered<questions.length){
+    showMessage(
+      "Tanpri reponn tout 5 kestyon yo anvan ou soumèt assessment la."
+    );
+    return;
+  }
+
+  const percent=Math.round(
+    (score/questions.length)*100
+  );
+
+  const passed=percent>=80;
+
+  E("gradeBtn").disabled=true;
+  E("gradeBtn").textContent="SAVING SCORE...";
+
+  try{
+    await saveProgress({
+      assessmentScore:percent,
+      assessmentPassed:passed
+    });
+
+    showMessage(
+      passed
+        ?`PASSED — ${percent}%. Assessment score sove nan Firestore.`
+        :`NOT PASSED — ${percent}%. Ou bezwen omwen 80%.`
+    );
+  }catch(error){
+    console.error(error);
+    showMessage(
+      "Assessment score pa sove. Verifye Firestore rules."
+    );
+  }finally{
+    E("gradeBtn").disabled=false;
+    E("gradeBtn").textContent="SUBMIT ASSESSMENT";
+  }
+});
+
+async function reloadCloud(){
+  if(!currentUser)return;
+
+  try{
+    const snap=await getDoc(progressRef());
+
+    if(snap.exists()){
+      renderProgress(snap.data());
+      showMessage("Cloud course progress chaje.");
+    }else{
+      renderProgress({
+        completedLessonIds:[],
+        assessmentScore:0,
+        assessmentPassed:false,
+        courseCompleted:false,
+        progressPercent:0
+      });
+
+      showMessage(
+        "Pa gen Firestore progress record ankò. Kòmanse premye leson an."
+      );
+    }
+  }catch(error){
+    console.error(error);
+    showMessage(
+      "Pa kapab chaje Firestore course progress."
+    );
+  }
+}
+
+E("reloadBtn").addEventListener(
+  "click",
+  reloadCloud
+);
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    E("authStatus").textContent=
+      "NO FIREBASE SESSION — REDIRECTING TO LOGIN...";
+
+    setTimeout(
+      ()=>window.location.href="../../login/index.html",
+      800
+    );
+
+    return;
+  }
+
+  currentUser=user;
+
+  E("authStatus").textContent=
+    `CONNECTED • ${user.email||"AUTHENTICATED STUDENT"}`;
+
+  if(unsubscribeProgress){
+    unsubscribeProgress();
+  }
+
+  unsubscribeProgress=onSnapshot(
+    progressRef(),
+    snapshot=>{
+      if(snapshot.exists()){
+        renderProgress(snapshot.data());
+      }else{
+        renderProgress({
+          completedLessonIds:[],
+          assessmentScore:0,
+          assessmentPassed:false,
+          courseCompleted:false,
+          progressPercent:0
+        });
+      }
+    },
+    error=>{
+      console.error(error);
+      showMessage(
+        "Realtime course progress listener pa kapab li Firestore."
+      );
+    }
+  );
+});
+</script>
+
+</body>
+</html>
