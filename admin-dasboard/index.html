@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Admin Dashboard</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{
+  --o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);
+  --g:0 0 20px rgba(255,121,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);
+  background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000)
+}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.container{width:min(1180px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);border-bottom:1px solid var(--bd)}
+.head{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
+.back{border:1px solid var(--bd2);border-radius:999px;padding:10px 14px;color:var(--o);font-size:.68rem;font-weight:900}
+.hero{text-align:center;padding:58px 0 36px}.hero h1{color:var(--o);font-size:clamp(2.4rem,7vw,5rem);line-height:.9}.hero p{max-width:800px;margin:16px auto 0;line-height:1.65}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:26px}
+.stat{border:1px solid var(--bd);border-radius:16px;padding:18px;background:#050200;text-align:center}
+.stat strong{display:block;color:var(--o);font-size:1.45rem}.stat span{display:block;margin-top:6px;font-size:.68rem;font-weight:900;text-transform:uppercase}
+.section{padding:60px 0;border-top:1px solid rgba(255,121,0,.12)}
+.title{text-align:center;color:var(--o);font-size:clamp(1.9rem,5vw,3.2rem)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.card{border:1px solid var(--bd);border-radius:18px;padding:20px;background:#050200}
+.card h3{color:var(--o)}.card p{margin-top:8px;font-size:.84rem;line-height:1.55}
+.btn{display:inline-flex;margin-top:16px;border:2px solid var(--o);border-radius:999px;padding:10px 15px;background:var(--o);color:#000;font-weight:900;font-size:.7rem}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+input,select{background:#000;color:var(--o2);border:1px solid var(--bd2);border-radius:10px;padding:11px 12px}
+input{flex:1;min-width:220px}.table{overflow:auto;margin-top:18px;border:1px solid var(--bd);border-radius:16px}
+table{width:100%;min-width:980px;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid var(--bd);text-align:left;font-size:.78rem}th{color:var(--o);background:#080300}
+.badge{display:inline-flex;border:1px solid var(--bd);border-radius:999px;padding:5px 8px;font-size:.64rem;font-weight:900}
+.badge.good{border-color:var(--o);color:var(--o)}
+.actions{display:flex;gap:6px}.small-btn{border:1px solid var(--o);background:#000;color:var(--o);border-radius:999px;padding:6px 9px;font-size:.64rem;cursor:pointer}
+footer{text-align:center;padding:34px 0;border-top:1px solid var(--bd)}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.back{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header><div class="container head">
+<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>ADMIN DASHBOARD & STUDENT REGISTRY</span></div>
+<a class="back" href="../index.html">← HOME ACADÉMIE</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="container">
+<h1>ADMIN DASHBOARD</h1>
+<p>Yon sèl sant pou kontwole elèv, kou, peman, pwogrè, evalyasyon ak sètifika PRO-MAX ACADÉMIE.</p>
+
+<div class="stats">
+<div class="stat"><strong id="totalStudents">0</strong><span>Elèv</span></div>
+<div class="stat"><strong id="activeCourses">0</strong><span>Kou Aktif</span></div>
+<div class="stat"><strong id="totalPayments">0 HTG</strong><span>Total Peman</span></div>
+<div class="stat"><strong id="eligibleCerts">0</strong><span>Certificate Eligible</span></div>
+<div class="stat"><strong id="issuedCerts">0</strong><span>Issued</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 class="title">ADMIN CENTER</h2>
+
+<div class="grid">
+<a class="card" href="../student-portal/index.html"><h3>STUDENT PORTAL</h3><p>Gade eksperyans elèv la, kou li yo ak progress li.</p><span class="btn">OUVRI</span></a>
+<a class="card" href="../courses/index.html"><h3>COURSES CENTER</h3><p>Kontwole 6 kou prensipal yo ak paj leson yo.</p><span class="btn">OUVRI</span></a>
+<a class="card" href="../payment-center/index.html"><h3>PAYMENT CENTER</h3><p>Jere 5 peman × 1,000 HTG, balans ak resi.</p><span class="btn">OUVRI</span></a>
+<a class="card" href="../certificate-center/index.html"><h3>CERTIFICATE CENTER</h3><p>Verifye eligibility, jenere ak verifye sètifika.</p><span class="btn">OUVRI</span></a>
+<a class="card" href="../courses/introduction-ai/index.html"><h3>ASSESSMENTS</h3><p>Verifye kou Introduction to AI ak final assessment li.</p><span class="btn">OUVRI</span></a>
+<a class="card" href="../index.html#contact"><h3>SUPPORT & CONTACT</h3><p>Aksè rapid sou kontak ak rezo sosyal Académie a.</p><span class="btn">OUVRI</span></a>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 class="title">STUDENT REGISTRY</h2>
+
+<div class="toolbar">
+<input id="searchInput" type="text" placeholder="Chèche non, kou, telefòn oswa email...">
+<select id="filterStatus">
+<option value="all">Tout Estati</option>
+<option value="paid">Paid in Full</option>
+<option value="balance">Balance Remaining</option>
+<option value="eligible">Certificate Eligible</option>
+<option value="locked">Certificate Locked</option>
+</select>
+<button class="small-btn" id="refreshBtn">REFRESH DATA</button>
+</div>
+
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>Elèv</th><th>Kou</th><th>Telefòn</th><th>Email</th><th>Peman</th><th>Balans</th><th>Progress</th><th>Certificate</th><th>Actions</th>
+</tr>
+</thead>
+<tbody id="registryBody"></tbody>
+</table>
+</div>
+</div></section>
+</main>
+
+<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Admin Dashboard • Student Registry • BSS1815 PRO-MAX DMP</div></footer>
+
+<script>
+const E=id=>document.getElementById(id);
+
+function money(n){return Number(n).toLocaleString("en-US")+" HTG"}
+
+function readLocalData(){
+ let student={name:"",course:"Introduction to AI",phone:"",email:""};
+ let payments=[],certs={};
+ try{student=JSON.parse(localStorage.getItem("promaxPaymentStudent")||JSON.stringify(student))}catch(e){}
+ try{payments=JSON.parse(localStorage.getItem("promaxPaymentHistory")||"[]")}catch(e){}
+ try{certs=JSON.parse(localStorage.getItem("promaxCertificates")||"{}")}catch(e){}
+
+ const aiProgress=Math.max(0,Math.min(100,Number(localStorage.getItem("promaxCourseProgress_ai")||0)));
+ const courseCompleted=localStorage.getItem("promaxAIcourseCompleted")==="true";
+ const assessmentPassed=localStorage.getItem("promaxAIassessmentPassed")==="true";
+ const paid=payments.reduce((sum,p)=>sum+Number(p.amount||1000),0);
+ const balance=Math.max(5000-paid,0);
+ const eligible=paid>=5000&&courseCompleted&&assessmentPassed;
+ const issued=Object.keys(certs).length>0;
+
+ const rows=[];
+ if(student.name){
+   rows.push({
+     name:student.name,
+     course:student.course||"Introduction to AI",
+     phone:student.phone||"—",
+     email:student.email||"—",
+     paid,balance,progress:aiProgress,eligible,issued
+   });
+ }
+ return {rows,payments,certs};
+}
+
+function render(){
+ const data=readLocalData();
+ E("totalStudents").textContent=data.rows.length;
+ E("activeCourses").textContent=data.rows.length?1:0;
+ const total=data.rows.reduce((s,r)=>s+r.paid,0);
+ E("totalPayments").textContent=money(total);
+ E("eligibleCerts").textContent=data.rows.filter(r=>r.eligible).length;
+ E("issuedCerts").textContent=Object.keys(data.certs).length;
+
+ const q=E("searchInput").value.trim().toLowerCase();
+ const filter=E("filterStatus").value;
+
+ let rows=data.rows.filter(r=>{
+   const hay=[r.name,r.course,r.phone,r.email].join(" ").toLowerCase();
+   if(q && !hay.includes(q)) return false;
+   if(filter==="paid" && r.balance>0) return false;
+   if(filter==="balance" && r.balance===0) return false;
+   if(filter==="eligible" && !r.eligible) return false;
+   if(filter==="locked" && r.eligible) return false;
+   return true;
+ });
+
+ const body=E("registryBody");
+ body.innerHTML="";
+ if(!rows.length){
+   body.innerHTML='<tr><td colspan="9" style="text-align:center;padding:24px">Pa gen done elèv pou montre ankò.</td></tr>';
+   return;
+ }
+
+ rows.forEach(r=>{
+   const tr=document.createElement("tr");
+   tr.innerHTML=`
+   <td>${r.name}</td>
+   <td>${r.course}</td>
+   <td>${r.phone}</td>
+   <td>${r.email}</td>
+   <td>${money(r.paid)}</td>
+   <td>${money(r.balance)}</td>
+   <td>${r.progress}%</td>
+   <td><span class="badge ${r.eligible?"good":""}">${r.issued?"ISSUED":r.eligible?"ELIGIBLE":"LOCKED"}</span></td>
+   <td><div class="actions">
+      <a class="small-btn" href="../payment-center/index.html">PAYMENT</a>
+      <a class="small-btn" href="../certificate-center/index.html">CERT</a>
+   </div></td>`;
+   body.appendChild(tr);
+ });
+}
+
+E("searchInput").addEventListener("input",render);
+E("filterStatus").addEventListener("change",render);
+E("refreshBtn").addEventListener("click",render);
+render();
+</script>
+</body>
+</html>
