@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Enrollment & Student Account</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{
+  --o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);
+  --g:0 0 20px rgba(255,121,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);
+  background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000)
+}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.container{width:min(1160px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);border-bottom:1px solid var(--bd)}
+.head{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
+.back{border:1px solid var(--bd2);border-radius:999px;padding:10px 14px;color:var(--o);font-size:.68rem;font-weight:900}
+.hero{text-align:center;padding:60px 0 38px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,5rem);line-height:.9}.hero p{max-width:800px;margin:16px auto 0;line-height:1.65}
+.rule{max-width:900px;margin:22px auto 0;padding:14px;border:1px solid var(--bd2);border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
+.section{padding:60px 0;border-top:1px solid rgba(255,121,0,.12)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{border:1px solid var(--bd);border-radius:20px;padding:22px;background:#050200}
+.card h2{color:var(--o);text-transform:uppercase}.sub{margin-top:8px;font-size:.86rem;line-height:1.55}
+.field{margin-top:14px}
+label{display:block;margin-bottom:6px;color:var(--o);font-size:.74rem;font-weight:900}
+input,select{width:100%;background:#000;color:var(--o2);border:1px solid var(--bd2);border-radius:10px;padding:11px 12px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--o);border-radius:999px;padding:11px 17px;font-weight:1000;font-size:.72rem;cursor:pointer;text-transform:uppercase}
+.primary{background:var(--o);color:#000}.secondary{background:#000;color:var(--o)}
+.id-card{display:none;margin-top:28px;border:2px solid var(--o);border-radius:22px;padding:26px;background:radial-gradient(circle at top right,rgba(255,121,0,.13),transparent 35%),#000;box-shadow:var(--g)}
+.id-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.id-title{color:var(--o);font-size:1.3rem;font-weight:1000}.id-code{border:1px solid var(--bd2);border-radius:999px;padding:7px 10px;font-size:.68rem;font-weight:900}
+.id-body{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.id-field{border:1px solid var(--bd);border-radius:12px;padding:13px}.id-field strong{display:block;color:var(--o);font-size:.72rem;text-transform:uppercase}.id-field span{display:block;margin-top:6px}
+.account-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.metric{border:1px solid var(--bd);border-radius:14px;padding:16px;text-align:center;background:#000}.metric strong{display:block;color:var(--o);font-size:1.3rem}.metric span{display:block;margin-top:6px;font-size:.68rem;font-weight:900}
+.table{overflow:auto;margin-top:20px;border:1px solid var(--bd);border-radius:16px}table{width:100%;min-width:900px;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid var(--bd);text-align:left;font-size:.78rem}th{color:var(--o);background:#080300}
+.small{border:1px solid var(--o);background:#000;color:var(--o);border-radius:999px;padding:6px 9px;font-size:.63rem;cursor:pointer}
+footer{text-align:center;padding:34px 0;border-top:1px solid var(--bd)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.account-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.id-body{grid-template-columns:1fr}.account-grid{grid-template-columns:1fr 1fr}.back{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header><div class="container head">
+<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>ENROLLMENT & STUDENT ACCOUNT SYSTEM</span></div>
+<a class="back" href="../admin-dashboard/index.html">← ADMIN DASHBOARD</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="container">
+<h1>ENROLLMENT CENTER</h1>
+<p>Kreye dosye ofisyèl pou chak elèv ak Student ID, kou, kontak, dat enskripsyon ak estati kont.</p>
+<div class="rule">CHAK ELÈV = 1 STUDENT ID • 1 DOSYE • PWOGRÈ • PEMAN • SÈTIFIKASYON</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="grid">
+
+<div class="card">
+<h2>Nouvo Enskripsyon</h2>
+<p class="sub">Ranpli enfòmasyon elèv la epi sistèm nan ap jenere yon Student ID otomatik.</p>
+
+<div class="field"><label>Non Konplè</label><input id="fullName" type="text" placeholder="Egzanp: Jean Pierre"></div>
+<div class="field"><label>Telefòn / WhatsApp</label><input id="phone" type="text" placeholder="+509 ..."></div>
+<div class="field"><label>Email</label><input id="email" type="email" placeholder="student@email.com"></div>
+<div class="field"><label>Kou</label>
+<select id="course">
+<option>Introduction to AI</option><option>Digital Creation</option><option>Digital Leadership</option>
+<option>Automation</option><option>Communication</option><option>Innovation</option>
+</select></div>
+<div class="field"><label>Dat Enskripsyon</label><input id="enrollDate" type="date"></div>
+
+<div class="actions">
+<button class="btn primary" id="createBtn">CREATE STUDENT ACCOUNT</button>
+<button class="btn secondary" id="clearBtn">CLEAR FORM</button>
+</div>
+</div>
+
+<div class="card">
+<h2>Student Account Status</h2>
+<p class="sub">Apre enskripsyon an, kat elèv la ap parèt isit la.</p>
+
+<div class="id-card" id="idCard">
+<div class="id-top">
+<div class="id-title">PRO-MAX ACADÉMIE STUDENT</div>
+<div class="id-code" id="studentId">PMA-000000</div>
+</div>
+
+<div class="id-body">
+<div class="id-field"><strong>Student</strong><span id="cardName">—</span></div>
+<div class="id-field"><strong>Course</strong><span id="cardCourse">—</span></div>
+<div class="id-field"><strong>Phone</strong><span id="cardPhone">—</span></div>
+<div class="id-field"><strong>Email</strong><span id="cardEmail">—</span></div>
+<div class="id-field"><strong>Enrollment Date</strong><span id="cardDate">—</span></div>
+<div class="id-field"><strong>Status</strong><span>ACTIVE</span></div>
+</div>
+</div>
+
+<div class="account-grid">
+<div class="metric"><strong id="mProgress">0%</strong><span>PROGRESS</span></div>
+<div class="metric"><strong id="mPayments">0/5</strong><span>PAYMENTS</span></div>
+<div class="metric"><strong id="mBalance">5,000</strong><span>HTG BALANCE</span></div>
+<div class="metric"><strong id="mCert">🔒</strong><span>CERTIFICATE</span></div>
+</div>
+
+<div class="actions">
+<a class="btn secondary" href="../student-portal/index.html">STUDENT PORTAL</a>
+<a class="btn secondary" href="../payment-center/index.html">PAYMENT CENTER</a>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 style="text-align:center;color:var(--o);font-size:clamp(2rem,5vw,3.2rem)">STUDENT ACCOUNTS</h2>
+
+<div class="table">
+<table>
+<thead><tr><th>Student ID</th><th>Non</th><th>Kou</th><th>Telefòn</th><th>Email</th><th>Dat</th><th>Status</th><th>Action</th></tr></thead>
+<tbody id="studentBody"></tbody>
+</table>
+</div>
+</div></section>
+</main>
+
+<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Enrollment & Student Account System • BSS1815 PRO-MAX DMP</div></footer>
+
+<script>
+const E=id=>document.getElementById(id);
+let students=[];
+
+function loadStudents(){
+ try{students=JSON.parse(localStorage.getItem("promaxStudents")||"[]")}catch(e){students=[]}
+}
+function saveStudents(){localStorage.setItem("promaxStudents",JSON.stringify(students))}
+function makeId(){
+ const year=new Date().getFullYear();
+ const r=Math.random().toString(36).slice(2,7).toUpperCase();
+ return `PMA-${year}-${r}`;
+}
+function clearForm(){
+ E("fullName").value="";E("phone").value="";E("email").value="";E("course").selectedIndex=0;
+ E("enrollDate").value=new Date().toISOString().slice(0,10);
+}
+function showCard(s){
+ E("idCard").style.display="block";
+ E("studentId").textContent=s.id;E("cardName").textContent=s.name;E("cardCourse").textContent=s.course;
+ E("cardPhone").textContent=s.phone||"—";E("cardEmail").textContent=s.email||"—";E("cardDate").textContent=s.date;
+ const progress=Number(localStorage.getItem("promaxCourseProgress_ai")||0);
+ let payments=[];try{payments=JSON.parse(localStorage.getItem("promaxPaymentHistory")||"[]")}catch(e){}
+ const paidCount=Math.min(payments.length,5),balance=Math.max(5000-paidCount*1000,0);
+ const courseDone=localStorage.getItem("promaxAIcourseCompleted")==="true";
+ const assessment=localStorage.getItem("promaxAIassessmentPassed")==="true";
+ const cert=paidCount>=5&&courseDone&&assessment;
+ E("mProgress").textContent=progress+"%";E("mPayments").textContent=paidCount+"/5";
+ E("mBalance").textContent=balance.toLocaleString();E("mCert").textContent=cert?"🔓":"🔒";
+}
+function render(){
+ const body=E("studentBody");body.innerHTML="";
+ if(!students.length){body.innerHTML='<tr><td colspan="8" style="text-align:center;padding:24px">Pa gen elèv anrejistre ankò.</td></tr>';return}
+ students.forEach((s,i)=>{
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${s.id}</td><td>${s.name}</td><td>${s.course}</td><td>${s.phone||"—"}</td><td>${s.email||"—"}</td><td>${s.date}</td><td>ACTIVE</td><td><button class="small" data-i="${i}">VIEW</button></td>`;
+  body.appendChild(tr);
+ });
+ document.querySelectorAll(".small").forEach(b=>b.onclick=()=>showCard(students[Number(b.dataset.i)]));
+}
+E("createBtn").onclick=()=>{
+ const name=E("fullName").value.trim();
+ if(!name)return alert("Tanpri antre non elèv la.");
+ const s={id:makeId(),name,phone:E("phone").value.trim(),email:E("email").value.trim(),course:E("course").value,date:E("enrollDate").value||new Date().toISOString().slice(0,10)};
+ students.push(s);saveStudents();
+ localStorage.setItem("promaxPaymentStudent",JSON.stringify({name:s.name,course:s.course,phone:s.phone,email:s.email,studentId:s.id}));
+ showCard(s);render();alert("Student account kreye avèk siksè.");clearForm();
+};
+E("clearBtn").onclick=clearForm;
+
+loadStudents();render();clearForm();
+if(students.length)showCard(students[students.length-1]);
+</script>
+</body>
+</html>
