@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Student Portal</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{--o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);--g:0 0 20px rgba(255,121,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--o2);background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000);min-height:100vh}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);border-bottom:1px solid var(--bd)}
+.head{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
+.back{border:1px solid var(--bd2);border-radius:999px;padding:10px 14px;color:var(--o);font-size:.68rem;font-weight:900}
+.hero{text-align:center;padding:60px 0 40px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,5rem);line-height:.9}.hero p{max-width:760px;margin:16px auto 0;line-height:1.65}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.stat{border:1px solid var(--bd);border-radius:16px;padding:18px;background:#050200;text-align:center}
+.stat strong{display:block;color:var(--o);font-size:1.5rem}.stat span{display:block;margin-top:6px;font-size:.7rem;font-weight:900}
+.section{padding:65px 0;border-top:1px solid rgba(255,121,0,.12)}
+.title{text-align:center;color:var(--o);font-size:clamp(1.9rem,5vw,3.2rem)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.card{border:1px solid var(--bd);border-radius:20px;padding:22px;background:#050200;transition:.25s}
+.card:hover{border-color:var(--o);box-shadow:var(--g);transform:translateY(-3px)}
+.card h3{color:var(--o);margin-top:12px}.card p{margin-top:8px;line-height:1.55;font-size:.86rem}
+.icon{font-size:2rem}.btn{display:inline-flex;margin-top:18px;border:2px solid var(--o);border-radius:999px;padding:10px 15px;background:var(--o);color:#000;font-weight:900;font-size:.7rem}
+.course-list{display:grid;gap:12px;margin-top:32px}
+.course-row{border:1px solid var(--bd);border-radius:16px;padding:18px;background:#050200}
+.row-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.row-top strong{color:var(--o)}
+.track{height:10px;margin-top:10px;border:1px solid var(--bd);border-radius:999px;overflow:hidden;background:#160800}.fill{height:100%;background:var(--o);width:0}
+footer{text-align:center;padding:34px 0;border-top:1px solid var(--bd)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.row-top{align-items:flex-start;flex-direction:column}.back{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header><div class="container head">
+<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>STUDENT PORTAL</span></div>
+<a class="back" href="../index.html">← HOME ACADÉMIE</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="container">
+<h1>STUDENT PORTAL</h1>
+<p>Yon sèl espas pou suiv kou, pwogrè, evalyasyon, peman ak sètifikasyon.</p>
+
+<div class="stats">
+<div class="stat"><strong id="overallProgress">0%</strong><span>PWOGRÈ TOTAL</span></div>
+<div class="stat"><strong id="coursesStarted">0/6</strong><span>KOU KÒMANSE</span></div>
+<div class="stat"><strong id="coursesCompleted">0</strong><span>KOU FINI</span></div>
+<div class="stat"><strong>🎓</strong><span>SÈTIFIKASYON</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2 class="title">ESPAS ELÈV</h2>
+<div class="grid">
+
+<a class="card" href="../courses/index.html">
+<div class="icon">📚</div><h3>MY COURSES</h3>
+<p>Gade 6 kou prensipal PRO-MAX ACADÉMIE yo epi kontinye aprantisaj ou.</p>
+<span class="btn">OUVRI KOU YO</span>
+</a>
+
+<a class="card" href="#progress">
+<div class="icon">📈</div><h3>PROGRESS</h3>
+<p>Suiv pwogrè ou atravè tout kou yo ak pousantaj pou chak kou.</p>
+<span class="btn">GADE PWOGRÈ</span>
+</a>
+
+<a class="card" href="../courses/introduction-ai/index.html">
+<div class="icon">✅</div><h3>ASSESSMENTS</h3>
+<p>Kontinye ak Final Assessment kou Introduction to AI a.</p>
+<span class="btn">ALE NAN EVALYASYON</span>
+</a>
+
+<a class="card" href="../payment-center/index.html">
+<div class="icon">💳</div><h3>PAYMENT CENTER</h3>
+<p>Jere 5 peman yo, balans, resi ak estati finansye sètifika a.</p>
+<span class="btn">OUVRI PAYMENT CENTER</span>
+</a>
+
+<a class="card" href="#certificate">
+<div class="icon">🏆</div><h3>CERTIFICATES</h3>
+<p>Sètifika rete bloke jiskaske kondisyon akademik ak finansye yo fini.</p>
+<span class="btn">GADE ESTATI</span>
+</a>
+
+<a class="card" href="../index.html#contact">
+<div class="icon">📞</div><h3>SUPPORT</h3>
+<p>Kontakte PRO-MAX ACADÉMIE pou asistans ak kesyon sou fòmasyon an.</p>
+<span class="btn">KONTAKTE NOU</span>
+</a>
+
+</div>
+</div></section>
+
+<section class="section" id="progress"><div class="container">
+<h2 class="title">COURSE PROGRESS</h2>
+
+<div class="course-list">
+<div class="course-row"><div class="row-top"><strong>01 — Introduction to AI</strong><span id="aiText">0%</span></div><div class="track"><div class="fill" id="aiFill"></div></div></div>
+<div class="course-row"><div class="row-top"><strong>02 — Digital Creation</strong><span id="digitalText">0%</span></div><div class="track"><div class="fill" id="digitalFill"></div></div></div>
+<div class="course-row"><div class="row-top"><strong>03 — Digital Leadership</strong><span id="leadershipText">0%</span></div><div class="track"><div class="fill" id="leadershipFill"></div></div></div>
+<div class="course-row"><div class="row-top"><strong>04 — Automation</strong><span id="automationText">0%</span></div><div class="track"><div class="fill" id="automationFill"></div></div></div>
+<div class="course-row"><div class="row-top"><strong>05 — Communication</strong><span id="communicationText">0%</span></div><div class="track"><div class="fill" id="communicationFill"></div></div></div>
+<div class="course-row"><div class="row-top"><strong>06 — Innovation</strong><span id="innovationText">0%</span></div><div class="track"><div class="fill" id="innovationFill"></div></div></div>
+</div>
+</div></section>
+
+<section class="section" id="certificate"><div class="container">
+<h2 class="title">CERTIFICATION STATUS</h2>
+<div class="card" style="margin-top:30px;text-align:center">
+<div class="icon" id="certIcon">🔒</div>
+<h3 id="certTitle">CERTIFICATE LOCKED</h3>
+<p id="certText">Fini kou a, pase evalyasyon an epi ranpli kondisyon peman yo pou sètifika a kapab debloke.</p>
+<a class="btn" href="../payment-center/index.html">CHECK PAYMENT STATUS</a>
+</div>
+</div></section>
+</main>
+
+<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Student Portal • BSS1815 PRO-MAX DMP</div></footer>
+
+<script>
+const keys=["ai","digital","leadership","automation","communication","innovation"];
+const ids={
+ ai:["aiFill","aiText"],digital:["digitalFill","digitalText"],leadership:["leadershipFill","leadershipText"],
+ automation:["automationFill","automationText"],communication:["communicationFill","communicationText"],innovation:["innovationFill","innovationText"]
+};
+let values=[];
+keys.forEach(k=>{
+ const v=Math.max(0,Math.min(100,Number(localStorage.getItem("promaxCourseProgress_"+k)||0)));
+ values.push(v);
+ document.getElementById(ids[k][0]).style.width=v+"%";
+ document.getElementById(ids[k][1]).textContent=v+"%";
+});
+const overall=Math.round(values.reduce((a,b)=>a+b,0)/values.length);
+const started=values.filter(v=>v>0).length;
+const completed=values.filter(v=>v>=100).length;
+document.getElementById("overallProgress").textContent=overall+"%";
+document.getElementById("coursesStarted").textContent=started+"/6";
+document.getElementById("coursesCompleted").textContent=completed;
+
+const aiDone=localStorage.getItem("promaxAIcourseCompleted")==="true";
+let paidHistory=[];
+try{paidHistory=JSON.parse(localStorage.getItem("promaxPaymentHistory")||"[]")}catch(e){}
+const paidInFull=paidHistory.length>=5;
+
+if(aiDone && paidInFull){
+ document.getElementById("certIcon").textContent="🔓";
+ document.getElementById("certTitle").textContent="CERTIFICATE ELIGIBLE";
+ document.getElementById("certText").textContent="Kondisyon akademik ak finansye prensipal yo satisfè pou kou Introduction to AI.";
+}
+</script>
+</body>
+</html>
