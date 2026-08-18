@@ -1,0 +1,174 @@
+<script>
+(function(){
+
+"use strict";
+
+const MAX_PAYMENTS = 5;
+const INSTALLMENT_AMOUNT = 1000;
+const TOTAL_TUITION = 5000;
+
+function getPayments(){
+
+  try{
+
+    const data = JSON.parse(
+      localStorage.getItem("promaxPaymentHistory")
+    );
+
+    return Array.isArray(data)
+      ? data
+      : [];
+
+  }catch(error){
+
+    return [];
+
+  }
+
+}
+
+function totalPaid(){
+
+  return getPayments().reduce(
+    function(total,payment){
+
+      return total + Number(payment.amount || 0);
+
+    },
+    0
+  );
+
+}
+
+function updatePaymentStatus(){
+
+  const payments = getPayments();
+
+  const count = Math.min(
+    payments.length,
+    MAX_PAYMENTS
+  );
+
+  const paid = Math.min(
+    totalPaid(),
+    TOTAL_TUITION
+  );
+
+  const balance = Math.max(
+    TOTAL_TUITION - paid,
+    0
+  );
+
+  const percent = Math.min(
+    (count / MAX_PAYMENTS) * 100,
+    100
+  );
+
+  /* 0/5 → 5/5 */
+  const paymentCount =
+    document.getElementById("paymentCountMetric");
+
+  if(paymentCount){
+    paymentCount.textContent = count + "/5";
+  }
+
+  /* TOTAL PAID */
+  const paidBox =
+    document.getElementById("totalPaidMetric");
+
+  if(paidBox){
+    paidBox.textContent =
+      paid.toLocaleString("en-US") + " HTG";
+  }
+
+  /* BALANCE */
+  const balanceBox =
+    document.getElementById("balanceMetric");
+
+  if(balanceBox){
+    balanceBox.textContent =
+      balance.toLocaleString("en-US") + " HTG";
+  }
+
+  /* PROGRESS */
+  const progressText =
+    document.getElementById("progressPercent");
+
+  if(progressText){
+    progressText.textContent =
+      Math.round(percent) + "%";
+  }
+
+  const progressBar =
+    document.getElementById("paymentProgressBar");
+
+  if(progressBar){
+    progressBar.style.width =
+      percent + "%";
+  }
+
+  /* 5 PAYMENT BOXES */
+  document.querySelectorAll(".installment")
+  .forEach(function(box,index){
+
+    box.classList.toggle(
+      "paid",
+      index < count
+    );
+
+  });
+
+  /* STATUS */
+  const status =
+    document.getElementById("paymentStatusMetric");
+
+  if(status){
+
+    status.textContent =
+      count === 5
+      ? "✅ 5/5"
+      : "🔒 " + count + "/5";
+
+  }
+
+  const financialStatus =
+    document.getElementById("financialStatus");
+
+  if(financialStatus){
+
+    financialStatus.textContent =
+      count === 5
+      ? "✅ PAYMENT COMPLETE — 5/5"
+      : "🔒 PAYMENT STATUS — " + count + "/5";
+
+  }
+
+  const reason =
+    document.getElementById("financialReason");
+
+  if(reason){
+
+    if(count === 5){
+
+      reason.textContent =
+        "Tout 5 peman yo fini. Balans: 0 HTG.";
+
+    }else{
+
+      reason.textContent =
+        "Peman fini: " +
+        count +
+        "/5 • Balans ki rete: " +
+        balance.toLocaleString("en-US") +
+        " HTG.";
+
+    }
+
+  }
+
+}
+
+updatePaymentStatus();
+
+})();
+</script>
