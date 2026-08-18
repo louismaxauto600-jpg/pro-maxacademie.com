@@ -3,152 +3,305 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PRO-MAX ACADÉMIE | Payment & Certification Center</title>
+<title>PRO-MAX ACADÉMIE | Payment Center — Firestore Live</title>
 <meta name="theme-color" content="#000000">
 <style>
-:root{--o:#ff7900;--o2:#ffad4d;--b:#000;--bd:rgba(255,121,0,.35)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:linear-gradient(#000,#0a0400,#000);color:var(--o2)}
-a{text-decoration:none;color:inherit}.wrap{width:min(1100px,calc(100% - 28px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#000;border-bottom:1px solid var(--bd)}
-.head{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:900;color:var(--o)}.sub{font-size:.72rem;margin-top:5px}
-.lang{display:flex;gap:4px}.lang button{border:1px solid var(--bd);background:#000;color:var(--o2);padding:8px 11px;border-radius:999px;font-weight:900}
-.lang button.active{background:var(--o);color:#000}
-.back{border:1px solid var(--o);padding:9px 13px;border-radius:999px;font-size:.72rem;font-weight:900}
-.hero{text-align:center;padding:55px 0 28px}.hero h1{color:var(--o);font-size:clamp(2rem,6vw,4rem)}
-.hero p{max-width:760px;margin:15px auto;line-height:1.6}
-.rule{border:1px solid var(--o);padding:15px;border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:28px 0 70px}.card{border:1px solid var(--bd);border-radius:18px;padding:22px;background:#050200}
-.card h2{color:var(--o);margin-bottom:8px}.full{grid-column:1/-1}.field{margin-top:14px}
-label{display:block;margin-bottom:6px;color:var(--o);font-size:.75rem;font-weight:900}
-input,select,textarea{width:100%;background:#000;color:var(--o2);border:1px solid var(--bd);border-radius:10px;padding:11px}
-textarea{min-height:80px}.btn{margin-top:15px;border:2px solid var(--o);border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer}
+:root{
+  --o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);--g:0 0 20px rgba(255,121,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000)}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(1160px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);border-bottom:1px solid var(--bd)}
+.head{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
+.back{border:1px solid var(--bd2);border-radius:999px;padding:10px 14px;color:var(--o);font-size:.68rem;font-weight:900}
+.hero{text-align:center;padding:58px 0 34px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,5rem);line-height:.9}.hero p{max-width:800px;margin:16px auto 0;line-height:1.65}
+.statusbar{max-width:900px;margin:22px auto 0;padding:14px;border:1px solid var(--bd2);border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
+.section{padding:60px 0;border-top:1px solid rgba(255,121,0,.12)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{border:1px solid var(--bd);border-radius:20px;padding:22px;background:#050200}
+.card h2{color:var(--o);text-transform:uppercase}.sub{margin-top:8px;font-size:.86rem;line-height:1.55}
+.field{margin-top:14px}label{display:block;margin-bottom:6px;color:var(--o);font-size:.74rem;font-weight:900}
+input,select,textarea{width:100%;background:#000;color:var(--o2);border:1px solid var(--bd2);border-radius:10px;padding:11px 12px}
+textarea{min-height:84px}
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.method{border:1px solid var(--bd);border-radius:12px;padding:12px;background:#000}
+.method input{width:auto}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--o);border-radius:999px;padding:11px 17px;font-weight:1000;font-size:.72rem;cursor:pointer;text-transform:uppercase}
 .primary{background:var(--o);color:#000}.secondary{background:#000;color:var(--o)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.metric{border:1px solid var(--bd);border-radius:12px;padding:13px;text-align:center}
-.metric strong{display:block;color:var(--o);font-size:1.2rem}.metric span{font-size:.7rem}
-.bar{height:14px;border:1px solid var(--bd);border-radius:999px;overflow:hidden;margin-top:15px}.fill{height:100%;width:0;background:var(--o)}
-.payments{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}.pay{border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center}.pay.on{box-shadow:0 0 18px rgba(255,121,0,.6)}
-.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.method{border:1px solid var(--bd);padding:10px;border-radius:10px}
-.method input{width:auto}.status{margin-top:16px;border:1px solid var(--o);border-radius:12px;padding:14px}
-table{width:100%;border-collapse:collapse;min-width:760px}.table{overflow:auto;margin-top:12px}
-th,td{padding:10px;border-bottom:1px solid var(--bd);text-align:left;font-size:.8rem}th{color:var(--o)}
-pre{white-space:pre-wrap;line-height:1.5;margin-top:10px}
-.contacts{padding:60px 0;border-top:1px solid var(--bd)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contact-box{border:1px solid var(--bd);border-radius:18px;padding:22px;background:#050200}.contact-box h2{color:var(--o)}
-.contact-list{display:grid;gap:8px;margin-top:14px}.contact-list a,.social{border:1px solid var(--bd);padding:11px;border-radius:10px}
-.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.social{text-align:center;color:var(--o);font-weight:900}
-footer{text-align:center;padding:30px;border-top:1px solid var(--bd);background:#000}
-@media(max-width:820px){.grid,.contact-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.methods{grid-template-columns:1fr}.payments{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.head{align-items:flex-start;padding:10px 0;flex-wrap:wrap}.socials{grid-template-columns:1fr 1fr}}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.metric{border:1px solid var(--bd);border-radius:14px;padding:16px;text-align:center;background:#000}
+.metric strong{display:block;color:var(--o);font-size:1.3rem}.metric span{display:block;margin-top:6px;font-size:.68rem;font-weight:900}
+.track{height:12px;margin-top:16px;border:1px solid var(--bd);border-radius:999px;overflow:hidden;background:#160800}.fill{height:100%;width:0;background:var(--o)}
+.installments{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}.installment{border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center;background:#000}.installment.paid{border-color:var(--o);box-shadow:var(--g)}
+.table{overflow:auto;margin-top:18px;border:1px solid var(--bd);border-radius:16px}
+table{width:100%;min-width:900px;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid var(--bd);text-align:left;font-size:.78rem}th{color:var(--o);background:#080300}
+.message{display:none;margin-top:16px;padding:14px;border:1px solid var(--bd2);border-radius:12px;line-height:1.55}
+.receipt{margin-top:18px;border:1px solid var(--bd2);border-radius:16px;padding:18px;background:#000}.receipt pre{white-space:pre-wrap;line-height:1.55;font-family:inherit}
+footer{text-align:center;padding:34px 0;border-top:1px solid var(--bd)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.methods{grid-template-columns:1fr}}
+@media(max-width:560px){.installments{grid-template-columns:1fr 1fr}.back{padding:8px 10px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head">
-<div><div class="brand">PRO-MAX ACADÉMIE</div><div class="sub" data-k="sub">Payment & Certification Center</div></div>
-<div class="lang"><button data-l="fr">FRA</button><button data-l="en">ENG</button><button class="active" data-l="ht">KRE</button></div>
-<a class="back" href="../index.html" data-k="back">← Retounen</a>
+
+<header><div class="container head">
+<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>PAYMENT CENTER • FIRESTORE LIVE</span></div>
+<a class="back" href="../student-portal/index.html">← STUDENT PORTAL</a>
 </div></header>
 
 <main>
-<section class="hero"><div class="wrap">
-<h1 data-k="title">Payment & Certification Center</h1>
-<p data-k="intro">Jere enskripsyon, peman, balans, resi otomatik ak estati sètifika elèv yo.</p>
-<div class="rule" data-k="rule">5 PEMAN × 1,000 HTG = 5,000 HTG TOTAL • SÈTIFIKA BLOKE JISKASKE 5/5 PEYE + KOU FINI + EVALYASYON PASE</div>
+<section class="hero"><div class="container">
+<h1>PAYMENT CENTER</h1>
+<p>NatCash, Digicel / MonCash ak Bank Card — tout peman yo antre dirèkteman nan Cloud Firestore epi mete balans elèv la ajou an tan reyèl.</p>
+<div class="statusbar" id="authStatus">VERIFYING FIREBASE SESSION...</div>
 </div></section>
 
-<section><div class="wrap grid">
-<div class="card">
-<h2 data-k="reg">Enskripsyon Elèv</h2>
-<div class="field"><label data-k="name">Non Elèv</label><input id="name"></div>
-<div class="field"><label data-k="course">Kou</label><select id="course"><option>Introduction à l’IA</option><option>Création Digitale</option><option>Leadership Digital</option><option>Automatisation</option><option>Communication</option><option>Innovation</option></select></div>
-<div class="field"><label data-k="phone">Telefòn / WhatsApp</label><input id="phone"></div>
-<div class="field"><label>Email</label><input id="email" type="email"></div>
-<button class="btn primary" id="save" data-k="save">Sove Elèv</button>
-<button class="btn secondary" id="reset">Reset</button>
-</div>
+<section class="section"><div class="container grid">
 
-<div class="card">
-<h2 data-k="control">Kontwòl Peman</h2>
-<div class="metrics">
-<div class="metric"><strong id="paid">0 HTG</strong><span data-k="paid">Total Peye</span></div>
-<div class="metric"><strong id="bal">5,000 HTG</strong><span data-k="bal">Balans</span></div>
-<div class="metric"><strong id="count">0/5</strong><span data-k="pay">Peman</span></div>
-<div class="metric"><strong id="lock">🔒</strong><span data-k="cert">Sètifika</span></div>
-</div>
-<div class="bar"><div class="fill" id="fill"></div></div>
-<div class="payments"><div class="pay">1/5</div><div class="pay">2/5</div><div class="pay">3/5</div><div class="pay">4/5</div><div class="pay">5/5</div></div>
-<div class="field"><label data-k="method">Metòd Peman</label>
+<section class="card">
+<h2>Konfime Peman</h2>
+<p class="sub">Chak tranch se 1,000 HTG. Sistèm nan verifye duplicate Transaction / Reference ID anvan li sove peman an nan Firestore.</p>
+
+<div class="field"><label>Student ID</label><input id="studentId" type="text" readonly></div>
+<div class="field"><label>Non Elèv</label><input id="studentName" type="text" readonly></div>
+
+<div class="field"><label>Metòd Peman</label>
 <div class="methods">
 <label class="method"><input type="radio" name="method" value="NatCash" checked> NatCash</label>
 <label class="method"><input type="radio" name="method" value="Digicel / MonCash"> Digicel / MonCash</label>
 <label class="method"><input type="radio" name="method" value="Bank Card"> Bank Card</label>
 </div></div>
-<div class="field"><label>Transaction / Reference ID</label><input id="ref"></div>
-<button class="btn primary" id="add" data-k="confirm">+ Konfime 1,000 HTG</button>
-<div class="status"><strong id="certStatus">🔒 CERTIFICATE LOCKED</strong><p id="reason">Balans: 5,000 HTG.</p></div>
+
+<div class="field"><label>Transaction / Reference ID</label><input id="reference" type="text" placeholder="Egzanp: NC-123456789"></div>
+<div class="field"><label>Nòt Peman</label><textarea id="note" placeholder="Opsyonèl..."></textarea></div>
+
+<div class="actions">
+<button class="btn primary" id="confirmBtn">CONFIRM 1,000 HTG</button>
+<button class="btn secondary" id="reloadBtn">RELOAD CLOUD DATA</button>
 </div>
 
-<div class="card full">
-<h2 data-k="academic">Kondisyon Akademik</h2>
-<label><input style="width:auto" type="checkbox" id="done"> <span data-k="done">Kou a fini</span></label><br><br>
-<label><input style="width:auto" type="checkbox" id="pass"> <span data-k="pass">Evalyasyon an pase</span></label>
+<div class="message" id="message"></div>
+</section>
+
+<section class="card">
+<h2>Live Payment Status</h2>
+<p class="sub">Done sa yo soti dirèkteman nan collection Firestore `payments` pou kont elèv ki konekte a.</p>
+
+<div class="metrics">
+<div class="metric"><strong id="paymentCount">0/5</strong><span>PAYMENTS</span></div>
+<div class="metric"><strong id="totalPaid">0 HTG</strong><span>TOTAL PAID</span></div>
+<div class="metric"><strong id="balance">5,000 HTG</strong><span>BALANCE</span></div>
+<div class="metric"><strong id="certLock">🔒</strong><span>FINANCIAL STATUS</span></div>
 </div>
 
-<div class="card full">
-<h2>Payment History</h2>
-<div class="table"><table><thead><tr><th>#</th><th data-k="date">Dat</th><th data-k="name">Elèv</th><th data-k="course">Kou</th><th data-k="method">Metòd</th><th>Reference</th><th data-k="paid">Total Peye</th><th data-k="bal">Balans</th></tr></thead><tbody id="history"></tbody></table></div>
+<div class="track"><div class="fill" id="progressFill"></div></div>
+
+<div class="installments">
+<div class="installment">1/5</div><div class="installment">2/5</div><div class="installment">3/5</div><div class="installment">4/5</div><div class="installment">5/5</div>
 </div>
 
-<div class="card full">
-<h2 data-k="messages">Mesaj Otomatik</h2>
-<pre id="studentMsg">Pa gen peman ankò.</pre>
-<pre id="adminMsg">Pa gen peman ankò.</pre>
-<button class="btn secondary" id="copyS" data-k="copyS">Kopye Mesaj Elèv</button>
-<button class="btn secondary" id="copyA" data-k="copyA">Kopye Mesaj Admin</button>
+<div class="receipt">
+<strong style="color:var(--o)">AUTOMATIC RECEIPT / MESSAGE</strong>
+<pre id="receiptText">Pa gen peman konfime ankò.</pre>
 </div>
+</section>
+
 </div></section>
 
-<section class="contacts"><div class="wrap contact-grid">
-<div class="contact-box"><h2 data-k="contact">Kontak</h2><div class="contact-list">
-<a href="tel:+14076405166">📞 (407) 640-5166</a>
-<a href="tel:+15172168494">📞 (517) 216-8494</a>
-<a href="mailto:pro-maxacademie@gmail.com">✉ pro-maxacademie@gmail.com</a>
-<a href="https://briyantsoley1815-site.netlify.app" target="_blank" rel="noopener">🌐 www.briyantsoley1815-site.netlify.app</a>
-</div></div>
-<div class="contact-box"><h2 data-k="social">Rezo Sosyal</h2><div class="socials">
-<div class="social">Facebook</div><div class="social">WhatsApp</div><div class="social">Instagram</div>
-<div class="social">TikTok</div><div class="social">LinkedIn</div><div class="social">YouTube</div>
-<div class="social">Spotify</div><div class="social">Truth Social</div><div class="social">X / Twitter</div>
-</div></div>
+<section class="section"><div class="container">
+<h2 style="text-align:center;color:var(--o);font-size:clamp(2rem,5vw,3.2rem)">PAYMENT HISTORY — CLOUD</h2>
+
+<div class="table">
+<table>
+<thead><tr><th>#</th><th>Dat</th><th>Metòd</th><th>Reference</th><th>Amount</th><th>Status</th></tr></thead>
+<tbody id="historyBody"></tbody>
+</table>
+</div>
 </div></section>
 </main>
 
-<footer>PRO-MAX ACADÉMIE • BSS1815 PRO-MAX DMP</footer>
+<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Firestore Live Payment Center • BSS1815 PRO-MAX DMP</div></footer>
 
-<script>
-const T={
-ht:{sub:"Payment & Certification Center",back:"← Retounen",title:"Payment & Certification Center",intro:"Jere enskripsyon, peman, balans, resi otomatik ak estati sètifika elèv yo.",rule:"5 PEMAN × 1,000 HTG = 5,000 HTG TOTAL • SÈTIFIKA BLOKE JISKASKE 5/5 PEYE + KOU FINI + EVALYASYON PASE",reg:"Enskripsyon Elèv",name:"Non Elèv",course:"Kou",phone:"Telefòn / WhatsApp",save:"Sove Elèv",control:"Kontwòl Peman",paid:"Total Peye",bal:"Balans",pay:"Peman",cert:"Sètifika",method:"Metòd Peman",confirm:"+ Konfime 1,000 HTG",academic:"Kondisyon Akademik",done:"Kou a fini",pass:"Evalyasyon an pase",date:"Dat",messages:"Mesaj Otomatik",copyS:"Kopye Mesaj Elèv",copyA:"Kopye Mesaj Admin",contact:"Kontak",social:"Rezo Sosyal"},
-fr:{sub:"Centre Paiement & Certification",back:"← Retour",title:"Centre Paiement & Certification",intro:"Gérez les inscriptions, paiements, soldes, reçus automatiques et certificats.",rule:"5 PAIEMENTS × 1 000 HTG = 5 000 HTG • CERTIFICAT BLOQUÉ JUSQU’À 5/5 + COURS TERMINÉ + ÉVALUATION RÉUSSIE",reg:"Inscription Étudiant",name:"Nom Étudiant",course:"Cours",phone:"Téléphone / WhatsApp",save:"Enregistrer",control:"Contrôle Paiement",paid:"Total Payé",bal:"Solde",pay:"Paiements",cert:"Certificat",method:"Mode de Paiement",confirm:"+ Confirmer 1 000 HTG",academic:"Conditions Académiques",done:"Cours terminé",pass:"Évaluation réussie",date:"Date",messages:"Messages Automatiques",copyS:"Copier Message Étudiant",copyA:"Copier Message Admin",contact:"Contact",social:"Réseaux Sociaux"},
-en:{sub:"Payment & Certification Center",back:"← Back",title:"Payment & Certification Center",intro:"Manage enrollment, payments, balances, automatic receipts and certificate status.",rule:"5 PAYMENTS × 1,000 HTG = 5,000 HTG • CERTIFICATE LOCKED UNTIL 5/5 + COURSE COMPLETED + ASSESSMENT PASSED",reg:"Student Registration",name:"Student Name",course:"Course",phone:"Phone / WhatsApp",save:"Save Student",control:"Payment Control",paid:"Total Paid",bal:"Balance",pay:"Payments",cert:"Certificate",method:"Payment Method",confirm:"+ Confirm 1,000 HTG",academic:"Academic Requirements",done:"Course completed",pass:"Assessment passed",date:"Date",messages:"Automatic Messages",copyS:"Copy Student Message",copyA:"Copy Admin Message",contact:"Contact",social:"Social Networks"}};
-let lang="ht";
-function setLang(l){lang=T[l]?l:"ht";document.documentElement.lang=lang;document.querySelectorAll("[data-k]").forEach(n=>{let k=n.dataset.k;if(T[lang][k])n.textContent=T[lang][k]});document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.l===lang));update()}
-document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
-const E=id=>document.getElementById(id),TOTAL=5000,STEP=1000;let student={},payments=[];
-function paid(){return payments.length*STEP}function bal(){return Math.max(TOTAL-paid(),0)}
-function eligible(){return paid()>=TOTAL&&E("done").checked&&E("pass").checked}
-function update(){
-E("paid").textContent=paid().toLocaleString()+" HTG";E("bal").textContent=bal().toLocaleString()+" HTG";E("count").textContent=payments.length+"/5";E("fill").style.width=(paid()/TOTAL*100)+"%";E("lock").textContent=eligible()?"🔓":"🔒";E("certStatus").textContent=eligible()?"🔓 CERTIFICATE ELIGIBLE":"🔒 CERTIFICATE LOCKED";E("reason").textContent=eligible()?"Tout kondisyon yo ranpli.":`Balans: ${bal().toLocaleString()} HTG.`;document.querySelectorAll(".pay").forEach((n,i)=>n.classList.toggle("on",i<payments.length))}
-function render(){E("history").innerHTML="";payments.forEach((p,i)=>{E("history").innerHTML+=`<tr><td>${i+1}</td><td>${p.date}</td><td>${student.name||"—"}</td><td>${student.course||"—"}</td><td>${p.method}</td><td>${p.ref}</td><td>${((i+1)*STEP).toLocaleString()} HTG</td><td>${(TOTAL-(i+1)*STEP).toLocaleString()} HTG</td></tr>`})}
-function messages(){if(!payments.length){E("studentMsg").textContent="Pa gen peman ankò.";E("adminMsg").textContent="Pa gen peman ankò.";return}let p=payments.at(-1),c=payments.length;E("studentMsg").textContent=`PRO-MAX ACADÉMIE\nPeman ${c}/5 konfime\nKantite: 1,000 HTG\nMetòd: ${p.method}\nReference: ${p.ref}\nTotal peye: ${paid().toLocaleString()} HTG\nBalans: ${bal().toLocaleString()} HTG`;E("adminMsg").textContent=`NOUVO PEMAN\nElèv: ${student.name}\nKou: ${student.course}\nPeman: ${c}/5\nMetòd: ${p.method}\nReference: ${p.ref}\nBalans: ${bal().toLocaleString()} HTG`}
-E("save").onclick=()=>{student={name:E("name").value.trim(),course:E("course").value,phone:E("phone").value.trim(),email:E("email").value.trim()};if(!student.name)return alert("Antre non elèv la.");localStorage.setItem("pmStudent",JSON.stringify(student));alert("Elèv sove.")};
-E("add").onclick=()=>{if(!student.name)return alert("Sove elèv la anvan.");if(payments.length>=5)return alert("5/5 deja fini.");let ref=E("ref").value.trim();if(!ref)return alert("Antre Transaction / Reference ID.");if(payments.some(p=>p.ref.toLowerCase()===ref.toLowerCase()))return alert("Reference sa deja itilize.");let method=document.querySelector('input[name="method"]:checked').value;payments.push({ref,method,date:new Date().toLocaleString()});localStorage.setItem("pmPayments",JSON.stringify(payments));E("ref").value="";update();render();messages()};
-E("reset").onclick=()=>{if(confirm("Efase tout done yo?")){student={};payments=[];localStorage.removeItem("pmStudent");localStorage.removeItem("pmPayments");location.reload()}};
-E("done").onchange=E("pass").onchange=update;
-async function copy(id){try{await navigator.clipboard.writeText(E(id).textContent);alert("Kopye.")}catch{alert("Copy pa disponib.")}}
-E("copyS").onclick=()=>copy("studentMsg");E("copyA").onclick=()=>copy("adminMsg");
-try{student=JSON.parse(localStorage.getItem("pmStudent")||"{}");payments=JSON.parse(localStorage.getItem("pmPayments")||"[]");E("name").value=student.name||"";E("course").value=student.course||"Introduction à l’IA";E("phone").value=student.phone||"";E("email").value=student.email||""}catch{}
-setLang("ht");render();messages();
+<script type="module">
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { auth } from "../firebase/firebase-config.js";
+import {
+  getStudent,
+  addStudentPayment,
+  getStudentPayments,
+  watchStudentPayments,
+  calculatePaymentSummary
+} from "../firebase/firestore-service.js";
+
+const E=id=>document.getElementById(id);
+let currentUser=null;
+let currentStudent=null;
+let payments=[];
+let unsubscribePayments=null;
+
+function money(n){return Number(n).toLocaleString("en-US")+" HTG"}
+
+function showMessage(text){
+  const box=E("message");
+  box.style.display="block";
+  box.textContent=text;
+}
+
+function methodSelected(){
+  const r=document.querySelector('input[name="method"]:checked');
+  return r?r.value:"NatCash";
+}
+
+function renderPayments(rows){
+  payments=rows||[];
+  const summary=calculatePaymentSummary(payments,5000);
+
+  E("paymentCount").textContent=Math.min(summary.count,5)+"/5";
+  E("totalPaid").textContent=money(summary.totalPaid);
+  E("balance").textContent=money(summary.balance);
+  E("certLock").textContent=summary.paidInFull?"🔓":"🔒";
+  E("progressFill").style.width=Math.min((summary.totalPaid/5000)*100,100)+"%";
+
+  document.querySelectorAll(".installment").forEach((node,index)=>{
+    node.classList.toggle("paid",index<summary.count);
+  });
+
+  const body=E("historyBody");
+  body.innerHTML="";
+
+  if(!payments.length){
+    body.innerHTML='<tr><td colspan="6" style="text-align:center;padding:24px">Pa gen peman nan Firestore ankò.</td></tr>';
+    E("receiptText").textContent="Pa gen peman konfime ankò.";
+    return;
+  }
+
+  payments.forEach((p,index)=>{
+    const date=p.createdAt?.toDate ? p.createdAt.toDate().toLocaleString() : "Pending server timestamp";
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td>${payments.length-index}</td><td>${date}</td><td>${p.method||"—"}</td><td>${p.reference||"—"}</td><td>${money(p.amount||0)}</td><td>${p.status||"CONFIRMED"}</td>`;
+    body.appendChild(tr);
+  });
+
+  const last=payments[0];
+  E("receiptText").textContent=
+`PRO-MAX ACADÉMIE
+PAYMENT CONFIRMATION
+
+Elèv: ${currentStudent?.fullName||"—"}
+Student ID: ${currentStudent?.studentId||"—"}
+Peman: ${Math.min(summary.count,5)}/5
+Kantite: ${money(last.amount||1000)}
+Metòd: ${last.method||"—"}
+Reference ID: ${last.reference||"—"}
+
+Total peye: ${money(summary.totalPaid)}
+Balans ki rete: ${money(summary.balance)}
+
+${summary.paidInFull ? "FINANCIAL REQUIREMENT COMPLETE" : "Mèsi paske ou kontinye avanse nan fòmasyon ou."}
+
+DEVAN DEVAN NÈT™
+PRO-MAX ACADÉMIE
+BSS1815 PRO-MAX DMP`;
+}
+
+async function reloadCloud(){
+  if(!currentUser)return;
+  try{
+    currentStudent=await getStudent(currentUser.uid);
+    if(currentStudent){
+      E("studentId").value=currentStudent.studentId||"";
+      E("studentName").value=currentStudent.fullName||"";
+    }
+    const rows=await getStudentPayments(currentUser.uid);
+    renderPayments(rows);
+    showMessage("Cloud payment data chaje.");
+  }catch(error){
+    console.error(error);
+    showMessage("Pa kapab chaje Firestore payment data. Verifye rules/indexes.");
+  }
+}
+
+E("confirmBtn").addEventListener("click",async()=>{
+  if(!currentUser){
+    showMessage("Firebase login obligatwa.");
+    return;
+  }
+
+  const ref=E("reference").value.trim();
+  if(!ref){
+    showMessage("Antre Transaction / Reference ID.");
+    return;
+  }
+
+  const currentSummary=calculatePaymentSummary(payments,5000);
+  if(currentSummary.paidInFull){
+    showMessage("Tout 5 peman yo deja fini.");
+    return;
+  }
+
+  E("confirmBtn").disabled=true;
+  E("confirmBtn").textContent="SAVING...";
+
+  try{
+    await addStudentPayment(currentUser.uid,{
+      studentId:currentStudent?.studentId||"",
+      amount:1000,
+      installmentNumber:currentSummary.count+1,
+      method:methodSelected(),
+      reference:ref,
+      note:E("note").value.trim(),
+      status:"CONFIRMED"
+    });
+
+    E("reference").value="";
+    E("note").value="";
+    showMessage("Peman 1,000 HTG sove nan Cloud Firestore avèk siksè.");
+  }catch(error){
+    console.error(error);
+    showMessage(error.message||"Payment save pa reyisi.");
+  }finally{
+    E("confirmBtn").disabled=false;
+    E("confirmBtn").textContent="CONFIRM 1,000 HTG";
+  }
+});
+
+E("reloadBtn").addEventListener("click",reloadCloud);
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    E("authStatus").textContent="NO FIREBASE SESSION — REDIRECTING TO LOGIN...";
+    setTimeout(()=>window.location.href="../login/index.html",800);
+    return;
+  }
+
+  currentUser=user;
+  E("authStatus").textContent=`CONNECTED • ${user.email||"AUTHENTICATED USER"}`;
+
+  currentStudent=await getStudent(user.uid);
+
+  if(!currentStudent){
+    showMessage("Pa gen student record nan Firestore. Ale Enrollment Center anvan.");
+  }else{
+    E("studentId").value=currentStudent.studentId||"";
+    E("studentName").value=currentStudent.fullName||"";
+  }
+
+  if(unsubscribePayments)unsubscribePayments();
+
+  unsubscribePayments=watchStudentPayments(
+    user.uid,
+    renderPayments,
+    error=>{
+      console.error(error);
+      showMessage("Realtime payment listener pa kapab li Firestore.");
+    }
+  );
+});
 </script>
 </body>
 </html>
