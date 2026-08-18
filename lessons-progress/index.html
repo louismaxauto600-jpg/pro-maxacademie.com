@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Progress | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Course Progress Dashboard">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --black3:#0d0500;
+
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:
+    0 0 16px rgba(255,121,0,.70),
+    0 0 42px rgba(255,121,0,.28);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+
+  font-family:Arial,Helvetica,sans-serif;
+
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 82% 72%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000 0%,#090400 48%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1200px,calc(100% - 28px));
+  margin:auto;
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(0,0,0,.97);
+
+  border-bottom:1px solid var(--border);
+
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+  overflow:hidden;
+
+  border:2px solid var(--orange);
+
+  background:#000;
+
+  box-shadow:var(--glow);
+}
+
+.brand-logo video{
+  width:100%;
+  height:100%;
+  display:block;
+
+  object-fit:cover;
+
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+
+  color:var(--orange);
+
+  font-size:1rem;
+
+  font-weight:1000;
+}
+
+.brand-text span{
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--orange3);
+
+  font-size:.55rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back-btn{
+  padding:10px 16px;
+
+  border:1px solid var(--borderStrong);
+
+  border-radius:999px;
+
+  color:var(--orange);
+
+  background:#000;
+
+  font-size:.67rem;
+
+  font-weight:1000;
+
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+
+  padding:3px;
+
+  border:1px solid var(--border);
+
+  border-radius:999px;
+
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+
+  border:0;
+
+  border-radius:999px;
+
+  padding:9px 10px;
+
+  cursor:pointer;
+
+  background:#000;
+
+  color:var(--orange3);
+
+  font-size:.65rem;
+
+  font-weight:1000;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  padding:68px 0 40px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+
+  font-size:.69rem;
+
+  font-weight:1000;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin-top:12px;
+
+  color:var(--orange);
+
+  font-size:clamp(2.7rem,8vw,5.6rem);
+
+  line-height:.92;
+
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:780px;
+
+  margin:18px auto 0;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+SUMMARY
+========================= */
+
+.summary-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:14px;
+
+  margin-top:36px;
+}
+
+.summary-card{
+  min-height:130px;
+
+  padding:18px;
+
+  border:1px solid var(--border);
+
+  border-radius:17px;
+
+  background:#050200;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+}
+
+.summary-icon{
+  font-size:1.6rem;
+}
+
+.summary-card strong{
+  margin-top:8px;
+
+  color:var(--orange);
+
+  font-size:1.6rem;
+}
+
+.summary-card span{
+  margin-top:7px;
+
+  font-size:.66rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================
+OVERALL PROGRESS
+========================= */
+
+.dashboard-section{
+  padding:30px 0 90px;
+}
+
+.panel{
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:26px;
+
+  background:
+    radial-gradient(circle at top right,rgba(255,121,0,.10),transparent 36%),
+    linear-gradient(145deg,#000,#0b0400);
+}
+
+.panel + .panel{
+  margin-top:20px;
+}
+
+.panel h2{
+  color:var(--orange);
+
+  font-size:1.25rem;
+
+  text-transform:uppercase;
+}
+
+.panel p{
+  margin-top:8px;
+
+  line-height:1.6;
+
+  font-size:.84rem;
+}
+
+.overall-progress{
+  margin-top:24px;
+}
+
+.overall-top{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  align-items:center;
+}
+
+.overall-top strong{
+  color:var(--orange);
+
+  font-size:2rem;
+}
+
+.progress-track{
+  height:18px;
+
+  margin-top:13px;
+
+  border:1px solid var(--border);
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:#160800;
+}
+
+.progress-bar{
+  width:0;
+  height:100%;
+
+  background:var(--orange);
+
+  transition:width .45s ease;
+}
+
+
+/* =========================
+COURSE PROGRESS GRID
+========================= */
+
+.course-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+
+  margin-top:24px;
+}
+
+.course-card{
+  padding:22px;
+
+  border:1px solid var(--border);
+
+  border-radius:19px;
+
+  background:#030100;
+
+  transition:.3s;
+}
+
+.course-card:hover{
+  transform:translateY(-4px);
+
+  border-color:var(--orange);
+
+  box-shadow:var(--glow);
+}
+
+.course-head{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:14px;
+}
+
+.course-icon{
+  width:56px;
+  height:56px;
+
+  display:grid;
+
+  place-items:center;
+
+  border:1px solid var(--orange);
+
+  border-radius:16px;
+
+  background:#000;
+
+  color:var(--orange);
+
+  font-size:1.45rem;
+
+  font-weight:1000;
+}
+
+.status-pill{
+  padding:7px 10px;
+
+  border:1px solid var(--borderStrong);
+
+  border-radius:999px;
+
+  font-size:.59rem;
+
+  font-weight:1000;
+
+  text-transform:uppercase;
+}
+
+.status-pill.not-started{
+  color:var(--orange3);
+}
+
+.status-pill.in-progress{
+  color:var(--orange);
+}
+
+.status-pill.completed{
+  background:var(--orange);
+  color:#000;
+}
+
+.course-card h3{
+  margin-top:18px;
+
+  color:var(--orange);
+
+  font-size:1rem;
+
+  text-transform:uppercase;
+}
+
+.course-progress-row{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-top:17px;
+
+  font-size:.72rem;
+
+  font-weight:900;
+}
+
+.lesson-stats{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:9px;
+
+  margin-top:17px;
+}
+
+.lesson-stat{
+  padding:11px 8px;
+
+  border:1px solid var(--border);
+
+  border-radius:12px;
+
+  background:#000;
+
+  text-align:center;
+}
+
+.lesson-stat strong{
+  display:block;
+
+  color:var(--orange);
+
+  font-size:.85rem;
+}
+
+.lesson-stat span{
+  display:block;
+
+  margin-top:4px;
+
+  font-size:.56rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.course-actions{
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-top:18px;
+}
+
+.course-btn{
+  flex:1;
+
+  min-height:45px;
+
+  padding:10px 15px;
+
+  border:2px solid var(--orange);
+
+  border-radius:999px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:.66rem;
+
+  font-weight:1000;
+
+  text-transform:uppercase;
+}
+
+.course-btn.primary{
+  background:var(--orange);
+  color:#000;
+}
+
+.course-btn.secondary{
+  background:#000;
+  color:var(--orange);
+}
+
+
+/* =========================
+CERTIFICATION READINESS
+========================= */
+
+.readiness-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:14px;
+
+  margin-top:22px;
+}
+
+.readiness-card{
+  min-height:145px;
+
+  padding:18px;
+
+  border:1px solid var(--border);
+
+  border-radius:16px;
+
+  background:#030100;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+}
+
+.readiness-icon{
+  font-size:1.8rem;
+}
+
+.readiness-card strong{
+  margin-top:9px;
+
+  color:var(--orange);
+
+  font-size:1rem;
+}
+
+.readiness-card span{
+  margin-top:6px;
+
+  font-size:.66rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.certificate-status{
+  margin-top:20px;
+
+  padding:24px;
+
+  border:1px solid var(--borderStrong);
+
+  border-radius:18px;
+
+  background:
+    radial-gradient(circle at center,rgba(255,121,0,.12),transparent 55%),
+    #020100;
+
+  text-align:center;
+}
+
+.certificate-status .icon{
+  font-size:3rem;
+}
+
+.certificate-status h3{
+  margin-top:10px;
+
+  color:var(--orange);
+
+  font-size:1.3rem;
+}
+
+.certificate-status p{
+  max-width:650px;
+
+  margin:10px auto 0;
+
+  line-height:1.6;
+
+  font-size:.82rem;
+}
+
+
+/* =========================
+QUICK LINKS
+========================= */
+
+.quick-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:13px;
+
+  margin-top:22px;
+}
+
+.quick-link{
+  min-height:130px;
+
+  padding:17px;
+
+  border:1px solid var(--border);
+
+  border-radius:16px;
+
+  background:#030100;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  transition:.25s;
+}
+
+.quick-link:hover{
+  transform:translateY(-4px);
+
+  border-color:var(--orange);
+
+  box-shadow:var(--glow);
+}
+
+.quick-link span{
+  font-size:1.7rem;
+}
+
+.quick-link strong{
+  margin-top:9px;
+
+  color:var(--orange);
+
+  font-size:.68rem;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  padding:42px 0;
+
+  border-top:1px solid var(--border);
+
+  background:#000;
+
+  text-align:center;
+}
+
+.footer-title{
+  color:var(--orange);
+
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:9px;
+
+  font-size:.76rem;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .course-grid{
+    grid-template-columns:1fr;
+  }
+
+  .readiness-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:650px){
+
+  .header-inner{
+    padding:12px 0;
+  }
+
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-text strong{
+    font-size:.80rem;
+  }
+
+  .brand-text span{
+    font-size:.47rem;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .lang-btn{
+    min-width:38px;
+
+    padding:8px 7px;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .lesson-stats{
+    grid-template-columns:1fr;
+  }
+
+  .course-actions{
+    display:grid;
+
+    grid-template-columns:1fr;
+  }
+
+  .course-btn{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+  <div class="brand-logo">
+
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../pro-max-dmp-II.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <div class="brand-text">
+
+    <strong>
+      PRO-MAX ACADÉMIE
+    </strong>
+
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+
+      Fòme Jodi a Pou Dirije Demen
+
+    </span>
+
+  </div>
+
+</a>
+
+
+<div class="header-actions">
+
+  <a
+    href="../my-courses/index.html"
+    class="back-btn"
+
+    data-ht="← KOU MWEN"
+    data-fr="← MES COURS"
+    data-en="← MY COURSES">
+
+    ← KOU MWEN
+
+  </a>
+
+
+  <div class="lang-switch" aria-label="Language selector">
+
+    <button type="button" class="lang-btn" data-lang="fr">
+      FRA
+    </button>
+
+    <button type="button" class="lang-btn" data-lang="en">
+      ENG
+    </button>
+
+    <button type="button" class="lang-btn active" data-lang="ht">
+      KRE
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+BSS1815 PRO-MAX DMP • STUDENT PORTAL
+</div>
+
+<h1
+  data-ht="PWOGRÈ KOU"
+  data-fr="PROGRESSION DES COURS"
+  data-en="COURSE PROGRESS">
+
+  PWOGRÈ KOU
+</h1>
+
+<p
+  data-ht="Swiv evolisyon ou sou tout kou yo, wè konbyen leson ki fini, estati evalyasyon yo ak nivo preparasyon ou pou sètifikasyon."
+
+  data-fr="Suivez votre évolution dans tous les cours, les leçons terminées, le statut des évaluations et votre préparation à la certification."
+
+  data-en="Track your progress across all courses, completed lessons, assessment status and your certification readiness.">
+
+  Swiv evolisyon ou sou tout kou yo, wè konbyen leson ki fini, estati evalyasyon yo ak nivo preparasyon ou pou sètifikasyon.
+</p>
+
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<div class="summary-icon">
+📊
+</div>
+
+<strong id="overallProgressMetric">
+0%
+</strong>
+
+<span
+data-ht="PWOGRÈ TOTAL"
+data-fr="PROGRESSION GLOBALE"
+data-en="OVERALL PROGRESS">
+
+PWOGRÈ TOTAL
+
+</span>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+📚
+</div>
+
+<strong id="lessonMetric">
+0/144
+</strong>
+
+<span
+data-ht="LESON FINI"
+data-fr="LEÇONS TERMINÉES"
+data-en="LESSONS COMPLETED">
+
+LESON FINI
+
+</span>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+✓
+</div>
+
+<strong id="assessmentMetric">
+0/6
+</strong>
+
+<span
+data-ht="EVALYASYON PASE"
+data-fr="ÉVALUATIONS RÉUSSIES"
+data-en="ASSESSMENTS PASSED">
+
+EVALYASYON PASE
+
+</span>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+🏆
+</div>
+
+<strong id="completedMetric">
+0/6
+</strong>
+
+<span
+data-ht="KOU FINI"
+data-fr="COURS TERMINÉS"
+data-en="COURSES COMPLETED">
+
+KOU FINI
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="dashboard-section">
+
+<div class="container">
+
+
+<section class="panel">
+
+<h2
+  data-ht="PWOGRÈ JENERAL"
+  data-fr="PROGRESSION GÉNÉRALE"
+  data-en="OVERALL PROGRESS">
+
+  PWOGRÈ JENERAL
+</h2>
+
+<p
+  data-ht="Sa montre pwogrè mwayèn ou sou tout sis kou prensipal PRO-MAX ACADÉMIE yo."
+
+  data-fr="Cette section affiche votre progression moyenne sur les six cours principaux de PRO-MAX ACADÉMIE."
+
+  data-en="This shows your average progress across all six core PRO-MAX ACADEMY courses.">
+
+  Sa montre pwogrè mwayèn ou sou tout sis kou prensipal PRO-MAX ACADÉMIE yo.
+</p>
+
+
+<div class="overall-progress">
+
+<div class="overall-top">
+
+<span
+data-ht="PWOGRÈ TOTAL"
+data-fr="PROGRESSION TOTALE"
+data-en="TOTAL PROGRESS">
+
+PWOGRÈ TOTAL
+
+</span>
+
+<strong id="overallProgressText">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+
+<div
+  class="progress-bar"
+  id="overallProgressBar">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h2
+  data-ht="PWOGRÈ PA KOU"
+  data-fr="PROGRESSION PAR COURS"
+  data-en="PROGRESS BY COURSE">
+
+  PWOGRÈ PA KOU
+</h2>
+
+<div class="course-grid">
+
+
+<!-- COURSE 01 -->
+
+<article
+class="course-card"
+data-course-id="introduction-ai"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+AI
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="ENTWODIKSYON NAN AI"
+data-fr="INTRODUCTION À L’IA"
+data-en="INTRODUCTION TO AI">
+
+ENTWODIKSYON NAN AI
+
+</h3>
+
+<div class="course-progress-row">
+
+<span
+data-ht="PWOGRÈ"
+data-fr="PROGRESSION"
+data-en="PROGRESS">
+
+PWOGRÈ
+
+</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span
+data-ht="LESON"
+data-fr="LEÇONS"
+data-en="LESSONS">
+LESON
+</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span
+data-ht="EVALYASYON"
+data-fr="ÉVALUATION"
+data-en="ASSESSMENT">
+EVALYASYON
+</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span
+data-ht="FINI"
+data-fr="TERMINÉ"
+data-en="COMPLETE">
+FINI
+</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/introduction-ai/index.html"
+class="course-btn primary"
+
+data-ht="KONTINYE KOU"
+data-fr="CONTINUER"
+data-en="CONTINUE COURSE">
+
+KONTINYE KOU
+
+</a>
+
+<a
+href="../courses/introduction-ai/index.html#assessment"
+class="course-btn secondary"
+
+data-ht="EVALYASYON"
+data-fr="ÉVALUATION"
+data-en="ASSESSMENT">
+
+EVALYASYON
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 02 -->
+
+<article
+class="course-card"
+data-course-id="digital-creation"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+✦
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="KREYASYON DIJITAL"
+data-fr="CRÉATION DIGITALE"
+data-en="DIGITAL CREATION">
+
+KREYASYON DIJITAL
+
+</h3>
+
+<div class="course-progress-row">
+
+<span>PWOGRÈ</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span>LESON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span>EVALYASYON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span>FINI</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/digital-creation/index.html"
+class="course-btn primary">
+KONTINYE KOU
+</a>
+
+<a
+href="../courses/digital-creation/index.html#assessment"
+class="course-btn secondary">
+EVALYASYON
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 03 -->
+
+<article
+class="course-card"
+data-course-id="digital-leadership"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+↗
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="LIDÈCHIP DIJITAL"
+data-fr="LEADERSHIP DIGITAL"
+data-en="DIGITAL LEADERSHIP">
+
+LIDÈCHIP DIJITAL
+
+</h3>
+
+<div class="course-progress-row">
+
+<span>PWOGRÈ</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span>LESON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span>EVALYASYON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span>FINI</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/digital-leadership/index.html"
+class="course-btn primary">
+KONTINYE KOU
+</a>
+
+<a
+href="../courses/digital-leadership/index.html#assessment"
+class="course-btn secondary">
+EVALYASYON
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 04 -->
+
+<article
+class="course-card"
+data-course-id="automation"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+⚙
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="OTOMATIZASYON"
+data-fr="AUTOMATISATION"
+data-en="AUTOMATION">
+
+OTOMATIZASYON
+
+</h3>
+
+<div class="course-progress-row">
+
+<span>PWOGRÈ</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span>LESON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span>EVALYASYON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span>FINI</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/automation/index.html"
+class="course-btn primary">
+KONTINYE KOU
+</a>
+
+<a
+href="../courses/automation/index.html#assessment"
+class="course-btn secondary">
+EVALYASYON
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 05 -->
+
+<article
+class="course-card"
+data-course-id="communication"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+◎
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="KOMINIKASYON"
+data-fr="COMMUNICATION"
+data-en="COMMUNICATION">
+
+KOMINIKASYON
+
+</h3>
+
+<div class="course-progress-row">
+
+<span>PWOGRÈ</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span>LESON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span>EVALYASYON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span>FINI</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/communication/index.html"
+class="course-btn primary">
+KONTINYE KOU
+</a>
+
+<a
+href="../courses/communication/index.html#assessment"
+class="course-btn secondary">
+EVALYASYON
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 06 -->
+
+<article
+class="course-card"
+data-course-id="innovation"
+data-lessons="24">
+
+<div class="course-head">
+
+<div class="course-icon">
+◆
+</div>
+
+<div class="status-pill not-started">
+NOT STARTED
+</div>
+
+</div>
+
+<h3
+data-ht="INOVASYON"
+data-fr="INNOVATION"
+data-en="INNOVATION">
+
+INOVASYON
+
+</h3>
+
+<div class="course-progress-row">
+
+<span>PWOGRÈ</span>
+
+<strong class="progress-text">
+0%
+</strong>
+
+</div>
+
+<div class="progress-track">
+<div class="progress-bar course-progress-bar"></div>
+</div>
+
+<div class="lesson-stats">
+
+<div class="lesson-stat">
+<strong class="lesson-count">
+0/24
+</strong>
+<span>LESON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="assessment-status">
+—
+</strong>
+<span>EVALYASYON</span>
+</div>
+
+<div class="lesson-stat">
+<strong class="completion-status">
+0%
+</strong>
+<span>FINI</span>
+</div>
+
+</div>
+
+<div class="course-actions">
+
+<a
+href="../courses/innovation/index.html"
+class="course-btn primary">
+KONTINYE KOU
+</a>
+
+<a
+href="../courses/innovation/index.html#assessment"
+class="course-btn secondary">
+EVALYASYON
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h2
+data-ht="PREPARASYON POU SÈTIFIKASYON"
+data-fr="PRÉPARATION À LA CERTIFICATION"
+data-en="CERTIFICATION READINESS">
+
+PREPARASYON POU SÈTIFIKASYON
+
+</h2>
+
+<div class="readiness-grid">
+
+<div class="readiness-card">
+
+<div class="readiness-icon">
+🎓
+</div>
+
+<strong id="courseReadyStatus">
+0/6
+</strong>
+
+<span
+data-ht="KOU FINI"
+data-fr="COURS TERMINÉS"
+data-en="COURSES COMPLETE">
+
+KOU FINI
+
+</span>
+
+</div>
+
+
+<div class="readiness-card">
+
+<div class="readiness-icon">
+✓
+</div>
+
+<strong id="assessmentReadyStatus">
+0/6
+</strong>
+
+<span
+data-ht="EVALYASYON PASE"
+data-fr="ÉVALUATIONS RÉUSSIES"
+data-en="ASSESSMENTS PASSED">
+
+EVALYASYON PASE
+
+</span>
+
+</div>
+
+
+<div class="readiness-card">
+
+<div class="readiness-icon">
+💳
+</div>
+
+<strong id="paymentReadyStatus">
+0/5
+</strong>
+
+<span
+data-ht="PEMAN FINI"
+data-fr="PAIEMENTS TERMINÉS"
+data-en="PAYMENTS COMPLETE">
+
+PEMAN FINI
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="certificate-status">
+
+<div class="icon" id="certificateIcon">
+🔒
+</div>
+
+<h3 id="certificateStatusText">
+CERTIFICATE LOCKED
+</h3>
+
+<p
+id="certificateStatusReason"
+
+data-ht="Pou sètifika a debloke, elèv la dwe fini kou a, pase evalyasyon an epi konplete 5/5 peman yo."
+
+data-fr="Pour débloquer le certificat, l’étudiant doit terminer le cours, réussir l’évaluation et compléter les 5/5 paiements."
+
+data-en="To unlock the certificate, the student must finish the course, pass the assessment and complete all 5/5 payments.">
+
+Pou sètifika a debloke, elèv la dwe fini kou a, pase evalyasyon an epi konplete 5/5 peman yo.
+
+</p>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h2
+data-ht="AKSÈ RAPID"
+data-fr="ACCÈS RAPIDE"
+data-en="QUICK ACCESS">
+
+AKSÈ RAPID
+
+</h2>
+
+<div class="quick-grid">
+
+<a href="../student-profile/index.html" class="quick-link">
+
+<span>
+👤
+</span>
+
+<strong
+data-ht="PWOFIL ELÈV"
+data-fr="PROFIL ÉTUDIANT"
+data-en="STUDENT PROFILE">
+
+PWOFIL ELÈV
+
+</strong>
+
+</a>
+
+
+<a href="../my-courses/index.html" class="quick-link">
+
+<span>
+🎓
+</span>
+
+<strong
+data-ht="KOU MWEN"
+data-fr="MES COURS"
+data-en="MY COURSES">
+
+KOU MWEN
+
+</strong>
+
+</a>
+
+
+<a href="../index.html#payment" class="quick-link">
+
+<span>
+💳
+</span>
+
+<strong
+data-ht="PEMAN"
+data-fr="PAIEMENTS"
+data-en="PAYMENTS">
+
+PEMAN
+
+</strong>
+
+</a>
+
+
+<a href="../ddn/index.html" class="quick-link">
+
+<span>
+🌎
+</span>
+
+<strong>
+DEVAN DEVAN NÈT™
+</strong>
+
+</a>
+
+</div>
+
+</section>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-title">
+PRO-MAX ACADÉMIE
+</div>
+
+<div class="footer-info">
+
+BSS1815 PRO-MAX DMP
+<br>
+
+DEVAN DEVAN NÈT™
+<br>
+
+BATI POU JODI A • PARE POU DEMEN
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+(function(){
+
+"use strict";
+
+
+/* =========================
+LANGUAGE
+========================= */
+
+var currentLanguage = "ht";
+
+var languageButtons =
+document.querySelectorAll(
+  ".lang-btn[data-lang]"
+);
+
+
+function applyLanguage(lang){
+
+  if(
+    ["ht","fr","en"]
+    .indexOf(lang) === -1
+  ){
+    lang = "ht";
+  }
+
+  currentLanguage = lang;
+
+  document.documentElement.lang = lang;
+
+
+  document.querySelectorAll(
+    "[data-ht][data-fr][data-en]"
+  )
+  .forEach(function(element){
+
+    var value =
+      element.getAttribute(
+        "data-" + lang
+      );
+
+    if(value !== null){
+      element.textContent = value;
+    }
+
+  });
+
+
+  languageButtons.forEach(
+    function(button){
+
+      button.classList.toggle(
+        "active",
+        button.getAttribute(
+          "data-lang"
+        ) === lang
+      );
+
+    }
+  );
+
+
+  updateDashboard();
+
+}
+
+
+languageButtons.forEach(
+function(button){
+
+  button.addEventListener(
+    "click",
+    function(){
+
+      applyLanguage(
+        this.getAttribute(
+          "data-lang"
+        )
+      );
+
+    }
+  );
+
+});
+
+
+/* =========================
+VIDEO
+========================= */
+
+document.querySelectorAll("video")
+.forEach(function(video){
+
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  var promise =
+    video.play();
+
+  if(promise){
+    promise.catch(function(){});
+  }
+
+});
+
+
+/* =========================
+DATA
+========================= */
+
+var courses = [
+  "introduction-ai",
+  "digital-creation",
+  "digital-leadership",
+  "automation",
+  "communication",
+  "innovation"
+];
+
+var TOTAL_LESSONS_PER_COURSE = 24;
+
+var TOTAL_LESSONS =
+  TOTAL_LESSONS_PER_COURSE *
+  courses.length;
+
+var TOTAL_TUITION = 5000;
+
+
+function getNumber(keys){
+
+  for(
+    var i=0;
+    i<keys.length;
+    i++
+  ){
+
+    var value =
+      localStorage.getItem(
+        keys[i]
+      );
+
+    if(value !== null){
+
+      var number =
+        Number(value);
+
+      if(!isNaN(number)){
+        return number;
+      }
+
+    }
+
+  }
+
+  return 0;
+
+}
+
+
+function getCourseProgress(courseId){
+
+  var value =
+    getNumber([
+      "promax-course-progress-" + courseId,
+      "promaxCourseProgress-" + courseId,
+      "courseProgress-" + courseId
+    ]);
+
+  return Math.max(
+    0,
+    Math.min(
+      value,
+      100
+    )
+  );
+
+}
+
+
+function getAssessmentPassed(courseId){
+
+  var keys = [
+    "promax-assessment-" + courseId,
+    "promaxAssessment-" + courseId,
+    "assessmentPassed-" + courseId
+  ];
+
+  for(
+    var i=0;
+    i<keys.length;
+    i++
+  ){
+
+    var value =
+      localStorage.getItem(
+        keys[i]
+      );
+
+    if(
+      value === "true" ||
+      value === "passed" ||
+      value === "1"
+    ){
+      return true;
+    }
+
+  }
+
+  return false;
+
+}
+
+
+function getPayments(){
+
+  try{
+
+    var data =
+      JSON.parse(
+        localStorage.getItem(
+          "promaxPaymentHistory"
+        )
+      );
+
+    return Array.isArray(data)
+      ? data
+      : [];
+
+  }catch(error){
+
+    return [];
+
+  }
+
+}
+
+
+function totalPaid(){
+
+  return getPayments()
+    .reduce(
+      function(total,payment){
+
+        return total +
+          Number(
+            payment.amount || 0
+          );
+
+      },
+      0
+    );
+
+}
+
+
+function statusFor(progress){
+
+  if(progress >= 100){
+    return "completed";
+  }
+
+  if(progress > 0){
+    return "in-progress";
+  }
+
+  return "not-started";
+
+}
+
+
+function statusText(status){
+
+  var map = {
+
+    ht:{
+      "not-started":"POKO KÒMANSE",
+      "in-progress":"AN PWOGRÈ",
+      "completed":"FINI"
+    },
+
+    fr:{
+      "not-started":"NON COMMENCÉ",
+      "in-progress":"EN COURS",
+      "completed":"TERMINÉ"
+    },
+
+    en:{
+      "not-started":"NOT STARTED",
+      "in-progress":"IN PROGRESS",
+      "completed":"COMPLETED"
+    }
+
+  };
+
+  return map[currentLanguage][status];
+
+}
+
+
+function assessmentText(passed){
+
+  if(currentLanguage === "fr"){
+    return passed
+      ? "RÉUSSIE"
+      : "NON";
+  }
+
+  if(currentLanguage === "en"){
+    return passed
+      ? "PASSED"
+      : "NO";
+  }
+
+  return passed
+    ? "PASE"
+    : "NON";
+
+}
+
+
+/* =========================
+DASHBOARD
+========================= */
+
+function updateDashboard(){
+
+  var progressTotal = 0;
+  var totalLessonsDone = 0;
+  var completedCourses = 0;
+  var assessmentsPassed = 0;
+
+
+  document.querySelectorAll(
+    ".course-card"
+  )
+  .forEach(function(card){
+
+    var courseId =
+      card.getAttribute(
+        "data-course-id"
+      );
+
+    var progress =
+      getCourseProgress(
+        courseId
+      );
+
+    var assessmentPassed =
+      getAssessmentPassed(
+        courseId
+      );
+
+    var status =
+      statusFor(
+        progress
+      );
+
+    var lessonsDone =
+      Math.round(
+        TOTAL_LESSONS_PER_COURSE *
+        (progress / 100)
+      );
+
+
+    progressTotal +=
+      progress;
+
+    totalLessonsDone +=
+      lessonsDone;
+
+
+    if(progress >= 100){
+      completedCourses++;
+    }
+
+
+    if(assessmentPassed){
+      assessmentsPassed++;
+    }
+
+
+    card.querySelector(
+      ".progress-text"
+    ).textContent =
+      progress + "%";
+
+
+    card.querySelector(
+      ".course-progress-bar"
+    ).style.width =
+      progress + "%";
+
+
+    card.querySelector(
+      ".lesson-count"
+    ).textContent =
+      lessonsDone +
+      "/" +
+      TOTAL_LESSONS_PER_COURSE;
+
+
+    card.querySelector(
+      ".assessment-status"
+    ).textContent =
+      assessmentText(
+        assessmentPassed
+      );
+
+
+    card.querySelector(
+      ".completion-status"
+    ).textContent =
+      progress + "%";
+
+
+    var statusElement =
+      card.querySelector(
+        ".status-pill"
+      );
+
+
+    statusElement.className =
+      "status-pill " +
+      status;
+
+
+    statusElement.textContent =
+      statusText(
+        status
+      );
+
+  });
+
+
+  var overall =
+    Math.round(
+      progressTotal /
+      courses.length
+    );
+
+
+  document.getElementById(
+    "overallProgressMetric"
+  ).textContent =
+    overall + "%";
+
+
+  document.getElementById(
+    "overallProgressText"
+  ).textContent =
+    overall + "%";
+
+
+  document.getElementById(
+    "overallProgressBar"
+  ).style.width =
+    overall + "%";
+
+
+  document.getElementById(
+    "lessonMetric"
+  ).textContent =
+    totalLessonsDone +
+    "/" +
+    TOTAL_LESSONS;
+
+
+  document.getElementById(
+    "assessmentMetric"
+  ).textContent =
+    assessmentsPassed +
+    "/6";
+
+
+  document.getElementById(
+    "completedMetric"
+  ).textContent =
+    completedCourses +
+    "/6";
+
+
+  document.getElementById(
+    "courseReadyStatus"
+  ).textContent =
+    completedCourses +
+    "/6";
+
+
+  document.getElementById(
+    "assessmentReadyStatus"
+  ).textContent =
+    assessmentsPassed +
+    "/6";
+
+
+  var payments =
+    getPayments();
+
+
+  var paymentCount =
+    Math.min(
+      payments.length,
+      5
+    );
+
+
+  document.getElementById(
+    "paymentReadyStatus"
+  ).textContent =
+    paymentCount +
+    "/5";
+
+
+  var paymentComplete =
+    totalPaid() >=
+    TOTAL_TUITION;
+
+
+  var allCoursesComplete =
+    completedCourses === 6;
+
+
+  var allAssessmentsPassed =
+    assessmentsPassed === 6;
+
+
+  var eligible =
+    paymentComplete &&
+    allCoursesComplete &&
+    allAssessmentsPassed;
+
+
+  var icon =
+    document.getElementById(
+      "certificateIcon"
+    );
+
+
+  var statusTextElement =
+    document.getElementById(
+      "certificateStatusText"
+    );
+
+
+  if(eligible){
+
+    icon.textContent =
+      "🏆";
+
+    statusTextElement.textContent =
+      "CERTIFICATE ELIGIBLE";
+
+  }else{
+
+    icon.textContent =
+      "🔒";
+
+    statusTextElement.textContent =
+      "CERTIFICATE LOCKED";
+
+  }
+
+}
+
+
+/* =========================
+INITIALIZE
+========================= */
+
+applyLanguage("ht");
+
+})();
+</script>
+
+</body>
+</html>
