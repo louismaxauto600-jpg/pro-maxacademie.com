@@ -3,186 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PRO-MAX ACADÉMIE | Enrollment & Student Account</title>
+<title>PRO-MAX ACADÉMIE | Enrollment Center — Firestore</title>
 <meta name="theme-color" content="#000000">
 <style>
-:root{
-  --o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);
-  --g:0 0 20px rgba(255,121,0,.35)
-}
+:root{--o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);--g:0 0 20px rgba(255,121,0,.35)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);
-  background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000)
-}
+body{min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);background:radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),linear-gradient(180deg,#000,#0a0400 50%,#000)}
 a{text-decoration:none;color:inherit}button,input,select{font:inherit}
-.container{width:min(1160px,calc(100% - 28px));margin:auto}
+.container{width:min(1120px,calc(100% - 28px));margin:auto}
 header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);border-bottom:1px solid var(--bd)}
 .head{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
 .back{border:1px solid var(--bd2);border-radius:999px;padding:10px 14px;color:var(--o);font-size:.68rem;font-weight:900}
-.hero{text-align:center;padding:60px 0 38px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,5rem);line-height:.9}.hero p{max-width:800px;margin:16px auto 0;line-height:1.65}
-.rule{max-width:900px;margin:22px auto 0;padding:14px;border:1px solid var(--bd2);border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
+.hero{text-align:center;padding:58px 0 34px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,5rem);line-height:.9}.hero p{max-width:800px;margin:16px auto 0;line-height:1.65}
+.statusbar{max-width:900px;margin:22px auto 0;padding:14px;border:1px solid var(--bd2);border-radius:14px;background:rgba(255,121,0,.08);font-weight:900}
 .section{padding:60px 0;border-top:1px solid rgba(255,121,0,.12)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card{border:1px solid var(--bd);border-radius:20px;padding:22px;background:#050200}
 .card h2{color:var(--o);text-transform:uppercase}.sub{margin-top:8px;font-size:.86rem;line-height:1.55}
-.field{margin-top:14px}
-label{display:block;margin-bottom:6px;color:var(--o);font-size:.74rem;font-weight:900}
+.field{margin-top:14px}label{display:block;margin-bottom:6px;color:var(--o);font-size:.74rem;font-weight:900}
 input,select{width:100%;background:#000;color:var(--o2);border:1px solid var(--bd2);border-radius:10px;padding:11px 12px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .btn{border:2px solid var(--o);border-radius:999px;padding:11px 17px;font-weight:1000;font-size:.72rem;cursor:pointer;text-transform:uppercase}
 .primary{background:var(--o);color:#000}.secondary{background:#000;color:var(--o)}
-.id-card{display:none;margin-top:28px;border:2px solid var(--o);border-radius:22px;padding:26px;background:radial-gradient(circle at top right,rgba(255,121,0,.13),transparent 35%),#000;box-shadow:var(--g)}
-.id-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.id-title{color:var(--o);font-size:1.3rem;font-weight:1000}.id-code{border:1px solid var(--bd2);border-radius:999px;padding:7px 10px;font-size:.68rem;font-weight:900}
-.id-body{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.id-field{border:1px solid var(--bd);border-radius:12px;padding:13px}.id-field strong{display:block;color:var(--o);font-size:.72rem;text-transform:uppercase}.id-field span{display:block;margin-top:6px}
-.account-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.metric{border:1px solid var(--bd);border-radius:14px;padding:16px;text-align:center;background:#000}.metric strong{display:block;color:var(--o);font-size:1.3rem}.metric span{display:block;margin-top:6px;font-size:.68rem;font-weight:900}
-.table{overflow:auto;margin-top:20px;border:1px solid var(--bd);border-radius:16px}table{width:100%;min-width:900px;border-collapse:collapse}th,td{padding:11px;border-bottom:1px solid var(--bd);text-align:left;font-size:.78rem}th{color:var(--o);background:#080300}
-.small{border:1px solid var(--o);background:#000;color:var(--o);border-radius:999px;padding:6px 9px;font-size:.63rem;cursor:pointer}
+.profile{display:none;margin-top:18px;border:1px solid var(--bd2);border-radius:18px;padding:20px;background:#000}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.item{border:1px solid var(--bd);border-radius:12px;padding:13px}.item strong{display:block;color:var(--o);font-size:.69rem;text-transform:uppercase}.item span{display:block;margin-top:6px}
+.cloud{margin-top:18px;padding:14px;border-left:4px solid var(--o);background:rgba(255,121,0,.06);line-height:1.55}
+.message{display:none;margin-top:16px;padding:14px;border:1px solid var(--bd2);border-radius:12px;line-height:1.55}
 footer{text-align:center;padding:34px 0;border-top:1px solid var(--bd)}
-@media(max-width:900px){.grid{grid-template-columns:1fr}.account-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.id-body{grid-template-columns:1fr}.account-grid{grid-template-columns:1fr 1fr}.back{padding:8px 10px}}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.profile-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="container head">
-<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>ENROLLMENT & STUDENT ACCOUNT SYSTEM</span></div>
-<a class="back" href="../admin-dashboard/index.html">← ADMIN DASHBOARD</a>
-</div></header>
+
+<header>
+<div class="container head">
+  <div class="brand">
+    <strong>PRO-MAX ACADÉMIE</strong>
+    <span>ENROLLMENT CENTER • FIRESTORE CONNECTED</span>
+  </div>
+  <a class="back" href="../student-portal/index.html">← STUDENT PORTAL</a>
+</div>
+</header>
 
 <main>
-<section class="hero"><div class="container">
-<h1>ENROLLMENT CENTER</h1>
-<p>Kreye dosye ofisyèl pou chak elèv ak Student ID, kou, kontak, dat enskripsyon ak estati kont.</p>
-<div class="rule">CHAK ELÈV = 1 STUDENT ID • 1 DOSYE • PWOGRÈ • PEMAN • SÈTIFIKASYON</div>
-</div></section>
 
-<section class="section"><div class="container">
-<div class="grid">
-
-<div class="card">
-<h2>Nouvo Enskripsyon</h2>
-<p class="sub">Ranpli enfòmasyon elèv la epi sistèm nan ap jenere yon Student ID otomatik.</p>
-
-<div class="field"><label>Non Konplè</label><input id="fullName" type="text" placeholder="Egzanp: Jean Pierre"></div>
-<div class="field"><label>Telefòn / WhatsApp</label><input id="phone" type="text" placeholder="+509 ..."></div>
-<div class="field"><label>Email</label><input id="email" type="email" placeholder="student@email.com"></div>
-<div class="field"><label>Kou</label>
-<select id="course">
-<option>Introduction to AI</option><option>Digital Creation</option><option>Digital Leadership</option>
-<option>Automation</option><option>Communication</option><option>Innovation</option>
-</select></div>
-<div class="field"><label>Dat Enskripsyon</label><input id="enrollDate" type="date"></div>
-
-<div class="actions">
-<button class="btn primary" id="createBtn">CREATE STUDENT ACCOUNT</button>
-<button class="btn secondary" id="clearBtn">CLEAR FORM</button>
+<section class="hero">
+<div class="container">
+  <h1>ENROLLMENT CENTER</h1>
+  <p>Dosye elèv la antre dirèkteman nan Cloud Firestore pou li disponib sou diferan aparèy ak nan Admin Dashboard.</p>
+  <div class="statusbar" id="authStatus">VERIFYING FIREBASE SESSION...</div>
 </div>
-</div>
+</section>
 
-<div class="card">
-<h2>Student Account Status</h2>
-<p class="sub">Apre enskripsyon an, kat elèv la ap parèt isit la.</p>
+<section class="section">
+<div class="container grid">
 
-<div class="id-card" id="idCard">
-<div class="id-top">
-<div class="id-title">PRO-MAX ACADÉMIE STUDENT</div>
-<div class="id-code" id="studentId">PMA-000000</div>
-</div>
+  <section class="card">
+    <h2>Student Profile</h2>
+    <p class="sub">Kont Firebase ki konekte a sèvi kòm idantite cloud pou dosye elèv la.</p>
 
-<div class="id-body">
-<div class="id-field"><strong>Student</strong><span id="cardName">—</span></div>
-<div class="id-field"><strong>Course</strong><span id="cardCourse">—</span></div>
-<div class="id-field"><strong>Phone</strong><span id="cardPhone">—</span></div>
-<div class="id-field"><strong>Email</strong><span id="cardEmail">—</span></div>
-<div class="id-field"><strong>Enrollment Date</strong><span id="cardDate">—</span></div>
-<div class="id-field"><strong>Status</strong><span>ACTIVE</span></div>
-</div>
-</div>
+    <div class="field">
+      <label>Student ID</label>
+      <input id="studentId" type="text" readonly>
+    </div>
 
-<div class="account-grid">
-<div class="metric"><strong id="mProgress">0%</strong><span>PROGRESS</span></div>
-<div class="metric"><strong id="mPayments">0/5</strong><span>PAYMENTS</span></div>
-<div class="metric"><strong id="mBalance">5,000</strong><span>HTG BALANCE</span></div>
-<div class="metric"><strong id="mCert">🔒</strong><span>CERTIFICATE</span></div>
-</div>
+    <div class="field">
+      <label>Non Konplè</label>
+      <input id="fullName" type="text" placeholder="Egzanp: Jean Pierre">
+    </div>
 
-<div class="actions">
-<a class="btn secondary" href="../student-portal/index.html">STUDENT PORTAL</a>
-<a class="btn secondary" href="../payment-center/index.html">PAYMENT CENTER</a>
-</div>
-</div>
+    <div class="field">
+      <label>Telefòn / WhatsApp</label>
+      <input id="phone" type="text" placeholder="+509 ...">
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input id="email" type="email" readonly>
+    </div>
+
+    <div class="field">
+      <label>Kou Aktif</label>
+      <select id="activeCourse">
+        <option>Introduction to AI</option>
+        <option>Digital Creation</option>
+        <option>Digital Leadership</option>
+        <option>Automation</option>
+        <option>Communication</option>
+        <option>Innovation</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Dat Enskripsyon</label>
+      <input id="enrollmentDate" type="date">
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="saveBtn">SAVE TO FIRESTORE</button>
+      <button class="btn secondary" id="reloadBtn">RELOAD CLOUD DATA</button>
+    </div>
+
+    <div class="message" id="message"></div>
+  </section>
+
+  <section class="card">
+    <h2>Cloud Student Record</h2>
+    <p class="sub">Sa ki parèt anba a soti dirèkteman nan document Firestore elèv la.</p>
+
+    <div class="profile" id="profile">
+      <div style="color:var(--o);font-weight:1000" id="profileTitle">STUDENT RECORD</div>
+
+      <div class="profile-grid">
+        <div class="item"><strong>Student ID</strong><span id="pStudentId">—</span></div>
+        <div class="item"><strong>Name</strong><span id="pName">—</span></div>
+        <div class="item"><strong>Email</strong><span id="pEmail">—</span></div>
+        <div class="item"><strong>Phone</strong><span id="pPhone">—</span></div>
+        <div class="item"><strong>Course</strong><span id="pCourse">—</span></div>
+        <div class="item"><strong>Status</strong><span id="pStatus">—</span></div>
+        <div class="item"><strong>Enrollment Date</strong><span id="pDate">—</span></div>
+        <div class="item"><strong>Firebase UID</strong><span id="pUid" style="word-break:break-all">—</span></div>
+      </div>
+    </div>
+
+    <div class="cloud">
+      <strong style="color:var(--o)">CLOUD FLOW</strong><br>
+      Firebase Auth UID → students/{uid} → Student Portal → Payment Center → Progress → Certificate Center → Admin Dashboard
+    </div>
+  </section>
 
 </div>
-</div></section>
+</section>
 
-<section class="section"><div class="container">
-<h2 style="text-align:center;color:var(--o);font-size:clamp(2rem,5vw,3.2rem)">STUDENT ACCOUNTS</h2>
-
-<div class="table">
-<table>
-<thead><tr><th>Student ID</th><th>Non</th><th>Kou</th><th>Telefòn</th><th>Email</th><th>Dat</th><th>Status</th><th>Action</th></tr></thead>
-<tbody id="studentBody"></tbody>
-</table>
-</div>
-</div></section>
 </main>
 
-<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Enrollment & Student Account System • BSS1815 PRO-MAX DMP</div></footer>
+<footer>
+<div class="container">
+  <strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>
+  Firestore Enrollment Center • BSS1815 PRO-MAX DMP
+</div>
+</footer>
 
-<script>
+<script type="module">
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { auth } from "../firebase/firebase-config.js";
+import {
+  saveStudent,
+  getStudent,
+  watchStudent
+} from "../firebase/firestore-service.js";
+
 const E=id=>document.getElementById(id);
-let students=[];
+let currentUser=null;
+let unsubscribeStudent=null;
 
-function loadStudents(){
- try{students=JSON.parse(localStorage.getItem("promaxStudents")||"[]")}catch(e){students=[]}
+function showMessage(text){
+  const box=E("message");
+  box.style.display="block";
+  box.textContent=text;
 }
-function saveStudents(){localStorage.setItem("promaxStudents",JSON.stringify(students))}
-function makeId(){
- const year=new Date().getFullYear();
- const r=Math.random().toString(36).slice(2,7).toUpperCase();
- return `PMA-${year}-${r}`;
-}
-function clearForm(){
- E("fullName").value="";E("phone").value="";E("email").value="";E("course").selectedIndex=0;
- E("enrollDate").value=new Date().toISOString().slice(0,10);
-}
-function showCard(s){
- E("idCard").style.display="block";
- E("studentId").textContent=s.id;E("cardName").textContent=s.name;E("cardCourse").textContent=s.course;
- E("cardPhone").textContent=s.phone||"—";E("cardEmail").textContent=s.email||"—";E("cardDate").textContent=s.date;
- const progress=Number(localStorage.getItem("promaxCourseProgress_ai")||0);
- let payments=[];try{payments=JSON.parse(localStorage.getItem("promaxPaymentHistory")||"[]")}catch(e){}
- const paidCount=Math.min(payments.length,5),balance=Math.max(5000-paidCount*1000,0);
- const courseDone=localStorage.getItem("promaxAIcourseCompleted")==="true";
- const assessment=localStorage.getItem("promaxAIassessmentPassed")==="true";
- const cert=paidCount>=5&&courseDone&&assessment;
- E("mProgress").textContent=progress+"%";E("mPayments").textContent=paidCount+"/5";
- E("mBalance").textContent=balance.toLocaleString();E("mCert").textContent=cert?"🔓":"🔒";
-}
-function render(){
- const body=E("studentBody");body.innerHTML="";
- if(!students.length){body.innerHTML='<tr><td colspan="8" style="text-align:center;padding:24px">Pa gen elèv anrejistre ankò.</td></tr>';return}
- students.forEach((s,i)=>{
-  const tr=document.createElement("tr");
-  tr.innerHTML=`<td>${s.id}</td><td>${s.name}</td><td>${s.course}</td><td>${s.phone||"—"}</td><td>${s.email||"—"}</td><td>${s.date}</td><td>ACTIVE</td><td><button class="small" data-i="${i}">VIEW</button></td>`;
-  body.appendChild(tr);
- });
- document.querySelectorAll(".small").forEach(b=>b.onclick=()=>showCard(students[Number(b.dataset.i)]));
-}
-E("createBtn").onclick=()=>{
- const name=E("fullName").value.trim();
- if(!name)return alert("Tanpri antre non elèv la.");
- const s={id:makeId(),name,phone:E("phone").value.trim(),email:E("email").value.trim(),course:E("course").value,date:E("enrollDate").value||new Date().toISOString().slice(0,10)};
- students.push(s);saveStudents();
- localStorage.setItem("promaxPaymentStudent",JSON.stringify({name:s.name,course:s.course,phone:s.phone,email:s.email,studentId:s.id}));
- showCard(s);render();alert("Student account kreye avèk siksè.");clearForm();
-};
-E("clearBtn").onclick=clearForm;
 
-loadStudents();render();clearForm();
-if(students.length)showCard(students[students.length-1]);
+function makeStudentId(uid){
+  const year=new Date().getFullYear();
+  const suffix=uid.replace(/[^a-zA-Z0-9]/g,"").slice(0,6).toUpperCase();
+  return `PMA-${year}-${suffix}`;
+}
+
+function renderStudent(student){
+  if(!student){
+    E("profile").style.display="none";
+    return;
+  }
+
+  E("profile").style.display="block";
+  E("pStudentId").textContent=student.studentId||"—";
+  E("pName").textContent=student.fullName||"—";
+  E("pEmail").textContent=student.email||"—";
+  E("pPhone").textContent=student.phone||"—";
+  E("pCourse").textContent=student.activeCourse||"—";
+  E("pStatus").textContent=student.status||"ACTIVE";
+  E("pDate").textContent=student.enrollmentDate||"—";
+  E("pUid").textContent=student.uid||student.id||"—";
+
+  E("studentId").value=student.studentId||E("studentId").value;
+  E("fullName").value=student.fullName||"";
+  E("phone").value=student.phone||"";
+  E("activeCourse").value=student.activeCourse||"Introduction to AI";
+  E("enrollmentDate").value=student.enrollmentDate||E("enrollmentDate").value;
+}
+
+async function reloadCloud(){
+  if(!currentUser)return;
+  try{
+    const student=await getStudent(currentUser.uid);
+    renderStudent(student);
+    showMessage(student ? "Cloud student record chaje." : "Pa gen student record nan Firestore ankò.");
+  }catch(error){
+    console.error(error);
+    showMessage("Pa kapab chaje student record la. Verifye Firestore rules ak koneksyon Firebase.");
+  }
+}
+
+E("saveBtn").addEventListener("click",async()=>{
+  if(!currentUser){
+    showMessage("Firebase login obligatwa.");
+    return;
+  }
+
+  const fullName=E("fullName").value.trim();
+  if(!fullName){
+    showMessage("Antre non elèv la.");
+    return;
+  }
+
+  E("saveBtn").disabled=true;
+  E("saveBtn").textContent="SAVING...";
+
+  try{
+    await saveStudent(currentUser.uid,{
+      studentId:E("studentId").value,
+      fullName,
+      phone:E("phone").value.trim(),
+      email:currentUser.email||E("email").value,
+      activeCourse:E("activeCourse").value,
+      enrollmentDate:E("enrollmentDate").value,
+      status:"ACTIVE"
+    });
+
+    showMessage("Student account sove nan Cloud Firestore avèk siksè.");
+  }catch(error){
+    console.error(error);
+    showMessage("Save pa reyisi. Verifye Firebase Auth, Firestore rules ak firestore-service.js.");
+  }finally{
+    E("saveBtn").disabled=false;
+    E("saveBtn").textContent="SAVE TO FIRESTORE";
+  }
+});
+
+E("reloadBtn").addEventListener("click",reloadCloud);
+
+onAuthStateChanged(auth,async user=>{
+  if(!user){
+    E("authStatus").textContent="NO FIREBASE SESSION — REDIRECTING TO LOGIN...";
+    setTimeout(()=>window.location.href="../login/index.html",800);
+    return;
+  }
+
+  currentUser=user;
+  E("authStatus").textContent=`CONNECTED • ${user.email||"AUTHENTICATED USER"}`;
+  E("email").value=user.email||"";
+  E("studentId").value=makeStudentId(user.uid);
+  E("enrollmentDate").value=new Date().toISOString().slice(0,10);
+
+  const existing=await getStudent(user.uid);
+  renderStudent(existing);
+
+  if(unsubscribeStudent)unsubscribeStudent();
+  unsubscribeStudent=watchStudent(user.uid,renderStudent,error=>{
+    console.error(error);
+    showMessage("Realtime student listener pa kapab li Firestore.");
+  });
+});
 </script>
+
 </body>
 </html>
