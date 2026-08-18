@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Certificate Center</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{
+  --o:#ff7900;--o2:#ffad4d;--b:#000;
+  --bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);
+  --g:0 0 20px rgba(255,121,0,.35)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--o2);
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,121,0,.14),transparent 34%),
+    linear-gradient(180deg,#000,#0a0400 50%,#000)
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.container{width:min(1120px,calc(100% - 28px));margin:auto}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--bd)
+}
+.head{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px
+}
+.brand strong{display:block;color:var(--o)}
+.brand span{font-size:.62rem;font-weight:900}
+.back{
+  border:1px solid var(--bd2);
+  border-radius:999px;
+  padding:10px 14px;
+  color:var(--o);
+  font-size:.68rem;
+  font-weight:900
+}
+
+.hero{text-align:center;padding:62px 0 40px}
+.hero h1{
+  color:var(--o);
+  font-size:clamp(2.5rem,7vw,5rem);
+  line-height:.9
+}
+.hero p{
+  max-width:760px;
+  margin:16px auto 0;
+  line-height:1.65
+}
+.rule{
+  max-width:850px;
+  margin:24px auto 0;
+  padding:15px;
+  border:1px solid var(--bd2);
+  border-radius:14px;
+  background:rgba(255,121,0,.08);
+  font-weight:900
+}
+
+.section{
+  padding:65px 0;
+  border-top:1px solid rgba(255,121,0,.12)
+}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px
+}
+.card{
+  border:1px solid var(--bd);
+  border-radius:20px;
+  padding:22px;
+  background:#050200
+}
+.card h2{
+  color:var(--o);
+  text-transform:uppercase
+}
+.field{margin-top:14px}
+label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--o);
+  font-size:.75rem;
+  font-weight:900
+}
+input,select{
+  width:100%;
+  padding:11px 12px;
+  border-radius:10px;
+  border:1px solid var(--bd2);
+  background:#000;
+  color:var(--o2)
+}
+.status-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px
+}
+.status-box{
+  border:1px solid var(--bd);
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  background:#000
+}
+.status-box strong{
+  display:block;
+  color:var(--o);
+  font-size:1.2rem
+}
+.status-box span{
+  display:block;
+  margin-top:5px;
+  font-size:.7rem;
+  font-weight:900
+}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px
+}
+.btn{
+  border:2px solid var(--o);
+  border-radius:999px;
+  padding:11px 17px;
+  font-weight:1000;
+  font-size:.72rem;
+  cursor:pointer;
+  text-transform:uppercase
+}
+.primary{background:var(--o);color:#000}
+.secondary{background:#000;color:var(--o)}
+
+.certificate-wrap{
+  margin-top:30px;
+  display:none
+}
+.certificate{
+  position:relative;
+  min-height:620px;
+  border:4px solid var(--o);
+  outline:1px solid rgba(255,121,0,.4);
+  outline-offset:-14px;
+  padding:60px 50px;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(255,121,0,.08),transparent 34%),
+    #000;
+  text-align:center;
+  box-shadow:var(--g)
+}
+.certificate::before,
+.certificate::after{
+  content:"✦";
+  position:absolute;
+  color:var(--o);
+  font-size:2rem
+}
+.certificate::before{top:22px;left:28px}
+.certificate::after{bottom:22px;right:28px}
+.cert-brand{
+  color:var(--o);
+  font-size:1rem;
+  font-weight:1000;
+  letter-spacing:.16em
+}
+.cert-title{
+  margin-top:34px;
+  color:var(--o);
+  font-size:clamp(2.5rem,7vw,5rem);
+  line-height:.95
+}
+.cert-sub{
+  margin-top:18px;
+  font-size:1.05rem
+}
+.cert-name{
+  margin-top:32px;
+  color:var(--o);
+  font-size:clamp(2rem,6vw,4rem);
+  font-weight:1000
+}
+.cert-course{
+  margin-top:18px;
+  font-size:1.2rem;
+  font-weight:900
+}
+.cert-line{
+  width:min(520px,90%);
+  margin:28px auto 0;
+  border-top:1px solid var(--bd2)
+}
+.cert-details{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:30px
+}
+.cert-detail{
+  border:1px solid var(--bd);
+  border-radius:12px;
+  padding:13px
+}
+.cert-detail strong{
+  display:block;
+  color:var(--o)
+}
+.cert-footer{
+  margin-top:36px;
+  font-size:.82rem;
+  line-height:1.6
+}
+
+.verify-box{
+  margin-top:24px;
+  border:1px solid var(--bd2);
+  border-radius:16px;
+  padding:18px
+}
+.verify-result{
+  margin-top:12px;
+  padding:14px;
+  border:1px solid var(--bd);
+  border-radius:12px;
+  display:none
+}
+
+footer{
+  text-align:center;
+  padding:34px 0;
+  border-top:1px solid var(--bd)
+}
+
+@media(max-width:850px){
+  .grid{grid-template-columns:1fr}
+  .status-grid{grid-template-columns:1fr}
+  .cert-details{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#000}
+  header,.hero,.section>.container>.grid,.verify-box,footer,.actions{display:none!important}
+  .certificate-wrap{display:block!important;margin:0}
+  .certificate{box-shadow:none;min-height:100vh}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container head">
+    <div class="brand">
+      <strong>PRO-MAX ACADÉMIE</strong>
+      <span>CERTIFICATE CENTER</span>
+    </div>
+    <a class="back" href="../student-portal/index.html">← STUDENT PORTAL</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>CERTIFICATE CENTER</h1>
+    <p>
+      Verifye kondisyon akademik ak finansye elèv la, jenere Certificate ID,
+      epi prepare sètifika ofisyèl PRO-MAX ACADÉMIE.
+    </p>
+    <div class="rule">
+      5/5 PAYMENT + COURSE COMPLETED + ASSESSMENT PASSED = CERTIFICATE ELIGIBLE
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="grid">
+
+      <div class="card">
+        <h2>Student Information</h2>
+
+        <div class="field">
+          <label>Non Elèv</label>
+          <input id="studentName" type="text" placeholder="Egzanp: Jean Pierre">
+        </div>
+
+        <div class="field">
+          <label>Kou</label>
+          <select id="courseName">
+            <option value="Introduction to AI">Introduction to AI</option>
+            <option value="Digital Creation">Digital Creation</option>
+            <option value="Digital Leadership">Digital Leadership</option>
+            <option value="Automation">Automation</option>
+            <option value="Communication">Communication</option>
+            <option value="Innovation">Innovation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Assessment Score</label>
+          <input id="assessmentScore" type="number" min="0" max="100" placeholder="0 - 100">
+        </div>
+
+        <div class="field">
+          <label>Completion Date</label>
+          <input id="completionDate" type="date">
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" id="loadDataBtn">LOAD STUDENT STATUS</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Eligibility Status</h2>
+
+        <div class="status-grid">
+          <div class="status-box">
+            <strong id="paymentStatus">🔒</strong>
+            <span>PAYMENT 5/5</span>
+          </div>
+
+          <div class="status-box">
+            <strong id="courseStatus">🔒</strong>
+            <span>COURSE COMPLETED</span>
+          </div>
+
+          <div class="status-box">
+            <strong id="assessmentStatus">🔒</strong>
+            <span>ASSESSMENT PASSED</span>
+          </div>
+        </div>
+
+        <div class="verify-box">
+          <strong style="color:var(--o)" id="eligibilityTitle">CERTIFICATE LOCKED</strong>
+          <p id="eligibilityText" style="margin-top:8px;line-height:1.55">
+            Tout kondisyon yo dwe ranpli anvan sètifika a kapab jenere.
+          </p>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="generateBtn" disabled>GENERATE CERTIFICATE</button>
+          <button class="btn secondary" id="printBtn" disabled>PRINT / SAVE PDF</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="certificate-wrap" id="certificateWrap">
+      <div class="certificate" id="certificate">
+
+        <div class="cert-brand">PRO-MAX ACADÉMIE • BSS1815 PRO-MAX DMP</div>
+
+        <div class="cert-title">CERTIFICATE OF COMPLETION</div>
+
+        <div class="cert-sub">This certificate is proudly presented to</div>
+
+        <div class="cert-name" id="certStudentName">STUDENT NAME</div>
+
+        <div class="cert-sub">for successfully completing</div>
+
+        <div class="cert-course" id="certCourseName">COURSE NAME</div>
+
+        <div class="cert-line"></div>
+
+        <div class="cert-details">
+          <div class="cert-detail">
+            <strong id="certScore">0%</strong>
+            <span>ASSESSMENT SCORE</span>
+          </div>
+
+          <div class="cert-detail">
+            <strong id="certDate">—</strong>
+            <span>COMPLETION DATE</span>
+          </div>
+
+          <div class="cert-detail">
+            <strong id="certId">—</strong>
+            <span>CERTIFICATE ID</span>
+          </div>
+        </div>
+
+        <div class="cert-footer">
+          PRO-MAX ACADÉMIE<br>
+          DEVAN DEVAN NÈT™ • Fòme Jodi a Pou Dirije Demen
+        </div>
+
+      </div>
+    </div>
+
+    <div class="verify-box">
+      <h2 style="color:var(--o)">VERIFY CERTIFICATE</h2>
+
+      <div class="field">
+        <label>Certificate ID</label>
+        <input id="verifyId" type="text" placeholder="Egzanp: PMA-AI-2026-AB12CD">
+      </div>
+
+      <div class="actions">
+        <button class="btn secondary" id="verifyBtn">VERIFY</button>
+      </div>
+
+      <div class="verify-result" id="verifyResult"></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>
+    Certificate Center • BSS1815 PRO-MAX DMP
+  </div>
+</footer>
+
+<script>
+const el=id=>document.getElementById(id);
+
+let state={
+  paidInFull:false,
+  courseCompleted:false,
+  assessmentPassed:false,
+  certificateId:"",
+  issued:false
+};
+
+function getPaymentStatus(){
+  let history=[];
+  try{
+    history=JSON.parse(localStorage.getItem("promaxPaymentHistory")||"[]");
+  }catch(e){}
+  return history.length>=5;
+}
+
+function getCourseStatus(){
+  return localStorage.getItem("promaxAIcourseCompleted")==="true";
+}
+
+function getAssessmentStatus(){
+  return localStorage.getItem("promaxAIassessmentPassed")==="true";
+}
+
+function updateStatus(){
+  state.paidInFull=getPaymentStatus();
+  state.courseCompleted=getCourseStatus();
+  state.assessmentPassed=getAssessmentStatus();
+
+  el("paymentStatus").textContent=state.paidInFull?"🔓":"🔒";
+  el("courseStatus").textContent=state.courseCompleted?"🔓":"🔒";
+  el("assessmentStatus").textContent=state.assessmentPassed?"🔓":"🔒";
+
+  const eligible=
+    state.paidInFull &&
+    state.courseCompleted &&
+    state.assessmentPassed;
+
+  if(eligible){
+    el("eligibilityTitle").textContent="CERTIFICATE ELIGIBLE";
+    el("eligibilityText").textContent=
+      "Tout kondisyon finansye ak akademik yo ranpli. Sètifika a pare pou jenere.";
+    el("generateBtn").disabled=false;
+  }else{
+    el("eligibilityTitle").textContent="CERTIFICATE LOCKED";
+    el("eligibilityText").textContent=
+      "5/5 payment, course completed ak assessment passed dwe tout valide.";
+    el("generateBtn").disabled=true;
+    el("printBtn").disabled=true;
+  }
+}
+
+function makeCertificateId(){
+  const course=el("courseName").value;
+  const prefix=course==="Introduction to AI"?"AI":"CRS";
+  const year=new Date().getFullYear();
+  const random=Math.random().toString(36).slice(2,8).toUpperCase();
+  return `PMA-${prefix}-${year}-${random}`;
+}
+
+function generateCertificate(){
+  const name=el("studentName").value.trim();
+  const course=el("courseName").value;
+  const score=Number(el("assessmentScore").value||0);
+  const date=el("completionDate").value;
+
+  if(!name){
+    alert("Antre non elèv la.");
+    return;
+  }
+
+  if(score<80){
+    alert("Assessment score dwe omwen 80%.");
+    return;
+  }
+
+  if(!date){
+    alert("Chwazi completion date.");
+    return;
+  }
+
+  state.certificateId=makeCertificateId();
+  state.issued=true;
+
+  const record={
+    id:state.certificateId,
+    student:name,
+    course,
+    score,
+    date,
+    issuedAt:new Date().toISOString()
+  };
+
+  let records={};
+  try{
+    records=JSON.parse(localStorage.getItem("promaxCertificates")||"{}");
+  }catch(e){}
+
+  records[state.certificateId]=record;
+  localStorage.setItem("promaxCertificates",JSON.stringify(records));
+
+  el("certStudentName").textContent=name.toUpperCase();
+  el("certCourseName").textContent=course.toUpperCase();
+  el("certScore").textContent=score+"%";
+  el("certDate").textContent=date;
+  el("certId").textContent=state.certificateId;
+
+  el("certificateWrap").style.display="block";
+  el("printBtn").disabled=false;
+  el("certificateWrap").scrollIntoView({behavior:"smooth"});
+}
+
+function verifyCertificate(){
+  const id=el("verifyId").value.trim().toUpperCase();
+
+  let records={};
+  try{
+    records=JSON.parse(localStorage.getItem("promaxCertificates")||"{}");
+  }catch(e){}
+
+  const result=el("verifyResult");
+  result.style.display="block";
+
+  if(records[id]){
+    const r=records[id];
+    result.innerHTML=
+      `<strong style="color:var(--o)">VALID CERTIFICATE</strong><br><br>
+       Student: ${r.student}<br>
+       Course: ${r.course}<br>
+       Score: ${r.score}%<br>
+       Completion Date: ${r.date}<br>
+       Certificate ID: ${r.id}`;
+  }else{
+    result.innerHTML=
+      `<strong style="color:var(--o)">CERTIFICATE NOT FOUND</strong><br>
+       Verifye Certificate ID la epi eseye ankò.`;
+  }
+}
+
+el("loadDataBtn").addEventListener("click",updateStatus);
+el("generateBtn").addEventListener("click",generateCertificate);
+el("printBtn").addEventListener("click",()=>window.print());
+el("verifyBtn").addEventListener("click",verifyCertificate);
+
+const savedStudent=localStorage.getItem("promaxPaymentStudent");
+if(savedStudent){
+  try{
+    const s=JSON.parse(savedStudent);
+    el("studentName").value=s.name||"";
+  }catch(e){}
+}
+
+if(getAssessmentStatus()){
+  el("assessmentScore").value=80;
+}
+
+el("completionDate").value=new Date().toISOString().slice(0,10);
+
+updateStatus();
+</script>
+
+</body>
+</html>
