@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Notifications Center">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --black3:#0d0500;
+
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:
+    0 0 16px rgba(255,121,0,.70),
+    0 0 42px rgba(255,121,0,.28);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 82% 72%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000 0%,#090400 48%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1200px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--orange);
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.brand-logo video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:1rem;
+  font-weight:1000;
+}
+
+.brand-text span{
+  display:block;
+  margin-top:5px;
+  color:var(--orange3);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back-btn{
+  padding:10px 16px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  color:var(--orange);
+  background:#000;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+/* ================= LANGUAGE ================= */
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+  border:0;
+  border-radius:999px;
+  padding:9px 10px;
+  cursor:pointer;
+  background:#000;
+  color:var(--orange3);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  padding:68px 0 42px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.7rem,8vw,5.6rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:800px;
+  margin:18px auto 0;
+  line-height:1.7;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:36px;
+}
+
+.summary-card{
+  min-height:128px;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#050200;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.summary-card strong{
+  color:var(--orange);
+  font-size:1.7rem;
+}
+
+.summary-card span{
+  margin-top:7px;
+  font-size:.68rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* ================= TOOLBAR ================= */
+
+.notification-section{
+  padding:30px 0 95px;
+}
+
+.toolbar{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.filter-btn{
+  padding:9px 14px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange3);
+  cursor:pointer;
+  font-size:.65rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.filter-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+.toolbar-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.tool-btn{
+  padding:9px 14px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange);
+  cursor:pointer;
+  font-size:.65rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.tool-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+/* ================= NOTIFICATIONS ================= */
+
+.notification-list{
+  display:grid;
+  gap:14px;
+}
+
+.notification-card{
+  position:relative;
+  padding:21px;
+  border:1px solid var(--border);
+  border-radius:19px;
+  background:
+    radial-gradient(circle at top right,rgba(255,121,0,.08),transparent 36%),
+    linear-gradient(145deg,#000,#0b0400);
+  transition:.25s;
+}
+
+.notification-card:hover{
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+  transform:translateY(-2px);
+}
+
+.notification-card.unread{
+  border-color:var(--borderStrong);
+}
+
+.notification-card.unread::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 0 12px var(--orange);
+}
+
+.notification-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.notification-left{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.notification-icon{
+  min-width:54px;
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--orange);
+  border-radius:16px;
+  background:#000;
+  color:var(--orange);
+  font-size:1.35rem;
+}
+
+.notification-content h3{
+  color:var(--orange);
+  font-size:1rem;
+}
+
+.notification-content p{
+  margin-top:7px;
+  line-height:1.6;
+  font-size:.84rem;
+}
+
+.notification-meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  font-size:.62rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.meta-pill{
+  padding:5px 8px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#030100;
+}
+
+.notification-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.action-btn{
+  padding:8px 12px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange);
+  cursor:pointer;
+  font-size:.62rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.action-btn.primary{
+  background:var(--orange);
+  color:#000;
+}
+
+.action-btn:hover{
+  box-shadow:var(--glow);
+}
+
+.notification-card.hidden{
+  display:none;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-state{
+  display:none;
+  padding:45px 25px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:#030100;
+  text-align:center;
+}
+
+.empty-state.show{
+  display:block;
+}
+
+.empty-state .icon{
+  font-size:3rem;
+}
+
+.empty-state h3{
+  margin-top:12px;
+  color:var(--orange);
+}
+
+.empty-state p{
+  margin-top:8px;
+  font-size:.82rem;
+  line-height:1.6;
+}
+
+/* ================= SETTINGS ================= */
+
+.settings-box{
+  margin-top:24px;
+  padding:25px;
+  border:1px solid var(--borderStrong);
+  border-radius:20px;
+  background:#020100;
+}
+
+.settings-box h2{
+  color:var(--orange);
+  font-size:1.2rem;
+  text-transform:uppercase;
+}
+
+.settings-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.setting-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#030100;
+}
+
+.setting-row strong{
+  color:var(--orange);
+  font-size:.82rem;
+}
+
+.setting-row span{
+  display:block;
+  margin-top:4px;
+  font-size:.64rem;
+}
+
+.toggle{
+  position:relative;
+  width:48px;
+  height:26px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  background:#000;
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+.toggle::after{
+  content:"";
+  position:absolute;
+  top:3px;
+  left:3px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--orange3);
+  transition:.25s;
+}
+
+.toggle.active{
+  background:var(--orange);
+}
+
+.toggle.active::after{
+  left:25px;
+  background:#000;
+}
+
+/* ================= QUICK LINKS ================= */
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+  margin-top:25px;
+}
+
+.quick-link{
+  min-height:130px;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#030100;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  transition:.25s;
+}
+
+.quick-link:hover{
+  transform:translateY(-4px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.quick-link span{
+  font-size:1.7rem;
+}
+
+.quick-link strong{
+  margin-top:9px;
+  color:var(--orange);
+  font-size:.68rem;
+  text-transform:uppercase;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  padding:42px 0;
+  border-top:1px solid var(--border);
+  background:#000;
+  text-align:center;
+}
+
+.footer-title{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:9px;
+  font-size:.76rem;
+  line-height:1.7;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .settings-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .header-inner{
+    padding:12px 0;
+  }
+
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-text strong{
+    font-size:.80rem;
+  }
+
+  .brand-text span{
+    font-size:.47rem;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .lang-btn{
+    min-width:38px;
+    padding:8px 7px;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .notification-top{
+    display:block;
+  }
+
+  .notification-left{
+    display:block;
+  }
+
+  .notification-icon{
+    margin-bottom:12px;
+  }
+
+  .notification-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .action-btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+  <div class="brand-logo">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../pro-max-dmp-II.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="brand-text">
+    <strong>PRO-MAX ACADÉMIE</strong>
+
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+      Fòme Jodi a Pou Dirije Demen
+    </span>
+  </div>
+
+</a>
+
+<div class="header-actions">
+
+  <a
+    href="../student-profile/index.html"
+    class="back-btn"
+    data-ht="← PWOFIL ELÈV"
+    data-fr="← PROFIL ÉTUDIANT"
+    data-en="← STUDENT PROFILE">
+    ← PWOFIL ELÈV
+  </a>
+
+  <div class="lang-switch" aria-label="Language selector">
+
+    <button type="button" class="lang-btn" data-lang="fr">
+      FRA
+    </button>
+
+    <button type="button" class="lang-btn" data-lang="en">
+      ENG
+    </button>
+
+    <button type="button" class="lang-btn active" data-lang="ht">
+      KRE
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+BSS1815 PRO-MAX DMP • STUDENT PORTAL
+</div>
+
+<h1
+  data-ht="NOTIFIKASYON"
+  data-fr="NOTIFICATIONS"
+  data-en="NOTIFICATIONS">
+  NOTIFIKASYON
+</h1>
+
+<p
+  data-ht="Resevwa rapèl sou kou, peman, evalyasyon, sètifika ak mesaj administrasyon PRO-MAX ACADÉMIE."
+  data-fr="Recevez des rappels concernant vos cours, paiements, évaluations, certificats et messages administratifs."
+  data-en="Receive reminders about courses, payments, assessments, certificates and PRO-MAX ACADEMY administrative messages.">
+  Resevwa rapèl sou kou, peman, evalyasyon, sètifika ak mesaj administrasyon PRO-MAX ACADÉMIE.
+</p>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+<strong id="totalNotifications">0</strong>
+<span
+data-ht="TOTAL"
+data-fr="TOTAL"
+data-en="TOTAL">
+TOTAL
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="unreadNotifications">0</strong>
+<span
+data-ht="PA LI"
+data-fr="NON LUES"
+data-en="UNREAD">
+PA LI
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="paymentNotifications">0</strong>
+<span
+data-ht="PEMAN"
+data-fr="PAIEMENTS"
+data-en="PAYMENTS">
+PEMAN
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="importantNotifications">0</strong>
+<span
+data-ht="ENPÒTAN"
+data-fr="IMPORTANTES"
+data-en="IMPORTANT">
+ENPÒTAN
+</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="notification-section">
+
+<div class="container">
+
+<div class="toolbar">
+
+<div class="filters">
+
+<button
+type="button"
+class="filter-btn active"
+data-filter="all"
+data-ht="TOUT"
+data-fr="TOUTES"
+data-en="ALL">
+TOUT
+</button>
+
+<button
+type="button"
+class="filter-btn"
+data-filter="course"
+data-ht="KOU"
+data-fr="COURS"
+data-en="COURSES">
+KOU
+</button>
+
+<button
+type="button"
+class="filter-btn"
+data-filter="payment"
+data-ht="PEMAN"
+data-fr="PAIEMENTS"
+data-en="PAYMENTS">
+PEMAN
+</button>
+
+<button
+type="button"
+class="filter-btn"
+data-filter="assessment"
+data-ht="EVALYASYON"
+data-fr="ÉVALUATIONS"
+data-en="ASSESSMENTS">
+EVALYASYON
+</button>
+
+<button
+type="button"
+class="filter-btn"
+data-filter="certificate"
+data-ht="SÈTIFIKA"
+data-fr="CERTIFICATS"
+data-en="CERTIFICATES">
+SÈTIFIKA
+</button>
+
+<button
+type="button"
+class="filter-btn"
+data-filter="admin"
+data-ht="ADMIN"
+data-fr="ADMIN"
+data-en="ADMIN">
+ADMIN
+</button>
+
+</div>
+
+<div class="toolbar-actions">
+
+<button
+type="button"
+class="tool-btn"
+id="markAllReadBtn"
+data-ht="MAKE TOUT KÒM LI"
+data-fr="TOUT MARQUER COMME LU"
+data-en="MARK ALL READ">
+MAKE TOUT KÒM LI
+</button>
+
+<button
+type="button"
+class="tool-btn"
+id="clearReadBtn"
+data-ht="EFASE SA KI LI"
+data-fr="EFFACER LES LUES"
+data-en="CLEAR READ">
+EFASE SA KI LI
+</button>
+
+</div>
+
+</div>
+
+<div class="notification-list" id="notificationList"></div>
+
+<div class="empty-state" id="emptyState">
+
+<div class="icon">🔔</div>
+
+<h3
+data-ht="PA GEN NOTIFIKASYON"
+data-fr="AUCUNE NOTIFICATION"
+data-en="NO NOTIFICATIONS">
+PA GEN NOTIFIKASYON
+</h3>
+
+<p
+data-ht="Pa gen okenn notifikasyon nan kategori sa a pou kounye a."
+data-fr="Il n’y a actuellement aucune notification dans cette catégorie."
+data-en="There are currently no notifications in this category.">
+Pa gen okenn notifikasyon nan kategori sa a pou kounye a.
+</p>
+
+</div>
+
+<section class="settings-box">
+
+<h2
+data-ht="PREFERANS NOTIFIKASYON"
+data-fr="PRÉFÉRENCES DE NOTIFICATION"
+data-en="NOTIFICATION PREFERENCES">
+PREFERANS NOTIFIKASYON
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-row">
+
+<div>
+<strong
+data-ht="RAPÈL KOU"
+data-fr="RAPPELS DE COURS"
+data-en="COURSE REMINDERS">
+RAPÈL KOU
+</strong>
+
+<span
+data-ht="Resevwa rapèl pou kontinye kou ou."
+data-fr="Recevez des rappels pour continuer vos cours."
+data-en="Receive reminders to continue your courses.">
+Resevwa rapèl pou kontinye kou ou.
+</span>
+</div>
+
+<div class="toggle active" data-setting="course"></div>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+<strong
+data-ht="RAPÈL PEMAN"
+data-fr="RAPPELS DE PAIEMENT"
+data-en="PAYMENT REMINDERS">
+RAPÈL PEMAN
+</strong>
+
+<span
+data-ht="Resevwa mesaj sou peman ak balans."
+data-fr="Recevez des messages concernant vos paiements et votre solde."
+data-en="Receive messages about payments and remaining balance.">
+Resevwa mesaj sou peman ak balans.
+</span>
+</div>
+
+<div class="toggle active" data-setting="payment"></div>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+<strong
+data-ht="EVALYASYON"
+data-fr="ÉVALUATIONS"
+data-en="ASSESSMENTS">
+EVALYASYON
+</strong>
+
+<span
+data-ht="Resevwa rapèl pou evalyasyon ki disponib."
+data-fr="Recevez des rappels pour les évaluations disponibles."
+data-en="Receive reminders for available assessments.">
+Resevwa rapèl pou evalyasyon ki disponib.
+</span>
+</div>
+
+<div class="toggle active" data-setting="assessment"></div>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+<strong
+data-ht="SÈTIFIKA"
+data-fr="CERTIFICATS"
+data-en="CERTIFICATES">
+SÈTIFIKA
+</strong>
+
+<span
+data-ht="Resevwa mesaj lè yon sètifika elijib oswa emèt."
+data-fr="Recevez un message lorsqu’un certificat devient éligible ou est émis."
+data-en="Receive a message when a certificate becomes eligible or is issued.">
+Resevwa mesaj lè yon sètifika elijib oswa emèt.
+</span>
+</div>
+
+<div class="toggle active" data-setting="certificate"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="quick-grid">
+
+<a href="../student-profile/index.html" class="quick-link">
+<span>👤</span>
+<strong
+data-ht="PWOFIL ELÈV"
+data-fr="PROFIL ÉTUDIANT"
+data-en="STUDENT PROFILE">
+PWOFIL ELÈV
+</strong>
+</a>
+
+<a href="../my-courses/index.html" class="quick-link">
+<span>🎓</span>
+<strong
+data-ht="KOU MWEN"
+data-fr="MES COURS"
+data-en="MY COURSES">
+KOU MWEN
+</strong>
+</a>
+
+<a href="../assessments/index.html" class="quick-link">
+<span>✓</span>
+<strong
+data-ht="EVALYASYON"
+data-fr="ÉVALUATIONS"
+data-en="ASSESSMENTS">
+EVALYASYON
+</strong>
+</a>
+
+<a href="../certificates/index.html" class="quick-link">
+<span>🏆</span>
+<strong
+data-ht="SÈTIFIKA"
+data-fr="CERTIFICATS"
+data-en="CERTIFICATES">
+SÈTIFIKA
+</strong>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-title">
+PRO-MAX ACADÉMIE
+</div>
+
+<div class="footer-info">
+BSS1815 PRO-MAX DMP<br>
+DEVAN DEVAN NÈT™<br>
+BATI POU JODI A • PARE POU DEMEN
+</div>
+
+</div>
+
+</footer>
+
+<script>
+(function(){
+
+"use strict";
+
+var currentLanguage = "ht";
+
+var STORAGE_KEY = "promaxNotifications";
+var SETTINGS_KEY = "promaxNotificationSettings";
+
+var languageButtons =
+document.querySelectorAll(".lang-btn[data-lang]");
+
+/* ================= LANGUAGE ================= */
+
+function applyLanguage(lang){
+
+  if(["ht","fr","en"].indexOf(lang) === -1){
+    lang = "ht";
+  }
+
+  currentLanguage = lang;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-ht][data-fr][data-en]")
+  .forEach(function(element){
+
+    var value =
+      element.getAttribute(
+        "data-" + lang
+      );
+
+    if(value !== null){
+      element.textContent = value;
+    }
+
+  });
+
+  languageButtons.forEach(function(button){
+
+    button.classList.toggle(
+      "active",
+      button.getAttribute("data-lang") === lang
+    );
+
+  });
+
+  renderNotifications();
+
+}
+
+languageButtons.forEach(function(button){
+
+  button.addEventListener("click",function(){
+
+    applyLanguage(
+      this.getAttribute("data-lang")
+    );
+
+  });
+
+});
+
+
+/* ================= VIDEO ================= */
+
+document.querySelectorAll("video")
+.forEach(function(video){
+
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  var promise = video.play();
+
+  if(promise){
+    promise.catch(function(){});
+  }
+
+});
+
+
+/* ================= DEFAULT NOTIFICATIONS ================= */
+
+function defaultNotifications(){
+
+  return [
+
+    {
+      id:"welcome",
+      type:"admin",
+      icon:"👋",
+      important:true,
+      read:false,
+      date:new Date().toLocaleString(),
+      title:{
+        ht:"BYENVINI NAN PRO-MAX ACADÉMIE",
+        fr:"BIENVENUE À PRO-MAX ACADÉMIE",
+        en:"WELCOME TO PRO-MAX ACADEMY"
+      },
+      message:{
+        ht:"Kont elèv ou pare. Ou kapab kòmanse kou yo, suiv pwogrè ou epi jere tout aktivite akademik ou.",
+        fr:"Votre compte étudiant est prêt. Vous pouvez commencer vos cours, suivre votre progression et gérer vos activités académiques.",
+        en:"Your student account is ready. You can begin your courses, track your progress and manage your academic activity."
+      },
+      link:"../my-courses/index.html"
+    },
+
+    {
+      id:"payment-reminder",
+      type:"payment",
+      icon:"💳",
+      important:true,
+      read:false,
+      date:new Date().toLocaleString(),
+      title:{
+        ht:"RAPÈL PEMAN",
+        fr:"RAPPEL DE PAIEMENT",
+        en:"PAYMENT REMINDER"
+      },
+      message:{
+        ht:"Pri total fòmasyon an se 5,000 HTG, divize an 5 peman × 1,000 HTG. Sètifika a rete bloke jiskaske 5/5 peman yo fini.",
+        fr:"Le coût total de la formation est de 5 000 HTG, divisé en 5 paiements de 1 000 HTG. Le certificat reste verrouillé jusqu’au paiement complet.",
+        en:"Total tuition is 5,000 HTG, divided into 5 payments of 1,000 HTG. The certificate remains locked until all 5 payments are completed."
+      },
+      link:"../index.html#payment"
+    },
+
+    {
+      id:"course-reminder",
+      type:"course",
+      icon:"🎓",
+      important:false,
+      read:false,
+      date:new Date().toLocaleString(),
+      title:{
+        ht:"KONTINYE KOU OU",
+        fr:"CONTINUEZ VOTRE COURS",
+        en:"CONTINUE YOUR COURSE"
+      },
+      message:{
+        ht:"Pa kite fòmasyon an kanpe. Antre nan My Courses pou kontinye kote ou te rete a.",
+        fr:"Ne laissez pas votre formation s’arrêter. Accédez à Mes Cours pour reprendre là où vous vous êtes arrêté.",
+        en:"Keep your learning moving. Open My Courses and continue where you left off."
+      },
+      link:"../my-courses/index.html"
+    },
+
+    {
+      id:"assessment-info",
+      type:"assessment",
+      icon:"✓",
+      important:false,
+      read:false,
+      date:new Date().toLocaleString(),
+      title:{
+        ht:"EVALYASYON YO DISPONIB",
+        fr:"LES ÉVALUATIONS SONT DISPONIBLES",
+        en:"ASSESSMENTS AVAILABLE"
+      },
+      message:{
+        ht:"Chak kou gen yon evalyasyon. Nòt minimòm pou pase se 70%.",
+        fr:"Chaque cours comprend une évaluation. La note minimale pour réussir est de 70 %.",
+        en:"Each course includes an assessment. The minimum passing score is 70%."
+      },
+      link:"../assessments/index.html"
+    },
+
+    {
+      id:"certificate-rule",
+      type:"certificate",
+      icon:"🏆",
+      important:true,
+      read:false,
+      date:new Date().toLocaleString(),
+      title:{
+        ht:"KONDISYON SÈTIFIKA",
+        fr:"CONDITIONS DU CERTIFICAT",
+        en:"CERTIFICATE REQUIREMENTS"
+      },
+      message:{
+        ht:"Pou yon sètifika debloke: kou a dwe fini 100%, evalyasyon an dwe pase, epi tout 5/5 peman yo dwe fini.",
+        fr:"Pour débloquer un certificat : le cours doit être terminé à 100 %, l’évaluation réussie et les 5/5 paiements complétés.",
+        en:"To unlock a certificate: the course must be 100% complete, the assessment passed, and all 5/5 payments completed."
+      },
+      link:"../certificates/index.html"
+    }
+
+  ];
+
+}
+
+
+/* ================= STORAGE ================= */
+
+function getNotifications(){
+
+  try{
+
+    var saved =
+      JSON.parse(
+        localStorage.getItem(STORAGE_KEY)
+      );
+
+    if(Array.isArray(saved)){
+      return saved;
+    }
+
+  }catch(e){}
+
+  var defaults = defaultNotifications();
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(defaults)
+  );
+
+  return defaults;
+
+}
+
+
+function saveNotifications(data){
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+/* ================= SETTINGS ================= */
+
+function getSettings(){
+
+  try{
+
+    var saved =
+      JSON.parse(
+        localStorage.getItem(SETTINGS_KEY)
+      );
+
+    if(saved){
+      return saved;
+    }
+
+  }catch(e){}
+
+  return {
+    course:true,
+    payment:true,
+    assessment:true,
+    certificate:true
+  };
+
+}
+
+
+function saveSettings(settings){
+
+  localStorage.setItem(
+    SETTINGS_KEY,
+    JSON.stringify(settings)
+  );
+
+}
+
+
+var settings = getSettings();
+
+document.querySelectorAll(".toggle")
+.forEach(function(toggle){
+
+  var key =
+    toggle.getAttribute("data-setting");
+
+  toggle.classList.toggle(
+    "active",
+    settings[key] !== false
+  );
+
+  toggle.addEventListener("click",function(){
+
+    settings[key] =
+      !settings[key];
+
+    this.classList.toggle(
+      "active",
+      settings[key]
+    );
+
+    saveSettings(settings);
+
+  });
+
+});
+
+
+/* ================= RENDER ================= */
+
+var activeFilter = "all";
+
+function renderNotifications(){
+
+  var notifications =
+    getNotifications();
+
+  var list =
+    document.getElementById(
+      "notificationList"
+    );
+
+  list.innerHTML = "";
+
+  var visibleCount = 0;
+
+  notifications.forEach(function(item){
+
+    if(
+      activeFilter !== "all" &&
+      item.type !== activeFilter
+    ){
+      return;
+    }
+
+    visibleCount++;
+
+    var card =
+      document.createElement("article");
+
+    card.className =
+      "notification-card" +
+      (item.read ? "" : " unread");
+
+    var title =
+      item.title[currentLanguage] ||
+      item.title.ht;
+
+    var message =
+      item.message[currentLanguage] ||
+      item.message.ht;
+
+    card.innerHTML = `
+      <div class="notification-top">
+
+        <div class="notification-left">
+
+          <div class="notification-icon">
+            ${item.icon}
+          </div>
+
+          <div class="notification-content">
+
+            <h3>${title}</h3>
+
+            <p>${message}</p>
+
+            <div class="notification-meta">
+
+              <span class="meta-pill">
+                ${item.type.toUpperCase()}
+              </span>
+
+              <span class="meta-pill">
+                ${item.date}
+              </span>
+
+              ${item.important
+                ? '<span class="meta-pill">IMPORTANT</span>'
+                : ''
+              }
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="notification-actions">
+
+        <button
+          type="button"
+          class="action-btn primary open-btn">
+          ${currentLanguage === "fr"
+            ? "OUVRIR"
+            : currentLanguage === "en"
+            ? "OPEN"
+            : "LOUVRI"}
+        </button>
+
+        <button
+          type="button"
+          class="action-btn read-btn">
+          ${item.read
+            ? (
+                currentLanguage === "fr"
+                ? "MARQUER NON LU"
+                : currentLanguage === "en"
+                ? "MARK UNREAD"
+                : "MAKE PA LI"
+              )
+            : (
+                currentLanguage === "fr"
+                ? "MARQUER LU"
+                : currentLanguage === "en"
+                ? "MARK READ"
+                : "MAKE KÒM LI"
+              )
+          }
+        </button>
+
+        <button
+          type="button"
+          class="action-btn delete-btn">
+          ${currentLanguage === "fr"
+            ? "SUPPRIMER"
+            : currentLanguage === "en"
+            ? "DELETE"
+            : "EFASE"}
+        </button>
+
+      </div>
+    `;
+
+    card.querySelector(".open-btn")
+    .addEventListener("click",function(){
+
+      item.read = true;
+
+      saveNotifications(notifications);
+
+      window.location.href =
+        item.link;
+
+    });
+
+
+    card.querySelector(".read-btn")
+    .addEventListener("click",function(){
+
+      item.read =
+        !item.read;
+
+      saveNotifications(notifications);
+
+      renderNotifications();
+
+    });
+
+
+    card.querySelector(".delete-btn")
+    .addEventListener("click",function(){
+
+      var updated =
+        notifications.filter(
+          function(notification){
+            return notification.id !== item.id;
+          }
+        );
+
+      saveNotifications(updated);
+
+      renderNotifications();
+
+    });
+
+    list.appendChild(card);
+
+  });
+
+
+  document.getElementById(
+    "emptyState"
+  ).classList.toggle(
+    "show",
+    visibleCount === 0
+  );
+
+
+  updateSummary();
+
+}
+
+
+/* ================= SUMMARY ================= */
+
+function updateSummary(){
+
+  var notifications =
+    getNotifications();
+
+  var unread =
+    notifications.filter(
+      function(item){
+        return !item.read;
+      }
+    ).length;
+
+  var payment =
+    notifications.filter(
+      function(item){
+        return item.type === "payment";
+      }
+    ).length;
+
+  var important =
+    notifications.filter(
+      function(item){
+        return item.important;
+      }
+    ).length;
+
+
+  document.getElementById(
+    "totalNotifications"
+  ).textContent =
+    notifications.length;
+
+
+  document.getElementById(
+    "unreadNotifications"
+  ).textContent =
+    unread;
+
+
+  document.getElementById(
+    "paymentNotifications"
+  ).textContent =
+    payment;
+
+
+  document.getElementById(
+    "importantNotifications"
+  ).textContent =
+    important;
+
+}
+
+
+/* ================= FILTERS ================= */
+
+document.querySelectorAll(".filter-btn")
+.forEach(function(button){
+
+  button.addEventListener("click",function(){
+
+    activeFilter =
+      this.getAttribute(
+        "data-filter"
+      );
+
+    document.querySelectorAll(".filter-btn")
+    .forEach(function(btn){
+
+      btn.classList.remove("active");
+
+    });
+
+    this.classList.add("active");
+
+    renderNotifications();
+
+  });
+
+});
+
+
+/* ================= MARK ALL ================= */
+
+document.getElementById("markAllReadBtn")
+.addEventListener("click",function(){
+
+  var notifications =
+    getNotifications();
+
+  notifications.forEach(function(item){
+    item.read = true;
+  });
+
+  saveNotifications(notifications);
+
+  renderNotifications();
+
+});
+
+
+/* ================= CLEAR READ ================= */
+
+document.getElementById("clearReadBtn")
+.addEventListener("click",function(){
+
+  var notifications =
+    getNotifications()
+    .filter(function(item){
+      return !item.read;
+    });
+
+  saveNotifications(notifications);
+
+  renderNotifications();
+
+});
+
+
+/* ================= INIT ================= */
+
+applyLanguage("ht");
+renderNotifications();
+
+})();
+</script>
+
+</body>
+</html>
