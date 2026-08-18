@@ -6,20 +6,34 @@
 
 <title>PRO-MAX ACADÉMIE | Fòme Jodi a Pou Dirije Demen</title>
 
+<meta name="description" content="PRO-MAX ACADÉMIE — Fòmasyon, entèlijans atifisyèl, inovasyon, lidèchip ak DEVAN DEVAN NÈT™ anba BSS1815 PRO-MAX DMP.">
+<meta name="theme-color" content="#000000">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
 :root{
-  --orange:#ff6a00;
-  --orange2:#ff8c42;
   --black:#000000;
-  --dark:#090300;
-  --line:rgba(255,106,0,.35);
-  --soft:rgba(255,106,0,.14);
+  --black2:#080300;
+  --black3:#0d0500;
+
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:
+    0 0 16px rgba(255,121,0,.70),
+    0 0 42px rgba(255,121,0,.28);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -27,1066 +41,1358 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 50% 10%,rgba(255,106,0,.14),transparent 28%),
-    linear-gradient(180deg,#000 0%,#0c0300 48%,#000 100%);
-  color:#ff9b61;
   min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 80% 70%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000000 0%,#090400 45%,#000000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+  background-size:44px 44px;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
-img{
-  max-width:100%;
+button{
+  font:inherit;
 }
 
 .container{
-  width:min(1180px,92%);
+  width:min(1220px,calc(100% - 28px));
   margin:auto;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ========================= HEADER ========================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:999;
-  background:rgba(0,0,0,.96);
-  border-bottom:2px solid var(--orange);
-  backdrop-filter:blur(10px);
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
 }
 
-.header-top{
+.header-inner{
+  min-height:84px;
   display:flex;
   align-items:center;
-  gap:16px;
-  padding:16px 0 12px;
+  justify-content:space-between;
+  gap:18px;
 }
 
-.logo{
-  width:86px;
-  height:86px;
-  border-radius:50%;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.brand-video{
+  width:62px;
+  height:62px;
   object-fit:cover;
+  border-radius:50%;
+  background:#000;
   border:2px solid var(--orange);
-  box-shadow:0 0 22px rgba(255,106,0,.38);
+  box-shadow:var(--glow);
 }
 
-.brand h1{
+.brand-text strong{
+  display:block;
   color:var(--orange);
-  font-size:30px;
-  line-height:1.1;
+  font-size:.98rem;
+  font-weight:1000;
+  line-height:1;
 }
 
-.brand p{
-  color:#ffad7a;
-  font-size:15px;
+.brand-text span{
+  display:block;
   margin-top:6px;
+  color:var(--orange3);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
 }
 
-.nav{
+.header-actions{
   display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  padding:0 0 16px;
   align-items:center;
+  gap:9px;
 }
 
-.nav a,
-.lang-btn{
-  border:1px solid rgba(255,106,0,.7);
-  color:#ff8d4d;
-  background:#050100;
-  padding:11px 18px;
+.welcome-btn{
+  padding:10px 16px;
+  border:1px solid var(--borderStrong);
   border-radius:999px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.25s;
+  background:#000;
+  color:var(--orange);
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
 }
 
-.nav a:hover,
-.lang-btn:hover,
+.welcome-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+  border:0;
+  border-radius:999px;
+  padding:8px 10px;
+  cursor:pointer;
+  background:#000;
+  color:var(--orange3);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
 .lang-btn.active{
   background:var(--orange);
   color:#000;
-  transform:translateY(-2px);
 }
 
-/* =========================
-   HERO
-========================= */
+/* ========================= HERO ========================= */
 
 .hero{
-  min-height:680px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  min-height:calc(100vh - 84px);
+  padding:56px 0 75px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-  border-bottom:1px solid var(--line);
-  padding:70px 0;
 }
 
-.hero::before{
-  content:"";
+.platform-label{
+  color:var(--orange);
+  font-size:.72rem;
+  font-weight:1000;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+}
+
+.hero-logo-wrap{
+  position:relative;
+  width:min(88vw,470px);
+  aspect-ratio:1;
+  margin:34px auto 0;
+  display:grid;
+  place-items:center;
+  filter:drop-shadow(0 0 38px rgba(255,121,0,.25));
+}
+
+.hero-logo-video{
+  width:72%;
+  height:72%;
+  border-radius:50%;
+  object-fit:cover;
+  background:#000;
+  border:2px solid var(--orange);
+  box-shadow:
+    0 0 40px rgba(255,121,0,.55),
+    0 0 100px rgba(255,121,0,.22);
+}
+
+.hero-orbit{
   position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 50% 45%,rgba(255,106,0,.17),transparent 33%),
-    radial-gradient(circle at 20% 20%,rgba(255,106,0,.08),transparent 25%);
+  border-radius:50%;
+  border:1px solid rgba(255,121,0,.45);
   pointer-events:none;
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:980px;
-  margin:auto;
+.orbit-1{
+  width:88%;
+  height:88%;
+  animation:spin 14s linear infinite;
 }
 
-.badge{
-  display:inline-block;
-  border:1px solid var(--orange);
-  border-radius:999px;
-  padding:9px 18px;
-  color:#ff985c;
-  font-weight:800;
-  margin-bottom:24px;
-  background:rgba(0,0,0,.55);
+.orbit-2{
+  width:82%;
+  height:82%;
+  transform:rotateX(68deg) rotateZ(18deg);
+  animation:spinReverse 11s linear infinite;
 }
 
-/* =========================
-   ROTATING GLOBE
-========================= */
-
-.globe-wrap{
-  width:290px;
-  height:290px;
-  margin:0 auto 30px;
-  position:relative;
-  display:grid;
-  place-items:center;
+.orbit-3{
+  width:78%;
+  height:78%;
+  transform:rotateY(65deg) rotateZ(-18deg);
+  animation:spin 9s linear infinite;
 }
 
-.globe-ring{
-  position:absolute;
-  inset:0;
-  border:2px solid rgba(255,106,0,.45);
-  border-radius:50%;
-  box-shadow:
-    0 0 35px rgba(255,106,0,.24),
-    inset 0 0 35px rgba(255,106,0,.12);
-  animation:pulse 2.8s ease-in-out infinite;
-}
-
-.globe{
-  width:235px;
-  height:235px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:150px;
-  background:
-    radial-gradient(circle at 35% 30%,rgba(255,160,90,.3),transparent 25%),
-    radial-gradient(circle,#2b0b00,#000 70%);
-  border:3px solid var(--orange);
-  box-shadow:
-    0 0 55px rgba(255,106,0,.52),
-    inset 0 0 40px rgba(255,106,0,.24);
-  animation:rotateGlobe 12s linear infinite;
-}
-
-@keyframes rotateGlobe{
+@keyframes spin{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
 
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:.65}
-  50%{transform:scale(1.06);opacity:1}
+@keyframes spinReverse{
+  from{transform:rotate(360deg)}
+  to{transform:rotate(0deg)}
 }
 
-.hero h2{
+.hero h1{
+  margin-top:24px;
   color:var(--orange);
-  font-size:clamp(42px,7vw,78px);
-  line-height:1;
-  margin-bottom:16px;
-  letter-spacing:-1px;
+  font-size:clamp(2.4rem,8vw,5.5rem);
+  line-height:.90;
+  text-transform:uppercase;
 }
 
-.hero .sub{
-  font-size:clamp(20px,3vw,28px);
-  color:#ffac79;
-  margin-bottom:12px;
-  font-weight:700;
+.hero-description{
+  max-width:780px;
+  margin:18px auto 0;
+  line-height:1.75;
+  font-size:1rem;
 }
 
-.hero .slogan{
-  font-size:18px;
-  color:#ff8e52;
-  max-width:760px;
-  margin:0 auto 34px;
-  line-height:1.6;
-}
-
-.hero-buttons{
+.hero-actions{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:14px;
+  gap:12px;
+  margin-top:30px;
 }
 
-.main-btn{
-  padding:15px 24px;
-  border-radius:999px;
+.btn{
+  min-height:52px;
+  padding:13px 22px;
   border:2px solid var(--orange);
-  color:#ff985c;
-  font-weight:900;
-  background:#050100;
-  transition:.25s;
-  min-width:190px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:.72rem;
+  font-weight:1000;
+  text-transform:uppercase;
+  transition:.25s ease;
 }
 
-.main-btn.primary{
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--glowStrong);
+}
+
+.btn-primary{
   background:var(--orange);
   color:#000;
 }
 
-.main-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 35px rgba(255,106,0,.22);
-}
-
-/* =========================
-   MAIN PORTAL
-========================= */
-
-.section{
-  padding:80px 0;
-}
-
-.section-title{
-  text-align:center;
+.btn-outline{
+  background:#000;
   color:var(--orange);
-  font-size:clamp(34px,5vw,52px);
-  margin-bottom:14px;
 }
 
-.section-subtitle{
-  text-align:center;
-  max-width:780px;
-  margin:0 auto 44px;
-  color:#db8050;
-  font-size:18px;
-  line-height:1.6;
+.btn-ddn{
+  min-width:260px;
+  flex-direction:column;
+  overflow:hidden;
+  background:linear-gradient(135deg,#000,rgba(255,121,0,.16),#000);
+  color:var(--orange);
+  box-shadow:var(--glow);
 }
 
-.portal-grid{
+.btn-ddn small{
+  margin-top:2px;
+  color:var(--orange3);
+  font-size:.50rem;
+  letter-spacing:.08em;
+}
+
+.stats-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:52px;
 }
 
-.portal-card{
+.stat-card{
+  min-height:130px;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:18px;
   background:
-    linear-gradient(145deg,rgba(255,106,0,.08),rgba(0,0,0,.92));
-  border:1px solid var(--line);
-  border-radius:26px;
-  padding:38px 28px;
-  text-align:center;
-  min-height:310px;
+    radial-gradient(circle at top,rgba(255,121,0,.13),transparent 52%),
+    #050200;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  transition:.28s;
+  align-items:center;
 }
 
-.portal-card:hover{
-  transform:translateY(-8px);
-  border-color:var(--orange);
-  box-shadow:0 18px 50px rgba(255,106,0,.16);
-}
-
-.portal-icon{
-  font-size:64px;
-  margin-bottom:22px;
-}
-
-.portal-card h3{
+.stat-value{
   color:var(--orange);
-  font-size:27px;
-  margin-bottom:14px;
+  font-size:1.9rem;
+  font-weight:1000;
 }
 
-.portal-card p{
-  color:#d98757;
-  line-height:1.6;
-  margin-bottom:24px;
-}
-
-.portal-link{
-  display:inline-block;
-  border:1px solid var(--orange);
-  padding:12px 18px;
-  border-radius:999px;
+.stat-label{
+  margin-top:8px;
+  font-size:.76rem;
   font-weight:900;
-  color:#ff9457;
+  text-transform:uppercase;
 }
 
-.portal-link:hover{
-  background:var(--orange);
-  color:#000;
+/* ========================= SECTIONS ========================= */
+
+.section{
+  padding:88px 0;
+  border-top:1px solid rgba(255,121,0,.10);
+  text-align:center;
 }
 
-/* =========================
-   IDENTITY
-========================= */
-
-.identity{
-  background:rgba(255,106,0,.035);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  text-transform:uppercase;
 }
 
-.identity-grid{
+.section-title{
+  margin-top:11px;
+  color:var(--orange);
+  font-size:clamp(2rem,6vw,3.8rem);
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.section-desc{
+  max-width:720px;
+  margin:17px auto 0;
+  line-height:1.75;
+}
+
+/* COURSES */
+
+.course-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.course-card{
+  min-height:245px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  text-align:left;
+  border:1px solid var(--border);
+  border-radius:19px;
+  background:linear-gradient(145deg,#000,#0b0400);
+  transition:.3s;
+}
+
+.course-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.course-icon{
+  color:var(--orange);
+  font-size:2rem;
+  font-weight:1000;
+}
+
+.course-card h3{
+  margin-top:18px;
+  color:var(--orange);
+  font-size:1rem;
+  text-transform:uppercase;
+}
+
+.course-card p{
+  margin-top:11px;
+  line-height:1.6;
+  font-size:.86rem;
+}
+
+.course-link{
+  margin-top:auto;
+  padding-top:18px;
+  color:var(--orange);
+  font-size:.70rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+/* DDN */
+
+.ddn-box{
+  margin-top:42px;
+  padding:42px;
+  border:1px solid var(--borderStrong);
+  border-radius:26px;
+  text-align:left;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(255,121,0,.19),transparent 33%),
+    linear-gradient(135deg,#000,#0d0500,#000);
+  box-shadow:var(--glow);
+}
+
+.ddn-box h2{
+  color:var(--orange);
+  font-size:clamp(2.2rem,7vw,4.7rem);
+  line-height:.88;
+}
+
+.ddn-box p{
+  max-width:760px;
+  margin-top:16px;
+  line-height:1.75;
+}
+
+/* STUDENT AREA */
+
+.student-grid{
+  margin-top:42px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:15px;
 }
 
-.identity-card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:26px 18px;
-  text-align:center;
-  background:#080200;
+.student-card{
+  min-height:180px;
+  padding:22px 17px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#050200;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:.3s;
 }
 
-.identity-card span{
-  display:block;
-  font-size:38px;
-  margin-bottom:14px;
+.student-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
 }
 
-.identity-card strong{
+.student-card i{
   color:var(--orange);
-  display:block;
-  margin-bottom:8px;
+  font-size:2rem;
 }
 
-.identity-card p{
-  color:#cb7548;
+.student-card strong{
+  margin-top:14px;
+  color:var(--orange);
+  text-transform:uppercase;
+}
+
+.student-card span{
+  margin-top:8px;
+  font-size:.78rem;
   line-height:1.5;
 }
 
-/* =========================
-   LANGUAGE CONTENT
-========================= */
+/* CONTACT */
 
-[data-lang]{
-  display:none;
-}
-
-[data-lang="kre"]{
-  display:block;
-}
-
-/* =========================
-   CONTACT / SOCIAL
-========================= */
-
-.social-section{
-  text-align:center;
-}
-
-.social-grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:16px;
-  margin:30px 0 40px;
-}
-
-.social{
-  width:72px;
-  height:72px;
+.contact-grid{
   display:grid;
-  place-items:center;
-  border:1px solid var(--line);
-  border-radius:20px;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:42px;
+  text-align:left;
+}
+
+.contact-card{
+  border:1px solid var(--borderStrong);
+  border-radius:22px;
+  padding:26px;
+  background:#050200;
+}
+
+.contact-card h3{
   color:var(--orange);
-  font-size:26px;
-  font-weight:900;
-  background:#090200;
-  transition:.25s;
+  text-transform:uppercase;
 }
 
-.social:hover{
-  background:var(--orange);
-  color:#000;
-  transform:translateY(-4px);
-}
-
-.contact-box{
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:30px;
-  background:linear-gradient(135deg,#110500,#050100);
+.contact-list{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
+  gap:12px;
+  margin-top:20px;
 }
 
 .contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
   padding:14px;
-}
-
-.contact-item .icon{
-  font-size:32px;
-  margin-bottom:8px;
-}
-
-.contact-item strong{
-  display:block;
-  color:var(--orange);
-  margin-bottom:7px;
-}
-
-.contact-item a,
-.contact-item p{
-  color:#e38a58;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  border-top:2px solid var(--orange);
-  text-align:center;
-  padding:45px 20px;
+  border:1px solid var(--border);
+  border-radius:14px;
   background:#000;
 }
 
-footer h3{
+.contact-item i{
+  width:26px;
+  text-align:center;
   color:var(--orange);
-  font-size:24px;
-  margin-bottom:10px;
+  font-size:1.25rem;
 }
 
-footer p{
-  color:#dc8454;
+.contact-item span{
+  word-break:break-word;
+}
+
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.social-card{
+  min-height:100px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:.25s;
+}
+
+.social-card:hover{
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+  transform:translateY(-3px);
+}
+
+.social-card i{
+  color:var(--orange);
+  font-size:1.9rem;
+}
+
+.social-card strong{
+  color:var(--orange);
+  font-size:.70rem;
+  text-transform:uppercase;
+}
+
+.truth-logo{
+  width:32px;
+  height:32px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--orange);
+  font-weight:1000;
+}
+
+/* FINAL */
+
+.final-cta{
+  padding:80px 0 95px;
+  text-align:center;
+}
+
+.final-box{
+  padding:52px 24px;
+  border:1px solid var(--orange);
+  border-radius:27px;
+  background:
+    radial-gradient(circle,rgba(255,121,0,.15),transparent 48%),
+    #000;
+  box-shadow:var(--glow);
+}
+
+.final-box h2{
+  color:var(--orange);
+  font-size:clamp(2.2rem,7vw,4.8rem);
+  line-height:.90;
+  text-transform:uppercase;
+}
+
+.final-box p{
+  max-width:700px;
+  margin:18px auto 0;
   line-height:1.7;
 }
 
-.footer-slogan{
-  margin-top:16px;
-  color:var(--orange);
-  font-weight:900;
+/* FOOTER */
+
+footer{
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  background:#000;
+  text-align:center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.footer-title{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:8px;
+  line-height:1.65;
+  font-size:.78rem;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
-  .portal-grid{
-    grid-template-columns:1fr;
-  }
-
-  .identity-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .header-top{
-    align-items:flex-start;
-  }
-
-  .brand h1{
-    font-size:24px;
-  }
-
-  .globe-wrap{
-    width:245px;
-    height:245px;
-  }
-
-  .globe{
-    width:200px;
-    height:200px;
-    font-size:125px;
-  }
+  .course-grid{grid-template-columns:repeat(2,1fr)}
+  .student-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
 }
 
-@media(max-width:600px){
-  .header-top{
-    gap:11px;
-  }
-
-  .logo{
-    width:68px;
-    height:68px;
-  }
-
-  .brand h1{
-    font-size:21px;
-  }
-
-  .brand p{
-    font-size:12px;
-  }
-
-  .nav{
-    gap:7px;
-  }
-
-  .nav a,
-  .lang-btn{
-    font-size:12px;
-    padding:9px 13px;
-  }
-
-  .hero{
-    min-height:590px;
-  }
-
-  .identity-grid{
-    grid-template-columns:1fr;
-  }
-
-  .contact-box{
-    grid-template-columns:1fr;
-  }
-
-  .globe-wrap{
-    width:220px;
-    height:220px;
-  }
-
-  .globe{
-    width:180px;
-    height:180px;
-    font-size:110px;
-  }
+@media(max-width:650px){
+  .header-inner{min-height:72px}
+  .brand-video{width:50px;height:50px}
+  .brand-text strong{font-size:.80rem}
+  .brand-text span{font-size:.48rem}
+  .welcome-btn{display:none}
+  .lang-btn{min-width:39px;padding:8px 8px}
+  .hero{padding-top:38px}
+  .hero-logo-wrap{width:min(94vw,420px)}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .btn{width:100%}
+  .btn-ddn{min-width:0}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .course-grid,.student-grid{grid-template-columns:1fr}
+  .social-grid{grid-template-columns:repeat(2,1fr)}
+  .ddn-box{padding:30px 22px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- =====================================
-     HEADER
-===================================== -->
-
 <header>
-  <div class="container">
+<div class="container header-inner">
 
-    <div class="header-top">
+<a href="#home" class="brand">
+  <video class="brand-video" autoplay muted loop playsinline preload="auto">
+    <source src="pro-max-dmp-II.mp4" type="video/mp4">
+  </video>
 
-      <!-- CHANJE NON FOTO A SI LOGO OU GEN YON LÒT NON -->
-      <img
-        src="assets/images/pro-max-academie-logo.png"
-        alt="PRO-MAX ACADÉMIE"
-        class="logo"
-        onerror="this.src='logo.png'"
-      >
-
-      <div class="brand">
-        <h1>PRO-MAX ACADÉMIE</h1>
-        <p>FÒME JODI A POU DIRIJE DEMEN</p>
-      </div>
-
-    </div>
-
-    <nav class="nav">
-
-      <a href="/">🏠 AKADEMI</a>
-
-      <a href="#home">BYENVINI</a>
-
-      <button class="lang-btn" onclick="setLanguage('fra',this)">FRA</button>
-
-      <button class="lang-btn" onclick="setLanguage('eng',this)">ENG</button>
-
-      <button class="lang-btn active" onclick="setLanguage('kre',this)">KRE</button>
-
-    </nav>
-
+  <div class="brand-text">
+    <strong>PRO-MAX ACADÉMIE</strong>
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+      Fòme Jodi a Pou Dirije Demen
+    </span>
   </div>
+</a>
+
+<div class="header-actions">
+
+  <a
+    href="#home"
+    class="welcome-btn"
+    data-ht="BYENVINI"
+    data-fr="BIENVENUE"
+    data-en="WELCOME">
+    BYENVINI
+  </a>
+
+  <div class="lang-switch" aria-label="Language selector">
+    <button type="button" class="lang-btn" data-lang="fr">FRA</button>
+    <button type="button" class="lang-btn" data-lang="en">ENG</button>
+    <button type="button" class="lang-btn active" data-lang="ht">KRE</button>
+  </div>
+
+</div>
+</div>
 </header>
 
+<main>
 
-<!-- =====================================
-     HERO / HOMEPAGE
-===================================== -->
+<section class="hero" id="home">
+<div class="container">
 
-<main id="home">
+<div class="platform-label">BSS1815 PRO-MAX DMP</div>
 
-<section class="hero">
+<div class="hero-logo-wrap">
+  <video class="hero-logo-video" autoplay muted loop playsinline preload="auto">
+    <source src="pro-max-dmp-II.mp4" type="video/mp4">
+  </video>
 
-  <div class="container hero-content">
+  <div class="hero-orbit orbit-1"></div>
+  <div class="hero-orbit orbit-2"></div>
+  <div class="hero-orbit orbit-3"></div>
+</div>
 
-    <div class="badge">
-      🌎 PRO-MAX DIGITAL LEARNING PLATFORM
+<h1
+  data-ht="FÒME JODI A POU DIRIJE DEMEN"
+  data-fr="FORMER AUJOURD’HUI POUR DIRIGER DEMAIN"
+  data-en="TRAIN TODAY TO LEAD TOMORROW">
+  FÒME JODI A POU DIRIJE DEMEN
+</h1>
+
+<p
+  class="hero-description"
+  data-ht="Yon platfòm fòmasyon modèn ki konekte konesans, konpetans, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip."
+  data-fr="Une plateforme moderne de formation qui relie connaissances, compétences, intelligence artificielle, innovation, discipline et leadership."
+  data-en="A modern learning platform connecting knowledge, skills, artificial intelligence, innovation, discipline and leadership.">
+  Yon platfòm fòmasyon modèn ki konekte konesans, konpetans, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip.
+</p>
+
+<div class="hero-actions">
+
+  <a
+    href="./courses/index.html"
+    class="btn btn-primary"
+    data-ht="🎓 DEKOUVRI KOU YO"
+    data-fr="🎓 DÉCOUVRIR LES COURS"
+    data-en="🎓 EXPLORE COURSES">
+    🎓 DEKOUVRI KOU YO
+  </a>
+
+  <a href="./ddn/index.html" class="btn btn-ddn">
+    <strong>🤖 DEVAN DEVAN NÈT™ — DDN</strong>
+    <small
+      data-ht="MOUVMAN EPÒK IA A"
+      data-fr="LE MOUVEMENT DE L’ÈRE IA"
+      data-en="THE AI ERA MOVEMENT">
+      MOUVMAN EPÒK IA A
+    </small>
+  </a>
+
+  <a
+    href="./student-portal/index.html"
+    class="btn btn-outline"
+    data-ht="👤 ESPAS ELÈV"
+    data-fr="👤 ESPACE ÉTUDIANT"
+    data-en="👤 STUDENT AREA">
+    👤 ESPAS ELÈV
+  </a>
+
+  <a
+    href="./payment-center/index.html"
+    class="btn btn-outline"
+    data-ht="💳 PEMAN & SÈTIFIKASYON"
+    data-fr="💳 PAIEMENT & CERTIFICATION"
+    data-en="💳 PAYMENT & CERTIFICATION">
+    💳 PEMAN & SÈTIFIKASYON
+  </a>
+
+</div>
+
+<div class="stats-grid">
+
+  <div class="stat-card">
+    <div class="stat-value">3</div>
+    <div
+      class="stat-label"
+      data-ht="Lang"
+      data-fr="Langues"
+      data-en="Languages">
+      Lang
     </div>
-
-    <div class="globe-wrap">
-      <div class="globe-ring"></div>
-
-      <div class="globe">
-        🌎
-      </div>
-    </div>
-
-
-    <!-- KREYÒL -->
-
-    <div data-lang="kre">
-
-      <h2>PRO-MAX ACADÉMIE</h2>
-
-      <div class="sub">
-        APRANN • DEVLOPE • REYISI
-      </div>
-
-      <p class="slogan">
-        Yon platfòm fòmasyon modèn ki fèt pou ede elèv,
-        pwofesyonèl ak lidè kominotè devlope kapasite yo
-        pou jodi a epi prepare yo pou demen.
-      </p>
-
-    </div>
-
-
-    <!-- FRANÇAIS -->
-
-    <div data-lang="fra">
-
-      <h2>PRO-MAX ACADÉMIE</h2>
-
-      <div class="sub">
-        APPRENDRE • ÉVOLUER • RÉUSSIR
-      </div>
-
-      <p class="slogan">
-        Une plateforme moderne de formation conçue pour
-        développer les compétences, renforcer le leadership
-        et préparer les apprenants aux défis de demain.
-      </p>
-
-    </div>
-
-
-    <!-- ENGLISH -->
-
-    <div data-lang="eng">
-
-      <h2>PRO-MAX ACADEMY</h2>
-
-      <div class="sub">
-        LEARN • GROW • SUCCEED
-      </div>
-
-      <p class="slogan">
-        A modern learning platform built to develop skills,
-        strengthen leadership and prepare students
-        for tomorrow's opportunities.
-      </p>
-
-    </div>
-
-
-    <div class="hero-buttons">
-
-      <a href="/courses.html" class="main-btn primary">
-        📚 KOU YO
-      </a>
-
-      <a href="/payment-center.html" class="main-btn">
-        💳 PAYMENT CENTER
-      </a>
-
-      <a href="/ddn.html" class="main-btn">
-        🌎 DEVAN DEVAN NÈT
-      </a>
-
-    </div>
-
   </div>
 
+  <div class="stat-card">
+    <div class="stat-value">24/7</div>
+    <div
+      class="stat-label"
+      data-ht="Aksè Nimerik"
+      data-fr="Accès Numérique"
+      data-en="Digital Access">
+      Aksè Nimerik
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-value">AI</div>
+    <div class="stat-label">Smart Learning</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-value">🎓</div>
+    <div
+      class="stat-label"
+      data-ht="Sètifikasyon"
+      data-fr="Certification"
+      data-en="Certification">
+      Sètifikasyon
+    </div>
+  </div>
+
+</div>
+
+</div>
 </section>
 
+<section class="section" id="courses">
+<div class="container">
 
-<!-- =====================================
-     MAIN ACCESS
-===================================== -->
+<div
+  class="eyebrow"
+  data-ht="SANT APRANTISAJ"
+  data-fr="CENTRE D’APPRENTISSAGE"
+  data-en="LEARNING CENTER">
+  SANT APRANTISAJ
+</div>
 
-<section class="section">
+<h2
+  class="section-title"
+  data-ht="APRANN • PRATIKE • AVANSE"
+  data-fr="APPRENDRE • PRATIQUER • PROGRESSER"
+  data-en="LEARN • PRACTICE • PROGRESS">
+  APRANN • PRATIKE • AVANSE
+</h2>
 
-  <div class="container">
+<p
+  class="section-desc"
+  data-ht="Chwazi youn nan sis kou prensipal PRO-MAX ACADÉMIE yo epi antre dirèkteman nan Courses Center."
+  data-fr="Choisissez l’un des six cours principaux de PRO-MAX ACADÉMIE et entrez directement dans le centre de formation."
+  data-en="Choose one of the six core PRO-MAX ACADEMY courses and enter the Courses Center directly.">
+  Chwazi youn nan sis kou prensipal PRO-MAX ACADÉMIE yo epi antre dirèkteman nan Courses Center.
+</p>
 
-    <h2 class="section-title">
-      ANTRE NAN PRO-MAX ACADÉMIE
-    </h2>
+<div class="course-grid">
 
-    <p class="section-subtitle">
-      Tout gwo sèvis akademi an rete òganize sou paj prensipal sa a.
-      Chwazi sèvis ou bezwen an epi sistèm nan ap mennen ou dirèkteman ladan li.
+  <a href="./courses/introduction-ai/index.html" class="course-card">
+    <div class="course-icon">AI</div>
+    <h3
+      data-ht="ENTWODIKSYON NAN AI"
+      data-fr="INTRODUCTION À L’IA"
+      data-en="INTRODUCTION TO AI">
+      ENTWODIKSYON NAN AI
+    </h3>
+    <p
+      data-ht="Konprann prensip entèlijans atifisyèl ak itilizasyon pratik li."
+      data-fr="Comprendre les principes de l’intelligence artificielle et ses usages pratiques."
+      data-en="Understand artificial intelligence principles and practical uses.">
+      Konprann prensip entèlijans atifisyèl ak itilizasyon pratik li.
     </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
+  <a href="./courses/digital-creation/index.html" class="course-card">
+    <div class="course-icon">✦</div>
+    <h3
+      data-ht="KREYASYON DIJITAL"
+      data-fr="CRÉATION DIGITALE"
+      data-en="DIGITAL CREATION">
+      KREYASYON DIJITAL
+    </h3>
+    <p
+      data-ht="Kreye tèks, imaj, videyo, prezantasyon ak kontni dijital."
+      data-fr="Créer textes, images, vidéos, présentations et contenus numériques."
+      data-en="Create text, images, videos, presentations and digital content.">
+      Kreye tèks, imaj, videyo, prezantasyon ak kontni dijital.
+    </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
-    <div class="portal-grid">
+  <a href="./courses/digital-leadership/index.html" class="course-card">
+    <div class="course-icon">↗</div>
+    <h3
+      data-ht="LIDÈCHIP DIJITAL"
+      data-fr="LEADERSHIP DIGITAL"
+      data-en="DIGITAL LEADERSHIP">
+      LIDÈCHIP DIJITAL
+    </h3>
+    <p
+      data-ht="Devlope vizyon, disiplin, òganizasyon ak lidèchip."
+      data-fr="Développer vision, discipline, organisation et leadership."
+      data-en="Develop vision, discipline, organization and leadership.">
+      Devlope vizyon, disiplin, òganizasyon ak lidèchip.
+    </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
+  <a href="./courses/automation/index.html" class="course-card">
+    <div class="course-icon">⚙</div>
+    <h3
+      data-ht="OTOMATIZASYON"
+      data-fr="AUTOMATISATION"
+      data-en="AUTOMATION">
+      OTOMATIZASYON
+    </h3>
+    <p
+      data-ht="Kreye workflow entelijan epi diminye travay repetitif."
+      data-fr="Créer des workflows intelligents et réduire les tâches répétitives."
+      data-en="Build smart workflows and reduce repetitive work.">
+      Kreye workflow entelijan epi diminye travay repetitif.
+    </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
-      <!-- COURSES -->
+  <a href="./courses/communication/index.html" class="course-card">
+    <div class="course-icon">◎</div>
+    <h3
+      data-ht="KOMINIKASYON"
+      data-fr="COMMUNICATION"
+      data-en="COMMUNICATION">
+      KOMINIKASYON
+    </h3>
+    <p
+      data-ht="Devlope kominikasyon pwofesyonèl ak prezantasyon avèk enpak."
+      data-fr="Développer la communication professionnelle et la présentation avec impact."
+      data-en="Develop professional communication and impactful presentation.">
+      Devlope kominikasyon pwofesyonèl ak prezantasyon avèk enpak.
+    </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
-      <article class="portal-card">
+  <a href="./courses/innovation/index.html" class="course-card">
+    <div class="course-icon">◆</div>
+    <h3
+      data-ht="INOVASYON"
+      data-fr="INNOVATION"
+      data-en="INNOVATION">
+      INOVASYON
+    </h3>
+    <p
+      data-ht="Transfòme lide an pwojè epi sèvi ak teknoloji pou kreye solisyon."
+      data-fr="Transformer les idées en projets et utiliser la technologie pour créer des solutions."
+      data-en="Turn ideas into projects and use technology to create solutions.">
+      Transfòme lide an pwojè epi sèvi ak teknoloji pou kreye solisyon.
+    </p>
+    <div class="course-link">KÒMANSE →</div>
+  </a>
 
-        <div class="portal-icon">📚</div>
+</div>
 
-        <h3>KOU & FÒMASYON</h3>
-
-        <p>
-          Antre nan katalòg fòmasyon an pou jwenn kou Digital,
-          AI, Leadership, Médias, Business ak Communauté.
-        </p>
-
-        <a href="/courses.html" class="portal-link">
-          ANTRE NAN KOU YO →
-        </a>
-
-      </article>
-
-
-      <!-- PAYMENT -->
-
-      <article class="portal-card">
-
-        <div class="portal-icon">💳</div>
-
-        <h3>PAYMENT CENTER</h3>
-
-        <p>
-          Sant peman PRO-MAX ACADÉMIE pou enskripsyon,
-          fòmasyon, sèvis ak lòt tranzaksyon akademik.
-        </p>
-
-        <a href="/payment-center.html" class="portal-link">
-          LOUVRI PAYMENT CENTER →
-        </a>
-
-      </article>
-
-
-      <!-- DDN -->
-
-      <article class="portal-card">
-
-        <div class="portal-icon">🌎</div>
-
-        <h3>DEVAN DEVAN NÈT</h3>
-
-        <p>
-          Dekouvri vizyon DEVAN DEVAN NÈT la,
-          globe dijital la ak tout enfòmasyon pwojè a.
-        </p>
-
-        <a href="/ddn.html" class="portal-link">
-          ANTRE DEVAN DEVAN NÈT →
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
+</div>
 </section>
 
+<section class="section" id="ddn">
+<div class="container">
 
-<!-- =====================================
-     IDENTITY
-===================================== -->
+<div class="ddn-box">
 
-<section class="section identity">
+  <div class="eyebrow">PRO-MAX ACADÉMIE • AI MOVEMENT</div>
 
-  <div class="container">
+  <h2>DEVAN DEVAN NÈT™</h2>
 
-    <h2 class="section-title">
-      YON AKADEMI POU DEMEN
-    </h2>
+  <p
+    data-ht="DDN se mouvman AI ki entegre nan PRO-MAX ACADÉMIE. Li ankouraje moun aprann teknoloji, konprann AI, kreye, inove epi toujou avanse."
+    data-fr="DDN est le mouvement IA intégré à PRO-MAX ACADÉMIE. Il encourage chacun à apprendre la technologie, comprendre l’IA, créer, innover et toujours avancer."
+    data-en="DDN is the AI movement integrated into PRO-MAX ACADEMY. It encourages people to learn technology, understand AI, create, innovate and keep moving forward.">
+    DDN se mouvman AI ki entegre nan PRO-MAX ACADÉMIE.
+  </p>
 
-    <p class="section-subtitle">
-      PRO-MAX ACADÉMIE mete teknoloji, edikasyon,
-      devlopman ak lidèchip ansanm nan yon sèl ekosistèm.
-    </p>
-
-
-    <div class="identity-grid">
-
-      <div class="identity-card">
-        <span>🤖</span>
-        <strong>AI & DIGITAL</strong>
-        <p>Aprann sèvi ak teknoloji ak entèlijans atifisyèl.</p>
-      </div>
-
-      <div class="identity-card">
-        <span>🎓</span>
-        <strong>FORMATION</strong>
-        <p>Pwogram òganize ak modil fòmasyon pwofesyonèl.</p>
-      </div>
-
-      <div class="identity-card">
-        <span>🏆</span>
-        <strong>CERTIFICATION</strong>
-        <p>Evalyasyon, sètifika ak validasyon konpetans.</p>
-      </div>
-
-      <div class="identity-card">
-        <span>🌎</span>
-        <strong>VISION GLOBALE</strong>
-        <p>Yon akademi dijital ki prepare moun pou lavni.</p>
-      </div>
-
-    </div>
-
+  <div class="hero-actions" style="justify-content:flex-start;">
+    <a href="./ddn/index.html" class="btn btn-primary">
+      DEVAN DEVAN NÈT™ →
+    </a>
   </div>
 
+</div>
+
+</div>
 </section>
 
+<section class="section" id="student-area">
+<div class="container">
 
-<!-- =====================================
-     STUDENT JOURNEY
-===================================== -->
+<div
+  class="eyebrow"
+  data-ht="PORTAL ELÈV"
+  data-fr="PORTAIL ÉTUDIANT"
+  data-en="STUDENT PORTAL">
+  PORTAL ELÈV
+</div>
 
-<section class="section">
+<h2
+  class="section-title"
+  data-ht="ESPAS ELÈV"
+  data-fr="ESPACE ÉTUDIANT"
+  data-en="STUDENT AREA">
+  ESPAS ELÈV
+</h2>
 
-  <div class="container">
+<p
+  class="section-desc"
+  data-ht="Tout zouti elèv la nan yon sèl espas: kou, pwogrè, evalyasyon, peman ak sètifikasyon."
+  data-fr="Tous les outils de l’étudiant dans un seul espace : cours, progression, évaluations, paiements et certification."
+  data-en="All student tools in one place: courses, progress, assessments, payments and certification.">
+  Tout zouti elèv la nan yon sèl espas.
+</p>
 
-    <h2 class="section-title">
-      PARCOURS DE L'ÉTUDIANT
-    </h2>
+<div class="student-grid">
 
-    <p class="section-subtitle">
-      Yon chemen senp depi enskripsyon rive nan sètifikasyon.
-    </p>
+  <a href="./courses/index.html" class="student-card">
+    <i class="fa-solid fa-book-open"></i>
+    <strong
+      data-ht="KOU MWEN"
+      data-fr="MES COURS"
+      data-en="MY COURSES">
+      KOU MWEN
+    </strong>
+    <span
+      data-ht="Gade epi kontinye kou yo."
+      data-fr="Voir et continuer vos cours."
+      data-en="View and continue your courses.">
+      Gade epi kontinye kou yo.
+    </span>
+  </a>
 
-    <div class="identity-grid">
+  <a href="./student-portal/index.html#progress" class="student-card">
+    <i class="fa-solid fa-chart-line"></i>
+    <strong
+      data-ht="PWOGRÈ"
+      data-fr="PROGRESSION"
+      data-en="PROGRESS">
+      PWOGRÈ
+    </strong>
+    <span
+      data-ht="Suiv evolisyon ou."
+      data-fr="Suivez votre évolution."
+      data-en="Track your progress.">
+      Suiv evolisyon ou.
+    </span>
+  </a>
 
-      <div class="identity-card">
-        <span>📝</span>
-        <strong>1. INSCRIPTION</strong>
-        <p>Kreye kont elèv la.</p>
-      </div>
+  <a href="./courses/introduction-ai/index.html" class="student-card">
+    <i class="fa-solid fa-list-check"></i>
+    <strong
+      data-ht="EVALYASYON"
+      data-fr="ÉVALUATIONS"
+      data-en="ASSESSMENTS">
+      EVALYASYON
+    </strong>
+    <span
+      data-ht="Teste konesans ak konpetans ou."
+      data-fr="Testez vos connaissances et compétences."
+      data-en="Test your knowledge and skills.">
+      Teste konesans ak konpetans ou.
+    </span>
+  </a>
 
-      <div class="identity-card">
-        <span>📚</span>
-        <strong>2. FORMATION</strong>
-        <p>Swiv modil fòmasyon yo.</p>
-      </div>
+  <a href="./certificate-center/index.html" class="student-card">
+    <i class="fa-solid fa-award"></i>
+    <strong
+      data-ht="SÈTIFIKA"
+      data-fr="CERTIFICATS"
+      data-en="CERTIFICATES">
+      SÈTIFIKA
+    </strong>
+    <span
+      data-ht="Verifye estati sètifikasyon ou."
+      data-fr="Vérifiez votre statut de certification."
+      data-en="Check your certification status.">
+      Verifye estati sètifikasyon ou.
+    </span>
+  </a>
 
-      <div class="identity-card">
-        <span>🧠</span>
-        <strong>3. APPRENTISSAGE</strong>
-        <p>Etidye, aprann epi pratike.</p>
-      </div>
+</div>
 
-      <div class="identity-card">
-        <span>🏆</span>
-        <strong>4. CERTIFICATION</strong>
-        <p>Pase evalyasyon epi resevwa sètifika.</p>
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
 </section>
 
+<section class="section" id="contact">
+<div class="container">
 
-<!-- =====================================
-     SOCIAL + CONTACT
-===================================== -->
+<div
+  class="eyebrow"
+  data-ht="RETE KONEKTE"
+  data-fr="RESTEZ CONNECTÉ"
+  data-en="STAY CONNECTED">
+  RETE KONEKTE
+</div>
 
-<section class="section social-section">
+<h2
+  class="section-title"
+  data-ht="KONTAK & REZO SOSYAL"
+  data-fr="CONTACT & RÉSEAUX SOCIAUX"
+  data-en="CONTACT & SOCIAL NETWORKS">
+  KONTAK & REZO SOSYAL
+</h2>
 
-  <div class="container">
+<div class="contact-grid">
 
-    <h2 class="section-title">
-      SWIV NOU
-    </h2>
+<div class="contact-card">
 
-    <p class="section-subtitle">
-      Retrouvez PRO-MAX ACADÉMIE sur tous nos réseaux.
-    </p>
+  <h3>CONTACT</h3>
 
+  <div class="contact-list">
 
-    <div class="social-grid">
+    <a class="contact-item" href="tel:+14076405166">
+      <i class="fa-solid fa-phone"></i>
+      <span>(407) 640-5166</span>
+    </a>
 
-      <a href="#" class="social" aria-label="Facebook">f</a>
+    <a class="contact-item" href="tel:+15162168494">
+      <i class="fa-solid fa-phone"></i>
+      <span>(516) 216-8494</span>
+    </a>
 
-      <a href="#" class="social" aria-label="WhatsApp">◉</a>
+    <a class="contact-item" href="mailto:promaxfmdmp@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+      <span>promaxfmdmp@gmail.com</span>
+    </a>
 
-      <a href="#" class="social" aria-label="Instagram">◎</a>
+    <a
+      class="contact-item"
+      href="https://briyantsoley1815-site.netlify.app"
+      target="_blank"
+      rel="noopener noreferrer">
+      <i class="fa-solid fa-globe"></i>
+      <span>www.briyantsoley1815-site.netlify.app</span>
+    </a>
 
-      <a href="#" class="social" aria-label="YouTube">▶</a>
+  </div>
 
-      <a href="#" class="social" aria-label="Spotify">●</a>
+</div>
 
-      <a href="#" class="social" aria-label="True Social">⚡</a>
+<div class="contact-card">
 
-      <a href="#" class="social" aria-label="X">𝕏</a>
+  <h3
+    data-ht="REZO SOSYAL"
+    data-fr="RÉSEAUX SOCIAUX"
+    data-en="SOCIAL NETWORKS">
+    REZO SOSYAL
+  </h3>
 
-      <a href="#" class="social" aria-label="TikTok">♪</a>
+  <div class="social-grid">
 
-      <a href="#" class="social" aria-label="LinkedIn">in</a>
-
+    <div class="social-card">
+      <i class="fa-brands fa-facebook-f"></i>
+      <strong>Facebook</strong>
     </div>
 
+    <div class="social-card">
+      <i class="fa-brands fa-whatsapp"></i>
+      <strong>WhatsApp</strong>
+    </div>
 
-    <div class="contact-box">
+    <div class="social-card">
+      <i class="fa-brands fa-youtube"></i>
+      <strong>YouTube</strong>
+    </div>
 
-      <div class="contact-item">
+    <div class="social-card">
+      <i class="fa-brands fa-instagram"></i>
+      <strong>Instagram</strong>
+    </div>
 
-        <div class="icon">🌐</div>
+    <div class="social-card">
+      <i class="fa-brands fa-tiktok"></i>
+      <strong>TikTok</strong>
+    </div>
 
-        <strong>WEBSITE</strong>
+    <div class="social-card">
+      <i class="fa-brands fa-x-twitter"></i>
+      <strong>X / Twitter</strong>
+    </div>
 
-        <a href="https://www.briyantsoley1815-site.netlify.app">
-          www.briyantsoley1815-site.netlify.app
-        </a>
+    <div class="social-card">
+      <i class="fa-brands fa-spotify"></i>
+      <strong>Spotify</strong>
+    </div>
 
-      </div>
+    <div class="social-card">
+      <i class="fa-brands fa-linkedin-in"></i>
+      <strong>LinkedIn</strong>
+    </div>
 
-
-      <div class="contact-item">
-
-        <div class="icon">✉️</div>
-
-        <strong>E-MAIL</strong>
-
-        <a href="mailto:promaxfmdmp@gmail.com">
-          promaxfmdmp@gmail.com
-        </a>
-
-      </div>
-
-
-      <div class="contact-item">
-
-        <div class="icon">📞</div>
-
-        <strong>TEL 1</strong>
-
-        <a href="tel:+14076405166">
-          (407) 640-5166
-        </a>
-
-      </div>
-
-
-      <div class="contact-item">
-
-        <div class="icon">📞</div>
-
-        <strong>TEL 2</strong>
-
-        <a href="tel:+15162168494">
-          (516) 216-8494
-        </a>
-
-      </div>
-
+    <div class="social-card">
+      <div class="truth-logo">T</div>
+      <strong>Truth Social</strong>
     </div>
 
   </div>
 
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="final-cta">
+<div class="container">
+
+<div class="final-box">
+
+<h2
+  data-ht="APRANN JODI A. DIRIJE DEMEN."
+  data-fr="APPRENEZ AUJOURD’HUI. DIRIGEZ DEMAIN."
+  data-en="LEARN TODAY. LEAD TOMORROW.">
+  APRANN JODI A. DIRIJE DEMEN.
+</h2>
+
+<p
+  data-ht="Konesans ap evolye. Teknoloji ap avanse. Entèlijans atifisyèl ap transfòme mond lan. PRO-MAX ACADÉMIE prepare w pou avanse avèk epòk la."
+  data-fr="La connaissance évolue. La technologie avance. L’intelligence artificielle transforme le monde. PRO-MAX ACADÉMIE vous prépare à avancer avec votre époque."
+  data-en="Knowledge is evolving. Technology is advancing. Artificial intelligence is transforming the world. PRO-MAX ACADEMY prepares you to move forward with the times.">
+  Konesans ap evolye. Teknoloji ap avanse. Entèlijans atifisyèl ap transfòme mond lan.
+</p>
+
+<div class="hero-actions">
+  <a href="./courses/index.html" class="btn btn-primary">
+    KÒMANSE APRANN
+  </a>
+
+  <a href="./ddn/index.html" class="btn btn-outline">
+    DEVAN DEVAN NÈT™ →
+  </a>
+</div>
+
+</div>
+
+</div>
 </section>
 
 </main>
 
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
 <footer>
+<div class="container">
 
-  <h3>PRO-MAX ACADÉMIE</h3>
+<div class="footer-title">PRO-MAX ACADÉMIE</div>
 
-  <p>
-    FÒME JODI A POU DIRIJE DEMEN
-  </p>
+<div class="footer-info">
+  BSS1815 PRO-MAX DMP<br>
+  DEVAN DEVAN NÈT™ — LE MOUVEMENT DE L’ÈRE IA<br>
+  #DevanDevanNèt
+</div>
 
-  <p>
-    promaxfmdmp@gmail.com |
-    (407) 640-5166 |
-    (516) 216-8494
-  </p>
-
-  <p>
-    © 2026 PRO-MAX ACADÉMIE — Tous droits réservés.
-  </p>
-
-  <div class="footer-slogan">
-    DEVAN DEVAN NÈT. BATI POU JODI A. PARE POU DEMEN.
-  </div>
-
+</div>
 </footer>
 
-
 <script>
+(function(){
+  "use strict";
 
-/* =====================================
-   LANGUAGE TOGGLE
-===================================== */
+  function initPage(){
 
-function setLanguage(lang,button){
-
-  document.querySelectorAll("[data-lang]").forEach(function(item){
-    item.style.display="none";
-  });
-
-  document.querySelectorAll('[data-lang="'+lang+'"]').forEach(function(item){
-    item.style.display="block";
-  });
-
-  document.querySelectorAll(".lang-btn").forEach(function(btn){
-    btn.classList.remove("active");
-  });
-
-  if(button){
-    button.classList.add("active");
-  }
-
-  localStorage.setItem("promax-language",lang);
-}
-
-
-/* Restore language */
-
-document.addEventListener("DOMContentLoaded",function(){
-
-  const saved =
-    localStorage.getItem("promax-language") || "kre";
-
-  const button =
-    document.querySelector(
-      '.lang-btn[onclick*="' + saved + '"]'
+    var languageButtons = Array.prototype.slice.call(
+      document.querySelectorAll(".lang-btn[data-lang]")
     );
 
-  setLanguage(saved,button);
+    var translatableElements = Array.prototype.slice.call(
+      document.querySelectorAll("[data-ht][data-fr][data-en]")
+    );
 
-});
+    function applyLanguage(lang){
 
+      if(["ht","fr","en"].indexOf(lang) === -1){
+        lang = "ht";
+      }
+
+      document.documentElement.setAttribute("lang",lang);
+
+      translatableElements.forEach(function(element){
+
+        var value = element.getAttribute("data-" + lang);
+
+        if(value !== null){
+          element.textContent = value;
+        }
+
+      });
+
+      languageButtons.forEach(function(button){
+
+        var active = button.getAttribute("data-lang") === lang;
+
+        button.classList.toggle("active",active);
+
+        button.setAttribute(
+          "aria-pressed",
+          active ? "true" : "false"
+        );
+
+      });
+
+    }
+
+    languageButtons.forEach(function(button){
+
+      button.addEventListener("click",function(event){
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        applyLanguage(
+          button.getAttribute("data-lang")
+        );
+
+      });
+
+    });
+
+    /* ALWAYS START IN KREYÒL */
+    applyLanguage("ht");
+
+
+    /* PLAY ALL pro-max-dmp-II.mp4 LOGOS */
+    var videos = Array.prototype.slice.call(
+      document.querySelectorAll(".brand-video,.hero-logo-video")
+    );
+
+    videos.forEach(function(video){
+
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+
+      var tryPlay = function(){
+
+        var promise = video.play();
+
+        if(
+          promise &&
+          typeof promise.catch === "function"
+        ){
+          promise.catch(function(){});
+        }
+
+      };
+
+      tryPlay();
+
+      document.addEventListener(
+        "click",
+        tryPlay,
+        {once:true}
+      );
+
+      document.addEventListener(
+        "touchstart",
+        tryPlay,
+        {once:true}
+      );
+
+    });
+
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded",initPage);
+  }else{
+    initPage();
+  }
+
+})();
 </script>
 
 </body>
