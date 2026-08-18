@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certificates | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Certificates Center">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --black3:#0d0500;
+
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:
+    0 0 16px rgba(255,121,0,.70),
+    0 0 42px rgba(255,121,0,.28);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 82% 72%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000 0%,#090400 48%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1200px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--orange);
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.brand-logo video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:1rem;
+  font-weight:1000;
+}
+
+.brand-text span{
+  display:block;
+  margin-top:5px;
+  color:var(--orange3);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back-btn{
+  padding:10px 16px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  color:var(--orange);
+  background:#000;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+  border:0;
+  border-radius:999px;
+  padding:9px 10px;
+  cursor:pointer;
+  background:#000;
+  color:var(--orange3);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+/* HERO */
+
+.hero{
+  padding:68px 0 42px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.7rem,8vw,5.6rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:800px;
+  margin:18px auto 0;
+  line-height:1.7;
+}
+
+/* SUMMARY */
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:36px;
+}
+
+.summary-card{
+  min-height:128px;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:#050200;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.summary-card strong{
+  color:var(--orange);
+  font-size:1.7rem;
+}
+
+.summary-card span{
+  margin-top:7px;
+  font-size:.68rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* CERTIFICATES */
+
+.cert-section{
+  padding:30px 0 95px;
+}
+
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.cert-card{
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:22px;
+
+  background:
+    radial-gradient(circle at top right,rgba(255,121,0,.11),transparent 36%),
+    linear-gradient(145deg,#000,#0b0400);
+
+  transition:.3s;
+}
+
+.cert-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.cert-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.cert-icon{
+  width:64px;
+  height:64px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--orange);
+  border-radius:18px;
+  background:#000;
+  color:var(--orange);
+  font-size:1.7rem;
+  font-weight:1000;
+  box-shadow:var(--glow);
+}
+
+.status-pill{
+  padding:7px 11px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  font-size:.61rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.status-pill.locked{
+  color:var(--orange3);
+}
+
+.status-pill.eligible{
+  color:var(--orange);
+  box-shadow:0 0 12px rgba(255,121,0,.22);
+}
+
+.status-pill.issued{
+  background:var(--orange);
+  color:#000;
+}
+
+.course-number{
+  margin-top:20px;
+  color:var(--orange3);
+  font-size:.61rem;
+  font-weight:1000;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.cert-card h2{
+  margin-top:8px;
+  color:var(--orange);
+  font-size:1.18rem;
+  text-transform:uppercase;
+}
+
+.cert-card p{
+  margin-top:12px;
+  line-height:1.6;
+  font-size:.85rem;
+}
+
+.requirements{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:18px;
+}
+
+.requirement{
+  padding:12px 8px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#030100;
+  text-align:center;
+}
+
+.requirement strong{
+  display:block;
+  color:var(--orange);
+  font-size:.84rem;
+}
+
+.requirement span{
+  display:block;
+  margin-top:4px;
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.requirement.ok{
+  border-color:var(--orange);
+  box-shadow:0 0 9px rgba(255,121,0,.15);
+}
+
+.certificate-info{
+  margin-top:18px;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#030100;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:7px 0;
+  font-size:.74rem;
+}
+
+.info-row + .info-row{
+  border-top:1px solid rgba(255,121,0,.12);
+}
+
+.info-row strong{
+  color:var(--orange);
+}
+
+.cert-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.cert-btn{
+  flex:1;
+  min-height:46px;
+  padding:11px 16px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.cert-btn.primary{
+  background:var(--orange);
+  color:#000;
+}
+
+.cert-btn.secondary{
+  background:#000;
+  color:var(--orange);
+}
+
+.cert-btn.disabled{
+  opacity:.42;
+  pointer-events:none;
+}
+
+/* VERIFICATION */
+
+.verify-box{
+  margin-top:25px;
+  padding:28px;
+  border:1px solid var(--borderStrong);
+  border-radius:20px;
+
+  background:
+    radial-gradient(circle at center,rgba(255,121,0,.12),transparent 55%),
+    #020100;
+
+  text-align:center;
+}
+
+.verify-box .icon{
+  font-size:3rem;
+}
+
+.verify-box h2{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:1.3rem;
+  text-transform:uppercase;
+}
+
+.verify-box p{
+  max-width:700px;
+  margin:11px auto 0;
+  line-height:1.65;
+  font-size:.82rem;
+}
+
+/* QUICK LINKS */
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+  margin-top:25px;
+}
+
+.quick-link{
+  min-height:130px;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#030100;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  transition:.25s;
+}
+
+.quick-link:hover{
+  transform:translateY(-4px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.quick-link span{
+  font-size:1.7rem;
+}
+
+.quick-link strong{
+  margin-top:9px;
+  color:var(--orange);
+  font-size:.68rem;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  padding:42px 0;
+  border-top:1px solid var(--border);
+  background:#000;
+  text-align:center;
+}
+
+.footer-title{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:9px;
+  font-size:.76rem;
+  line-height:1.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .header-inner{
+    padding:12px 0;
+  }
+
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-text strong{
+    font-size:.80rem;
+  }
+
+  .brand-text span{
+    font-size:.47rem;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .lang-btn{
+    min-width:38px;
+    padding:8px 7px;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .requirements{
+    grid-template-columns:1fr;
+  }
+
+  .cert-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .cert-btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+  <div class="brand-logo">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../pro-max-dmp-II.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="brand-text">
+    <strong>PRO-MAX ACADÉMIE</strong>
+
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+      Fòme Jodi a Pou Dirije Demen
+    </span>
+  </div>
+
+</a>
+
+<div class="header-actions">
+
+  <a
+    href="../assessments/index.html"
+    class="back-btn"
+    data-ht="← EVALYASYON"
+    data-fr="← ÉVALUATIONS"
+    data-en="← ASSESSMENTS">
+    ← EVALYASYON
+  </a>
+
+  <div class="lang-switch" aria-label="Language selector">
+
+    <button type="button" class="lang-btn" data-lang="fr">
+      FRA
+    </button>
+
+    <button type="button" class="lang-btn" data-lang="en">
+      ENG
+    </button>
+
+    <button type="button" class="lang-btn active" data-lang="ht">
+      KRE
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+BSS1815 PRO-MAX DMP • STUDENT PORTAL
+</div>
+
+<h1
+  data-ht="SÈTIFIKA"
+  data-fr="CERTIFICATS"
+  data-en="CERTIFICATES">
+  SÈTIFIKA
+</h1>
+
+<p
+  data-ht="Verifye si ou satisfè tout kondisyon yo, wè sètifika ki bloke, sètifika ki elijib ak sètifika ki deja emèt."
+
+  data-fr="Vérifiez si vous remplissez toutes les conditions, consultez les certificats verrouillés, éligibles et déjà émis."
+
+  data-en="Check whether you meet all requirements and view locked, eligible and issued certificates.">
+
+  Verifye si ou satisfè tout kondisyon yo, wè sètifika ki bloke, sètifika ki elijib ak sètifika ki deja emèt.
+</p>
+
+
+<div class="summary-grid">
+
+<div class="summary-card">
+<strong id="totalCertificates">6</strong>
+<span
+data-ht="TOTAL SÈTIFIKA"
+data-fr="TOTAL CERTIFICATS"
+data-en="TOTAL CERTIFICATES">
+TOTAL SÈTIFIKA
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="eligibleCertificates">0</strong>
+<span
+data-ht="ELIJIB"
+data-fr="ÉLIGIBLES"
+data-en="ELIGIBLE">
+ELIJIB
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="issuedCertificates">0</strong>
+<span
+data-ht="EMÈT"
+data-fr="ÉMIS"
+data-en="ISSUED">
+EMÈT
+</span>
+</div>
+
+<div class="summary-card">
+<strong id="lockedCertificates">6</strong>
+<span
+data-ht="BLOKE"
+data-fr="VERROUILLÉS"
+data-en="LOCKED">
+BLOKE
+</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cert-section">
+
+<div class="container">
+
+<div class="cert-grid">
+
+
+<!-- COURSE 01 -->
+
+<article
+class="cert-card"
+data-course-id="introduction-ai"
+data-course-code="AIC">
+
+<div class="cert-head">
+
+<div class="cert-icon">AI</div>
+
+<div class="status-pill locked">
+LOCKED
+</div>
+
+</div>
+
+<div class="course-number">COURSE 01</div>
+
+<h2
+data-ht="ENTWODIKSYON NAN AI"
+data-fr="INTRODUCTION À L’IA"
+data-en="INTRODUCTION TO AI">
+ENTWODIKSYON NAN AI
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon fondamantal sou entèlijans atifisyèl."
+data-fr="Certificat de réussite pour la formation fondamentale en intelligence artificielle."
+data-en="Completion certificate for foundational artificial intelligence training.">
+Sètifika pou konplete fòmasyon fondamantal sou entèlijans atifisyèl.
+</p>
+
+<div class="requirements">
+
+<div class="requirement course-req">
+<strong>0%</strong>
+<span
+data-ht="KOU FINI"
+data-fr="COURS TERMINÉ"
+data-en="COURSE COMPLETE">
+KOU FINI
+</span>
+</div>
+
+<div class="requirement assessment-req">
+<strong>0%</strong>
+<span
+data-ht="EVALYASYON"
+data-fr="ÉVALUATION"
+data-en="ASSESSMENT">
+EVALYASYON
+</span>
+</div>
+
+<div class="requirement payment-req">
+<strong>0/5</strong>
+<span
+data-ht="PEMAN"
+data-fr="PAIEMENTS"
+data-en="PAYMENTS">
+PEMAN
+</span>
+</div>
+
+</div>
+
+<div class="certificate-info">
+
+<div class="info-row">
+<span>CERTIFICATE ID</span>
+<strong class="certificate-id">—</strong>
+</div>
+
+<div class="info-row">
+<span
+data-ht="DAT EMISYON"
+data-fr="DATE D’ÉMISSION"
+data-en="ISSUE DATE">
+DAT EMISYON
+</span>
+<strong class="issue-date">—</strong>
+</div>
+
+<div class="info-row">
+<span
+data-ht="VERIFIKASYON"
+data-fr="VÉRIFICATION"
+data-en="VERIFICATION">
+VERIFIKASYON
+</span>
+<strong class="verification-status">LOCKED</strong>
+</div>
+
+</div>
+
+<div class="cert-actions">
+
+<button
+type="button"
+class="cert-btn primary view-btn disabled">
+VIEW CERTIFICATE
+</button>
+
+<button
+type="button"
+class="cert-btn secondary print-btn disabled">
+PRINT / DOWNLOAD
+</button>
+
+</div>
+
+</article>
+
+
+<!-- COURSE 02 -->
+
+<article
+class="cert-card"
+data-course-id="digital-creation"
+data-course-code="DGC">
+
+<div class="cert-head">
+<div class="cert-icon">✦</div>
+<div class="status-pill locked">LOCKED</div>
+</div>
+
+<div class="course-number">COURSE 02</div>
+
+<h2
+data-ht="KREYASYON DIJITAL"
+data-fr="CRÉATION DIGITALE"
+data-en="DIGITAL CREATION">
+KREYASYON DIJITAL
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon kreyasyon ak pwodiksyon kontni dijital."
+data-fr="Certificat de réussite pour la formation en création et production de contenu numérique."
+data-en="Completion certificate for digital creation and content production training.">
+Sètifika pou konplete fòmasyon kreyasyon ak pwodiksyon kontni dijital.
+</p>
+
+<div class="requirements">
+<div class="requirement course-req"><strong>0%</strong><span>KOU FINI</span></div>
+<div class="requirement assessment-req"><strong>0%</strong><span>EVALYASYON</span></div>
+<div class="requirement payment-req"><strong>0/5</strong><span>PEMAN</span></div>
+</div>
+
+<div class="certificate-info">
+<div class="info-row"><span>CERTIFICATE ID</span><strong class="certificate-id">—</strong></div>
+<div class="info-row"><span>DAT EMISYON</span><strong class="issue-date">—</strong></div>
+<div class="info-row"><span>VERIFIKASYON</span><strong class="verification-status">LOCKED</strong></div>
+</div>
+
+<div class="cert-actions">
+<button type="button" class="cert-btn primary view-btn disabled">VIEW CERTIFICATE</button>
+<button type="button" class="cert-btn secondary print-btn disabled">PRINT / DOWNLOAD</button>
+</div>
+
+</article>
+
+
+<!-- COURSE 03 -->
+
+<article
+class="cert-card"
+data-course-id="digital-leadership"
+data-course-code="DLC">
+
+<div class="cert-head">
+<div class="cert-icon">↗</div>
+<div class="status-pill locked">LOCKED</div>
+</div>
+
+<div class="course-number">COURSE 03</div>
+
+<h2
+data-ht="LIDÈCHIP DIJITAL"
+data-fr="LEADERSHIP DIGITAL"
+data-en="DIGITAL LEADERSHIP">
+LIDÈCHIP DIJITAL
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon lidèchip nan epòk dijital la."
+data-fr="Certificat de réussite pour la formation en leadership numérique."
+data-en="Completion certificate for digital leadership training.">
+Sètifika pou konplete fòmasyon lidèchip nan epòk dijital la.
+</p>
+
+<div class="requirements">
+<div class="requirement course-req"><strong>0%</strong><span>KOU FINI</span></div>
+<div class="requirement assessment-req"><strong>0%</strong><span>EVALYASYON</span></div>
+<div class="requirement payment-req"><strong>0/5</strong><span>PEMAN</span></div>
+</div>
+
+<div class="certificate-info">
+<div class="info-row"><span>CERTIFICATE ID</span><strong class="certificate-id">—</strong></div>
+<div class="info-row"><span>DAT EMISYON</span><strong class="issue-date">—</strong></div>
+<div class="info-row"><span>VERIFIKASYON</span><strong class="verification-status">LOCKED</strong></div>
+</div>
+
+<div class="cert-actions">
+<button type="button" class="cert-btn primary view-btn disabled">VIEW CERTIFICATE</button>
+<button type="button" class="cert-btn secondary print-btn disabled">PRINT / DOWNLOAD</button>
+</div>
+
+</article>
+
+
+<!-- COURSE 04 -->
+
+<article
+class="cert-card"
+data-course-id="automation"
+data-course-code="AUC">
+
+<div class="cert-head">
+<div class="cert-icon">⚙</div>
+<div class="status-pill locked">LOCKED</div>
+</div>
+
+<div class="course-number">COURSE 04</div>
+
+<h2
+data-ht="OTOMATIZASYON"
+data-fr="AUTOMATISATION"
+data-en="AUTOMATION">
+OTOMATIZASYON
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon sou workflow ak otomatikasyon dijital."
+data-fr="Certificat de réussite pour la formation sur les workflows et l’automatisation numérique."
+data-en="Completion certificate for workflow and digital automation training.">
+Sètifika pou konplete fòmasyon sou workflow ak otomatikasyon dijital.
+</p>
+
+<div class="requirements">
+<div class="requirement course-req"><strong>0%</strong><span>KOU FINI</span></div>
+<div class="requirement assessment-req"><strong>0%</strong><span>EVALYASYON</span></div>
+<div class="requirement payment-req"><strong>0/5</strong><span>PEMAN</span></div>
+</div>
+
+<div class="certificate-info">
+<div class="info-row"><span>CERTIFICATE ID</span><strong class="certificate-id">—</strong></div>
+<div class="info-row"><span>DAT EMISYON</span><strong class="issue-date">—</strong></div>
+<div class="info-row"><span>VERIFIKASYON</span><strong class="verification-status">LOCKED</strong></div>
+</div>
+
+<div class="cert-actions">
+<button type="button" class="cert-btn primary view-btn disabled">VIEW CERTIFICATE</button>
+<button type="button" class="cert-btn secondary print-btn disabled">PRINT / DOWNLOAD</button>
+</div>
+
+</article>
+
+
+<!-- COURSE 05 -->
+
+<article
+class="cert-card"
+data-course-id="communication"
+data-course-code="CMC">
+
+<div class="cert-head">
+<div class="cert-icon">◎</div>
+<div class="status-pill locked">LOCKED</div>
+</div>
+
+<div class="course-number">COURSE 05</div>
+
+<h2
+data-ht="KOMINIKASYON"
+data-fr="COMMUNICATION"
+data-en="COMMUNICATION">
+KOMINIKASYON
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon kominikasyon pwofesyonèl ak dijital."
+data-fr="Certificat de réussite pour la formation en communication professionnelle et numérique."
+data-en="Completion certificate for professional and digital communication training.">
+Sètifika pou konplete fòmasyon kominikasyon pwofesyonèl ak dijital.
+</p>
+
+<div class="requirements">
+<div class="requirement course-req"><strong>0%</strong><span>KOU FINI</span></div>
+<div class="requirement assessment-req"><strong>0%</strong><span>EVALYASYON</span></div>
+<div class="requirement payment-req"><strong>0/5</strong><span>PEMAN</span></div>
+</div>
+
+<div class="certificate-info">
+<div class="info-row"><span>CERTIFICATE ID</span><strong class="certificate-id">—</strong></div>
+<div class="info-row"><span>DAT EMISYON</span><strong class="issue-date">—</strong></div>
+<div class="info-row"><span>VERIFIKASYON</span><strong class="verification-status">LOCKED</strong></div>
+</div>
+
+<div class="cert-actions">
+<button type="button" class="cert-btn primary view-btn disabled">VIEW CERTIFICATE</button>
+<button type="button" class="cert-btn secondary print-btn disabled">PRINT / DOWNLOAD</button>
+</div>
+
+</article>
+
+
+<!-- COURSE 06 -->
+
+<article
+class="cert-card"
+data-course-id="innovation"
+data-course-code="INC">
+
+<div class="cert-head">
+<div class="cert-icon">◆</div>
+<div class="status-pill locked">LOCKED</div>
+</div>
+
+<div class="course-number">COURSE 06</div>
+
+<h2
+data-ht="INOVASYON"
+data-fr="INNOVATION"
+data-en="INNOVATION">
+INOVASYON
+</h2>
+
+<p
+data-ht="Sètifika pou konplete fòmasyon inovasyon ak devlopman pwojè dijital."
+data-fr="Certificat de réussite pour la formation en innovation et développement de projets numériques."
+data-en="Completion certificate for innovation and digital project development training.">
+Sètifika pou konplete fòmasyon inovasyon ak devlopman pwojè dijital.
+</p>
+
+<div class="requirements">
+<div class="requirement course-req"><strong>0%</strong><span>KOU FINI</span></div>
+<div class="requirement assessment-req"><strong>0%</strong><span>EVALYASYON</span></div>
+<div class="requirement payment-req"><strong>0/5</strong><span>PEMAN</span></div>
+</div>
+
+<div class="certificate-info">
+<div class="info-row"><span>CERTIFICATE ID</span><strong class="certificate-id">—</strong></div>
+<div class="info-row"><span>DAT EMISYON</span><strong class="issue-date">—</strong></div>
+<div class="info-row"><span>VERIFIKASYON</span><strong class="verification-status">LOCKED</strong></div>
+</div>
+
+<div class="cert-actions">
+<button type="button" class="cert-btn primary view-btn disabled">VIEW CERTIFICATE</button>
+<button type="button" class="cert-btn secondary print-btn disabled">PRINT / DOWNLOAD</button>
+</div>
+
+</article>
+
+</div>
+
+
+<section class="verify-box">
+
+<div class="icon">🔐</div>
+
+<h2
+data-ht="VERIFIKASYON SÈTIFIKA"
+data-fr="VÉRIFICATION DES CERTIFICATS"
+data-en="CERTIFICATE VERIFICATION">
+VERIFIKASYON SÈTIFIKA
+</h2>
+
+<p
+data-ht="Chak sètifika PRO-MAX ACADÉMIE kapab genyen yon Certificate ID inik. Lè sistèm Firebase la konekte, ID sa a kapab sèvi pou verifye otantisite sètifika a."
+data-fr="Chaque certificat PRO-MAX ACADÉMIE peut recevoir un identifiant unique. Une fois Firebase connecté, cet identifiant pourra servir à vérifier l’authenticité du certificat."
+data-en="Each PRO-MAX ACADEMY certificate can receive a unique Certificate ID. Once Firebase is connected, that ID can be used to verify certificate authenticity.">
+
+Chak sètifika PRO-MAX ACADÉMIE kapab genyen yon Certificate ID inik.
+</p>
+
+</section>
+
+
+<div class="quick-grid">
+
+<a href="../student-profile/index.html" class="quick-link">
+<span>👤</span>
+<strong
+data-ht="PWOFIL ELÈV"
+data-fr="PROFIL ÉTUDIANT"
+data-en="STUDENT PROFILE">
+PWOFIL ELÈV
+</strong>
+</a>
+
+<a href="../my-courses/index.html" class="quick-link">
+<span>🎓</span>
+<strong
+data-ht="KOU MWEN"
+data-fr="MES COURS"
+data-en="MY COURSES">
+KOU MWEN
+</strong>
+</a>
+
+<a href="../course-progress/index.html" class="quick-link">
+<span>📊</span>
+<strong
+data-ht="PWOGRÈ"
+data-fr="PROGRESSION"
+data-en="PROGRESS">
+PWOGRÈ
+</strong>
+</a>
+
+<a href="../assessments/index.html" class="quick-link">
+<span>✓</span>
+<strong
+data-ht="EVALYASYON"
+data-fr="ÉVALUATIONS"
+data-en="ASSESSMENTS">
+EVALYASYON
+</strong>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-title">
+PRO-MAX ACADÉMIE
+</div>
+
+<div class="footer-info">
+BSS1815 PRO-MAX DMP<br>
+DEVAN DEVAN NÈT™<br>
+BATI POU JODI A • PARE POU DEMEN
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+(function(){
+
+"use strict";
+
+var currentLanguage = "ht";
+var PASS_SCORE = 70;
+var TOTAL_TUITION = 5000;
+
+
+/* =========================
+LANGUAGE
+========================= */
+
+var langButtons =
+document.querySelectorAll(".lang-btn[data-lang]");
+
+function applyLanguage(lang){
+
+  if(["ht","fr","en"].indexOf(lang) === -1){
+    lang = "ht";
+  }
+
+  currentLanguage = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-ht][data-fr][data-en]")
+  .forEach(function(el){
+
+    var value =
+      el.getAttribute("data-" + lang);
+
+    if(value !== null){
+      el.textContent = value;
+    }
+
+  });
+
+  langButtons.forEach(function(btn){
+
+    btn.classList.toggle(
+      "active",
+      btn.getAttribute("data-lang") === lang
+    );
+
+  });
+
+}
+
+langButtons.forEach(function(btn){
+
+  btn.addEventListener("click",function(){
+
+    applyLanguage(
+      this.getAttribute("data-lang")
+    );
+
+  });
+
+});
+
+
+/* =========================
+VIDEO
+========================= */
+
+document.querySelectorAll("video")
+.forEach(function(video){
+
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  var promise = video.play();
+
+  if(promise){
+    promise.catch(function(){});
+  }
+
+});
+
+
+/* =========================
+HELPERS
+========================= */
+
+function getCourseProgress(courseId){
+
+  var keys = [
+    "promax-course-progress-" + courseId,
+    "promaxCourseProgress-" + courseId,
+    "courseProgress-" + courseId
+  ];
+
+  for(var i=0;i<keys.length;i++){
+
+    var val =
+      localStorage.getItem(keys[i]);
+
+    if(val !== null){
+
+      var n = Number(val);
+
+      if(!isNaN(n)){
+        return Math.max(0,Math.min(n,100));
+      }
+
+    }
+
+  }
+
+  return 0;
+
+}
+
+
+function getAssessmentScore(courseId){
+
+  var score =
+    Number(
+      localStorage.getItem(
+        "promax-assessment-score-" + courseId
+      ) || 0
+    );
+
+  return Math.max(0,Math.min(score,100));
+
+}
+
+
+function getPayments(){
+
+  try{
+
+    var data =
+      JSON.parse(
+        localStorage.getItem(
+          "promaxPaymentHistory"
+        )
+      );
+
+    return Array.isArray(data)
+      ? data
+      : [];
+
+  }catch(e){
+
+    return [];
+
+  }
+
+}
+
+
+function totalPaid(){
+
+  return getPayments().reduce(
+    function(total,payment){
+
+      return total +
+        Number(payment.amount || 0);
+
+    },
+    0
+  );
+
+}
+
+
+function getIssuedData(courseId){
+
+  try{
+
+    var value =
+      JSON.parse(
+        localStorage.getItem(
+          "promax-certificate-" + courseId
+        )
+      );
+
+    return value || null;
+
+  }catch(e){
+
+    return null;
+
+  }
+
+}
+
+
+function generateCertificateId(code){
+
+  var stamp =
+    Date.now()
+    .toString()
+    .slice(-8);
+
+  return "PMA-" + code + "-" + stamp;
+
+}
+
+
+function formatDate(date){
+
+  return date.toLocaleDateString(
+    "en-US",
+    {
+      year:"numeric",
+      month:"2-digit",
+      day:"2-digit"
+    }
+  );
+
+}
+
+
+/* =========================
+CERTIFICATE UI
+========================= */
+
+function updateCertificates(){
+
+  var eligibleCount = 0;
+  var issuedCount = 0;
+  var lockedCount = 0;
+
+  var payments =
+    getPayments();
+
+  var paymentCount =
+    Math.min(payments.length,5);
+
+  var paymentComplete =
+    totalPaid() >= TOTAL_TUITION;
+
+
+  document.querySelectorAll(".cert-card")
+  .forEach(function(card){
+
+    var courseId =
+      card.getAttribute("data-course-id");
+
+    var code =
+      card.getAttribute("data-course-code");
+
+    var progress =
+      getCourseProgress(courseId);
+
+    var score =
+      getAssessmentScore(courseId);
+
+    var courseComplete =
+      progress >= 100;
+
+    var assessmentPassed =
+      score >= PASS_SCORE;
+
+    var eligible =
+      courseComplete &&
+      assessmentPassed &&
+      paymentComplete;
+
+    var issued =
+      getIssuedData(courseId);
+
+
+    var courseReq =
+      card.querySelector(".course-req");
+
+    var assessmentReq =
+      card.querySelector(".assessment-req");
+
+    var paymentReq =
+      card.querySelector(".payment-req");
+
+
+    courseReq.querySelector("strong")
+      .textContent =
+      progress + "%";
+
+    assessmentReq.querySelector("strong")
+      .textContent =
+      score + "%";
+
+    paymentReq.querySelector("strong")
+      .textContent =
+      paymentCount + "/5";
+
+
+    courseReq.classList.toggle(
+      "ok",
+      courseComplete
+    );
+
+    assessmentReq.classList.toggle(
+      "ok",
+      assessmentPassed
+    );
+
+    paymentReq.classList.toggle(
+      "ok",
+      paymentComplete
+    );
+
+
+    var status =
+      card.querySelector(".status-pill");
+
+    var certId =
+      card.querySelector(".certificate-id");
+
+    var issueDate =
+      card.querySelector(".issue-date");
+
+    var verify =
+      card.querySelector(".verification-status");
+
+    var viewBtn =
+      card.querySelector(".view-btn");
+
+    var printBtn =
+      card.querySelector(".print-btn");
+
+
+    if(issued){
+
+      issuedCount++;
+
+      status.className =
+        "status-pill issued";
+
+      status.textContent =
+        "ISSUED";
+
+      certId.textContent =
+        issued.id || "—";
+
+      issueDate.textContent =
+        issued.date || "—";
+
+      verify.textContent =
+        "VALID";
+
+      viewBtn.classList.remove("disabled");
+      printBtn.classList.remove("disabled");
+
+    }
+
+    else if(eligible){
+
+      eligibleCount++;
+
+      status.className =
+        "status-pill eligible";
+
+      status.textContent =
+        "ELIGIBLE";
+
+      certId.textContent =
+        "READY";
+
+      issueDate.textContent =
+        "NOT ISSUED";
+
+      verify.textContent =
+        "READY";
+
+      viewBtn.classList.remove("disabled");
+      printBtn.classList.add("disabled");
+
+      viewBtn.textContent =
+        currentLanguage === "fr"
+        ? "ÉMETTRE LE CERTIFICAT"
+        : currentLanguage === "en"
+        ? "ISSUE CERTIFICATE"
+        : "EMÈT SÈTIFIKA";
+
+      viewBtn.onclick =
+        function(){
+
+          var data = {
+            id:generateCertificateId(code),
+            date:formatDate(new Date()),
+            courseId:courseId
+          };
+
+          localStorage.setItem(
+            "promax-certificate-" + courseId,
+            JSON.stringify(data)
+          );
+
+          updateCertificates();
+
+        };
+
+    }
+
+    else{
+
+      lockedCount++;
+
+      status.className =
+        "status-pill locked";
+
+      status.textContent =
+        "LOCKED";
+
+      certId.textContent =
+        "—";
+
+      issueDate.textContent =
+        "—";
+
+      verify.textContent =
+        "LOCKED";
+
+      viewBtn.classList.add("disabled");
+      printBtn.classList.add("disabled");
+
+    }
+
+
+    if(issued){
+
+      viewBtn.textContent =
+        currentLanguage === "fr"
+        ? "VOIR CERTIFICAT"
+        : currentLanguage === "en"
+        ? "VIEW CERTIFICATE"
+        : "GADE SÈTIFIKA";
+
+      viewBtn.onclick =
+        function(){
+
+          alert(
+            "Certificate ID: " +
+            issued.id +
+            "\nIssue Date: " +
+            issued.date
+          );
+
+        };
+
+
+      printBtn.onclick =
+        function(){
+
+          window.print();
+
+        };
+
+    }
+
+  });
+
+
+  document.getElementById(
+    "eligibleCertificates"
+  ).textContent =
+    eligibleCount;
+
+  document.getElementById(
+    "issuedCertificates"
+  ).textContent =
+    issuedCount;
+
+  document.getElementById(
+    "lockedCertificates"
+  ).textContent =
+    lockedCount;
+
+}
+
+
+/* =========================
+INIT
+========================= */
+
+applyLanguage("ht");
+updateCertificates();
+
+langButtons.forEach(function(btn){
+
+  btn.addEventListener("click",function(){
+    updateCertificates();
+  });
+
+});
+
+})();
+</script>
+
+</body>
+</html>
