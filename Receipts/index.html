@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Receipts | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Payment Receipt Center">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --border:rgba(255,121,0,.28);
+  --borderStrong:rgba(255,121,0,.72);
+  --glow:0 0 18px rgba(255,121,0,.35);
+  --glowStrong:
+    0 0 16px rgba(255,121,0,.70),
+    0 0 42px rgba(255,121,0,.28);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,121,0,.14),transparent 34%),
+    radial-gradient(circle at 82% 72%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000 0%,#090400 48%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:60px;
+  height:60px;
+  overflow:hidden;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.brand-logo video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+  color:var(--orange);
+  font-size:1rem;
+  font-weight:1000;
+}
+
+.brand-text span{
+  display:block;
+  margin-top:5px;
+  color:var(--orange3);
+  font-size:.55rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back-btn{
+  padding:10px 16px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange);
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+/* LANGUAGE */
+
+.lang-switch{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang-btn{
+  min-width:44px;
+  padding:9px 10px;
+  border:0;
+  border-radius:999px;
+  background:#000;
+  color:var(--orange3);
+  cursor:pointer;
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#000;
+}
+
+/* HERO */
+
+.hero{
+  padding:65px 0 38px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.6rem,8vw,5.3rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:760px;
+  margin:18px auto 0;
+  line-height:1.7;
+}
+
+/* SUMMARY */
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:30px;
+}
+
+.summary-card{
+  min-height:130px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#050200;
+  text-align:center;
+}
+
+.summary-card .icon{
+  font-size:1.7rem;
+}
+
+.summary-card strong{
+  margin-top:8px;
+  color:var(--orange);
+  font-size:1.35rem;
+}
+
+.summary-card span{
+  margin-top:6px;
+  font-size:.64rem;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* RECEIPTS */
+
+.receipts-section{
+  padding:30px 0 95px;
+}
+
+.receipts-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:18px;
+}
+
+.receipts-header h2{
+  color:var(--orange);
+  font-size:1.3rem;
+  text-transform:uppercase;
+}
+
+.receipts-count{
+  padding:8px 13px;
+  border:1px solid var(--borderStrong);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.67rem;
+  font-weight:1000;
+}
+
+.receipts-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+/* RECEIPT CARD */
+
+.receipt-card{
+  position:relative;
+  overflow:hidden;
+  padding:25px;
+  border:1px solid var(--borderStrong);
+  border-radius:22px;
+
+  background:
+    radial-gradient(circle at top right,rgba(255,121,0,.12),transparent 38%),
+    linear-gradient(145deg,#000,#0b0400);
+
+  box-shadow:var(--glow);
+}
+
+.receipt-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:var(--orange);
+}
+
+.receipt-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  padding-bottom:17px;
+  border-bottom:1px solid var(--border);
+}
+
+.receipt-brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.receipt-logo{
+  width:52px;
+  height:52px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  overflow:hidden;
+  background:#000;
+}
+
+.receipt-logo video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.receipt-brand strong{
+  display:block;
+  color:var(--orange);
+  font-size:.82rem;
+}
+
+.receipt-brand span{
+  display:block;
+  margin-top:4px;
+  font-size:.57rem;
+  font-weight:900;
+}
+
+.receipt-number{
+  text-align:right;
+}
+
+.receipt-number strong{
+  display:block;
+  color:var(--orange);
+  font-size:.78rem;
+}
+
+.receipt-number span{
+  display:block;
+  margin-top:5px;
+  font-size:.62rem;
+}
+
+.receipt-status{
+  display:inline-block;
+  margin-top:8px;
+  padding:5px 9px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.55rem;
+  font-weight:1000;
+}
+
+/* DETAILS */
+
+.receipt-details{
+  margin-top:18px;
+  display:grid;
+  gap:10px;
+}
+
+.detail-row{
+  display:grid;
+  grid-template-columns:145px 1fr;
+  gap:12px;
+  padding-bottom:9px;
+  border-bottom:1px solid rgba(255,121,0,.10);
+}
+
+.detail-row span{
+  color:var(--orange2);
+  font-size:.66rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.detail-row strong{
+  color:var(--orange3);
+  font-size:.76rem;
+  word-break:break-word;
+}
+
+/* TOTAL */
+
+.receipt-total{
+  margin-top:18px;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:#030100;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:5px 0;
+  font-size:.76rem;
+}
+
+.total-row strong{
+  color:var(--orange);
+}
+
+.total-row.final{
+  margin-top:7px;
+  padding-top:12px;
+  border-top:1px solid var(--borderStrong);
+  font-size:.90rem;
+  font-weight:1000;
+}
+
+/* ACTIONS */
+
+.receipt-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.action-btn{
+  flex:1;
+  min-width:120px;
+  padding:10px 12px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange);
+  cursor:pointer;
+  font-size:.62rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.action-btn:hover{
+  background:var(--orange);
+  color:#000;
+  box-shadow:var(--glow);
+}
+
+/* EMPTY */
+
+.empty-state{
+  grid-column:1/-1;
+  padding:55px 20px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:#030100;
+  text-align:center;
+}
+
+.empty-icon{
+  font-size:3rem;
+}
+
+.empty-state h3{
+  margin-top:15px;
+  color:var(--orange);
+  font-size:1.2rem;
+}
+
+.empty-state p{
+  max-width:580px;
+  margin:10px auto 0;
+  line-height:1.6;
+  font-size:.82rem;
+}
+
+.empty-state a{
+  display:inline-flex;
+  margin-top:20px;
+  padding:11px 18px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  background:var(--orange);
+  color:#000;
+  font-size:.67rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  padding:42px 0;
+  border-top:1px solid var(--border);
+  background:#000;
+  text-align:center;
+}
+
+.footer-title{
+  color:var(--orange);
+  font-weight:1000;
+}
+
+.footer-info{
+  margin-top:9px;
+  font-size:.76rem;
+  line-height:1.7;
+}
+
+/* PRINT */
+
+.print-only{
+  display:none;
+}
+
+@media print{
+
+  body{
+    background:#fff !important;
+    color:#000 !important;
+  }
+
+  body::before,
+  header,
+  footer,
+  .hero,
+  .summary-grid,
+  .receipts-header{
+    display:none !important;
+  }
+
+  .receipts-section{
+    padding:0;
+  }
+
+  .container{
+    width:100%;
+  }
+
+  .receipts-grid{
+    display:block;
+  }
+
+  .receipt-card{
+    display:none;
+  }
+
+  .receipt-card.print-target{
+    display:block;
+    width:100%;
+    border:2px solid #000;
+    border-radius:0;
+    box-shadow:none;
+    background:#fff;
+    color:#000;
+  }
+
+  .receipt-card.print-target *{
+    color:#000 !important;
+  }
+
+  .receipt-card.print-target .receipt-actions{
+    display:none;
+  }
+
+  .receipt-card.print-target video{
+    display:none;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .receipts-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:650px){
+
+  .header-inner{
+    padding:12px 0;
+  }
+
+  .brand-logo{
+    width:50px;
+    height:50px;
+  }
+
+  .brand-text strong{
+    font-size:.80rem;
+  }
+
+  .brand-text span{
+    font-size:.47rem;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .lang-btn{
+    min-width:38px;
+    padding:8px 7px;
+  }
+
+  .summary-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .detail-row{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+
+  .receipt-top{
+    flex-direction:column;
+  }
+
+  .receipt-number{
+    text-align:left;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+  <div class="brand-logo">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../pro-max-dmp-II.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="brand-text">
+
+    <strong>PRO-MAX ACADÉMIE</strong>
+
+    <span
+      data-ht="Fòme Jodi a Pou Dirije Demen"
+      data-fr="Former Aujourd’hui Pour Diriger Demain"
+      data-en="Train Today To Lead Tomorrow">
+      Fòme Jodi a Pou Dirije Demen
+    </span>
+
+  </div>
+
+</a>
+
+<div class="header-actions">
+
+<a
+href="../payment-status/index.html"
+class="back-btn"
+data-ht="← ESTATI PEMAN"
+data-fr="← STATUT PAIEMENT"
+data-en="← PAYMENT STATUS">
+← ESTATI PEMAN
+</a>
+
+<div class="lang-switch">
+
+<button type="button" class="lang-btn" data-lang="fr">FRA</button>
+<button type="button" class="lang-btn" data-lang="en">ENG
