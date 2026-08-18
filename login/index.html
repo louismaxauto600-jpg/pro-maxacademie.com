@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PRO-MAX ACADÉMIE | Secure Login</title>
+<meta name="theme-color" content="#000000">
+<style>
+:root{--o:#ff7900;--o2:#ffad4d;--bd:rgba(255,121,0,.32);--bd2:rgba(255,121,0,.72);--g:0 0 22px rgba(255,121,0,.38)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--o2);background:radial-gradient(circle at 50% 20%,rgba(255,121,0,.17),transparent 34%),linear-gradient(180deg,#000,#0a0400 55%,#000)}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.container{width:min(1050px,calc(100% - 28px));margin:auto}
+header{border-bottom:1px solid var(--bd);background:#000}.head{min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand strong{display:block;color:var(--o)}.brand span{font-size:.62rem;font-weight:900}
+.home{border:1px solid var(--bd2);border-radius:999px;padding:9px 13px;color:var(--o);font-size:.67rem;font-weight:900}
+.hero{text-align:center;padding:58px 0 28px}.hero h1{color:var(--o);font-size:clamp(2.5rem,7vw,4.8rem);line-height:.92}.hero p{max-width:700px;margin:15px auto 0;line-height:1.6}
+.login-wrap{padding:20px 0 80px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{border:1px solid var(--bd);border-radius:22px;padding:25px;background:#050200;box-shadow:var(--g)}
+.card h2{color:var(--o);text-transform:uppercase}.sub{margin-top:8px;line-height:1.55;font-size:.85rem}
+.field{margin-top:15px}label{display:block;margin-bottom:6px;color:var(--o);font-size:.73rem;font-weight:900}
+input,select{width:100%;padding:12px;border:1px solid var(--bd2);border-radius:11px;background:#000;color:var(--o2);outline:none}
+input:focus,select:focus{box-shadow:var(--g)}
+.btn{width:100%;margin-top:18px;border:2px solid var(--o);border-radius:999px;padding:12px;background:var(--o);color:#000;font-weight:1000;cursor:pointer}
+.notice{margin-top:16px;border:1px solid var(--bd);border-radius:12px;padding:13px;font-size:.8rem;line-height:1.5}
+.roles{display:grid;gap:12px;margin-top:20px}.role{border:1px solid var(--bd);border-radius:14px;padding:15px;background:#000}.role strong{color:var(--o)}.role p{margin-top:5px;font-size:.78rem;line-height:1.5}
+.status{display:none;margin-top:16px;border:1px solid var(--bd2);border-radius:12px;padding:14px;text-align:center;font-weight:900}
+footer{text-align:center;border-top:1px solid var(--bd);padding:30px 0}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="container head">
+<div class="brand"><strong>PRO-MAX ACADÉMIE</strong><span>SECURE ACCESS CENTER</span></div>
+<a class="home" href="../index.html">← HOME</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="container">
+<h1>SECURE LOGIN</h1>
+<p>Separe aksè Admin ak Student Portal pou chak itilizatè antre sèlman nan espas ki koresponn ak wòl li.</p>
+</div></section>
+
+<section class="login-wrap"><div class="container grid">
+
+<section class="card">
+<h2>Login</h2>
+<p class="sub">Chwazi wòl ou epi antre enfòmasyon kont ou.</p>
+
+<div class="field"><label>ROLE</label>
+<select id="role">
+<option value="student">STUDENT</option>
+<option value="admin">ADMIN</option>
+</select></div>
+
+<div class="field"><label>STUDENT ID / USERNAME</label>
+<input id="username" type="text" autocomplete="username" placeholder="PMA-2026-XXXXX"></div>
+
+<div class="field"><label>PASSWORD</label>
+<input id="password" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+
+<button class="btn" id="loginBtn">SECURE LOGIN</button>
+<div class="status" id="status"></div>
+
+<div class="notice">
+<strong style="color:var(--o)">IMPORTANT:</strong> Paj sa a bay estrikti front-end pou login ak role routing. Pou yon sit piblik reyèl, modpas ak privilèj Admin dwe verifye pa Firebase Authentication oswa yon backend sekirize—pa mete modpas Admin dirèk nan HTML/JavaScript.
+</div>
+</section>
+
+<section class="card">
+<h2>Access Control</h2>
+<p class="sub">Estrikti a separe zòn elèv la ak zòn administrasyon an.</p>
+
+<div class="roles">
+<div class="role"><strong>👤 STUDENT</strong><p>Student ID valide kont dosye ki deja kreye nan Enrollment Center, epi elèv la antre nan Student Portal.</p></div>
+<div class="role"><strong>🛡️ ADMIN</strong><p>Admin antre nan Admin Dashboard. Nan pwodiksyon, aksè sa a dwe pase atravè Firebase Authentication ak admin role/claim.</p></div>
+<div class="role"><strong>🔐 SESSION</strong><p>Sistèm nan konsève sèlman yon session marker lokal pou demonstrasyon navigasyon. Li pa konsidere kòm sekirite backend.</p></div>
+</div>
+
+<a class="btn" style="display:block;text-align:center;text-decoration:none" href="../enrollment-center/index.html">ENROLLMENT CENTER</a>
+</section>
+
+</div></section>
+</main>
+
+<footer><div class="container"><strong style="color:var(--o)">PRO-MAX ACADÉMIE</strong><br>Secure Access Center • BSS1815 PRO-MAX DMP</div></footer>
+
+<script>
+const E=id=>document.getElementById(id);
+
+function showStatus(text){
+ const s=E("status");s.style.display="block";s.textContent=text;
+}
+
+function findStudent(id){
+ let students=[];
+ try{students=JSON.parse(localStorage.getItem("promaxStudents")||"[]")}catch(e){}
+ return students.find(s=>String(s.id||"").toUpperCase()===id.toUpperCase());
+}
+
+E("loginBtn").addEventListener("click",()=>{
+ const role=E("role").value;
+ const user=E("username").value.trim();
+ const pass=E("password").value;
+
+ if(!user || !pass){
+   showStatus("Antre username / Student ID ak password.");
+   return;
+ }
+
+ if(role==="student"){
+   const student=findStudent(user);
+   if(!student){
+     showStatus("Student ID pa jwenn nan Enrollment Center.");
+     return;
+   }
+
+   sessionStorage.setItem("promaxSession",JSON.stringify({
+     role:"student",
+     studentId:student.id,
+     name:student.name,
+     loginAt:new Date().toISOString()
+   }));
+
+   localStorage.setItem("promaxActiveStudentId",student.id);
+   window.location.href="../student-portal/index.html";
+   return;
+ }
+
+ showStatus("Admin authentication dwe konekte ak Firebase Authentication anvan Admin Dashboard la louvri sou sit piblik la.");
+});
+</script>
+</body>
+</html>
