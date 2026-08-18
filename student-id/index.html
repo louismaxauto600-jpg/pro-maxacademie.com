@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Student ID | PRO-MAX ACADÉMIE</title>
+
+<meta name="description" content="PRO-MAX ACADÉMIE Digital Student Identification Card">
+<meta name="theme-color" content="#000000">
+
+<style>
+:root{
+  --black:#000;
+  --black2:#080300;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --orange3:#ffad4d;
+  --border:rgba(255,121,0,.28);
+  --strong:rgba(255,121,0,.75);
+  --glow:0 0 18px rgba(255,121,0,.38);
+  --glow2:0 0 18px rgba(255,121,0,.72),0 0 45px rgba(255,121,0,.25);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange3);
+
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,121,0,.15),transparent 35%),
+    radial-gradient(circle at 80% 75%,rgba(255,121,0,.10),transparent 40%),
+    linear-gradient(180deg,#000,#090400 50%,#000);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input{
+  font:inherit;
+}
+
+.container{
+  width:min(1100px,calc(100% - 28px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.logo{
+  width:58px;
+  height:58px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  overflow:hidden;
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.logo video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.brand strong{
+  display:block;
+  color:var(--orange);
+  font-size:.95rem;
+  font-weight:1000;
+}
+
+.brand small{
+  display:block;
+  margin-top:5px;
+  font-size:.52rem;
+  font-weight:900;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.back{
+  padding:10px 15px;
+  border:1px solid var(--strong);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.back:hover{
+  background:var(--orange);
+  color:#000;
+}
+
+/* LANGUAGE */
+
+.languages{
+  display:flex;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+}
+
+.lang{
+  min-width:42px;
+  padding:8px;
+  border:0;
+  border-radius:999px;
+  background:#000;
+  color:var(--orange3);
+  cursor:pointer;
+  font-size:.63rem;
+  font-weight:1000;
+}
+
+.lang.active{
+  background:var(--orange);
+  color:#000;
+}
+
+/* HERO */
+
+.hero{
+  padding:60px 0 35px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.68rem;
+  font-weight:1000;
+  letter-spacing:.17em;
+}
+
+.hero h1{
+  margin-top:12px;
+  color:var(--orange);
+  font-size:clamp(2.5rem,8vw,5rem);
+  line-height:.92;
+}
+
+.hero p{
+  max-width:700px;
+  margin:17px auto 0;
+  line-height:1.7;
+}
+
+/* CARD AREA */
+
+.id-section{
+  padding:25px 0 90px;
+}
+
+.id-card{
+  position:relative;
+  width:min(100%,760px);
+  min-height:430px;
+  margin:auto;
+  overflow:hidden;
+
+  border:2px solid var(--orange);
+  border-radius:28px;
+
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,121,0,.20),transparent 32%),
+    radial-gradient(circle at 15% 80%,rgba(255,121,0,.10),transparent 35%),
+    linear-gradient(135deg,#000,#100600,#000);
+
+  box-shadow:var(--glow2);
+}
+
+.id-card::after{
+  content:"PRO-MAX";
+  position:absolute;
+  right:-30px;
+  bottom:-20px;
+  color:rgba(255,121,0,.045);
+  font-size:7rem;
+  font-weight:1000;
+  transform:rotate(-12deg);
+}
+
+.card-top{
+  position:relative;
+  z-index:2;
+  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid var(--border);
+}
+
+.card-brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.card-logo{
+  width:60px;
+  height:60px;
+  border:2px solid var(--orange);
+  border-radius:50%;
+  overflow:hidden;
+}
+
+.card-logo video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card-brand strong{
+  display:block;
+  color:var(--orange);
+  font-size:.95rem;
+  font-weight:1000;
+}
+
+.card-brand span{
+  display:block;
+  margin-top:4px;
+  font-size:.54rem;
+  font-weight:900;
+}
+
+.active-badge{
+  padding:7px 11px;
+  border:1px solid var(--orange);
+  border-radius:999px;
+  color:var(--orange);
+  font-size:.58rem;
+  font-weight:1000;
+}
+
+/* BODY */
+
+.card-body{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:180px 1fr 130px;
+  gap:24px;
+  padding:28px;
+  align-items:center;
+}
+
+/* PHOTO */
+
+.photo-box{
+  width:160px;
+  height:190px;
+  overflow:hidden;
+  border:2px solid var(--orange);
+  border-radius:20px;
+  background:#080300;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.photo-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.photo-placeholder{
+  font-size:4rem;
+}
+
+/* INFO */
+
+.student-name{
+  color:var(--orange);
+  font-size:1.65rem;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.student-role{
+  margin-top:5px;
+  font-size:.68rem;
+  font-weight:1000;
+  letter-spacing:.10em;
+}
+
+.info{
+  margin-top:20px;
+  display:grid;
+  gap:10px;
+}
+
+.info-row{
+  display:grid;
+  grid-template-columns:105px 1fr;
+  gap:10px;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(255,121,0,.13);
+}
+
+.info-row span{
+  color:var(--orange2);
+  font-size:.60rem;
+  font-weight:1000;
+}
+
+.info-row strong{
+  font-size:.72rem;
+  word-break:break-word;
+}
+
+/* QR */
+
+.qr-area{
+  text-align:center;
+}
+
+.qr{
+  width:120px;
+  height:120px;
+  margin:auto;
+  padding:8px;
+  border:2px solid var(--orange);
+  border-radius:15px;
+  background:#000;
+  display:grid;
+  place-items:center;
+}
+
+.qr-pattern{
+  width:100%;
+  height:100%;
+  background:
+    linear-gradient(90deg,var(--orange) 12%,transparent 12% 25%,var(--orange) 25% 38%,transparent 38% 50%,var(--orange) 50% 62%,transparent 62% 75%,var(--orange) 75%),
+    linear-gradient(var(--orange) 12%,transparent 12% 25%,var(--orange) 25% 38%,transparent 38% 50%,var(--orange) 50% 62%,transparent 62% 75%,var(--orange) 75%);
+  background-size:23px 23px;
+  opacity:.85;
+}
+
+.qr-area span{
+  display:block;
+  margin-top:8px;
+  font-size:.53rem;
+  font-weight:1000;
+}
+
+/* CARD FOOT */
+
+.card-foot{
+  position:relative;
+  z-index:2;
+  padding:15px 24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:.59rem;
+  font-weight:1000;
+}
+
+.ddn{
+  color:var(--orange);
+}
+
+/* CONTROLS */
+
+.controls{
+  width:min(100%,760px);
+  margin:22px auto 0;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:#050200;
+}
+
+.controls h2{
+  color:var(--orange);
+  font-size:1rem;
+}
+
+.upload{
+  margin-top:15px;
+}
+
+.upload label{
+  display:block;
+  margin-bottom:7px;
+  color:var(--orange2);
+  font-size:.67rem;
+  font-weight:1000;
+}
+
+.upload input{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--strong);
+  border-radius:12px;
+  background:#000;
+  color:var(--orange3);
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:17px;
+}
+
+.btn{
+  padding:11px 18px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  background:#000;
+  color:var(--orange);
+  cursor:pointer;
+  font-size:.67rem;
+  font-weight:1000;
+}
+
+.btn.primary{
+  background:var(--orange);
+  color:#000;
+}
+
+.btn:hover{
+  box-shadow:var(--glow2);
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+}
+
+footer strong{
+  color:var(--orange);
+}
+
+footer p{
+  margin-top:8px;
+  font-size:.73rem;
+  line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+  .back{
+    display:none;
+  }
+
+  .card-body{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .photo-box{
+    margin:auto;
+  }
+
+  .info-row{
+    grid-template-columns:1fr;
+    text-align:left;
+  }
+
+  .card-foot{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+@media print{
+
+  header,
+  .hero,
+  .controls,
+  footer{
+    display:none !important;
+  }
+
+  body{
+    background:#000;
+  }
+
+  .id-section{
+    padding:0;
+  }
+
+  .id-card{
+    margin:0 auto;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<a href="../index.html" class="brand">
+
+<div class="logo">
+<video autoplay muted loop playsinline>
+<source src="../pro-max-dmp-II.mp4" type="video/mp4">
+</video>
+</div>
+
+<div>
+<strong>PRO-MAX ACADÉMIE</strong>
+
+<small
+data-ht="Fòme Jodi a Pou Dirije Demen"
+data-fr="Former Aujourd’hui Pour Diriger Demain"
+data-en="Train Today To Lead Tomorrow">
+Fòme Jodi a Pou Dirije Demen
+</small>
+</div>
+
+</a>
+
+<div class="header-right">
+
+<a
+href="../index.html"
+class="back"
+data-ht="← RETOUNEN NAN PRO-MAX ACADÉMIE"
+data-fr="← RETOUR À PRO-MAX ACADÉMIE"
+data-en="← BACK TO PRO-MAX ACADEMY">
+← RETOUNEN NAN PRO-MAX ACADÉMIE
+</a>
+
+<div class="languages">
+<button class="lang" data-lang="fr">FRA</button>
+<button class="lang" data-lang="en">ENG</button>
+<button class="lang active" data-lang="ht">KRE</button>
+</div>
+
+</div>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container">
+
+<div class="eyebrow">
+BSS1815 PRO-MAX DMP • STUDENT PORTAL
+</div>
+
+<h1
+data-ht="KAT ELÈV"
+data-fr="CARTE ÉTUDIANT"
+data-en="STUDENT ID CARD">
+KAT ELÈV
+</h1>
+
+<p
+data-ht="Kat idantifikasyon dijital ofisyèl elèv PRO-MAX ACADÉMIE."
+data-fr="Carte d’identification numérique officielle des étudiants de PRO-MAX ACADÉMIE."
+data-en="Official digital identification card for PRO-MAX ACADEMY students.">
+Kat idantifikasyon dijital ofisyèl elèv PRO-MAX ACADÉMIE.
+</p>
+
+</div>
+</section>
+
+<section class="id-section">
+<div class="container">
+
+<div class="id-card" id="studentCard">
+
+<div class="card-top">
+
+<div class="card-brand">
+
+<div class="card-logo">
+<video autoplay muted loop playsinline>
+<source src="../pro-max-dmp-II.mp4" type="video/mp4">
+</video>
+</div>
+
+<div>
+<strong>PRO-MAX ACADÉMIE</strong>
+<span>BSS1815 PRO-MAX DMP</span>
+</div>
+
+</div>
+
+<div class="active-badge">
+● ACTIVE STUDENT
+</div>
+
+</div>
+
+<div class="card-body">
+
+<div class="photo-box">
+
+<img id="studentPhoto" alt="Student">
+
+<div class="photo-placeholder" id="photoPlaceholder">
+👤
+</div>
+
+</div>
+
+<div>
+
+<div class="student-name" id="studentName">
+STUDENT NAME
+</div>
+
+<div
+class="student-role"
+data-ht="ELÈV • PRO-MAX ACADÉMIE"
+data-fr="ÉTUDIANT • PRO-MAX ACADÉMIE"
+data-en="STUDENT • PRO-MAX ACADEMY">
+ELÈV • PRO-MAX ACADÉMIE
+</div>
+
+<div class="info">
+
+<div class="info-row">
+<span>STUDENT ID</span>
+<strong id="studentId">PMA-000001</strong>
+</div>
+
+<div class="info-row">
+<span>COURSE</span>
+<strong id="studentCourse">—</strong>
+</div>
+
+<div class="info-row">
+<span>EMAIL</span>
+<strong id="studentEmail">—</strong>
+</div>
+
+<div class="info-row">
+<span>PHONE</span>
+<strong id="studentPhone">—</strong>
+</div>
+
+<div class="info-row">
+<span>STATUS</span>
+<strong>ACTIVE</strong>
+</div>
+
+</div>
+
+</div>
+
+<div class="qr-area">
+
+<div class="qr">
+<div class="qr-pattern"></div>
+</div>
+
+<span>STUDENT VERIFICATION</span>
+
+</div>
+
+</div>
+
+<div class="card-foot">
+
+<span>PRO-MAX ACADÉMIE</span>
+
+<span class="ddn">
+DEVAN DEVAN NÈT™
+</span>
+
+<span>
+BATI POU JODI A • PARE POU DEMEN
+</span>
+
+</div>
+
+</div>
+
+<div class="controls">
+
+<h2
+data-ht="KONTWÒL KAT"
+data-fr="CONTRÔLE DE LA CARTE"
+data-en="CARD CONTROLS">
+KONTWÒL KAT
+</h2>
+
+<div class="upload">
+
+<label
+for="photoUpload"
+data-ht="AJOUTE FOTO ELÈV"
+data-fr="AJOUTER LA PHOTO"
+data-en="ADD STUDENT PHOTO">
+AJOUTE FOTO ELÈV
+</label>
+
+<input
+type="file"
+id="photoUpload"
+accept="image/*">
+
+</div>
+
+<div class="actions">
+
+<button
+type="button"
+class="btn primary"
+id="printCard"
+data-ht="🖨 ENPRIME KAT"
+data-fr="🖨 IMPRIMER LA CARTE"
+data-en="🖨 PRINT CARD">
+🖨 ENPRIME KAT
+</button>
+
+<a
+href="../student-portal/index.html"
+class="btn"
+data-ht="👤 PORTAL ELÈV"
+data-fr="👤 PORTAIL ÉTUDIANT"
+data-en="👤 STUDENT PORTAL">
+👤 PORTAL ELÈV
+</a>
+
+<a
+href="../ddn-access/index.html"
+class="btn">
+🌎 DDN ACCESS
+</a>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<strong>PRO-MAX ACADÉMIE</strong>
+
+<p>
+BSS1815 PRO-MAX DMP<br>
+DEVAN DEVAN NÈT™<br>
+#DevanDevanNèt
+</p>
+
+</div>
+
+</footer>
+
+<script>
+(function(){
+
+"use strict";
+
+/* =========================
+   STUDENT DATA
+========================= */
+
+function getStudent(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem("promaxPaymentStudent")
+    ) || {};
+
+  }catch(error){
+
+    return {};
+
+  }
+
+}
+
+var student = getStudent();
+
+document.getElementById("studentName").textContent =
+student.name || "STUDENT NAME";
+
+document.getElementById("studentCourse").textContent =
+student.course || "—";
+
+document.getElementById("studentEmail").textContent =
+student.email || "—";
+
+document.getElementById("studentPhone").textContent =
+student.phone || "—";
+
+
+/* =========================
+   STUDENT ID
+========================= */
+
+var storedID = "";
+
+try{
+  storedID = localStorage.getItem("promaxStudentID");
+}catch(e){}
+
+if(!storedID){
+
+  storedID =
+    "PMA-" +
+    String(
+      Math.floor(100000 + Math.random() * 900000)
+    );
+
+  try{
+    localStorage.setItem(
+      "promaxStudentID",
+      storedID
+    );
+  }catch(e){}
+
+}
+
+document.getElementById("studentId").textContent =
+storedID;
+
+
+/* =========================
+   PHOTO
+========================= */
+
+var photoInput =
+document.getElementById("photoUpload");
+
+var studentPhoto =
+document.getElementById("studentPhoto");
+
+var placeholder =
+document.getElementById("photoPlaceholder");
+
+function showPhoto(data){
+
+  if(!data) return;
+
+  studentPhoto.src = data;
+  studentPhoto.style.display = "block";
+  placeholder.style.display = "none";
+
+}
+
+try{
+
+  var savedPhoto =
+    localStorage.getItem("promaxStudentPhoto");
+
+  if(savedPhoto){
+    showPhoto(savedPhoto);
+  }
+
+}catch(e){}
+
+photoInput.addEventListener("change",function(){
+
+  var file = this.files[0];
+
+  if(!file) return;
+
+  var reader =
+    new FileReader();
+
+  reader.onload =
+    function(event){
+
+      var data =
+        event.target.result;
+
+      showPhoto(data);
+
+      try{
+        localStorage.setItem(
+          "promaxStudentPhoto",
+          data
+        );
+      }catch(error){
+
+        alert(
+          "Foto a twò gwo pou browser storage la. Eseye yon foto ki pi piti."
+        );
+
+      }
+
+    };
+
+  reader.readAsDataURL(file);
+
+});
+
+
+/* =========================
+   PRINT
+========================= */
+
+document.getElementById(
+  "printCard"
+).addEventListener(
+  "click",
+  function(){
+
+    window.print();
+
+  }
+);
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+var buttons =
+document.querySelectorAll(".lang");
+
+function applyLanguage(lang){
+
+  if(["ht","fr","en"].indexOf(lang) === -1){
+    lang = "ht";
+  }
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll(
+    "[data-ht][data-fr][data-en]"
+  ).forEach(function(element){
+
+    var text =
+      element.getAttribute(
+        "data-" + lang
+      );
+
+    if(text !== null){
+      element.textContent = text;
+    }
+
+  });
+
+  buttons.forEach(function(button){
+
+    button.classList.toggle(
+      "active",
+      button.dataset.lang === lang
+    );
+
+  });
+
+  try{
+    localStorage.setItem(
+      "promaxLanguage",
+      lang
+    );
+  }catch(e){}
+
+}
+
+buttons.forEach(function(button){
+
+  button.addEventListener(
+    "click",
+    function(){
+
+      applyLanguage(
+        this.dataset.lang
+      );
+
+    }
+  );
+
+});
+
+var savedLanguage = "ht";
+
+try{
+
+  savedLanguage =
+    localStorage.getItem("promaxLanguage")
+    || "ht";
+
+}catch(e){}
+
+applyLanguage(savedLanguage);
+
+
+/* =========================
+   VIDEOS
+========================= */
+
+document.querySelectorAll("video")
+.forEach(function(video){
+
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  var promise = video.play();
+
+  if(promise){
+    promise.catch(function(){});
+  }
+
+});
+
+})();
+</script>
+
+</body>
+</html>
