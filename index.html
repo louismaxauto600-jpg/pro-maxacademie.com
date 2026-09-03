@@ -1,1889 +1,1169 @@
 <!DOCTYPE html>
 <html lang="ht" id="htmlRoot" translate="no">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1.0"
-  >
-
-  <meta name="theme-color" content="#000000">
-  <meta name="google" content="notranslate">
-
-  <meta
-    name="description"
-    content="PRO-MAX Académie — fòmasyon pwofesyonèl, teknoloji, entèlijans atifisyèl, lidèchip, lekòl, evalyasyon ak sètifikasyon."
-  >
-
-  <title>PRO-MAX Académie | Learn • Evolve • Succeed</title>
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  >
-
-  <style>
-    :root {
-      --black: #000000;
-      --black-two: #080300;
-      --black-three: #100500;
-      --orange: #ff7900;
-      --orange-two: #ff8c1a;
-      --apricot: #ffad70;
-      --text: #ffc28e;
-      --border: rgba(255, 121, 0, 0.30);
-      --border-strong: rgba(255, 121, 0, 0.72);
-      --glow:
-        0 0 18px rgba(255, 121, 0, 0.52),
-        0 0 45px rgba(255, 121, 0, 0.20);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: var(--text);
-      font-family: "Montserrat", Arial, sans-serif;
-
-      background:
-        radial-gradient(
-          circle at 18% 15%,
-          rgba(255, 121, 0, 0.16),
-          transparent 34%
-        ),
-        radial-gradient(
-          circle at 82% 72%,
-          rgba(255, 121, 0, 0.09),
-          transparent 40%
-        ),
-        linear-gradient(
-          180deg,
-          #000000 0%,
-          #0b0400 48%,
-          #000000 100%
-        );
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-
-      background-image:
-        linear-gradient(
-          rgba(255, 121, 0, 0.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 121, 0, 0.025) 1px,
-          transparent 1px
-        );
-
-      background-size: 44px 44px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    img,
-    video {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1200px, calc(100% - 30px));
-      margin: auto;
-    }
-
-    .top-message {
-      padding: 10px 15px;
-      color: #000000;
-      text-align: center;
-      font-size: 0.68rem;
-      font-weight: 1000;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-
-      background:
-        linear-gradient(
-          90deg,
-          #8e3500,
-          var(--orange),
-          var(--apricot),
-          var(--orange),
-          #8e3500
-        );
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.62);
-    }
-
-    .header-inner {
-      min-height: 86px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .brand-mark {
-      width: 64px;
-      height: 64px;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 2px solid var(--orange);
-      border-radius: 18px;
-      background: #000000;
-      box-shadow: var(--glow);
-    }
-
-    .brand-mark video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-text strong {
-      display: block;
-      color: var(--orange);
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    .brand-text span {
-      display: block;
-      margin-top: 5px;
-      color: var(--apricot);
-      font-size: 0.54rem;
-      font-weight: 900;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-    }
-
-    .main-nav a {
-      padding: 9px 11px;
-      border-radius: 999px;
-      color: var(--apricot);
-      font-size: 0.62rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      transition: 0.22s ease;
-    }
-
-    .main-nav a:hover {
-      color: #000000;
-      background: var(--orange);
-    }
-
-    .language-switcher {
-      display: flex;
-      gap: 3px;
-      padding: 3px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: #000000;
-    }
-
-    .language-button {
-      min-width: 42px;
-      padding: 8px 9px;
-      border: 0;
-      border-radius: 999px;
-      color: var(--apricot);
-      background: #000000;
-      cursor: pointer;
-      font-size: 0.62rem;
-      font-weight: 1000;
-    }
-
-    .language-button.active {
-      color: #000000;
-      background: var(--orange);
-    }
-
-    .menu-button {
-      display: none;
-      width: 44px;
-      height: 42px;
-      border: 1px solid var(--orange);
-      border-radius: 12px;
-      color: var(--orange);
-      background: #000000;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
-
-    .hero {
-      min-height: calc(100vh - 116px);
-      display: flex;
-      align-items: center;
-      padding: 65px 0 82px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      color: var(--orange);
-      font-size: 0.70rem;
-      font-weight: 1000;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      max-width: 1000px;
-      margin: 20px auto 0;
-      color: var(--orange);
-      font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(2.6rem, 8vw, 6.4rem);
-      line-height: 0.92;
-      text-transform: uppercase;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: var(--apricot);
-    }
-
-    .hero-description {
-      max-width: 800px;
-      margin: 22px auto 0;
-      line-height: 1.78;
-      font-size: 0.96rem;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .button {
-      min-height: 52px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 22px;
-      border: 2px solid var(--orange);
-      border-radius: 999px;
-      font-size: 0.70rem;
-      font-weight: 1000;
-      text-transform: uppercase;
-      transition: 0.25s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--glow);
-    }
-
-    .button-primary {
-      color: #000000;
-      background: var(--orange);
-    }
-
-    .button-outline {
-      color: var(--orange);
-      background: #000000;
-    }
-
-    .hero-stats {
-      max-width: 900px;
-      margin: 52px auto 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .stat {
-      min-height: 125px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-
-      background:
-        radial-gradient(
-          circle at top,
-          rgba(255, 121, 0, 0.13),
-          transparent 55%
-        ),
-        #050200;
-    }
-
-    .stat strong {
-      color: var(--orange);
-      font-size: 1.55rem;
-      font-weight: 1000;
-    }
-
-    .stat span {
-      margin-top: 7px;
-      font-size: 0.64rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .section {
-      padding: 92px 0;
-      border-top: 1px solid rgba(255, 121, 0, 0.13);
-    }
-
-    .section-heading {
-      max-width: 820px;
-      margin: 0 auto 44px;
-      text-align: center;
-    }
-
-    .section-title {
-      margin-top: 13px;
-      color: var(--orange);
-      font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(2rem, 6vw, 4.2rem);
-      line-height: 0.98;
-      text-transform: uppercase;
-    }
-
-    .section-description {
-      margin-top: 18px;
-      line-height: 1.75;
-    }
-
-    .professor-section {
-      position: relative;
-      padding: 95px 0;
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at 50% 42%,
-          rgba(255, 121, 0, 0.16),
-          transparent 43%
-        ),
-        linear-gradient(
-          145deg,
-          #100603,
-          #000000 60%,
-          #120500
-        );
-    }
-
-    .professor-video-wrapper {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .professor-video-card {
-      width: min(100%, 630px);
-      padding: 12px;
-      overflow: hidden;
-      border: 1px solid var(--orange);
-      border-radius: 28px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 121, 0, 0.19),
-          rgba(0, 0, 0, 0.99) 48%,
-          rgba(255, 173, 112, 0.14)
-        );
-
-      box-shadow:
-        0 0 0 4px rgba(255, 121, 0, 0.07),
-        0 25px 70px rgba(0, 0, 0, 0.76),
-        var(--glow);
-    }
-
-    .video-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 9px 15px;
-      letter-spacing: 1px;
-    }
-
-    .video-label span {
-      color: var(--apricot);
-      font-size: 0.68rem;
-      font-weight: 900;
-    }
-
-    .video-label strong {
-      color: var(--orange);
-      font-size: 0.70rem;
-      font-weight: 1000;
-    }
-
-    .professor-video {
-      display: block;
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      max-height: 760px;
-      border: 1px solid rgba(255, 121, 0, 0.58);
-      border-radius: 20px;
-      object-fit: contain;
-      background: #000000;
-    }
-
-    .schools-grid,
-    .courses-grid,
-    .student-grid,
-    .contact-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .schools-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .courses-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .student-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .contact-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      min-height: 245px;
-      display: flex;
-      flex-direction: column;
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(255, 121, 0, 0.13),
-          transparent 36%
-        ),
-        linear-gradient(
-          145deg,
-          #000000,
-          #0c0400
-        );
-
-      transition: 0.28s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--orange);
-      box-shadow: var(--glow);
-    }
-
-    .card-icon {
-      color: var(--orange);
-      font-size: 2rem;
-    }
-
-    .card h3 {
-      margin-top: 18px;
-      color: var(--orange);
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      margin-top: 12px;
-      line-height: 1.65;
-      font-size: 0.84rem;
-    }
-
-    .card-link {
-      margin-top: auto;
-      padding-top: 20px;
-      color: var(--orange);
-      font-size: 0.68rem;
-      font-weight: 1000;
-      text-transform: uppercase;
-    }
-
-    .student-card {
-      min-height: 185px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      text-align: center;
-      background: #050200;
-      transition: 0.28s ease;
-    }
-
-    .student-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--orange);
-      box-shadow: var(--glow);
-    }
-
-    .student-card i {
-      color: var(--orange);
-      font-size: 2rem;
-    }
-
-    .student-card strong {
-      margin-top: 15px;
-      color: var(--orange);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-    }
-
-    .student-card span {
-      margin-top: 8px;
-      line-height: 1.5;
-      font-size: 0.75rem;
-    }
-
-    .ddn-box {
-      padding: 52px 28px;
-      border: 2px solid var(--orange);
-      border-radius: 28px;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 121, 0, 0.16),
-          transparent 50%
-        ),
-        #000000;
-
-      box-shadow: var(--glow);
-    }
-
-    .ddn-box h2 {
-      color: var(--orange);
-      font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(2.7rem, 9vw, 6.5rem);
-      line-height: 0.90;
-    }
-
-    .ddn-box h3 {
-      margin-top: 18px;
-      color: var(--apricot);
-      font-size: clamp(0.9rem, 2.5vw, 1.25rem);
-    }
-
-    .ddn-box p {
-      max-width: 780px;
-      margin: 20px auto 0;
-      line-height: 1.74;
-    }
-
-    .contact-card {
-      min-height: 165px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 23px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      text-align: center;
-      background: #050200;
-    }
-
-    .contact-card i {
-      color: var(--orange);
-      font-size: 1.8rem;
-    }
-
-    .contact-card strong {
-      margin-top: 12px;
-      color: var(--orange);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-    }
-
-    .contact-card a,
-    .contact-card span {
-      margin-top: 8px;
-      line-height: 1.55;
-      font-size: 0.76rem;
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      padding: 48px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      background: #000000;
-    }
-
-    .footer-title {
-      color: var(--orange);
-      font-family: "Cinzel", Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 900;
-    }
-
-    .footer-text {
-      margin-top: 10px;
-      line-height: 1.75;
-      font-size: 0.72rem;
-    }
-
-    @media (max-width: 1050px) {
-      .main-nav {
-        position: absolute;
-        top: 86px;
-        left: 15px;
-        right: 15px;
-        display: none;
-        flex-direction: column;
-        padding: 15px;
-        border: 1px solid var(--orange);
-        border-radius: 16px;
-        background: #000000;
-        box-shadow: var(--glow);
-      }
-
-      .main-nav.open {
-        display: flex;
-      }
-
-      .main-nav a {
-        width: 100%;
-        text-align: center;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .courses-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .student-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .header-inner {
-        min-height: 76px;
-      }
-
-      .brand-mark {
-        width: 53px;
-        height: 53px;
-        border-radius: 14px;
-      }
-
-      .brand-text strong {
-        font-size: 0.76rem;
-      }
-
-      .brand-text span {
-        font-size: 0.43rem;
-      }
-
-      .language-button {
-        min-width: 35px;
-        padding: 7px 6px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 45px;
-      }
-
-      .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .schools-grid,
-      .courses-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .professor-section {
-        padding: 72px 0;
-      }
-
-      .professor-video-card {
-        padding: 9px;
-        border-radius: 22px;
-      }
-
-      .professor-video {
-        border-radius: 16px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .student-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .video-label {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="google" content="notranslate">
+<meta name="description" content="PRO-MAX Académie — fòmasyon, teknoloji, entèlijans atifisyèl, lidèchip ak sètifikasyon.">
+<title>PRO-MAX ACADÉMIE | Fòme Jodi a Pou Dirije Demen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+  --black:#000;
+  --dark:#080300;
+  --dark2:#120500;
+  --orange:#ff7900;
+  --orange2:#ff8c1a;
+  --apricot:#ffad70;
+  --text:#ffc59a;
+  --border:rgba(255,121,0,.30);
+  --strong:rgba(255,121,0,.72);
+  --glow:0 0 18px rgba(255,121,0,.52),0 0 45px rgba(255,121,0,.20);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--text);
+  font-family:Montserrat,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 18% 15%,rgba(255,121,0,.16),transparent 34%),
+    radial-gradient(circle at 82% 72%,rgba(255,121,0,.09),transparent 40%),
+    linear-gradient(180deg,#000 0%,#0b0400 48%,#000 100%);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,121,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,121,0,.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,select{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,calc(100% - 30px));
+  margin:auto;
+}
+
+.top-message{
+  padding:10px 15px;
+  color:#000;
+  text-align:center;
+  font-size:.67rem;
+  font-weight:1000;
+  letter-spacing:.08em;
+  background:linear-gradient(90deg,#8e3500,var(--orange),var(--apricot),var(--orange),#8e3500);
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,.97);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:62px;
+  height:62px;
+  object-fit:cover;
+  border:2px solid var(--orange);
+  border-radius:17px;
+  background:#000;
+  box-shadow:var(--glow);
+}
+
+.brand strong{
+  display:block;
+  color:var(--orange);
+  font-family:Cinzel,serif;
+  font-size:1rem;
+}
+
+.brand small{
+  display:block;
+  margin-top:5px;
+  color:var(--apricot);
+  font-size:.5rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.header-right,.nav,.languages{
+  display:flex;
+  align-items:center;
+}
+
+.header-right{
+  gap:9px;
+}
+
+.nav{
+  gap:3px;
+}
+
+.nav a{
+  padding:9px 11px;
+  border-radius:999px;
+  color:var(--apricot);
+  font-size:.61rem;
+  font-weight:900;
+}
+
+.nav a:hover{
+  color:#000;
+  background:var(--orange);
+}
+
+.languages{
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#000;
+}
+
+.lang{
+  min-width:40px;
+  padding:8px;
+  border:0;
+  border-radius:999px;
+  color:var(--apricot);
+  background:#000;
+  cursor:pointer;
+  font-size:.61rem;
+  font-weight:1000;
+}
+
+.lang.active{
+  color:#000;
+  background:var(--orange);
+}
+
+.menu{
+  display:none;
+  width:44px;
+  height:42px;
+  border:1px solid var(--orange);
+  border-radius:11px;
+  color:var(--orange);
+  background:#000;
+  cursor:pointer;
+  font-size:1.2rem;
+}
+
+.hero{
+  min-height:calc(100vh - 115px);
+  display:flex;
+  align-items:center;
+  padding:68px 0 82px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--orange);
+  font-size:.69rem;
+  font-weight:1000;
+  letter-spacing:.18em;
+}
+
+.hero h1,.section-title{
+  color:var(--orange);
+  font-family:Cinzel,serif;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  max-width:1000px;
+  margin:20px auto 0;
+  font-size:clamp(2.5rem,8vw,6rem);
+  line-height:.92;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--apricot);
+}
+
+.description{
+  max-width:800px;
+  margin:20px auto 0;
+  line-height:1.75;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:29px;
+}
+
+.btn{
+  min-height:51px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 21px;
+  border:2px solid var(--orange);
+  border-radius:999px;
+  font-size:.69rem;
+  font-weight:1000;
+  text-transform:uppercase;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--glow);
+}
+
+.primary{
+  color:#000;
+  background:var(--orange);
+}
+
+.outline{
+  color:var(--orange);
+  background:#000;
+}
+
+.stats{
+  max-width:900px;
+  margin:50px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.stat{
+  min-height:120px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:radial-gradient(circle at top,rgba(255,121,0,.13),transparent 55%),#050200;
+}
+
+.stat strong{
+  color:var(--orange);
+  font-size:1.55rem;
+}
+
+.stat span{
+  margin-top:7px;
+  font-size:.63rem;
+  font-weight:900;
+}
+
+.section{
+  padding:90px 0;
+  border-top:1px solid rgba(255,121,0,.13);
+}
+
+.heading{
+  max-width:820px;
+  margin:0 auto 43px;
+  text-align:center;
+}
+
+.section-title{
+  margin-top:12px;
+  font-size:clamp(2rem,6vw,4rem);
+  line-height:1;
+}
+
+.professor{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,121,0,.16),transparent 44%),
+    linear-gradient(145deg,#120602,#000 60%,#160600);
+}
+
+.video-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.video-card{
+  width:min(100%,630px);
+  padding:12px;
+  overflow:hidden;
+  border:1px solid var(--orange);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,121,0,.20),rgba(0,0,0,.98) 48%,rgba(255,173,112,.14));
+  box-shadow:var(--glow);
+}
+
+.video-label{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 8px 14px;
+  color:var(--orange);
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.professor-video{
+  width:100%;
+  aspect-ratio:9/16;
+  max-height:760px;
+  object-fit:contain;
+  border:1px solid var(--strong);
+  border-radius:20px;
+  background:#000;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.card{
+  min-height:245px;
+  display:flex;
+  flex-direction:column;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:19px;
+  background:radial-gradient(circle at top right,rgba(255,121,0,.13),transparent 37%),linear-gradient(145deg,#000,#0b0400);
+  transition:.28s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--orange);
+  box-shadow:var(--glow);
+}
+
+.card i{
+  color:var(--orange);
+  font-size:2rem;
+}
+
+.card h3{
+  margin-top:18px;
+  color:var(--orange);
+  font-size:1rem;
+  text-transform:uppercase;
+}
+
+.card p{
+  margin-top:11px;
+  line-height:1.62;
+  font-size:.83rem;
+}
+
+.card-link{
+  margin-top:auto;
+  padding-top:20px;
+  color:var(--orange);
+  font-size:.68rem;
+  font-weight:1000;
+}
+
+.schools{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.student-grid{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.student-grid .card{
+  min-height:180px;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+}
+
+.ddn{
+  padding:52px 28px;
+  border:2px solid var(--orange);
+  border-radius:28px;
+  text-align:center;
+  background:radial-gradient(circle,rgba(255,121,0,.16),transparent 50%),#000;
+  box-shadow:var(--glow);
+}
+
+.ddn h2{
+  color:var(--orange);
+  font-family:Cinzel,serif;
+  font-size:clamp(2.7rem,9vw,6.3rem);
+  line-height:.9;
+}
+
+.ddn h3{
+  margin-top:18px;
+  color:var(--apricot);
+}
+
+.payment{
+  max-width:900px;
+  margin:auto;
+  padding:28px;
+  border:1px solid var(--strong);
+  border-radius:24px;
+  background:linear-gradient(145deg,#000,#0b0400);
+}
+
+.payment-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:24px;
+}
+
+.field{
+  text-align:left;
+}
+
+.field label{
+  display:block;
+  margin-bottom:7px;
+  color:var(--orange);
+  font-size:.7rem;
+  font-weight:900;
+}
+
+.field input,.field select{
+  width:100%;
+  padding:13px;
+  border:1px solid var(--strong);
+  border-radius:12px;
+  color:var(--apricot);
+  background:#000;
+  outline:none;
+}
+
+.payment-status{
+  grid-column:1/-1;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  text-align:center;
+  background:#050200;
+}
+
+.contact-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.contact-grid .card{
+  min-height:165px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.contact-grid a{
+  margin-top:8px;
+  font-size:.76rem;
+  overflow-wrap:anywhere;
+}
+
+footer{
+  padding:45px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+  background:#000;
+}
+
+footer strong{
+  color:var(--orange);
+  font-family:Cinzel,serif;
+}
+
+footer p{
+  margin-top:10px;
+  line-height:1.7;
+  font-size:.72rem;
+}
+
+@media(max-width:1000px){
+  .nav{
+    position:absolute;
+    top:84px;
+    left:15px;
+    right:15px;
+    display:none;
+    flex-direction:column;
+    padding:15px;
+    border:1px solid var(--orange);
+    border-radius:15px;
+    background:#000;
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .nav a{
+    width:100%;
+    text-align:center;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .brand-logo{
+    width:52px;
+    height:52px;
+  }
+
+  .brand strong{
+    font-size:.76rem;
+  }
+
+  .brand small{
+    font-size:.42rem;
+  }
+
+  .lang{
+    min-width:34px;
+    padding:7px 5px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:45px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid,.schools,.student-grid,.contact-grid,.payment-grid{
+    grid-template-columns:1fr;
+  }
+
+  .payment-status{
+    grid-column:auto;
+  }
+
+  .video-card{
+    padding:9px;
+    border-radius:22px;
+  }
+}
+
+@media(max-width:500px){
+  .actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .video-label{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div
-    class="top-message"
-    data-ht="PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI"
-    data-fr="PRO-MAX ACADÉMIE — APPRENDRE • ÉVOLUER • RÉUSSIR"
-    data-en="PRO-MAX ACADEMY — LEARN • EVOLVE • SUCCEED"
-  >
-    PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI
-  </div>
+<div
+  class="top-message"
+  data-ht="PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI"
+  data-fr="PRO-MAX ACADÉMIE — APPRENDRE • ÉVOLUER • RÉUSSIR"
+  data-en="PRO-MAX ACADEMY — LEARN • EVOLVE • SUCCEED"
+>
+PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI
+</div>
 
-  <header>
-    <div class="container header-inner">
+<header>
+<div class="container header-inner">
 
-      <a href="#home" class="brand">
+<a href="#home" class="brand">
+  <video class="brand-logo" autoplay muted loop playsinline>
+    <source src="./pro-max-dmp-II.mp4" type="video/mp4">
+  </video>
 
-        <div class="brand-mark">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-          >
-            <source
-              src="./pro-max-dmp-II.mp4"
-              type="video/mp4"
-            >
-          </video>
-        </div>
+  <span>
+    <strong>PRO-MAX ACADÉMIE</strong>
+    <small data-ht="EKOSISTÈM APRANTISAJ PWOFESYONÈL" data-fr="ÉCOSYSTÈME D’APPRENTISSAGE PROFESSIONNEL" data-en="PROFESSIONAL LEARNING ECOSYSTEM">
+      EKOSISTÈM APRANTISAJ PWOFESYONÈL
+    </small>
+  </span>
+</a>
 
-        <div class="brand-text">
-          <strong>PRO-MAX ACADÉMIE</strong>
+<div class="header-right">
 
-          <span
-            data-ht="EKOSISTÈM APRANTISAJ PWOFESYONÈL"
-            data-fr="ÉCOSYSTÈME D’APPRENTISSAGE PROFESSIONNEL"
-            data-en="PROFESSIONAL LEARNING ECOSYSTEM"
-          >
-            EKOSISTÈM APRANTISAJ PWOFESYONÈL
-          </span>
-        </div>
+<nav class="nav" id="nav">
+  <a href="#home" data-ht="AKÈY" data-fr="ACCUEIL" data-en="HOME">AKÈY</a>
+  <a href="#professor" data-ht="PWOFESÈ" data-fr="PROFESSEUR" data-en="PROFESSOR">PWOFESÈ</a>
+  <a href="#schools" data-ht="LEKÒL" data-fr="ÉCOLES" data-en="SCHOOLS">LEKÒL</a>
+  <a href="#courses" data-ht="KOU" data-fr="COURS" data-en="COURSES">KOU</a>
+  <a href="#student" data-ht="ELÈV" data-fr="ÉTUDIANT" data-en="STUDENT">ELÈV</a>
+  <a href="#contact">KONTAK</a>
+</nav>
 
-      </a>
+<div class="languages">
+  <button class="lang" data-lang="fr">FRA</button>
+  <button class="lang" data-lang="en">ENG</button>
+  <button class="lang active" data-lang="ht">KRE</button>
+</div>
 
-      <div class="header-right">
+<button class="menu" id="menu" type="button">☰</button>
 
-        <nav class="main-nav" id="mainNavigation">
+</div>
+</div>
+</header>
 
-          <a
-            href="#home"
-            data-ht="AKÈY"
-            data-fr="ACCUEIL"
-            data-en="HOME"
-          >
-            AKÈY
-          </a>
+<main>
 
-          <a
-            href="#professor"
-            data-ht="PWOFESÈ"
-            data-fr="PROFESSEUR"
-            data-en="PROFESSOR"
-          >
-            PWOFESÈ
-          </a>
+<section class="hero" id="home">
+<div class="container">
 
-          <a
-            href="#schools"
-            data-ht="LEKÒL"
-            data-fr="ÉCOLES"
-            data-en="SCHOOLS"
-          >
-            LEKÒL
-          </a>
+<p class="eyebrow">BSS1815 PRO-MAX DMP</p>
 
-          <a
-            href="#courses"
-            data-ht="KOU"
-            data-fr="COURS"
-            data-en="COURSES"
-          >
-            KOU
-          </a>
+<h1 data-ht="FÒME JODI A POU DIRIJE DEMEN" data-fr="FORMER AUJOURD’HUI POUR DIRIGER DEMAIN" data-en="TRAIN TODAY TO LEAD TOMORROW">
+FÒME JODI A
+<span>POU DIRIJE DEMEN</span>
+</h1>
 
-          <a
-            href="#student"
-            data-ht="ELÈV"
-            data-fr="ÉTUDIANT"
-            data-en="STUDENT"
-          >
-            ELÈV
-          </a>
+<p class="description" data-ht="PRO-MAX Académie se yon ekosistèm aprantisaj pwofesyonèl ki konekte edikasyon, teknoloji, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip." data-fr="PRO-MAX Académie est un écosystème d’apprentissage professionnel qui relie l’éducation, la technologie, l’intelligence artificielle, l’innovation, la discipline et le leadership." data-en="PRO-MAX Academy is a professional learning ecosystem connecting education, technology, artificial intelligence, innovation, discipline and leadership.">
+PRO-MAX Académie se yon ekosistèm aprantisaj pwofesyonèl ki konekte edikasyon, teknoloji, entèlijans atifisyèl, inovasyon ak lidèchip.
+</p>
 
-          <a
-            href="#contact"
-            data-ht="KONTAK"
-            data-fr="CONTACT"
-            data-en="CONTACT"
-          >
-            KONTAK
-          </a>
+<div class="actions">
+  <a class="btn primary" href="#schools">🎓 DEKOUVRI LEKÒL YO</a>
+  <a class="btn outline" href="./student-profile/index.html">👤 KREYE KONT</a>
+  <a class="btn outline" href="./student-portal/index.html">📚 PÒTAL ELÈV</a>
+</div>
 
-        </nav>
+<div class="stats">
+  <div class="stat"><strong>2</strong><span>LEKÒL PWOFESYONÈL</span></div>
+  <div class="stat"><strong>3</strong><span>LANG</span></div>
+  <div class="stat"><strong>100%</strong><span>ONLINE</span></div>
+  <div class="stat"><strong>AI</strong><span>SMART LEARNING</span></div>
+</div>
 
-        <div
-          class="language-switcher"
-          aria-label="Language selector"
-        >
-          <button
-            type="button"
-            class="language-button"
-            data-language="fr"
-          >
-            FRA
-          </button>
+</div>
+</section>
 
-          <button
-            type="button"
-            class="language-button"
-            data-language="en"
-          >
-            ENG
-          </button>
+<section class="section professor" id="professor">
+<div class="container">
 
-          <button
-            type="button"
-            class="language-button active"
-            data-language="ht"
-          >
-            KRE
-          </button>
-        </div>
+<div class="heading">
+  <p class="eyebrow">PREZANTASYON OFISYÈL</p>
 
-        <button
-          type="button"
-          class="menu-button"
-          id="menuButton"
-          aria-label="Menu"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
+  <h2 class="section-title" data-ht="RANKONTRE PWOFESÈ PRO-MAX ACADÉMIE A" data-fr="RENCONTREZ LE PROFESSEUR DE PRO-MAX ACADÉMIE" data-en="MEET THE PRO-MAX ACADEMY PROFESSOR">
+    RANKONTRE PWOFESÈ PRO-MAX ACADÉMIE A
+  </h2>
 
-      </div>
+  <p class="description" data-ht="Bon jan direksyon pwofesyonèl, ansèyman klè ak yon eksperyans aprantisaj ki prepare w pou avanse." data-fr="Une orientation professionnelle, un enseignement clair et une expérience qui vous prépare à progresser." data-en="Professional guidance, clear instruction and a learning experience designed to help you progress.">
+    Bon jan direksyon pwofesyonèl ak ansèyman klè.
+  </p>
+</div>
 
+<div class="video-wrap">
+  <div class="video-card">
+
+    <div class="video-label">
+      <span>PRO-MAX ACADÉMIE</span>
+      <strong>ACADÉMIE PROFESSOR</strong>
     </div>
-  </header>
 
-  <main>
-
-    <section class="hero" id="home">
-      <div class="container">
-
-        <div class="eyebrow">
-          BSS1815 PRO-MAX DMP
-        </div>
-
-        <h1
-          data-ht="FÒME JODI A POU DIRIJE DEMEN"
-          data-fr="FORMER AUJOURD’HUI POUR DIRIGER DEMAIN"
-          data-en="TRAIN TODAY TO LEAD TOMORROW"
-        >
-          FÒME JODI A
-          <span>POU DIRIJE DEMEN</span>
-        </h1>
-
-        <p
-          class="hero-description"
-          data-ht="PRO-MAX Académie se yon ekosistèm aprantisaj pwofesyonèl ki konekte edikasyon, teknoloji, entèlijans atifisyèl, inovasyon, disiplin ak lidèchip."
-          data-fr="PRO-MAX Académie est un écosystème d’apprentissage professionnel qui relie l’éducation, la technologie, l’intelligence artificielle, l’innovation, la discipline et le leadership."
-          data-en="PRO-MAX Academy is a professional learning ecosystem connecting education, technology, artificial intelligence, innovation, discipline and leadership."
-        >
-          PRO-MAX Académie se yon ekosistèm aprantisaj
-          pwofesyonèl ki konekte edikasyon, teknoloji,
-          entèlijans atifisyèl, inovasyon ak lidèchip.
-        </p>
-
-        <div class="actions">
-
-          <a href="#schools" class="button button-primary">
-            <i class="fa-solid fa-graduation-cap"></i>
-
-            <span
-              data-ht="DEKOUVRI LEKÒL YO"
-              data-fr="DÉCOUVRIR LES ÉCOLES"
-              data-en="EXPLORE SCHOOLS"
-            >
-              DEKOUVRI LEKÒL YO
-            </span>
-          </a>
-
-          <a
-            href="./student-profile/index.html"
-            class="button button-outline"
-          >
-            <i class="fa-solid fa-user-plus"></i>
-
-            <span
-              data-ht="KREYE KONT"
-              data-fr="CRÉER UN COMPTE"
-              data-en="CREATE ACCOUNT"
-            >
-              KREYE KONT
-            </span>
-          </a>
-
-          <a
-            href="./student-portal/index.html"
-            class="button button-outline"
-          >
-            <i class="fa-solid fa-user-graduate"></i>
-
-            <span
-              data-ht="PÒTAL ELÈV"
-              data-fr="PORTAIL ÉTUDIANT"
-              data-en="STUDENT PORTAL"
-            >
-              PÒTAL ELÈV
-            </span>
-          </a>
-
-        </div>
-
-        <div class="hero-stats">
-
-          <div class="stat">
-            <strong>2</strong>
-
-            <span
-              data-ht="LEKÒL PWOFESYONÈL"
-              data-fr="ÉCOLES PROFESSIONNELLES"
-              data-en="PROFESSIONAL SCHOOLS"
-            >
-              LEKÒL PWOFESYONÈL
-            </span>
-          </div>
-
-          <div class="stat">
-            <strong>3</strong>
-
-            <span
-              data-ht="LANG"
-              data-fr="LANGUES"
-              data-en="LANGUAGES"
-            >
-              LANG
-            </span>
-          </div>
-
-          <div class="stat">
-            <strong>100%</strong>
-
-            <span
-              data-ht="SOU ENTÈNÈT"
-              data-fr="EN LIGNE"
-              data-en="ONLINE"
-            >
-              SOU ENTÈNÈT
-            </span>
-          </div>
-
-          <div class="stat">
-            <strong>AI</strong>
-
-            <span>SMART LEARNING</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section
-      class="professor-section"
-      id="professor"
+    <video
+      id="professorVideo"
+      class="professor-video"
+      controls
+      playsinline
+      preload="auto"
     >
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div
-            class="eyebrow"
-            data-ht="PREZANTASYON OFISYÈL"
-            data-fr="PRÉSENTATION OFFICIELLE"
-            data-en="OFFICIAL PRESENTATION"
-          >
-            PREZANTASYON OFISYÈL
-          </div>
-
-          <h2
-            class="section-title"
-            data-ht="RANKONTRE PWOFESÈ PRO-MAX ACADÉMIE A"
-            data-fr="RENCONTREZ LE PROFESSEUR DE PRO-MAX ACADÉMIE"
-            data-en="MEET THE PRO-MAX ACADEMY PROFESSOR"
-          >
-            RANKONTRE PWOFESÈ
-            PRO-MAX ACADÉMIE A
-          </h2>
-
-          <p
-            class="section-description"
-            data-ht="Bon jan direksyon pwofesyonèl, ansèyman klè ak yon eksperyans aprantisaj ki prepare w pou avanse."
-            data-fr="Une orientation professionnelle, un enseignement clair et une expérience d’apprentissage qui vous prépare à progresser."
-            data-en="Professional guidance, clear instruction and a learning experience designed to help you progress."
-          >
-            Bon jan direksyon pwofesyonèl, ansèyman klè
-            ak yon eksperyans aprantisaj ki prepare w pou avanse.
-          </p>
-
-        </div>
-
-        <div class="professor-video-wrapper">
-
-          <div class="professor-video-card">
-
-            <div class="video-label">
-              <span>PRO-MAX ACADÉMIE</span>
-
-              <strong
-                data-ht="PWOFESÈ ACADÉMIE"
-                data-fr="PROFESSEUR DE L’ACADÉMIE"
-                data-en="ACADEMY PROFESSOR"
-              >
-                PWOFESÈ ACADÉMIE
-              </strong>
-            </div>
-
-            <video
-              id="academieProfessorVideo"
-              class="professor-video"
-              controls
-              playsinline
-              preload="metadata"
-            >
-              <source
-                src="./promax-academie-professor-clean-final.mp4"
-                type="video/mp4"
-              >
-
-              Navigatè ou a pa sipòte videyo HTML5.
-            </video>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="schools">
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div
-            class="eyebrow"
-            data-ht="LEKÒL PWOFESYONÈL"
-            data-fr="ÉCOLES PROFESSIONNELLES"
-            data-en="PROFESSIONAL SCHOOLS"
-          >
-            LEKÒL PWOFESYONÈL
-          </div>
-
-          <h2
-            class="section-title"
-            data-ht="CHWAZI CHEMEN OU"
-            data-fr="CHOISISSEZ VOTRE PARCOURS"
-            data-en="CHOOSE YOUR PATH"
-          >
-            CHWAZI CHEMEN OU
-          </h2>
-
-          <p
-            class="section-description"
-            data-ht="Antre nan youn nan lekòl pwofesyonèl PRO-MAX Académie yo epi kòmanse fòmasyon ou."
-            data-fr="Accédez à l’une des écoles professionnelles de PRO-MAX Académie et commencez votre formation."
-            data-en="Enter one of the PRO-MAX Academy professional schools and begin your training."
-          >
-            Antre nan youn nan lekòl pwofesyonèl
-            PRO-MAX Académie yo.
-          </p>
-
-        </div>
-
-        <div class="schools-grid">
-
-          <a
-            href="https://insurance-school.netlify.app"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-shield-heart"></i>
-            </div>
-
-            <h3
-              data-ht="INSURANCE SCHOOL"
-              data-fr="ÉCOLE D’ASSURANCE"
-              data-en="INSURANCE SCHOOL"
-            >
-              INSURANCE SCHOOL
-            </h3>
-
-            <p
-              data-ht="Fòmasyon nan asirans vi, sante, machin, pwopriyete ak responsablite."
-              data-fr="Formation en assurance vie, santé, automobile, biens et responsabilité."
-              data-en="Training in life, health, auto, property and casualty insurance."
-            >
-              Fòmasyon pwofesyonèl nan asirans.
-            </p>
-
-            <div class="card-link">
-              ENTER INSURANCE SCHOOL →
-            </div>
-          </a>
-
-          <a
-            href="https://real-estate-school.netlify.app"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-building"></i>
-            </div>
-
-            <h3
-              data-ht="REAL ESTATE SCHOOL"
-              data-fr="ÉCOLE IMMOBILIÈRE"
-              data-en="REAL ESTATE SCHOOL"
-            >
-              REAL ESTATE SCHOOL
-            </h3>
-
-            <p
-              data-ht="Fòmasyon nan byen imobilye, lwa, etik, finansman, valyasyon ak preparasyon egzamen."
-              data-fr="Formation en immobilier, droit, éthique, financement, évaluation et préparation à l’examen."
-              data-en="Training in real estate, law, ethics, finance, valuation and exam preparation."
-            >
-              Fòmasyon pwofesyonèl nan byen imobilye.
-            </p>
-
-            <div class="card-link">
-              ENTER REAL ESTATE SCHOOL →
-            </div>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="courses">
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div
-            class="eyebrow"
-            data-ht="SANT APRANTISAJ"
-            data-fr="CENTRE D’APPRENTISSAGE"
-            data-en="LEARNING CENTER"
-          >
-            SANT APRANTISAJ
-          </div>
-
-          <h2
-            class="section-title"
-            data-ht="APRANN • PRATIKE • AVANSE"
-            data-fr="APPRENDRE • PRATIQUER • PROGRESSER"
-            data-en="LEARN • PRACTICE • PROGRESS"
-          >
-            APRANN • PRATIKE • AVANSE
-          </h2>
-
-        </div>
-
-        <div class="courses-grid">
-
-          <a
-            href="./courses/introduction-ai/index.html"
-            class="card"
-          >
-            <div class="card-icon">AI</div>
-
-            <h3
-              data-ht="ENTWODIKSYON NAN AI"
-              data-fr="INTRODUCTION À L’IA"
-              data-en="INTRODUCTION TO AI"
-            >
-              ENTWODIKSYON NAN AI
-            </h3>
-
-            <p
-              data-ht="Konprann prensip entèlijans atifisyèl ak itilizasyon pratik li."
-              data-fr="Comprendre les principes de l’intelligence artificielle et ses utilisations pratiques."
-              data-en="Understand artificial intelligence principles and practical applications."
-            >
-              Konprann prensip AI ak itilizasyon pratik li.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-          <a
-            href="./courses/digital-creation/index.html"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-
-            <h3
-              data-ht="KREYASYON DIJITAL"
-              data-fr="CRÉATION NUMÉRIQUE"
-              data-en="DIGITAL CREATION"
-            >
-              KREYASYON DIJITAL
-            </h3>
-
-            <p
-              data-ht="Kreye tèks, imaj, videyo, prezantasyon ak kontni dijital."
-              data-fr="Créez des textes, images, vidéos, présentations et contenus numériques."
-              data-en="Create text, images, videos, presentations and digital content."
-            >
-              Kreye kontni dijital pwofesyonèl.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-          <a
-            href="./courses/digital-leadership/index.html"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-arrow-trend-up"></i>
-            </div>
-
-            <h3
-              data-ht="LIDÈCHIP DIJITAL"
-              data-fr="LEADERSHIP NUMÉRIQUE"
-              data-en="DIGITAL LEADERSHIP"
-            >
-              LIDÈCHIP DIJITAL
-            </h3>
-
-            <p
-              data-ht="Devlope vizyon, disiplin, òganizasyon ak lidèchip."
-              data-fr="Développez la vision, la discipline, l’organisation et le leadership."
-              data-en="Develop vision, discipline, organization and leadership."
-            >
-              Devlope vizyon ak lidèchip.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-          <a
-            href="./courses/automation/index.html"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-gears"></i>
-            </div>
-
-            <h3
-              data-ht="OTOMATIZASYON"
-              data-fr="AUTOMATISATION"
-              data-en="AUTOMATION"
-            >
-              OTOMATIZASYON
-            </h3>
-
-            <p
-              data-ht="Kreye sistèm entelijan epi diminye travay repetitif."
-              data-fr="Créez des systèmes intelligents et réduisez les tâches répétitives."
-              data-en="Build intelligent systems and reduce repetitive work."
-            >
-              Kreye sistèm ak workflow entelijan.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-          <a
-            href="./courses/communication/index.html"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <h3
-              data-ht="KOMINIKASYON"
-              data-fr="COMMUNICATION"
-              data-en="COMMUNICATION"
-            >
-              KOMINIKASYON
-            </h3>
-
-            <p
-              data-ht="Devlope kominikasyon pwofesyonèl ak prezantasyon avèk enpak."
-              data-fr="Développez une communication professionnelle et des présentations percutantes."
-              data-en="Develop professional communication and impactful presentations."
-            >
-              Devlope kominikasyon pwofesyonèl.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-          <a
-            href="./courses/innovation/index.html"
-            class="card"
-          >
-            <div class="card-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-
-            <h3
-              data-ht="INOVASYON"
-              data-fr="INNOVATION"
-              data-en="INNOVATION"
-            >
-              INOVASYON
-            </h3>
-
-            <p
-              data-ht="Transfòme lide an pwojè epi sèvi ak teknoloji pou kreye solisyon."
-              data-fr="Transformez les idées en projets et utilisez la technologie pour créer des solutions."
-              data-en="Turn ideas into projects and use technology to create solutions."
-            >
-              Transfòme lide an pwojè.
-            </p>
-
-            <div class="card-link">KÒMANSE →</div>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="student">
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div
-            class="eyebrow"
-            data-ht="PÒTAL ELÈV"
-            data-fr="PORTAIL ÉTUDIANT"
-            data-en="STUDENT PORTAL"
-          >
-            PÒTAL ELÈV
-          </div>
-
-          <h2
-            class="section-title"
-            data-ht="ESPAS ELÈV"
-            data-fr="ESPACE ÉTUDIANT"
-            data-en="STUDENT AREA"
-          >
-            ESPAS ELÈV
-          </h2>
-
-          <p
-            class="section-description"
-            data-ht="Tout zouti elèv la nan yon sèl espas: pwofil, kou, pwogrè, evalyasyon ak sètifikasyon."
-            data-fr="Tous les outils étudiants dans un seul espace : profil, cours, progression, évaluations et certification."
-            data-en="All student tools in one place: profile, courses, progress, assessments and certification."
-          >
-            Tout zouti elèv la nan yon sèl espas.
-          </p>
-
-        </div>
-
-        <div class="student-grid">
-
-          <a
-            href="./student-profile/index.html"
-            class="student-card"
-          >
-            <i class="fa-solid fa-user-plus"></i>
-            <strong>KREYE KONT</strong>
-            <span>Kreye pwofil elèv ou.</span>
-          </a>
-
-          <a
-            href="./student-portal/index.html"
-            class="student-card"
-          >
-            <i class="fa-solid fa-book-open"></i>
-            <strong>KOU MWEN</strong>
-            <span>Gade epi kontinye kou yo.</span>
-          </a>
-
-          <a
-            href="./assessments/index.html"
-            class="student-card"
-          >
-            <i class="fa-solid fa-list-check"></i>
-            <strong>EVALYASYON</strong>
-            <span>Teste konesans ou.</span>
-          </a>
-
-          <a
-            href="./certificate-center/index.html"
-            class="student-card"
-          >
-            <i class="fa-solid fa-award"></i>
-            <strong>SÈTIFIKA</strong>
-            <span>Verifye sètifikasyon ou.</span>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-
-        <div class="ddn-box">
-
-          <h2>DEVAN DEVAN NÈT™</h2>
-
-          <h3
-            data-ht="BATI POU JODI A • PARE POU DEMEN"
-            data-fr="CONSTRUIT POUR AUJOURD’HUI • PRÊT POUR DEMAIN"
-            data-en="BUILT FOR TODAY • READY FOR TOMORROW"
-          >
-            BATI POU JODI A • PARE POU DEMEN
-          </h3>
-
-          <p
-            data-ht="DEVAN DEVAN NÈT™ se vizyon teknoloji ak entèlijans atifisyèl ki ankouraje moun aprann, kreye, inove epi toujou avanse."
-            data-fr="DEVAN DEVAN NÈT™ est la vision technologique et d’intelligence artificielle qui encourage chacun à apprendre, créer, innover et toujours progresser."
-            data-en="DEVAN DEVAN NÈT™ is the technology and artificial intelligence vision encouraging people to learn, create, innovate and keep moving forward."
-          >
-            DEVAN DEVAN NÈT™ se vizyon teknoloji
-            ak entèlijans atifisyèl platfòm nan.
-          </p>
-
-          <div class="actions">
-            <a
-              href="./ddn/index.html"
-              class="button button-primary"
-            >
-              ENTER DEVAN DEVAN NÈT™
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div
-            class="eyebrow"
-            data-ht="RETE KONEKTE"
-            data-fr="RESTEZ CONNECTÉ"
-            data-en="STAY CONNECTED"
-          >
-            RETE KONEKTE
-          </div>
-
-          <h2
-            class="section-title"
-            data-ht="KONTAK OFISYÈL"
-            data-fr="CONTACT OFFICIEL"
-            data-en="OFFICIAL CONTACT"
-          >
-            KONTAK OFISYÈL
-          </h2>
-
-        </div>
-
-        <div class="contact-grid">
-
-          <div class="contact-card">
-            <i class="fa-solid fa-phone"></i>
-            <strong>TELEPHONE</strong>
-            <a href="tel:+14076405166">
-              (407) 640-5166
-            </a>
-            <a href="tel:+15162168494">
-              (516) 216-8494
-            </a>
-            <a href="tel:+50943437488">
-              +509 43 43 7488
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-solid fa-envelope"></i>
-            <strong>EMAIL</strong>
-
-            <a href="mailto:louismaxauto600@gmail.com">
-              louismaxauto600@gmail.com
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-solid fa-globe"></i>
-            <strong>WEBSITE</strong>
-
-            <a
-              href="https://bss1815promaxdmp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              bss1815promaxdmp.com
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-brands fa-whatsapp"></i>
-            <strong>WHATSAPP</strong>
-
-            <a
-              href="https://wa.me/15162168494"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              (516) 216-8494
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-solid fa-location-dot"></i>
-            <strong>LOCATION</strong>
-            <span>Orlando, Florida</span>
-          </div>
-
-          <div class="contact-card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <strong>PLATFORM</strong>
-            <span>BSS1815 PRO-MAX DMP</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-
-      <div class="footer-title">
-        PRO-MAX ACADÉMIE
-      </div>
-
-      <div class="footer-text">
-        BSS1815 PRO-MAX DMP
-        <br>
-        DEVAN DEVAN NÈT™
-        <br>
-
-        <span
-          data-ht="APRANN • EVOLYE • REYISI"
-          data-fr="APPRENDRE • ÉVOLUER • RÉUSSIR"
-          data-en="LEARN • EVOLVE • SUCCEED"
-        >
-          APRANN • EVOLYE • REYISI
-        </span>
-
-        <br><br>
-
-        © <span id="currentYear"></span>
-        PRO-MAX ACADÉMIE
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      "use strict";
-
-      var yearElement =
-        document.getElementById("currentYear");
-
-      if (yearElement) {
-        yearElement.textContent =
-          new Date().getFullYear();
-      }
-
-      var menuButton =
-        document.getElementById("menuButton");
-
-      var mainNavigation =
-        document.getElementById("mainNavigation");
-
-      if (menuButton && mainNavigation) {
-        menuButton.addEventListener(
-          "click",
-          function () {
-            var open =
-              mainNavigation.classList.toggle("open");
-
-            menuButton.textContent =
-              open ? "✕" : "☰";
-
-            menuButton.setAttribute(
-              "aria-expanded",
-              String(open)
-            );
-          }
-        );
-
-        mainNavigation
-          .querySelectorAll("a")
-          .forEach(function (link) {
-            link.addEventListener(
-              "click",
-              function () {
-                mainNavigation.classList.remove("open");
-                menuButton.textContent = "☰";
-
-                menuButton.setAttribute(
-                  "aria-expanded",
-                  "false"
-                );
-              }
-            );
-          });
-      }
-
-      var languageButtons =
-        document.querySelectorAll(
-          ".language-button[data-language]"
-        );
-
-      function applyLanguage(language) {
-        if (
-          ["ht", "fr", "en"].indexOf(language) === -1
-        ) {
-          language = "ht";
+      <source
+        src="./pro-max-academie.mp4?v=20260903-final"
+        type="video/mp4"
+      >
+      Navigatè ou a pa sipòte videyo HTML5.
+    </video>
+
+  </div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="schools">
+<div class="container">
+
+<div class="heading">
+  <p class="eyebrow">PROFESSIONAL SCHOOLS</p>
+  <h2 class="section-title">CHWAZI LEKÒL OU</h2>
+</div>
+
+<div class="grid schools">
+
+<a class="card" href="https://insurance-school.netlify.app">
+  <i class="fa-solid fa-shield-heart"></i>
+  <h3>INSURANCE SCHOOL</h3>
+  <p>Asirans vi, sante, machin, pwopriyete ak responsablite.</p>
+  <span class="card-link">ENTER INSURANCE SCHOOL →</span>
+</a>
+
+<a class="card" href="https://real-estate-school.netlify.app">
+  <i class="fa-solid fa-building"></i>
+  <h3>REAL ESTATE SCHOOL</h3>
+  <p>Byen imobilye, lwa, etik, finansman, valyasyon ak egzamen.</p>
+  <span class="card-link">ENTER REAL ESTATE SCHOOL →</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="courses">
+<div class="container">
+
+<div class="heading">
+  <p class="eyebrow">LEARNING CENTER</p>
+  <h2 class="section-title">APRANN • PRATIKE • AVANSE</h2>
+</div>
+
+<div class="grid">
+
+<a class="card" href="./courses/introduction-ai/index.html">
+  <i class="fa-solid fa-robot"></i>
+  <h3>ENTWODIKSYON NAN AI</h3>
+  <p>Konprann prensip entèlijans atifisyèl ak itilizasyon pratik li.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+<a class="card" href="./courses/digital-creation/index.html">
+  <i class="fa-solid fa-wand-magic-sparkles"></i>
+  <h3>KREYASYON DIJITAL</h3>
+  <p>Kreye tèks, imaj, videyo, prezantasyon ak kontni dijital.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+<a class="card" href="./courses/digital-leadership/index.html">
+  <i class="fa-solid fa-arrow-trend-up"></i>
+  <h3>LIDÈCHIP DIJITAL</h3>
+  <p>Devlope vizyon, disiplin, òganizasyon ak lidèchip.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+<a class="card" href="./courses/automation/index.html">
+  <i class="fa-solid fa-gears"></i>
+  <h3>OTOMATIZASYON</h3>
+  <p>Kreye workflow entelijan epi diminye travay repetitif.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+<a class="card" href="./courses/communication/index.html">
+  <i class="fa-solid fa-comments"></i>
+  <h3>KOMINIKASYON</h3>
+  <p>Devlope kominikasyon pwofesyonèl ak prezantasyon avèk enpak.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+<a class="card" href="./courses/innovation/index.html">
+  <i class="fa-solid fa-lightbulb"></i>
+  <h3>INOVASYON</h3>
+  <p>Transfòme lide an pwojè epi kreye solisyon avèk teknoloji.</p>
+  <span class="card-link">KÒMANSE →</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="student">
+<div class="container">
+
+<div class="heading">
+  <p class="eyebrow">STUDENT PORTAL</p>
+  <h2 class="section-title">ESPAS ELÈV</h2>
+</div>
+
+<div class="grid student-grid">
+
+<a class="card" href="./student-profile/index.html">
+  <i class="fa-solid fa-user-plus"></i>
+  <h3>KREYE KONT</h3>
+  <p>Kreye pwofil elèv ou.</p>
+</a>
+
+<a class="card" href="./student-portal/index.html">
+  <i class="fa-solid fa-book-open"></i>
+  <h3>KOU MWEN</h3>
+  <p>Gade epi kontinye kou yo.</p>
+</a>
+
+<a class="card" href="./assessments/index.html">
+  <i class="fa-solid fa-list-check"></i>
+  <h3>EVALYASYON</h3>
+  <p>Teste konesans ou.</p>
+</a>
+
+<a class="card" href="./certificate-center/index.html">
+  <i class="fa-solid fa-award"></i>
+  <h3>SÈTIFIKA</h3>
+  <p>Verifye sètifikasyon ou.</p>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="ddn">
+  <h2>DEVAN DEVAN NÈT™</h2>
+  <h3>BATI POU JODI A • PARE POU DEMEN</h3>
+
+  <p class="description">
+    Yon mouvman teknoloji ak entèlijans atifisyèl ki ankouraje moun aprann, kreye, inove epi toujou avanse.
+  </p>
+
+  <div class="actions">
+    <a class="btn primary" href="./ddn/index.html">ENTER DDN →</a>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="heading">
+  <p class="eyebrow">PAYMENT CENTER</p>
+  <h2 class="section-title">PEMAN & SÈTIFIKASYON</h2>
+</div>
+
+<div class="payment">
+
+<div class="payment-grid">
+
+<div class="field">
+  <label for="studentName">NON ELÈV</label>
+  <input id="studentName" type="text" placeholder="Non konplè">
+</div>
+
+<div class="field">
+  <label for="courseName">KOU</label>
+
+  <select id="courseName">
+    <option>Introduction à l’IA</option>
+    <option>Création Digitale</option>
+    <option>Leadership Digital</option>
+    <option>Automatisation</option>
+    <option>Communication</option>
+    <option>Innovation</option>
+    <option>Insurance School</option>
+    <option>Real Estate School</option>
+  </select>
+</div>
+
+<div class="field">
+  <label for="email">EMAIL</label>
+  <input id="email" type="email" placeholder="student@email.com">
+</div>
+
+<div class="field">
+  <label for="paymentAmount">MONTAN USD</label>
+  <input id="paymentAmount" type="number" min="1" placeholder="USD">
+</div>
+
+<div class="payment-status">
+  <strong id="paymentStatus">READY FOR SECURE PAYMENT</strong>
+
+  <div class="actions">
+    <button class="btn primary" id="paymentButton" type="button">
+      KONTINYE PEMAN
+    </button>
+  </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+
+<div class="heading">
+  <p class="eyebrow">STAY CONNECTED</p>
+  <h2 class="section-title">KONTAK OFISYÈL</h2>
+</div>
+
+<div class="grid contact-grid">
+
+<div class="card">
+  <i class="fa-solid fa-phone"></i>
+  <h3>TELEPHONE</h3>
+  <a href="tel:+14076405166">(407) 640-5166</a>
+  <a href="tel:+15162168494">(516) 216-8494</a>
+  <a href="tel:+50943437488">+509 43 43 7488</a>
+</div>
+
+<div class="card">
+  <i class="fa-solid fa-envelope"></i>
+  <h3>EMAIL</h3>
+  <a href="mailto:louismaxauto600@gmail.com">
+    louismaxauto600@gmail.com
+  </a>
+</div>
+
+<div class="card">
+  <i class="fa-solid fa-globe"></i>
+  <h3>PLATFÒM MANMAN</h3>
+  <a href="https://bss1815promaxdmp.com">
+    bss1815promaxdmp.com
+  </a>
+</div>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+  <strong>PRO-MAX ACADÉMIE</strong>
+
+  <p>
+    BSS1815 PRO-MAX DMP<br>
+    DEVAN DEVAN NÈT™<br>
+    APRANN • EVOLYE • REYISI<br><br>
+    © <span id="year"></span> PRO-MAX ACADÉMIE
+  </p>
+</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  const year=document.getElementById("year");
+  const menu=document.getElementById("menu");
+  const nav=document.getElementById("nav");
+  const languageButtons=document.querySelectorAll(".lang");
+  const professorVideo=document.getElementById("professorVideo");
+  const paymentButton=document.getElementById("paymentButton");
+  const paymentStatus=document.getElementById("paymentStatus");
+
+  if(year){
+    year.textContent=new Date().getFullYear();
+  }
+
+  if(menu&&nav){
+    menu.addEventListener("click",function(){
+      const open=nav.classList.toggle("open");
+      menu.textContent=open?"✕":"☰";
+      menu.setAttribute("aria-expanded",String(open));
+    });
+
+    nav.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click",function(){
+        nav.classList.remove("open");
+        menu.textContent="☰";
+      });
+    });
+  }
+
+  function applyLanguage(language){
+    if(!["ht","fr","en"].includes(language)){
+      language="ht";
+    }
+
+    document.documentElement.lang=language;
+
+    document
+      .querySelectorAll("[data-ht][data-fr][data-en]")
+      .forEach(function(element){
+        const value=element.getAttribute("data-"+language);
+
+        if(value!==null){
+          element.textContent=value;
         }
+      });
 
-        document.documentElement.lang = language;
-
-        document
-          .querySelectorAll(
-            "[data-ht][data-fr][data-en]"
-          )
-          .forEach(function (element) {
-            var translation =
-              element.getAttribute(
-                "data-" + language
-              );
-
-            if (translation !== null) {
-              element.textContent = translation;
-            }
-          });
-
-        languageButtons.forEach(
-          function (button) {
-            button.classList.toggle(
-              "active",
-              button.getAttribute(
-                "data-language"
-              ) === language
-            );
-
-            button.setAttribute(
-              "aria-pressed",
-              button.classList.contains("active")
-                ? "true"
-                : "false"
-            );
-          }
-        );
-
-        try {
-          localStorage.setItem(
-            "promaxAcademieLanguage",
-            language
-          );
-        } catch (error) {}
-      }
-
-      languageButtons.forEach(
-        function (button) {
-          button.addEventListener(
-            "click",
-            function () {
-              applyLanguage(
-                button.getAttribute(
-                  "data-language"
-                )
-              );
-            }
-          );
-        }
+    languageButtons.forEach(function(button){
+      button.classList.toggle(
+        "active",
+        button.dataset.lang===language
       );
+    });
 
-      var savedLanguage = "ht";
+    try{
+      localStorage.setItem(
+        "promaxAcademieLanguage",
+        language
+      );
+    }catch(error){}
+  }
 
-      try {
-        savedLanguage =
-          localStorage.getItem(
-            "promaxAcademieLanguage"
-          ) || "ht";
-      } catch (error) {}
+  languageButtons.forEach(function(button){
+    button.addEventListener("click",function(){
+      applyLanguage(button.dataset.lang);
+    });
+  });
 
-      applyLanguage(savedLanguage);
+  let savedLanguage="ht";
 
-      document
-        .querySelectorAll(
-          ".brand-mark video"
-        )
-        .forEach(function (video) {
-          video.muted = true;
-          video.loop = true;
-          video.playsInline = true;
+  try{
+    savedLanguage=
+      localStorage.getItem(
+        "promaxAcademieLanguage"
+      )||"ht";
+  }catch(error){}
 
-          var playPromise = video.play();
+  applyLanguage(savedLanguage);
 
-          if (
-            playPromise &&
-            typeof playPromise.catch === "function"
-          ) {
-            playPromise.catch(function () {});
-          }
-        });
+  document
+    .querySelectorAll(".brand-logo")
+    .forEach(function(video){
+      video.muted=true;
+      video.loop=true;
+      video.playsInline=true;
 
-      var professorVideo =
-        document.getElementById(
-          "academieProfessorVideo"
-        );
+      const promise=video.play();
 
-      if (professorVideo) {
-        professorVideo.addEventListener(
-          "error",
-          function () {
-            console.error(
-              "Videyo a pa chaje. Verifye fichye promax-academie-professor-clean-final.mp4 nan rasin repo a."
-            );
-          }
+      if(promise){
+        promise.catch(function(){});
+      }
+    });
+
+  if(professorVideo){
+    professorVideo.load();
+
+    professorVideo.addEventListener(
+      "loadedmetadata",
+      function(){
+        console.log(
+          "PRO-MAX Académie professor video loaded:",
+          professorVideo.duration
         );
       }
+    );
 
-      window.addEventListener(
-        "resize",
-        function () {
-          if (
-            window.innerWidth > 1050 &&
-            mainNavigation &&
-            menuButton
-          ) {
-            mainNavigation.classList.remove("open");
-            menuButton.textContent = "☰";
+    professorVideo.addEventListener(
+      "error",
+      function(){
+        console.error(
+          "Unable to load ./pro-max-academie.mp4"
+        );
+      }
+    );
+  }
 
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-          }
+  if(paymentButton&&paymentStatus){
+    paymentButton.addEventListener(
+      "click",
+      function(){
+        const studentName=
+          document
+            .getElementById("studentName")
+            .value.trim();
+
+        const paymentAmount=
+          Number(
+            document
+              .getElementById("paymentAmount")
+              .value
+          );
+
+        if(!studentName){
+          paymentStatus.textContent=
+            "TANPRI ANTRE NON ELÈV LA.";
+          return;
         }
-      );
-    })();
-  </script>
+
+        if(!paymentAmount||paymentAmount<=0){
+          paymentStatus.textContent=
+            "TANPRI ANTRE YON MONTAN USD KI VALAB.";
+          return;
+        }
+
+        paymentStatus.textContent=
+          "PEMAN POU "+
+          studentName.toUpperCase()+
+          ": $"+
+          paymentAmount.toFixed(2)+
+          " USD — READY.";
+      }
+    );
+  }
+
+  window.addEventListener("resize",function(){
+    if(
+      window.innerWidth>1000&&
+      nav&&
+      menu
+    ){
+      nav.classList.remove("open");
+      menu.textContent="☰";
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
