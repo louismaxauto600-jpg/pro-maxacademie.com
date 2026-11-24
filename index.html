@@ -4,9 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080400">
+<meta name="theme-color" content="#050301">
 <title>PRO-MAX ACADÉMIE — Courses Center</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
@@ -14,393 +13,217 @@
  --orange:#ff7900;
  --apricot:#ffb66e;
  --black:#050301;
- --border:#ff790044;
+ --border:#ff790055;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:180px}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
 body{
  margin:0;
  font-family:Arial,Helvetica,sans-serif;
  color:var(--apricot);
- background:radial-gradient(ellipse at top,#402000,#080400 50%,#000);
- line-height:1.65;
+ background:radial-gradient(ellipse at top,#402000,#080400 45%,#000);
+ line-height:1.75;
 }
 a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
+button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 .container{width:min(1250px,94%);margin:auto}
 header{
- position:sticky;
- top:0;
- z-index:100;
+ position:sticky;top:0;z-index:100;
  background:#050301;
  border-bottom:1px solid var(--border);
 }
 .header-inner{
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:15px;
- padding:15px 0;
+ display:flex;justify-content:space-between;
+ align-items:center;flex-wrap:wrap;
+ gap:15px;padding:15px 0;
 }
-.brand{
- display:flex;
- align-items:center;
- gap:15px;
-}
+.brand{display:flex;align-items:center;gap:15px}
 .brand video{
- width:65px;
- height:65px;
- border-radius:50%;
- object-fit:cover;
+ width:65px;height:65px;
+ border-radius:50%;object-fit:cover;
  border:2px solid var(--orange);
 }
-.brand strong{
- display:block;
- color:var(--orange);
- font-size:21px;
-}
-.brand small{
- font-size:12px;
- letter-spacing:1px;
-}
-.actions{
- display:flex;
- flex-wrap:wrap;
- align-items:center;
- justify-content:center;
- gap:12px;
-}
+.brand strong{display:block;color:var(--orange);font-size:21px}
+.brand small{font-size:12px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .btn{
- display:inline-flex;
- justify-content:center;
- align-items:center;
- gap:10px;
- padding:13px 22px;
- background:linear-gradient(135deg,var(--apricot),var(--orange));
- color:#080400;
+ display:inline-flex;align-items:center;
+ justify-content:center;gap:9px;
  border:1px solid var(--orange);
- border-radius:30px;
- font-size:12px;
- font-weight:900;
+ border-radius:30px;padding:12px 20px;
+ background:linear-gradient(135deg,var(--apricot),var(--orange));
+ color:#080400;font-weight:900;font-size:12px;
 }
-.btn-outline{
- background:#080400;
- color:var(--orange);
-}
-.btn:hover{
- box-shadow:0 0 25px #ff790055;
-}
+.btn-outline{background:#080400;color:var(--orange)}
+.btn:hover{box-shadow:0 0 25px #ff790055}
 .languages{display:flex}
 .languages button{
- background:#080400;
- color:var(--orange);
  border:1px solid var(--border);
- padding:11px 16px;
- font-weight:bold;
+ background:#080400;color:var(--orange);
+ padding:10px 15px;font-weight:bold;
 }
-.languages button:first-child{
- border-radius:30px 0 0 30px;
-}
-.languages button:last-child{
- border-radius:0 30px 30px 0;
-}
-.languages button.active{
- background:var(--orange);
- color:#000;
-}
-.hero{
- padding:45px 0;
- text-align:center;
-}
+.languages button.active{background:var(--orange);color:#000}
+.hero{text-align:center;padding:45px 0}
 .hero-logo{
- width:210px;
- height:210px;
- margin:20px auto 30px;
- padding:7px;
- border-radius:50%;
+ width:220px;height:220px;
+ margin:20px auto 30px;padding:7px;
  border:2px solid var(--orange);
+ border-radius:50%;
  box-shadow:0 0 45px #ff790066;
 }
 .hero-logo video{
- width:100%;
- height:100%;
- border-radius:50%;
- object-fit:cover;
+ width:100%;height:100%;
+ border-radius:50%;object-fit:cover;
 }
-.eyebrow{
- color:var(--orange);
- font-size:12px;
- letter-spacing:2px;
- font-weight:900;
-}
-h1,h2,h3{
- color:var(--orange);
- line-height:1.3;
-}
+h1,h2,h3,h4{color:var(--orange);line-height:1.3}
 h1{font-size:clamp(30px,5vw,54px)}
 h2{font-size:clamp(25px,4vw,40px)}
-.hero p,.section-head p{
- max-width:850px;
- margin:20px auto;
+.eyebrow{
+ color:var(--orange);font-size:12px;
+ letter-spacing:2px;font-weight:900;
 }
+.hero p,.section-head p{max-width:850px;margin:20px auto}
 .stats{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
- margin:35px 0;
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:15px;margin:35px 0;
 }
 .stat{
- display:block;
  padding:25px 15px;
+ background:linear-gradient(145deg,#261103,#080400);
  border:1px solid var(--border);
  border-radius:18px;
- background:linear-gradient(145deg,#261103,#080400);
 }
-.stat strong{
- display:block;
- font-size:35px;
- color:var(--orange);
-}
-.stat:hover{
- border-color:var(--orange);
- box-shadow:0 0 25px #ff790033;
-}
-.section{padding:55px 0}
-.section-head{
- text-align:center;
- margin-bottom:35px;
-}
-.grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
+.stat strong{display:block;font-size:35px;color:var(--orange)}
+.section{padding:50px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.grid,.path-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
  gap:22px;
 }
-.card{
+.card,.panel,.path-card,.contact-card{
  background:linear-gradient(145deg,#251003,#080400);
  border:1px solid var(--border);
- border-radius:24px;
- padding:25px;
- display:flex;
- flex-direction:column;
+ border-radius:22px;padding:25px;
+ color:var(--apricot);
 }
-.card:hover{
+.card{display:flex;flex-direction:column}
+.card:hover,.stat:hover,.path-card:hover{
  border-color:var(--orange);
  box-shadow:0 0 25px #ff790033;
 }
-.card-top{
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
+.card-top{display:flex;justify-content:space-between;align-items:center}
 .card-icon{
- display:grid;
- place-items:center;
- width:65px;
- height:65px;
- border-radius:16px;
- background:#050301;
+ width:65px;height:65px;
+ display:grid;place-items:center;
  border:1px solid var(--border);
- color:var(--orange);
- font-size:30px;
-}
-.card-number{
- font-size:11px;
- font-weight:bold;
- letter-spacing:1px;
+ border-radius:16px;background:#050301;
+ color:var(--orange);font-size:30px;
 }
 .card h3{font-size:21px}
 .card p{flex:1}
-.tags{
- display:flex;
- gap:7px;
- flex-wrap:wrap;
- margin:12px 0;
-}
-.tags span{
- border:1px solid var(--border);
- border-radius:20px;
- padding:5px 10px;
- font-size:10px;
- font-weight:bold;
-}
+.card .btn{width:100%;margin-top:auto}
 .progress-label{
- display:flex;
- justify-content:space-between;
- font-size:12px;
- font-weight:bold;
- margin-top:15px;
+ display:flex;justify-content:space-between;
+ font-size:12px;font-weight:bold;
 }
 .progress-track{
- height:10px;
- background:#170900;
+ height:10px;background:#170900;
  border:1px solid var(--border);
- border-radius:20px;
- overflow:hidden;
+ border-radius:20px;overflow:hidden;
  margin:10px 0 22px;
 }
-.progress-fill{
- height:100%;
- background:var(--orange);
+.progress-fill{height:100%;background:var(--orange)}
+.path-card{text-align:center}
+.path-card i{font-size:32px;color:var(--orange)}
+.panel{margin:25px 0}
+.professor-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:30px;align-items:center;
 }
-.card .btn{
- width:100%;
- margin-top:auto;
-}
-.path-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:20px;
-}
-.path-card{
- padding:30px 20px;
- text-align:center;
- background:#080400;
- border:1px solid var(--border);
- border-radius:20px;
- color:var(--apricot);
-}
-.path-card i{
- color:var(--orange);
- font-size:32px;
-}
-.path-card:hover{
- border-color:var(--orange);
-}
-.panel{
- border:1px solid var(--border);
- border-radius:20px;
- background:linear-gradient(145deg,#251003,#080400);
- padding:25px;
- margin:25px 0;
+.professor-video{
+ width:100%;max-height:650px;
+ background:#000;object-fit:contain;
+ border:2px solid var(--orange);
+ border-radius:22px;
 }
 .contact-grid{
- display:grid;
- grid-template-columns:repeat(2,1fr);
+ display:grid;grid-template-columns:1fr 1fr;
  gap:20px;
 }
-.contact-card{
- text-align:center;
- background:#080400;
- border:1px solid var(--border);
- border-radius:20px;
- padding:25px;
-}
-.flag{
- font-size:50px;
-}
+.contact-card{text-align:center}
+.flag{font-size:50px}
 .phone{
- display:block;
+ display:block;padding:12px;margin:12px 0;
  border:1px solid var(--border);
- border-radius:10px;
- margin:12px 0;
- padding:12px;
- font-weight:bold;
-}
-.phone:hover{
- border-color:var(--orange);
+ border-radius:12px;font-weight:bold;
 }
 .social-grid{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:12px;
+ display:flex;justify-content:center;
+ flex-wrap:wrap;gap:12px;
 }
 .social{
- width:65px;
- height:65px;
- display:grid;
- place-items:center;
- border:1px solid var(--border);
- border-radius:17px;
+ width:62px;height:62px;
+ display:grid;place-items:center;
  background:#080400;
- font-size:30px;
+ border:1px solid var(--border);
+ border-radius:16px;font-size:30px;
 }
-.social:hover{
- transform:translateY(-4px);
- border-color:currentColor;
-}
-.facebook{color:#1877f2}
-.whatsapp{color:#25d366}
-.instagram{color:#e4405f}
-.youtube{color:#ff0000}
-.spotify{color:#1db954}
-.telegram{color:#229ed9}
-.twitter{color:#eeeeee}
-.tiktok{color:#25f4ee;text-shadow:2px 1px #fe2c55}
-.linkedin{color:#0a66c2}
-.truth{color:#5448ee}
+.social:hover{transform:translateY(-4px)}
 footer{
- background:#000;
- border-top:1px solid var(--border);
- text-align:center;
- padding:40px 15px;
+ text-align:center;padding:35px 15px;
+ background:#000;border-top:1px solid var(--border);
 }
-footer strong{color:var(--orange)}
 dialog{
- width:min(900px,95%);
- max-height:90vh;
- overflow:auto;
- background:#100700;
- color:var(--apricot);
+ width:min(950px,95%);max-height:90vh;
+ overflow:auto;padding:25px;
+ background:#100700;color:var(--apricot);
  border:1px solid var(--orange);
- border-radius:20px;
- padding:25px;
+ border-radius:22px;
 }
-dialog::backdrop{background:#000d}
+dialog::backdrop{background:#000e}
 .dialog-head{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
+ display:flex;justify-content:space-between;
+ align-items:center;gap:15px;
 }
 .close{
- width:42px;
- height:42px;
- flex-shrink:0;
- border-radius:50%;
+ width:42px;height:42px;flex-shrink:0;
+ background:#080400;color:var(--orange);
  border:1px solid var(--orange);
- background:#080400;
- color:var(--orange);
- font-size:25px;
+ border-radius:50%;font-size:24px;
 }
 .lesson{
+ padding:20px;margin:15px 0;
  background:#080400;
  border:1px solid var(--border);
  border-radius:15px;
- padding:20px;
- margin:15px 0;
 }
 .lesson summary{
  color:var(--orange);
- font-weight:bold;
- cursor:pointer;
+ font-weight:bold;cursor:pointer;
 }
-.lesson input{accent-color:var(--orange)}
-textarea,input[type=text],input[type=email]{
- width:100%;
- background:#080400;
- color:var(--apricot);
+.lesson p{margin:15px 0}
+input,textarea,select{accent-color:var(--orange)}
+textarea,input[type=text],input[type=email],select{
+ width:100%;padding:12px;
+ background:#080400;color:var(--apricot);
  border:1px solid var(--border);
  border-radius:10px;
- padding:12px;
 }
+.answer{display:block;padding:10px;cursor:pointer}
+.notice{font-size:13px;color:var(--apricot)}
 @media(max-width:950px){
- .grid,.path-grid{
-  grid-template-columns:repeat(2,1fr);
- }
+ .grid,.path-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .professor-grid,.contact-grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .header-inner{justify-content:center}
 }
 @media(max-width:550px){
- .grid,.path-grid,.contact-grid{
-  grid-template-columns:1fr;
- }
- .stats{
-  grid-template-columns:repeat(2,1fr);
- }
- .header-inner{justify-content:center}
+ .grid,.path-grid{grid-template-columns:1fr}
+ .hero-logo{width:175px;height:175px}
  .brand strong{font-size:17px}
- .hero-logo{width:170px;height:170px}
 }
 </style>
 </head>
@@ -409,302 +232,209 @@ textarea,input[type=text],input[type=email]{
 
 <header>
 <div class="container header-inner">
-
 <a class="brand" href="../index.html">
- <video autoplay muted loop playsinline
- src="../pro-max-academie-II.mp4"
- onerror="this.onerror=null;this.src='../pro-max-dmp-II.mp4'">
- </video>
- <div>
-  <strong>PRO-MAX ACADÉMIE</strong>
-  <small data-t="subtitle"></small>
- </div>
+<video class="academy-logo" autoplay muted loop playsinline></video>
+<div>
+<strong>PRO-MAX ACADÉMIE</strong>
+<small data-t="subtitle"></small>
+</div>
 </a>
 
 <div class="actions">
- <a class="btn btn-outline" href="../index.html">
-  <i class="fa-solid fa-house"></i>
-  <span data-t="home"></span>
- </a>
+<a href="../index.html" class="btn btn-outline">
+<i class="fa-solid fa-house"></i>
+<span data-t="home"></span>
+</a>
 
- <div class="languages">
-  <button data-lang="fr">FRA</button>
-  <button data-lang="en">ENG</button>
-  <button data-lang="ht">KRE</button>
- </div>
+<div class="languages">
+<button data-lang="fr">FRA</button>
+<button data-lang="en">ENG</button>
+<button data-lang="ht">KRE</button>
 </div>
-
+</div>
 </div>
 </header>
 
 <main>
 
-<!-- HERO VIDEO LOGO -->
-
 <section class="hero">
 <div class="container">
 
 <div class="hero-logo">
- <video autoplay muted loop playsinline
- src="../pro-max-academie-II.mp4"
- onerror="this.onerror=null;this.src='../pro-max-dmp-II.mp4'">
- </video>
+<video class="academy-logo" autoplay muted loop playsinline></video>
 </div>
 
-<span class="eyebrow">PRO-MAX ACADÉMIE</span>
+<p id="logoStatus" class="notice"></p>
 
+<span class="eyebrow">PRO-MAX ACADÉMIE</span>
 <h1 data-t="title"></h1>
 <p data-t="intro"></p>
 
 <div class="stats">
-
 <a class="stat" href="#core">
- <strong>6</strong>
- <span data-t="core"></span>
+<strong>6</strong><span data-t="core"></span>
 </a>
-
 <a class="stat" href="#special">
- <strong>6</strong>
- <span data-t="special"></span>
+<strong>6</strong><span data-t="special"></span>
 </a>
-
 <a class="stat" href="#learning">
- <strong>5</strong>
- <span>LEARNING PATH</span>
+<strong>5</strong><span>LEARNING PATH</span>
 </a>
-
-<a class="stat" href="#contact">
- <strong>24/7</strong>
- <span data-t="support"></span>
+<a class="stat" href="#professor">
+<strong>24/7</strong><span data-t="support"></span>
 </a>
-
 </div>
+
 </div>
 </section>
-
-<!-- CORE COURSES -->
 
 <section class="section" id="core">
 <div class="container">
-
 <div class="section-head">
- <span class="eyebrow">SECTION 01 • CORE LEARNING</span>
- <h2 data-t="coreTitle"></h2>
- <p data-t="coreDesc"></p>
+<span class="eyebrow">SECTION 01</span>
+<h2 data-t="coreTitle"></h2>
 </div>
-
 <div class="grid" id="coreGrid"></div>
-
 </div>
 </section>
-
-<!-- SPECIALIZED COURSES -->
 
 <section class="section" id="special">
 <div class="container">
-
 <div class="section-head">
- <span class="eyebrow">SECTION 02 • SPECIALIZED LEARNING</span>
- <h2 data-t="specialTitle"></h2>
+<span class="eyebrow">SECTION 02</span>
+<h2 data-t="specialTitle"></h2>
 </div>
-
 <div class="grid" id="specialGrid"></div>
-
 </div>
 </section>
 
-<!-- LEARNING PATH -->
+<section class="section" id="professor">
+<div class="container">
+<div class="section-head">
+<h2>AI PROFESSOR</h2>
+<p data-t="profIntro"></p>
+</div>
+
+<div class="panel professor-grid">
+
+<div>
+<video id="profVideo" class="professor-video"
+ autoplay muted loop playsinline controls></video>
+
+<p id="profStatus" class="notice"></p>
+
+<button id="soundButton" class="btn btn-outline">
+<i class="fa-solid fa-volume-high"></i>
+<span data-t="sound"></span>
+</button>
+</div>
+
+<div>
+<span class="eyebrow">ACADEMIC SUPPORT</span>
+<h2>CUSTOMER SERVICE</h2>
+<p data-t="profText"></p>
+
+<form id="profForm">
+<label for="profCourse" data-t="choose"></label>
+<select id="profCourse"></select>
+
+<p><label for="profQuestion" data-t="question"></label></p>
+<textarea id="profQuestion" rows="5" required></textarea>
+
+<p>
+<button class="btn" type="submit">
+<i class="fa-solid fa-envelope"></i>
+<span data-t="send"></span>
+</button>
+</p>
+</form>
+
+<p class="notice" data-t="emailNotice"></p>
+</div>
+
+</div>
+</div>
+</section>
 
 <section class="section" id="learning">
 <div class="container">
-
 <div class="section-head">
- <h2>LEARNING PATH</h2>
- <p data-t="pathDesc"></p>
+<h2>LEARNING PATH</h2>
+<p data-t="pathIntro"></p>
 </div>
-
 <div class="path-grid" id="pathGrid"></div>
-
 <div class="panel">
- <h3 data-t="certRule"></h3>
- <p data-t="certText"></p>
+<h3 data-t="certificate"></h3>
+<p data-t="certRule"></p>
 </div>
-
 </div>
 </section>
-
-<!-- CONTACT CENTER -->
 
 <section class="section" id="contact">
 <div class="container">
-
 <div class="section-head">
- <h2 data-t="contact"></h2>
+<h2 data-t="contact"></h2>
 </div>
 
 <div class="contact-grid">
-
 <article class="contact-card">
-
 <div class="flag">🇺🇸</div>
 <h3>UNITED STATES</h3>
-
 <a class="phone" href="tel:+13175381150">
- <i class="fa-solid fa-phone"></i>
- (317) 538-1150
+<i class="fa-solid fa-phone"></i> (317) 538-1150
 </a>
-
 <a class="phone" href="tel:+14076405166">
- <i class="fa-solid fa-phone"></i>
- (407) 640-5166
+<i class="fa-solid fa-phone"></i> (407) 640-5166
 </a>
-
 <a class="phone" href="tel:+15162168494">
- <i class="fa-solid fa-phone"></i>
- (516) 216-8494
+<i class="fa-solid fa-phone"></i> (516) 216-8494
 </a>
-
 </article>
 
 <article class="contact-card">
-
 <div class="flag">🇭🇹</div>
 <h3>HAÏTI</h3>
-
 <a class="phone" href="tel:+50942544447">
- <i class="fa-solid fa-phone"></i>
- +509 4254-4447
+<i class="fa-solid fa-phone"></i> +509 4254-4447
 </a>
-
 <a class="phone" href="tel:+50943437488">
- <i class="fa-solid fa-phone"></i>
- +509 4343-7488
+<i class="fa-solid fa-phone"></i> +509 4343-7488
 </a>
-
 </article>
-
 </div>
 
 <div class="panel" style="text-align:center;overflow-wrap:anywhere">
-
-<i class="fa-solid fa-envelope"
- style="font-size:35px;color:#ff7900"></i>
-
+<i class="fa-solid fa-envelope" style="font-size:30px"></i>
 <h3>EMAIL</h3>
-
 <a href="mailto:bss1815promaxdmp@gmail.com">
- bss1815promaxdmp@gmail.com
+bss1815promaxdmp@gmail.com
 </a>
-
 </div>
-
 </div>
 </section>
 
-<!-- SOCIAL NETWORKS -->
-
 <section class="section">
 <div class="container">
-
 <div class="section-head">
- <h2 data-t="follow"></h2>
+<h2 data-t="follow"></h2>
 </div>
-
-<div class="social-grid">
-
-<a class="social facebook"
- href="https://www.facebook.com/"
- target="_blank" rel="noopener noreferrer"
- title="Facebook" aria-label="Facebook">
- <i class="fa-brands fa-facebook-f"></i>
-</a>
-
-<a class="social whatsapp"
- href="https://wa.me/14076405166"
- target="_blank" rel="noopener noreferrer"
- title="WhatsApp" aria-label="WhatsApp">
- <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<a class="social instagram"
- href="https://www.instagram.com/"
- target="_blank" rel="noopener noreferrer"
- title="Instagram" aria-label="Instagram">
- <i class="fa-brands fa-instagram"></i>
-</a>
-
-<a class="social youtube"
- href="https://www.youtube.com/"
- target="_blank" rel="noopener noreferrer"
- title="YouTube" aria-label="YouTube">
- <i class="fa-brands fa-youtube"></i>
-</a>
-
-<a class="social spotify"
- href="https://open.spotify.com/"
- target="_blank" rel="noopener noreferrer"
- title="Spotify" aria-label="Spotify">
- <i class="fa-brands fa-spotify"></i>
-</a>
-
-<a class="social telegram"
- href="https://telegram.org/"
- target="_blank" rel="noopener noreferrer"
- title="Telegram" aria-label="Telegram">
- <i class="fa-brands fa-telegram"></i>
-</a>
-
-<a class="social twitter"
- href="https://x.com/"
- target="_blank" rel="noopener noreferrer"
- title="X" aria-label="X">
- <i class="fa-brands fa-x-twitter"></i>
-</a>
-
-<a class="social tiktok"
- href="https://www.tiktok.com/"
- target="_blank" rel="noopener noreferrer"
- title="TikTok" aria-label="TikTok">
- <i class="fa-brands fa-tiktok"></i>
-</a>
-
-<a class="social linkedin"
- href="https://www.linkedin.com/"
- target="_blank" rel="noopener noreferrer"
- title="LinkedIn" aria-label="LinkedIn">
- <i class="fa-brands fa-linkedin-in"></i>
-</a>
-
-<a class="social truth"
- href="https://truthsocial.com/"
- target="_blank" rel="noopener noreferrer"
- title="Truth Social" aria-label="Truth Social">
- <img
- src="https://cdn.simpleicons.org/truthsocial/5448EE"
- width="30" height="30" alt="Truth Social"
- onerror="this.replaceWith(document.createTextNode('TS'))">
-</a>
-
-</div>
+<div class="social-grid" id="socialGrid"></div>
 </div>
 </section>
 
 </main>
 
 <footer>
-<strong>PRO-MAX ACADÉMIE</strong>
-<p>Courses &amp; Learning Center</p>
+<h3>PRO-MAX ACADÉMIE</h3>
+<p>COURSES &amp; LEARNING CENTER</p>
 <p>© <span id="year"></span> PRO-MAX ACADÉMIE</p>
-<strong>
- DEVAN DEVAN NÈT • BATI POU JODI A • PARE POU DEMEN
-</strong>
+<strong>DEVAN DEVAN NÈT</strong>
 </footer>
 
 <dialog id="courseDialog">
 <div class="dialog-head">
- <h2 id="dialogTitle"></h2>
- <button class="close" id="closeDialog"
- aria-label="Close">×</button>
+<h2 id="dialogTitle"></h2>
+<button id="closeDialog" class="close" aria-label="Close">×</button>
 </div>
 <div id="dialogContent"></div>
 </dialog>
@@ -712,454 +442,110 @@ textarea,input[type=text],input[type=email]{
 <script>
 "use strict";
 
-/* LANGUAGE SYSTEM */
-
-const T={
-ht:{
- subtitle:"SANT KOU AK APRANTISAJ",
- home:"RETOUNEN NAN AKADEMI",
- title:"SANT FÒMASYON",
- intro:"Aprann, pratike, pase evalyasyon epi devlope konpetans pwofesyonèl ou.",
- core:"KOU PRENSIPAL",
- special:"FÒMASYON ESPESYALIZE",
- support:"SIPÒ",
- coreTitle:"6 KOU PRENSIPAL",
- coreDesc:"Sis kou dijital pou devlope konesans, teknoloji ak kapasite pwofesyonèl.",
- specialTitle:"6 FÒMASYON ESPESYALIZE",
- progress:"PWOGRÈ",
- start:"KÒMANSE KOU A",
- pathDesc:"Chak elèv suiv yon pwosesis depi enskripsyon rive nan sètifikasyon.",
- certRule:"RÈG SÈTIFIKASYON",
- certText:"Elèv la dwe fini kou a, pase evalyasyon obligatwa yo epi satisfè kondisyon finansye ak administratif ki aplikab yo anvan emisyon sètifika a.",
- contact:"KONTAK AK SIPÒ",
- follow:"SWIV NOU",
- lessons:"PLAN FÒMASYON",
- complete:"Mwen etidye modil sa a",
- exercise:"EGZÈSIS PRATIK",
- save:"ANREJISTRE",
- saved:"Travay ou anrejistre sou aparèy sa a.",
- profile:"ENSKRIPSYON",
- training:"FÒMASYON",
- practice:"PRATIK",
- assessment:"EVALYASYON",
- certificate:"SÈTIFIKASYON",
- profileDesc:"Kreye pwofil elèv ou.",
- trainingDesc:"Swiv modil ak leson yo.",
- practiceDesc:"Fè egzèsis ak pwojè.",
- assessmentDesc:"Pase egzamen obligatwa yo.",
- certificateDesc:"Verifye kondisyon sètifikasyon.",
- open:"OUVRI PAJ FÒMASYON AN",
- name:"Non konplè",
- email:"Imèl",
- choose:"Chwazi yon pwogram.",
- note:"Modil sa yo se plan etid. Paj leson detaye yo dwe disponib pou fòmasyon konplè.",
- unavailable:"Paj detaye a poko disponib."
-},
-fr:{
- subtitle:"CENTRE DE FORMATION",
- home:"RETOUR À L’ACADÉMIE",
- title:"CENTRE DE FORMATION",
- intro:"Apprenez, pratiquez, passez vos évaluations et développez vos compétences.",
- core:"COURS PRINCIPAUX",
- special:"FORMATIONS SPÉCIALISÉES",
- support:"ASSISTANCE",
- coreTitle:"6 COURS PRINCIPAUX",
- coreDesc:"Six cours numériques pour développer vos connaissances et compétences professionnelles.",
- specialTitle:"6 FORMATIONS SPÉCIALISÉES",
- progress:"PROGRESSION",
- start:"COMMENCER LE COURS",
- pathDesc:"Chaque étudiant suit un parcours de l’inscription à la certification.",
- certRule:"RÈGLES DE CERTIFICATION",
- certText:"L’étudiant doit terminer sa formation, réussir les évaluations et satisfaire aux conditions financières et administratives applicables.",
- contact:"CONTACT ET ASSISTANCE",
- follow:"SUIVEZ-NOUS",
- lessons:"PROGRAMME DE FORMATION",
- complete:"J’ai étudié ce module",
- exercise:"EXERCICE PRATIQUE",
- save:"ENREGISTRER",
- saved:"Travail enregistré sur cet appareil.",
- profile:"INSCRIPTION",
- training:"FORMATION",
- practice:"PRATIQUE",
- assessment:"ÉVALUATION",
- certificate:"CERTIFICATION",
- profileDesc:"Créez votre profil étudiant.",
- trainingDesc:"Suivez les modules et les leçons.",
- practiceDesc:"Réalisez les exercices et projets.",
- assessmentDesc:"Passez les examens obligatoires.",
- certificateDesc:"Vérifiez les conditions de certification.",
- open:"OUVRIR LA FORMATION",
- name:"Nom complet",
- email:"Courriel",
- choose:"Choisissez un programme.",
- note:"Ces modules constituent un plan d’étude. Les leçons détaillées doivent être disponibles pour une formation complète.",
- unavailable:"La page détaillée n’est pas encore disponible."
-},
-en:{
- subtitle:"COURSES & LEARNING CENTER",
- home:"BACK TO ACADEMY",
- title:"LEARNING CENTER",
- intro:"Learn, practice, complete assessments and develop professional skills.",
- core:"CORE COURSES",
- special:"SPECIALIZED PROGRAMS",
- support:"SUPPORT",
- coreTitle:"6 CORE COURSES",
- coreDesc:"Six digital courses to develop knowledge, technology and professional skills.",
- specialTitle:"6 SPECIALIZED PROGRAMS",
- progress:"PROGRESS",
- start:"START COURSE",
- pathDesc:"Every student follows a learning path from registration to certification.",
- certRule:"CERTIFICATION RULES",
- certText:"Students must complete training, pass required assessments and satisfy applicable financial and administrative requirements.",
- contact:"CONTACT AND SUPPORT",
- follow:"FOLLOW US",
- lessons:"TRAINING CURRICULUM",
- complete:"I studied this module",
- exercise:"PRACTICAL EXERCISE",
- save:"SAVE",
- saved:"Work saved on this device.",
- profile:"REGISTRATION",
- training:"TRAINING",
- practice:"PRACTICE",
- assessment:"ASSESSMENT",
- certificate:"CERTIFICATION",
- profileDesc:"Create your student profile.",
- trainingDesc:"Follow modules and lessons.",
- practiceDesc:"Complete exercises and projects.",
- assessmentDesc:"Take required examinations.",
- certificateDesc:"Review certification requirements.",
- open:"OPEN TRAINING PAGE",
- name:"Full name",
- email:"Email",
- choose:"Choose a program.",
- note:"These modules form a study outline. Detailed lesson pages must be available for full training.",
- unavailable:"The detailed page is not yet available."
-}
-};
-
+const $=id=>document.getElementById(id);
 const L=(ht,fr,en)=>({ht,fr,en});
 
-/* TWELVE TRAINING PROGRAMS */
+const EMAIL="bss1815promaxdmp@gmail.com";
 
-const courses=[
+/* ==========================================
+   VIDEO ASSETS — ACADEMY ONLY
+========================================== */
 
-{
- id:"ai",
- folder:"introduction-ai",
- icon:"brain",
- title:"INTRODUCTION TO AI",
- tags:["BEGINNER","AI","CERTIFICATE"],
- desc:L(
- "Konprann entèlijans atifisyèl ak aplikasyon pratik li.",
- "Comprendre l’intelligence artificielle et ses applications.",
- "Understand artificial intelligence and its applications."
- ),
- modules:[
- L("Fondasyon AI","Fondements de l’IA","AI fundamentals"),
- L("Machine Learning","Apprentissage automatique","Machine learning"),
- L("AI jeneratif","IA générative","Generative AI"),
- L("Teknik Prompt","Techniques de prompt","Prompt engineering"),
- L("Etik ak sekirite","Éthique et sécurité","Ethics and safety"),
- L("Pwojè final AI","Projet final IA","Final AI project")
- ],
- task:L(
- "Prepare yon prompt ki gen objektif, kontèks, enstriksyon ak fòma. Analize repons AI a epi verifye twa enfòmasyon ladan l.",
- "Préparez un prompt avec objectif, contexte, instructions et format. Analysez la réponse et vérifiez trois informations.",
- "Prepare a prompt with a goal, context, instructions and format. Analyze the response and verify three claims."
- )
-},
-
-{
- id:"digital",
- folder:"digital-creation",
- icon:"wand-magic-sparkles",
- title:"DIGITAL CREATION",
- tags:["CREATIVE","MEDIA","CERTIFICATE"],
- desc:L(
- "Kreye kontni dijital pwofesyonèl.",
- "Créer du contenu numérique professionnel.",
- "Create professional digital content."
- ),
- modules:[
- L("Fondasyon design","Fondements du design","Design fundamentals"),
- L("Tipografi ak koulè","Typographie et couleurs","Typography and color"),
- L("Kreyasyon imaj","Création d’images","Image creation"),
- L("Pwodiksyon videyo","Production vidéo","Video production"),
- L("Kontni rezo sosyal","Contenu social","Social media content"),
- L("Portfolio dijital","Portfolio numérique","Digital portfolio")
- ],
- task:L(
- "Kreye yon afich ak yon mesaj prensipal, yon yerachi vizyèl ak yon apèl a aksyon. Eksplike chwa design ou yo.",
- "Créez une affiche avec message principal, hiérarchie visuelle et appel à l’action. Justifiez vos choix.",
- "Create a flyer with a main message, visual hierarchy and call to action. Explain your design choices."
- )
-},
-
-{
- id:"leadership",
- folder:"digital-leadership",
- icon:"chart-line",
- title:"DIGITAL LEADERSHIP",
- tags:["LEADERSHIP","MANAGEMENT"],
- desc:L(
- "Devlope vizyon, disiplin ak jesyon ekip.",
- "Développer la vision, la discipline et la gestion d’équipe.",
- "Develop vision, discipline and team management."
- ),
- modules:[
- L("Prensip lidèchip","Principes du leadership","Leadership principles"),
- L("Vizyon estratejik","Vision stratégique","Strategic vision"),
- L("Jesyon ekip","Gestion d’équipe","Team management"),
- L("Pran desizyon","Prise de décision","Decision-making"),
- L("Jesyon konfli","Gestion des conflits","Conflict management"),
- L("Plan aksyon","Plan d’action","Action plan")
- ],
- task:L(
- "Prepare yon plan ekip ak twa objektif mezirab, responsablite, delè ak metòd evalyasyon.",
- "Préparez un plan d’équipe avec trois objectifs mesurables, responsabilités, échéances et méthode d’évaluation.",
- "Prepare a team plan with three measurable goals, responsibilities, deadlines and evaluation methods."
- )
-},
-
-{
- id:"automation",
- folder:"automation",
- icon:"gears",
- title:"AUTOMATION",
- tags:["WORKFLOW","AI","PRODUCTIVITY"],
- desc:L(
- "Otomatize travay repetitif.",
- "Automatiser les tâches répétitives.",
- "Automate repetitive tasks."
- ),
- modules:[
- L("Fondasyon workflow","Fondements du workflow","Workflow fundamentals"),
- L("Trigger ak Action","Déclencheurs et actions","Triggers and actions"),
- L("Kondisyon lojik","Conditions logiques","Logical conditions"),
- L("Entegrasyon zouti","Intégration des outils","Tool integration"),
- L("Tès ak sekirite","Tests et sécurité","Testing and safety"),
- L("Pwojè otomatik","Projet automatisé","Automation project")
- ],
- task:L(
- "Desine yon sistèm rapèl reyinyon ak trigger, kondisyon, aksyon ak pwosedi si gen erè.",
- "Concevez un rappel de réunion avec déclencheur, condition, action et procédure d’erreur.",
- "Design a meeting reminder with a trigger, condition, action and error-handling procedure."
- )
-},
-
-{
- id:"communication",
- folder:"communication",
- icon:"comments",
- title:"COMMUNICATION",
- tags:["MEDIA","PROFESSIONAL"],
- desc:L(
- "Devlope kominikasyon pwofesyonèl.",
- "Développer la communication professionnelle.",
- "Develop professional communication."
- ),
- modules:[
- L("Fondasyon kominikasyon","Fondements de la communication","Communication fundamentals"),
- L("Koute aktivman","Écoute active","Active listening"),
- L("Redaksyon pwofesyonèl","Rédaction professionnelle","Professional writing"),
- L("Pale an piblik","Prise de parole","Public speaking"),
- L("Kominikasyon dijital","Communication numérique","Digital communication"),
- L("Prezantasyon final","Présentation finale","Final presentation")
- ],
- task:L(
- "Ekri yon prezantasyon de minit ak entwodiksyon, twa pwen prensipal ak konklizyon.",
- "Rédigez une présentation de deux minutes avec introduction, trois points et conclusion.",
- "Write a two-minute presentation with an introduction, three main points and conclusion."
- )
-},
-
-{
- id:"innovation",
- folder:"innovation",
- icon:"lightbulb",
- title:"INNOVATION",
- tags:["TECHNOLOGY","PROJECT"],
- desc:L(
- "Transfòme lide an solisyon.",
- "Transformer les idées en solutions.",
- "Transform ideas into solutions."
- ),
- modules:[
- L("Idantifye pwoblèm","Identification des problèmes","Problem identification"),
- L("Rechèch itilizatè","Recherche utilisateur","User research"),
- L("Kreyativite","Créativité","Creativity"),
- L("Pwototip","Prototypage","Prototyping"),
- L("Tès ak amelyorasyon","Tests et amélioration","Testing and improvement"),
- L("Pwojè inovasyon","Projet d’innovation","Innovation project")
- ],
- task:L(
- "Idantifye yon pwoblèm lokal, pwopoze twa solisyon epi prepare yon pwototip ak yon plan tès.",
- "Identifiez un problème local, proposez trois solutions et préparez un prototype avec un plan de test.",
- "Identify a local problem, propose three solutions and prepare a prototype with a testing plan."
- )
-},
-
-{
- id:"skills",
- folder:"digital-skills",
- icon:"laptop",
- title:"DIGITAL SKILLS",
- tags:["COMPUTER","DIGITAL"],
- desc:L(
- "Konpetans enfòmatik ak sekirite.",
- "Compétences informatiques et sécurité.",
- "Computer skills and security."
- ),
- modules:[
- L("Sistèm enfòmatik","Systèmes informatiques","Computer systems"),
- L("Jesyon fichye","Gestion des fichiers","File management"),
- L("Dokiman dijital","Documents numériques","Digital documents"),
- L("Tableur","Tableurs","Spreadsheets"),
- L("Sekirite dijital","Sécurité numérique","Digital security"),
- L("Pwodiktivite","Productivité","Productivity")
- ],
- task:L(
- "Òganize yon dosye pwofesyonèl, prepare yon tablo depans epi fè yon kopi sovgad.",
- "Organisez un dossier professionnel, préparez un tableau de dépenses et une sauvegarde.",
- "Organize a professional folder, prepare an expense spreadsheet and create a backup."
- )
-},
-
-{
- id:"advanced-ai",
- folder:"artificial-intelligence",
- icon:"robot",
- title:"ARTIFICIAL INTELLIGENCE",
- tags:["AI","ADVANCED"],
- desc:L(
- "Itilizasyon avanse entèlijans atifisyèl.",
- "Utilisation avancée de l’intelligence artificielle.",
- "Advanced artificial intelligence applications."
- ),
- modules:[
- L("Modèl AI","Modèles IA","AI models"),
- L("Prompt avanse","Prompts avancés","Advanced prompting"),
- L("AI miltimodal","IA multimodale","Multimodal AI"),
- L("Ajan AI","Agents IA","AI agents"),
- L("Analiz done","Analyse des données","Data analysis"),
- L("Workflow AI","Workflow IA","AI workflows"),
- L("Verifikasyon rezilta","Validation des résultats","Output evaluation"),
- L("Pwojè final","Projet final","Final project")
- ],
- task:L(
- "Prepare yon workflow AI ki gen twa etap ak verifikasyon imen anvan piblikasyon.",
- "Préparez un workflow IA en trois étapes avec validation humaine avant publication.",
- "Prepare a three-stage AI workflow with human review before publication."
- )
-},
-
-{
- id:"administration",
- folder:"leadership-administration",
- icon:"clipboard-list",
- title:"LEADERSHIP & ADMINISTRATION",
- tags:["ADMINISTRATION","MANAGEMENT"],
- desc:L(
- "Administrasyon ak jesyon pwojè.",
- "Administration et gestion de projets.",
- "Administration and project management."
- ),
- modules:[
- L("Estrikti òganizasyon","Structure organisationnelle","Organizational structure"),
- L("Planifikasyon","Planification","Planning"),
- L("Jesyon resous","Gestion des ressources","Resource management"),
- L("Bidjè","Budget","Budgeting"),
- L("Rapò administratif","Rapports administratifs","Administrative reporting"),
- L("Evalyasyon pèfòmans","Évaluation des performances","Performance evaluation")
- ],
- task:L(
- "Prepare yon bidjè, yon kalandriye ak yon rapò pou yon pwojè yon mwa.",
- "Préparez un budget, un calendrier et un rapport pour un projet d’un mois.",
- "Prepare a budget, schedule and report for a one-month project."
- )
-},
-
-{
- id:"radio",
- folder:"radio-digital-media",
- icon:"radio",
- title:"RADIO & DIGITAL MEDIA",
- tags:["RADIO","PODCAST","MEDIA"],
- desc:L(
- "Pwodiksyon ak difizyon medya dijital.",
- "Production et diffusion de médias numériques.",
- "Digital media production and broadcasting."
- ),
- modules:[
- L("Fondasyon radyo","Fondements de la radio","Radio fundamentals"),
- L("Pwogramasyon","Programmation","Programming"),
- L("Pwodiksyon odyo","Production audio","Audio production"),
- L("Podcast","Podcast","Podcasting"),
- L("Streaming","Diffusion en continu","Streaming"),
- L("Etik medya","Éthique des médias","Media ethics"),
- L("Pwojè emisyon","Projet d’émission","Broadcast project")
- ],
- task:L(
- "Prepare yon emisyon 15 minit ak entwodiksyon, segman, tranzisyon ak konklizyon.",
- "Préparez une émission de quinze minutes avec introduction, segments, transitions et conclusion.",
- "Prepare a fifteen-minute broadcast with an introduction, segments, transitions and conclusion."
- )
-},
-
-{
- id:"business",
- folder:"business-entrepreneurship",
- icon:"briefcase",
- title:"BUSINESS & ENTREPRENEURSHIP",
- tags:["BUSINESS","ENTREPRENEUR"],
- desc:L(
- "Kreye ak devlope yon biznis.",
- "Créer et développer une entreprise.",
- "Create and develop a business."
- ),
- modules:[
- L("Lide biznis","Idée d’entreprise","Business idea"),
- L("Rechèch mache","Étude de marché","Market research"),
- L("Plan biznis","Plan d’affaires","Business plan"),
- L("Finans","Finances","Finance"),
- L("Maketing","Marketing","Marketing"),
- L("Devlopman biznis","Développement commercial","Business development")
- ],
- task:L(
- "Prepare yon plan biznis ak kliyan sib, sèvis, pri, depans ak estrateji maketing.",
- "Préparez un plan d’affaires avec clientèle cible, services, prix, dépenses et stratégie marketing.",
- "Prepare a business plan with target customers, services, prices, expenses and marketing strategy."
- )
-},
-
-{
- id:"community",
- folder:"community-services",
- icon:"handshake",
- title:"COMMUNITY & SERVICES",
- tags:["COMMUNITY","SERVICES"],
- desc:L(
- "Òganizasyon ak sèvis kominotè.",
- "Organisation et services communautaires.",
- "Community organization and services."
- ),
- modules:[
- L("Bezwen kominotè","Besoins communautaires","Community needs"),
- L("Òganizasyon volontè","Organisation des bénévoles","Volunteer organization"),
- L("Jesyon aktivite","Gestion des activités","Activity management"),
- L("Kominikasyon kominotè","Communication communautaire","Community communication"),
- L("Mezire enpak","Mesure de l’impact","Impact measurement")
- ],
- task:L(
- "Prepare yon aktivite kominotè ak objektif, resous, responsab ak metòd pou mezire enpak li.",
- "Préparez une activité communautaire avec objectifs, ressources, responsables et méthode de mesure de l’impact.",
- "Prepare a community activity with goals, resources, responsibilities and an impact measurement method."
- )
-}
-
+const logoPaths=[
+ "../assets/video/pro-max-academie.mp4",
+ "../pro-max-academie.mp4",
+ "../assets/video/pro-max-academie-II.mp4",
+ "../pro-max-academie-II.mp4",
+ "./assets/video/pro-max-academie.mp4"
 ];
 
-/* STORAGE */
+const professorPaths=[
+ "../video-prof-avatar.mp4",
+ "../assets/video/video-prof-avatar.mp4",
+ "../assets/videos/video-prof-avatar.mp4",
+ "./video-prof-avatar.mp4"
+];
+
+function loadVideo(video,paths,status){
+ let index=0;
+
+ function next(){
+  if(index>=paths.length){
+   if(status)status.textContent=tr("videoError");
+   return;
+  }
+  video.src=paths[index++];
+  video.load();
+ }
+
+ video.addEventListener("error",next);
+
+ video.addEventListener("loadeddata",()=>{
+  if(status)status.textContent="";
+  video.play().catch(()=>{});
+ });
+
+ next();
+}
+
+/* ==========================================
+   LANGUAGE SYSTEM
+========================================== */
+
+const T={
+ subtitle:L("SANT KOU AK APRANTISAJ","CENTRE DE FORMATION","COURSES & LEARNING CENTER"),
+ home:L("RETOUNEN NAN AKADEMI","RETOUR À L’ACADÉMIE","BACK TO ACADEMY"),
+ title:L("SANT FÒMASYON","CENTRE DE FORMATION","LEARNING CENTER"),
+ intro:L("Aprann, pratike, pase evalyasyon epi devlope konpetans pwofesyonèl ou.","Apprenez, pratiquez et développez vos compétences professionnelles.","Learn, practice and develop professional skills."),
+ core:L("KOU PRENSIPAL","COURS PRINCIPAUX","CORE COURSES"),
+ special:L("FÒMASYON ESPESYALIZE","FORMATIONS SPÉCIALISÉES","SPECIALIZED PROGRAMS"),
+ support:L("SIPÒ","ASSISTANCE","SUPPORT"),
+ coreTitle:L("6 KOU PRENSIPAL","6 COURS PRINCIPAUX","6 CORE COURSES"),
+ specialTitle:L("6 FÒMASYON ESPESYALIZE","6 FORMATIONS SPÉCIALISÉES","6 SPECIALIZED PROGRAMS"),
+ progress:L("PWOGRÈ","PROGRESSION","PROGRESS"),
+ start:L("KÒMANSE KOU A","COMMENCER LE COURS","START COURSE"),
+ objective:L("OBJEKTIF","OBJECTIF","OBJECTIVE"),
+ example:L("EGZANP","EXEMPLE","EXAMPLE"),
+ complete:L("Mwen fini etidye leson sa a","J’ai terminé cette leçon","I completed this lesson"),
+ exercise:L("EGZÈSIS PRATIK","EXERCICE PRATIQUE","PRACTICAL EXERCISE"),
+ assessment:L("EVALYASYON","ÉVALUATION","ASSESSMENT"),
+ submit:L("KORIJE REPONS YO","CORRIGER LES RÉPONSES","CHECK ANSWERS"),
+ save:L("ANREJISTRE","ENREGISTRER","SAVE"),
+ saved:L("Anrejistre sou aparèy sa a.","Enregistré sur cet appareil.","Saved on this device."),
+ storageError:L("Anrejistreman an echwe.","Échec de l’enregistrement.","Saving failed."),
+ score:L("REZILTA","RÉSULTAT","RESULT"),
+ passed:L("Ou pase evalyasyon an.","Évaluation réussie.","Assessment passed."),
+ failed:L("Revize leson yo epi eseye ankò.","Révisez et réessayez.","Review the lessons and try again."),
+ finish:L("Fini tout leson yo anvan egzamen an.","Terminez les leçons avant l’examen.","Complete the lessons before the exam."),
+ profile:L("ENSKRIPSYON","INSCRIPTION","REGISTRATION"),
+ training:L("FÒMASYON","FORMATION","TRAINING"),
+ practice:L("PRATIK","PRATIQUE","PRACTICE"),
+ certificate:L("SÈTIFIKASYON","CERTIFICATION","CERTIFICATION"),
+ pathIntro:L("Soti nan enskripsyon rive nan sètifikasyon.","De l’inscription à la certification.","From registration to certification."),
+ profileDesc:L("Prepare pwofil elèv ou.","Préparez votre profil étudiant.","Prepare your student profile."),
+ trainingDesc:L("Etidye leson yo.","Étudiez les leçons.","Study the lessons."),
+ practiceDesc:L("Aplike sa ou aprann.","Appliquez vos connaissances.","Apply your knowledge."),
+ assessmentDesc:L("Teste konesans ou.","Testez vos connaissances.","Test your knowledge."),
+ certificateDesc:L("Konsilte rezilta fòmasyon ou.","Consultez vos résultats.","Review your training results."),
+ certRule:L("Sètifika ofisyèl mande validasyon administrasyon an. Rezilta lokal yo pa yon sètifika ofisyèl.","Le certificat officiel nécessite une validation administrative.","Official certification requires administrative approval."),
+ profIntro:L("Asistans pedagojik ak sèvis elèv.","Assistance pédagogique et service étudiant.","Academic assistance and student services."),
+ profText:L("Chwazi kou ou epi prepare yon kesyon pou sèvis akademik la.","Choisissez votre cours et préparez une question au service académique.","Choose your course and prepare a question for academic support."),
+ choose:L("Chwazi yon kou","Choisissez un cours","Choose a course"),
+ question:L("Ekri kesyon ou","Écrivez votre question","Write your question"),
+ send:L("VOYE PA IMÈL","ENVOYER PAR COURRIEL","SEND BY EMAIL"),
+ emailNotice:L("Bouton an ouvri aplikasyon imèl ou. Li pa yon chatbot AI an dirèk.","Le bouton ouvre votre messagerie. Il ne s’agit pas d’un chatbot IA en direct.","This opens your email application, not a live AI chatbot."),
+ sound:L("SON ON / OFF","ACTIVER / COUPER LE SON","SOUND ON / OFF"),
+ videoError:L("Fichye videyo a pa jwenn.","Fichier vidéo introuvable.","Video file not found."),
+ contact:L("KONTAK AK SIPÒ","CONTACT ET ASSISTANCE","CONTACT AND SUPPORT"),
+ follow:L("SWIV NOU","SUIVEZ-NOUS","FOLLOW US"),
+ name:L("Non konplè","Nom complet","Full name"),
+ email:L("Imèl","Courriel","Email"),
+ localProfile:L("Pwofil lokal, pa yon enskripsyon ofisyèl.","Profil local, non une inscription officielle.","Local profile, not official enrollment."),
+ pending:L("An atant validasyon administratif","En attente de validation administrative","Awaiting administrative approval"),
+ incomplete:L("Fòmasyon poko fini","Formation non terminée","Training incomplete"),
+ correct:L("Bon repons","Bonne réponse","Correct answer"),
+ socialNotice:L("Lyen pwofil ofisyèl la poko konfigire.","Le lien du profil officiel reste à configurer.","The official profile URL is not configured.")
+};
 
 function read(key,fallback){
  try{
@@ -1176,31 +562,733 @@ function write(key,value){
 }
 
 let lang=read("promaxCoursesLanguage","ht");
+if(!["ht","fr","en"].includes(lang))lang="ht";
 
-if(!T[lang])lang="ht";
+function tr(key){return T[key][lang]}
 
-function tr(key){return T[lang][key]}
+/* ==========================================
+   PEDAGOGICAL CONTENT
+   TITLE / LESSON / EXAMPLE / QUESTION / ANSWERS
+========================================== */
 
-function getDone(course){
- const value=read("promaxStudy_"+course.id,[]);
+function M(title,body,example,q,correct,wrong1,wrong2){
+ return {title,body,example,q,options:[correct,wrong1,wrong2]};
+}
+
+function C(id,icon,title,desc,lessons,task){
+ return {id,icon,title,desc,lessons,task};
+}
+
+const courses=[
+
+/* 01 — INTRODUCTION TO AI */
+
+C("ai","brain","INTRODUCTION TO AI",
+
+L("Konprann AI ak itilizasyon responsab li.",
+"Comprendre l’IA et son utilisation responsable.",
+"Understand AI and its responsible use."),
+
+[
+M(
+L("Fondasyon AI","Fondements de l’IA","AI fundamentals"),
+L(
+"AI se yon teknoloji ki itilize modèl enfòmatik pou analize done, rekonèt regilarite epi pwodwi rezilta. Yon sistèm AI kapab klase enfòmasyon, fè prediksyon oswa jenere kontni. Machine Learning aprann apati egzanp, tandiske AI jeneratif pwodwi nouvo kontni. Rezilta AI pa toujou egzak. Itilizatè a dwe verifye sous ak kalkil anvan li pran yon desizyon.",
+"L’IA utilise des modèles informatiques pour analyser des données, reconnaître des régularités et produire des résultats. Elle peut classifier, prédire ou générer du contenu. L’apprentissage automatique apprend à partir d’exemples. L’IA générative produit du contenu. Les résultats doivent être vérifiés avant toute décision.",
+"AI uses computational models to analyze data, recognize patterns and produce outputs. It can classify information, make predictions or generate content. Machine learning learns from examples, while generative AI produces content. Verify sources and calculations before making decisions."
+),
+L("Yon filtè imèl aprann rekonèt mesaj spam apati egzanp.","Un filtre apprend à reconnaître les courriels indésirables.","An email filter learns to recognize spam from examples."),
+L("Kisa AI kapab fè?","Que peut faire l’IA ?","What can AI do?"),
+L("Rekonèt modèl","Reconnaître des régularités","Recognize patterns"),
+L("Toujou garanti verite","Garantir toujours la vérité","Always guarantee truth"),
+L("Elimine tout erè","Éliminer toutes les erreurs","Eliminate every error")
+),
+
+M(
+L("Prompt Engineering","Techniques de prompt","Prompt engineering"),
+L(
+"Yon prompt se enstriksyon ou bay AI. Li dwe gen objektif, kontèks, limit ak fòma rezilta. Kòmanse ak yon travay presi. Bay egzanp si sa nesesè. Konpare repons lan ak kritè ou te defini. Si li pa satisfè kondisyon yo, amelyore enstriksyon an epi teste ankò.",
+"Un prompt est une instruction donnée à l’IA. Il précise l’objectif, le contexte, les contraintes et le format attendu. Fournissez des exemples si nécessaire. Comparez la réponse aux critères définis, puis améliorez les instructions.",
+"A prompt is an instruction given to AI. Specify the goal, context, constraints and output format. Provide examples when useful. Compare the output against your criteria, then refine the instructions."
+),
+L("Ekri yon imèl pwofesyonèl 100 mo an fransè.","Rédigez un courriel professionnel de 100 mots en français.","Write a 100-word professional email in French."),
+L("Ki prompt ki pi efikas?","Quel prompt est le plus efficace ?","Which prompt is most effective?"),
+L("Yon prompt presi ak kontèks","Un prompt précis et contextualisé","A specific prompt with context"),
+L("Yon enstriksyon vag","Une instruction vague","A vague instruction"),
+L("Yon mesaj kontradiktwa","Un message contradictoire","A contradictory message")
+),
+
+M(
+L("Etik ak verifikasyon","Éthique et vérification","Ethics and verification"),
+L(
+"AI kapab envante enfòmasyon oswa repwodui patipri ki nan done li. Verifye reklamasyon yo ak sous endepandan. Pa pataje modpas, enfòmasyon kliyan oswa dokiman konfidansyèl san otorizasyon. Kenbe kontwòl imen sou desizyon enpòtan epi respekte dwa otè.",
+"L’IA peut inventer des informations ou reproduire des biais. Vérifiez les affirmations auprès de sources indépendantes. Ne partagez pas de mots de passe ni de données confidentielles sans autorisation. Maintenez un contrôle humain et respectez les droits d’auteur.",
+"AI may fabricate information or reproduce biases. Verify claims using independent sources. Never share passwords or confidential customer data without authorization. Maintain human oversight and respect copyright."
+),
+L("Verifye yon dat AI bay ak yon dokiman ofisyèl.","Vérifier une date auprès d’une source officielle.","Check an AI-generated date against an official source."),
+L("Kisa pou fè anvan piblikasyon?","Que faire avant publication ?","What should happen before publication?"),
+L("Verifye enfòmasyon","Vérifier les informations","Verify information"),
+L("Pibliye otomatikman","Publier automatiquement","Publish automatically"),
+L("Inyore sous yo","Ignorer les sources","Ignore sources")
+)
+],
+
+L("Prepare yon prompt pou yon plan etid 7 jou. Verifye rezilta a epi eksplike koreksyon ou fè.",
+"Préparez un prompt pour un programme d’étude de sept jours. Vérifiez le résultat et expliquez vos corrections.",
+"Prepare a prompt for a seven-day study plan. Verify the output and explain your corrections.")
+),
+
+/* 02 — DIGITAL CREATION */
+
+C("digital","wand-magic-sparkles","DIGITAL CREATION",
+
+L("Kreyasyon grafik, imaj ak videyo.",
+"Création graphique, images et vidéos.",
+"Graphic design, images and video."),
+
+[
+M(
+L("Fondasyon design","Fondements du design","Design fundamentals"),
+L(
+"Yon design efikas kòmanse ak objektif ak piblik sib. Yerachi vizyèl detèmine sa moun wè an premye. Aliyman kreye òganizasyon, kontrast amelyore lekti epi espas separe enfòmasyon yo. Limite kantite polis ak eleman dekoratif.",
+"Un design efficace commence par un objectif et un public cible. La hiérarchie visuelle guide le regard. L’alignement organise les éléments, le contraste améliore la lecture et l’espace sépare les informations.",
+"Effective design begins with a goal and target audience. Visual hierarchy guides attention. Alignment organizes elements, contrast improves readability and spacing separates information."
+),
+L("Mete tit yon evènman pi gwo pase dat la.","Agrandir le titre d’un événement par rapport à sa date.","Make an event title larger than its date."),
+L("Kisa kontrast amelyore?","Que favorise le contraste ?","What does contrast improve?"),
+L("Lizibilite","Lisibilité","Readability"),
+L("Konfizyon","Confusion","Confusion"),
+L("Pèt enfòmasyon","Perte d’information","Information loss")
+),
+
+M(
+L("Pwodiksyon videyo","Production vidéo","Video production"),
+L(
+"Prepare yon storyboard ki dekri chak sèn. Chwazi kadraj, limyè ak son selon mesaj la. Anrejistre yon tès anvan pwodiksyon final. Pou montaj, retire pati initil yo epi verifye tranzisyon ak nivo odyo. Ekspòte selon platfòm destinasyon an.",
+"Préparez un storyboard décrivant chaque scène. Choisissez cadrage, lumière et son selon le message. Réalisez un test avant production. Au montage, supprimez les passages inutiles et vérifiez transitions et niveaux audio.",
+"Prepare a storyboard describing each scene. Choose framing, lighting and sound according to the message. Record a test before production. Remove unnecessary footage and review transitions and audio levels."
+),
+L("Videyo vètikal 9:16 pou yon rezo sosyal.","Vidéo verticale 9:16 pour un réseau social.","Vertical 9:16 video for social media."),
+L("Kisa storyboard la prepare?","Que prépare le storyboard ?","What does a storyboard prepare?"),
+L("Sekans sèn yo","La séquence des scènes","The sequence of scenes"),
+L("Modpas kont lan","Le mot de passe","The account password"),
+L("Pri entènèt la","Le prix d’Internet","Internet pricing")
+),
+
+M(
+L("Ekspòtasyon ak portfolio","Exportation et portfolio","Export and portfolio"),
+L(
+"PNG itil pou grafik ak transparans. JPEG adapte pou anpil foto. MP4 se yon fòma videyo komen. Kenbe fichye sous yo apa de vèsyon ekspòte yo. Yon portfolio dwe montre pi bon travay ou, objektif pwojè a ak rezilta final li.",
+"Le PNG convient aux graphiques et à la transparence. Le JPEG convient à de nombreuses photos. Le MP4 est un format vidéo courant. Conservez les fichiers sources séparément. Un portfolio présente vos meilleurs travaux et leurs objectifs.",
+"PNG supports graphics and transparency. JPEG is suitable for many photographs. MP4 is a common video format. Keep source files separate from exports. A portfolio showcases your strongest work and project objectives."
+),
+L("Ekspòte yon logo transparan an PNG.","Exporter un logo transparent en PNG.","Export a transparent logo as PNG."),
+L("Ki fòma sipòte transparans?","Quel format permet la transparence ?","Which format supports transparency?"),
+L("PNG","PNG","PNG"),
+L("MP3","MP3","MP3"),
+L("TXT","TXT","TXT")
+)
+],
+
+L("Kreye yon afich, yon storyboard ak yon plan portfolio.",
+"Créez une affiche, un storyboard et un plan de portfolio.",
+"Create a flyer, a storyboard and a portfolio plan.")
+),
+
+/* 03 — DIGITAL LEADERSHIP */
+
+C("leadership","chart-line","DIGITAL LEADERSHIP",
+
+L("Lidèchip, estrateji ak jesyon ekip.",
+"Leadership, stratégie et gestion d’équipe.",
+"Leadership, strategy and team management."),
+
+[
+M(
+L("Vizyon estratejik","Vision stratégique","Strategic vision"),
+L(
+"Yon vizyon dekri kote yon òganizasyon vle rive. Transfòme vizyon an an objektif presi ak mezirab. Defini responsab, resous ak delè. Evalye pwogrè regilyèman epi adapte plan an selon rezilta yo.",
+"Une vision décrit la destination d’une organisation. Transformez-la en objectifs précis et mesurables. Définissez responsables, ressources et échéances. Évaluez régulièrement les progrès.",
+"A vision describes where an organization wants to go. Translate it into specific, measurable objectives. Define owners, resources and deadlines. Review progress regularly."
+),
+L("Fòme 20 elèv nan twa mwa.","Former 20 étudiants en trois mois.","Train 20 students in three months."),
+L("Ki objektif ki mezirab?","Quel objectif est mesurable ?","Which goal is measurable?"),
+L("Fòme 20 elèv","Former 20 étudiants","Train 20 students"),
+L("Fè yon bagay","Faire quelque chose","Do something"),
+L("Travay san delè","Travailler sans échéance","Work without deadlines")
+),
+
+M(
+L("Delegasyon","Délégation","Delegation"),
+L(
+"Delegasyon se bay yon moun responsabilite pou yon travay. Chwazi moun selon kapasite li. Bay enstriksyon, otorite ak resous nesesè. Fikse yon delè ak kritè kalite. Kontwole rezilta san ou pa retire tout endepandans moun nan.",
+"La délégation consiste à confier une responsabilité selon les compétences. Fournissez instructions, autorité et ressources. Fixez échéances et critères de qualité. Suivez les résultats sans supprimer l’autonomie.",
+"Delegation assigns responsibility according to skills. Provide instructions, authority and resources. Set deadlines and quality criteria. Monitor results without removing autonomy."
+),
+L("Bay responsab finans lan prepare bidjè a.","Confier le budget au responsable financier.","Assign budgeting to the finance lead."),
+L("Kisa yon bon delegasyon mande?","Que nécessite une bonne délégation ?","What does good delegation require?"),
+L("Responsablite klè","Responsabilités claires","Clear responsibilities"),
+L("Konfizyon","Confusion","Confusion"),
+L("Absans resous","Absence de ressources","No resources")
+),
+
+M(
+L("Jesyon konfli","Gestion des conflits","Conflict management"),
+L(
+"Idantifye pwoblèm nan san atake moun. Koute chak pati, separe reyalite ak opinyon epi chèche enterè komen. Konpare solisyon yo ak objektif ekip la. Dokimante akò final la epi verifye aplikasyon li.",
+"Identifiez le problème sans attaquer les personnes. Écoutez chaque partie, distinguez faits et opinions et recherchez les intérêts communs. Documentez l’accord et suivez son application.",
+"Identify the problem without attacking individuals. Listen to each party, separate facts from opinions and find common interests. Document the agreement and monitor implementation."
+),
+L("Òganize yon reyinyon medyasyon.","Organiser une réunion de médiation.","Organize a mediation meeting."),
+L("Ki premye etap ki itil?","Quelle première étape est utile ?","Which first step is useful?"),
+L("Koute chak pati","Écouter chaque partie","Listen to each party"),
+L("Akize tout moun","Accuser tout le monde","Accuse everyone"),
+L("Inyore pwoblèm nan","Ignorer le problème","Ignore the problem")
+)
+],
+
+L("Prepare yon plan ekip ak objektif, responsab, delè ak endikatè pèfòmans.",
+"Préparez un plan d’équipe avec objectifs, responsables, délais et indicateurs.",
+"Prepare a team plan with goals, owners, deadlines and performance indicators.")
+),
+
+/* 04 — AUTOMATION */
+
+C("automation","gears","AUTOMATION",
+
+L("Workflow ak otomatik dijital.",
+"Workflows et automatisation numérique.",
+"Digital workflows and automation."),
+
+[
+M(
+L("Workflow","Flux de travail","Workflow"),
+L(
+"Yon workflow se yon sekans travay ki mennen nan yon rezilta. Idantifye antre, etap, responsab ak rezilta final. Chèche travay repetitif ki gen règ klè. Pa otomatize yon pwosesis ki poko byen defini.",
+"Un workflow est une séquence de tâches produisant un résultat. Identifiez entrées, étapes, responsables et sorties. Repérez les tâches répétitives aux règles claires. Définissez le processus avant de l’automatiser.",
+"A workflow is a sequence of tasks producing an outcome. Identify inputs, steps, owners and outputs. Find repetitive tasks with clear rules. Define the process before automating it."
+),
+L("Resevwa yon fòm, verifye li epi klase li.","Recevoir, vérifier et classer un formulaire.","Receive, validate and file a form."),
+L("Kisa workflow la reprezante?","Que représente un workflow ?","What does a workflow represent?"),
+L("Yon sekans travay","Une séquence de tâches","A sequence of tasks"),
+L("Yon foto","Une photo","A photograph"),
+L("Yon modpas","Un mot de passe","A password")
+),
+
+M(
+L("Trigger, condition, action","Déclencheur, condition, action","Trigger, condition, action"),
+L(
+"Trigger se evènman ki kòmanse otomatik la. Condition verifye si règ yo satisfè. Action egzekite travay la. Yon workflow kapab gen plizyè branch selon rezilta kondisyon yo. Mete yon pwosedi pou erè.",
+"Le déclencheur démarre l’automatisation. La condition vérifie les règles. L’action exécute la tâche. Plusieurs branches peuvent dépendre des conditions. Prévoyez une gestion des erreurs.",
+"A trigger starts an automation. A condition checks rules. An action performs the task. Multiple branches may depend on conditions. Include error handling."
+),
+L("Nouvo enskripsyon → verifye imèl → prepare konfimasyon.","Nouvelle inscription → vérifier le courriel → préparer la confirmation.","New registration → validate email → prepare confirmation."),
+L("Kisa trigger la fè?","Que fait le déclencheur ?","What does a trigger do?"),
+L("Kòmanse workflow la","Démarre le workflow","Starts the workflow"),
+L("Efase tout done","Efface toutes les données","Deletes all data"),
+L("Bloke tout travay","Bloque toutes les tâches","Blocks every task")
+),
+
+M(
+L("Tès ak sekirite","Tests et sécurité","Testing and safety"),
+L(
+"Teste workflow la ak done tès anvan ou itilize done reyèl. Verifye rezilta nòmal, done ki manke ak erè koneksyon. Limite pèmisyon zouti yo. Mete apwobasyon imen pou aksyon ki gen konsekans enpòtan.",
+"Testez le workflow avec des données fictives. Vérifiez les résultats normaux, données manquantes et erreurs de connexion. Limitez les permissions. Exigez une validation humaine pour les actions importantes.",
+"Test workflows using sample data. Check normal outcomes, missing inputs and connection errors. Limit permissions. Require human approval for consequential actions."
+),
+L("Teste yon rapèl ak yon fo randevou.","Tester un rappel avec un rendez-vous fictif.","Test a reminder using a sample appointment."),
+L("Kisa pou fè anvan lansman?","Que faire avant le lancement ?","What should happen before launch?"),
+L("Teste sistèm nan","Tester le système","Test the system"),
+L("Inyore erè","Ignorer les erreurs","Ignore errors"),
+L("Bay tout pèmisyon","Accorder toutes les permissions","Grant every permission")
+)
+],
+
+L("Desine yon otomatik rapèl reyinyon ak kondisyon, aksyon ak jesyon erè.",
+"Concevez un rappel de réunion avec conditions, actions et gestion des erreurs.",
+"Design a meeting reminder automation with conditions, actions and error handling.")
+),
+
+/* 05 — COMMUNICATION */
+
+C("communication","comments","COMMUNICATION",
+
+L("Kominikasyon pwofesyonèl ak prezantasyon.",
+"Communication professionnelle et présentation.",
+"Professional communication and presentation."),
+
+[
+M(
+L("Estrikti mesaj","Structure du message","Message structure"),
+L(
+"Yon mesaj pwofesyonèl dwe gen objektif, piblik sib ak enfòmasyon esansyèl. Mete pwen prensipal la an premye. Itilize mo presi ak paragraf kout. Fini ak aksyon ou bezwen moun nan fè.",
+"Un message professionnel précise objectif, public cible et informations essentielles. Présentez le point principal en premier. Utilisez des mots précis et terminez par l’action attendue.",
+"A professional message identifies its purpose, audience and essential information. Present the main point first. Use precise language and end with the requested action."
+),
+L("Konfime dat ak lè yon reyinyon nan yon imèl.","Confirmer la date et l’heure d’une réunion par courriel.","Confirm a meeting date and time by email."),
+L("Ki eleman mesaj la bezwen?","Quel élément est nécessaire ?","What does a message need?"),
+L("Yon objektif klè","Un objectif clair","A clear purpose"),
+L("Kontradiksyon","Des contradictions","Contradictions"),
+L("Enfòmasyon initil","Des informations inutiles","Unnecessary information")
+),
+
+M(
+L("Koute aktivman","Écoute active","Active listening"),
+L(
+"Koute aktivman mande atansyon ak kestyon ouvè. Pa entèwonp moun nan. Repete sans mesaj la ak pwòp mo ou pou verifye konpreyansyon. Separe sa moun nan di ak entèpretasyon pèsonèl ou.",
+"L’écoute active exige attention et questions ouvertes. Évitez les interruptions. Reformulez le message pour vérifier votre compréhension. Distinguez les propos de votre interprétation.",
+"Active listening requires attention and open questions. Avoid interrupting. Paraphrase the message to check understanding. Distinguish what was said from your interpretation."
+),
+L("Mande moun nan eksplike bezwen li.","Demander à la personne d’expliquer son besoin.","Ask the person to explain their needs."),
+L("Ki aksyon ki ede konpreyansyon?","Quelle action aide à comprendre ?","What helps understanding?"),
+L("Reformile mesaj la","Reformuler le message","Paraphrase the message"),
+L("Entèwonp moun nan","Interrompre la personne","Interrupt the speaker"),
+L("Sipoze tout bagay","Tout supposer","Assume everything")
+),
+
+M(
+L("Pale an piblik","Prise de parole","Public speaking"),
+L(
+"Prepare yon entwodiksyon ki atire atansyon, yon devlopman ki gen prèv ak yon konklizyon ki rezime mesaj la. Pratike ak yon kwonomèt. Kontwole ritm, volim ak poz. Adapte vokabilè a selon piblik la.",
+"Préparez une introduction captivante, un développement argumenté et une conclusion synthétique. Entraînez-vous avec un chronomètre. Contrôlez rythme, volume et pauses. Adaptez le vocabulaire au public.",
+"Prepare an engaging introduction, evidence-based main points and a concise conclusion. Practice with a timer. Control pace, volume and pauses. Adapt vocabulary to the audience."
+),
+L("Prepare yon prezantasyon de minit.","Préparer une présentation de deux minutes.","Prepare a two-minute presentation."),
+L("Kisa konklizyon an fè?","À quoi sert la conclusion ?","What does the conclusion do?"),
+L("Rezime mesaj la","Résumer le message","Summarize the message"),
+L("Kache objektif la","Cacher l’objectif","Hide the purpose"),
+L("Kòmanse yon lòt sijè","Commencer un autre sujet","Start another topic")
+)
+],
+
+L("Ekri yon prezantasyon pwofesyonèl de minit epi prepare twa kestyon pou piblik la.",
+"Rédigez une présentation de deux minutes et trois questions pour le public.",
+"Write a two-minute professional presentation and three audience questions.")
+),
+
+/* 06 — INNOVATION */
+
+C("innovation","lightbulb","INNOVATION",
+
+L("Kreyativite, pwototip ak solisyon.",
+"Créativité, prototypes et solutions.",
+"Creativity, prototypes and solutions."),
+
+[
+M(
+L("Idantifye pwoblèm","Identification du problème","Problem identification"),
+L(
+"Inovasyon kòmanse ak yon bezwen reyèl. Obsève moun ki afekte yo, poze kestyon epi dokimante difikilte yo. Defini pwoblèm nan san ou pa enpoze yon solisyon davans. Chwazi yon endikatè pou mezire amelyorasyon.",
+"L’innovation commence par un besoin réel. Observez les personnes concernées, posez des questions et documentez les difficultés. Définissez le problème sans imposer une solution préalable. Choisissez un indicateur d’amélioration.",
+"Innovation starts with a real need. Observe affected users, ask questions and document difficulties. Define the problem without imposing a solution. Choose a measure of improvement."
+),
+L("Mezire tan elèv pèdi ap chèche leson.","Mesurer le temps perdu à rechercher les leçons.","Measure time students spend searching for lessons."),
+L("Kisa pou idantifye an premye?","Que faut-il identifier en premier ?","What should be identified first?"),
+L("Bezwen reyèl la","Le besoin réel","The real need"),
+L("Koulè logo a","La couleur du logo","The logo color"),
+L("Pri yon dekorasyon","Le prix d’une décoration","Decoration cost")
+),
+
+M(
+L("Pwototip","Prototypage","Prototyping"),
+L(
+"Yon pwototip se yon premye modèl solisyon an. Li sèvi pou teste lide san gwo envestisman. Kreye yon desen, yon modèl dijital oswa yon vèsyon senp. Mande itilizatè yo fè travay reyèl avèk li epi obsève rezilta yo.",
+"Un prototype est une première représentation de la solution. Il permet de tester une idée avant un investissement important. Créez une maquette ou une version simple. Observez les utilisateurs pendant des tâches réelles.",
+"A prototype is an early representation of a solution. It tests an idea before major investment. Create a sketch, mockup or simple version. Observe users completing real tasks."
+),
+L("Teste yon paj enskripsyon senp.","Tester une page d’inscription simple.","Test a simple registration page."),
+L("Poukisa kreye yon pwototip?","Pourquoi créer un prototype ?","Why create a prototype?"),
+L("Teste lide a","Tester l’idée","Test the idea"),
+L("Evite tout fidbak","Éviter les retours","Avoid feedback"),
+L("Garanti siksè","Garantir le succès","Guarantee success")
+),
+
+M(
+L("Amelyorasyon kontinyèl","Amélioration continue","Continuous improvement"),
+L(
+"Kolekte fidbak ak done apre chak tès. Konpare rezilta ak objektif orijinal la. Idantifye pwoblèm ki pi enpòtan, korije yo epi teste ankò. Kenbe yon istwa chanjman pou konprann sa ki amelyore sistèm nan.",
+"Collectez les retours et les données après chaque test. Comparez les résultats aux objectifs. Corrigez les problèmes prioritaires et testez à nouveau. Conservez un historique des modifications.",
+"Collect feedback and data after each test. Compare results with the original objectives. Fix priority issues and test again. Maintain a change history."
+),
+L("Redui kantite etap yon fòm enskripsyon.","Réduire les étapes d’un formulaire.","Reduce the number of registration form steps."),
+L("Kisa ki gide amelyorasyon?","Qu’est-ce qui guide l’amélioration ?","What guides improvement?"),
+L("Done ak fidbak","Données et retours","Data and feedback"),
+L("Devine sèlman","Les suppositions seules","Guesswork alone"),
+L("Efase tout prèv","Effacer les preuves","Delete evidence")
+)
+],
+
+L("Idantifye yon pwoblèm, prepare yon pwototip epi defini twa kritè tès.",
+"Identifiez un problème, préparez un prototype et trois critères de test.",
+"Identify a problem, prepare a prototype and define three test criteria.")
+),
+
+/* 07 — DIGITAL SKILLS */
+
+C("skills","laptop","DIGITAL SKILLS",
+
+L("Enfòmatik, dokiman ak sekirite dijital.",
+"Informatique, documents et sécurité numérique.",
+"Computing, documents and digital security."),
+
+[
+M(
+L("Jesyon fichye","Gestion des fichiers","File management"),
+L(
+"Òganize fichye selon pwojè ak kategori. Itilize non ki dekri kontni ak dat. Ekstansyon fichye a endike fòma li. Kenbe dokiman orijinal yo epi kreye kopi sovgad separe. Verifye fichye yo anvan ou efase yo.",
+"Organisez les fichiers par projet et catégorie. Utilisez des noms descriptifs et datés. L’extension indique le format. Conservez les originaux et des sauvegardes séparées. Vérifiez avant suppression.",
+"Organize files by project and category. Use descriptive, dated names. Extensions indicate file formats. Preserve originals and separate backups. Verify files before deletion."
+),
+L("rapport-2026-11.pdf","rapport-2026-11.pdf","report-2026-11.pdf"),
+L("Ki non fichye ki pi klè?","Quel nom est le plus clair ?","Which filename is clearest?"),
+L("Rapò ak dat","Rapport avec date","Report with date"),
+L("abc123","abc123","abc123"),
+L("San non","Sans nom","Untitled")
+),
+
+M(
+L("Dokiman ak tableur","Documents et tableurs","Documents and spreadsheets"),
+L(
+"Yon dokiman tèks sèvi pou rapò ak lèt. Yon tableur òganize done nan ranje ak kolòn. Fòmil pèmèt kalkile total, mwayèn ak diferans. Verifye kalite done yo epi teste fòmil sou egzanp ou kapab kalkile alamen.",
+"Un traitement de texte sert aux rapports et lettres. Un tableur organise les données en lignes et colonnes. Les formules calculent totaux, moyennes et différences. Vérifiez les données et testez les formules.",
+"A word processor creates reports and letters. A spreadsheet organizes data into rows and columns. Formulas calculate totals, averages and differences. Validate data and test formulas against manual examples."
+),
+L("=SUM(B2:B10) kalkile total valè yo.","=SUM(B2:B10) calcule le total.","=SUM(B2:B10) calculates the total."),
+L("Ki zouti adapte pou kalkil?","Quel outil convient aux calculs ?","Which tool is suitable for calculations?"),
+L("Tableur","Tableur","Spreadsheet"),
+L("Mikwofòn","Microphone","Microphone"),
+L("Kamera","Caméra","Camera")
+),
+
+M(
+L("Sekirite dijital","Sécurité numérique","Digital security"),
+L(
+"Itilize modpas long ak inik pou chak kont. Aktive verifikasyon de etap. Mete sistèm ak aplikasyon ajou. Verifye adrès sit ak moun ki voye mesaj anvan ou klike sou lyen. Fè sovgad dokiman enpòtan yo.",
+"Utilisez des mots de passe longs et uniques. Activez la double authentification. Mettez à jour les applications. Vérifiez les adresses et expéditeurs avant de cliquer. Sauvegardez les documents importants.",
+"Use long, unique passwords. Enable two-factor authentication. Update applications. Verify website addresses and message senders before clicking. Back up important documents."
+),
+L("Aktive yon aplikasyon otantifikasyon.","Activer une application d’authentification.","Enable an authenticator application."),
+L("Ki pratik ki pi an sekirite?","Quelle pratique est plus sûre ?","Which practice is safer?"),
+L("Modpas inik ak 2FA","Mot de passe unique et 2FA","Unique password and 2FA"),
+L("Menm modpas tout kote","Même mot de passe partout","Same password everywhere"),
+L("Pataje modpas","Partager les mots de passe","Share passwords")
+)
+],
+
+L("Prepare yon dosye travay, yon tablo depans ak yon plan sovgad.",
+"Préparez un dossier de travail, un tableau de dépenses et un plan de sauvegarde.",
+"Prepare a work folder, an expense spreadsheet and a backup plan.")
+),
+
+/* 08 — ARTIFICIAL INTELLIGENCE */
+
+C("advanced-ai","robot","ARTIFICIAL INTELLIGENCE",
+
+L("AI avanse, workflow ak analiz done.",
+"IA avancée, workflows et analyse de données.",
+"Advanced AI, workflows and data analysis."),
+
+[
+M(
+L("AI miltimodal","IA multimodale","Multimodal AI"),
+L(
+"Yon sistèm miltimodal kapab trete plizyè kalite enfòmasyon tankou tèks, imaj ak odyo. Chwazi modèl selon travay la. Verifye si li kapab analize kalite fichye ou bay la. Pa sipoze yon modèl gen aksè ak enfòmasyon li pa resevwa.",
+"Un système multimodal traite plusieurs types d’informations, notamment texte, images et audio. Choisissez le modèle selon la tâche. Vérifiez les formats acceptés. Ne supposez pas un accès à des informations non fournies.",
+"A multimodal system processes different information types, including text, images and audio. Choose a model suited to the task. Check supported formats. Do not assume access to information that was not provided."
+),
+L("Analize yon grafik epi prepare yon rezime.","Analyser un graphique et préparer un résumé.","Analyze a chart and prepare a summary."),
+L("Kisa miltimodal vle di?","Que signifie multimodal ?","What does multimodal mean?"),
+L("Plizyè kalite done","Plusieurs types de données","Multiple data types"),
+L("Yon sèl modpas","Un seul mot de passe","One password"),
+L("Absans done","Absence de données","No data")
+),
+
+M(
+L("Analiz done ak AI","Analyse de données avec l’IA","AI-assisted data analysis"),
+L(
+"Prepare done yo anvan analiz. Idantifye valè ki manke, doublon ak inite mezi. Mande AI eksplike metòd kalkil li. Verifye total ak mwayèn yo ak yon tableur. Pa konfonn korelasyon ak relasyon koz ak efè.",
+"Préparez les données avant analyse. Identifiez valeurs manquantes, doublons et unités. Demandez à l’IA d’expliquer ses calculs. Vérifiez totaux et moyennes dans un tableur. Ne confondez pas corrélation et causalité.",
+"Prepare data before analysis. Identify missing values, duplicates and measurement units. Ask AI to explain calculations. Verify totals and averages using a spreadsheet. Do not confuse correlation with causation."
+),
+L("Analize lavant chak mwa epi verifye total anyèl la.","Analyser les ventes mensuelles et vérifier le total annuel.","Analyze monthly sales and verify the annual total."),
+L("Kisa pou verifye?","Que faut-il vérifier ?","What should be verified?"),
+L("Done ak kalkil","Données et calculs","Data and calculations"),
+L("Koulè ekran an sèlman","La couleur de l’écran seulement","Screen color only"),
+L("Anyen","Rien","Nothing")
+),
+
+M(
+L("Ajan AI ak kontwòl imen","Agents IA et supervision humaine","AI agents and human oversight"),
+L(
+"Yon ajan AI kapab planifye etap epi itilize zouti ki disponib pou yon objektif. Defini limit pèmisyon li, aksyon otorize ak kondisyon pou kanpe. Mete validasyon imen anvan piblikasyon, peman oswa chanjman enpòtan. Kenbe tras aksyon yo.",
+"Un agent IA peut planifier des étapes et utiliser des outils disponibles. Définissez permissions, actions autorisées et conditions d’arrêt. Exigez une validation humaine avant publication, paiement ou modification importante.",
+"An AI agent can plan steps and use available tools toward a goal. Define permissions, allowed actions and stopping conditions. Require human approval before publication, payment or important changes."
+),
+L("Prepare yon rapò san pibliye li otomatikman.","Préparer un rapport sans publication automatique.","Prepare a report without automatically publishing it."),
+L("Kisa ajan an bezwen?","De quoi l’agent a-t-il besoin ?","What does an agent need?"),
+L("Limit ak kontwòl","Limites et supervision","Limits and oversight"),
+L("Aksè san limit","Accès illimité","Unlimited access"),
+L("Pa gen objektif","Aucun objectif","No objective")
+)
+],
+
+L("Desine yon workflow AI pou analize done, prepare rapò epi mande apwobasyon.",
+"Concevez un workflow IA d’analyse, de rapport et de validation.",
+"Design an AI workflow for analysis, reporting and approval.")
+),
+
+/* 09 — LEADERSHIP & ADMINISTRATION */
+
+C("administration","clipboard-list","LEADERSHIP & ADMINISTRATION",
+
+L("Administrasyon, bidjè ak jesyon pwojè.",
+"Administration, budget et gestion de projets.",
+"Administration, budgeting and project management."),
+
+[
+M(
+L("Estrikti òganizasyon","Structure organisationnelle","Organizational structure"),
+L(
+"Yon òganizasyon bezwen wòl, responsablite ak liy otorite klè. Prepare yon òganigram ki montre relasyon ant fonksyon yo. Chak travay enpòtan dwe gen yon responsab. Dokimante pwosedi yo pou asire kontinwite.",
+"Une organisation nécessite des rôles, responsabilités et lignes d’autorité clairs. Préparez un organigramme. Attribuez un responsable à chaque tâche importante. Documentez les procédures pour assurer la continuité.",
+"An organization needs clear roles, responsibilities and reporting lines. Prepare an organizational chart. Assign an owner to each important task. Document procedures to ensure continuity."
+),
+L("Separe administrasyon, finans ak operasyon.","Séparer administration, finances et opérations.","Separate administration, finance and operations."),
+L("Kisa òganigram nan montre?","Que montre l’organigramme ?","What does an organizational chart show?"),
+L("Relasyon ant fonksyon","Relations entre fonctions","Relationships between roles"),
+L("Mizik ekip la","La musique de l’équipe","Team music"),
+L("Modpas pèsonèl","Les mots de passe","Personal passwords")
+),
+
+M(
+L("Bidjè ak resous","Budget et ressources","Budget and resources"),
+L(
+"Yon bidjè estime revni ak depans pou yon peryòd. Separe depans fiks ak varyab. Konpare depans reyèl ak previzyon. Analize diferans yo epi ajiste plan an. Kenbe resi ak dokiman apwobasyon.",
+"Un budget estime recettes et dépenses pour une période. Séparez charges fixes et variables. Comparez dépenses réelles et prévisions. Analysez les écarts et conservez les justificatifs.",
+"A budget estimates income and expenses for a period. Separate fixed and variable costs. Compare actual spending with forecasts. Analyze differences and retain supporting documents."
+),
+L("Bidjè $500, depans $450, diferans $50.","Budget 500 $, dépenses 450 $, écart 50 $.","Budget $500, spending $450, variance $50."),
+L("Kisa bidjè a ede kontwole?","Que permet de contrôler le budget ?","What does a budget help control?"),
+L("Revni ak depans","Recettes et dépenses","Income and expenses"),
+L("Tanperati","Température","Temperature"),
+L("Koulè rad","Couleur des vêtements","Clothing color")
+),
+
+M(
+L("Rapò ak pèfòmans","Rapports et performance","Reporting and performance"),
+L(
+"Yon rapò administratif prezante objektif, aktivite, rezilta, pwoblèm ak pwochen aksyon. Itilize endikatè mezirab. Separe reyalite ak rekòmandasyon. Bay responsab ak delè pou chak aksyon korektif.",
+"Un rapport administratif présente objectifs, activités, résultats, difficultés et prochaines actions. Utilisez des indicateurs mesurables. Séparez faits et recommandations. Attribuez responsables et échéances.",
+"An administrative report presents goals, activities, outcomes, issues and next actions. Use measurable indicators. Separate facts from recommendations. Assign owners and deadlines."
+),
+L("Rapò chak semèn sou travay fini ak travay anreta.","Rapport hebdomadaire des tâches terminées et en retard.","Weekly report of completed and overdue tasks."),
+L("Kisa yon rapò dwe genyen?","Que doit contenir un rapport ?","What should a report include?"),
+L("Rezilta ak aksyon","Résultats et actions","Results and actions"),
+L("Rimè sèlman","Des rumeurs seulement","Rumors only"),
+L("Done envante","Des données inventées","Fabricated data")
+)
+],
+
+L("Prepare yon òganigram, bidjè ak rapò pou yon pwojè yon mwa.",
+"Préparez un organigramme, un budget et un rapport pour un projet d’un mois.",
+"Prepare an organizational chart, budget and report for a one-month project.")
+),
+
+/* 10 — RADIO & DIGITAL MEDIA */
+
+C("radio","radio","RADIO & DIGITAL MEDIA",
+
+L("Pwodiksyon odyo, podcast ak difizyon.",
+"Production audio, podcast et diffusion.",
+"Audio production, podcasting and broadcasting."),
+
+[
+M(
+L("Pwogramasyon radyo","Programmation radio","Radio programming"),
+L(
+"Yon emisyon dwe gen yon piblik sib, objektif ak dire. Prepare yon conducteur ki òganize entwodiksyon, segman, tranzisyon ak konklizyon. Planifye entèvansyon prezantatè yo. Verifye dire chak segman anvan difizyon.",
+"Une émission définit son public, son objectif et sa durée. Préparez un conducteur avec introduction, segments, transitions et conclusion. Planifiez les interventions et vérifiez la durée de chaque segment.",
+"A broadcast defines its audience, purpose and duration. Prepare a rundown with an introduction, segments, transitions and conclusion. Plan presenter contributions and check segment timing."
+),
+L("Emisyon 15 minit: 1 minit intro, 12 minit kontni, 2 minit konklizyon.","Émission de 15 minutes : 1 minute d’introduction, 12 de contenu, 2 de conclusion.","15-minute show: 1 minute introduction, 12 content, 2 conclusion."),
+L("Kisa conducteur la òganize?","Qu’organise le conducteur ?","What does a rundown organize?"),
+L("Segman emisyon yo","Les segments de l’émission","Broadcast segments"),
+L("Modpas radyo a","Le mot de passe radio","Radio passwords"),
+L("Pri mikwo a","Le prix du microphone","Microphone prices")
+),
+
+M(
+L("Pwodiksyon odyo","Production audio","Audio production"),
+L(
+"Anrejistre nan yon espas ki gen ti bri. Ajiste gain mikwo a pou evite clipping. Koute yon tès ak kas ekoutè. Nan montaj, retire bri ak silans initil san detwi vwa a. Verifye nivo final la sou plizyè aparèy.",
+"Enregistrez dans un espace calme. Réglez le gain pour éviter la saturation. Écoutez un test au casque. Au montage, réduisez bruits et silences inutiles sans dégrader la voix. Vérifiez le niveau final.",
+"Record in a quiet space. Adjust microphone gain to prevent clipping. Listen to a test with headphones. Remove unwanted noise and silence without degrading the voice. Check final levels."
+),
+L("Teste vwa a anvan emisyon an.","Tester la voix avant l’émission.","Test voice levels before broadcasting."),
+L("Kisa clipping ye?","Qu’est-ce que la saturation ?","What is clipping?"),
+L("Distòsyon siyal odyo","Distorsion du signal audio","Audio signal distortion"),
+L("Yon logo","Un logo","A logo"),
+L("Yon lis mizik","Une liste musicale","A playlist")
+),
+
+M(
+L("Streaming ak etik medya","Streaming et éthique","Streaming and media ethics"),
+L(
+"Streaming transmèt odyo oswa videyo atravè entènèt. Verifye koneksyon, nivo odyo ak lekti sou aparèy piblik la. Respekte lisans mizik ak dwa otè. Verifye nouvèl anvan difizyon epi korije erè piblikman lè sa nesesè.",
+"Le streaming transmet audio ou vidéo par Internet. Vérifiez connexion, niveaux et lecture sur les appareils du public. Respectez licences et droits d’auteur. Vérifiez les nouvelles et corrigez les erreurs.",
+"Streaming delivers audio or video over the internet. Verify connectivity, audio levels and playback on audience devices. Respect music licenses and copyright. Verify news and correct errors when necessary."
+),
+L("Teste yon emisyon sou telefòn ak òdinatè.","Tester une émission sur téléphone et ordinateur.","Test a broadcast on a phone and computer."),
+L("Kisa yon medya responsab dwe fè?","Que doit faire un média responsable ?","What should responsible media do?"),
+L("Verifye nouvèl","Vérifier les nouvelles","Verify news"),
+L("Pibliye rimè","Publier des rumeurs","Publish rumors"),
+L("Inyore dwa otè","Ignorer les droits d’auteur","Ignore copyright")
+)
+],
+
+L("Prepare conducteur yon emisyon 15 minit ak yon lis verifikasyon odyo.",
+"Préparez le conducteur d’une émission de 15 minutes et une liste de contrôle audio.",
+"Prepare a 15-minute broadcast rundown and an audio checklist.")
+),
+
+/* 11 — BUSINESS & ENTREPRENEURSHIP */
+
+C("business","briefcase","BUSINESS & ENTREPRENEURSHIP",
+
+L("Kreyasyon biznis, finans ak maketing.",
+"Création d’entreprise, finances et marketing.",
+"Business creation, finance and marketing."),
+
+[
+M(
+L("Rechèch mache","Étude de marché","Market research"),
+L(
+"Yon biznis bezwen konprann kliyan li. Idantifye pwoblèm kliyan yo, sèvis konkiran yo ak pri mache a. Fè entèvyou oswa sondaj. Teste demann pou sèvis la anvan ou envesti anpil lajan.",
+"Une entreprise doit comprendre ses clients. Identifiez leurs problèmes, les offres concurrentes et les prix du marché. Réalisez entretiens ou sondages. Testez la demande avant un investissement important.",
+"A business must understand its customers. Identify customer problems, competing offers and market prices. Conduct interviews or surveys. Test demand before making major investments."
+),
+L("Poze dis kliyan kestyon sou bezwen yo.","Interroger dix clients sur leurs besoins.","Interview ten customers about their needs."),
+L("Kisa rechèch mache ede konprann?","Que permet de comprendre l’étude de marché ?","What does market research help understand?"),
+L("Bezwen kliyan","Besoins des clients","Customer needs"),
+L("Modpas kliyan","Mots de passe clients","Customer passwords"),
+L("Anyen sou demann","Rien sur la demande","Nothing about demand")
+),
+
+M(
+L("Finans biznis","Finances d’entreprise","Business finance"),
+L(
+"Revni se lajan biznis la resevwa nan aktivite li. Depans se pri operasyon yo. Pwofi se revni mwens depans. Separe finans pèsonèl ak finans biznis. Prepare yon bidjè ak previzyon lajan kach. Verifye obligasyon legal ak fiskal lokal yo.",
+"Les recettes proviennent de l’activité. Les charges représentent les coûts. Le bénéfice correspond aux recettes moins les charges. Séparez finances personnelles et professionnelles. Préparez budget et trésorerie. Vérifiez les obligations locales.",
+"Revenue comes from business activity. Expenses are operating costs. Profit equals revenue minus expenses. Separate personal and business finances. Prepare a budget and cash-flow forecast. Check local legal and tax obligations."
+),
+L("Revni $1,000 mwens depans $700 bay $300 pwofi.","Recettes 1 000 $ moins charges 700 $ donnent 300 $ de bénéfice.","Revenue of $1,000 minus expenses of $700 gives $300 profit."),
+L("Kijan kalkile pwofi?","Comment calculer le bénéfice ?","How is profit calculated?"),
+L("Revni mwens depans","Recettes moins charges","Revenue minus expenses"),
+L("Revni plis depans","Recettes plus charges","Revenue plus expenses"),
+L("Depans sèlman","Charges seulement","Expenses only")
+),
+
+M(
+L("Maketing ak kliyan","Marketing et clientèle","Marketing and customers"),
+L(
+"Defini pwopozisyon valè biznis la: ki pwoblèm li rezoud, pou ki moun ak poukisa sèvis la diferan. Chwazi chanèl kominikasyon selon kliyan sib. Mezire demann, lavant ak pri pou jwenn kliyan. Amelyore sèvis selon fidbak.",
+"Définissez la proposition de valeur : problème résolu, public cible et différenciation. Choisissez les canaux selon les clients. Mesurez demandes, ventes et coût d’acquisition. Améliorez le service selon les retours.",
+"Define the value proposition: the problem solved, target customer and differentiation. Choose communication channels based on the audience. Measure inquiries, sales and acquisition cost. Improve service using feedback."
+),
+L("Teste de afich epi konpare kantite demann.","Tester deux affiches et comparer les demandes.","Test two flyers and compare inquiries."),
+L("Kisa maketing dwe kominike?","Que doit communiquer le marketing ?","What should marketing communicate?"),
+L("Valè sèvis la","La valeur du service","The service value"),
+L("Pwomès ki pa verifye","Des promesses non vérifiées","Unverified promises"),
+L("Enfòmasyon fo","De fausses informations","False information")
+)
+],
+
+L("Prepare yon plan biznis yon paj ak kliyan, sèvis, pri, depans ak maketing.",
+"Préparez un plan d’affaires d’une page avec clientèle, services, prix, coûts et marketing.",
+"Prepare a one-page business plan covering customers, services, pricing, costs and marketing.")
+),
+
+/* 12 — COMMUNITY & SERVICES */
+
+C("community","handshake","COMMUNITY & SERVICES",
+
+L("Sèvis kominotè ak jesyon volontè.",
+"Services communautaires et gestion des bénévoles.",
+"Community services and volunteer management."),
+
+[
+M(
+L("Bezwen kominotè","Besoins communautaires","Community needs"),
+L(
+"Yon sèvis kominotè dwe reponn ak bezwen moun yo. Konsilte diferan gwoup, idantifye priyorite epi dokimante resous ki deja disponib. Chwazi objektif reyalis. Evite pran desizyon pou kominote a san patisipasyon li.",
+"Un service communautaire répond aux besoins des personnes. Consultez différents groupes, identifiez les priorités et documentez les ressources existantes. Choisissez des objectifs réalistes avec la participation de la communauté.",
+"A community service responds to people's needs. Consult different groups, identify priorities and document existing resources. Set realistic goals with community participation."
+),
+L("Konsilte fanmi yo anvan òganize yon aktivite.","Consulter les familles avant une activité.","Consult families before organizing an activity."),
+L("Ki premye etap yon sèvis kominotè?","Quelle est la première étape ?","What is the first step?"),
+L("Konsilte kominote a","Consulter la communauté","Consult the community"),
+L("Enpoze yon desizyon","Imposer une décision","Impose a decision"),
+L("Inyore bezwen yo","Ignorer les besoins","Ignore needs")
+),
+
+M(
+L("Jesyon volontè","Gestion des bénévoles","Volunteer management"),
+L(
+"Defini travay chak volontè, orè ak responsab sipèvizyon. Bay fòmasyon ak materyèl nesesè. Respekte kapasite ak disponiblite moun yo. Mete pwosedi sekirite epi rekonèt kontribisyon yo.",
+"Définissez les tâches, horaires et responsables des bénévoles. Fournissez formation et matériel. Respectez compétences et disponibilités. Prévoyez des procédures de sécurité et reconnaissez les contributions.",
+"Define volunteer duties, schedules and supervisors. Provide training and materials. Respect skills and availability. Establish safety procedures and recognize contributions."
+),
+L("Prepare yon lis volontè ak orè yo.","Préparer une liste des bénévoles et horaires.","Prepare a volunteer roster and schedule."),
+L("Kisa volontè bezwen?","De quoi les bénévoles ont-ils besoin ?","What do volunteers need?"),
+L("Wòl klè ak fòmasyon","Rôles clairs et formation","Clear roles and training"),
+L("Konfizyon","Confusion","Confusion"),
+L("Absans sipò","Absence de soutien","No support")
+),
+
+M(
+L("Mezire enpak","Mesure de l’impact","Impact measurement"),
+L(
+"Separe aktivite, rezilta imedya ak chanjman alontèm. Kantite patisipan se yon endikatè aktivite, men li pa sifi pou mezire enpak. Kolekte fidbak, konpare sitiyasyon anvan ak apre epi rapòte limit analiz la.",
+"Distinguez activités, résultats immédiats et changements à long terme. Le nombre de participants mesure l’activité mais ne suffit pas à établir l’impact. Collectez les retours, comparez avant et après et indiquez les limites.",
+"Distinguish activities, immediate outputs and long-term outcomes. Participant counts measure activity but do not establish impact alone. Collect feedback, compare before and after, and report limitations."
+),
+L("Mezire konpetans elèv anvan ak apre fòmasyon.","Mesurer les compétences avant et après formation.","Measure student skills before and after training."),
+L("Kisa ki ede mezire enpak?","Qu’est-ce qui aide à mesurer l’impact ?","What helps measure impact?"),
+L("Konparezon anvan ak apre","Comparaison avant et après","Before-and-after comparison"),
+L("Rimè","Rumeurs","Rumors"),
+L("Done envante","Données inventées","Fabricated data")
+)
+],
+
+L("Prepare yon pwojè kominotè ak objektif, volontè, bidjè ak endikatè enpak.",
+"Préparez un projet communautaire avec objectifs, bénévoles, budget et indicateurs.",
+"Prepare a community project with goals, volunteers, budget and impact indicators.")
+)
+
+];
+
+/* ==========================================
+   PROGRESS AND COURSE CARDS
+========================================== */
+
+function done(course){
+ const value=read("promaxStudyV3_"+course.id,[]);
  return Array.isArray(value)?value:[];
 }
 
 function progress(course){
  return Math.round(
- course.modules.filter((m,i)=>getDone(course)[i]).length
- /course.modules.length*100
+ course.lessons.filter((lesson,i)=>done(course)[i]).length
+ /course.lessons.length*100
  );
 }
 
-/* COURSE CARDS */
+function renderCards(id,items,offset){
 
-function renderCards(id,items){
-
- const grid=document.getElementById(id);
+ const grid=$(id);
  grid.innerHTML="";
 
- items.forEach((course,index)=>{
+ items.forEach((course,i)=>{
 
  const pct=progress(course);
  const card=document.createElement("article");
@@ -1208,39 +1296,30 @@ function renderCards(id,items){
 
  card.innerHTML=`
  <div class="card-top">
-  <div class="card-icon">
-   <i class="fa-solid fa-${course.icon}"></i>
-  </div>
-  <span class="card-number">
-   COURSE ${String(index+1).padStart(2,"0")}
-  </span>
+ <div class="card-icon">
+ <i class="fa-solid fa-${course.icon}"></i>
+ </div>
+ <strong>${String(i+offset+1).padStart(2,"0")}</strong>
  </div>
 
  <h3>${course.title}</h3>
-
  <p>${course.desc[lang]}</p>
 
- <div class="tags">
- ${course.tags.map(t=>`<span>${t}</span>`).join("")}
- </div>
-
  <div class="progress-label">
-  <span>${tr("progress")}</span>
-  <span>${pct}%</span>
+ <span>${tr("progress")}</span>
+ <span>${pct}%</span>
  </div>
 
  <div class="progress-track">
-  <div class="progress-fill" style="width:${pct}%"></div>
+ <div class="progress-fill" style="width:${pct}%"></div>
  </div>
 
- <button class="btn btn-outline" type="button">
-  <i class="fa-solid fa-book-open"></i>
-  ${tr("start")}
- </button>
- `;
+ <button class="btn btn-outline">
+ <i class="fa-solid fa-book-open"></i>
+ ${tr("start")}
+ </button>`;
 
  card.querySelector("button").onclick=()=>openCourse(course);
-
  grid.appendChild(card);
 
  });
@@ -1248,105 +1327,111 @@ function renderCards(id,items){
 }
 
 function renderAll(){
- renderCards("coreGrid",courses.slice(0,6));
- renderCards("specialGrid",courses.slice(6));
+ renderCards("coreGrid",courses.slice(0,6),0);
+ renderCards("specialGrid",courses.slice(6),6);
 }
 
-/* COURSE CONTENT */
-
-const dialog=document.getElementById("courseDialog");
-const content=document.getElementById("dialogContent");
+const dialog=$("courseDialog");
+const content=$("dialogContent");
 
 function showDialog(title){
- document.getElementById("dialogTitle").textContent=title;
+ $("dialogTitle").textContent=title;
  if(!dialog.open)dialog.showModal();
+ dialog.scrollTop=0;
 }
+
+/* ==========================================
+   OPEN LESSONS
+========================================== */
 
 function openCourse(course){
 
- const done=getDone(course);
+ const completed=done(course);
 
  content.innerHTML=`
-
  <p>${course.desc[lang]}</p>
 
- <h3>${tr("lessons")}</h3>
+ ${course.lessons.map((lesson,i)=>`
+ <details class="lesson" ${i===0?"open":""}>
 
- <p>${tr("note")}</p>
+ <summary>
+ MODULE ${String(i+1).padStart(2,"0")}
+ — ${lesson.title[lang]}
+ </summary>
 
- ${course.modules.map((module,i)=>`
- <div class="lesson">
-  <strong>
-   MODULE ${String(i+1).padStart(2,"0")}
-   — ${module[lang]}
-  </strong>
-  <p>
-   <label>
-    <input type="checkbox" data-module="${i}"
-    ${done[i]?"checked":""}>
-    ${tr("complete")}
-   </label>
-  </p>
- </div>
+ <h4>${tr("objective")}</h4>
+ <p>${lesson.title[lang]}</p>
+
+ <p>${lesson.body[lang]}</p>
+
+ <h4>${tr("example")}</h4>
+ <p>${lesson.example[lang]}</p>
+
+ <label>
+ <input type="checkbox" data-lesson="${i}"
+ ${completed[i]?"checked":""}>
+ ${tr("complete")}
+ </label>
+
+ </details>
  `).join("")}
 
  <div class="panel">
-
  <h3>${tr("exercise")}</h3>
-
  <p>${course.task[lang]}</p>
-
  <textarea id="practiceAnswer" rows="7"></textarea>
-
- <p>
- <button class="btn" id="savePractice">
-  ${tr("save")}
- </button>
- </p>
-
- <p id="saveStatus" role="status"></p>
-
+ <p><button class="btn" id="savePractice">${tr("save")}</button></p>
+ <p id="practiceStatus" role="status"></p>
  </div>
 
- <button class="btn" id="openFullCourse">
-  <i class="fa-solid fa-book-open"></i>
-  ${tr("open")}
+ <button class="btn" id="quizButton">
+ <i class="fa-solid fa-clipboard-check"></i>
+ ${tr("assessment")}
  </button>
 
- <p id="courseStatus" role="status"></p>
-
+ <p id="quizStatus" role="status"></p>
  `;
 
- content.querySelectorAll("[data-module]").forEach(box=>{
+ content.querySelectorAll("[data-lesson]").forEach(box=>{
+
  box.onchange=()=>{
-  const values=getDone(course);
-  values[Number(box.dataset.module)]=box.checked;
-  write("promaxStudy_"+course.id,values);
-  renderAll();
+
+ const values=done(course);
+ values[Number(box.dataset.lesson)]=box.checked;
+
+ if(!write("promaxStudyV3_"+course.id,values)){
+  box.checked=!box.checked;
+  $("quizStatus").textContent=tr("storageError");
+ }
+
+ renderAll();
+
  };
+
  });
 
- document.getElementById("practiceAnswer").value=
- read("promaxPractice_"+course.id,"");
+ $("practiceAnswer").value=read("promaxPractice_"+course.id,"");
 
- document.getElementById("savePractice").onclick=()=>{
+ $("savePractice").onclick=()=>{
 
  const ok=write(
  "promaxPractice_"+course.id,
- document.getElementById("practiceAnswer").value
+ $("practiceAnswer").value
  );
 
- document.getElementById("saveStatus").textContent=
- ok?tr("saved"):"Storage unavailable";
+ $("practiceStatus").textContent=
+ ok?tr("saved"):tr("storageError");
 
  };
 
- document.getElementById("openFullCourse").onclick=()=>{
+ $("quizButton").onclick=()=>{
 
- openVerifiedPage(
- "./"+course.folder+"/index.html",
- document.getElementById("courseStatus")
- );
+ if(progress(course)<100){
+ $("quizStatus").textContent=tr("finish");
+ return;
+ }
+
+ openQuiz(course);
 
  };
 
@@ -1354,53 +1439,124 @@ function openCourse(course){
 
 }
 
-/* CHECK DESTINATION BEFORE NAVIGATION */
+/* ==========================================
+   ASSESSMENTS
+========================================== */
 
-async function openVerifiedPage(path,status){
+function openQuiz(course){
 
- try{
+ if(progress(course)<100){
+ openCourse(course);
+ $("quizStatus").textContent=tr("finish");
+ return;
+ }
 
- const url=new URL(path,location.href);
+ const questions=course.lessons.map((lesson,i)=>{
 
- const response=await fetch(url,{
-  method:"GET",
-  cache:"no-cache"
+ const options=lesson.options.map((option,j)=>({
+ text:option[lang],
+ correct:j===0
+ }));
+
+ const shift=i%3;
+
+ for(let j=0;j<shift;j++){
+ options.push(options.shift());
+ }
+
+ return {q:lesson.q[lang],options};
+
  });
 
- if(!response.ok)throw new Error("Unavailable");
+ content.innerHTML=`
 
- const html=await response.text();
+ <form id="quizForm">
 
- if(!html.trim())throw new Error("Empty page");
+ ${questions.map((question,i)=>`
 
- const doc=new DOMParser().parseFromString(html,"text/html");
+ <div class="lesson">
+ <h3>${i+1}. ${question.q}</h3>
 
- const title=doc.title.toLowerCase();
+ ${question.options.map((option,j)=>`
+ <label class="answer">
+ <input type="radio" name="q${i}" value="${j}" required>
+ ${option.text}
+ </label>
+ `).join("")}
 
- if(title.includes("page not found")||
- title.includes("404")){
- throw new Error("Unavailable");
- }
+ <p id="feedback${i}"></p>
+ </div>
 
- location.href=url.href;
+ `).join("")}
 
- }catch(e){
+ <button class="btn" type="submit">
+ ${tr("submit")}
+ </button>
 
- status.textContent=tr("unavailable");
+ </form>
 
- }
+ <div id="quizResult" role="status"></div>
+
+ <p>
+ <button class="btn btn-outline" id="backCourse">
+ ${tr("training")}
+ </button>
+ </p>
+
+ `;
+
+ $("quizForm").onsubmit=e=>{
+
+ e.preventDefault();
+
+ const data=new FormData(e.target);
+ let correct=0;
+
+ questions.forEach((question,i)=>{
+
+ const selected=question.options[Number(data.get("q"+i))];
+
+ if(selected.correct)correct++;
+
+ $("feedback"+i).textContent=
+ tr("correct")+": "+
+ question.options.find(option=>option.correct).text;
+
+ });
+
+ const score=Math.round(correct/questions.length*100);
+
+ const ok=write("promaxQuizV3_"+course.id,{
+ score,
+ date:new Date().toISOString()
+ });
+
+ $("quizResult").textContent=
+ tr("score")+": "+score+"% — "+
+ (score>=70?tr("passed"):tr("failed"))+
+ (ok?"":" — "+tr("storageError"));
+
+ };
+
+ $("backCourse").onclick=()=>openCourse(course);
+
+ showDialog(course.title+" — "+tr("assessment"));
 
 }
 
-/* LEARNING PATH */
+/* ==========================================
+   STUDENT REGISTRATION
+========================================== */
 
-function openRegistration(){
+function openProfile(){
 
  const profile=read("promaxLocalProfile",{});
 
  content.innerHTML=`
 
- <form id="registrationForm">
+ <p>${tr("localProfile")}</p>
+
+ <form id="profileForm">
 
  <p>${tr("name")}</p>
  <input type="text" id="studentName" required>
@@ -1408,35 +1564,28 @@ function openRegistration(){
  <p>${tr("email")}</p>
  <input type="email" id="studentEmail" required>
 
- <p>
- <button type="submit" class="btn">
- ${tr("save")}
- </button>
- </p>
+ <p><button class="btn" type="submit">${tr("save")}</button></p>
 
- <p id="registrationStatus" role="status"></p>
+ <p id="profileStatus" role="status"></p>
 
  </form>
 
  `;
 
- document.getElementById("studentName").value=
- profile.name||"";
+ $("studentName").value=profile.name||"";
+ $("studentEmail").value=profile.email||"";
 
- document.getElementById("studentEmail").value=
- profile.email||"";
-
- document.getElementById("registrationForm").onsubmit=e=>{
+ $("profileForm").onsubmit=e=>{
 
  e.preventDefault();
 
  const ok=write("promaxLocalProfile",{
- name:document.getElementById("studentName").value,
- email:document.getElementById("studentEmail").value
+ name:$("studentName").value,
+ email:$("studentEmail").value
  });
 
- document.getElementById("registrationStatus").textContent=
- ok?tr("saved"):"Storage unavailable";
+ $("profileStatus").textContent=
+ ok?tr("saved"):tr("storageError");
 
  };
 
@@ -1444,139 +1593,247 @@ function openRegistration(){
 
 }
 
-function openPractice(){
+/* ==========================================
+   COURSE SELECTOR
+========================================== */
 
- content.innerHTML=`<p>${tr("choose")}</p>`;
+function chooseCourse(mode){
+
+ content.innerHTML="";
 
  courses.forEach(course=>{
 
  const button=document.createElement("button");
+
  button.className="btn btn-outline";
  button.style.cssText="display:flex;width:100%;margin:12px 0";
  button.textContent=course.title;
 
  button.onclick=()=>{
+
+ if(mode==="quiz"){
+ openQuiz(course);
+ }else{
  openCourse(course);
- document.getElementById("practiceAnswer").focus();
+ if(mode==="practice"){
+ $("practiceAnswer").focus();
+ }
+ }
+
  };
 
  content.appendChild(button);
 
  });
 
- showDialog(tr("practice"));
+ showDialog(tr("choose"));
 
 }
 
-function openStudentModule(title,path){
+/* ==========================================
+   CERTIFICATE REVIEW
+========================================== */
 
- content.innerHTML=`
- <button class="btn" id="openStudentModule">
- ${tr("open")}
- </button>
- <p id="moduleStatus" role="status"></p>
- `;
+function openCertificate(){
 
- document.getElementById("openStudentModule").onclick=()=>{
+ content.innerHTML="";
 
- openVerifiedPage(
- path,
- document.getElementById("moduleStatus")
- );
+ courses.forEach(course=>{
 
- };
+ const quiz=read("promaxQuizV3_"+course.id,null);
+ const pct=progress(course);
 
- showDialog(title);
+ const card=document.createElement("article");
+ card.className="lesson";
+
+ const title=document.createElement("h3");
+ title.textContent=course.title;
+
+ const result=document.createElement("p");
+
+ result.textContent=
+ tr("progress")+": "+pct+"% | "+
+ tr("assessment")+": "+(quiz?quiz.score+"%":"—");
+
+ const status=document.createElement("p");
+
+ status.textContent=
+ pct===100&&quiz&&quiz.score>=70
+ ?tr("pending"):tr("incomplete");
+
+ card.append(title,result,status);
+ content.appendChild(card);
+
+ });
+
+ const note=document.createElement("p");
+ note.textContent=tr("certRule");
+ content.appendChild(note);
+
+ const link=document.createElement("a");
+ link.href="mailto:"+EMAIL;
+ link.className="btn";
+ link.textContent=tr("contact");
+
+ content.appendChild(link);
+
+ showDialog(tr("certificate"));
 
 }
+
+/* ==========================================
+   LEARNING PATH
+========================================== */
 
 function renderPath(){
 
  const steps=[
-
- {
- icon:"user-plus",
- title:"profile",
- desc:"profileDesc",
- action:openRegistration
- },
-
- {
- icon:"book-open",
- title:"training",
- desc:"trainingDesc",
- action:()=>{
- document.getElementById("core").scrollIntoView();
- }
- },
-
- {
- icon:"brain",
- title:"practice",
- desc:"practiceDesc",
- action:openPractice
- },
-
- {
- icon:"clipboard-check",
- title:"assessment",
- desc:"assessmentDesc",
- action:()=>{
- openStudentModule(
- tr("assessment"),
- "../assessments/index.html"
- );
- }
- },
-
- {
- icon:"award",
- title:"certificate",
- desc:"certificateDesc",
- action:()=>{
- openStudentModule(
- tr("certificate"),
- "../certificate-center/index.html"
- );
- }
- }
-
+ ["user-plus","profile","profileDesc",openProfile],
+ ["book-open","training","trainingDesc",()=>chooseCourse("training")],
+ ["brain","practice","practiceDesc",()=>chooseCourse("practice")],
+ ["clipboard-check","assessment","assessmentDesc",()=>chooseCourse("quiz")],
+ ["award","certificate","certificateDesc",openCertificate]
  ];
 
- const grid=document.getElementById("pathGrid");
-
- grid.innerHTML="";
+ $("pathGrid").innerHTML="";
 
  steps.forEach((step,i)=>{
 
  const button=document.createElement("button");
-
  button.className="path-card";
- button.type="button";
 
  button.innerHTML=`
+ <i class="fa-solid fa-${step[0]}"></i>
+ <h3>0${i+1} • ${tr(step[1])}</h3>
+ <p>${tr(step[2])}</p>`;
 
- <i class="fa-solid fa-${step.icon}"></i>
+ button.onclick=step[3];
 
- <h3>0${i+1} • ${tr(step.title)}</h3>
-
- <p>${tr(step.desc)}</p>
-
- `;
-
- button.onclick=step.action;
-
- grid.appendChild(button);
+ $("pathGrid").appendChild(button);
 
  });
 
 }
 
-/* LANGUAGE SWITCH */
+/* ==========================================
+   PROFESSOR / CUSTOMER SERVICE
+========================================== */
+
+function renderProfessor(){
+
+ $("profCourse").innerHTML="";
+
+ courses.forEach(course=>{
+
+ const option=document.createElement("option");
+ option.value=course.title;
+ option.textContent=course.title;
+ $("profCourse").appendChild(option);
+
+ });
+
+}
+
+$("profForm").onsubmit=e=>{
+
+ e.preventDefault();
+
+ const subject=encodeURIComponent(
+ "PRO-MAX ACADÉMIE — "+$("profCourse").value
+ );
+
+ const body=encodeURIComponent(
+ $("profQuestion").value
+ );
+
+ location.href="mailto:"+EMAIL+
+ "?subject="+subject+"&body="+body;
+
+};
+
+$("soundButton").onclick=()=>{
+
+ const video=$("profVideo");
+ video.muted=!video.muted;
+ video.play().catch(()=>{});
+
+};
+
+/* ==========================================
+   SOCIAL NETWORKS
+   OFFICIAL BRAND COLORS
+========================================== */
+
+const socials=[
+ ["Facebook","fa-facebook-f","#1877F2",""],
+ ["WhatsApp","fa-whatsapp","#25D366","https://wa.me/14076405166"],
+ ["Instagram","fa-instagram","#E4405F",""],
+ ["YouTube","fa-youtube","#FF0000",""],
+ ["Spotify","fa-spotify","#1DB954",""],
+ ["Telegram","fa-telegram","#229ED9",""],
+ ["X","fa-x-twitter","#EEEEEE",""],
+ ["TikTok","fa-tiktok","#25F4EE",""],
+ ["LinkedIn","fa-linkedin-in","#0A66C2",""],
+ ["Truth Social","","#5448EE",""]
+];
+
+function renderSocial(){
+
+ $("socialGrid").innerHTML="";
+
+ socials.forEach(([name,icon,color,url])=>{
+
+ const item=document.createElement(url?"a":"button");
+
+ item.className="social";
+ item.style.color=color;
+ item.title=name;
+ item.setAttribute("aria-label",name);
+
+ if(icon){
+
+ const symbol=document.createElement("i");
+ symbol.className="fa-brands "+icon;
+ item.appendChild(symbol);
+
+ }else{
+
+ const img=document.createElement("img");
+ img.src="https://cdn.simpleicons.org/truthsocial/5448EE";
+ img.width=30;
+ img.height=30;
+ img.alt="Truth Social";
+ img.onerror=()=>img.replaceWith(document.createTextNode("TS"));
+ item.appendChild(img);
+
+ }
+
+ if(url){
+
+ item.href=url;
+ item.target="_blank";
+ item.rel="noopener noreferrer";
+
+ }else{
+
+ item.type="button";
+ item.onclick=()=>alert(name+": "+tr("socialNotice"));
+
+ }
+
+ $("socialGrid").appendChild(item);
+
+ });
+
+}
+
+/* ==========================================
+   LANGUAGE SWITCH AND INITIALIZATION
+========================================== */
 
 function setLanguage(value){
 
- lang=T[value]?value:"ht";
+ lang=["ht","fr","en"].includes(value)?value:"ht";
 
  document.documentElement.lang=lang;
 
@@ -1597,6 +1854,8 @@ function setLanguage(value){
 
  renderAll();
  renderPath();
+ renderProfessor();
+ renderSocial();
 
  if(dialog.open)dialog.close();
 
@@ -1608,13 +1867,21 @@ document.querySelectorAll("[data-lang]").forEach(button=>{
 
 });
 
-document.getElementById("closeDialog").onclick=()=>dialog.close();
+$("closeDialog").onclick=()=>dialog.close();
 
-document.getElementById("year").textContent=
- new Date().getFullYear();
+$("year").textContent=new Date().getFullYear();
 
 setLanguage(lang);
 
+document.querySelectorAll(".academy-logo").forEach(video=>{
+
+ loadVideo(video,logoPaths,$("logoStatus"));
+
+});
+
+loadVideo($("profVideo"),professorPaths,$("profStatus"));
+
 </script>
+
 </body>
 </html>
