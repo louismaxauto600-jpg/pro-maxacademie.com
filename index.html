@@ -1,39 +1,38 @@
 
 <!DOCTYPE html>
-<html lang="ht" translate="no">
+<html lang="en" translate="no">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000">
-<meta name="google" content="notranslate">
-<title>PRO-MAX ACADÉMIE</title>
+<title>Assessment Center | PRO-MAX ACADÉMIE</title>
 
 <style>
 :root{
  --orange:#ff7900;
- --apricot:#ffad4d;
+ --apricot:#ffad60;
  --black:#000;
- --border:#713400;
+ --border:#773600;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
  margin:0;
+ min-height:100vh;
  font-family:Arial,Helvetica,sans-serif;
  color:var(--apricot);
  background:radial-gradient(ellipse at top,#351500,#000 65%);
 }
 a{color:inherit;text-decoration:none}
-button,input,select{font:inherit}
-button,a{touch-action:manipulation}
+button,select{font:inherit}
 button{cursor:pointer}
-.container{width:min(1240px,94%);margin:auto}
 header{
- position:sticky;
- top:0;
- z-index:100;
  background:#000;
  border-bottom:1px solid var(--orange);
+ padding:18px;
+}
+.container{
+ width:min(1150px,94%);
+ margin:auto;
 }
 .header-inner{
  display:flex;
@@ -41,78 +40,50 @@ header{
  justify-content:space-between;
  flex-wrap:wrap;
  gap:15px;
- padding:15px 0;
 }
-.brand{display:flex;align-items:center;gap:12px}
+.brand{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ font-weight:900;
+ color:var(--orange);
+}
 .brand video{
- width:65px;height:65px;
+ width:60px;
+ height:60px;
+ border:2px solid var(--orange);
  border-radius:50%;
  object-fit:cover;
- border:2px solid var(--orange);
 }
-.brand strong{color:var(--orange)}
-.brand small{display:block;margin-top:6px}
-.languages{display:flex;gap:5px}
-.languages button,.btn{
- display:inline-flex;
- justify-content:center;
- align-items:center;
- padding:13px 20px;
+.languages{
+ display:flex;
+ gap:6px;
+}
+button,.btn{
+ display:inline-block;
+ padding:12px 18px;
  border:1px solid var(--orange);
- border-radius:30px;
- background:#000;
+ border-radius:25px;
  color:var(--orange);
- font-weight:bold;
+ background:#000;
+ font-weight:800;
  text-align:center;
 }
-.languages button.active,.btn:hover,.primary{
+button:hover,.btn:hover,button.active,.primary{
  background:var(--orange);
  color:#000;
 }
-nav{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:18px;
- padding:12px;
- border-top:1px solid #351500;
- font-size:13px;
- font-weight:bold;
-}
 .hero{
  text-align:center;
- padding:65px 0;
+ padding:65px 15px 35px;
 }
-.hero-logo{
- width:min(360px,85vw);
- aspect-ratio:1;
- border:2px solid var(--orange);
- border-radius:50%;
- overflow:hidden;
- margin:20px auto;
- box-shadow:0 0 60px #ff790044;
-}
-.hero-logo video{
- width:100%;height:100%;
- object-fit:cover;
-}
-h1{
- font-size:clamp(32px,6vw,70px);
- line-height:1.05;
+.hero h1{
  color:var(--orange);
+ font-size:clamp(32px,6vw,65px);
+ margin:15px 0;
 }
-h2{
- color:var(--orange);
- font-size:clamp(25px,4vw,42px);
- text-align:center;
-}
-h3{color:var(--orange)}
 p{line-height:1.7}
-.intro{
- max-width:800px;
- margin:15px auto 30px;
- text-align:center;
-}
+h2,h3{color:var(--orange)}
 .actions{
  display:flex;
  justify-content:center;
@@ -120,159 +91,99 @@ p{line-height:1.7}
  gap:12px;
  margin:25px 0;
 }
-section{
- padding:55px 0;
- border-bottom:1px solid #442000;
- scroll-margin-top:155px;
-}
 .grid{
  display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
- gap:20px;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
 }
-.schools{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card,.panel{
+ padding:25px;
+ border:1px solid var(--border);
+ border-radius:20px;
+ background:linear-gradient(145deg,#241000,#000);
+ box-shadow:0 8px 25px #0008;
+}
 .card{
  display:flex;
  flex-direction:column;
- align-items:flex-start;
- padding:25px;
- border:1px solid var(--border);
- border-radius:22px;
- background:linear-gradient(145deg,#241000,#000);
- box-shadow:0 10px 25px #0008;
- transition:.25s;
 }
+.card p{flex:1}
+.card button{width:100%}
 .card:hover{
  border-color:var(--orange);
- box-shadow:0 0 25px #ff790033;
- transform:translateY(-3px);
+ box-shadow:0 0 20px #ff790033;
 }
-.card h3{font-size:19px}
-.card p{flex:1}
-.card .btn{width:100%;margin-top:15px}
-.icon{
- display:grid;
- place-items:center;
- width:60px;height:60px;
- font-size:29px;
- border:1px solid var(--orange);
- border-radius:16px;
- background:#000;
-}
+.icon{font-size:35px}
+section{margin:35px 0}
 .stats{
  display:grid;
- grid-template-columns:repeat(4,1fr);
+ grid-template-columns:repeat(3,1fr);
  gap:12px;
- margin-top:35px;
 }
-.stat{
- padding:25px 10px;
- border:1px solid var(--border);
- border-radius:16px;
- background:#000;
-}
+.stat{text-align:center}
 .stat strong{
  display:block;
+ color:var(--orange);
  font-size:35px;
- color:var(--orange);
+ margin-bottom:8px;
 }
-.stat span{font-size:13px}
-.search{
- width:100%;
- padding:16px;
- border:1px solid var(--orange);
- border-radius:12px;
- background:#000;
- color:var(--apricot);
- margin-bottom:25px;
-}
-.search::placeholder{color:#b77945}
-.professor{
- max-width:850px;
- margin:auto;
- text-align:center;
-}
-.professor video{
- width:min(100%,480px);
- border:1px solid var(--orange);
- border-radius:20px;
- background:#000;
-}
-dialog{
- width:min(850px,94%);
- max-height:90vh;
- overflow:auto;
- border:1px solid var(--orange);
- border-radius:20px;
- background:linear-gradient(145deg,#241000,#000);
- color:var(--apricot);
- padding:25px;
-}
-dialog::backdrop{background:#000d}
-.close{
- float:right;
- border:1px solid var(--orange);
- border-radius:50%;
- width:42px;height:42px;
- background:#000;
- color:var(--orange);
- font-size:22px;
-}
-.lesson{
- padding:18px;
- margin:12px 0;
+fieldset{
  border:1px solid var(--border);
- border-radius:12px;
- background:#080300;
-}
-.lesson summary{
- cursor:pointer;
- font-weight:bold;
- color:var(--orange);
-}
-.progress{
- height:10px;
- border-radius:20px;
- background:#351500;
- overflow:hidden;
- margin:15px 0;
-}
-.progress span{
- display:block;
- height:100%;
- background:var(--orange);
-}
-.question{
+ border-radius:15px;
+ margin:20px 0;
  padding:20px;
- border:1px solid var(--border);
- border-radius:12px;
- margin:15px 0;
 }
-.question label{
+legend{
+ color:var(--orange);
+ font-weight:bold;
+ padding:8px;
+}
+.option{
  display:block;
- padding:10px 0;
+ padding:13px;
+ margin:8px 0;
+ border:1px solid #442000;
+ border-radius:10px;
  cursor:pointer;
 }
-input[type=radio],input[type=checkbox]{
- accent-color:var(--orange);
+.option:hover{border-color:var(--orange)}
+input[type=radio]{accent-color:var(--orange)}
+.result{
+ text-align:center;
+ padding:25px;
+ border:1px solid var(--orange);
+ border-radius:15px;
+ margin-top:20px;
+}
+.score{
+ font-size:55px;
+ font-weight:900;
+ color:var(--orange);
+}
+.history-row{
+ padding:15px 0;
+ border-bottom:1px solid var(--border);
+ display:flex;
+ justify-content:space-between;
+ gap:12px;
+ flex-wrap:wrap;
 }
 footer{
- padding:40px 15px;
  text-align:center;
+ border-top:1px solid var(--border);
+ padding:35px 15px;
+ margin-top:50px;
  background:#000;
 }
 [hidden]{display:none!important}
-@media(max-width:1000px){
- .schools{grid-template-columns:repeat(2,1fr)}
+@media(max-width:850px){
  .grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:600px){
+@media(max-width:550px){
+ .grid{grid-template-columns:1fr}
  .header-inner{justify-content:center}
- .grid,.schools{grid-template-columns:1fr}
- .stats{grid-template-columns:repeat(2,1fr)}
- .hero{padding:30px 0}
- .brand video{width:48px;height:48px}
- nav{gap:10px;font-size:11px}
+ .stats{grid-template-columns:1fr}
+ .hero{padding-top:35px}
 }
 </style>
 </head>
@@ -281,796 +192,603 @@ footer{
 
 <header>
 <div class="container header-inner">
- <a class="brand" href="#home">
+ <a href="../index.html" class="brand">
   <video autoplay muted loop playsinline>
-   <source src="pro-max-dmp-II.mp4" type="video/mp4">
+   <source src="../pro-max-dmp-II.mp4" type="video/mp4">
   </video>
-  <div>
-   <strong>PRO-MAX ACADÉMIE</strong>
-   <small>BSS1815 PRO-MAX DMP</small>
-  </div>
+  <span>PRO-MAX ACADÉMIE</span>
  </a>
 
  <div class="languages">
   <button data-lang="fr">FRA</button>
-  <button data-lang="en">ENG</button>
-  <button data-lang="ht" class="active">KRE</button>
+  <button data-lang="en" class="active">ENG</button>
+  <button data-lang="ht">KRE</button>
  </div>
 </div>
-
-<nav>
- <a href="#home" data-t="home">AKÈY</a>
- <a href="#schools" data-t="schools">LEKÒL YO</a>
- <a href="#courses" data-t="courses">KOU YO</a>
- <a href="#professor" data-t="professor">PWOFESÈ</a>
- <a href="#student" data-t="student">ESPAS ELÈV</a>
- <a href="#contact" data-t="contact">KONTAK</a>
-</nav>
 </header>
 
 <main class="container">
 
-<section class="hero" id="home">
+<div class="hero">
  <strong>BSS1815 PRO-MAX DMP</strong>
+ <h1>ASSESSMENT CENTER</h1>
 
- <div class="hero-logo">
-  <video autoplay muted loop playsinline>
-   <source src="pro-max-dmp-II.mp4" type="video/mp4">
-  </video>
- </div>
-
- <h1 data-t="slogan">
- FÒME JODI A POU DIRIJE DEMEN
- </h1>
-
- <p class="intro" data-t="intro">
- Yon platfòm fòmasyon modèn ki konekte
- konesans, teknoloji, entèlijans atifisyèl,
- inovasyon ak lidèchip.
- </p>
+ <p data-t="intro"></p>
 
  <div class="actions">
-  <a href="#schools" class="btn primary" data-t="choose">
-   CHWAZI LEKÒL OU
-  </a>
-  <a href="#courses" class="btn" data-t="explore">
-   DEKOUVRI KOU YO
-  </a>
-  <a href="./student-portal/index.html" class="btn">
+  <a class="btn" href="../index.html" data-t="home"></a>
+  <a class="btn" href="../student-portal/index.html">
    STUDENT PORTAL
   </a>
+  <a class="btn" href="../courses/index.html" data-t="courses"></a>
+ </div>
+</div>
+
+<section class="stats">
+ <div class="panel stat">
+  <strong>6</strong>
+  <span data-t="categories"></span>
  </div>
 
- <div class="stats">
-  <div class="stat">
-   <strong>4</strong>
-   <span data-t="schools">LEKÒL YO</span>
-  </div>
-  <div class="stat">
-   <strong>12</strong>
-   <span data-t="courses">KOU YO</span>
-  </div>
-  <div class="stat">
-   <strong>24/7</strong>
-   <span data-t="access">AKSÈ DIJITAL</span>
-  </div>
-  <div class="stat">
-   <strong>AI</strong>
-   <span>SMART LEARNING</span>
-  </div>
+ <div class="panel stat">
+  <strong id="attemptCount">0</strong>
+  <span data-t="attempts"></span>
  </div>
-</section>
 
-<!-- 4 PROFESSIONAL SCHOOLS -->
-
-<section id="schools">
- <h2 data-t="schoolTitle">4 LEKÒL PWOFESYONÈL</h2>
- <p class="intro" data-t="schoolDesc">
- Chwazi domèn pwofesyonèl ou vle aprann nan.
- </p>
- <div class="grid schools" id="schoolGrid"></div>
-</section>
-
-<!-- 12 COURSES -->
-
-<section id="courses">
- <h2 data-t="coreTitle">6 KOU PRENSIPAL</h2>
-
- <input type="search" class="search"
- id="search" placeholder="Chèche yon kou...">
-
- <div class="grid" id="coreGrid"></div>
-
- <h2 style="margin-top:65px" data-t="catalogTitle">
- 6 FÒMASYON ESPESYALIZE
- </h2>
-
- <div class="grid" id="catalogGrid"></div>
-</section>
-
-<!-- PROFESSOR -->
-
-<section id="professor">
- <h2>PRO-MAX AI PROFESSOR</h2>
- <div class="professor">
-  <video controls playsinline preload="metadata">
-   <source src="video-prof-avatar.mp4" type="video/mp4">
-  </video>
-  <p data-t="profDesc">
-   Aprann, pratike epi devlope konpetans ou.
-  </p>
+ <div class="panel stat">
+  <strong id="averageScore">0%</strong>
+  <span data-t="average"></span>
  </div>
 </section>
 
-<!-- STUDENT CENTER -->
-
-<section id="student">
- <h2>STUDENT CENTER</h2>
-
- <div class="grid">
-
-  <article class="card">
-   <div class="icon">👤</div>
-   <h3>STUDENT PROFILE</h3>
-   <p data-t="profileDesc">Jere pwofil elèv ou.</p>
-   <a href="./student-profile/index.html"
-      class="btn" data-t="open">OUVRI</a>
-  </article>
-
-  <article class="card">
-   <div class="icon">🎓</div>
-   <h3>STUDENT PORTAL</h3>
-   <p data-t="portalDesc">
-    Aksede espas pèsonèl elèv ou.
-   </p>
-   <a href="./student-portal/index.html"
-      class="btn primary" data-t="open">OUVRI</a>
-  </article>
-
-  <article class="card">
-   <div class="icon">📝</div>
-   <h3>ASSESSMENT CENTER</h3>
-   <p data-t="assessmentDesc">
-    Teste konesans ou avèk yon egzèsis pratik.
-   </p>
-   <button class="btn" id="assessmentBtn"
-    data-t="open">OUVRI</button>
-  </article>
-
-  <article class="card">
-   <div class="icon">🏆</div>
-   <h3>CERTIFICATE CENTER</h3>
-   <p data-t="certificateDesc">
-    Aksede sant sètifikasyon an.
-   </p>
-   <a href="./certificate-center/index.html"
-    class="btn" data-t="open">OUVRI</a>
-  </article>
-
- </div>
+<section id="assessmentList">
+ <h2 data-t="choose"></h2>
+ <div class="grid" id="cards"></div>
 </section>
 
-<!-- DDN -->
+<section class="panel" id="examPanel" hidden>
+ <h2 id="examTitle"></h2>
+ <p data-t="instructions"></p>
 
-<section id="ddn">
- <h2>DEVAN DEVAN NÈT™</h2>
- <p class="intro">
- BATI POU JODI A • PARE POU DEMEN
- </p>
- <div class="actions">
-  <a href="./ddn/index.html" class="btn">
-   DEVAN DEVAN NÈT
-  </a>
- </div>
-</section>
+ <form id="examForm"></form>
 
-<!-- CONTACT -->
-
-<section id="contact">
- <h2 data-t="contact">KONTAK</h2>
-
- <div class="grid">
-  <article class="card">
-   <h3>🇺🇸 USA</h3>
-   <p>
-    <a href="tel:+14076405166">(407) 640-5166</a><br>
-    <a href="tel:+13175381150">(317) 538-1150</a><br>
-    <a href="tel:+15162168494">(516) 216-8494</a>
-   </p>
-  </article>
-
-  <article class="card">
-   <h3>🇭🇹 HAÏTI</h3>
-   <p>
-    <a href="tel:+50942544447">+509 4254 4447</a><br>
-    <a href="tel:+50943437488">+509 4343 7488</a>
-   </p>
-  </article>
-
-  <article class="card">
-   <h3>EMAIL</h3>
-   <p style="overflow-wrap:anywhere">
-    <a href="mailto:bss1815promaxdmp@gmail.com">
-     bss1815promaxdmp@gmail.com
-    </a>
-   </p>
-  </article>
- </div>
+ <div id="result" class="result" hidden></div>
 
  <div class="actions">
-  <a class="btn" href="https://bss1815promaxdmp.com">
-   BSS1815 PRO-MAX DMP
-  </a>
-  <a class="btn" href="https://wa.me/14076405166">
-   WHATSAPP
-  </a>
+  <button id="backBtn" data-t="back"></button>
  </div>
+</section>
+
+<section class="panel">
+ <h2 data-t="history"></h2>
+ <div id="history"></div>
 </section>
 
 </main>
 
 <footer>
- <strong>PRO-MAX ACADÉMIE</strong>
- <p>BSS1815 PRO-MAX DMP © 2026</p>
- <p>DEVAN DEVAN NÈT™</p>
+ <h3>PRO-MAX ACADÉMIE</h3>
+ <p>BSS1815 PRO-MAX DMP</p>
+
+ <a href="mailto:bss1815promaxdmp@gmail.com"
+ style="overflow-wrap:anywhere">
+ bss1815promaxdmp@gmail.com
+ </a>
+
+ <p>BATI POU JODI A • PARE POU DEMEN</p>
+ <p>© 2026 PRO-MAX ACADÉMIE</p>
 </footer>
-
-<!-- INTEGRATED PROGRAM VIEWER -->
-
-<dialog id="programDialog">
- <button class="close" id="closeProgram"
- aria-label="Close">×</button>
- <div id="programContent"></div>
-</dialog>
-
-<!-- INTEGRATED ASSESSMENT CENTER -->
-
-<dialog id="assessmentDialog">
- <button class="close" id="closeAssessment"
- aria-label="Close">×</button>
- <h2>ASSESSMENT CENTER</h2>
- <form id="quiz"></form>
- <div id="quizResult" role="status"></div>
-</dialog>
 
 <script>
 "use strict";
 
-const T = (ht,fr,en) => ({ht,fr,en});
+const T=(en,fr,ht)=>({en,fr,ht});
 
-const dictionary = {
- home:T("AKÈY","ACCUEIL","HOME"),
- schools:T("LEKÒL YO","ÉCOLES","SCHOOLS"),
- courses:T("KOU YO","COURS","COURSES"),
- professor:T("PWOFESÈ","PROFESSEUR","PROFESSOR"),
- student:T("ESPAS ELÈV","ESPACE ÉTUDIANT","STUDENT AREA"),
- contact:T("KONTAK","CONTACT","CONTACT"),
- slogan:T(
-  "FÒME JODI A POU DIRIJE DEMEN",
-  "FORMER AUJOURD’HUI POUR DIRIGER DEMAIN",
-  "TRAIN TODAY TO LEAD TOMORROW"
- ),
+const words={
  intro:T(
-  "Yon platfòm fòmasyon modèn ki konekte konesans, teknoloji, entèlijans atifisyèl, inovasyon ak lidèchip.",
-  "Une plateforme moderne de formation, de technologie, d’intelligence artificielle, d’innovation et de leadership.",
-  "A modern learning platform connecting knowledge, technology, artificial intelligence, innovation and leadership."
+ "Practice your skills and evaluate your knowledge.",
+ "Entraînez-vous et évaluez vos connaissances.",
+ "Pratike konpetans ou epi evalye konesans ou."
  ),
- choose:T("CHWAZI LEKÒL OU","CHOISIR UNE ÉCOLE","CHOOSE YOUR SCHOOL"),
- explore:T("DEKOUVRI KOU YO","DÉCOUVRIR LES COURS","EXPLORE COURSES"),
- access:T("AKSÈ DIJITAL","ACCÈS NUMÉRIQUE","DIGITAL ACCESS"),
- schoolTitle:T("4 LEKÒL PWOFESYONÈL","4 ÉCOLES PROFESSIONNELLES","4 PROFESSIONAL SCHOOLS"),
- schoolDesc:T("Chwazi domèn pwofesyonèl ou vle aprann nan.","Choisissez votre domaine professionnel.","Choose your professional field."),
- coreTitle:T("6 KOU PRENSIPAL","6 COURS PRINCIPAUX","6 CORE COURSES"),
- catalogTitle:T("6 FÒMASYON ESPESYALIZE","6 FORMATIONS SPÉCIALISÉES","6 SPECIALIZED PROGRAMS"),
- profDesc:T("Aprann, pratike epi devlope konpetans ou.","Apprenez, pratiquez et développez vos compétences.","Learn, practice and develop your skills."),
- profileDesc:T("Jere pwofil elèv ou.","Gérez votre profil étudiant.","Manage your student profile."),
- portalDesc:T("Aksede espas pèsonèl elèv ou.","Accédez à votre espace étudiant.","Access your personal student area."),
- assessmentDesc:T("Teste konesans ou avèk yon egzèsis pratik.","Testez vos connaissances.","Test your knowledge with a practice quiz."),
- certificateDesc:T("Aksede sant sètifikasyon an.","Accédez au centre de certification.","Access the certification center."),
- open:T("OUVRI","OUVRIR","OPEN"),
- enter:T("GADE PWOGRAM NAN","VOIR LE PROGRAMME","VIEW PROGRAM"),
- start:T("DEKOUVRI KOU A","DÉCOUVRIR LE COURS","EXPLORE COURSE"),
- search:T("Chèche yon kou...","Rechercher un cours...","Search courses..."),
- modules:T("PWOGRAM FÒMASYON","PROGRAMME DE FORMATION","TRAINING PROGRAM"),
- completed:T("Mwen revize modil sa a","J’ai consulté ce module","I reviewed this module"),
- progress:T("PWOGRÈ REVIZYON","PROGRESSION DE CONSULTATION","REVIEW PROGRESS"),
- outline:T(
-  "Men plan fòmasyon an. Sa pa ranplase leson konplè ni egzamen ofisyèl yo.",
-  "Voici le programme. Il ne remplace pas les leçons complètes ni les examens officiels.",
-  "This is the program outline, not a replacement for full lessons or official exams."
+ home:T("ACADEMY HOME","ACCUEIL ACADÉMIE","AKÈY AKADEMI"),
+ courses:T("COURSES CENTER","CENTRE DES COURS","SANT KOU YO"),
+ categories:T("Assessment categories","Catégories d’évaluation","Kategori evalyasyon"),
+ attempts:T("Completed attempts","Tentatives terminées","Evalyasyon fini"),
+ average:T("Average score","Note moyenne","Mwayèn nòt"),
+ choose:T("CHOOSE YOUR ASSESSMENT","CHOISISSEZ VOTRE ÉVALUATION","CHWAZI EVALYASYON OU"),
+ start:T("START ASSESSMENT","COMMENCER","KÒMANSE"),
+ instructions:T(
+ "Choose one answer for each question. These are practice assessments.",
+ "Choisissez une réponse par question. Il s’agit d’exercices pratiques.",
+ "Chwazi yon repons pou chak kestyon. Se evalyasyon pratik."
  ),
- submit:T("VERIFYE REPONS YO","VÉRIFIER LES RÉPONSES","CHECK ANSWERS"),
- score:T("REZILTA","RÉSULTAT","RESULT"),
- answerAll:T("Reponn tout kestyon yo.","Répondez à toutes les questions.","Answer all questions.")
+ submit:T("SUBMIT ANSWERS","SOUMETTRE","VOYE REPONS YO"),
+ back:T("BACK TO ASSESSMENTS","RETOUR AUX ÉVALUATIONS","TOUNEN NAN EVALYASYON"),
+ history:T("ASSESSMENT HISTORY","HISTORIQUE DES ÉVALUATIONS","ISTORIK EVALYASYON"),
+ empty:T("No completed assessments yet.","Aucune évaluation terminée.","Ou poko fini okenn evalyasyon."),
+ score:T("YOUR SCORE","VOTRE NOTE","NÒT OU"),
+ correct:T("Correct answers","Bonnes réponses","Bon repons"),
+ review:T("REVIEW ANSWERS","CORRECTION DES RÉPONSES","REVIZE REPONS YO"),
+ retry:T("TRY AGAIN","RÉESSAYER","ESEYE ANKÒ"),
+ storageError:T(
+ "Your result could not be saved on this device.",
+ "Le résultat n’a pas pu être enregistré.",
+ "Rezilta a pa t kapab anrejistre sou aparèy la."
+ )
 };
 
-const programs = [
+const Q=(question,options,correct)=>({
+ question,options,correct
+});
 
-/* PROFESSIONAL SCHOOLS */
+const exams=[
 
 {
- id:"real-estate",
- group:"school",
- icon:"🏠",
- title:"REAL ESTATE SCHOOL",
- desc:T("Fòmasyon nan byen imobilye.","Formation en immobilier.","Real estate education."),
- modules:[
- T("Prensip fondamantal byen imobilye","Fondements de l’immobilier","Real estate fundamentals"),
- T("Lwa ak etik pwofesyonèl","Droit et éthique","Law and ethics"),
- T("Finans ak ipotèk","Finance et hypothèques","Finance and mortgages"),
- T("Evalyasyon pwopriyete","Évaluation immobilière","Property valuation"),
- T("Maketing ak kliyan","Marketing et clients","Marketing and clients"),
- T("Preparasyon egzamen","Préparation à l’examen","Exam preparation")
- ]
-},
-{
- id:"insurance-school",
- group:"school",
- icon:"🛡️",
- title:"INSURANCE SCHOOL",
- desc:T("Fòmasyon nan asirans.","Formation en assurance.","Insurance education."),
- modules:[
- T("Asirans lavi","Assurance vie","Life insurance"),
- T("Asirans sante FL 2-40","Assurance santé FL 2-40","Health insurance FL 2-40"),
- T("Asirans otomobil","Assurance automobile","Auto insurance"),
- T("Asirans pwopriyete ak responsabilite","Assurance de biens et responsabilité","Property and casualty")
- ]
-},
-{
- id:"journalism-school",
- group:"school",
- icon:"🎙️",
- title:"JOURNALISM SCHOOL",
- desc:T("Jounalis, medya ak kominikasyon.","Journalisme, médias et communication.","Journalism, media and communication."),
- modules:[
- T("Entwodiksyon nan jounalis","Introduction au journalisme","Introduction to journalism"),
- T("Etik jounalis","Éthique journalistique","Journalism ethics"),
- T("Rechèch ak verifikasyon enfòmasyon","Recherche et vérification","Research and verification"),
- T("Teknik entèvyou ak repòtaj","Techniques d’entretien et reportage","Interview and reporting"),
- T("Ekriti pou medya","Écriture médiatique","Media writing"),
- T("Jounalis dijital","Journalisme numérique","Digital journalism")
- ]
-},
-{
- id:"beat-maker-school",
- group:"school",
- icon:"🎹",
- title:"BEAT MAKER AI SCHOOL",
- desc:T("Kreyasyon ak pwodiksyon mizik.","Création et production musicale.","Music creation and production."),
- modules:[
- T("Ritm ak tanpo","Rythme et tempo","Rhythm and tempo"),
- T("Melodi ak akò","Mélodie et accords","Melody and chords"),
- T("Beat making","Création de beats","Beat making"),
- T("Mizik ayisyen","Musique haïtienne","Haitian music"),
- T("Mixaj ak mastering","Mixage et mastering","Mixing and mastering"),
- T("AI nan pwodiksyon mizik","IA et production musicale","AI music production")
+ id:"ai",
+ icon:"🤖",
+ title:T("INTRODUCTION TO AI","INTRODUCTION À L’IA","ENTWODIKSYON NAN AI"),
+ questions:[
+ Q(
+ T("What is generative AI?","Qu’est-ce que l’IA générative?","Kisa AI jeneratif ye?"),
+ [
+ T("Technology that generates content","Technologie qui génère du contenu","Teknoloji ki jenere kontni"),
+ T("A computer screen","Un écran","Yon ekran òdinatè"),
+ T("A password","Un mot de passe","Yon modpas")
+ ],0),
+ Q(
+ T("What makes a prompt effective?","Qu’est-ce qui rend un prompt efficace?","Kisa ki fè yon prompt efikas?"),
+ [
+ T("No instructions","Aucune instruction","Pa gen enstriksyon"),
+ T("Clear context and instructions","Contexte et instructions clairs","Kontèks ak enstriksyon klè"),
+ T("Random words","Mots aléatoires","Mo san sans")
+ ],1),
+ Q(
+ T("How should important AI answers be handled?","Comment traiter les réponses IA importantes?","Kijan pou trete repons AI enpòtan?"),
+ [
+ T("Never check them","Ne jamais vérifier","Pa janm verifye"),
+ T("Publish immediately","Publier immédiatement","Pibliye tousuit"),
+ T("Verify with reliable sources","Vérifier avec des sources fiables","Verifye ak sous serye")
+ ],2),
+ Q(
+ T("Should confidential passwords be shared with AI?","Faut-il partager ses mots de passe avec l’IA?","Èske ou dwe pataje modpas konfidansyèl ak AI?"),
+ [
+ T("No","Non","Non"),
+ T("Always","Toujours","Toujou"),
+ T("Only in public","Seulement en public","Sèlman an piblik")
+ ],0),
+ Q(
+ T("Can AI make mistakes?","L’IA peut-elle se tromper?","Èske AI ka fè erè?"),
+ [
+ T("Never","Jamais","Jamè"),
+ T("Yes","Oui","Wi"),
+ T("Only offline","Seulement hors ligne","Sèlman offline")
+ ],1)
  ]
 },
 
-/* 6 CORE COURSES */
-
 {
- id:"ai",group:"core",icon:"🤖",
- title:"INTRODUCTION TO AI",
- desc:T("Konprann prensip AI ak itilizasyon li.","Comprendre les principes de l’IA.","Understand AI principles and uses."),
- modules:[
- T("Kisa AI ye?","Qu’est-ce que l’IA?","What is AI?"),
- T("AI jeneratif","IA générative","Generative AI"),
- T("Ekri bon prompt","Rédiger des prompts","Writing prompts"),
- T("Verifikasyon repons AI","Vérification des réponses","Verifying AI outputs"),
- T("Etik ak konfidansyalite","Éthique et confidentialité","Ethics and privacy")
- ]
-},
-{
- id:"digital",group:"core",icon:"🎨",
- title:"DIGITAL CREATION",
- desc:T("Kreye kontni dijital pwofesyonèl.","Créer du contenu numérique professionnel.","Create professional digital content."),
- modules:[
- T("Konsepsyon vizyèl","Design visuel","Visual design"),
- T("Kreyasyon imaj","Création d’images","Image creation"),
- T("Pwodiksyon videyo","Production vidéo","Video production"),
- T("Prezantasyon dijital","Présentation numérique","Digital presentations")
- ]
-},
-{
- id:"leadership",group:"core",icon:"📈",
- title:"DIGITAL LEADERSHIP",
- desc:T("Devlope vizyon ak lidèchip.","Développer la vision et le leadership.","Develop vision and leadership."),
- modules:[
- T("Vizyon estratejik","Vision stratégique","Strategic vision"),
- T("Jesyon ekip","Gestion d’équipe","Team management"),
- T("Disiplin ak responsablite","Discipline et responsabilité","Discipline and accountability"),
- T("Pran desizyon","Prise de décision","Decision-making")
- ]
-},
-{
- id:"automation",group:"core",icon:"⚙️",
- title:"AUTOMATION",
- desc:T("Otomatize travay repetitif.","Automatiser les tâches répétitives.","Automate repetitive tasks."),
- modules:[
- T("Prensip otomatizasyon","Principes de l’automatisation","Automation principles"),
- T("Workflow","Flux de travail","Workflows"),
- T("Entegrasyon zouti","Intégration des outils","Tool integration"),
- T("Tès ak kontwòl","Tests et contrôle","Testing and control")
- ]
-},
-{
- id:"communication",group:"core",icon:"💬",
- title:"COMMUNICATION",
- desc:T("Kominikasyon pwofesyonèl.","Communication professionnelle.","Professional communication."),
- modules:[
- T("Kominikasyon oral","Communication orale","Oral communication"),
- T("Ekriti pwofesyonèl","Écriture professionnelle","Professional writing"),
- T("Prezantasyon piblik","Présentation publique","Public speaking"),
- T("Koute aktivman","Écoute active","Active listening")
- ]
-},
-{
- id:"innovation",group:"core",icon:"💡",
- title:"INNOVATION",
- desc:T("Transfòme lide an solisyon.","Transformer les idées en solutions.","Turn ideas into solutions."),
- modules:[
- T("Idantifye pwoblèm","Identifier les problèmes","Problem identification"),
- T("Kreyativite","Créativité","Creativity"),
- T("Pwototip","Prototypage","Prototyping"),
- T("Devlope pwojè","Développement de projets","Project development")
+ id:"digital",
+ icon:"🎨",
+ title:T("DIGITAL CREATION","CRÉATION DIGITALE","KREYASYON DIJITAL"),
+ questions:[
+ Q(
+ T("What helps make text readable?","Qu’est-ce qui facilite la lecture?","Kisa ki fasilite lekti?"),
+ [
+ T("Clear contrast","Un contraste clair","Bon kontras"),
+ T("Tiny text","Texte minuscule","Tèks twò piti"),
+ T("Random placement","Placement aléatoire","Plasman san òganizasyon")
+ ],0),
+ Q(
+ T("Which format commonly supports transparency?","Quel format accepte la transparence?","Ki fòma ki sipòte transparans?"),
+ [
+ T("MP3","MP3","MP3"),
+ T("PNG","PNG","PNG"),
+ T("TXT","TXT","TXT")
+ ],1),
+ Q(
+ T("What should guide a design?","Qu’est-ce qui doit guider un design?","Kisa ki dwe gide yon design?"),
+ [
+ T("Random colors","Couleurs aléatoires","Koulè o aza"),
+ T("Unrelated images","Images sans rapport","Imaj san rapò"),
+ T("Audience and purpose","Public et objectif","Piblik ak objektif")
+ ],2),
+ Q(
+ T("What does video editing involve?","Que comprend le montage vidéo?","Kisa montaj videyo gen ladan?"),
+ [
+ T("Arranging and refining clips","Organiser et améliorer les séquences","Òganize epi amelyore sekans"),
+ T("Deleting every clip","Supprimer toutes les séquences","Efase tout sekans"),
+ T("Changing passwords","Changer les mots de passe","Chanje modpas")
+ ],0),
+ Q(
+ T("Before publishing content, what should you check?","Que vérifier avant publication?","Kisa pou verifye anvan piblikasyon?"),
+ [
+ T("Nothing","Rien","Anyen"),
+ T("Quality, accuracy and usage rights","Qualité, exactitude et droits d’utilisation","Kalite, presizyon ak dwa itilizasyon"),
+ T("Only the filename","Seulement le nom du fichier","Sèlman non fichye a")
+ ],1)
  ]
 },
 
-/* 6 SPECIALIZED PROGRAMS */
+{
+ id:"leadership",
+ icon:"📈",
+ title:T("DIGITAL LEADERSHIP","LEADERSHIP DIGITAL","LIDÈCHIP DIJITAL"),
+ questions:[
+ Q(
+ T("What supports effective leadership?","Qu’est-ce qui favorise un bon leadership?","Kisa ki favorize bon lidèchip?"),
+ [
+ T("Clear goals","Objectifs clairs","Objektif klè"),
+ T("Confusion","Confusion","Konfizyon"),
+ T("Ignoring the team","Ignorer l’équipe","Inyore ekip la")
+ ],0),
+ Q(
+ T("How should responsibilities be assigned?","Comment attribuer les responsabilités?","Kijan pou distribye responsablite?"),
+ [
+ T("Randomly","Au hasard","O aza"),
+ T("According to skills and needs","Selon les compétences et les besoins","Selon konpetans ak bezwen"),
+ T("Without explanation","Sans explication","San eksplikasyon")
+ ],1),
+ Q(
+ T("What helps resolve team conflicts?","Qu’est-ce qui aide à résoudre les conflits?","Kisa ki ede rezoud konfli?"),
+ [
+ T("Insults","Insultes","Joure"),
+ T("Silence forever","Silence permanent","Toujou rete an silans"),
+ T("Constructive dialogue","Dialogue constructif","Dyalòg konstriktif")
+ ],2),
+ Q(
+ T("What is accountability?","Qu’est-ce que la responsabilité?","Kisa responsablite ye?"),
+ [
+ T("Owning your decisions and actions","Assumer ses décisions et ses actions","Asime desizyon ak aksyon ou"),
+ T("Blaming everyone","Accuser tout le monde","Blame tout moun"),
+ T("Avoiding commitments","Éviter les engagements","Evite angajman")
+ ],0),
+ Q(
+ T("How should progress be measured?","Comment mesurer les progrès?","Kijan pou mezire pwogrè?"),
+ [
+ T("By rumors","Par des rumeurs","Ak rimè"),
+ T("With clear indicators","Avec des indicateurs clairs","Ak endikatè klè"),
+ T("Without objectives","Sans objectifs","San objektif")
+ ],1)
+ ]
+},
 
 {
- id:"digital-skills",group:"catalog",icon:"💻",
- title:"DIGITAL SKILLS",
- desc:T("Konpetans dijital esansyèl.","Compétences numériques essentielles.","Essential digital skills."),
- modules:[
- T("Òdinatè","Informatique","Computers"),
- T("Entènèt","Internet","Internet"),
- T("Imel","Courrier électronique","Email"),
- T("Dokiman","Documents","Documents"),
- T("Sekirite dijital","Sécurité numérique","Digital security"),
- T("Evalyasyon","Évaluation","Assessment")
+ id:"automation",
+ icon:"⚙️",
+ title:T("AUTOMATION","AUTOMATISATION","OTOMATIZASYON"),
+ questions:[
+ Q(
+ T("What is automation used for?","À quoi sert l’automatisation?","Pou kisa otomatizasyon sèvi?"),
+ [
+ T("Reducing repetitive work","Réduire les tâches répétitives","Redui travay repetitif"),
+ T("Creating confusion","Créer la confusion","Kreye konfizyon"),
+ T("Removing all responsibility","Supprimer toute responsabilité","Retire tout responsablite")
+ ],0),
+ Q(
+ T("What starts an automated workflow?","Qu’est-ce qui déclenche un workflow?","Kisa ki deklanche yon workflow?"),
+ [
+ T("A screen color","Une couleur d’écran","Koulè ekran"),
+ T("A trigger","Un déclencheur","Yon deklanchè"),
+ T("A random image","Une image aléatoire","Yon imaj o aza")
+ ],1),
+ Q(
+ T("Before activating automation, what should you do?","Que faire avant activation?","Kisa pou fè anvan aktivasyon?"),
+ [
+ T("Ignore errors","Ignorer les erreurs","Inyore erè"),
+ T("Delete records","Supprimer les données","Efase done"),
+ T("Test the workflow","Tester le workflow","Teste workflow la")
+ ],2),
+ Q(
+ T("Why monitor automation?","Pourquoi surveiller l’automatisation?","Poukisa pou siveye otomatizasyon?"),
+ [
+ T("To detect errors","Pour détecter les erreurs","Pou detekte erè"),
+ T("To create errors","Pour créer des erreurs","Pou kreye erè"),
+ T("To waste time","Pour perdre du temps","Pou gaspiye tan")
+ ],0),
+ Q(
+ T("What is a workflow?","Qu’est-ce qu’un workflow?","Kisa yon workflow ye?"),
+ [
+ T("A logo","Un logo","Yon logo"),
+ T("An organized sequence of tasks","Une suite organisée de tâches","Yon seri travay òganize"),
+ T("A password","Un mot de passe","Yon modpas")
+ ],1)
  ]
 },
+
 {
- id:"artificial-intelligence",group:"catalog",icon:"🧠",
- title:"ARTIFICIAL INTELLIGENCE",
- desc:T("Zouti AI ak aplikasyon pratik.","Outils IA et applications pratiques.","AI tools and practical applications."),
- modules:[
- T("Fondasyon AI","Fondements de l’IA","AI foundations"),
- T("AI jeneratif","IA générative","Generative AI"),
- T("Prompt engineering","Ingénierie des prompts","Prompt engineering"),
- T("Ekriti AI","Écriture IA","AI writing"),
- T("Imaj AI","Images IA","AI images"),
- T("Vwa ak videyo","Voix et vidéo","Voice and video"),
- T("Itilizasyon responsab","Usage responsable","Responsible use"),
- T("Pwojè final","Projet final","Final project")
+ id:"communication",
+ icon:"💬",
+ title:T("COMMUNICATION","COMMUNICATION","KOMINIKASYON"),
+ questions:[
+ Q(
+ T("What supports clear communication?","Qu’est-ce qui favorise une communication claire?","Kisa ki favorize kominikasyon klè?"),
+ [
+ T("Simple and precise language","Langage simple et précis","Langaj senp ak presi"),
+ T("Unnecessary confusion","Confusion inutile","Konfizyon initil"),
+ T("Contradictory instructions","Instructions contradictoires","Enstriksyon kontradiktwa")
+ ],0),
+ Q(
+ T("What is active listening?","Qu’est-ce que l’écoute active?","Kisa koute aktivman ye?"),
+ [
+ T("Interrupting constantly","Interrompre constamment","Koupe pawòl moun"),
+ T("Listening to understand","Écouter pour comprendre","Koute pou konprann"),
+ T("Ignoring questions","Ignorer les questions","Inyore kestyon")
+ ],1),
+ Q(
+ T("What should a professional email include?","Que doit contenir un courriel professionnel?","Kisa yon imel pwofesyonèl dwe genyen?"),
+ [
+ T("Insults","Insultes","Joure"),
+ T("Unrelated information","Informations inutiles","Enfòmasyon initil"),
+ T("A clear subject and message","Un objet et un message clairs","Yon sijè ak mesaj klè")
+ ],2),
+ Q(
+ T("How should feedback be delivered?","Comment donner un retour?","Kijan pou bay fidbak?"),
+ [
+ T("Respectfully and specifically","Avec respect et précision","Avèk respè ak presizyon"),
+ T("With personal attacks","Avec des attaques personnelles","Ak atak pèsonèl"),
+ T("Without context","Sans contexte","San kontèks")
+ ],0),
+ Q(
+ T("What helps a public presentation?","Qu’est-ce qui améliore une présentation publique?","Kisa ki amelyore yon prezantasyon piblik?"),
+ [
+ T("No preparation","Aucune préparation","Pa gen preparasyon"),
+ T("Preparation and practice","Préparation et pratique","Preparasyon ak pratik"),
+ T("Reading unrelated material","Lire des documents sans rapport","Li dokiman san rapò")
+ ],1)
  ]
 },
+
 {
- id:"administration",group:"catalog",icon:"👔",
- title:"LEADERSHIP & ADMINISTRATION",
- desc:T("Jesyon ak administrasyon.","Gestion et administration.","Management and administration."),
- modules:[
- T("Lidèchip","Leadership","Leadership"),
- T("Disiplin","Discipline","Discipline"),
- T("Kominikasyon","Communication","Communication"),
- T("Jesyon ekip","Gestion d’équipe","Team management"),
- T("Rezolisyon konfli","Résolution des conflits","Conflict resolution"),
- T("Evalyasyon","Évaluation","Assessment")
- ]
-},
-{
- id:"radio-media",group:"catalog",icon:"📻",
- title:"RADIO & DIGITAL MEDIA",
- desc:T("Radyo, podcast ak medya dijital.","Radio, podcasts et médias numériques.","Radio, podcasts and digital media."),
- modules:[
- T("Entwodiksyon nan radyo","Introduction à la radio","Introduction to radio"),
- T("Prezantasyon ak vwa","Présentation et voix","Presentation and voice"),
- T("Mikwofòn ak estidyo","Microphone et studio","Microphone and studio"),
- T("Pwodiksyon odyo","Production audio","Audio production"),
- T("Podcast","Podcast","Podcast"),
- T("Difizyon an dirèk","Diffusion en direct","Live streaming"),
- T("Pwojè final","Projet final","Final project")
- ]
-},
-{
- id:"business",group:"catalog",icon:"💼",
- title:"BUSINESS & ENTREPRENEURSHIP",
- desc:T("Kreyasyon ak jesyon biznis.","Création et gestion d’entreprise.","Business creation and management."),
- modules:[
- T("Lide biznis","Idée d’entreprise","Business idea"),
- T("Planifikasyon","Planification","Planning"),
- T("Sèvis kliyan","Service client","Customer service"),
- T("Maketing dijital","Marketing numérique","Digital marketing"),
- T("Òganizasyon finansye","Organisation financière","Financial organization"),
- T("Pwojè final","Projet final","Final project")
- ]
-},
-{
- id:"community",group:"catalog",icon:"🤝",
- title:"COMMUNITY & SERVICES",
- desc:T("Sèvis ak devlopman kominotè.","Services et développement communautaire.","Community services and development."),
- modules:[
- T("Konprann kominote a","Comprendre la communauté","Understanding communities"),
- T("Akèy ak kominikasyon","Accueil et communication","Reception and communication"),
- T("Oryantasyon resous","Orientation vers les ressources","Resource guidance"),
- T("Etik ak konfidansyalite","Éthique et confidentialité","Ethics and confidentiality"),
- T("Evalyasyon","Évaluation","Assessment")
+ id:"innovation",
+ icon:"💡",
+ title:T("INNOVATION","INNOVATION","INOVASYON"),
+ questions:[
+ Q(
+ T("What is the first step in solving a problem?","Quelle est la première étape pour résoudre un problème?","Ki premye etap pou rezoud yon pwoblèm?"),
+ [
+ T("Understand the problem","Comprendre le problème","Konprann pwoblèm nan"),
+ T("Ignore the problem","Ignorer le problème","Inyore pwoblèm nan"),
+ T("Launch without planning","Lancer sans planifier","Lanse san planifikasyon")
+ ],0),
+ Q(
+ T("What is a prototype?","Qu’est-ce qu’un prototype?","Kisa yon pwototip ye?"),
+ [
+ T("A password","Un mot de passe","Yon modpas"),
+ T("An early model for testing","Un premier modèle à tester","Yon premye modèl pou teste"),
+ T("A final invoice","Une facture finale","Yon fakti final")
+ ],1),
+ Q(
+ T("Why collect user feedback?","Pourquoi recueillir les avis des utilisateurs?","Poukisa kolekte opinyon itilizatè yo?"),
+ [
+ T("To ignore users","Pour ignorer les utilisateurs","Pou inyore itilizatè yo"),
+ T("To avoid improvements","Pour éviter les améliorations","Pou evite amelyorasyon"),
+ T("To improve the solution","Pour améliorer la solution","Pou amelyore solisyon an")
+ ],2),
+ Q(
+ T("What supports innovation?","Qu’est-ce qui favorise l’innovation?","Kisa ki favorize inovasyon?"),
+ [
+ T("Experimentation and learning","Expérimentation et apprentissage","Eksperimantasyon ak aprantisaj"),
+ T("Rejecting all ideas","Rejeter toutes les idées","Rejte tout lide"),
+ T("Avoiding evaluation","Éviter l’évaluation","Evite evalyasyon")
+ ],0),
+ Q(
+ T("How can a solution be improved?","Comment améliorer une solution?","Kijan pou amelyore yon solisyon?"),
+ [
+ T("Never test it","Ne jamais la tester","Pa janm teste li"),
+ T("Test, measure and refine","Tester, mesurer et améliorer","Teste, mezire epi amelyore"),
+ T("Ignore results","Ignorer les résultats","Inyore rezilta yo")
+ ],1)
  ]
 }
+
 ];
 
-let lang="ht";
-let activeProgram=null;
+let lang="en";
+let currentExam=null;
+let submitted=false;
+let lastAnswers=[];
+
+const $=id=>document.getElementById(id);
+const tr=key=>words[key][lang];
 
 try{
  const saved=localStorage.getItem("promax-language");
- if(["ht","fr","en"].includes(saved))lang=saved;
+ if(["en","fr","ht"].includes(saved))lang=saved;
 }catch(e){}
 
-const tr=key=>dictionary[key][lang];
-const programDialog=document.getElementById("programDialog");
-const assessmentDialog=document.getElementById("assessmentDialog");
-
-function getReviewed(id){
+function readHistory(){
  try{
-  const value=JSON.parse(
-   localStorage.getItem("promax-outline-"+id)||"[]"
+  const data=JSON.parse(
+   localStorage.getItem("promax-assessment-history")||"[]"
   );
-  return Array.isArray(value)?value:[];
+  return Array.isArray(data)?data.filter(
+   x=>x&&typeof x.score==="number"&&
+   exams.some(e=>e.id===x.id)
+  ):[];
  }catch(e){return []}
 }
 
-function renderCards(){
- const query=document.getElementById("search")
- .value.toLowerCase().trim();
+function renderHistory(){
+ const history=readHistory();
 
- const targets={
-  school:document.getElementById("schoolGrid"),
-  core:document.getElementById("coreGrid"),
-  catalog:document.getElementById("catalogGrid")
- };
+ $("attemptCount").textContent=history.length;
 
- Object.values(targets).forEach(el=>el.innerHTML="");
+ const average=history.length?
+ Math.round(history.reduce((a,b)=>a+b.score,0)/history.length):0;
 
- programs.forEach(p=>{
-  if(p.group!=="school"&&query){
-   const text=[
-    p.title,
-    ...Object.values(p.desc),
-    ...p.modules.flatMap(m=>Object.values(m))
-   ].join(" ").toLowerCase();
+ $("averageScore").textContent=average+"%";
+ $("history").replaceChildren();
 
-   if(!text.includes(query))return;
-  }
+ if(!history.length){
+  $("history").textContent=tr("empty");
+  return;
+ }
 
-  const card=document.createElement("article");
-  card.className="card";
+ history.slice().reverse().forEach(item=>{
+  const exam=exams.find(e=>e.id===item.id);
+  const row=document.createElement("div");
+  row.className="history-row";
 
-  card.innerHTML=`
-   <div class="icon">${p.icon}</div>
-   <h3>${p.title}</h3>
-   <p>${p.desc[lang]}</p>
-   <small>${p.modules.length} MODULES</small>
-   <button type="button" class="btn"
-    data-program="${p.id}">
-    ${tr(p.group==="school"?"enter":"start")}
-   </button>
-  `;
+  const title=document.createElement("strong");
+  title.textContent=exam.title[lang];
 
-  targets[p.group].appendChild(card);
+  const score=document.createElement("span");
+  score.textContent=item.score+"% — "+
+   new Date(item.date).toLocaleDateString(lang==="ht"?"fr":lang);
+
+  row.append(title,score);
+  $("history").appendChild(row);
  });
 }
 
-function renderProgram(id){
- const p=programs.find(item=>item.id===id);
- if(!p)return;
-
- activeProgram=id;
- const reviewed=getReviewed(id);
- const count=p.modules.filter((m,i)=>reviewed.includes(i)).length;
- const percent=Math.round(count/p.modules.length*100);
-
- document.getElementById("programContent").innerHTML=`
-  <h2>${p.icon} ${p.title}</h2>
-  <p>${p.desc[lang]}</p>
-  <h3>${tr("modules")}</h3>
-  <p>${tr("outline")}</p>
-  <p>${tr("progress")}: ${percent}%</p>
-  <div class="progress">
-   <span style="width:${percent}%"></span>
-  </div>
-  ${p.modules.map((m,i)=>`
-   <article class="lesson">
-    <h3>MODULE ${String(i+1).padStart(2,"0")}</h3>
-    <p>${m[lang]}</p>
-    <label>
-     <input type="checkbox"
-      data-reviewed="${i}"
-      ${reviewed.includes(i)?"checked":""}>
-     ${tr("completed")}
-    </label>
-   </article>
-  `).join("")}
- `;
-
- if(!programDialog.open)programDialog.showModal();
+function renderCards(){
+ $("cards").innerHTML=exams.map(exam=>`
+  <article class="card">
+   <div class="icon">${exam.icon}</div>
+   <h3>${exam.title[lang]}</h3>
+   <p>${exam.questions.length} QUESTIONS</p>
+   <button data-exam="${exam.id}">
+    ${tr("start")}
+   </button>
+  </article>
+ `).join("");
 }
 
-document.addEventListener("click",e=>{
- const button=e.target.closest("[data-program]");
- if(button)renderProgram(button.dataset.program);
-});
+function startExam(id){
+ currentExam=exams.find(e=>e.id===id);
+ if(!currentExam)return;
 
-document.addEventListener("change",e=>{
- if(!e.target.matches("[data-reviewed]"))return;
- if(!activeProgram)return;
+ submitted=false;
+ lastAnswers=[];
+ $("assessmentList").hidden=true;
+ $("examPanel").hidden=false;
+ $("result").hidden=true;
 
- const index=Number(e.target.dataset.reviewed);
- let reviewed=getReviewed(activeProgram);
+ renderExam();
+ $("examPanel").scrollIntoView({behavior:"smooth"});
+}
 
- if(e.target.checked){
-  if(!reviewed.includes(index))reviewed.push(index);
- }else{
-  reviewed=reviewed.filter(i=>i!==index);
- }
+function renderExam(){
+ if(!currentExam)return;
 
- try{
-  localStorage.setItem(
-   "promax-outline-"+activeProgram,
-   JSON.stringify(reviewed)
-  );
- }catch(e){}
+ $("examTitle").textContent=currentExam.title[lang];
 
- renderProgram(activeProgram);
-});
-
-document.getElementById("closeProgram")
-.addEventListener("click",()=>programDialog.close());
-
-document.getElementById("search")
-.addEventListener("input",renderCards);
-
-/* PRACTICE ASSESSMENT */
-
-const questions=[
- {
-  q:T(
-   "Kisa ou dwe fè ak yon repons AI enpòtan?",
-   "Que faire avec une réponse IA importante?",
-   "What should you do with an important AI answer?"
-  ),
-  options:[
-   T("Aksepte li san verifikasyon","L’accepter sans vérifier","Accept without checking"),
-   T("Verifye li","La vérifier","Verify it"),
-   T("Pataje li otomatikman","La partager automatiquement","Share it automatically")
-  ],
-  correct:1
- },
- {
-  q:T(
-   "Ki aksyon ki pwoteje kont dijital ou?",
-   "Quelle action protège votre compte numérique?",
-   "Which action protects your digital account?"
-  ),
-  options:[
-   T("Pataje modpas ou","Partager son mot de passe","Share your password"),
-   T("Itilize menm modpas tout kote","Réutiliser le même mot de passe","Reuse one password everywhere"),
-   T("Aktive otantifikasyon an de etap","Activer la double authentification","Enable two-factor authentication")
-  ],
-  correct:2
- },
- {
-  q:T(
-   "Kisa yon jounalis dwe fè anvan li pibliye yon nouvèl?",
-   "Que doit faire un journaliste avant de publier?",
-   "What should a journalist do before publishing?"
-  ),
-  options:[
-   T("Verifye sous yo","Vérifier les sources","Verify sources"),
-   T("Envante detay","Inventer des détails","Invent details"),
-   T("Pibliye rimè","Publier des rumeurs","Publish rumors")
-  ],
-  correct:0
- },
- {
-  q:T(
-   "Ki objektif otomatizasyon?",
-   "Quel est le but de l’automatisation?",
-   "What is the purpose of automation?"
-  ),
-  options:[
-   T("Ogmante travay repetitif","Augmenter les tâches répétitives","Increase repetitive work"),
-   T("Redui travay repetitif","Réduire les tâches répétitives","Reduce repetitive work"),
-   T("Elimine tout verifikasyon","Éliminer toute vérification","Eliminate all checks")
-  ],
-  correct:1
- },
- {
-  q:T(
-   "Ki premye etap pou devlope yon solisyon?",
-   "Quelle est la première étape pour développer une solution?",
-   "What is the first step in developing a solution?"
-  ),
-  options:[
-   T("Konprann pwoblèm nan","Comprendre le problème","Understand the problem"),
-   T("Inyore bezwen moun","Ignorer les besoins","Ignore user needs"),
-   T("Sote planifikasyon","Ignorer la planification","Skip planning")
-  ],
-  correct:0
- }
-];
-
-function renderQuiz(){
- const quiz=document.getElementById("quiz");
-
- quiz.innerHTML=questions.map((q,i)=>`
-  <fieldset class="question">
-   <legend>${i+1}. ${q.q[lang]}</legend>
+ $("examForm").innerHTML=currentExam.questions.map((q,i)=>`
+  <fieldset>
+   <legend>${i+1}. ${q.question[lang]}</legend>
    ${q.options.map((option,j)=>`
-    <label>
-     <input type="radio" name="q${i}"
-      value="${j}" required>
+    <label class="option">
+     <input type="radio"
+      name="question${i}"
+      value="${j}"
+      ${lastAnswers[i]===j?"checked":""}
+      ${submitted?"disabled":"required"}>
      ${option[lang]}
     </label>
    `).join("")}
   </fieldset>
- `).join("")+`
-  <button type="submit" class="btn primary">
+ `).join("")+
+ (submitted?"":`
+  <button type="submit" class="primary">
    ${tr("submit")}
   </button>
- `;
-
- document.getElementById("quizResult").textContent="";
+ `);
 }
 
-document.getElementById("assessmentBtn")
-.addEventListener("click",()=>{
- renderQuiz();
- assessmentDialog.showModal();
+function showResult(){
+ const correct=currentExam.questions.reduce(
+  (total,q,i)=>total+(lastAnswers[i]===q.correct?1:0),0
+ );
+
+ const score=Math.round(
+  correct/currentExam.questions.length*100
+ );
+
+ $("result").hidden=false;
+
+ $("result").innerHTML=`
+  <h3>${tr("score")}</h3>
+  <div class="score">${score}%</div>
+  <p>${tr("correct")}: ${correct}/${currentExam.questions.length}</p>
+  <h3>${tr("review")}</h3>
+  ${currentExam.questions.map((q,i)=>`
+   <p>${i+1}. ${lastAnswers[i]===q.correct?"✓":"✗"}
+    ${q.options[q.correct][lang]}
+   </p>
+  `).join("")}
+  <button id="retryBtn">${tr("retry")}</button>
+ `;
+
+ $("retryBtn").onclick=()=>startExam(currentExam.id);
+
+ return score;
+}
+
+$("examForm").addEventListener("change",e=>{
+ if(!e.target.matches("input[type=radio]"))return;
+ const index=Number(e.target.name.replace("question",""));
+ lastAnswers[index]=Number(e.target.value);
 });
 
-document.getElementById("closeAssessment")
-.addEventListener("click",()=>assessmentDialog.close());
-
-document.getElementById("quiz")
-.addEventListener("submit",e=>{
+$("examForm").addEventListener("submit",e=>{
  e.preventDefault();
 
+ if(submitted||!currentExam)return;
+
  const data=new FormData(e.target);
- let score=0;
 
- for(let i=0;i<questions.length;i++){
-  if(!data.has("q"+i)){
-   document.getElementById("quizResult").textContent=
-    tr("answerAll");
-   return;
-  }
+ lastAnswers=currentExam.questions.map(
+  (q,i)=>Number(data.get("question"+i))
+ );
 
-  if(Number(data.get("q"+i))===questions[i].correct){
-   score++;
-  }
+ submitted=true;
+
+ const score=showResult();
+
+ renderExam();
+
+ try{
+  const history=readHistory();
+
+  history.push({
+   id:currentExam.id,
+   score:score,
+   date:new Date().toISOString()
+  });
+
+  localStorage.setItem(
+   "promax-assessment-history",
+   JSON.stringify(history)
+  );
+
+ }catch(e){
+  const warning=document.createElement("p");
+  warning.textContent=tr("storageError");
+  $("result").appendChild(warning);
  }
 
- const percentage=Math.round(score/questions.length*100);
-
- document.getElementById("quizResult").innerHTML=`
-  <h3>${tr("score")}: ${score}/${questions.length}</h3>
-  <h2>${percentage}%</h2>
- `;
+ renderHistory();
+ $("result").scrollIntoView({behavior:"smooth"});
 });
 
-/* LANGUAGE SYSTEM */
+$("cards").addEventListener("click",e=>{
+ const btn=e.target.closest("[data-exam]");
+ if(btn)startExam(btn.dataset.exam);
+});
+
+$("backBtn").addEventListener("click",()=>{
+ currentExam=null;
+ $("examPanel").hidden=true;
+ $("assessmentList").hidden=false;
+ $("assessmentList").scrollIntoView({behavior:"smooth"});
+});
 
 function setLanguage(value){
- lang=["ht","fr","en"].includes(value)?value:"ht";
+ lang=["en","fr","ht"].includes(value)?value:"en";
  document.documentElement.lang=lang;
 
  document.querySelectorAll("[data-t]").forEach(el=>{
-  if(dictionary[el.dataset.t]){
-   el.textContent=tr(el.dataset.t);
-  }
+  el.textContent=tr(el.dataset.t);
  });
 
  document.querySelectorAll("[data-lang]").forEach(btn=>{
@@ -1079,19 +797,17 @@ function setLanguage(value){
   btn.setAttribute("aria-pressed",String(active));
  });
 
- document.getElementById("search").placeholder=tr("search");
-
  try{
   localStorage.setItem("promax-language",lang);
  }catch(e){}
 
  renderCards();
+ renderHistory();
 
- if(programDialog.open&&activeProgram){
-  renderProgram(activeProgram);
+ if(currentExam){
+  renderExam();
+  if(submitted)showResult();
  }
-
- if(assessmentDialog.open)renderQuiz();
 }
 
 document.querySelectorAll("[data-lang]").forEach(btn=>{
@@ -1101,701 +817,7 @@ document.querySelectorAll("[data-lang]").forEach(btn=>{
 });
 
 setLanguage(lang);
-</script>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="ht" id="htmlRoot" translate="no">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#000000">
-<meta name="google" content="notranslate">
-<meta name="description" content="PRO-MAX ACADÉMIE — Real Estate, Insurance, Journalism, Beat Maker ak fòmasyon dijital pwofesyonèl.">
-<title>PRO-MAX ACADÉMIE | Fòme Jodi a Pou Dirije Demen</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<style>
-:root{
-  --black:#000;
-  --dark:#090300;
-  --orange:#ff7900;
-  --apricot:#ffad70;
-  --text:#ffc59a;
-  --border:rgba(255,121,0,.35);
-  --glow:0 0 22px rgba(255,121,0,.36);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:105px}
-body{
-  min-height:100vh;
-  overflow-x:hidden;
-  font-family:Montserrat,Arial,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at 16% 10%,rgba(255,121,0,.17),transparent 34%),
-    radial-gradient(circle at 85% 70%,rgba(255,121,0,.10),transparent 40%),
-    linear-gradient(180deg,#000,#100500 50%,#000);
-}
-a{color:inherit;text-decoration:none}
-button,input,select{font:inherit}
-button{cursor:pointer}
-.container{width:min(1180px,calc(100% - 32px));margin:auto}
-.topbar{
-  padding:11px 15px;text-align:center;
-  color:#000;font-size:.69rem;font-weight:900;
-  letter-spacing:.09em;
-  background:linear-gradient(90deg,#873000,var(--orange),var(--apricot),var(--orange),#873000);
-}
-header{
-  position:sticky;top:0;z-index:1000;
-  border-bottom:1px solid var(--border);
-  background:rgba(0,0,0,.97);
-  backdrop-filter:blur(14px);
-}
-.header-inner{
-  min-height:86px;display:flex;
-  align-items:center;justify-content:space-between;gap:15px;
-}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-logo{
-  width:62px;height:62px;flex-shrink:0;
-  object-fit:cover;border:2px solid var(--orange);
-  border-radius:17px;background:#000;box-shadow:var(--glow);
-}
-.brand strong{
-  display:block;color:var(--orange);
-  font:800 .97rem Cinzel,serif;
-}
-.brand small{
-  display:block;margin-top:5px;
-  font-size:.52rem;font-weight:800;
-}
-.header-tools{display:flex;align-items:center;gap:10px}
-.nav{display:flex;align-items:center;gap:3px}
-.nav a{
-  padding:9px;border-radius:22px;
-  font-size:.62rem;font-weight:900;
-}
-.nav a:hover{color:#000;background:var(--orange)}
-.languages{display:flex;gap:4px}
-.lang{
-  padding:9px;border:1px solid var(--border);
-  border-radius:20px;color:var(--apricot);
-  background:#000;font-size:.62rem;font-weight:900;
-}
-.lang.active{background:var(--orange);color:#000}
-.menu{
-  display:none;padding:10px 14px;
-  border:1px solid var(--orange);
-  border-radius:10px;color:var(--orange);
-  background:#000;
-}
-.hero{
-  min-height:calc(100vh - 115px);
-  display:flex;align-items:center;
-  padding:75px 0 85px;text-align:center;
-}
-.eyebrow{
-  color:var(--orange);font-size:.7rem;
-  font-weight:900;letter-spacing:.16em;
-}
-h1,h2{font-family:Cinzel,serif;color:var(--orange)}
-.hero h1{
-  max-width:1050px;margin:22px auto;
-  font-size:clamp(2.5rem,7vw,5.8rem);
-  line-height:1.06;
-}
-.hero h1 span{display:block;color:var(--apricot)}
-.description{
-  max-width:830px;margin:18px auto 0;
-  line-height:1.8;
-}
-.actions{
-  display:flex;justify-content:center;
-  flex-wrap:wrap;gap:12px;margin-top:29px;
-}
-.btn{
-  min-height:49px;display:inline-flex;
-  align-items:center;justify-content:center;gap:9px;
-  padding:12px 22px;border:2px solid var(--orange);
-  border-radius:28px;font-size:.7rem;font-weight:900;
-  transition:.2s;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:var(--glow)}
-.btn:focus-visible,.lang:focus-visible{
-  outline:3px solid var(--apricot);outline-offset:3px;
-}
-.primary{background:var(--orange);color:#000}
-.outline{background:#000;color:var(--orange)}
-.stats{
-  max-width:880px;margin:48px auto 0;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-}
-.stat{
-  min-height:118px;display:flex;
-  flex-direction:column;align-items:center;
-  justify-content:center;padding:20px;
-  border:1px solid var(--border);
-  border-radius:18px;background:#080300;
-}
-.stat strong{color:var(--orange);font-size:1.6rem}
-.stat span{margin-top:8px;font-size:.68rem;font-weight:800}
-.section{
-  padding:85px 0;
-  border-top:1px solid rgba(255,121,0,.16);
-}
-.heading{
-  max-width:850px;margin:0 auto 42px;text-align:center;
-}
-.heading h2{
-  margin-top:13px;
-  font-size:clamp(2rem,5vw,4rem);
-  line-height:1.1;
-}
-.heading p:last-child{margin-top:16px;line-height:1.7}
-.professor{
-  background:
-    radial-gradient(circle at center,rgba(255,121,0,.13),transparent 50%),
-    linear-gradient(145deg,#110500,#000);
-}
-.video-card{
-  width:min(100%,640px);
-  margin:auto;padding:12px;
-  border:1px solid var(--orange);
-  border-radius:27px;
-  background:linear-gradient(145deg,#190800,#000 55%,#180700);
-  box-shadow:var(--glow);
-}
-.video-label{
-  display:flex;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-  padding:10px;color:var(--orange);
-  font-size:.67rem;font-weight:900;
-}
-.professor-video{
-  display:block;width:100%;
-  max-height:740px;aspect-ratio:9/16;
-  object-fit:contain;
-  border:1px solid var(--border);
-  border-radius:19px;background:#000;
-}
-.grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-}
-.schools{grid-template-columns:repeat(2,1fr)}
-.card{
-  min-height:245px;display:flex;
-  flex-direction:column;padding:26px;
-  border:1px solid var(--border);
-  border-radius:21px;
-  background:
-    radial-gradient(circle at top right,rgba(255,121,0,.17),transparent 42%),
-    linear-gradient(145deg,#000,#100500);
-  transition:.25s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--orange);box-shadow:var(--glow);
-}
-.card i{font-size:2rem;color:var(--orange)}
-.card h3{
-  margin-top:18px;color:var(--orange);
-  font-size:1.04rem;text-transform:uppercase;
-}
-.card p{margin-top:12px;line-height:1.7;font-size:.84rem}
-.card-link{
-  margin-top:auto;padding-top:24px;
-  color:var(--orange);font-size:.72rem;font-weight:900;
-}
-.student-grid{grid-template-columns:repeat(4,1fr)}
-.student-grid .card{
-  min-height:190px;align-items:center;
-  justify-content:center;text-align:center;
-}
-.ddn{
-  padding:55px 28px;
-  border:2px solid var(--orange);
-  border-radius:28px;text-align:center;
-  background:radial-gradient(circle,rgba(255,121,0,.17),transparent 60%),#000;
-  box-shadow:var(--glow);
-}
-.ddn h2{
-  font-size:clamp(2.5rem,8vw,5.7rem);
-}
-.ddn h3{margin-top:17px;color:var(--apricot)}
-.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.contact-card{
-  padding:28px;border:1px solid var(--border);
-  border-radius:20px;background:#080300;
-}
-.contact-card h3{color:var(--orange);margin-bottom:17px}
-.phone{
-  display:flex;align-items:center;gap:14px;
-  padding:13px 0;border-bottom:1px solid var(--border);
-  font-weight:800;
-}
-.flag{font-size:1.7rem}
-.phone a:hover,.contact-card a:hover{color:var(--orange)}
-.contact-card p{margin:12px 0;overflow-wrap:anywhere}
-.social-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:14px;margin-top:28px;
-}
-.social{
-  min-height:105px;display:flex;
-  flex-direction:column;align-items:center;
-  justify-content:center;gap:11px;
-  border:1px solid var(--border);
-  border-radius:17px;background:#080300;
-  font-size:.68rem;font-weight:900;
-  transition:.2s;
-}
-.social:hover{
-  transform:translateY(-3px);border-color:var(--orange);
-}
-.social i{font-size:2rem}
-.facebook i{color:#1877f2}
-.whatsapp i{color:#25d366}
-.instagram i{color:#e4405f}
-.youtube i{color:#ff0033}
-.spotify i{color:#1db954}
-.telegram i{color:#26a5e4}
-.twitter i{color:#e7e7e7}
-.tiktok i{color:#25f4ee}
-.linkedin i{color:#0a66c2}
-.truth i{color:var(--orange)}
-footer{
-  padding:48px 15px;text-align:center;
-  border-top:1px solid var(--border);background:#000;
-}
-footer strong{font-family:Cinzel,serif;color:var(--orange)}
-footer p{margin-top:12px;line-height:1.9;font-size:.73rem}
-@media(max-width:1000px){
-  .nav{
-    position:absolute;top:86px;left:15px;right:15px;
-    display:none;flex-direction:column;
-    padding:15px;border:1px solid var(--orange);
-    border-radius:15px;background:#000;
-  }
-  .nav.open{display:flex}
-  .nav a{text-align:center}
-  .menu{display:block}
-  .grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:700px){
-  .brand-logo{width:49px;height:49px}
-  .brand strong{font-size:.75rem}
-  .brand small{font-size:.46rem}
-  .lang{padding:8px 6px}
-  .hero{min-height:auto;padding:60px 0}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .grid,.schools,.student-grid,.contact-grid{
-    grid-template-columns:1fr;
-  }
-  .social-grid{grid-template-columns:repeat(2,1fr)}
-  .video-card{padding:9px}
-}
-@media(max-width:390px){
-  .brand strong{font-size:.66rem}
-  .brand small{font-size:.4rem}
-  .lang{font-size:.56rem;padding:7px 5px}
-}
-</style>
-</head>
-
-<body>
-
-<div class="topbar"
- data-ht="PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI"
- data-fr="PRO-MAX ACADÉMIE — APPRENDRE • ÉVOLUER • RÉUSSIR"
- data-en="PRO-MAX ACADEMY — LEARN • EVOLVE • SUCCEED">
- PRO-MAX ACADÉMIE — APRANN • EVOLYE • REYISI
-</div>
-
-<header>
-<div class="container header-inner">
-<a class="brand" href="#home">
-  <img class="brand-logo" src="./Pro-max-academie.png" alt="PRO-MAX ACADÉMIE">
-  <span>
-    <strong>PRO-MAX ACADÉMIE</strong>
-    <small data-ht="EKOSISTÈM APRANTISAJ PWOFESYONÈL"
-           data-fr="ÉCOSYSTÈME D’APPRENTISSAGE PROFESSIONNEL"
-           data-en="PROFESSIONAL LEARNING ECOSYSTEM">
-      EKOSISTÈM APRANTISAJ PWOFESYONÈL
-    </small>
-  </span>
-</a>
-
-<div class="header-tools">
-<nav class="nav" id="nav">
-  <a href="#home" data-ht="AKÈY" data-fr="ACCUEIL" data-en="HOME">AKÈY</a>
-  <a href="#professor" data-ht="PWOFESÈ" data-fr="PROFESSEUR" data-en="PROFESSOR">PWOFESÈ</a>
-  <a href="#schools" data-ht="LEKÒL" data-fr="ÉCOLES" data-en="SCHOOLS">LEKÒL</a>
-  <a href="#courses" data-ht="KOU" data-fr="COURS" data-en="COURSES">KOU</a>
-  <a href="#student" data-ht="ELÈV" data-fr="ÉTUDIANTS" data-en="STUDENTS">ELÈV</a>
-  <a href="#contact" data-ht="KONTAK" data-fr="CONTACT" data-en="CONTACT">KONTAK</a>
-</nav>
-
-<div class="languages">
-  <button class="lang" data-lang="fr" type="button">FRA</button>
-  <button class="lang" data-lang="en" type="button">ENG</button>
-  <button class="lang active" data-lang="ht" type="button">KRE</button>
-</div>
-<button class="menu" id="menu" type="button" aria-label="Menu" aria-expanded="false">☰</button>
-</div>
-</div>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-<div class="container">
-  <p class="eyebrow">BSS1815 PRO-MAX DMP</p>
-  <h1>
-    <span data-ht="FÒME JODI A" data-fr="FORMER AUJOURD’HUI" data-en="TRAIN TODAY">FÒME JODI A</span>
-    <span data-ht="POU DIRIJE DEMEN" data-fr="POUR DIRIGER DEMAIN" data-en="TO LEAD TOMORROW">POU DIRIJE DEMEN</span>
-  </h1>
-  <p class="description"
-     data-ht="PRO-MAX ACADÉMIE se yon ekosistèm aprantisaj pwofesyonèl ki rasanble kat lekòl: Real Estate, Insurance, Journalism ak Beat Maker, ansanm ak teknoloji, AI ak lidèchip."
-     data-fr="PRO-MAX ACADÉMIE réunit quatre écoles professionnelles : immobilier, assurance, journalisme et production musicale, ainsi que la technologie, l’intelligence artificielle et le leadership."
-     data-en="PRO-MAX ACADEMY brings together four professional schools: Real Estate, Insurance, Journalism and Beat Maker, alongside technology, artificial intelligence and leadership.">
-    PRO-MAX ACADÉMIE se yon ekosistèm aprantisaj pwofesyonèl ki rasanble kat lekòl.
-  </p>
-  <div class="actions">
-    <a class="btn primary" href="#schools"><i class="fa-solid fa-graduation-cap"></i> <span data-ht="DEKOUVRI LEKÒL YO" data-fr="DÉCOUVRIR LES ÉCOLES" data-en="EXPLORE SCHOOLS">DEKOUVRI LEKÒL YO</span></a>
-    <a class="btn outline" href="./student-profile/index.html"><i class="fa-solid fa-user-plus"></i> <span data-ht="KREYE KONT" data-fr="CRÉER UN COMPTE" data-en="CREATE ACCOUNT">KREYE KONT</span></a>
-    <a class="btn outline" href="./student-portal/index.html"><i class="fa-solid fa-book-open"></i> <span data-ht="PÒTAL ELÈV" data-fr="PORTAIL ÉTUDIANT" data-en="STUDENT PORTAL">PÒTAL ELÈV</span></a>
-  </div>
-  <div class="stats">
-    <div class="stat"><strong>04</strong><span data-ht="LEKÒL PWOFESYONÈL" data-fr="ÉCOLES PROFESSIONNELLES" data-en="PROFESSIONAL SCHOOLS">LEKÒL PWOFESYONÈL</span></div>
-    <div class="stat"><strong>03</strong><span data-ht="LANG" data-fr="LANGUES" data-en="LANGUAGES">LANG</span></div>
-    <div class="stat"><strong>100%</strong><span>ONLINE</span></div>
-    <div class="stat"><strong>AI</strong><span>SMART LEARNING</span></div>
-  </div>
-</div>
-</section>
-
-<section class="section professor" id="professor">
-<div class="container">
-  <div class="heading">
-    <p class="eyebrow">OFFICIAL PRESENTATION</p>
-    <h2 data-ht="RANKONTRE PWOFESÈ ACADÉMIE A"
-        data-fr="RENCONTREZ LE PROFESSEUR DE L’ACADÉMIE"
-        data-en="MEET THE ACADEMY PROFESSOR">
-      RANKONTRE PWOFESÈ ACADÉMIE A
-    </h2>
-    <p data-ht="Bon jan direksyon pwofesyonèl ak yon eksperyans aprantisaj ki prepare w pou avanse."
-       data-fr="Une orientation professionnelle et une expérience d’apprentissage conçue pour vous faire progresser."
-       data-en="Professional guidance and a learning experience designed to help you progress.">
-      Bon jan direksyon pwofesyonèl ak ansèyman klè.
-    </p>
-  </div>
-  <div class="video-card">
-    <div class="video-label">
-      <span>PRO-MAX ACADÉMIE</span>
-      <strong>ACADÉMIE PROFESSOR</strong>
-    </div>
-    <video class="professor-video" controls playsinline preload="metadata">
-      <source src="./pro-max-academie.mp4" type="video/mp4">
-      Navigatè ou a pa sipòte videyo HTML5.
-    </video>
-  </div>
-</div>
-</section>
-
-<section class="section" id="schools">
-<div class="container">
-  <div class="heading">
-    <p class="eyebrow">PRO-MAX ACADÉMIE • PROFESSIONAL SCHOOLS</p>
-    <h2 data-ht="CHWAZI LEKÒL OU"
-        data-fr="CHOISISSEZ VOTRE ÉCOLE"
-        data-en="CHOOSE YOUR SCHOOL">
-      CHWAZI LEKÒL OU
-    </h2>
-    <p data-ht="Kat lekòl pwofesyonèl, yon sèl direksyon akademik ak yon sèl ekosistèm."
-       data-fr="Quatre écoles professionnelles, une seule direction académique et un seul écosystème."
-       data-en="Four professional schools, one academic direction and one learning ecosystem.">
-      Kat lekòl pwofesyonèl anba yon sèl Académie.
-    </p>
-  </div>
-
-  <div class="grid schools">
-    <a class="card" href="./real-estate/index.html">
-      <i class="fa-solid fa-building"></i>
-      <h3>REAL ESTATE SCHOOL</h3>
-      <p data-ht="Byen imobilye, dwa, etik, finansman, valyasyon, maketing ak preparasyon egzamen."
-         data-fr="Immobilier, droit, éthique, financement, évaluation, marketing et préparation aux examens."
-         data-en="Real estate, law, ethics, financing, valuation, marketing and exam preparation.">
-        Byen imobilye, dwa, etik, finansman, valyasyon ak maketing.
-      </p>
-      <span class="card-link">ENTER REAL ESTATE SCHOOL →</span>
-    </a>
-
-    <a class="card" href="./insurance-school/index.html">
-      <i class="fa-solid fa-shield-heart"></i>
-      <h3>INSURANCE SCHOOL</h3>
-      <p data-ht="Asirans vi, sante, otomobil, pwopriyete ak responsablite."
-         data-fr="Assurance vie, santé, automobile, biens et responsabilité."
-         data-en="Life, health, auto, property and liability insurance.">
-        Asirans vi, sante, otomobil, pwopriyete ak responsablite.
-      </p>
-      <span class="card-link">ENTER INSURANCE SCHOOL →</span>
-    </a>
-
-    <a class="card" href="./journalism-school/index.html">
-      <i class="fa-solid fa-newspaper"></i>
-      <h3>JOURNALISM SCHOOL</h3>
-      <p data-ht="Rechèch ak verifikasyon enfòmasyon, entèvyou, repòtaj, etik ak jounalis dijital."
-         data-fr="Recherche et vérification des informations, interviews, reportages, éthique et journalisme numérique."
-         data-en="Research, fact-checking, interviews, reporting, ethics and digital journalism.">
-        Rechèch, verifikasyon, entèvyou, repòtaj ak etik.
-      </p>
-      <span class="card-link">ENTER JOURNALISM SCHOOL →</span>
-    </a>
-
-    <a class="card" href="./beat-maker-school/index.html">
-      <i class="fa-solid fa-music"></i>
-      <h3>BEAT MAKER SCHOOL</h3>
-      <p data-ht="Kreyasyon beat, pwodiksyon mizikal, aranjman, miksaj, mastering ak teknoloji AI."
-         data-fr="Création de beats, production musicale, arrangement, mixage, mastering et technologie IA."
-         data-en="Beat creation, music production, arrangement, mixing, mastering and AI technology.">
-        Kreyasyon beat, pwodiksyon mizikal, miksaj ak mastering.
-      </p>
-      <span class="card-link">ENTER BEAT MAKER SCHOOL →</span>
-    </a>
-  </div>
-</div>
-</section>
-
-<section class="section" id="courses">
-<div class="container">
-  <div class="heading">
-    <p class="eyebrow">LEARNING CENTER</p>
-    <h2 data-ht="APRANN • PRATIKE • AVANSE"
-        data-fr="APPRENDRE • PRATIQUER • PROGRESSER"
-        data-en="LEARN • PRACTICE • ADVANCE">
-      APRANN • PRATIKE • AVANSE
-    </h2>
-  </div>
-
-  <div class="grid">
-    <a class="card" href="./courses/introduction-ai/index.html">
-      <i class="fa-solid fa-robot"></i>
-      <h3>INTRODUCTION TO AI</h3>
-      <p>Prensip entèlijans atifisyèl ak aplikasyon pratik.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-    <a class="card" href="./courses/digital-creation/index.html">
-      <i class="fa-solid fa-wand-magic-sparkles"></i>
-      <h3>DIGITAL CREATION</h3>
-      <p>Kreyasyon tèks, imaj, videyo ak kontni dijital.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-    <a class="card" href="./courses/digital-leadership/index.html">
-      <i class="fa-solid fa-arrow-trend-up"></i>
-      <h3>DIGITAL LEADERSHIP</h3>
-      <p>Vizyon, disiplin, òganizasyon ak lidèchip.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-    <a class="card" href="./courses/automation/index.html">
-      <i class="fa-solid fa-gears"></i>
-      <h3>AUTOMATION</h3>
-      <p>Workflow entelijan ak automatisation travay.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-    <a class="card" href="./courses/communication/index.html">
-      <i class="fa-solid fa-comments"></i>
-      <h3>COMMUNICATION</h3>
-      <p>Kominikasyon pwofesyonèl ak prezantasyon.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-    <a class="card" href="./courses/innovation/index.html">
-      <i class="fa-solid fa-lightbulb"></i>
-      <h3>INNOVATION</h3>
-      <p>Transfòme lide an pwojè ak solisyon teknoloji.</p>
-      <span class="card-link">EXPLORE COURSE →</span>
-    </a>
-  </div>
-</div>
-</section>
-
-<section class="section" id="student">
-<div class="container">
-  <div class="heading">
-    <p class="eyebrow">STUDENT CENTER</p>
-    <h2 data-ht="ESPAS ELÈV" data-fr="ESPACE ÉTUDIANT" data-en="STUDENT CENTER">ESPAS ELÈV</h2>
-  </div>
-  <div class="grid student-grid">
-    <a class="card" href="./student-profile/index.html">
-      <i class="fa-solid fa-user-plus"></i>
-      <h3>STUDENT PROFILE</h3>
-      <p>Kreye pwofil elèv ou.</p>
-    </a>
-    <a class="card" href="./student-portal/index.html">
-      <i class="fa-solid fa-book-open"></i>
-      <h3>STUDENT PORTAL</h3>
-      <p>Kontinye kou ak fòmasyon ou.</p>
-    </a>
-    <a class="card" href="./assessments/index.html">
-      <i class="fa-solid fa-list-check"></i>
-      <h3>ASSESSMENTS</h3>
-      <p>Evalyasyon ak kestyon pratik.</p>
-    </a>
-    <a class="card" href="./certificate-center/index.html">
-      <i class="fa-solid fa-award"></i>
-      <h3>CERTIFICATE CENTER</h3>
-      <p>Enfòmasyon sou sètifikasyon.</p>
-    </a>
-  </div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-  <div class="ddn">
-    <h2>DEVAN DEVAN NÈT™</h2>
-    <h3>BATI POU JODI A • PARE POU DEMEN</h3>
-    <p class="description">Yon mouvman teknoloji, edikasyon, kreyativite ak entèlijans atifisyèl.</p>
-    <div class="actions">
-      <a class="btn primary" href="./ddn/index.html">EXPLORE DDN →</a>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="container">
-  <div class="heading">
-    <p class="eyebrow">OFFICIAL CONTACT</p>
-    <h2 data-ht="KONTAK OFISYÈL"
-        data-fr="CONTACT OFFICIEL"
-        data-en="OFFICIAL CONTACT">KONTAK OFISYÈL</h2>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3><i class="fa-solid fa-phone"></i> TELEPHONE</h3>
-      <div class="phone"><span class="flag">🇺🇸</span><a href="tel:+14076405166">(407) 640-5166</a></div>
-      <div class="phone"><span class="flag">🇺🇸</span><a href="tel:+15162168494">(516) 216-8494</a></div>
-      <div class="phone"><span class="flag">🇭🇹</span><a href="tel:+50942544447">+509 4254 4447</a></div>
-      <div class="phone"><span class="flag">🇭🇹</span><a href="tel:+50943437488">+509 4343 7488</a></div>
-    </div>
-    <div class="contact-card">
-      <h3><i class="fa-solid fa-envelope"></i> EMAIL</h3>
-      <p><a href="mailto:louismaxauto600@gmail.com">louismaxauto600@gmail.com</a></p>
-      <h3 style="margin-top:28px"><i class="fa-solid fa-globe"></i> PARENT PLATFORM</h3>
-      <p><a href="https://bss1815promaxdmp.com">bss1815promaxdmp.com</a></p>
-    </div>
-  </div>
-
-  <div class="heading" style="margin-top:65px">
-    <p class="eyebrow">SOCIAL NETWORKS</p>
-    <h2 data-ht="SWIV NOU" data-fr="SUIVEZ-NOUS" data-en="FOLLOW US">SWIV NOU</h2>
-  </div>
-
-  <div class="social-grid">
-    <a class="social facebook" href="https://www.facebook.com/share/1By3KvYRrM/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
-    <a class="social whatsapp" href="https://wa.me/50943437488" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-    <a class="social instagram" href="https://www.instagram.com/lebaron072/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>Instagram</a>
-    <a class="social youtube" href="https://www.youtube.com/@BSS1815PROMAXDMP" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i>YouTube</a>
-    <a class="social spotify" href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-spotify"></i>Spotify</a>
-    <a class="social telegram" href="https://t.me/bss1815dmp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>Telegram</a>
-    <a class="social twitter" href="https://x.com/w05g2m" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i>X</a>
-    <a class="social tiktok" href="https://www.tiktok.com/@maximax1960" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i>TikTok</a>
-    <a class="social linkedin" href="https://www.linkedin.com/in/maximax-multi-services-075ba2314" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
-    <a class="social truth" href="https://truthsocial.com/@briyant_soley_1815" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bullhorn"></i>Truth Social</a>
-  </div>
-</div>
-</section>
-
-</main>
-
-<footer>
-<div class="container">
-  <strong>PRO-MAX ACADÉMIE</strong>
-  <p>
-    BSS1815 PRO-MAX DMP<br>
-    FÒME JODI A POU DIRIJE DEMEN<br>
-    DEVAN DEVAN NÈT™<br>
-    © <span id="year"></span> PRO-MAX ACADÉMIE
-  </p>
-</div>
-</footer>
-
-<script>
-(function(){
-"use strict";
-
-const year=document.getElementById("year");
-const menu=document.getElementById("menu");
-const nav=document.getElementById("nav");
-const languageButtons=document.querySelectorAll(".lang");
-
-if(year)year.textContent=new Date().getFullYear();
-
-if(menu&&nav){
-  menu.addEventListener("click",function(){
-    const open=nav.classList.toggle("open");
-    menu.textContent=open?"✕":"☰";
-    menu.setAttribute("aria-expanded",String(open));
-  });
-
-  nav.querySelectorAll("a").forEach(function(link){
-    link.addEventListener("click",function(){
-      nav.classList.remove("open");
-      menu.textContent="☰";
-      menu.setAttribute("aria-expanded","false");
-    });
-  });
-}
-
-function applyLanguage(language){
-  if(!["ht","fr","en"].includes(language))language="ht";
-
-  document.documentElement.lang=language;
-
-  document.querySelectorAll("[data-ht][data-fr][data-en]").forEach(function(element){
-    const translated=element.getAttribute("data-"+language);
-    if(translated!==null)element.textContent=translated;
-  });
-
-  languageButtons.forEach(function(button){
-    button.classList.toggle("active",button.dataset.lang===language);
-  });
-
-  try{
-    localStorage.setItem("promaxAcademieLanguage",language);
-  }catch(error){}
-}
-
-languageButtons.forEach(function(button){
-  button.addEventListener("click",function(){
-    applyLanguage(button.dataset.lang);
-  });
-});
-
-let savedLanguage="ht";
-try{
-  savedLanguage=localStorage.getItem("promaxAcademieLanguage")||"ht";
-}catch(error){}
-
-applyLanguage(savedLanguage);
-
-window.addEventListener("resize",function(){
-  if(window.innerWidth>1000&&nav&&menu){
-    nav.classList.remove("open");
-    menu.textContent="☰";
-    menu.setAttribute("aria-expanded","false");
-  }
-});
-})();
 </script>
 </body>
 </html>
