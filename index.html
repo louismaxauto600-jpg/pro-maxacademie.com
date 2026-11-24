@@ -1,472 +1,886 @@
-<!-- BSS1815 PRO-MAX DMP — MAIN INDEX.HTML -->
-<!-- PRO-MAX FM connected to its existing live website -->
+
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="ht" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#000000">
-<meta name="description" content="BSS1815 PRO-MAX DMP — Yon sèl platfòm, yon sèl vizyon.">
-<title>BSS1815 PRO-MAX DMP</title>
+<meta name="theme-color" content="#080400">
+<meta name="google" content="notranslate">
+<meta name="description" content="PRO-MAX ACADÉMIE — Professional Schools, Digital Education and Artificial Intelligence.">
+<title>PRO-MAX ACADÉMIE | Official Learning Platform</title>
+
 <style>
-:root {
-  --orange:#ff7900;
-  --apricot:#ffac57;
-  --black:#000;
-  --panel:#130900;
-  --border:rgba(255,121,0,.45);
+:root{
+ --orange:#ff7900;
+ --apricot:#ffb66e;
+ --light:#ffd0a1;
+ --black:#050301;
+ --panel:#170b03;
+ --border:rgba(255,121,0,.30);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{
-  margin:0;
-  background:linear-gradient(140deg,#000,#1b0b00,#000);
-  color:var(--orange);
-  font-family:Arial,Helvetica,sans-serif;
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ color:var(--apricot);
+ background:radial-gradient(ellipse at top,#3d1905,#080400 45%,#000 80%);
+ line-height:1.6;
 }
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1200px,92%);margin:auto}
 header{
-  padding:22px;
-  border-bottom:2px solid var(--orange);
-  text-align:center;
-  background:#000;
+ position:sticky;top:0;z-index:100;
+ background:rgba(5,3,1,.97);
+ border-bottom:1px solid var(--border);
 }
-header h1{
-  margin:8px 0;
-  font-size:clamp(32px,6vw,60px);
+.header-inner{
+ display:flex;align-items:center;
+ justify-content:space-between;
+ gap:18px;min-height:85px;
+ flex-wrap:wrap;padding:12px 0;
 }
-header p{font-weight:bold;letter-spacing:2px}
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:9px;
-  padding:16px;
+.brand{display:flex;align-items:center;gap:12px}
+.brand video{
+ width:57px;height:57px;border-radius:50%;
+ object-fit:cover;border:2px solid var(--orange);
 }
-nav a,.btn,button{
-  display:inline-block;
-  padding:12px 18px;
-  border:1px solid var(--orange);
-  border-radius:10px;
-  background:#100700;
-  color:var(--orange);
-  font-weight:bold;
+.brand strong{display:block;color:var(--orange);font-size:19px}
+.brand small{font-size:10px;letter-spacing:1px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{font-size:12px;font-weight:800}
+nav a:hover{color:var(--orange)}
+.languages{display:flex;gap:5px}
+.languages button{
+ background:#100600;border:1px solid var(--border);
+ color:var(--apricot);padding:8px 11px;border-radius:7px;
+ font-weight:bold;font-size:11px;
 }
-nav a:hover,.btn:hover,button:hover{
-  background:var(--orange);
-  color:#000;
+.languages button.active{
+ background:var(--orange);color:#090400;
 }
-main{max-width:1250px;margin:auto;padding:20px}
-section{
-  padding:45px 16px;
-  border-bottom:1px solid var(--border);
+.hero{text-align:center;padding:65px 0 35px}
+.eyebrow{
+ display:inline-block;
+ border:1px solid var(--border);
+ border-radius:30px;padding:7px 20px;
+ color:var(--orange);font-weight:bold;
+ font-size:11px;letter-spacing:2px;
 }
-h2{text-align:center;font-size:clamp(25px,4vw,40px)}
-.intro{
-  max-width:800px;
-  margin:12px auto 26px;
-  text-align:center;
-  line-height:1.7;
+.hero-logo{
+ width:190px;height:190px;
+ margin:28px auto;position:relative;
+ border-radius:50%;
+ border:2px solid var(--orange);
+ box-shadow:0 0 45px #ff790055;
+ padding:8px;
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:18px;
+.hero-logo video{
+ width:100%;height:100%;
+ object-fit:cover;border-radius:50%;
 }
-.card{
-  background:linear-gradient(140deg,#241000,#050505);
-  padding:24px;
-  border:1px solid var(--border);
-  border-radius:17px;
+.hero-logo:after{
+ content:"";position:absolute;inset:-12px;
+ border:1px dashed #ff790088;border-radius:50%;
+ animation:orbit 35s linear infinite;
+ pointer-events:none;
 }
-.card h3{margin-top:0}
-.card p{line-height:1.7;color:var(--apricot)}
-.card .btn{margin-top:15px}
-.hero{text-align:center;padding:55px 18px}
-.hero video{
-  display:block;
-  width:min(100%,680px);
-  margin:20px auto;
-  border:2px solid var(--orange);
-  border-radius:22px;
+@keyframes orbit{to{transform:rotate(360deg)}}
+h1,h2,h3,p{margin-top:0}
+h1{
+ font-size:clamp(32px,5.5vw,66px);
+ line-height:1.12;color:var(--orange);
+ letter-spacing:-1.5px;margin-bottom:20px;
 }
-.hero h2{font-size:clamp(24px,5vw,44px)}
-.center{text-align:center}
+.hero p{
+ max-width:800px;margin:0 auto 25px;
+ font-size:17px;
+}
 .actions{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:22px;
+ display:flex;justify-content:center;
+ gap:12px;flex-wrap:wrap;
 }
-.radio-panel{
-  border:2px solid var(--orange);
-  border-radius:20px;
-  overflow:hidden;
-  background:#000;
+.btn{
+ display:inline-flex;align-items:center;
+ justify-content:center;gap:8px;
+ padding:13px 22px;
+ border-radius:9px;border:1px solid var(--orange);
+ font-weight:900;font-size:12px;
+ color:#080400;background:linear-gradient(135deg,var(--apricot),var(--orange));
+ transition:transform .2s,box-shadow .2s;
 }
-.radio-panel-header{
-  padding:25px;
-  text-align:center;
-  background:linear-gradient(130deg,#281000,#000);
+.btn:hover{transform:translateY(-3px);box-shadow:0 6px 25px #ff790044}
+.btn-outline{background:#100600;color:var(--orange)}
+.stats{
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:14px;margin:35px auto 0;
 }
-.radio-panel-header h3{font-size:30px}
-.radio-frame{
-  width:100%;
-  min-height:600px;
-  height:850px;
-  border:0;
-  display:block;
-  background:#000;
+.stat{
+ border:1px solid var(--border);
+ background:linear-gradient(145deg,#241003,#090400);
+ border-radius:13px;padding:20px;
 }
-.avatar-video{
-  width:min(100%,700px);
-  display:block;
-  margin:15px auto;
-  border:2px solid var(--orange);
-  border-radius:18px;
+.stat strong{display:block;font-size:32px;color:var(--orange)}
+.stat span{font-size:11px;font-weight:bold;letter-spacing:1px}
+.section{padding:65px 0}
+.section-head{text-align:center;margin-bottom:32px}
+.section-head h2{
+ font-size:clamp(25px,4vw,40px);
+ color:var(--orange);line-height:1.2;margin:12px 0;
 }
-.slideshow{
-  max-width:1000px;
-  margin:auto;
-  text-align:center;
+.section-head p{max-width:760px;margin:auto}
+.grid{display:grid;gap:20px}
+.schools-grid{grid-template-columns:repeat(4,1fr)}
+.course-grid{grid-template-columns:repeat(3,1fr)}
+.student-grid{grid-template-columns:repeat(4,1fr)}
+.card{
+ display:flex;flex-direction:column;align-items:flex-start;
+ background:linear-gradient(145deg,#271105,#0b0502 70%);
+ border:1px solid var(--border);
+ border-radius:17px;padding:24px;
+ transition:transform .25s,border-color .25s;
+ min-width:0;
 }
-.slideshow img{
-  display:block;
-  max-width:100%;
-  max-height:600px;
-  margin:auto;
-  object-fit:contain;
-  border:2px solid var(--orange);
-  border-radius:15px;
+.card:hover{
+ transform:translateY(-5px);
+ border-color:var(--orange);
 }
-.lang-switch{display:flex;justify-content:center;gap:10px;margin:15px}
-.socials{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;
+.card-icon{
+ width:65px;height:65px;display:grid;place-items:center;
+ background:#ff790017;border:1px solid var(--border);
+ border-radius:15px;font-size:30px;margin-bottom:18px;
 }
-.socials a{
-  display:block;
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:var(--panel);
-  font-weight:bold;
-  text-align:center;
+.card h3{
+ color:var(--orange);font-size:19px;
+ line-height:1.3;margin-bottom:12px;
 }
+.card p{font-size:13px;flex:1;margin-bottom:20px}
+.card .btn{width:100%;margin-top:auto;padding:12px}
+.number{
+ font-size:11px;letter-spacing:2px;
+ font-weight:bold;color:var(--orange);
+ margin-bottom:10px;
+}
+.subheading{
+ color:var(--orange);font-size:20px;
+ margin:40px 0 20px;
+ border-left:4px solid var(--orange);
+ padding-left:13px;
+}
+.professor{
+ display:grid;grid-template-columns:1fr 1.2fr;
+ gap:30px;align-items:center;
+ padding:28px;border-radius:20px;
+ background:linear-gradient(130deg,#2b1004,#080400);
+ border:1px solid var(--border);
+}
+.professor video{
+ width:100%;max-height:420px;
+ object-fit:contain;border-radius:14px;background:#000;
+}
+.professor h3{font-size:30px;color:var(--orange)}
+.professor .actions{justify-content:flex-start}
+.ddn{
+ padding:45px 20px;text-align:center;
+ border:1px solid var(--border);
+ border-radius:20px;background:radial-gradient(ellipse at center,#3c1905,#080400);
+}
+.ddn h2{font-size:36px;color:var(--orange)}
+.contact-panel{text-align:center}
 footer{
-  padding:35px 18px;
-  background:#000;
-  border-top:2px solid var(--orange);
-  text-align:center;
-  line-height:1.8;
+ text-align:center;padding:35px 15px;
+ border-top:1px solid var(--border);
+ background:#000;font-size:13px;
 }
-@media(max-width:650px){
-  main{padding:8px}
-  section{padding:30px 10px}
-  .radio-frame{height:650px}
+footer strong{font-size:18px;color:var(--orange)}
+#topBtn{
+ position:fixed;bottom:18px;right:18px;z-index:99;
+ width:43px;height:43px;border-radius:50%;
+ background:var(--orange);border:0;
+ color:#000;font-weight:bold;font-size:20px;
+}
+@media(max-width:1000px){
+ .schools-grid,.student-grid{grid-template-columns:repeat(2,1fr)}
+ .header-inner{justify-content:center}
+ nav{justify-content:center}
+}
+@media(max-width:700px){
+ .course-grid{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .professor{grid-template-columns:1fr}
+ .hero{padding-top:40px}
+ nav{gap:10px}
+ nav a{font-size:10px}
+ .section{padding:40px 0}
+}
+@media(max-width:450px){
+ .schools-grid,.course-grid,.student-grid{grid-template-columns:1fr}
+ .card{padding:20px}
+ .brand strong{font-size:16px}
+ .hero-logo{width:150px;height:150px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
 }
 </style>
 </head>
+
 <body>
 
-<header id="home">
-  <h1>BSS1815 PRO-MAX DMP</h1>
-  <p>DEVAN DEVAN NÈT™</p>
-  <p>BATI POU JODI A • PARE POU DEMEN</p>
-  <div class="lang-switch">
-    <button type="button" onclick="setLang('fr')">FRA</button>
-    <button type="button" onclick="setLang('en')">ENG</button>
-    <button type="button" onclick="setLang('ht')">KRE</button>
-  </div>
-  <nav>
-    <a href="#home">AKÈY</a>
-    <a href="#customer-service">CUSTOMER SERVICE</a>
-    <a href="#ecosystem">EKOSISTÈM</a>
-    <a href="#modules">MODIL</a>
-    <a href="#community">COMMUNITY</a>
-    <a href="#promaxfm">PRO-MAX FM</a>
-    <a href="#maximax">MAXIMAX</a>
-    <a href="#academy">ACADÉMIE</a>
-    <a href="#beat-lab">BEAT LAB</a>
-    <a href="#ddn">DDN</a>
-    <a href="#contact">KONTAK</a>
-  </nav>
+<header>
+<div class="container header-inner">
+
+<a href="#home" class="brand">
+ <video autoplay muted loop playsinline
+ src="./pro-max-dmp-II.mp4"></video>
+ <div>
+  <strong>PRO-MAX ACADÉMIE</strong>
+  <small data-t="tagline"></small>
+ </div>
+</a>
+
+<nav aria-label="Main navigation">
+ <a href="#home" data-t="home"></a>
+ <a href="#schools" data-t="schools"></a>
+ <a href="#courses" data-t="courses"></a>
+ <a href="#professor" data-t="professor"></a>
+ <a href="#student" data-t="student"></a>
+ <a href="#contact" data-t="contact"></a>
+</nav>
+
+<div class="languages">
+ <button type="button" data-lang="fr">FRA</button>
+ <button type="button" data-lang="en">ENG</button>
+ <button type="button" data-lang="ht">KRE</button>
+</div>
+
+</div>
 </header>
 
 <main>
 
-<section class="hero">
-  <h2>YON SÈL PLATFÒM • YON SÈL VIZYON</h2>
-  <video id="heroVideo" autoplay muted loop playsinline controls>
-    <source src="./bati-pou-jodi-a.mp4" type="video/mp4">
-  </video>
-  <p class="intro">
-    BSS1815 PRO-MAX DMP konekte kominote BSS1815,
-    PRO-MAX FM, Maximax Multi Services,
-    PRO-MAX Académie ak PRO-MAX Beat Lab
-    nan yon sèl ekosistèm dijital.
-  </p>
-  <div class="actions">
-    <a class="btn" href="#ecosystem">DEKOUVRI PLATFÒM NAN</a>
-    <a class="btn" href="#promaxfm">📻 PRO-MAX FM LIVE</a>
-  </div>
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+
+<span class="eyebrow">PRO-MAX ACADÉMIE</span>
+
+<div class="hero-logo">
+ <video autoplay muted loop playsinline
+ src="./pro-max-dmp-II.mp4"></video>
+</div>
+
+<h1 data-t="heroTitle"></h1>
+<p data-t="heroDesc"></p>
+
+<div class="actions">
+ <a href="#schools" class="btn">
+  🎓 <span data-t="exploreSchools"></span>
+ </a>
+ <a href="./courses/index.html" class="btn btn-outline">
+  📚 <span data-t="exploreCourses"></span>
+ </a>
+ <a href="./student-portal/index.html" class="btn btn-outline">
+  👤 <span data-t="student"></span>
+ </a>
+</div>
+
+<div class="stats">
+ <div class="stat">
+  <strong>4</strong>
+  <span data-t="schools"></span>
+ </div>
+ <div class="stat">
+  <strong>12</strong>
+  <span data-t="courses"></span>
+ </div>
+ <div class="stat">
+  <strong>3</strong>
+  <span data-t="languages"></span>
+ </div>
+ <div class="stat">
+  <strong>AI</strong>
+  <span>AI PROFESSOR</span>
+ </div>
+</div>
+
+</div>
 </section>
 
-<section id="customer-service">
-  <h2>PROF AVATAR — CUSTOMER SERVICE</h2>
-  <p class="intro">
-    Asistans ak oryantasyon pou vizitè platfòm BSS1815 la.
-  </p>
-  <video class="avatar-video" controls playsinline preload="metadata">
-    <source src="./video-prof-avatar.mp4" type="video/mp4">
-  </video>
-  <div class="center">
-    <p>Pou asistans, kontakte ekip BSS1815 PRO-MAX DMP la.</p>
-    <a class="btn" href="#contact">CONTACT CUSTOMER SERVICE</a>
-  </div>
+<!-- FOUR PROFESSIONAL SCHOOLS -->
+
+<section class="section" id="schools">
+<div class="container">
+
+<div class="section-head">
+ <span class="eyebrow">01 — PROFESSIONAL SCHOOLS</span>
+ <h2 data-t="schoolTitle"></h2>
+ <p data-t="schoolDesc"></p>
+</div>
+
+<div class="grid schools-grid" id="schoolGrid"></div>
+
+</div>
 </section>
 
-<section id="ecosystem">
-  <h2>YON SÈL EKOSISTÈM</h2>
-  <p class="intro">
-    Senk gwo pwojè BSS1815 PRO-MAX DMP yo.
-  </p>
-  <div class="grid">
-    <article class="card">
-      <h3>🏛️ BSS1815 COMMUNITY</h3>
-      <p>Manm, dirijan, mizisyen, fanatik, eritaj ak kominote.</p>
-      <a href="#community" class="btn">ANTRE</a>
-    </article>
-    <article class="card">
-      <h3>📻 PRO-MAX FM</h3>
-      <p>Radyo LIVE, nouvèl, mizik, podcast ak medya dijital.</p>
-      <a href="https://pro-maxfm.com/" class="btn">ENTER PRO-MAX FM</a>
-    </article>
-    <article class="card">
-      <h3>💼 MAXIMAX MULTI SERVICES</h3>
-      <p>Imigrasyon, sèvis administratif ak asistans pwofesyonèl.</p>
-      <a href="#maximax" class="btn">ANTRE</a>
-    </article>
-    <article class="card">
-      <h3>🎓 PRO-MAX ACADÉMIE</h3>
-      <p>Fòmasyon, teknoloji, AI ak sètifikasyon.</p>
-      <a href="#academy" class="btn">ANTRE</a>
-    </article>
-    <article class="card">
-      <h3>🎹 PRO-MAX BEAT LAB</h3>
-      <p>Beat Maker, piano, aranjman ak pwodiksyon mizik.</p>
-      <a href="#beat-lab" class="btn">ANTRE</a>
-    </article>
-  </div>
+<!-- TWELVE COURSES -->
+
+<section class="section" id="courses">
+<div class="container">
+
+<div class="section-head">
+ <span class="eyebrow">02 — COURSES CENTER</span>
+ <h2 data-t="courseTitle"></h2>
+ <p data-t="courseDesc"></p>
+</div>
+
+<h3 class="subheading" data-t="coreTitle"></h3>
+
+<div class="grid course-grid" id="coreGrid"></div>
+
+<h3 class="subheading" data-t="specialTitle"></h3>
+
+<div class="grid course-grid" id="specialGrid"></div>
+
+<div class="actions" style="margin-top:30px">
+ <a href="./courses/index.html" class="btn" data-t="allCourses"></a>
+</div>
+
+</div>
 </section>
 
-<section id="modules">
-  <h2>MODIL PRENSIPAL YO</h2>
-  <div class="grid" id="modulesGrid"></div>
+<!-- AI PROFESSOR -->
+
+<section class="section" id="professor">
+<div class="container">
+
+<div class="section-head">
+ <span class="eyebrow">03 — ARTIFICIAL INTELLIGENCE</span>
+ <h2>PRO-MAX AI PROFESSOR</h2>
+</div>
+
+<div class="professor">
+
+<video controls playsinline preload="metadata"
+ src="./video-prof-avatar.mp4">
+</video>
+
+<div>
+ <h3 data-t="profTitle"></h3>
+ <p data-t="profDesc"></p>
+
+ <div class="actions">
+  <a href="./ai-professor/index.html"
+     class="btn">
+     🤖 <span data-t="askProfessor"></span>
+  </a>
+ </div>
+</div>
+
+</div>
+</div>
 </section>
 
-<section id="community">
-  <h2>BRIYANT SOLÈY SIGNO 1815</h2>
-  <p class="intro">Istwa, eritaj ak kominote BSS1815.</p>
-  <div class="slideshow">
-    <img src="./bss1815.jpg" id="slideImage" alt="BSS1815 Community">
-    <div class="actions">
-      <button type="button" onclick="changeSlide(-1)">◀ PREVIOUS</button>
-      <button type="button" onclick="changeSlide(1)">NEXT ▶</button>
-    </div>
-  </div>
+<!-- STUDENT CENTER -->
+
+<section class="section" id="student">
+<div class="container">
+
+<div class="section-head">
+ <span class="eyebrow">04 — STUDENT CENTER</span>
+ <h2 data-t="studentTitle"></h2>
+ <p data-t="studentDesc"></p>
+</div>
+
+<div class="grid student-grid" id="studentGrid"></div>
+
+</div>
 </section>
 
-<section id="promaxfm">
-  <h2>📻 PRO-MAX FM — LA FORCE DU SON</h2>
-  <p class="intro">
-    Radyo LIVE PRO-MAX FM konekte ak platfòm BSS1815 PRO-MAX DMP.
-    Vizitè yo kapab antre nan sit radyo a ki deja disponib.
-  </p>
+<!-- DDN -->
 
-  <div class="radio-panel">
-    <div class="radio-panel-header">
-      <h3>● ON AIR — PRO-MAX FM</h3>
-      <p>LA RADIO DE TOUS, PARTOUT ET TOUJOURS.</p>
-      <div class="actions">
-        <a
-          class="btn"
-          href="https://pro-maxfm.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          📻 ENTER PRO-MAX FM
-        </a>
-        <a
-          class="btn"
-          href="https://pro-maxfm.com/#live"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ▶ ÉCOUTER EN DIRECT
-        </a>
-      </div>
-    </div>
+<section class="section" id="ddn">
+<div class="container">
+<div class="ddn">
 
-    <iframe
-      class="radio-frame"
-      title="PRO-MAX FM — LIVE RADIO"
-      src="https://pro-maxfm.com/"
-      loading="lazy"
-      allow="autoplay; fullscreen"
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-  </div>
+<span class="eyebrow">05 — DIGITAL INNOVATION</span>
+
+<h2>DEVAN DEVAN NÈT™</h2>
+
+<p data-t="ddnDesc"></p>
+
+<a href="./ddn/index.html" class="btn">
+ 🌐 DDN
+</a>
+
+</div>
+</div>
 </section>
 
-<section id="maximax">
-  <h2>💼 MAXIMAX MULTI SERVICES</h2>
-  <p class="intro">
-    Immigration, Notary, Taxes, Insurance, Real Estate,
-    Business, Translation, Travel ak lòt sèvis pwofesyonèl.
-  </p>
-  <div class="center">
-    <a href="./maximax/index.html" class="btn">ENTER MAXIMAX MULTI SERVICES</a>
-  </div>
-</section>
+<!-- CONTACT -->
 
-<section id="academy">
-  <h2>🎓 PRO-MAX ACADÉMIE</h2>
-  <p class="intro">
-    Sant fòmasyon, Real Estate School,
-    Insurance School, Journalism School ak teknoloji AI.
-  </p>
-  <div class="center">
-    <a href="./academy/index.html" class="btn">ENTER PRO-MAX ACADÉMIE</a>
-  </div>
-</section>
+<section class="section" id="contact">
+<div class="container">
 
-<section id="beat-lab">
-  <h2>🎹 PRO-MAX BEAT LAB</h2>
-  <p class="intro">
-    Espas pou Beat Maker, melodi, piano, mixaj ak pwodiksyon mizik.
-  </p>
-  <div class="center">
-    <a href="./pro-max-beat-lab.html" class="btn">ENTER BEAT LAB</a>
-  </div>
-</section>
+<div class="section-head">
+ <span class="eyebrow">06 — CONTACT CENTER</span>
+ <h2 data-t="contactTitle"></h2>
+ <p data-t="contactDesc"></p>
+</div>
 
-<section id="ddn">
-  <h2>🌎 DEVAN DEVAN NÈT™</h2>
-  <p class="intro">
-    BATI POU JODI A • PARE POU DEMEN.
-  </p>
-  <div class="center">
-    <a href="./devan-devan-net.html" class="btn">ENTER DEVAN DEVAN NÈT</a>
-  </div>
-</section>
+<div class="card contact-panel"
+ style="align-items:center">
 
-<section id="contact">
-  <h2>KONTAK & REZO SOSYAL</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>🇺🇸 USA</h3>
-      <p><a href="tel:+14076405166">(407) 640-5166</a></p>
-      <p><a href="tel:+13175381150">(317) 538-1150</a></p>
-    </div>
-    <div class="card">
-      <h3>🇭🇹 HAÏTI</h3>
-      <p><a href="tel:+50942544447">+509 4254 4447</a></p>
-      <p><a href="tel:+50943437488">+509 4343 7488</a></p>
-    </div>
-    <div class="card">
-      <h3>EMAIL</h3>
-      <p>
-        <a href="mailto:bss1815promaxdmp@gmail.com">
-          bss1815promaxdmp@gmail.com
-        </a>
-      </p>
-    </div>
-  </div>
+ <h3>PRO-MAX ACADÉMIE</h3>
 
-  <h2>10 REZO SOSYAL</h2>
-  <div class="socials">
-    <a href="https://www.facebook.com/share/1By3KvYRrM/">Facebook</a>
-    <a href="https://wa.me/50943437488">WhatsApp</a>
-    <a href="https://www.tiktok.com/@maximax1960">TikTok</a>
-    <a href="https://www.instagram.com/lebaron072/">Instagram</a>
-    <a href="https://t.me/bss1815dmp">Telegram</a>
-    <a href="https://www.youtube.com/@BSS1815PROMAXDMP">YouTube</a>
-    <a href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici">Spotify</a>
-    <a href="https://x.com/w05g2m">X / Twitter</a>
-    <a href="https://truthsocial.com/@briyant_soley_1815">Truth Social</a>
-    <a href="https://www.linkedin.com/in/maximax-multi-services-075ba2314">LinkedIn</a>
-  </div>
+ <p>
+  <a href="mailto:bss1815promaxdmp@gmail.com"
+     style="overflow-wrap:anywhere">
+   bss1815promaxdmp@gmail.com
+  </a>
+ </p>
+
+ <div class="actions">
+  <a class="btn" href="tel:+14076405166">
+   ☎ +1 (407) 640-5166
+  </a>
+  <a class="btn btn-outline" href="tel:+13175381150">
+   ☎ +1 (317) 538-1150
+  </a>
+  <a class="btn btn-outline" href="tel:+15162168494">
+   ☎ +1 (516) 216-8494
+  </a>
+  <a class="btn btn-outline" href="tel:+50942544447">
+   ☎ +509 4254-4447
+  </a>
+  <a class="btn btn-outline" href="tel:+50943437488">
+   ☎ +509 4343-7488
+  </a>
+ </div>
+
+</div>
+
+</div>
 </section>
 
 </main>
 
 <footer>
-  <strong>BSS1815 PRO-MAX DMP</strong>
-  <p>DEVAN DEVAN NÈT™</p>
-  <p>BATI POU JODI A • PARE POU DEMEN</p>
-  <p>© <span id="year"></span> BSS1815 PRO-MAX DMP</p>
+ <strong>PRO-MAX ACADÉMIE</strong>
+ <p data-t="tagline"></p>
+ <p>DEVAN DEVAN NÈT™</p>
+ <p>
+ © <span id="year"></span> PRO-MAX ACADÉMIE.
+ <span data-t="rights"></span>
+ </p>
 </footer>
+
+<button id="topBtn" type="button"
+ aria-label="Back to top">↑</button>
 
 <script>
 "use strict";
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+/* =========================
+   LANGUAGE TRANSLATIONS
+========================= */
 
-function setLang(lang) {
-  document.documentElement.lang = lang;
+const T={
+ht:{
+ tagline:"Fòme Jodi a Pou Dirije Demen",
+ home:"AKÈY",
+ schools:"LEKÒL YO",
+ courses:"KOU YO",
+ professor:"PWOFESÈ",
+ student:"ESPAS ELÈV",
+ contact:"KONTAK",
+ languages:"LANG",
+ heroTitle:"FÒME JODI A POU DIRIJE DEMEN",
+ heroDesc:"Yon platfòm fòmasyon pwofesyonèl ki mete edikasyon, teknoloji, inovasyon ak entèlijans atifisyèl nan sèvis avni ou.",
+ exploreSchools:"DEKOUVRI LEKÒL YO",
+ exploreCourses:"DEKOUVRI KOU YO",
+ schoolTitle:"4 LEKÒL PWOFESYONÈL",
+ schoolDesc:"Chwazi domèn ou epi devlope konpetans ou pou prepare avni pwofesyonèl ou.",
+ courseTitle:"12 PWOGRAM FÒMASYON",
+ courseDesc:"Aprann, pratike, devlope konpetans epi avanse.",
+ coreTitle:"6 KOU PRENSIPAL",
+ specialTitle:"6 FÒMASYON ESPESYALIZE",
+ allCourses:"TOUT KOU YO",
+ enterSchool:"ANTRE NAN LEKÒL LA →",
+ startCourse:"KÒMANSE KOU A →",
+ profTitle:"PWOFESÈ AI OU",
+ profDesc:"Jwenn sipò pou konprann leson, prepare egzamen ak devlope konpetans ou.",
+ askProfessor:"POZE PWOFESÈ A KESYON",
+ studentTitle:"SANT ELÈV",
+ studentDesc:"Jere pwofil ou, fòmasyon ou, evalyasyon ak sètifika ou.",
+ openModule:"OUVRI MODIL LA →",
+ ddnDesc:"Aprann teknoloji, kreye, inove epi prepare pou demen.",
+ contactTitle:"KONTAK AK SIPÒ",
+ contactDesc:"Kontakte administrasyon Académie a pou enfòmasyon ak asistans.",
+ rights:"Tout dwa rezève."
+},
+fr:{
+ tagline:"Former Aujourd’hui Pour Diriger Demain",
+ home:"ACCUEIL",
+ schools:"ÉCOLES",
+ courses:"COURS",
+ professor:"PROFESSEUR",
+ student:"ESPACE ÉTUDIANT",
+ contact:"CONTACT",
+ languages:"LANGUES",
+ heroTitle:"FORMER AUJOURD’HUI POUR DIRIGER DEMAIN",
+ heroDesc:"Une plateforme de formation professionnelle qui met l’éducation, la technologie, l’innovation et l’intelligence artificielle au service de votre avenir.",
+ exploreSchools:"DÉCOUVRIR LES ÉCOLES",
+ exploreCourses:"DÉCOUVRIR LES COURS",
+ schoolTitle:"4 ÉCOLES PROFESSIONNELLES",
+ schoolDesc:"Choisissez votre domaine et développez vos compétences professionnelles.",
+ courseTitle:"12 PROGRAMMES DE FORMATION",
+ courseDesc:"Apprenez, pratiquez, développez vos compétences et avancez.",
+ coreTitle:"6 COURS PRINCIPAUX",
+ specialTitle:"6 FORMATIONS SPÉCIALISÉES",
+ allCourses:"TOUS LES COURS",
+ enterSchool:"ENTRER DANS L’ÉCOLE →",
+ startCourse:"COMMENCER LE COURS →",
+ profTitle:"VOTRE PROFESSEUR IA",
+ profDesc:"Obtenez de l’aide pour comprendre vos leçons, préparer vos examens et développer vos compétences.",
+ askProfessor:"INTERROGER LE PROFESSEUR",
+ studentTitle:"CENTRE ÉTUDIANT",
+ studentDesc:"Gérez votre profil, vos formations, vos évaluations et vos certificats.",
+ openModule:"OUVRIR LE MODULE →",
+ ddnDesc:"Apprenez la technologie, créez, innovez et préparez demain.",
+ contactTitle:"CONTACT ET ASSISTANCE",
+ contactDesc:"Contactez l’administration pour toute information ou assistance.",
+ rights:"Tous droits réservés."
+},
+en:{
+ tagline:"Train Today To Lead Tomorrow",
+ home:"HOME",
+ schools:"SCHOOLS",
+ courses:"COURSES",
+ professor:"PROFESSOR",
+ student:"STUDENT AREA",
+ contact:"CONTACT",
+ languages:"LANGUAGES",
+ heroTitle:"TRAIN TODAY TO LEAD TOMORROW",
+ heroDesc:"A professional learning platform bringing education, technology, innovation and artificial intelligence together for your future.",
+ exploreSchools:"EXPLORE SCHOOLS",
+ exploreCourses:"EXPLORE COURSES",
+ schoolTitle:"4 PROFESSIONAL SCHOOLS",
+ schoolDesc:"Choose your field and develop your professional skills.",
+ courseTitle:"12 TRAINING PROGRAMS",
+ courseDesc:"Learn, practice, develop your skills and move forward.",
+ coreTitle:"6 CORE COURSES",
+ specialTitle:"6 SPECIALIZED PROGRAMS",
+ allCourses:"ALL COURSES",
+ enterSchool:"ENTER SCHOOL →",
+ startCourse:"START COURSE →",
+ profTitle:"YOUR AI PROFESSOR",
+ profDesc:"Get support understanding lessons, preparing for exams and developing your skills.",
+ askProfessor:"ASK THE PROFESSOR",
+ studentTitle:"STUDENT CENTER",
+ studentDesc:"Manage your profile, courses, assessments and certificates.",
+ openModule:"OPEN MODULE →",
+ ddnDesc:"Learn technology, create, innovate and prepare for tomorrow.",
+ contactTitle:"CONTACT AND SUPPORT",
+ contactDesc:"Contact the Academy administration for information and assistance.",
+ rights:"All rights reserved."
 }
+};
 
-const moduleData = [
-  ["🤖","AI CENTER","./modules/ai-center/index.html"],
-  ["👥","CRM SYSTEM","./modules/crm/index.html"],
-  ["📢","COMMUNICATION CENTER","./modules/communication/index.html"],
-  ["🎨","FLYER STUDIO","./modules/flyer-studio/index.html"],
-  ["📋","DIGITAL REGISTRY","./modules/registry/index.html"],
-  ["📅","EVENT MANAGEMENT","./modules/events/index.html"],
-  ["📄","DOCUMENT CENTER","./modules/documents/index.html"],
-  ["📣","ANNOUNCEMENT CENTER","./modules/announcements/index.html"],
-  ["💰","FINANCE","./modules/finance/index.html"],
-  ["🎥","MEDIA GALLERY","./modules/media/index.html"],
-  ["📊","REPORTS & ANALYTICS","./modules/reports/index.html"],
-  ["🎫","HELP DESK","./modules/help-desk/index.html"],
-  ["📻","PRO-MAX FM","https://pro-maxfm.com/"],
-  ["🔐","ADMIN DASHBOARD","./admin-login.html"]
+/* =========================
+   FOUR SCHOOLS
+========================= */
+
+const schools=[
+{
+ icon:"🏘️",
+ title:"REAL ESTATE SCHOOL",
+ path:"./real-estate/index.html",
+ ht:"Imobilye, finansman, evalyasyon, etik ak preparasyon egzamen.",
+ fr:"Immobilier, financement, évaluation, éthique et préparation aux examens.",
+ en:"Real estate, financing, valuation, ethics and exam preparation."
+},
+{
+ icon:"🛡️",
+ title:"INSURANCE SCHOOL",
+ path:"./insurance-school/index.html",
+ ht:"Asirans lavi, sante, oto, pwopriyete ak responsabilite.",
+ fr:"Assurance vie, santé, automobile, biens et responsabilité.",
+ en:"Life, health, auto, property and casualty insurance."
+},
+{
+ icon:"🎙️",
+ title:"JOURNALISM SCHOOL",
+ path:"./journalism-school/index.html",
+ ht:"Jounalis, repòtaj, entèvyou, verifikasyon enfòmasyon ak medya.",
+ fr:"Journalisme, reportage, entretien, vérification et médias.",
+ en:"Journalism, reporting, interviews, fact-checking and media."
+},
+{
+ icon:"🎹",
+ title:"BEAT MAKER AI SCHOOL",
+ path:"./beat-maker-school/index.html",
+ ht:"Pwodiksyon mizikal, ritm, mixing, mastering ak AI.",
+ fr:"Production musicale, rythme, mixage, mastering et IA.",
+ en:"Music production, rhythm, mixing, mastering and AI."
+}
 ];
 
-const modulesGrid = document.getElementById("modulesGrid");
+/* =========================
+   SIX CORE COURSES
+========================= */
 
-moduleData.forEach(([icon,name,url]) => {
-  const a = document.createElement("a");
-  a.href = url;
-  a.className = "card";
-  a.innerHTML =
-    "<h3>" + icon + " " + name + "</h3>" +
-    "<p>OPEN MODULE</p>";
-  modulesGrid.appendChild(a);
+const core=[
+{
+ icon:"🤖",
+ title:"INTRODUCTION TO AI",
+ path:"./courses/introduction-ai/index.html",
+ ht:"Konprann AI, zouti li yo, limit li yo ak aplikasyon pratik.",
+ fr:"Comprendre l’IA, ses outils, ses limites et ses applications.",
+ en:"Understand AI, its tools, limitations and practical applications."
+},
+{
+ icon:"🎨",
+ title:"DIGITAL CREATION",
+ path:"./courses/digital-creation/index.html",
+ ht:"Kreye imaj, videyo, prezantasyon ak kontni dijital.",
+ fr:"Créer des images, vidéos, présentations et contenus numériques.",
+ en:"Create images, videos, presentations and digital content."
+},
+{
+ icon:"👑",
+ title:"DIGITAL LEADERSHIP",
+ path:"./courses/digital-leadership/index.html",
+ ht:"Devlope vizyon, lidèchip, disiplin ak jesyon ekip.",
+ fr:"Développer la vision, le leadership, la discipline et la gestion d’équipe.",
+ en:"Develop vision, leadership, discipline and team management."
+},
+{
+ icon:"⚙️",
+ title:"AUTOMATION",
+ path:"./courses/automation/index.html",
+ ht:"Aprann òganize ak otomatize travay repetitif.",
+ fr:"Apprendre à organiser et automatiser les tâches répétitives.",
+ en:"Learn to organize and automate repetitive tasks."
+},
+{
+ icon:"💬",
+ title:"COMMUNICATION",
+ path:"./courses/communication/index.html",
+ ht:"Devlope kominikasyon ak prezantasyon pwofesyonèl.",
+ fr:"Développer la communication et la présentation professionnelle.",
+ en:"Develop professional communication and presentation skills."
+},
+{
+ icon:"💡",
+ title:"INNOVATION",
+ path:"./courses/innovation/index.html",
+ ht:"Transfòme lide an pwojè ak solisyon teknolojik.",
+ fr:"Transformer les idées en projets et solutions technologiques.",
+ en:"Transform ideas into projects and technological solutions."
+}
+];
+
+/* =========================
+   SIX SPECIALIZED PROGRAMS
+========================= */
+
+const specialized=[
+{
+ icon:"💻",
+ title:"DIGITAL SKILLS",
+ path:"./courses.html#digital-skills",
+ ht:"Konpetans enfòmatik ak zouti dijital.",
+ fr:"Compétences informatiques et outils numériques.",
+ en:"Computer skills and digital tools."
+},
+{
+ icon:"🧠",
+ title:"ARTIFICIAL INTELLIGENCE",
+ path:"./courses.html#artificial-intelligence",
+ ht:"Itilizasyon avanse zouti entèlijans atifisyèl.",
+ fr:"Utilisation avancée des outils d’intelligence artificielle.",
+ en:"Advanced use of artificial intelligence tools."
+},
+{
+ icon:"📊",
+ title:"LEADERSHIP & ADMINISTRATION",
+ path:"./courses.html#leadership",
+ ht:"Administrasyon, planifikasyon ak jesyon pwojè.",
+ fr:"Administration, planification et gestion de projets.",
+ en:"Administration, planning and project management."
+},
+{
+ icon:"📻",
+ title:"RADIO & DIGITAL MEDIA",
+ path:"./courses.html#radio-media",
+ ht:"Radyo, podcast, difizyon ak medya dijital.",
+ fr:"Radio, podcast, diffusion et médias numériques.",
+ en:"Radio, podcasts, broadcasting and digital media."
+},
+{
+ icon:"💼",
+ title:"BUSINESS & ENTREPRENEURSHIP",
+ path:"./courses.html#business",
+ ht:"Kreye, òganize ak devlope yon biznis.",
+ fr:"Créer, organiser et développer une entreprise.",
+ en:"Create, organize and develop a business."
+},
+{
+ icon:"🤝",
+ title:"COMMUNITY & SERVICES",
+ path:"./courses.html#community",
+ ht:"Sèvis kominotè, òganizasyon ak devlopman sosyal.",
+ fr:"Services communautaires, organisation et développement social.",
+ en:"Community services, organization and social development."
+}
+];
+
+/* =========================
+   FOUR STUDENT MODULES
+========================= */
+
+const students=[
+{
+ icon:"👤",
+ title:"STUDENT PROFILE",
+ path:"./student-profile/index.html",
+ ht:"Jere enfòmasyon pèsonèl ak pwofil elèv ou.",
+ fr:"Gérez vos informations et votre profil étudiant.",
+ en:"Manage your personal information and student profile."
+},
+{
+ icon:"🎓",
+ title:"STUDENT PORTAL",
+ path:"./student-portal/index.html",
+ ht:"Jwenn aksè ak kou ou yo epi suiv pwogrè ou.",
+ fr:"Accédez à vos cours et suivez votre progression.",
+ en:"Access your courses and track your progress."
+},
+{
+ icon:"📝",
+ title:"ASSESSMENTS",
+ path:"./assessments/index.html",
+ ht:"Pase tès ak evalyasyon pou mezire konesans ou.",
+ fr:"Passez des tests et évaluations de vos connaissances.",
+ en:"Take tests and assessments to measure your knowledge."
+},
+{
+ icon:"🏆",
+ title:"CERTIFICATE CENTER",
+ path:"./certificate-center/index.html",
+ ht:"Jere sètifika ak rezilta fòmasyon ou.",
+ fr:"Gérez vos certificats et résultats de formation.",
+ en:"Manage your certificates and training results."
+}
+];
+
+/* =========================
+   CARD RENDERING
+========================= */
+
+function renderCards(id,items,lang,buttonKey,numbered){
+
+ const grid=document.getElementById(id);
+ grid.replaceChildren();
+
+ items.forEach(function(item,index){
+
+  const card=document.createElement("article");
+  card.className="card";
+
+  if(numbered){
+   const number=document.createElement("span");
+   number.className="number";
+   number.textContent=String(index+1).padStart(2,"0");
+   card.appendChild(number);
+  }
+
+  const icon=document.createElement("div");
+  icon.className="card-icon";
+  icon.setAttribute("aria-hidden","true");
+  icon.textContent=item.icon;
+
+  const title=document.createElement("h3");
+  title.textContent=item.title;
+
+  const description=document.createElement("p");
+  description.textContent=item[lang];
+
+  const link=document.createElement("a");
+  link.className="btn";
+  link.href=item.path;
+  link.textContent=T[lang][buttonKey];
+  link.setAttribute("aria-label",
+    T[lang][buttonKey]+" "+item.title);
+
+  card.append(icon,title,description,link);
+  grid.appendChild(card);
+ });
+
+}
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+const LANG_KEY="promaxAcademieLanguage";
+
+function setLanguage(lang){
+
+ if(!T[lang])lang="ht";
+
+ document.documentElement.lang=lang;
+
+ document.querySelectorAll("[data-t]").forEach(function(el){
+  const key=el.dataset.t;
+  if(T[lang][key])el.textContent=T[lang][key];
+ });
+
+ document.querySelectorAll("[data-lang]").forEach(function(btn){
+  const active=btn.dataset.lang===lang;
+  btn.classList.toggle("active",active);
+  btn.setAttribute("aria-pressed",String(active));
+ });
+
+ renderCards("schoolGrid",schools,lang,"enterSchool",false);
+ renderCards("coreGrid",core,lang,"startCourse",true);
+ renderCards("specialGrid",specialized,lang,"startCourse",true);
+ renderCards("studentGrid",students,lang,"openModule",false);
+
+ try{localStorage.setItem(LANG_KEY,lang)}catch(e){}
+
+}
+
+document.querySelectorAll("[data-lang]").forEach(function(btn){
+ btn.addEventListener("click",function(){
+  setLanguage(btn.dataset.lang);
+ });
 });
 
-const slides = [
-  "./bss1815.jpg",
-  "./bss.jpg",
-  "./max.jpg",
-  "./papouche.jpg",
-  "./team-san-presyon.jpg"
-];
+let savedLanguage="ht";
 
-let slideIndex = 0;
-const slideImage = document.getElementById("slideImage");
+try{
+ savedLanguage=localStorage.getItem(LANG_KEY)||"ht";
+}catch(e){}
 
-function changeSlide(direction) {
-  slideIndex =
-    (slideIndex + direction + slides.length) % slides.length;
-  slideImage.src = slides[slideIndex];
-}
+setLanguage(savedLanguage);
+
+/* =========================
+   GENERAL FUNCTIONS
+========================= */
+
+document.getElementById("year").textContent=
+ new Date().getFullYear();
+
+document.getElementById("topBtn").addEventListener(
+ "click",function(){
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+
 </script>
-
 </body>
 </html>
