@@ -1,254 +1,793 @@
+
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="ht" id="htmlRoot" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Introduction to AI | PRO-MAX ACADÉMIE</title>
+<meta name="theme-color" content="#000000">
+<meta name="google" content="notranslate">
+<meta name="description" content="PRO-MAX ACADÉMIE — Real Estate School. Six cours de formation immobilière, leçons, exercices et préparation professionnelle.">
+<title>REAL ESTATE SCHOOL | PRO-MAX ACADÉMIE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(145deg,#301300,#000 65%);color:#ffad60;font-family:Arial,sans-serif}
-header,footer{text-align:center;background:#000;padding:24px;border-bottom:1px solid #ff7900}
-main{max-width:1000px;margin:auto;padding:25px}
-h1,h2,h3{color:#ff7900}
-p{line-height:1.8}
-button,a.btn{display:inline-block;background:#000;color:#ff7900;border:1px solid #ff7900;border-radius:12px;padding:13px 20px;margin:5px;text-decoration:none;font-weight:bold;cursor:pointer}
-button:hover,button.active,a.btn:hover{background:#ff7900;color:#000}
-.hero{text-align:center;padding:30px 0}
-.logo{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid #ff7900}
-.card{background:linear-gradient(145deg,#201000,#000);border:1px solid #773600;border-radius:18px;padding:24px;margin:20px 0}
-.progress{height:14px;background:#351500;border-radius:20px;overflow:hidden}
-#bar{height:100%;background:#ff7900;width:0;transition:.3s}
-input{accent-color:#ff7900}
-label{display:block;padding:10px}
-summary{cursor:pointer;color:#ff7900;font-weight:bold}
-a{color:#ffad60}
+:root{
+  --black:#000;
+  --dark:#0b0400;
+  --orange:#ff7900;
+  --apricot:#ffad70;
+  --text:#ffc59a;
+  --border:rgba(255,121,0,.35);
+  --glow:0 0 20px rgba(255,121,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Montserrat,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,121,0,.16),transparent 34%),
+    radial-gradient(circle at 85% 65%,rgba(255,121,0,.10),transparent 40%),
+    linear-gradient(160deg,#000,#120600 55%,#000);
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{
+  padding:11px;text-align:center;color:#000;
+  font-size:.7rem;font-weight:900;letter-spacing:.08em;
+  background:linear-gradient(90deg,#873000,var(--orange),var(--apricot),var(--orange),#873000);
+}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(0,0,0,.97);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  min-height:86px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-logo{
+  width:62px;height:62px;flex-shrink:0;
+  border:2px solid var(--orange);
+  border-radius:16px;
+  object-fit:cover;background:#000;
+  box-shadow:var(--glow);
+}
+.brand strong{
+  display:block;color:var(--orange);
+  font:800 .95rem Cinzel,serif;
+}
+.brand small{display:block;margin-top:5px;font-size:.55rem}
+.header-tools{display:flex;align-items:center;gap:9px}
+.nav{display:flex;gap:3px}
+.nav a{
+  padding:9px;border-radius:20px;
+  font-size:.65rem;font-weight:900;
+}
+.nav a:hover{background:var(--orange);color:#000}
+.languages{display:flex;gap:4px}
+.lang{
+  padding:9px;border:1px solid var(--border);
+  border-radius:22px;color:var(--apricot);
+  background:#000;font-size:.62rem;font-weight:900;
+}
+.lang.active{color:#000;background:var(--orange)}
+.menu{
+  display:none;padding:10px 14px;
+  border:1px solid var(--orange);
+  border-radius:10px;color:var(--orange);
+  background:#000;
+}
+.hero{
+  padding:90px 0 80px;text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.eyebrow{
+  color:var(--orange);font-size:.7rem;
+  font-weight:900;letter-spacing:.15em;
+}
+h1,h2{font-family:Cinzel,serif;color:var(--orange)}
+h1{
+  max-width:1000px;margin:22px auto;
+  font-size:clamp(2.6rem,7vw,5.8rem);
+  line-height:1.05;
+}
+h1 span{display:block;color:var(--apricot)}
+.lead{max-width:800px;margin:auto;line-height:1.8}
+.actions{
+  display:flex;justify-content:center;
+  flex-wrap:wrap;gap:12px;margin-top:28px;
+}
+.btn{
+  min-height:49px;display:inline-flex;
+  align-items:center;justify-content:center;gap:9px;
+  padding:12px 22px;border:2px solid var(--orange);
+  border-radius:28px;font-size:.72rem;
+  font-weight:900;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--glow)}
+.primary{background:var(--orange);color:#000}
+.outline{background:#000;color:var(--orange)}
+.stats{
+  max-width:820px;margin:45px auto 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.stat{
+  padding:25px;border:1px solid var(--border);
+  border-radius:19px;background:#070200;
+}
+.stat strong{display:block;color:var(--orange);font-size:1.7rem}
+.stat span{display:block;margin-top:8px;font-size:.7rem}
+.section{
+  padding:80px 0;border-bottom:1px solid rgba(255,121,0,.16);
+}
+.heading{text-align:center;max-width:850px;margin:0 auto 40px}
+.heading h2{
+  margin-top:12px;
+  font-size:clamp(2rem,5vw,3.8rem);
+}
+.heading p:last-child{margin-top:16px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  min-height:260px;display:flex;flex-direction:column;
+  padding:25px;border:1px solid var(--border);
+  border-radius:21px;
+  background:radial-gradient(circle at top right,rgba(255,121,0,.15),transparent 45%),#080300;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:var(--glow)}
+.card i{font-size:2rem;color:var(--orange)}
+.card .number{
+  margin-top:17px;color:var(--apricot);
+  font-size:.7rem;font-weight:900;
+}
+.card h3{margin-top:11px;color:var(--orange);font-size:1rem}
+.card p{margin-top:13px;line-height:1.7;font-size:.83rem}
+.card .card-link{
+  margin-top:auto;padding-top:22px;
+  color:var(--orange);font-size:.72rem;font-weight:900;
+}
+.course-button{
+  width:100%;text-align:left;color:inherit;
+}
+.course-button:focus-visible,.btn:focus-visible,.lang:focus-visible{
+  outline:3px solid var(--apricot);outline-offset:4px;
+}
+.lesson-panel{
+  margin-top:25px;padding:30px;
+  border:2px solid var(--orange);
+  border-radius:24px;
+  background:linear-gradient(145deg,#120600,#000);
+  box-shadow:var(--glow);
+}
+.lesson-panel[hidden]{display:none}
+.lesson-header{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:15px;
+}
+.lesson-header h3{color:var(--orange);font-size:1.3rem}
+.lesson-body{margin-top:25px;line-height:1.85}
+.lesson-body h4{color:var(--orange);margin:23px 0 9px}
+.lesson-body p{margin:10px 0}
+.lesson-body ul{padding-left:25px;margin:10px 0}
+.lesson-body li{margin:7px 0}
+.quiz{
+  margin-top:28px;padding:22px;
+  border:1px solid var(--border);
+  border-radius:16px;background:#080300;
+}
+.quiz h4{color:var(--orange);margin-bottom:14px}
+.quiz label{
+  display:block;padding:11px;margin:8px 0;
+  border:1px solid var(--border);border-radius:10px;
+  cursor:pointer;
+}
+.quiz input{margin-right:9px;accent-color:var(--orange)}
+.quiz-result{margin-top:15px;font-weight:900;color:var(--apricot)}
+.student-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.student-card{
+  padding:28px;border:1px solid var(--border);
+  border-radius:20px;background:#080300;
+}
+.student-card h3{color:var(--orange);margin-bottom:13px}
+.student-card p{line-height:1.7;font-size:.85rem}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.contact-card{
+  padding:27px;border:1px solid var(--border);
+  border-radius:20px;background:#080300;
+}
+.contact-card h3{color:var(--orange);margin-bottom:18px}
+.phone{
+  display:flex;align-items:center;gap:13px;
+  padding:12px 0;border-bottom:1px solid var(--border);
+  font-weight:800;
+}
+.flag{font-size:1.7rem}
+.phone a:hover{color:var(--orange)}
+.social-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:15px;margin-top:30px;
+}
+.social{
+  min-height:108px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;
+  border:1px solid var(--border);border-radius:17px;
+  background:#080300;font-size:.68rem;font-weight:900;
+  transition:.2s;
+}
+.social:hover{transform:translateY(-3px);border-color:var(--orange)}
+.social i{font-size:2rem}
+.social.facebook i{color:#1877f2}
+.social.whatsapp i{color:#25d366}
+.social.instagram i{color:#e4405f}
+.social.youtube i{color:#ff0033}
+.social.spotify i{color:#1db954}
+.social.telegram i{color:#26a5e4}
+.social.x i{color:#f0f0f0}
+.social.tiktok i{color:#25f4ee}
+.social.linkedin i{color:#0a66c2}
+.social.truth i{color:#ff7900}
+footer{
+  padding:45px 15px;text-align:center;background:#000;
+}
+footer strong{font-family:Cinzel,serif;color:var(--orange)}
+footer p{margin-top:12px;line-height:1.8;font-size:.75rem}
+@media(max-width:1000px){
+  .nav{
+    position:absolute;top:86px;left:15px;right:15px;
+    display:none;flex-direction:column;padding:16px;
+    border:1px solid var(--orange);border-radius:15px;background:#000;
+  }
+  .nav.open{display:flex}
+  .nav a{text-align:center}
+  .menu{display:block}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  .grid,.student-grid,.contact-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .social-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:60px 0}
+  .brand-logo{width:49px;height:49px}
+  .brand strong{font-size:.75rem}
+  .brand small{font-size:.48rem}
+  .lesson-panel{padding:19px}
+}
 </style>
 </head>
+
 <body>
+
+<div class="topbar">PRO-MAX ACADÉMIE • REAL ESTATE SCHOOL</div>
+
 <header>
-<strong>PRO-MAX ACADÉMIE</strong>
-<p>BSS1815 PRO-MAX DMP</p>
-<button onclick="setLang('fr')" data-lang="fr">FRA</button>
-<button onclick="setLang('en')" data-lang="en">ENG</button>
-<button onclick="setLang('ht')" data-lang="ht">KRE</button>
-</header>
-<main>
-<div class="hero">
-<video class="logo" autoplay muted loop playsinline>
-<source src="../../pro-max-dmp-II.mp4" type="video/mp4">
-</video>
-<h1>INTRODUCTION TO AI</h1>
-<p id="subtitle"></p>
-<a class="btn" href="../../index.html">ACADEMY HOME</a>
-<a class="btn" href="../index.html">COURSES CENTER</a>
-<a class="btn" href="../../student-portal/index.html">STUDENT PORTAL</a>
-</div>
-<div class="card">
-<h3 id="progressTitle"></h3>
-<div class="progress"><div id="bar"></div></div>
-<p id="percentage">0%</p>
-</div>
-<div id="lessons"></div>
-<div class="card">
-<h2>QUIZ</h2>
-<form id="quiz"></form>
-<h3 id="result"></h3>
-</div>
-</main>
-<footer>
-<h3>PRO-MAX ACADÉMIE</h3>
-<a href="mailto:bss1815promaxdmp@gmail.com">
-bss1815promaxdmp@gmail.com
+<div class="container header-inner">
+<a class="brand" href="../index.html">
+  <img
+    class="brand-logo"
+    src="../pro-max-academie-logo.png"
+    alt="PRO-MAX ACADÉMIE"
+    onerror="this.onerror=null;this.src='../pro-max-dmp-II.mp4';this.style.display='none';document.getElementById('logoFallback').hidden=false;"
+  >
+  <span id="logoFallback" class="brand-logo" hidden style="display:none;place-items:center;color:#ff7900;font-size:1.5rem">
+    <i class="fa-solid fa-graduation-cap"></i>
+  </span>
+  <span>
+    <strong>REAL ESTATE SCHOOL</strong>
+    <small>PRO-MAX ACADÉMIE</small>
+  </span>
 </a>
-<p>BATI POU JODI A • PARE POU DEMEN</p>
+
+<div class="header-tools">
+<nav class="nav" id="nav">
+  <a href="#home" data-ht="AKÈY" data-en="HOME" data-es="INICIO">AKÈY</a>
+  <a href="#courses" data-ht="6 KOU" data-en="6 COURSES" data-es="6 CURSOS">6 KOU</a>
+  <a href="#student" data-ht="ELÈV" data-en="STUDENT" data-es="ESTUDIANTE">ELÈV</a>
+  <a href="#contact" data-ht="KONTAK" data-en="CONTACT" data-es="CONTACTO">KONTAK</a>
+  <a href="../index.html">ACADÉMIE</a>
+</nav>
+<div class="languages">
+  <button class="lang" data-lang="en">ENG</button>
+  <button class="lang" data-lang="es">ESP</button>
+  <button class="lang active" data-lang="ht">KRE</button>
+</div>
+<button class="menu" id="menu" aria-label="Menu" aria-expanded="false">☰</button>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container">
+  <p class="eyebrow">BSS1815 PRO-MAX DMP • PRO-MAX ACADÉMIE</p>
+  <h1>REAL ESTATE <span>SCHOOL</span></h1>
+  <p class="lead"
+    data-ht="Fòmasyon nan byen imobilye: prensip fondamantal, lwa, etik, finansman, valyasyon, maketing ak preparasyon egzamen."
+    data-en="Real estate training: fundamentals, law, ethics, financing, valuation, marketing and exam preparation."
+    data-es="Formación inmobiliaria: fundamentos, leyes, ética, financiación, valoración, marketing y preparación de exámenes.">
+    Fòmasyon nan byen imobilye: prensip fondamantal, lwa, etik, finansman, valyasyon, maketing ak preparasyon egzamen.
+  </p>
+  <div class="actions">
+    <a class="btn primary" href="#courses"><i class="fa-solid fa-book-open"></i> <span data-ht="KÒMANSE APRANN" data-en="START LEARNING" data-es="EMPEZAR A APRENDER">KÒMANSE APRANN</span></a>
+    <a class="btn outline" href="../student-profile/index.html"><i class="fa-solid fa-user-plus"></i> <span data-ht="ENSKRIPSYON" data-en="REGISTRATION" data-es="INSCRIPCIÓN">ENSKRIPSYON</span></a>
+    <a class="btn outline" href="../index.html"><i class="fa-solid fa-graduation-cap"></i> PRO-MAX ACADÉMIE</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>06</strong><span>COURSES</span></div>
+    <div class="stat"><strong>03</strong><span>ENG • ESP • KRE</span></div>
+    <div class="stat"><strong>AI</strong><span>SMART LEARNING</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="courses">
+<div class="container">
+<div class="heading">
+  <p class="eyebrow">REAL ESTATE CURRICULUM</p>
+  <h2 data-ht="6 KOU PWOFESYONÈL" data-en="6 PROFESSIONAL COURSES" data-es="6 CURSOS PROFESIONALES">6 KOU PWOFESYONÈL</h2>
+  <p data-ht="Klike sou nenpòt kou pou ouvri leson, eksplikasyon ak egzèsis li."
+     data-en="Select any course to open its lessons, explanations and exercises."
+     data-es="Seleccione un curso para abrir sus lecciones, explicaciones y ejercicios.">
+     Klike sou nenpòt kou pou ouvri leson, eksplikasyon ak egzèsis li.
+  </p>
+</div>
+
+<div class="grid" id="courseGrid">
+  <button class="card course-button" data-course="0">
+    <i class="fa-solid fa-house"></i>
+    <span class="number">COURSE 01</span>
+    <h3>REAL ESTATE FUNDAMENTALS</h3>
+    <p>Property types, ownership, agency and real estate transactions.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+  <button class="card course-button" data-course="1">
+    <i class="fa-solid fa-scale-balanced"></i>
+    <span class="number">COURSE 02</span>
+    <h3>REAL ESTATE LAW & ETHICS</h3>
+    <p>Fair housing, disclosures, professional duties and ethics.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+  <button class="card course-button" data-course="2">
+    <i class="fa-solid fa-money-bill-trend-up"></i>
+    <span class="number">COURSE 03</span>
+    <h3>FINANCE & MORTGAGES</h3>
+    <p>Loan types, interest, down payments and closing costs.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+  <button class="card course-button" data-course="3">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="number">COURSE 04</span>
+    <h3>PROPERTY VALUATION</h3>
+    <p>Comparable sales, market analysis and property value.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+  <button class="card course-button" data-course="4">
+    <i class="fa-solid fa-bullhorn"></i>
+    <span class="number">COURSE 05</span>
+    <h3>MARKETING & CLIENTS</h3>
+    <p>Listings, client communication and marketing ethics.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+  <button class="card course-button" data-course="5">
+    <i class="fa-solid fa-clipboard-check"></i>
+    <span class="number">COURSE 06</span>
+    <h3>EXAM PREPARATION</h3>
+    <p>Review, practice questions and exam strategies.</p>
+    <span class="card-link">OPEN COURSE →</span>
+  </button>
+</div>
+
+<div class="lesson-panel" id="lessonPanel" hidden>
+  <div class="lesson-header">
+    <h3 id="lessonTitle"></h3>
+    <button class="btn outline" id="closeLesson" type="button">
+      <i class="fa-solid fa-xmark"></i> CLOSE
+    </button>
+  </div>
+  <div class="lesson-body" id="lessonBody"></div>
+  <div class="quiz" id="quizBox">
+    <h4 id="quizQuestion"></h4>
+    <div id="quizOptions"></div>
+    <button class="btn primary" id="checkAnswer" type="button">CHECK ANSWER</button>
+    <p class="quiz-result" id="quizResult" role="status"></p>
+  </div>
+  <div class="actions">
+    <button class="btn outline" id="previousCourse" type="button">← PREVIOUS</button>
+    <button class="btn primary" id="nextCourse" type="button">NEXT COURSE →</button>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section" id="student">
+<div class="container">
+<div class="heading">
+  <p class="eyebrow">STUDENT CENTER</p>
+  <h2 data-ht="ESPAS ELÈV" data-en="STUDENT CENTER" data-es="CENTRO DEL ESTUDIANTE">ESPAS ELÈV</h2>
+</div>
+<div class="student-grid">
+  <div class="student-card">
+    <h3><i class="fa-solid fa-user-plus"></i> STUDENT PROFILE</h3>
+    <p>Kreye pwofil elèv ou.</p>
+    <div class="actions"><a class="btn outline" href="../student-profile/index.html">REGISTRATION</a></div>
+  </div>
+  <div class="student-card">
+    <h3><i class="fa-solid fa-book-open-reader"></i> STUDENT PORTAL</h3>
+    <p>Antre nan pòtal elèv la.</p>
+    <div class="actions"><a class="btn outline" href="../student-portal/index.html">OPEN PORTAL</a></div>
+  </div>
+  <div class="student-card">
+    <h3><i class="fa-solid fa-list-check"></i> FINAL EXAM</h3>
+    <p>Prepare pou evalyasyon final la.</p>
+    <div class="actions"><a class="btn outline" href="./final-exam/index.html">FINAL EXAM</a></div>
+  </div>
+  <div class="student-card">
+    <h3><i class="fa-solid fa-award"></i> CERTIFICATE CENTER</h3>
+    <p>Gade enfòmasyon sou sètifikasyon.</p>
+    <div class="actions"><a class="btn outline" href="../certificate-center/index.html">CERTIFICATE CENTER</a></div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+<div class="heading">
+  <p class="eyebrow">OFFICIAL CONTACT</p>
+  <h2 data-ht="KONTAK OFISYÈL" data-en="OFFICIAL CONTACT" data-es="CONTACTO OFICIAL">KONTAK OFISYÈL</h2>
+</div>
+
+<div class="contact-grid">
+  <div class="contact-card">
+    <h3><i class="fa-solid fa-phone"></i> TELEPHONE</h3>
+    <div class="phone"><span class="flag">🇺🇸</span><a href="tel:+14076405166">(407) 640-5166</a></div>
+    <div class="phone"><span class="flag">🇺🇸</span><a href="tel:+15162168494">(516) 216-8494</a></div>
+    <div class="phone"><span class="flag">🇭🇹</span><a href="tel:+50942544447">+509 4254 4447</a></div>
+    <div class="phone"><span class="flag">🇭🇹</span><a href="tel:+50943437488">+509 4343 7488</a></div>
+  </div>
+  <div class="contact-card">
+    <h3><i class="fa-solid fa-envelope"></i> EMAIL</h3>
+    <p><a href="mailto:louismaxauto600@gmail.com">louismaxauto600@gmail.com</a></p>
+    <h3 style="margin-top:26px"><i class="fa-solid fa-globe"></i> PARENT PLATFORM</h3>
+    <p><a href="https://bss1815promaxdmp.com">bss1815promaxdmp.com</a></p>
+  </div>
+</div>
+
+<div class="heading" style="margin-top:65px">
+  <p class="eyebrow">SOCIAL NETWORKS</p>
+  <h2 data-ht="SWIV NOU" data-en="FOLLOW US" data-es="SÍGUENOS">SWIV NOU</h2>
+</div>
+
+<div class="social-grid">
+  <a class="social facebook" href="https://www.facebook.com/share/1By3KvYRrM/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+  <a class="social whatsapp" href="https://wa.me/50943437488" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+  <a class="social instagram" href="https://www.instagram.com/lebaron072/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>Instagram</a>
+  <a class="social youtube" href="https://www.youtube.com/@BSS1815PROMAXDMP" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i>YouTube</a>
+  <a class="social spotify" href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-spotify"></i>Spotify</a>
+  <a class="social telegram" href="https://t.me/bss1815dmp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>Telegram</a>
+  <a class="social x" href="https://x.com/w05g2m" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i>X</a>
+  <a class="social tiktok" href="https://www.tiktok.com/@maximax1960" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+  <a class="social linkedin" href="https://www.linkedin.com/in/maximax-multi-services-075ba2314" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+  <a class="social truth" href="https://truthsocial.com/@briyant_soley_1815" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bullhorn"></i>Truth Social</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <strong>REAL ESTATE SCHOOL • PRO-MAX ACADÉMIE</strong>
+  <p>BSS1815 PRO-MAX DMP<br>FÒME JODI A POU DIRIJE DEMEN<br>DEVAN DEVAN NÈT™<br>© <span id="year"></span></p>
 </footer>
+
 <script>
-const T=(ht,fr,en)=>({ht,fr,en});
-let lang="ht";
-const lessons=[
+(function(){
+"use strict";
+
+const courses=[
 {
-title:T("Kisa AI ye?","Qu’est-ce que l’IA ?","What is AI?"),
-body:T(
-"Entèlijans atifisyèl se yon seri teknoloji ki pèmèt sistèm enfòmatik analize enfòmasyon, rekonèt modèl epi pwodwi repons. AI kapab ede moun ekri, tradui, fè rechèch ak òganize travay. Li pa toujou bay enfòmasyon ki kòrèk.",
-"L’intelligence artificielle regroupe des technologies permettant aux systèmes informatiques d’analyser des informations, de reconnaître des modèles et de produire des réponses. Elle peut aider à rédiger, traduire, rechercher et organiser le travail. Ses réponses ne sont pas toujours exactes.",
-"Artificial intelligence includes technologies that enable computer systems to analyze information, recognize patterns and generate responses. AI can assist with writing, translation, research and organization. Its answers are not always accurate."),
-practice:T(
-"Bay twa egzanp itilizasyon AI nan lavi chak jou.",
-"Donnez trois exemples d’utilisation quotidienne de l’IA.",
-"Give three examples of everyday AI use.")
+  title:{ht:"FONDAMANTAL BYEN IMOBILYE",en:"REAL ESTATE FUNDAMENTALS",es:"FUNDAMENTOS INMOBILIARIOS"},
+  lessons:{
+    ht:[
+      ["Kisa byen imobilye ye?","Byen imobilye gen ladan tè, bilding ak amelyorasyon pèmanan ki fikse sou tè a. Li diferan ak byen pèsonèl tankou mèb oswa machin."],
+      ["Kalite pwopriyete","Gen pwopriyete rezidansyèl, komèsyal, endistriyèl ak tè vid. Chak kategori gen itilizasyon, kondisyon ak règleman pa li."],
+      ["Wòl ajan imobilye","Yon ajan ka ede kliyan jwenn pwopriyete, konprann enfòmasyon sou mache a, prepare òf epi suiv etap tranzaksyon an. Ajan an dwe respekte lwa ki aplikab."]
+    ],
+    en:[
+      ["What is real property?","Real property includes land, buildings and permanent improvements attached to the land. It differs from personal property such as furniture or vehicles."],
+      ["Property categories","Residential, commercial, industrial and vacant land properties have different uses and requirements."],
+      ["The agent's role","Agents assist clients with property searches, market information, offers and transactions while following applicable law."]
+    ],
+    es:[
+      ["¿Qué son los bienes inmuebles?","Incluyen terrenos, edificios y mejoras permanentes. Se distinguen de los bienes personales."],
+      ["Tipos de propiedades","Las propiedades residenciales, comerciales, industriales y los terrenos tienen distintos usos y requisitos."],
+      ["Función del agente","El agente ayuda a buscar propiedades, entender el mercado, preparar ofertas y seguir transacciones conforme a la ley."]
+    ]
+  },
+  quiz:{
+    ht:["Kilès nan bagay sa yo ki se yon byen imobilye?",["Yon machin","Yon teren ak yon kay","Yon òdinatè"],1],
+    en:["Which is an example of real property?",["A vehicle","Land with a house","A computer"],1],
+    es:["¿Cuál es un bien inmueble?",["Un automóvil","Un terreno con una casa","Una computadora"],1]
+  }
 },
 {
-title:T("AI jeneratif","IA générative","Generative AI"),
-body:T(
-"AI jeneratif kapab pwodwi tèks, imaj, odyo, videyo ak kòd. Li itilize modèl li aprann nan done pou jenere nouvo kontni. Rezilta yo bezwen revizyon imen.",
-"L’IA générative peut produire du texte, des images, de l’audio, des vidéos et du code. Elle utilise des modèles appris à partir de données. Les résultats nécessitent une vérification humaine.",
-"Generative AI can produce text, images, audio, video and code. It uses patterns learned from data to generate content. Its outputs require human review."),
-practice:T(
-"Ekri yon demann pou AI kreye yon anons pwofesyonèl.",
-"Rédigez une demande de création d’annonce professionnelle.",
-"Write a request for AI to create a professional announcement.")
+  title:{ht:"LWA AK ETIK",en:"LAW AND ETHICS",es:"LEYES Y ÉTICA"},
+  lessons:{
+    ht:[
+      ["Fair Housing","Lwa federal Fair Housing Act la entèdi diskriminasyon nan anpil tranzaksyon lojman sou baz ras, koulè, relijyon, sèks, orijin nasyonal, estati familyal oswa andikap."],
+      ["Divilgasyon enfòmasyon","Lwa eta ak lwa federal ka mande pou sèten enfòmasyon sou pwopriyete a divilge. Obligasyon egzak yo varye selon kote tranzaksyon an fèt."],
+      ["Konduit pwofesyonèl","Ajan dwe kominike onètman, pwoteje enfòmasyon kliyan, evite deklarasyon ki twonpe moun epi jere konfli enterè selon lwa ak règleman ki aplikab."]
+    ],
+    en:[
+      ["Fair Housing","The federal Fair Housing Act prohibits housing discrimination based on race, color, religion, sex, national origin, familial status or disability."],
+      ["Disclosures","State and federal rules may require specific property disclosures. Requirements depend on the jurisdiction."],
+      ["Professional conduct","Agents should communicate honestly, safeguard client information and manage conflicts of interest."]
+    ],
+    es:[
+      ["Vivienda justa","La Ley Federal de Vivienda Justa prohíbe la discriminación por raza, color, religión, sexo, origen nacional, situación familiar o discapacidad."],
+      ["Divulgaciones","Las normas estatales y federales pueden exigir información sobre una propiedad."],
+      ["Conducta profesional","Los agentes deben actuar con honestidad, proteger datos y gestionar conflictos de interés."]
+    ]
+  },
+  quiz:{
+    ht:["Ki prensip ki enpòtan nan sèvis imobilye?",["Diskriminasyon","Enfòmasyon ki twonpe","Tretman egal ak onètete"],2],
+    en:["Which principle is essential?",["Discrimination","Misleading statements","Fair treatment and honesty"],2],
+    es:["¿Qué principio es esencial?",["Discriminación","Información engañosa","Trato justo y honestidad"],2]
+  }
 },
 {
-title:T("Prompt Engineering","Ingénierie des prompts","Prompt Engineering"),
-body:T(
-"Yon prompt se enstriksyon ou bay AI. Yon bon prompt presize objektif, kontèks, fòma, lang ak limit travay la. Pa egzanp: ekri yon anons an kreyòl, nan 80 mo, pou envite elèv nan yon fòmasyon.",
-"Un prompt est une instruction donnée à l’IA. Un bon prompt précise l’objectif, le contexte, le format, la langue et les contraintes. Par exemple : rédigez une annonce de 80 mots en créole pour inviter des étudiants à une formation.",
-"A prompt is an instruction given to AI. An effective prompt specifies the goal, context, format, language and constraints. For example: write an 80-word announcement in Haitian Creole inviting students to a training session."),
-practice:T(
-"Ekri yon prompt ki genyen objektif, kontèks ak fòma.",
-"Rédigez un prompt avec objectif, contexte et format.",
-"Write a prompt containing a goal, context and format.")
+  title:{ht:"FINANSMAN AK IPOTÈK",en:"FINANCE AND MORTGAGES",es:"FINANCIACIÓN E HIPOTECAS"},
+  lessons:{
+    ht:[
+      ["Prè ipotekè","Yon prè ipotekè se yon prè ki garanti ak yon byen imobilye. Moun ki prete a dwe respekte kondisyon ranbousman yo."],
+      ["Kapital ak enterè","Kapital se montan lajan ou prete a. Enterè se pri ou peye pou itilize lajan sa a. Peman ka gen lòt eleman tankou taks ak asirans."],
+      ["Depans tranzaksyon","Closing costs kapab gen ladan frè kreditè, sèvis tit, evalyasyon ak lòt frè. Montan yo depann de prè a ak tranzaksyon an."]
+    ],
+    en:[
+      ["Mortgage loans","A mortgage loan is secured by real estate. Borrowers must follow repayment terms."],
+      ["Principal and interest","Principal is the amount borrowed. Interest is the cost of borrowing. Payments may also include taxes and insurance."],
+      ["Closing costs","Closing costs may include lender, title, appraisal and other transaction fees."]
+    ],
+    es:[
+      ["Préstamos hipotecarios","Una hipoteca es un préstamo garantizado por un inmueble."],
+      ["Capital e intereses","El capital es la cantidad prestada y los intereses son el costo del préstamo."],
+      ["Costos de cierre","Pueden incluir cargos del prestamista, título, tasación y otros servicios."]
+    ]
+  },
+  quiz:{
+    ht:["Kisa kapital yon prè ye?",["Lajan yo prete a","Frè elektrisite","Komisyon ajan an"],0],
+    en:["What is loan principal?",["The amount borrowed","Electricity charges","Agent commission"],0],
+    es:["¿Qué es el capital del préstamo?",["La cantidad prestada","La factura eléctrica","La comisión del agente"],0]
+  }
 },
 {
-title:T("Verifikasyon enfòmasyon","Vérification des informations","Information verification"),
-body:T(
-"AI kapab pwodwi enfòmasyon ki pa egzak. Verifye non, dat, estatistik ak deklarasyon enpòtan avèk sous serye. Pa pibliye yon enfòmasyon sèlman paske AI prezante li avèk konfyans.",
-"L’IA peut produire des informations inexactes. Vérifiez les noms, dates, statistiques et affirmations importantes auprès de sources fiables. Ne publiez pas une information uniquement parce que l’IA la présente avec assurance.",
-"AI can generate inaccurate information. Verify names, dates, statistics and important claims against reliable sources. Do not publish information simply because AI presents it confidently."),
-practice:T(
-"Chwazi yon enfòmasyon epi verifye li avèk de sous serye.",
-"Choisissez une information et vérifiez-la auprès de deux sources fiables.",
-"Choose a claim and verify it using two reliable sources.")
+  title:{ht:"VALYASYON PWOPRIYETE",en:"PROPERTY VALUATION",es:"VALORACIÓN DE PROPIEDADES"},
+  lessons:{
+    ht:[
+      ["Faktè ki enfliyanse valè","Kote pwopriyete a ye, kondisyon li, dimansyon li ak demann sou mache a kapab enfliyanse valè li."],
+      ["Lavant konparab","Analiz mache konparatif itilize pwopriyete ki sanble epi ki vann resamman pou ede estime yon ranje pri."],
+      ["Evalyasyon pwofesyonèl","Yon appraisal se yon opinyon valè yon evalyatè kalifye prepare selon metòd ak estanda ki aplikab."]
+    ],
+    en:[
+      ["Value factors","Location, condition, size and market demand can influence property value."],
+      ["Comparable sales","Comparable market analysis examines similar recently sold properties to estimate a price range."],
+      ["Professional appraisal","An appraisal is an opinion of value prepared by a qualified appraiser under applicable standards."]
+    ],
+    es:[
+      ["Factores de valor","La ubicación, condición, tamaño y demanda influyen en el valor."],
+      ["Ventas comparables","El análisis comparativo estudia propiedades similares vendidas recientemente."],
+      ["Tasación profesional","Una tasación es una opinión de valor elaborada por un profesional calificado."]
+    ]
+  },
+  quiz:{
+    ht:["Kisa yo itilize nan yon analiz mache konparatif?",["Lavant pwopriyete ki sanble","Pri machin","Nimewo telefòn"],0],
+    en:["What is used in comparable market analysis?",["Sales of similar properties","Vehicle prices","Phone numbers"],0],
+    es:["¿Qué se usa en un análisis comparativo?",["Ventas de propiedades similares","Precios de autos","Números telefónicos"],0]
+  }
 },
 {
-title:T("Etik ak sekirite","Éthique et sécurité","Ethics and safety"),
-body:T(
-"Pa pataje modpas, nimewo sekirite sosyal oswa dokiman konfidansyèl san otorizasyon. Respekte dwa otè, vi prive ak konsantman moun. Itilize AI kòm yon zouti asistans, pa kòm yon ranplasman otomatik pou jijman imen.",
-"Ne partagez pas de mots de passe, de numéros de sécurité sociale ou de documents confidentiels sans autorisation. Respectez les droits d’auteur, la vie privée et le consentement. Utilisez l’IA comme outil d’assistance.",
-"Do not share passwords, Social Security numbers or confidential documents without authorization. Respect copyright, privacy and consent. Use AI as an assistance tool rather than an automatic replacement for human judgment."),
-practice:T(
-"Idantifye twa kalite enfòmasyon ou dwe pwoteje.",
-"Identifiez trois types d’informations à protéger.",
-"Identify three types of information that should be protected.")
+  title:{ht:"MAKETING AK KLIYAN",en:"MARKETING AND CLIENTS",es:"MARKETING Y CLIENTES"},
+  lessons:{
+    ht:[
+      ["Prezante pwopriyete","Yon bon anons dwe gen enfòmasyon egzak, deskripsyon klè ak foto ki pa twonpe moun sou kondisyon byen an."],
+      ["Kominikasyon ak kliyan","Koute bezwen kliyan, eksplike etap yo klèman epi reponn kestyon yo avèk respè."],
+      ["Swivi pwofesyonèl","Kenbe bon dosye kominikasyon, òganize randevou epi respekte konfidansyalite kliyan."]
+    ],
+    en:[
+      ["Property listings","Good listings use accurate information, clear descriptions and truthful property images."],
+      ["Client communication","Listen to client needs, explain each step and answer questions respectfully."],
+      ["Professional follow-up","Maintain communication records, organize appointments and respect confidentiality."]
+    ],
+    es:[
+      ["Anuncios de propiedades","Los anuncios deben incluir información precisa, descripciones claras e imágenes fieles."],
+      ["Comunicación","Escuche las necesidades del cliente y explique cada etapa con claridad."],
+      ["Seguimiento","Organice citas, mantenga registros y respete la confidencialidad."]
+    ]
+  },
+  quiz:{
+    ht:["Kisa yon bon anons pwopriyete dwe genyen?",["Enfòmasyon egzak","Fo foto","Fo pwomès"],0],
+    en:["What should a good listing contain?",["Accurate information","Misleading photos","False promises"],0],
+    es:["¿Qué debe contener un buen anuncio?",["Información precisa","Fotos engañosas","Promesas falsas"],0]
+  }
 },
 {
-title:T("Pwojè pratik","Projet pratique","Practical project"),
-body:T(
-"Prepare yon pwojè kote AI ede w rezoud yon pwoblèm reyèl. Defini objektif la, ekri prompt ou, analize rezilta a, verifye enfòmasyon yo epi amelyore travay final la.",
-"Préparez un projet dans lequel l’IA vous aide à résoudre un problème réel. Définissez l’objectif, rédigez votre prompt, analysez et vérifiez les résultats, puis améliorez le travail final.",
-"Prepare a project in which AI helps solve a real problem. Define your goal, write your prompt, analyze and verify the results, then improve the final output."),
-practice:T(
-"Prepare yon dokiman yon paj ki prezante pwojè ou.",
-"Préparez un document d’une page présentant votre projet.",
-"Prepare a one-page document presenting your project.")
+  title:{ht:"PREPARASYON EGZAMEN",en:"EXAM PREPARATION",es:"PREPARACIÓN PARA EXÁMENES"},
+  lessons:{
+    ht:[
+      ["Òganize revizyon","Revize chak sijè regilyèman. Kreye yon orè pou konsèp fondamantal, lwa, finansman, valyasyon ak etik."],
+      ["Pratike kestyon","Fè kestyon pratik, analize poukisa repons yo kòrèk oswa pa kòrèk epi travay plis sou sijè ki difisil yo."],
+      ["Kondisyon lisans","Kondisyon pou jwenn lisans imobilye varye selon eta a. Verifye kondisyon ajans regilasyon eta kote ou vle travay la."]
+    ],
+    en:[
+      ["Study planning","Review fundamentals, law, financing, valuation and ethics on a regular schedule."],
+      ["Practice questions","Answer practice questions, analyze errors and focus on weak areas."],
+      ["Licensing requirements","Real estate licensing requirements vary by state. Verify requirements with the relevant state regulator."]
+    ],
+    es:[
+      ["Plan de estudio","Repase fundamentos, leyes, financiación, valoración y ética regularmente."],
+      ["Preguntas de práctica","Practique preguntas, analice errores y refuerce áreas difíciles."],
+      ["Requisitos de licencia","Los requisitos de licencia varían según el estado. Consulte al regulador correspondiente."]
+    ]
+  },
+  quiz:{
+    ht:["Kiyès ki fikse kondisyon lisans imobilye?",["Chak eta selon lwa li","Nenpòt sit entènèt","Nenpòt kliyan"],0],
+    en:["Who establishes real estate licensing requirements?",["The relevant state under its laws","Any website","Any customer"],0],
+    es:["¿Quién establece los requisitos de licencia?",["El estado correspondiente","Cualquier sitio web","Cualquier cliente"],0]
+  }
 }
 ];
 
-const questions=[
-{
-q:T("Èske AI kapab fè erè?","L’IA peut-elle se tromper ?","Can AI make mistakes?"),
-a:[T("Wi","Oui","Yes"),T("Non","Non","No")],correct:0
-},
-{
-q:T("Kisa yon bon prompt bezwen?","Que faut-il pour un bon prompt ?","What does a good prompt need?"),
-a:[T("Mo o aza","Des mots aléatoires","Random words"),T("Enstriksyon klè","Des instructions claires","Clear instructions")],correct:1
-},
-{
-q:T("Èske ou dwe verifye enfòmasyon AI bay?","Faut-il vérifier les informations de l’IA ?","Should AI information be verified?"),
-a:[T("Wi","Oui","Yes"),T("Non","Non","No")],correct:0
-},
-{
-q:T("Èske ou dwe pataje modpas ou?","Faut-il partager son mot de passe ?","Should you share your password?"),
-a:[T("Wi","Oui","Yes"),T("Non","Non","No")],correct:1
-},
-{
-q:T("AI jeneratif kapab kreye kontni?","L’IA générative peut-elle créer du contenu ?","Can generative AI create content?"),
-a:[T("Wi","Oui","Yes"),T("Non","Non","No")],correct:0
-}
-];
+const $=id=>document.getElementById(id);
+let currentLanguage="ht";
+let activeCourse=-1;
 
-let completed=[];
-try{
-completed=JSON.parse(localStorage.getItem("promax-ai-lessons")||"[]");
-if(!Array.isArray(completed))completed=[];
-}catch(e){completed=[]}
+const interfaceText={
+  ht:{open:"OUVRI KOU A →",close:"FÈMEN",check:"VERIFYE REPONS",correct:"BON REPONS! 👏",wrong:"REPONS SA A PA KÒRÈK. ESEYE ANKÒ.",previous:"← KOU ANVAN",next:"KOU SWIVAN →"},
+  en:{open:"OPEN COURSE →",close:"CLOSE",check:"CHECK ANSWER",correct:"CORRECT ANSWER! 👏",wrong:"NOT CORRECT. TRY AGAIN.",previous:"← PREVIOUS COURSE",next:"NEXT COURSE →"},
+  es:{open:"ABRIR CURSO →",close:"CERRAR",check:"COMPROBAR RESPUESTA",correct:"¡RESPUESTA CORRECTA! 👏",wrong:"RESPUESTA INCORRECTA. INTÉNTELO DE NUEVO.",previous:"← CURSO ANTERIOR",next:"SIGUIENTE CURSO →"}
+};
 
-function updateProgress(){
-const percent=Math.round(
-lessons.filter((l,i)=>completed.includes(i)).length/lessons.length*100
-);
-document.getElementById("bar").style.width=percent+"%";
-document.getElementById("percentage").textContent=percent+"%";
-try{
-localStorage.setItem("promax-ai-lessons",JSON.stringify(completed));
-localStorage.setItem("promaxCourseProgress_ai",String(percent));
-}catch(e){}
+function renderCourseCards(){
+  document.querySelectorAll("[data-course]").forEach(function(button){
+    const index=Number(button.dataset.course);
+    const course=courses[index];
+    button.querySelector("h3").textContent=course.title[currentLanguage];
+    button.querySelector(".card-link").textContent=interfaceText[currentLanguage].open;
+  });
 }
 
-function markLesson(i,checked){
-completed=completed.filter(n=>n!==i);
-if(checked)completed.push(i);
-updateProgress();
+function renderActiveCourse(){
+  if(activeCourse<0)return;
+  const course=courses[activeCourse];
+  const lang=currentLanguage;
+  $("lessonTitle").textContent="COURSE "+String(activeCourse+1).padStart(2,"0")+" — "+course.title[lang];
+  $("lessonBody").replaceChildren();
+
+  course.lessons[lang].forEach(function(lesson,index){
+    const heading=document.createElement("h4");
+    heading.textContent="LESSON "+String(index+1).padStart(2,"0")+" — "+lesson[0];
+    const paragraph=document.createElement("p");
+    paragraph.textContent=lesson[1];
+    $("lessonBody").append(heading,paragraph);
+  });
+
+  const quiz=course.quiz[lang];
+  $("quizQuestion").textContent=quiz[0];
+  $("quizOptions").replaceChildren();
+
+  quiz[1].forEach(function(option,index){
+    const label=document.createElement("label");
+    const radio=document.createElement("input");
+    radio.type="radio";
+    radio.name="courseAnswer";
+    radio.value=String(index);
+    label.append(radio,document.createTextNode(option));
+    $("quizOptions").appendChild(label);
+  });
+
+  $("quizResult").textContent="";
+  $("closeLesson").lastChild.textContent=" "+interfaceText[lang].close;
+  $("checkAnswer").textContent=interfaceText[lang].check;
+  $("previousCourse").textContent=interfaceText[lang].previous;
+  $("nextCourse").textContent=interfaceText[lang].next;
+  $("previousCourse").disabled=activeCourse===0;
+  $("nextCourse").disabled=activeCourse===courses.length-1;
 }
 
-function setLang(value){
-lang=value;
-document.documentElement.lang=lang;
-document.querySelectorAll("[data-lang]").forEach(b=>{
-b.classList.toggle("active",b.dataset.lang===lang);
+function openCourse(index){
+  if(index<0||index>=courses.length)return;
+  activeCourse=index;
+  $("lessonPanel").hidden=false;
+  renderActiveCourse();
+  $("lessonPanel").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+document.querySelectorAll("[data-course]").forEach(function(button){
+  button.addEventListener("click",function(){
+    openCourse(Number(button.dataset.course));
+  });
 });
 
-document.getElementById("subtitle").textContent=
-T("6 leson • Egzèsis • Evalyasyon",
-"6 leçons • Exercices • Évaluation",
-"6 lessons • Exercises • Assessment")[lang];
+$("closeLesson").addEventListener("click",function(){
+  $("lessonPanel").hidden=true;
+  activeCourse=-1;
+  $("courses").scrollIntoView({behavior:"smooth"});
+});
 
-document.getElementById("progressTitle").textContent=
-T("PWOGRÈ OU","VOTRE PROGRESSION","YOUR PROGRESS")[lang];
+$("previousCourse").addEventListener("click",function(){
+  openCourse(activeCourse-1);
+});
 
-document.getElementById("lessons").innerHTML=
-lessons.map((l,i)=>`
-<article class="card">
-<h2>MODULE ${String(i+1).padStart(2,"0")}</h2>
-<details>
-<summary>${l.title[lang]}</summary>
-<p>${l.body[lang]}</p>
-<h3>${T("EGZÈSIS","EXERCICE","EXERCISE")[lang]}</h3>
-<p>${l.practice[lang]}</p>
-<label>
-<input type="checkbox"
-${completed.includes(i)?"checked":""}
-onchange="markLesson(${i},this.checked)">
-${T("Leson fini","Leçon terminée","Lesson completed")[lang]}
-</label>
-</details>
-</article>`).join("");
+$("nextCourse").addEventListener("click",function(){
+  openCourse(activeCourse+1);
+});
 
-document.getElementById("quiz").innerHTML=
-questions.map((q,i)=>`
-<div class="card">
-<h3>${i+1}. ${q.q[lang]}</h3>
-${q.a.map((a,j)=>`
-<label>
-<input type="radio" name="q${i}" value="${j}" required>
-${a[lang]}
-</label>`).join("")}
-</div>`).join("")+
-`<button type="submit">
-${T("VERIFYE REPONS YO","CORRIGER","CHECK ANSWERS")[lang]}
-</button>`;
+$("checkAnswer").addEventListener("click",function(){
+  const selected=document.querySelector('input[name="courseAnswer"]:checked');
+  if(!selected){
+    $("quizResult").textContent=currentLanguage==="ht"?"CHWAZI YON REPONS.":currentLanguage==="es"?"SELECCIONE UNA RESPUESTA.":"SELECT AN ANSWER.";
+    return;
+  }
+  const correct=courses[activeCourse].quiz[currentLanguage][2];
+  $("quizResult").textContent=Number(selected.value)===correct?
+    interfaceText[currentLanguage].correct:
+    interfaceText[currentLanguage].wrong;
+});
 
-document.getElementById("result").textContent="";
-updateProgress();
+function setLanguage(lang){
+  if(!["ht","en","es"].includes(lang))lang="ht";
+  currentLanguage=lang;
+  document.documentElement.lang=lang;
+
+  document.querySelectorAll("[data-ht][data-en][data-es]").forEach(function(element){
+    element.textContent=element.getAttribute("data-"+lang);
+  });
+
+  document.querySelectorAll(".lang").forEach(function(button){
+    button.classList.toggle("active",button.dataset.lang===lang);
+  });
+
+  renderCourseCards();
+  renderActiveCourse();
+  try{localStorage.setItem("realEstateLanguage",lang)}catch(error){}
 }
 
-document.getElementById("quiz").addEventListener("submit",e=>{
-e.preventDefault();
-const data=new FormData(e.target);
-let score=0;
-questions.forEach((q,i)=>{
-if(Number(data.get("q"+i))===q.correct)score++;
-});
-const percent=Math.round(score/questions.length*100);
-document.getElementById("result").textContent=
-T("REZILTA","RÉSULTAT","RESULT")[lang]+
-": "+score+"/"+questions.length+" — "+percent+"%";
-try{
-localStorage.setItem("promaxQuizScore_ai",String(percent));
-}catch(e){}
+document.querySelectorAll(".lang").forEach(function(button){
+  button.addEventListener("click",function(){
+    setLanguage(button.dataset.lang);
+  });
 });
 
-setLang("ht");
+const menu=$("menu"),nav=$("nav");
+menu.addEventListener("click",function(){
+  const open=nav.classList.toggle("open");
+  menu.textContent=open?"✕":"☰";
+  menu.setAttribute("aria-expanded",String(open));
+});
+nav.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click",function(){
+    nav.classList.remove("open");
+    menu.textContent="☰";
+    menu.setAttribute("aria-expanded","false");
+  });
+});
+
+$("year").textContent=new Date().getFullYear();
+
+let saved="ht";
+try{saved=localStorage.getItem("realEstateLanguage")||"ht"}catch(error){}
+setLanguage(saved);
+})();
 </script>
 </body>
 </html>
