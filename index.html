@@ -5,224 +5,219 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080400">
-<meta name="google" content="notranslate">
-<meta name="description" content="PRO-MAX ACADÉMIE — Professional Schools, Digital Education and Artificial Intelligence.">
-<title>PRO-MAX ACADÉMIE | Official Learning Platform</title>
+<title>PRO-MAX ACADÉMIE | Courses Center</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 :root{
  --orange:#ff7900;
  --apricot:#ffb66e;
- --light:#ffd0a1;
  --black:#050301;
- --panel:#170b03;
- --border:rgba(255,121,0,.30);
+ --border:#ff790044;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
+html{scroll-behavior:smooth;scroll-padding-top:160px}
 body{
  margin:0;
  font-family:Arial,Helvetica,sans-serif;
+ background:radial-gradient(ellipse at top,#351900,#080400 55%,#000);
  color:var(--apricot);
- background:radial-gradient(ellipse at top,#3d1905,#080400 45%,#000 80%);
- line-height:1.6;
+ line-height:1.65;
 }
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
-.container{width:min(1200px,92%);margin:auto}
+.container{width:min(1200px,94%);margin:auto}
 header{
  position:sticky;top:0;z-index:100;
- background:rgba(5,3,1,.97);
+ background:#050301;
  border-bottom:1px solid var(--border);
 }
 .header-inner{
  display:flex;align-items:center;
  justify-content:space-between;
- gap:18px;min-height:85px;
- flex-wrap:wrap;padding:12px 0;
+ flex-wrap:wrap;gap:15px;padding:15px 0;
 }
-.brand{display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:13px}
 .brand video{
- width:57px;height:57px;border-radius:50%;
- object-fit:cover;border:2px solid var(--orange);
-}
-.brand strong{display:block;color:var(--orange);font-size:19px}
-.brand small{font-size:10px;letter-spacing:1px}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{font-size:12px;font-weight:800}
-nav a:hover{color:var(--orange)}
-.languages{display:flex;gap:5px}
-.languages button{
- background:#100600;border:1px solid var(--border);
- color:var(--apricot);padding:8px 11px;border-radius:7px;
- font-weight:bold;font-size:11px;
-}
-.languages button.active{
- background:var(--orange);color:#090400;
-}
-.hero{text-align:center;padding:65px 0 35px}
-.eyebrow{
- display:inline-block;
- border:1px solid var(--border);
- border-radius:30px;padding:7px 20px;
- color:var(--orange);font-weight:bold;
- font-size:11px;letter-spacing:2px;
-}
-.hero-logo{
- width:190px;height:190px;
- margin:28px auto;position:relative;
- border-radius:50%;
- border:2px solid var(--orange);
- box-shadow:0 0 45px #ff790055;
- padding:8px;
-}
-.hero-logo video{
- width:100%;height:100%;
+ width:65px;height:65px;
  object-fit:cover;border-radius:50%;
+ border:2px solid var(--orange);
 }
-.hero-logo:after{
- content:"";position:absolute;inset:-12px;
- border:1px dashed #ff790088;border-radius:50%;
- animation:orbit 35s linear infinite;
- pointer-events:none;
-}
-@keyframes orbit{to{transform:rotate(360deg)}}
-h1,h2,h3,p{margin-top:0}
-h1{
- font-size:clamp(32px,5.5vw,66px);
- line-height:1.12;color:var(--orange);
- letter-spacing:-1.5px;margin-bottom:20px;
-}
-.hero p{
- max-width:800px;margin:0 auto 25px;
- font-size:17px;
-}
-.actions{
- display:flex;justify-content:center;
- gap:12px;flex-wrap:wrap;
-}
+.brand strong{display:block;color:var(--orange);font-size:20px}
+.brand small{font-size:11px;letter-spacing:1px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{
  display:inline-flex;align-items:center;
- justify-content:center;gap:8px;
- padding:13px 22px;
- border-radius:9px;border:1px solid var(--orange);
- font-weight:900;font-size:12px;
- color:#080400;background:linear-gradient(135deg,var(--apricot),var(--orange));
- transition:transform .2s,box-shadow .2s;
+ justify-content:center;gap:9px;
+ border:1px solid var(--orange);
+ border-radius:30px;padding:12px 20px;
+ background:linear-gradient(135deg,var(--apricot),var(--orange));
+ color:#080400;font-weight:900;font-size:12px;
 }
-.btn:hover{transform:translateY(-3px);box-shadow:0 6px 25px #ff790044}
-.btn-outline{background:#100600;color:var(--orange)}
+.btn-outline{background:#080400;color:var(--orange)}
+.btn:hover{box-shadow:0 0 20px #ff790055}
+.languages{display:flex}
+.languages button{
+ border:1px solid var(--border);
+ background:#080400;color:var(--orange);
+ padding:10px 14px;font-weight:bold;
+}
+.languages button:first-child{border-radius:25px 0 0 25px}
+.languages button:last-child{border-radius:0 25px 25px 0}
+.languages button.active{background:var(--orange);color:#000}
+.hero{text-align:center;padding:65px 0 35px}
+.eyebrow{
+ color:var(--orange);font-size:12px;
+ font-weight:bold;letter-spacing:2px;
+}
+h1,h2,h3{color:var(--orange);line-height:1.3}
+h1{font-size:clamp(32px,5vw,54px)}
+h2{font-size:clamp(25px,4vw,38px)}
+.hero p,.section-head p{max-width:800px;margin:15px auto}
 .stats{
  display:grid;grid-template-columns:repeat(4,1fr);
- gap:14px;margin:35px auto 0;
+ gap:15px;margin-top:30px;
 }
 .stat{
+ padding:20px;background:#100700;
  border:1px solid var(--border);
- background:linear-gradient(145deg,#241003,#090400);
- border-radius:13px;padding:20px;
+ border-radius:15px;
 }
-.stat strong{display:block;font-size:32px;color:var(--orange)}
-.stat span{font-size:11px;font-weight:bold;letter-spacing:1px}
-.section{padding:65px 0}
-.section-head{text-align:center;margin-bottom:32px}
-.section-head h2{
- font-size:clamp(25px,4vw,40px);
- color:var(--orange);line-height:1.2;margin:12px 0;
+.stat strong{display:block;font-size:30px;color:var(--orange)}
+.section{padding:45px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:22px;
 }
-.section-head p{max-width:760px;margin:auto}
-.grid{display:grid;gap:20px}
-.schools-grid{grid-template-columns:repeat(4,1fr)}
-.course-grid{grid-template-columns:repeat(3,1fr)}
-.student-grid{grid-template-columns:repeat(4,1fr)}
 .card{
- display:flex;flex-direction:column;align-items:flex-start;
- background:linear-gradient(145deg,#271105,#0b0502 70%);
+ background:linear-gradient(145deg,#241003,#070301);
  border:1px solid var(--border);
- border-radius:17px;padding:24px;
- transition:transform .25s,border-color .25s;
- min-width:0;
+ border-radius:23px;padding:25px;
+ display:flex;flex-direction:column;
 }
-.card:hover{
- transform:translateY(-5px);
- border-color:var(--orange);
-}
+.card:hover{border-color:var(--orange);box-shadow:0 0 25px #ff790025}
+.card-top{display:flex;justify-content:space-between;align-items:center}
 .card-icon{
  width:65px;height:65px;display:grid;place-items:center;
- background:#ff790017;border:1px solid var(--border);
- border-radius:15px;font-size:30px;margin-bottom:18px;
-}
-.card h3{
- color:var(--orange);font-size:19px;
- line-height:1.3;margin-bottom:12px;
-}
-.card p{font-size:13px;flex:1;margin-bottom:20px}
-.card .btn{width:100%;margin-top:auto;padding:12px}
-.number{
- font-size:11px;letter-spacing:2px;
- font-weight:bold;color:var(--orange);
- margin-bottom:10px;
-}
-.subheading{
- color:var(--orange);font-size:20px;
- margin:40px 0 20px;
- border-left:4px solid var(--orange);
- padding-left:13px;
-}
-.professor{
- display:grid;grid-template-columns:1fr 1.2fr;
- gap:30px;align-items:center;
- padding:28px;border-radius:20px;
- background:linear-gradient(130deg,#2b1004,#080400);
  border:1px solid var(--border);
+ border-radius:16px;background:#050301;
+ color:var(--orange);font-size:30px;
 }
-.professor video{
- width:100%;max-height:420px;
- object-fit:contain;border-radius:14px;background:#000;
-}
-.professor h3{font-size:30px;color:var(--orange)}
-.professor .actions{justify-content:flex-start}
-.ddn{
- padding:45px 20px;text-align:center;
+.card-number{font-size:11px;font-weight:bold;letter-spacing:1px}
+.card h3{font-size:21px}
+.card p{flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 20px}
+.tags span{
+ font-size:10px;font-weight:bold;
  border:1px solid var(--border);
- border-radius:20px;background:radial-gradient(ellipse at center,#3c1905,#080400);
+ border-radius:20px;padding:5px 10px;
 }
-.ddn h2{font-size:36px;color:var(--orange)}
-.contact-panel{text-align:center}
+.progress-label{
+ display:flex;justify-content:space-between;
+ font-size:12px;font-weight:bold;
+}
+.progress-track{
+ height:10px;border-radius:20px;
+ background:#160900;border:1px solid var(--border);
+ overflow:hidden;margin:10px 0 22px;
+}
+.progress-fill{
+ height:100%;background:var(--orange);
+ transition:width .3s;
+}
+.card .btn{width:100%;margin-top:auto}
+.path-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:18px;
+}
+.path-card{
+ text-align:center;padding:30px 20px;
+ border:1px solid var(--border);
+ border-radius:20px;background:#080400;
+ color:var(--apricot);
+}
+.path-card i{font-size:30px;color:var(--orange)}
+.path-card:hover{border-color:var(--orange)}
+.panel{
+ border:1px solid var(--border);
+ background:linear-gradient(135deg,#241003,#080400);
+ border-radius:20px;padding:25px;margin:20px 0;
+}
+dialog{
+ width:min(850px,94%);
+ max-height:90vh;overflow:auto;
+ border:1px solid var(--orange);
+ border-radius:20px;
+ background:#100700;color:var(--apricot);
+ padding:25px;
+}
+dialog::backdrop{background:#000d}
+.dialog-head{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:15px;
+}
+.close{
+ background:#080400;color:var(--orange);
+ border:1px solid var(--orange);
+ border-radius:50%;width:40px;height:40px;
+ flex-shrink:0;font-size:22px;
+}
+.lesson{
+ border:1px solid var(--border);
+ border-radius:12px;margin:12px 0;
+ padding:16px;background:#080400;
+}
+.lesson summary{cursor:pointer;font-weight:bold;color:var(--orange)}
+.lesson p{margin:15px 0}
+.lesson input{accent-color:var(--orange)}
+.question{
+ padding:15px;margin:12px 0;
+ border:1px solid var(--border);border-radius:12px;
+}
+.question label{display:block;padding:5px;cursor:pointer}
+.question input{accent-color:var(--orange)}
+.social-grid{
+ display:flex;justify-content:center;
+ flex-wrap:wrap;gap:12px;
+}
+.social{
+ width:56px;height:56px;
+ display:grid;place-items:center;
+ background:#080400;
+ border:1px solid var(--border);
+ border-radius:15px;font-size:27px;
+}
+.social:hover{transform:translateY(-4px)}
+.facebook{color:#1877f2}
+.whatsapp{color:#25d366}
+.instagram{color:#e4405f}
+.youtube{color:#ff0000}
+.spotify{color:#1db954}
+.telegram{color:#229ed9}
+.twitter{color:#d6d6d6}
+.tiktok{color:#25f4ee;text-shadow:2px 1px #fe2c55}
+.linkedin{color:#0a66c2}
+.truth{color:#5448ee;font-weight:900}
 footer{
- text-align:center;padding:35px 15px;
+ text-align:center;background:#000;
  border-top:1px solid var(--border);
- background:#000;font-size:13px;
+ padding:35px 15px;
 }
-footer strong{font-size:18px;color:var(--orange)}
-#topBtn{
- position:fixed;bottom:18px;right:18px;z-index:99;
- width:43px;height:43px;border-radius:50%;
- background:var(--orange);border:0;
- color:#000;font-weight:bold;font-size:20px;
+footer strong{color:var(--orange)}
+@media(max-width:950px){
+ .grid,.path-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:1000px){
- .schools-grid,.student-grid{grid-template-columns:repeat(2,1fr)}
- .header-inner{justify-content:center}
- nav{justify-content:center}
-}
-@media(max-width:700px){
- .course-grid{grid-template-columns:repeat(2,1fr)}
+@media(max-width:550px){
+ .grid,.path-grid{grid-template-columns:1fr}
  .stats{grid-template-columns:repeat(2,1fr)}
- .professor{grid-template-columns:1fr}
- .hero{padding-top:40px}
- nav{gap:10px}
- nav a{font-size:10px}
- .section{padding:40px 0}
-}
-@media(max-width:450px){
- .schools-grid,.course-grid,.student-grid{grid-template-columns:1fr}
- .card{padding:20px}
+ .header-inner{justify-content:center}
+ .actions{justify-content:center}
  .brand strong{font-size:16px}
- .hero-logo{width:150px;height:150px}
-}
-@media(prefers-reduced-motion:reduce){
- *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+ .hero{padding-top:35px}
+ .card{padding:20px}
 }
 </style>
 </head>
@@ -232,28 +227,26 @@ footer strong{font-size:18px;color:var(--orange)}
 <header>
 <div class="container header-inner">
 
-<a href="#home" class="brand">
+<a class="brand" href="../index.html">
  <video autoplay muted loop playsinline
- src="./pro-max-dmp-II.mp4"></video>
+ src="../pro-max-dmp-II.mp4"></video>
  <div>
   <strong>PRO-MAX ACADÉMIE</strong>
-  <small data-t="tagline"></small>
+  <small data-t="subtitle"></small>
  </div>
 </a>
 
-<nav aria-label="Main navigation">
- <a href="#home" data-t="home"></a>
- <a href="#schools" data-t="schools"></a>
- <a href="#courses" data-t="courses"></a>
- <a href="#professor" data-t="professor"></a>
- <a href="#student" data-t="student"></a>
- <a href="#contact" data-t="contact"></a>
-</nav>
+<div class="actions">
+ <a href="../index.html" class="btn btn-outline">
+  <i class="fa-solid fa-house"></i>
+  <span data-t="home"></span>
+ </a>
 
-<div class="languages">
- <button type="button" data-lang="fr">FRA</button>
- <button type="button" data-lang="en">ENG</button>
- <button type="button" data-lang="ht">KRE</button>
+ <div class="languages">
+  <button data-lang="fr">FRA</button>
+  <button data-lang="en">ENG</button>
+  <button data-lang="ht">KRE</button>
+ </div>
 </div>
 
 </div>
@@ -261,208 +254,93 @@ footer strong{font-size:18px;color:var(--orange)}
 
 <main>
 
-<!-- HERO -->
-
-<section class="hero" id="home">
+<section class="hero">
 <div class="container">
+ <span class="eyebrow">PRO-MAX ACADÉMIE</span>
+ <h1 data-t="title"></h1>
+ <p data-t="intro"></p>
 
-<span class="eyebrow">PRO-MAX ACADÉMIE</span>
-
-<div class="hero-logo">
- <video autoplay muted loop playsinline
- src="./pro-max-dmp-II.mp4"></video>
-</div>
-
-<h1 data-t="heroTitle"></h1>
-<p data-t="heroDesc"></p>
-
-<div class="actions">
- <a href="#schools" class="btn">
-  🎓 <span data-t="exploreSchools"></span>
- </a>
- <a href="./courses/index.html" class="btn btn-outline">
-  📚 <span data-t="exploreCourses"></span>
- </a>
- <a href="./student-portal/index.html" class="btn btn-outline">
-  👤 <span data-t="student"></span>
- </a>
-</div>
-
-<div class="stats">
- <div class="stat">
-  <strong>4</strong>
-  <span data-t="schools"></span>
- </div>
- <div class="stat">
-  <strong>12</strong>
-  <span data-t="courses"></span>
- </div>
- <div class="stat">
-  <strong>3</strong>
-  <span data-t="languages"></span>
- </div>
- <div class="stat">
-  <strong>AI</strong>
-  <span>AI PROFESSOR</span>
- </div>
-</div>
-
-</div>
-</section>
-
-<!-- FOUR PROFESSIONAL SCHOOLS -->
-
-<section class="section" id="schools">
-<div class="container">
-
-<div class="section-head">
- <span class="eyebrow">01 — PROFESSIONAL SCHOOLS</span>
- <h2 data-t="schoolTitle"></h2>
- <p data-t="schoolDesc"></p>
-</div>
-
-<div class="grid schools-grid" id="schoolGrid"></div>
-
-</div>
-</section>
-
-<!-- TWELVE COURSES -->
-
-<section class="section" id="courses">
-<div class="container">
-
-<div class="section-head">
- <span class="eyebrow">02 — COURSES CENTER</span>
- <h2 data-t="courseTitle"></h2>
- <p data-t="courseDesc"></p>
-</div>
-
-<h3 class="subheading" data-t="coreTitle"></h3>
-
-<div class="grid course-grid" id="coreGrid"></div>
-
-<h3 class="subheading" data-t="specialTitle"></h3>
-
-<div class="grid course-grid" id="specialGrid"></div>
-
-<div class="actions" style="margin-top:30px">
- <a href="./courses/index.html" class="btn" data-t="allCourses"></a>
-</div>
-
-</div>
-</section>
-
-<!-- AI PROFESSOR -->
-
-<section class="section" id="professor">
-<div class="container">
-
-<div class="section-head">
- <span class="eyebrow">03 — ARTIFICIAL INTELLIGENCE</span>
- <h2>PRO-MAX AI PROFESSOR</h2>
-</div>
-
-<div class="professor">
-
-<video controls playsinline preload="metadata"
- src="./video-prof-avatar.mp4">
-</video>
-
-<div>
- <h3 data-t="profTitle"></h3>
- <p data-t="profDesc"></p>
-
- <div class="actions">
-  <a href="./ai-professor/index.html"
-     class="btn">
-     🤖 <span data-t="askProfessor"></span>
+ <div class="stats">
+  <a class="stat" href="#core">
+   <strong>6</strong><span data-t="core"></span>
+  </a>
+  <a class="stat" href="#special">
+   <strong>6</strong><span data-t="special"></span>
+  </a>
+  <a class="stat" href="#learning">
+   <strong>5</strong><span>LEARNING PATH</span>
+  </a>
+  <a class="stat" href="#contact">
+   <strong>24/7</strong><span data-t="support"></span>
   </a>
  </div>
 </div>
-
-</div>
-</div>
 </section>
 
-<!-- STUDENT CENTER -->
-
-<section class="section" id="student">
+<section class="section" id="core">
 <div class="container">
-
-<div class="section-head">
- <span class="eyebrow">04 — STUDENT CENTER</span>
- <h2 data-t="studentTitle"></h2>
- <p data-t="studentDesc"></p>
-</div>
-
-<div class="grid student-grid" id="studentGrid"></div>
-
+ <div class="section-head">
+  <span class="eyebrow">SECTION 01 • CORE LEARNING</span>
+  <h2 data-t="coreTitle"></h2>
+  <p data-t="coreDesc"></p>
+ </div>
+ <div class="grid" id="coreGrid"></div>
 </div>
 </section>
 
-<!-- DDN -->
-
-<section class="section" id="ddn">
+<section class="section" id="special">
 <div class="container">
-<div class="ddn">
-
-<span class="eyebrow">05 — DIGITAL INNOVATION</span>
-
-<h2>DEVAN DEVAN NÈT™</h2>
-
-<p data-t="ddnDesc"></p>
-
-<a href="./ddn/index.html" class="btn">
- 🌐 DDN
-</a>
-
-</div>
+ <div class="section-head">
+  <span class="eyebrow">SECTION 02 • SPECIALIZED LEARNING</span>
+  <h2 data-t="specialTitle"></h2>
+ </div>
+ <div class="grid" id="specialGrid"></div>
 </div>
 </section>
 
-<!-- CONTACT -->
+<section class="section" id="learning">
+<div class="container">
+ <div class="section-head">
+  <h2>LEARNING PATH</h2>
+  <p data-t="pathDesc"></p>
+ </div>
+
+ <div class="path-grid" id="pathGrid"></div>
+
+ <div class="panel">
+  <h3 data-t="certRule"></h3>
+  <p data-t="certText"></p>
+ </div>
+</div>
+</section>
 
 <section class="section" id="contact">
 <div class="container">
-
-<div class="section-head">
- <span class="eyebrow">06 — CONTACT CENTER</span>
- <h2 data-t="contactTitle"></h2>
- <p data-t="contactDesc"></p>
-</div>
-
-<div class="card contact-panel"
- style="align-items:center">
-
- <h3>PRO-MAX ACADÉMIE</h3>
-
- <p>
-  <a href="mailto:bss1815promaxdmp@gmail.com"
-     style="overflow-wrap:anywhere">
-   bss1815promaxdmp@gmail.com
-  </a>
- </p>
-
- <div class="actions">
-  <a class="btn" href="tel:+14076405166">
-   ☎ +1 (407) 640-5166
-  </a>
-  <a class="btn btn-outline" href="tel:+13175381150">
-   ☎ +1 (317) 538-1150
-  </a>
-  <a class="btn btn-outline" href="tel:+15162168494">
-   ☎ +1 (516) 216-8494
-  </a>
-  <a class="btn btn-outline" href="tel:+50942544447">
-   ☎ +509 4254-4447
-  </a>
-  <a class="btn btn-outline" href="tel:+50943437488">
-   ☎ +509 4343-7488
+ <div class="section-head">
+  <h2 data-t="contact"></h2>
+ </div>
+ <div class="panel" style="text-align:center">
+  <h3>PRO-MAX ACADÉMIE</h3>
+  <p style="overflow-wrap:anywhere">
+   <a href="mailto:bss1815promaxdmp@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+    bss1815promaxdmp@gmail.com
+   </a>
+  </p>
+  <a href="tel:+14076405166" class="btn">
+   <i class="fa-solid fa-phone"></i>
+   +1 (407) 640-5166
   </a>
  </div>
-
 </div>
+</section>
 
+<section class="section">
+<div class="container">
+ <div class="section-head">
+  <h2 data-t="follow"></h2>
+ </div>
+ <div class="social-grid" id="socialGrid"></div>
 </div>
 </section>
 
@@ -470,416 +348,831 @@ footer strong{font-size:18px;color:var(--orange)}
 
 <footer>
  <strong>PRO-MAX ACADÉMIE</strong>
- <p data-t="tagline"></p>
- <p>DEVAN DEVAN NÈT™</p>
- <p>
- © <span id="year"></span> PRO-MAX ACADÉMIE.
- <span data-t="rights"></span>
- </p>
+ <p>Courses &amp; Learning Center</p>
+ <p>© <span id="year"></span> PRO-MAX ACADÉMIE</p>
+ <strong>DEVAN DEVAN NÈT • BATI POU JODI A • PARE POU DEMEN</strong>
 </footer>
 
-<button id="topBtn" type="button"
- aria-label="Back to top">↑</button>
+<dialog id="courseDialog">
+ <div class="dialog-head">
+  <h2 id="dialogTitle"></h2>
+  <button class="close" id="closeDialog"
+  aria-label="Close">×</button>
+ </div>
+ <div id="dialogContent"></div>
+</dialog>
 
 <script>
 "use strict";
 
-/* =========================
-   LANGUAGE TRANSLATIONS
-========================= */
-
 const T={
 ht:{
- tagline:"Fòme Jodi a Pou Dirije Demen",
- home:"AKÈY",
- schools:"LEKÒL YO",
- courses:"KOU YO",
- professor:"PWOFESÈ",
- student:"ESPAS ELÈV",
- contact:"KONTAK",
- languages:"LANG",
- heroTitle:"FÒME JODI A POU DIRIJE DEMEN",
- heroDesc:"Yon platfòm fòmasyon pwofesyonèl ki mete edikasyon, teknoloji, inovasyon ak entèlijans atifisyèl nan sèvis avni ou.",
- exploreSchools:"DEKOUVRI LEKÒL YO",
- exploreCourses:"DEKOUVRI KOU YO",
- schoolTitle:"4 LEKÒL PWOFESYONÈL",
- schoolDesc:"Chwazi domèn ou epi devlope konpetans ou pou prepare avni pwofesyonèl ou.",
- courseTitle:"12 PWOGRAM FÒMASYON",
- courseDesc:"Aprann, pratike, devlope konpetans epi avanse.",
+ subtitle:"SANT KOU AK APRANTISAJ",
+ home:"RETOUNEN NAN AKADEMI",
+ title:"SANT FÒMASYON",
+ intro:"Aprann, pratike, pase evalyasyon epi devlope konpetans pwofesyonèl ou.",
+ core:"KOU PRENSIPAL",
+ special:"FÒMASYON ESPESYALIZE",
+ support:"SIPÒ",
  coreTitle:"6 KOU PRENSIPAL",
+ coreDesc:"Sis kou dijital pou devlope konesans, teknoloji ak kapasite pwofesyonèl.",
  specialTitle:"6 FÒMASYON ESPESYALIZE",
- allCourses:"TOUT KOU YO",
- enterSchool:"ANTRE NAN LEKÒL LA →",
- startCourse:"KÒMANSE KOU A →",
- profTitle:"PWOFESÈ AI OU",
- profDesc:"Jwenn sipò pou konprann leson, prepare egzamen ak devlope konpetans ou.",
- askProfessor:"POZE PWOFESÈ A KESYON",
- studentTitle:"SANT ELÈV",
- studentDesc:"Jere pwofil ou, fòmasyon ou, evalyasyon ak sètifika ou.",
- openModule:"OUVRI MODIL LA →",
- ddnDesc:"Aprann teknoloji, kreye, inove epi prepare pou demen.",
- contactTitle:"KONTAK AK SIPÒ",
- contactDesc:"Kontakte administrasyon Académie a pou enfòmasyon ak asistans.",
- rights:"Tout dwa rezève."
+ progress:"PWOGRÈ",
+ start:"KÒMANSE KOU A",
+ complete:"Mwen fini leson sa a",
+ quiz:"EVALYASYON",
+ submit:"VERIFYE REPONS YO",
+ score:"Rezilta",
+ exercise:"Egzèsis pratik",
+ pathDesc:"Chak elèv suiv yon pwosesis depi enskripsyon rive nan sètifikasyon.",
+ certRule:"RÈG SÈTIFIKASYON",
+ certText:"Fini leson yo, pase evalyasyon obligatwa yo epi satisfè kondisyon administrasyon an. Pwogrè lokal pa reprezante yon sètifika ofisyèl.",
+ contact:"KONTAK AK SIPÒ",
+ follow:"SWIV NOU",
+ lessons:"LESON",
+ choose:"Chwazi yon kou pou kòmanse.",
+ profile:"ENSKRIPSYON",
+ training:"FÒMASYON",
+ practice:"PRATIK",
+ assessment:"EVALYASYON",
+ certificate:"SÈTIFIKASYON",
+ name:"Non konplè",
+ email:"Imèl",
+ save:"ANREJISTRE",
+ saved:"Enfòmasyon anrejistre sou aparèy sa a.",
+ certificateInfo:"Kontakte administrasyon an pou verifikasyon ak emisyon sètifika ofisyèl.",
+ missingSocial:"Pwofil ofisyèl la poko konfigire."
 },
 fr:{
- tagline:"Former Aujourd’hui Pour Diriger Demain",
- home:"ACCUEIL",
- schools:"ÉCOLES",
- courses:"COURS",
- professor:"PROFESSEUR",
- student:"ESPACE ÉTUDIANT",
- contact:"CONTACT",
- languages:"LANGUES",
- heroTitle:"FORMER AUJOURD’HUI POUR DIRIGER DEMAIN",
- heroDesc:"Une plateforme de formation professionnelle qui met l’éducation, la technologie, l’innovation et l’intelligence artificielle au service de votre avenir.",
- exploreSchools:"DÉCOUVRIR LES ÉCOLES",
- exploreCourses:"DÉCOUVRIR LES COURS",
- schoolTitle:"4 ÉCOLES PROFESSIONNELLES",
- schoolDesc:"Choisissez votre domaine et développez vos compétences professionnelles.",
- courseTitle:"12 PROGRAMMES DE FORMATION",
- courseDesc:"Apprenez, pratiquez, développez vos compétences et avancez.",
+ subtitle:"CENTRE DE FORMATION",
+ home:"RETOUR À L’ACADÉMIE",
+ title:"CENTRE DE FORMATION",
+ intro:"Apprenez, pratiquez, passez vos évaluations et développez vos compétences.",
+ core:"COURS PRINCIPAUX",
+ special:"FORMATIONS SPÉCIALISÉES",
+ support:"ASSISTANCE",
  coreTitle:"6 COURS PRINCIPAUX",
+ coreDesc:"Six cours numériques pour développer vos connaissances et compétences professionnelles.",
  specialTitle:"6 FORMATIONS SPÉCIALISÉES",
- allCourses:"TOUS LES COURS",
- enterSchool:"ENTRER DANS L’ÉCOLE →",
- startCourse:"COMMENCER LE COURS →",
- profTitle:"VOTRE PROFESSEUR IA",
- profDesc:"Obtenez de l’aide pour comprendre vos leçons, préparer vos examens et développer vos compétences.",
- askProfessor:"INTERROGER LE PROFESSEUR",
- studentTitle:"CENTRE ÉTUDIANT",
- studentDesc:"Gérez votre profil, vos formations, vos évaluations et vos certificats.",
- openModule:"OUVRIR LE MODULE →",
- ddnDesc:"Apprenez la technologie, créez, innovez et préparez demain.",
- contactTitle:"CONTACT ET ASSISTANCE",
- contactDesc:"Contactez l’administration pour toute information ou assistance.",
- rights:"Tous droits réservés."
+ progress:"PROGRESSION",
+ start:"COMMENCER LE COURS",
+ complete:"J’ai terminé cette leçon",
+ quiz:"ÉVALUATION",
+ submit:"VÉRIFIER LES RÉPONSES",
+ score:"Résultat",
+ exercise:"Exercice pratique",
+ pathDesc:"Chaque étudiant suit un parcours de l’inscription à la certification.",
+ certRule:"RÈGLES DE CERTIFICATION",
+ certText:"Terminez les leçons, réussissez les évaluations et respectez les conditions administratives. La progression locale ne constitue pas un certificat officiel.",
+ contact:"CONTACT ET ASSISTANCE",
+ follow:"SUIVEZ-NOUS",
+ lessons:"LEÇONS",
+ choose:"Choisissez un cours pour commencer.",
+ profile:"INSCRIPTION",
+ training:"FORMATION",
+ practice:"PRATIQUE",
+ assessment:"ÉVALUATION",
+ certificate:"CERTIFICATION",
+ name:"Nom complet",
+ email:"Courriel",
+ save:"ENREGISTRER",
+ saved:"Informations enregistrées sur cet appareil.",
+ certificateInfo:"Contactez l’administration pour la validation et la délivrance du certificat officiel.",
+ missingSocial:"Le profil officiel n’est pas encore configuré."
 },
 en:{
- tagline:"Train Today To Lead Tomorrow",
- home:"HOME",
- schools:"SCHOOLS",
- courses:"COURSES",
- professor:"PROFESSOR",
- student:"STUDENT AREA",
- contact:"CONTACT",
- languages:"LANGUAGES",
- heroTitle:"TRAIN TODAY TO LEAD TOMORROW",
- heroDesc:"A professional learning platform bringing education, technology, innovation and artificial intelligence together for your future.",
- exploreSchools:"EXPLORE SCHOOLS",
- exploreCourses:"EXPLORE COURSES",
- schoolTitle:"4 PROFESSIONAL SCHOOLS",
- schoolDesc:"Choose your field and develop your professional skills.",
- courseTitle:"12 TRAINING PROGRAMS",
- courseDesc:"Learn, practice, develop your skills and move forward.",
+ subtitle:"COURSES & LEARNING CENTER",
+ home:"BACK TO ACADEMY",
+ title:"COURSES CENTER",
+ intro:"Learn, practice, complete assessments and develop your professional skills.",
+ core:"CORE COURSES",
+ special:"SPECIALIZED PROGRAMS",
+ support:"SUPPORT",
  coreTitle:"6 CORE COURSES",
+ coreDesc:"Six digital courses to develop knowledge, technology and professional skills.",
  specialTitle:"6 SPECIALIZED PROGRAMS",
- allCourses:"ALL COURSES",
- enterSchool:"ENTER SCHOOL →",
- startCourse:"START COURSE →",
- profTitle:"YOUR AI PROFESSOR",
- profDesc:"Get support understanding lessons, preparing for exams and developing your skills.",
- askProfessor:"ASK THE PROFESSOR",
- studentTitle:"STUDENT CENTER",
- studentDesc:"Manage your profile, courses, assessments and certificates.",
- openModule:"OPEN MODULE →",
- ddnDesc:"Learn technology, create, innovate and prepare for tomorrow.",
- contactTitle:"CONTACT AND SUPPORT",
- contactDesc:"Contact the Academy administration for information and assistance.",
- rights:"All rights reserved."
+ progress:"PROGRESS",
+ start:"START COURSE",
+ complete:"I completed this lesson",
+ quiz:"ASSESSMENT",
+ submit:"CHECK ANSWERS",
+ score:"Result",
+ exercise:"Practical exercise",
+ pathDesc:"Every student follows a learning path from registration to certification.",
+ certRule:"CERTIFICATION RULES",
+ certText:"Complete lessons, pass required assessments and meet administrative requirements. Local progress does not constitute an official certificate.",
+ contact:"CONTACT AND SUPPORT",
+ follow:"FOLLOW US",
+ lessons:"LESSONS",
+ choose:"Choose a course to begin.",
+ profile:"REGISTRATION",
+ training:"TRAINING",
+ practice:"PRACTICE",
+ assessment:"ASSESSMENT",
+ certificate:"CERTIFICATION",
+ name:"Full name",
+ email:"Email",
+ save:"SAVE",
+ saved:"Information saved on this device.",
+ certificateInfo:"Contact the administration for verification and issuance of an official certificate.",
+ missingSocial:"The official profile has not been configured."
 }
 };
 
-/* =========================
-   FOUR SCHOOLS
-========================= */
+const L=(ht,fr,en)=>({ht,fr,en});
 
-const schools=[
+const courses=[
+
 {
- icon:"🏘️",
- title:"REAL ESTATE SCHOOL",
- path:"./real-estate/index.html",
- ht:"Imobilye, finansman, evalyasyon, etik ak preparasyon egzamen.",
- fr:"Immobilier, financement, évaluation, éthique et préparation aux examens.",
- en:"Real estate, financing, valuation, ethics and exam preparation."
+ id:"ai",icon:"brain",title:"INTRODUCTION TO AI",
+ tags:["BEGINNER","AI","DIGITAL"],
+ desc:L(
+ "Konprann entèlijans atifisyèl ak aplikasyon pratik li.",
+ "Comprendre l’intelligence artificielle et ses applications.",
+ "Understand artificial intelligence and its practical applications."
+ ),
+ lessons:[
+ L(
+ "AI se teknoloji ki itilize modèl enfòmatik pou analize done, rekonèt modèl epi pwodwi rezilta. Li pa toujou bay enfòmasyon ki kòrèk.",
+ "L’IA utilise des modèles informatiques pour analyser des données, reconnaître des motifs et produire des résultats. Elle peut se tromper.",
+ "AI uses computational models to analyze data, recognize patterns and generate outputs. Its answers can be incorrect."
+ ),
+ L(
+ "Yon prompt efikas dwe bay objektif, kontèks, enstriksyon ak fòma rezilta ou bezwen an.",
+ "Un prompt efficace précise l’objectif, le contexte, les instructions et le format attendu.",
+ "An effective prompt specifies the goal, context, instructions and desired output format."
+ ),
+ L(
+ "Verifye enfòmasyon AI bay yo ak sous serye. Pa antre modpas oswa done konfidansyèl san otorizasyon.",
+ "Vérifiez les réponses avec des sources fiables. Ne saisissez pas de données confidentielles sans autorisation.",
+ "Verify AI outputs against reliable sources. Do not enter confidential information without authorization."
+ )
+ ],
+ task:L(
+ "Ekri yon prompt pou kreye yon plan etid 7 jou. Verifye rezilta a.",
+ "Rédigez un prompt pour un programme d’étude de sept jours et vérifiez le résultat.",
+ "Write a prompt for a seven-day study plan and verify its output."
+ )
 },
+
 {
- icon:"🛡️",
- title:"INSURANCE SCHOOL",
- path:"./insurance-school/index.html",
- ht:"Asirans lavi, sante, oto, pwopriyete ak responsabilite.",
- fr:"Assurance vie, santé, automobile, biens et responsabilité.",
- en:"Life, health, auto, property and casualty insurance."
+ id:"digital",icon:"wand-magic-sparkles",title:"DIGITAL CREATION",
+ tags:["CREATIVE","MEDIA","DESIGN"],
+ desc:L(
+ "Kreye imaj, videyo, tèks ak kontni dijital.",
+ "Créez des images, vidéos, textes et contenus numériques.",
+ "Create images, videos, text and digital content."
+ ),
+ lessons:[
+ L(
+ "Idantifye piblik ou, mesaj ou ak objektif kontni an anvan ou kòmanse kreye.",
+ "Identifiez votre public, votre message et votre objectif avant la création.",
+ "Identify your audience, message and objective before creating content."
+ ),
+ L(
+ "Sèvi ak yerachi vizyèl, bon kontras, espas ak tipografi pou rann yon design fasil pou li.",
+ "Utilisez la hiérarchie visuelle, le contraste, l’espace et la typographie pour améliorer la lisibilité.",
+ "Use visual hierarchy, contrast, spacing and typography to improve readability."
+ ),
+ L(
+ "Chwazi fòma ekspòtasyon selon itilizasyon an: PNG pou grafik, JPEG pou foto, MP4 pou videyo.",
+ "Choisissez le format selon l’usage : PNG pour les graphiques, JPEG pour les photos et MP4 pour les vidéos.",
+ "Choose export formats according to use: PNG for graphics, JPEG for photos and MP4 for video."
+ )
+ ],
+ task:L(
+ "Kreye yon afich pwofesyonèl pou yon aktivite edikatif.",
+ "Créez une affiche professionnelle pour une activité éducative.",
+ "Create a professional flyer for an educational event."
+ )
 },
+
 {
- icon:"🎙️",
- title:"JOURNALISM SCHOOL",
- path:"./journalism-school/index.html",
- ht:"Jounalis, repòtaj, entèvyou, verifikasyon enfòmasyon ak medya.",
- fr:"Journalisme, reportage, entretien, vérification et médias.",
- en:"Journalism, reporting, interviews, fact-checking and media."
+ id:"leadership",icon:"chart-line",title:"DIGITAL LEADERSHIP",
+ tags:["MANAGEMENT","TEAM","LEADERSHIP"],
+ desc:L(
+ "Devlope vizyon, disiplin ak jesyon ekip.",
+ "Développez la vision, la discipline et la gestion d’équipe.",
+ "Develop vision, discipline and team management."
+ ),
+ lessons:[
+ L(
+ "Yon lidè defini objektif klè, responsablite ak rezilta ekip la dwe atenn.",
+ "Un leader définit des objectifs clairs, les responsabilités et les résultats attendus.",
+ "A leader defines clear goals, responsibilities and expected outcomes."
+ ),
+ L(
+ "Delegasyon mande pou bay moun travay selon kapasite yo, ak resous ak delè ki apwopriye.",
+ "La délégation attribue les tâches selon les compétences, avec des ressources et des délais adaptés.",
+ "Delegation assigns tasks according to skills, with appropriate resources and deadlines."
+ ),
+ L(
+ "Mezire rezilta, koute ekip la epi ajiste plan an selon enfòmasyon ki disponib.",
+ "Mesurez les résultats, écoutez l’équipe et adaptez le plan aux informations disponibles.",
+ "Measure outcomes, listen to the team and adjust plans using available evidence."
+ )
+ ],
+ task:L(
+ "Prepare yon plan pwojè ak twa objektif, responsab ak delè.",
+ "Préparez un plan de projet avec trois objectifs, responsables et échéances.",
+ "Prepare a project plan with three goals, owners and deadlines."
+ )
 },
+
 {
- icon:"🎹",
- title:"BEAT MAKER AI SCHOOL",
- path:"./beat-maker-school/index.html",
- ht:"Pwodiksyon mizikal, ritm, mixing, mastering ak AI.",
- fr:"Production musicale, rythme, mixage, mastering et IA.",
- en:"Music production, rhythm, mixing, mastering and AI."
+ id:"automation",icon:"gears",title:"AUTOMATION",
+ tags:["WORKFLOW","PRODUCTIVITY","AI"],
+ desc:L(
+ "Aprann otomatize travay repetitif.",
+ "Apprenez à automatiser les tâches répétitives.",
+ "Learn to automate repetitive tasks."
+ ),
+ lessons:[
+ L(
+ "Yon workflow se yon seri etap ki transfòme yon antre an yon rezilta.",
+ "Un workflow est une série d’étapes transformant une entrée en résultat.",
+ "A workflow is a series of steps that transforms an input into an output."
+ ),
+ L(
+ "Yon otomatik kapab kòmanse ak yon evènman, verifye yon kondisyon epi egzekite yon aksyon.",
+ "Une automatisation peut partir d’un événement, vérifier une condition et exécuter une action.",
+ "An automation can start with an event, check a condition and execute an action."
+ ),
+ L(
+ "Teste otomatik la sou done tès. Mete kontwòl pou erè ak aksyon ki bezwen apwobasyon.",
+ "Testez l’automatisation sur des données de test. Prévoyez les erreurs et les actions nécessitant une validation.",
+ "Test automation using sample data. Include error handling and approval steps."
+ )
+ ],
+ task:L(
+ "Desine yon workflow pou rapèl yon reyinyon.",
+ "Concevez un workflow de rappel de réunion.",
+ "Design a meeting reminder workflow."
+ )
+},
+
+{
+ id:"communication",icon:"comments",title:"COMMUNICATION",
+ tags:["PROFESSIONAL","MEDIA","SPEAKING"],
+ desc:L(
+ "Devlope kominikasyon pwofesyonèl.",
+ "Développez votre communication professionnelle.",
+ "Develop professional communication skills."
+ ),
+ lessons:[
+ L(
+ "Yon mesaj efikas gen yon objektif, yon piblik ak yon aksyon moun k ap resevwa li dwe konprann.",
+ "Un message efficace possède un objectif, un public et une action clairement compréhensible.",
+ "An effective message has a purpose, an audience and a clearly understandable action."
+ ),
+ L(
+ "Koute aktivman, poze kesyon ouvè epi verifye si ou byen konprann repons lan.",
+ "Écoutez activement, posez des questions ouvertes et vérifiez votre compréhension.",
+ "Listen actively, ask open questions and verify your understanding."
+ ),
+ L(
+ "Estriktire yon prezantasyon ak entwodiksyon, pwen prensipal, prèv ak konklizyon.",
+ "Structurez une présentation avec une introduction, des arguments, des preuves et une conclusion.",
+ "Structure a presentation with an introduction, main points, evidence and conclusion."
+ )
+ ],
+ task:L(
+ "Prepare yon prezantasyon pwofesyonèl de minit.",
+ "Préparez une présentation professionnelle de deux minutes.",
+ "Prepare a two-minute professional presentation."
+ )
+},
+
+{
+ id:"innovation",icon:"lightbulb",title:"INNOVATION",
+ tags:["IDEAS","TECHNOLOGY","PROJECT"],
+ desc:L(
+ "Transfòme lide an solisyon ak pwojè.",
+ "Transformez les idées en solutions et projets.",
+ "Transform ideas into solutions and projects."
+ ),
+ lessons:[
+ L(
+ "Inovasyon kòmanse ak idantifikasyon yon pwoblèm reyèl ak bezwen moun ki afekte yo.",
+ "L’innovation commence par l’identification d’un problème réel et des besoins des utilisateurs.",
+ "Innovation starts by identifying a real problem and user needs."
+ ),
+ L(
+ "Kreye yon pwototip senp pou teste lide a anvan gwo envestisman.",
+ "Créez un prototype simple pour tester l’idée avant un investissement important.",
+ "Build a simple prototype to test an idea before making a major investment."
+ ),
+ L(
+ "Kolekte fidbak, mezire rezilta epi amelyore solisyon an selon prèv yo.",
+ "Recueillez les retours, mesurez les résultats et améliorez la solution selon les preuves.",
+ "Collect feedback, measure results and improve the solution based on evidence."
+ )
+ ],
+ task:L(
+ "Idantifye yon pwoblèm lokal epi prepare yon pwototip solisyon.",
+ "Identifiez un problème local et préparez un prototype de solution.",
+ "Identify a local problem and prepare a solution prototype."
+ )
+},
+
+{
+ id:"skills",icon:"laptop",title:"DIGITAL SKILLS",
+ tags:["DIGITAL","COMPUTER"],
+ desc:L("Konpetans enfòmatik ak sekirite.","Compétences informatiques et sécurité.","Computer skills and security."),
+ lessons:[
+ L("Òganize fichye yo nan dosye ki gen non klè.","Organisez les fichiers dans des dossiers clairement nommés.","Organize files in clearly named folders."),
+ L("Sèvi ak modpas inik ak verifikasyon de etap.","Utilisez des mots de passe uniques et la double authentification.","Use unique passwords and two-factor authentication."),
+ L("Fè kopi sovgad dokiman enpòtan yo regilyèman.","Sauvegardez régulièrement les documents importants.","Back up important documents regularly.")
+ ],
+ task:L("Òganize yon dosye travay ak yon kopi sovgad.","Organisez un dossier de travail et sa sauvegarde.","Organize a work folder and its backup.")
+},
+
+{
+ id:"advanced-ai",icon:"robot",title:"ARTIFICIAL INTELLIGENCE",
+ tags:["AI","PRODUCTIVITY"],
+ desc:L("Itilizasyon avanse zouti AI.","Utilisation avancée des outils IA.","Advanced use of AI tools."),
+ lessons:[
+ L("Divize yon gwo travay an etap presi.","Divisez une tâche complexe en étapes précises.","Break complex tasks into specific steps."),
+ L("Bay AI egzanp ak kritè pou evalye rezilta.","Donnez des exemples et des critères d’évaluation à l’IA.","Provide AI with examples and evaluation criteria."),
+ L("Kenbe verifikasyon imen pou desizyon enpòtan.","Maintenez une validation humaine pour les décisions importantes.","Keep human review for important decisions.")
+ ],
+ task:L("Konstwi yon workflow AI ak verifikasyon imen.","Construisez un workflow IA avec validation humaine.","Build an AI workflow with human review.")
+},
+
+{
+ id:"administration",icon:"clipboard-list",title:"LEADERSHIP & ADMINISTRATION",
+ tags:["ADMINISTRATION","MANAGEMENT"],
+ desc:L("Administrasyon ak jesyon pwojè.","Administration et gestion de projets.","Administration and project management."),
+ lessons:[
+ L("Defini wòl ak responsablite chak manm.","Définissez les rôles et responsabilités de chaque membre.","Define each member’s roles and responsibilities."),
+ L("Prepare bidjè, kalandriye ak priyorite.","Préparez le budget, le calendrier et les priorités.","Prepare budgets, schedules and priorities."),
+ L("Dokimante desizyon ak rezilta reyinyon yo.","Documentez les décisions et résultats des réunions.","Document meeting decisions and outcomes.")
+ ],
+ task:L("Prepare yon rapò administrasyon chak semèn.","Préparez un rapport administratif hebdomadaire.","Prepare a weekly administrative report.")
+},
+
+{
+ id:"radio",icon:"radio",title:"RADIO & DIGITAL MEDIA",
+ tags:["RADIO","PODCAST","MEDIA"],
+ desc:L("Pwodiksyon ak difizyon medya dijital.","Production et diffusion de médias numériques.","Digital media production and broadcasting."),
+ lessons:[
+ L("Prepare yon pwogram ak objektif, dire ak segman.","Préparez une émission avec objectif, durée et segments.","Prepare a show with purpose, duration and segments."),
+ L("Kontwole nivo son epi evite distòsyon.","Contrôlez les niveaux audio et évitez la distorsion.","Control audio levels and avoid distortion."),
+ L("Respekte dwa otè ak verifye enfòmasyon anvan difizyon.","Respectez les droits d’auteur et vérifiez les informations avant diffusion.","Respect copyright and verify information before broadcasting.")
+ ],
+ task:L("Prepare yon plan emisyon 15 minit.","Préparez un conducteur d’émission de quinze minutes.","Prepare a fifteen-minute show rundown.")
+},
+
+{
+ id:"business",icon:"briefcase",title:"BUSINESS & ENTREPRENEURSHIP",
+ tags:["BUSINESS","ENTREPRENEUR"],
+ desc:L("Kreye ak devlope yon biznis.","Créer et développer une entreprise.","Create and develop a business."),
+ lessons:[
+ L("Idantifye kliyan ou ak bezwen sèvis la rezoud.","Identifiez vos clients et le besoin satisfait par votre service.","Identify customers and the need your service addresses."),
+ L("Kalkile depans, revni ak maj pwofi.","Calculez les dépenses, revenus et marges.","Calculate costs, revenue and profit margins."),
+ L("Verifye kondisyon legal ak fiskal ki aplikab.","Vérifiez les obligations juridiques et fiscales applicables.","Check applicable legal and tax requirements.")
+ ],
+ task:L("Prepare yon plan biznis yon paj.","Préparez un plan d’affaires d’une page.","Prepare a one-page business plan.")
+},
+
+{
+ id:"community",icon:"handshake",title:"COMMUNITY & SERVICES",
+ tags:["COMMUNITY","SERVICES"],
+ desc:L("Òganizasyon ak sèvis kominotè.","Organisation et services communautaires.","Community organization and services."),
+ lessons:[
+ L("Konsilte kominote a pou idantifye bezwen li.","Consultez la communauté pour identifier ses besoins.","Consult the community to identify its needs."),
+ L("Òganize volontè, resous ak responsablite.","Organisez les bénévoles, les ressources et les responsabilités.","Organize volunteers, resources and responsibilities."),
+ L("Mezire enpak sèvis yo epi prezante rezilta transparan.","Mesurez l’impact des services et présentez des résultats transparents.","Measure service impact and report results transparently.")
+ ],
+ task:L("Prepare yon plan aktivite kominotè.","Préparez un plan d’activité communautaire.","Prepare a community activity plan.")
 }
+
 ];
 
-/* =========================
-   SIX CORE COURSES
-========================= */
+let lang="ht";
+let activeCourse=null;
 
-const core=[
-{
- icon:"🤖",
- title:"INTRODUCTION TO AI",
- path:"./courses/introduction-ai/index.html",
- ht:"Konprann AI, zouti li yo, limit li yo ak aplikasyon pratik.",
- fr:"Comprendre l’IA, ses outils, ses limites et ses applications.",
- en:"Understand AI, its tools, limitations and practical applications."
-},
-{
- icon:"🎨",
- title:"DIGITAL CREATION",
- path:"./courses/digital-creation/index.html",
- ht:"Kreye imaj, videyo, prezantasyon ak kontni dijital.",
- fr:"Créer des images, vidéos, présentations et contenus numériques.",
- en:"Create images, videos, presentations and digital content."
-},
-{
- icon:"👑",
- title:"DIGITAL LEADERSHIP",
- path:"./courses/digital-leadership/index.html",
- ht:"Devlope vizyon, lidèchip, disiplin ak jesyon ekip.",
- fr:"Développer la vision, le leadership, la discipline et la gestion d’équipe.",
- en:"Develop vision, leadership, discipline and team management."
-},
-{
- icon:"⚙️",
- title:"AUTOMATION",
- path:"./courses/automation/index.html",
- ht:"Aprann òganize ak otomatize travay repetitif.",
- fr:"Apprendre à organiser et automatiser les tâches répétitives.",
- en:"Learn to organize and automate repetitive tasks."
-},
-{
- icon:"💬",
- title:"COMMUNICATION",
- path:"./courses/communication/index.html",
- ht:"Devlope kominikasyon ak prezantasyon pwofesyonèl.",
- fr:"Développer la communication et la présentation professionnelle.",
- en:"Develop professional communication and presentation skills."
-},
-{
- icon:"💡",
- title:"INNOVATION",
- path:"./courses/innovation/index.html",
- ht:"Transfòme lide an pwojè ak solisyon teknolojik.",
- fr:"Transformer les idées en projets et solutions technologiques.",
- en:"Transform ideas into projects and technological solutions."
+function read(key,fallback){
+ try{
+  const value=localStorage.getItem(key);
+  return value?JSON.parse(value):fallback;
+ }catch(e){return fallback}
 }
-];
 
-/* =========================
-   SIX SPECIALIZED PROGRAMS
-========================= */
-
-const specialized=[
-{
- icon:"💻",
- title:"DIGITAL SKILLS",
- path:"./courses.html#digital-skills",
- ht:"Konpetans enfòmatik ak zouti dijital.",
- fr:"Compétences informatiques et outils numériques.",
- en:"Computer skills and digital tools."
-},
-{
- icon:"🧠",
- title:"ARTIFICIAL INTELLIGENCE",
- path:"./courses.html#artificial-intelligence",
- ht:"Itilizasyon avanse zouti entèlijans atifisyèl.",
- fr:"Utilisation avancée des outils d’intelligence artificielle.",
- en:"Advanced use of artificial intelligence tools."
-},
-{
- icon:"📊",
- title:"LEADERSHIP & ADMINISTRATION",
- path:"./courses.html#leadership",
- ht:"Administrasyon, planifikasyon ak jesyon pwojè.",
- fr:"Administration, planification et gestion de projets.",
- en:"Administration, planning and project management."
-},
-{
- icon:"📻",
- title:"RADIO & DIGITAL MEDIA",
- path:"./courses.html#radio-media",
- ht:"Radyo, podcast, difizyon ak medya dijital.",
- fr:"Radio, podcast, diffusion et médias numériques.",
- en:"Radio, podcasts, broadcasting and digital media."
-},
-{
- icon:"💼",
- title:"BUSINESS & ENTREPRENEURSHIP",
- path:"./courses.html#business",
- ht:"Kreye, òganize ak devlope yon biznis.",
- fr:"Créer, organiser et développer une entreprise.",
- en:"Create, organize and develop a business."
-},
-{
- icon:"🤝",
- title:"COMMUNITY & SERVICES",
- path:"./courses.html#community",
- ht:"Sèvis kominotè, òganizasyon ak devlopman sosyal.",
- fr:"Services communautaires, organisation et développement social.",
- en:"Community services, organization and social development."
+function write(key,value){
+ try{
+  localStorage.setItem(key,JSON.stringify(value));
+  return true;
+ }catch(e){return false}
 }
-];
 
-/* =========================
-   FOUR STUDENT MODULES
-========================= */
+function tr(key){return T[lang][key]}
 
-const students=[
-{
- icon:"👤",
- title:"STUDENT PROFILE",
- path:"./student-profile/index.html",
- ht:"Jere enfòmasyon pèsonèl ak pwofil elèv ou.",
- fr:"Gérez vos informations et votre profil étudiant.",
- en:"Manage your personal information and student profile."
-},
-{
- icon:"🎓",
- title:"STUDENT PORTAL",
- path:"./student-portal/index.html",
- ht:"Jwenn aksè ak kou ou yo epi suiv pwogrè ou.",
- fr:"Accédez à vos cours et suivez votre progression.",
- en:"Access your courses and track your progress."
-},
-{
- icon:"📝",
- title:"ASSESSMENTS",
- path:"./assessments/index.html",
- ht:"Pase tès ak evalyasyon pou mezire konesans ou.",
- fr:"Passez des tests et évaluations de vos connaissances.",
- en:"Take tests and assessments to measure your knowledge."
-},
-{
- icon:"🏆",
- title:"CERTIFICATE CENTER",
- path:"./certificate-center/index.html",
- ht:"Jere sètifika ak rezilta fòmasyon ou.",
- fr:"Gérez vos certificats et résultats de formation.",
- en:"Manage your certificates and training results."
+function completed(course){
+ const data=read("promaxLessons_"+course.id,[]);
+ return Array.isArray(data)?data:[];
 }
-];
 
-/* =========================
-   CARD RENDERING
-========================= */
+function progress(course){
+ return Math.round(
+ completed(course).filter(Boolean).length/
+ course.lessons.length*100
+ );
+}
 
-function renderCards(id,items,lang,buttonKey,numbered){
-
+function renderCards(id,items){
  const grid=document.getElementById(id);
- grid.replaceChildren();
+ grid.innerHTML="";
 
- items.forEach(function(item,index){
-
+ items.forEach((course,index)=>{
+  const pct=progress(course);
   const card=document.createElement("article");
   card.className="card";
 
-  if(numbered){
-   const number=document.createElement("span");
-   number.className="number";
-   number.textContent=String(index+1).padStart(2,"0");
-   card.appendChild(number);
-  }
+  card.innerHTML=`
+   <div class="card-top">
+    <div class="card-icon">
+     <i class="fa-solid fa-${course.icon}"></i>
+    </div>
+    <span class="card-number">
+     COURSE ${String(index+1).padStart(2,"0")}
+    </span>
+   </div>
+   <h3>${course.title}</h3>
+   <p>${course.desc[lang]}</p>
+   <div class="tags">
+    ${course.tags.map(tag=>`<span>${tag}</span>`).join("")}
+   </div>
+   <div class="progress-label">
+    <span>${tr("progress")}</span>
+    <span>${pct}%</span>
+   </div>
+   <div class="progress-track">
+    <div class="progress-fill" style="width:${pct}%"></div>
+   </div>
+   <button class="btn btn-outline" type="button">
+    <i class="fa-solid fa-book-open"></i>
+    ${tr("start")}
+   </button>`;
 
-  const icon=document.createElement("div");
-  icon.className="card-icon";
-  icon.setAttribute("aria-hidden","true");
-  icon.textContent=item.icon;
-
-  const title=document.createElement("h3");
-  title.textContent=item.title;
-
-  const description=document.createElement("p");
-  description.textContent=item[lang];
-
-  const link=document.createElement("a");
-  link.className="btn";
-  link.href=item.path;
-  link.textContent=T[lang][buttonKey];
-  link.setAttribute("aria-label",
-    T[lang][buttonKey]+" "+item.title);
-
-  card.append(icon,title,description,link);
+  card.querySelector("button").onclick=()=>openCourse(course);
   grid.appendChild(card);
  });
-
 }
 
-/* =========================
-   LANGUAGE SWITCH
-========================= */
+const dialog=document.getElementById("courseDialog");
+const content=document.getElementById("dialogContent");
 
-const LANG_KEY="promaxAcademieLanguage";
+function showDialog(title){
+ document.getElementById("dialogTitle").textContent=title;
+ if(!dialog.open)dialog.showModal();
+}
 
-function setLanguage(lang){
+function openCourse(course){
+ activeCourse=course;
+ const done=completed(course);
 
- if(!T[lang])lang="ht";
+ content.innerHTML=`
+  <p>${course.desc[lang]}</p>
+  <h3>${tr("lessons")}</h3>
+  ${course.lessons.map((lesson,i)=>`
+   <details class="lesson" ${i===0?"open":""}>
+    <summary>${tr("lessons")} ${i+1}</summary>
+    <p>${lesson[lang]}</p>
+    <label>
+     <input type="checkbox" data-lesson="${i}"
+     ${done[i]?"checked":""}>
+     ${tr("complete")}
+    </label>
+   </details>
+  `).join("")}
+  <div class="panel">
+   <h3>${tr("exercise")}</h3>
+   <p>${course.task[lang]}</p>
+   <textarea id="practiceAnswer" rows="5"
+    style="width:100%;background:#080400;color:#ffb66e;border:1px solid #ff790055;border-radius:10px;padding:12px"></textarea>
+   <button id="savePractice" class="btn" style="margin-top:12px">
+    ${tr("save")}
+   </button>
+   <p id="practiceStatus" role="status"></p>
+  </div>
+  <button class="btn" id="startQuiz">
+   ${tr("quiz")}
+  </button>`;
 
+ content.querySelectorAll("[data-lesson]").forEach(box=>{
+  box.onchange=()=>{
+   const data=completed(course);
+   data[Number(box.dataset.lesson)]=box.checked;
+   write("promaxLessons_"+course.id,data);
+   write("promaxCourseProgress_"+course.id,progress(course));
+   renderAllCards();
+  };
+ });
+
+ document.getElementById("practiceAnswer").value=
+ read("promaxPractice_"+course.id,"");
+
+ document.getElementById("savePractice").onclick=()=>{
+  const ok=write(
+   "promaxPractice_"+course.id,
+   document.getElementById("practiceAnswer").value
+  );
+  document.getElementById("practiceStatus").textContent=
+   ok?tr("saved"):"Storage unavailable";
+ };
+
+ document.getElementById("startQuiz").onclick=()=>openQuiz(course);
+ showDialog(course.title);
+}
+
+const questionText=L(
+ "Ki deklarasyon ki koresponn ak leson sa a?",
+ "Quelle affirmation correspond à cette leçon ?",
+ "Which statement matches this lesson?"
+);
+
+const wrongAnswers=[
+ L(
+ "Pa bezwen verifye okenn enfòmasyon.",
+ "Il ne faut jamais vérifier les informations.",
+ "Information never needs verification."
+ ),
+ L(
+ "Tout travay dwe fèt san objektif ni planifikasyon.",
+ "Tout travail doit être effectué sans objectif ni planification.",
+ "All work should be done without goals or planning."
+ )
+];
+
+function openQuiz(course){
+ activeCourse=course;
+
+ const questions=course.lessons.map((lesson,i)=>{
+  const options=[
+   {text:lesson[lang],correct:true},
+   ...wrongAnswers.map(w=>({text:w[lang],correct:false}))
+  ];
+
+  if(i%3===1)options.push(options.shift());
+  if(i%3===2)options.unshift(options.pop());
+
+  return options;
+ });
+
+ content.innerHTML=`
+  <form id="quizForm">
+   ${questions.map((options,i)=>`
+    <div class="question">
+     <strong>${i+1}. ${questionText[lang]}</strong>
+     ${options.map((option,j)=>`
+      <label>
+       <input type="radio" name="q${i}"
+        value="${j}" required>
+       ${option.text}
+      </label>
+     `).join("")}
+    </div>
+   `).join("")}
+   <button type="submit" class="btn">
+    ${tr("submit")}
+   </button>
+  </form>
+  <h3 id="quizResult" role="status"></h3>
+  <button class="btn btn-outline" id="backLesson">
+   ${tr("lessons")}
+  </button>`;
+
+ document.getElementById("quizForm").onsubmit=e=>{
+  e.preventDefault();
+  const data=new FormData(e.target);
+  let correct=0;
+
+  questions.forEach((options,i)=>{
+   if(options[Number(data.get("q"+i))].correct)correct++;
+  });
+
+  const pct=Math.round(correct/questions.length*100);
+
+  write("promaxQuiz_"+course.id,{
+   score:pct,date:new Date().toISOString()
+  });
+
+  document.getElementById("quizResult").textContent=
+   `${tr("score")}: ${correct}/${questions.length} — ${pct}%`;
+ };
+
+ document.getElementById("backLesson").onclick=()=>openCourse(course);
+ showDialog(course.title+" — "+tr("quiz"));
+}
+
+function openProfile(){
+ activeCourse=null;
+ const profile=read("promaxLocalProfile",{name:"",email:""});
+
+ content.innerHTML=`
+  <form id="profileForm">
+   <p>${tr("name")}</p>
+   <input id="studentName" required
+    style="width:100%;padding:12px;background:#080400;color:#ffb66e;border:1px solid #ff7900;border-radius:8px">
+   <p>${tr("email")}</p>
+   <input id="studentEmail" type="email" required
+    style="width:100%;padding:12px;background:#080400;color:#ffb66e;border:1px solid #ff7900;border-radius:8px">
+   <p><button class="btn" type="submit">${tr("save")}</button></p>
+   <p id="profileStatus" role="status"></p>
+  </form>`;
+
+ document.getElementById("studentName").value=profile.name||"";
+ document.getElementById("studentEmail").value=profile.email||"";
+
+ document.getElementById("profileForm").onsubmit=e=>{
+  e.preventDefault();
+
+  const ok=write("promaxLocalProfile",{
+   name:document.getElementById("studentName").value,
+   email:document.getElementById("studentEmail").value
+  });
+
+  document.getElementById("profileStatus").textContent=
+   ok?tr("saved"):"Storage unavailable";
+ };
+
+ showDialog(tr("profile"));
+}
+
+function chooseCourse(mode){
+ activeCourse=null;
+ content.innerHTML=`<p>${tr("choose")}</p>`;
+
+ courses.forEach(course=>{
+  const button=document.createElement("button");
+  button.className="btn btn-outline";
+  button.style.cssText="display:flex;width:100%;margin:10px 0";
+  button.textContent=course.title;
+
+  button.onclick=()=>{
+   if(mode==="quiz"){
+    openQuiz(course);
+   }else{
+    openCourse(course);
+    if(mode==="practice"){
+     document.getElementById("practiceAnswer").focus();
+    }
+   }
+  };
+
+  content.appendChild(button);
+ });
+
+ showDialog(mode==="quiz"?tr("assessment"):tr("practice"));
+}
+
+function openCertificate(){
+ activeCourse=null;
+ content.innerHTML="";
+
+ courses.forEach(course=>{
+  const quiz=read("promaxQuiz_"+course.id,null);
+  const item=document.createElement("div");
+  item.className="lesson";
+
+  const title=document.createElement("strong");
+  title.textContent=course.title;
+
+  const p=document.createElement("p");
+  p.textContent=
+   `${tr("progress")}: ${progress(course)}% | ${tr("quiz")}: ${quiz?quiz.score+"%":"—"}`;
+
+  item.append(title,p);
+  content.appendChild(item);
+ });
+
+ const note=document.createElement("p");
+ note.textContent=tr("certificateInfo");
+ content.appendChild(note);
+
+ const link=document.createElement("a");
+ link.href="mailto:bss1815promaxdmp@gmail.com";
+ link.className="btn";
+ link.textContent=tr("contact");
+ content.appendChild(link);
+
+ showDialog(tr("certificate"));
+}
+
+function renderPath(){
+ const steps=[
+  ["user-plus","profile",openProfile],
+  ["book-open","training",()=>document.getElementById("core").scrollIntoView()],
+  ["brain","practice",()=>chooseCourse("practice")],
+  ["clipboard-check","assessment",()=>chooseCourse("quiz")],
+  ["award","certificate",openCertificate]
+ ];
+
+ const grid=document.getElementById("pathGrid");
+ grid.innerHTML="";
+
+ steps.forEach((step,i)=>{
+  const button=document.createElement("button");
+  button.className="path-card";
+
+  button.innerHTML=`
+   <i class="fa-solid fa-${step[0]}"></i>
+   <h3>0${i+1} • ${tr(step[1])}</h3>`;
+
+  button.onclick=step[2];
+  grid.appendChild(button);
+ });
+}
+
+/*
+ SOCIAL NETWORKS
+ Insert only verified official profile URLs.
+ Empty URLs display a configuration notice.
+*/
+
+const socials=[
+ ["Facebook","facebook","fa-facebook-f",""],
+ ["WhatsApp","whatsapp","fa-whatsapp",""],
+ ["Instagram","instagram","fa-instagram",""],
+ ["YouTube","youtube","fa-youtube",""],
+ ["Spotify","spotify","fa-spotify",""],
+ ["Telegram","telegram","fa-telegram",""],
+ ["X","twitter","fa-x-twitter",""],
+ ["TikTok","tiktok","fa-tiktok",""],
+ ["LinkedIn","linkedin","fa-linkedin-in",""],
+ ["Truth Social","truth","",""]
+];
+
+function renderSocial(){
+ const grid=document.getElementById("socialGrid");
+ grid.innerHTML="";
+
+ socials.forEach(([name,color,icon,url])=>{
+  const item=document.createElement(url?"a":"button");
+  item.className="social "+color;
+  item.title=name;
+  item.setAttribute("aria-label",name);
+
+  if(icon){
+   const i=document.createElement("i");
+   i.className="fa-brands "+icon;
+   item.appendChild(i);
+  }else{
+   item.textContent="T";
+  }
+
+  if(url){
+   item.href=url;
+   item.target="_blank";
+   item.rel="noopener noreferrer";
+  }else{
+   item.type="button";
+   item.onclick=()=>alert(name+": "+tr("missingSocial"));
+  }
+
+  grid.appendChild(item);
+ });
+}
+
+function renderAllCards(){
+ renderCards("coreGrid",courses.slice(0,6));
+ renderCards("specialGrid",courses.slice(6));
+}
+
+function setLanguage(value){
+ lang=T[value]?value:"ht";
  document.documentElement.lang=lang;
 
- document.querySelectorAll("[data-t]").forEach(function(el){
-  const key=el.dataset.t;
-  if(T[lang][key])el.textContent=T[lang][key];
+ document.querySelectorAll("[data-t]").forEach(el=>{
+  el.textContent=tr(el.dataset.t);
  });
 
- document.querySelectorAll("[data-lang]").forEach(function(btn){
-  const active=btn.dataset.lang===lang;
-  btn.classList.toggle("active",active);
-  btn.setAttribute("aria-pressed",String(active));
+ document.querySelectorAll("[data-lang]").forEach(button=>{
+  button.classList.toggle("active",button.dataset.lang===lang);
+  button.setAttribute("aria-pressed",
+   String(button.dataset.lang===lang));
  });
 
- renderCards("schoolGrid",schools,lang,"enterSchool",false);
- renderCards("coreGrid",core,lang,"startCourse",true);
- renderCards("specialGrid",specialized,lang,"startCourse",true);
- renderCards("studentGrid",students,lang,"openModule",false);
+ write("promaxCoursesLanguage",lang);
 
- try{localStorage.setItem(LANG_KEY,lang)}catch(e){}
+ renderAllCards();
+ renderPath();
+ renderSocial();
 
+ if(dialog.open)dialog.close();
 }
 
-document.querySelectorAll("[data-lang]").forEach(function(btn){
- btn.addEventListener("click",function(){
-  setLanguage(btn.dataset.lang);
- });
+document.querySelectorAll("[data-lang]").forEach(button=>{
+ button.onclick=()=>setLanguage(button.dataset.lang);
 });
 
-let savedLanguage="ht";
-
-try{
- savedLanguage=localStorage.getItem(LANG_KEY)||"ht";
-}catch(e){}
-
-setLanguage(savedLanguage);
-
-/* =========================
-   GENERAL FUNCTIONS
-========================= */
+document.getElementById("closeDialog").onclick=()=>dialog.close();
 
 document.getElementById("year").textContent=
  new Date().getFullYear();
 
-document.getElementById("topBtn").addEventListener(
- "click",function(){
- window.scrollTo({top:0,behavior:"smooth"});
-});
+setLanguage(read("promaxCoursesLanguage","ht"));
 
 </script>
 </body>
